@@ -1,0 +1,44 @@
+" Information: {{{
+"  {{{2
+"  Author: Elliot Boney
+" }}} }}}
+
+set nocompatible
+
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Let Vundle manage Vundle
+Bundle 'gmarik/vundle'
+
+
+"Bundle 'XmlPretty'
+" Define bundles via Github repos
+Bundle 'Lokaltog/powerline'
+"Bundle 'Css-Pretty'
+"Bundle 'Syntastic'
+"Bundle 'xterm-color-table.vim'
+"Bundle 'Align'
+"Bundle 'editorconfig-vim'
+"Bundle 'maksimr/vim-jsbeautify'
+"Bundle 'jshint.vim'
+Bundle 'tpope/vim-markdown'
+Bundle 'The-NERD-tree'
+"Bundle 'terryma/vim-multiple-cursors'
+Bundle 'eScrit'
+Bundle 'vim-hybrid'
+Bundle 'node.js'
+" Gist {{{
+Bundle 'Gist.vim'
+Bundle 'WebAPI.vim'
+" }}}
+"Bundle 'Solarized'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'pangloss/vim-javascript'
+"Bundle 'kien/ctrlp.vim'
+"Bundle 'tidy'
+Bundle 'LustyJuggler'
+"Bundle 'indenthtml.vim'
+filetype on
+filetype indent on
