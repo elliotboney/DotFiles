@@ -16,13 +16,10 @@ Bundle 'gmarik/vundle'
 " Define bundles via Github repos
 Bundle 'Lokaltog/powerline'
 Bundle 'tpope/vim-markdown'
-Bundle 'The-NERD-tree'
-Bundle 'eScrit'
-Bundle 'vim-hybrid'
-Bundle 'node.js'
+Bundle 'elliotboney/eScrit'
 " Gist {{{
-Bundle 'Gist.vim'
-Bundle 'WebAPI.vim'
+Bundle 'vim-scripts/Gist.vim'
+Bundle 'mattn/webapi-vim'
 " }}}
 Bundle 'pangloss/vim-javascript'
 Bundle 'scrooloose/nerdtree'

@@ -89,10 +89,10 @@ endif
       vnoremap <C-y> 3<C-y>
       "}}}
    " Remind Me Not To Use Arrows: {{{2
-      nnoremap <Left> :echoe "Use h"<CR>
-      nnoremap <Right> :echoe "Use l"<CR>
-      nnoremap <Up> :echoe "Use k"<CR>
-      nnoremap <Down> :echoe "Use j"<CR>
+     " nnoremap <Left> :echoe "Use h"<CR>
+      "nnoremap <Right> :echoe "Use l"<CR>
+      "nnoremap <Up> :echoe "Use k"<CR>
+      "nnoremap <Down> :echoe "Use j"<CR>
       "}}}
    " Leader Key Commands: {{{2
       " fast edits
