@@ -45,7 +45,8 @@ $fn_cmd -f shell_is_interactive
 $fn_cmd -f shell_is_script
 
 # NEW PART: {{{1 
-   export PATH=$PATH:$HOME/bin
+   #export PATH=$PATH:$HOME/bin
+if shell_is_interactive; then
 
    function include_d {
       dir=$1
@@ -62,7 +63,7 @@ $fn_cmd -f shell_is_script
    include_d bash_completion
    include_d bash_settings
 # }}}
-
+fi
 # Unset local variables
 unset fn_cmd
 unset EXPORT_FUNCTIONS

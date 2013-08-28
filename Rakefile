@@ -16,7 +16,7 @@ task :install do
     file = linkable.split('/').last.split('.symlink').last
     target = "#{ENV["HOME"]}/.#{file}"
 
-    if File.exists?(target) || File.symlink?(target)
+    if File.exists?(target) || File.symlink?(target) || File.exists?(File.expand_path(target))
       unless skip_all | overwrite_all | backup_all
         puts "File already exists: #{target}, what do you want to do? [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all"
         case STDIN.gets.chomp
