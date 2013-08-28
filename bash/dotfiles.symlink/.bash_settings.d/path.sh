@@ -4,7 +4,7 @@ case $(uname -s) in
       FDK_EXE="/Users/eboney/bin/FDK/Tools/osx"
       export FDK_EXE
 
-      PATH=        "/usr/local/bin"
+      PATH=${PATH}:"/usr/local/bin"
       PATH=${PATH}:"/bin"
       PATH=${PATH}:"/sbin"
       PATH=${PATH}:"/opt/local/bin"

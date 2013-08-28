@@ -97,7 +97,7 @@ endif
    " Leader Key Commands: {{{2
       " fast edits
       nmap <silent> <leader>v :e ~/.vimrc<CR>
-      nmap <silent> <leader>vv :e ~/.dotfiles/.vimrc.bundles<CR>
+      nmap <silent> <leader>vv :e ~/.vimrc.bundles<CR>
       nmap <silent> <leader>b :e ~/.bashrc<CR>
       nmap <silent> <leader>r :source ~/.vimrc<CR>
       " Tidy HTML:

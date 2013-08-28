@@ -13,19 +13,10 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 
-"Bundle 'XmlPretty'
 " Define bundles via Github repos
 Bundle 'Lokaltog/powerline'
-"Bundle 'Css-Pretty'
-"Bundle 'Syntastic'
-"Bundle 'xterm-color-table.vim'
-"Bundle 'Align'
-"Bundle 'editorconfig-vim'
-"Bundle 'maksimr/vim-jsbeautify'
-"Bundle 'jshint.vim'
 Bundle 'tpope/vim-markdown'
 Bundle 'The-NERD-tree'
-"Bundle 'terryma/vim-multiple-cursors'
 Bundle 'eScrit'
 Bundle 'vim-hybrid'
 Bundle 'node.js'
@@ -33,12 +24,25 @@ Bundle 'node.js'
 Bundle 'Gist.vim'
 Bundle 'WebAPI.vim'
 " }}}
-"Bundle 'Solarized'
-Bundle 'scrooloose/nerdcommenter'
 Bundle 'pangloss/vim-javascript'
-"Bundle 'kien/ctrlp.vim'
-"Bundle 'tidy'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdcommenter'
 Bundle 'LustyJuggler'
-"Bundle 'indenthtml.vim'
 filetype on
 filetype indent on
+
+
+" Unused {{{2
+"Bundle 'Css-Pretty'
+"Bundle 'Syntastic'
+"Bundle 'xterm-color-table.vim'
+"Bundle 'Align'
+"Bundle 'editorconfig-vim'
+"Bundle 'maksimr/vim-jsbeautify'
+"Bundle 'jshint.vim'
+"Bundle 'terryma/vim-multiple-cursors'
+"Bundle 'XmlPretty'
+"Bundle 'indenthtml.vim'
+"Bundle 'tidy'
+"Bundle 'kien/ctrlp.vim'
+" }}}
