@@ -1,0 +1,33 @@
+[submodule "vim/vim.symlink/bundle/powerline"]
+	path = vim/vim.symlink/bundle/powerline
+	url = git@github.com:Lokaltog/powerline.git
+[submodule "vim/vim.symlink/bundle/vim-jsbeautify"]
+	path = vim/vim.symlink/bundle/vim-jsbeautify
+	url = git@github.com:maksimr/vim-jsbeautify.git
+[submodule "vim/vim.symlink/bundle/vim-markdown"]
+	path = vim/vim.symlink/bundle/vim-markdown
+	url = git@github.com:tpope/vim-markdown.git
+[submodule "vim/vim.symlink/bundle/nerdcommenter"]
+	path = vim/vim.symlink/bundle/nerdcommenter
+	url = git@github.com:scrooloose/nerdcommenter.git
+[submodule "vim/vim.symlink/bundle/vim-javascript"]
+	path = vim/vim.symlink/bundle/vim-javascript
+	url = git@github.com:pangloss/vim-javascript.git
+[submodule "vim/vim.symlink/bundle/vundle"]
+	path = vim/vim.symlink/bundle/vundle
+	url = git@github.com:gmarik/vundle.git
+[submodule "vim/vim.symlink/bundle/nerdtree"]
+	path = vim/vim.symlink/bundle/nerdtree
+	url = git@github.com:scrooloose/nerdtree.git
+[submodule "vim/vim.symlink/bundle/gist-vim"]
+	path = vim/vim.symlink/bundle/gist-vim
+	url = git@github.com:mattn/gist-vim.git
+[submodule "vim/vim.symlink/bundle/WebAPI.vim"]
+	path = vim/vim.symlink/bundle/WebAPI.vim
+	url = git@github.com:vim-scripts/WebAPI.vim.git
+[submodule "vim/vim.symlink/bundle/LustyJuggler"]
+	path = vim/vim.symlink/bundle/LustyJuggler
+	url = git@github.com:vim-scripts/LustyJuggler.git
+[submodule "vim/vim.symlink/bundle/eScrit"]
+	path = vim/vim.symlink/bundle/eScrit
+	url = git@github.com:elliotboney/eScrit.git
