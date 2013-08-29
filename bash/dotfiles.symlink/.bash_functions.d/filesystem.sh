@@ -1,4 +1,4 @@
-# BCyan='\x1b[1;36m'        # Cyan
+BCyan='\x1b[1;36m'        # Cyan
 
 # Go to last directory
 cl()
@@ -23,7 +23,7 @@ function cleanup()
   echo -e "\n${BCyan}Deleting f'in ._ files...$NC"
   find . -type f -name '._*' -ls -delete
   echo -e "\n${BCyan}Deleting f'in __MACOSX files...$NC"
-  find . -type f -name '__MAC*' -ls -delete
+  find . -type d -name '__MAC*' -ls -exec rm -rf {} \;
 }
 
 # Create a new directory and enter it

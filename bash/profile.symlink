@@ -52,7 +52,7 @@ if shell_is_interactive; then
       dir=$1
       if [ -d $HOME/.dotfiles/.$dir.d -a -r $HOME/.dotfiles/.$dir.d -a -x $HOME/.dotfiles/.$dir.d ]; then
          for i in $HOME/.dotfiles/.$dir.d/*.sh; do
-           echo $i
+           #echo $i
             . $i
          done
       fi
