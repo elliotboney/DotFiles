@@ -16,3 +16,6 @@ done
 
 # Stop after sending count ECHO_REQUEST packets #
 alias ping='ping -c 5'
+
+# Connection for work
+alias onramp='sudo vpnc ~/Dropbox/myvpn.conf --debug 3'

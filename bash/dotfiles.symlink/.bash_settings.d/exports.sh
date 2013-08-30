@@ -12,3 +12,6 @@ export EDITOR="vim"
 
 # Make some commands not show up in history
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
+
+# Use home for ruby gems
+#export GEM_HOME="~/.gem"
