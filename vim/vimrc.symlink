@@ -157,7 +157,8 @@ endif
 " Set Statements: {{{
    " Color Scheme: {{{2
       set background=dark
-      colorscheme ChubyNinja
+      colorscheme flatland 
+      "ChubyNinja
       "}}}
    " Search Stuff: {{{2
       set hlsearch
