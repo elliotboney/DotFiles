@@ -52,7 +52,7 @@ if shell_is_interactive; then
       dir=$1
       if [ -d $HOME/.dotfiles/.$dir.d -a -r $HOME/.dotfiles/.$dir.d -a -x $HOME/.dotfiles/.$dir.d ]; then
          for i in $HOME/.dotfiles/.$dir.d/*.sh; do
-           #echo $i
+           echo $i
             . $i
          done
       fi
@@ -68,7 +68,3 @@ fi
 unset fn_cmd
 unset EXPORT_FUNCTIONS
 unset BASHRC_DISPATCH_PID
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

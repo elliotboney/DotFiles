@@ -11,7 +11,7 @@
 " 
 "
 " }}}
-"
+" asdasd
 "python import sys; sys.path.append("/usr/local/lib/python2.7/site-packages/")
 if has("gui")
       set gfn=Source\ Code\ Pro\ Light\ for\ Powerline:h14
@@ -32,8 +32,10 @@ endif
    filetype plugin indent on     " Turn on Filetype detection, plugins, and
 
    "_. Autosource Vimrc Edits And Snippets: {{{2
-      au! BufWritePost .vimrc source %
+   augroup vimfiles " {  
+      au! BufWritePost .vimrc nested source %
       au! BufWritePost .vimrc.bundles source % 
+   augroup END " }
       "}}}
    " Persistent Undo: {{{2
       "silent !mkdir ~/.vim/backups > /dev/null 2>&1 
@@ -42,12 +44,14 @@ endif
 " KeyBindings: {{{1
    " Clipboard: {{{2
       set pastetoggle=<F10>
-    "  if has("mac") " On OSX
-
+      if has("mac") " On OSX
          " Get Clipboard to work with system
          vmap <C-c> y:call system("pbcopy", getreg("\""))<CR>
-         nmap <C-v> :call setreg("\"",system("pbpaste"))<CR>p
-      "endif
+         nmap <C-v> :call setreg("\"",system("pbpaste"))<CR>py
+      elseif has("unix")
+         vmap <C-c> y:call system("xsel --clipboard --input", getreg("\""))<CR>
+         nmap <C-v> :call setreg("\"",system("xclip -selection clipboard -o"))<CR>py
+      endif
       "}}}
    " Control Key Bindings: {{{2 
       " When you press <leader>r you can search and replace the selected text
@@ -64,7 +68,7 @@ endif
       "cnoremap <C-K>      <C-U>
       "cnoremap <C-P> <Up>
       "cnoremap <C-N> <Down>
-      "vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+      vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
       noremap <C-t> !tidy --replace-color y --indent 'auto' --indent-attributes y --indent-cdata y --indent-spaces '2' --wrap '90100' --clean y -html -mi %<CR>
 
@@ -157,7 +161,7 @@ endif
 " Set Statements: {{{
    " Color Scheme: {{{2
       set background=dark
-      colorscheme flatland 
+      colorscheme FlatLand 
       "ChubyNinja
       "}}}
    " Search Stuff: {{{2

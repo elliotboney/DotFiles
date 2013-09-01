@@ -19,13 +19,11 @@ function sanitize() { chmod -R u=rwX,g=rX,o= "$@" ;}
 function cleanup()
 {
   echo -e "\n${BCyan}Deleting f'in .DS_Store files...$NC"
-  find . -type f -name '*.DS_Store'  -printf \ \ \ \ %p\n -delete
+  find . -type f -name '*.DS_Store' -ls -delete
   echo -e "\n${BCyan}Deleting f'in ._ files...$NC"
-  find . -type f -name '._*' -printf \ \ \ \ %p\n -delete
-  echo -e "\n${BCyan}Deleting f'in Thumbnail db files...$NC"
-  find . -type f -name 'Thumbs.db' -printf \ \ \ \ %p\n -delete
+  find . -type f -name '._*' -ls -delete
   echo -e "\n${BCyan}Deleting f'in __MACOSX files...$NC"
-  find . -type d -name '__MAC*' -printf \ \ \ \ %p\n -exec rm -rf {} \;
+  find . -type d -name '__MAC*' -ls -exec rm -rf {} \;
 }
 
 # Create a new directory and enter it
