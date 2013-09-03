@@ -1,10 +1,10 @@
 # Dark 256 color customized by Elliot and Bval
 #
-# @author  {@link http://trudg.in/ Elliot Boney}
+# @author  {@link http://www.elliotboney.com Elliot Boney}
 # @license http://sam.zoy.org/wtfpl/  Do What The Fuck You Want To Public License (WTFPL)
 
 # TODO see if we need all this shit down 
-# Term Section
+# Terminal {{{2
 TERM Eterm
 TERM ansi
 TERM color-xterm
@@ -56,6 +56,8 @@ TERM xterm-88color
 TERM xterm-color
 TERM xterm-debian
 TERM xterm-termite
+# }}}
+
 
 # NOTE: string consists of one or more of the following numeric codes:
 # Attribute codes:
@@ -73,30 +75,34 @@ TERM xterm-termite
 # Background 256 color coding:
 # 48;5;COLOR_NUMBER
 
+#ENDCODE                \_\? # symlink to nonexistent file, or non-stat'able file
+
+
 ## Special files
 
-NORMAL 00;38;5;233 # no color code at all
-FILE 00;38;5;254 # regular file: use no color at all
-RESET 0 # reset to "normal" color
-DIR 00;38;5;33 # directory 00;34
-LINK 00;38;5;14  # symbolic link. (If you set this to 'target' instead of a
-                 # numerical value, the color is as for the file pointed to.)
-MULTIHARDLINK 00 # regular file with more than one link
-FIFO 48;5;230;38;5;214;01 # pipe
-SOCK 48;5;230;38;5;214;01 # socket
-DOOR 48;5;230;38;5;214;01 # door
-BLK 48;5;230;38;5;244;01 # block device driver
-CHR 48;5;230;38;5;244;01 # character device driver
-ORPHAN 48;5;235;38;5;160 # symlink to nonexistent file, or non-stat'able file
-SETUID 48;5;160;38;5;230 # file that is setuid (u+s)
-SETGID 48;5;214;38;5;230 # file that is setgid (g+s)
-CAPABILITY 30;41 # file with capability
+NORMAL                08;38;5;236 # no color code at all
+FILE                  08;38;5;241 # regular file: use no color at all
+RESET                 0 # reset to "normal" color
+DIR                   00;38;5;33 # directory 00;34
+LINK                  00;38;5;14  # symbolic link. (If you set this to 'target' instead of a
+                                  # numerical value, the color is as for the file pointed to.)
+MULTIHARDLINK         00;38;5;14 #00 # regular file with more than one link
+FIFO                  48;5;230;38;5;213;01 # pipe
+SOCK                  48;5;230;38;5;214;01 # socket
+DOOR                  48;5;230;38;5;215;01 # door
+BLK                   48;5;230;38;5;244;01 # block device driver
+CHR                   48;5;230;38;5;244;01 # character device driver
+ORPHAN                48;5;235;38;5;160 # symlink to nonexistent file, or non-stat'able file
+MISSING               48;5;235;38;5;160 # symlink to nonexistent file, or non-stat'able file
+SETUID                48;5;160;38;5;230 # file that is setuid (u+s)
+SETGID                48;5;214;38;5;229 # file that is setgid (g+s)
+CAPABILITY            30;41 # file with capability
 STICKY_OTHER_WRITABLE 48;5;64;38;5;230 # dir that is sticky and other-writable (+t,o+w)
-OTHER_WRITABLE 48;5;235;38;5;33 # dir that is other-writable (o+w) and not sticky
-STICKY 48;5;33;38;5;230 # dir with the sticky bit set (+t) and not other-writable
+STICKY                48;5;37;38;5;0 # dir that is other-writable (o+w) and not sticky
+OTHER_WRITABLE        48;5;33;38;5;230 # dir with the sticky bit set (+t) and not other-writable
 
 # This is for files with execute permission:
-EXEC 48;5;233;38;5;83
+EXEC    48;5;00;38;5;83
 
 ## Big file image formats
 .dmg    48;5;235;38;5;61
@@ -139,6 +145,7 @@ EXEC 48;5;233;38;5;83
 .ico    00;38;5;214
 
 # Files of special interest (base1 + bold)
+.vim             00;38;5;205
 .xml             00;38;5;205
 *Makefile        00;38;5;205
 *Rakefile        00;38;5;205
@@ -180,11 +187,11 @@ EXEC 48;5;233;38;5;83
 .cache      00;38;5;240
 
 # Audio formats (orange)
-.aac    00;38;5;166
-.au     00;38;5;166
-.flac   00;38;5;166
-.mp3    00;38;5;166
-.m4a    00;38;5;166
+.aac        00;38;5;166
+.au         00;38;5;166
+.flac       00;38;5;166
+.mp3        00;38;5;166
+.m4a        00;38;5;166
 
 # Video formats (as audio + bold)
 .mov    00;38;5;166
@@ -201,37 +208,38 @@ EXEC 48;5;233;38;5;83
 # Added by elliot
 
 # Hide Files
-.DS_Store            00;38;5;233
-.bash_history        00;38;5;237
-.hushlogin           00;38;5;237
+.DS_Store             00;38;5;233
+.bash_history         00;38;5;237
+.hushlogin            00;38;5;237
 .hush_login           00;38;5;237
-.gitignore           00;38;5;237
-.CFUserTextEncoding  00;38;5;232
-.Trash/  00;38;5;232
-.Xauthority 00;38;5;232
-.py             00;38;5;119
-.html          00;38;5;56
+.gitignore            00;38;5;237
+.CFUserTextEncoding   00;38;5;232
+.Trash/               00;38;5;232
+.Xauthority           00;38;5;232
+.py                   00;38;5;119
+.html                 00;38;5;95
 
 # my version of config files
-*rc             00;38;5;174
-*config         00;38;5;174
-.gist-vim       00;38;5;174
-.gitconfig      00;38;5;174
-.viminfo        00;38;5;174
-.functions        00;38;5;174
-.aliases        00;38;5;174
-.bash_prompt        00;38;5;174
-.exports        00;38;5;174
-.path        00;38;5;174
-.vimrc.bundles       00;38;5;174
-.mac        00;38;5;174
-.mac        00;38;5;174
-.dircolors        00;38;5;174
-.completion        00;38;5;174
-.bash_profile        00;38;5;174
-.viminfo        00;38;5;174
-.gitignore_global           00;38;5;174
+*rc                   00;38;5;174
+*config               00;38;5;174
+.gist-vim             00;38;5;174
+.gitconfig            00;38;5;174
+.viminfo              00;38;5;174
+.functions            00;38;5;174
+.aliases              00;38;5;174
+.bash_prompt          00;38;5;174
+.exports              00;38;5;174
+.path                 00;38;5;174
+.vimrc.bundles        00;38;5;174
+.mach-color           00;38;5;174
+.mac                  00;38;5;174
+.dircolors            00;38;5;174
+.completion           00;38;5;174
+.bash_profile         00;38;5;174
+.viminfo              00;38;5;174
+.gitignore_global     00;38;5;174
 .mongorc.js           00;38;5;174
-.hgignore_global           00;38;5;174
-.dbshell           00;38;5;174
-.torrent         00;38;5;245
+.hgignore_global      00;38;5;174
+.dbshell              00;38;5;174
+.torrent              00;38;5;245
+.symlink              00;38;5;50

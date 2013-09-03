@@ -13,7 +13,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'itchyny/lightline.vim'
-
+Bundle 'xterm-color-table.vim'
 Bundle 'vim-coffee-script'
 " Define bundles via Github repos
 "Bundle 'Lokaltog/powerline'

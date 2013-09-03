@@ -35,6 +35,7 @@ endif
    augroup vimfiles " {  
       au! BufWritePost .vimrc nested source %
       au! BufWritePost .vimrc.bundles source % 
+      au! BufWritePost *.vim colorscheme FlatLand 
    augroup END " }
       "}}}
    " Persistent Undo: {{{2
@@ -49,7 +50,7 @@ endif
          vmap <C-c> y:call system("pbcopy", getreg("\""))<CR>
          nmap <C-v> :call setreg("\"",system("pbpaste"))<CR>py
       elseif has("unix")
-         vmap <C-c> y:call system("xsel --clipboard --input", getreg("\""))<CR>
+         vmap <C-c> y:call system("xclip -i", getreg("\""))<CR>
          nmap <C-v> :call setreg("\"",system("xclip -selection clipboard -o"))<CR>py
       endif
       "}}}
@@ -244,7 +245,7 @@ endif
       set backspace=2
       set hi=4000         " command history length
       if has("unix")
-         set clipboard=unnamedplus
+         set clipboard+=unnamed
       endif
       set fileformats=unix
       set iskeyword+=\$,-   " Add extra characters that are valid parts of variables^
@@ -411,3 +412,24 @@ function! CmdLine(str)
 endfunction
 "}}}
 set mat=2
+set acd
+set autoread ar
+setl autoread
+
+" Should fix annoying warnings:
+let s:IgnoreChange=0
+autocmd! FileChangedRO * nested
+    \ let s:IgnoreChange=1 |
+    \ call system("p4 edit " . expand("%")) |
+    \ set noreadonly
+autocmd! FileChangedShell *
+    \ if 1 == s:IgnoreChange |
+    \   let v:fcs_choice="" |
+    \   let s:IgnoreChange=0 |
+    \ else |
+    \   let v:fcs_choice="ask" |
+    \ endif
+
+"Directories for swp files
+set backupdir=~/.backup
+set directory=~/.backup

@@ -1,5 +1,5 @@
 # For editing/reloading dotfiles
-alias editfunc='vim ~/.dotfiles/.functions'
 alias editenv='vim $HOME/.bashrc'
-alias editalias='vim $HOME/.dotfiles/.aliases'
+alias seditenv="cd ~/.dotfiles && subl ."
+alias editalias='subl $HOME/.dotfiles/.bash_alias.d/'
 alias reloadenv='source $HOME/.bashrc'

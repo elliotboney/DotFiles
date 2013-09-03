@@ -19,3 +19,7 @@ alias ping='ping -c 5'
 
 # Connection for work
 alias onramp='sudo vpnc ~/Dropbox/myvpn.conf --debug 3'
+
+# View HTTP traffic
+alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
+alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""

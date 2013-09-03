@@ -1,6 +1,11 @@
 # for bypassing safety prompt
 alias rmf='rm -f'
 
+# Intuitive map function
+# For example, to list all directories that contain a certain file:
+# find . -name .gitattributes | map dirname
+alias map="xargs -n1"
+
 # Find top 5 big files
 alias findbig="find . -type f -exec ls -s {} \; | sort -n -r | head -5"
 
@@ -15,7 +20,8 @@ if shell_is_osx; then
    alias ls="gls -hF --color=auto --group-directories-first"
    alias ln="gln"
    ## Colorize the grep command output for ease of use (good for log files) ##
-   alias grep='grep --color=auto'
+   alias grep='ggrep --color=auto'
+   alias find='gfind'
    #}}}
 else
    alias grep='grep --color=auto'

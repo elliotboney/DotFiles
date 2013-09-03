@@ -1,11 +1,12 @@
-BCyan='\x1b[1;36m'        # Cyan
+NC="\x1b[m"               # Color Reset
+LIGHTGREEN="\033[1;32m"
 
 # Go to last directory
 cl()
 {
   last_dir="$(ls -Frt | grep '/$' | tail -n1)"
   if [ -d "$last_dir" ]; then
-          cd "$last_dir"
+    cd "$last_dir"
   fi
 }
 
@@ -18,13 +19,13 @@ function sanitize() { chmod -R u=rwX,g=rX,o= "$@" ;}
 # Mac cleanup
 function cleanup()
 {
-  echo -e "\n${BCyan}Deleting f'in .DS_Store files...$NC"
-  find . -type f -name '*.DS_Store'  -printf \ \ \ \ %p\n -delete
-  echo -e "\n${BCyan}Deleting f'in ._ files...$NC"
+  echo -e "\n${LIGHTGREEN}Deleting f'in .DS_Store files...${NC}"
+  gfind . -type f -name '*.DS_Store'  -printf \ \ \ \ %p\n -exec rm -rf {} \;
+  echo -e "\n${LIGHTGREEN}Deleting f'in ._ files...$NC"
   find . -type f -name '._*' -printf \ \ \ \ %p\n -delete
-  echo -e "\n${BCyan}Deleting f'in Thumbnail db files...$NC"
+  echo -e "\n${LIGHTGREEN}Deleting f'in Thumbnail db files...$NC"
   find . -type f -name 'Thumbs.db' -printf \ \ \ \ %p\n -delete
-  echo -e "\n${BCyan}Deleting f'in __MACOSX files...$NC"
+  echo -e "\n${LIGHTGREEN}Deleting f'in __MACOSX files...$NC"
   find . -type d -name '__MAC*' -printf \ \ \ \ %p\n -exec rm -rf {} \;
 }
 
