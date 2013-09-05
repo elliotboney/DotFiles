@@ -20,7 +20,7 @@ function sanitize() { chmod -R u=rwX,g=rX,o= "$@" ;}
 function cleanup()
 {
   echo -e "\n${LIGHTGREEN}Deleting f'in .DS_Store files...${NC}"
-  gfind . -type f -name '*.DS_Store'  -printf \ \ \ \ %p\n -exec rm -rf {} \;
+  find . -type f -name '*.DS_Store'  -printf \ \ \ \ %p\n -exec rm -rf {} \;
   echo -e "\n${LIGHTGREEN}Deleting f'in ._ files...$NC"
   find . -type f -name '._*' -printf \ \ \ \ %p\n -delete
   echo -e "\n${LIGHTGREEN}Deleting f'in Thumbnail db files...$NC"

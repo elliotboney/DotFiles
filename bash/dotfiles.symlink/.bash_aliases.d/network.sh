@@ -18,7 +18,7 @@ done
 alias ping='ping -c 5'
 
 # Connection for work
-alias onramp='sudo vpnc ~/Dropbox/myvpn.conf --debug 3'
+alias onramp='sudo vpnc ~/Dropbox/myvpn.conf --debug 99'
 
 # View HTTP traffic
 alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
