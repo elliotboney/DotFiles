@@ -3,7 +3,7 @@ function pushdots()   # Get current host related info.
     echo -e "\nMoving to DotFiles"
     cd ~/Dropbox/DotFiles
     git add -A .
-    git commit -m "$1"
+    git commit -m "{$1}"
     git push
     cd $@
 #     echo -e "${BRed}Additionnal information:$NC " ; uname -a
@@ -17,4 +17,10 @@ function pushdots()   # Get current host related info.
 #     echo -e "${BRed}Public IP Address :$NC" ; ip
 # #    echo -e "${BRed}Open connections :$NC "; netstat -an -p tcp;
 #     echo
+}
+
+function tester()
+{
+    echo $0
+
 }
