@@ -45,14 +45,14 @@ endif
 " KeyBindings: {{{1
    " Clipboard: {{{2
       set pastetoggle=<F10>
-      if has("mac") " On OSX
+      "if has("mac") " On OSX
          " Get Clipboard to work with system
          vmap <C-c> y:call system("pbcopy", getreg("\""))<CR>
          nmap <C-v> :call setreg("\"",system("pbpaste"))<CR>py
-      elseif has("unix")
-         vmap <C-c> y:call system("xclip -i", getreg("\""))<CR>
-         nmap <C-v> :call setreg("\"",system("xclip -selection clipboard -o"))<CR>py
-      endif
+     " elseif has("unix")
+         "vmap <C-c> y:call system("xclip -i", getreg("\""))<CR>
+         "nmap <C-v> :call setreg("\"",system("xclip -selection clipboard -o"))<CR>py
+      "endif
       "}}}
    " Control Key Bindings: {{{2 
       " When you press <leader>r you can search and replace the selected text
