@@ -2,10 +2,10 @@ function pushdots()   # Get current host related info.
 {
     echo -e "\nMoving to DotFiles"
     cd ~/Dropbox/DotFiles
-    git add -A
+    git add -A .
     git commit -m "$1"
     git push
-    cdl
+    cd $@
 #     echo -e "${BRed}Additionnal information:$NC " ; uname -a
 #     echo -e "${BRed}Users logged on:$NC " ; w -hs |
 #              cut -d " " -f1 | sort | uniq
