@@ -20,13 +20,13 @@ function sanitize() { chmod -R u=rwX,g=rX,o= "$@" ;}
 function cleanup()
 {
   echo -e "\n${LIGHTGREEN}Deleting f'in .DS_Store files...${NC}"
-  find . -type f -name '*.DS_Store'  -printf \ \ \ \ %p\n -exec rm -rf {} \;
+  sudo find . -type f -name '*.DS_Store' -printf \ \ \ \ %p"\n" -exec rm -rf {} \;
   echo -e "\n${LIGHTGREEN}Deleting f'in ._ files...$NC"
-  find . -type f -name '._*' -printf \ \ \ \ %p\n -delete
+  sudo find . -type f -name '._*' -printf \ \ \ \ %p"\n" -exec rm -rf {} \;
   echo -e "\n${LIGHTGREEN}Deleting f'in Thumbnail db files...$NC"
-  find . -type f -name 'Thumbs.db' -printf \ \ \ \ %p\n -delete
+  sudo find . -type f -name 'Thumbs.db' -printf \ \ \ \ %p"\n" -exec rm -rf {} \;
   echo -e "\n${LIGHTGREEN}Deleting f'in __MACOSX files...$NC"
-  find . -type d -name '__MAC*' -printf \ \ \ \ %p\n -exec rm -rf {} \;
+  sudo find . -type d -name '__MAC*' -printf \ \ \ \ %p"\n" -exec rm -rf {} \;
 }
 
 # Create a new directory and enter it

@@ -68,3 +68,9 @@ fi
 unset fn_cmd
 unset EXPORT_FUNCTIONS
 unset BASHRC_DISPATCH_PID
+
+# Execute local stuff if it exists
+if [ -f ~/.bashrc.local ]
+then
+    source ~/.bashrc.local
+fi
