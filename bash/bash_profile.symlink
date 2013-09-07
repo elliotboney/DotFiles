@@ -58,6 +58,7 @@ if shell_is_interactive; then
       fi
    }
 
+   include_d bash_runfirst
    include_d bash_functions
    include_d bash_aliases
    include_d bash_completion
@@ -74,3 +75,10 @@ if [ -f ~/.bashrc.local ]
 then
     source ~/.bashrc.local
 fi
+
+# Execute local stuff if it exists
+if [ -f ~/.dotfilelocation ]
+then
+    source ~/.dotfilelocation
+fi
+

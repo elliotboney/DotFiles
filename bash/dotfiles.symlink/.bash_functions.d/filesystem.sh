@@ -1,5 +1,5 @@
 NC="\x1b[m"               # Color Reset
-LIGHTGREEN="\033[1;32m"
+LIGHTGREEN="\x1b[1;32m"
 
 # Go to last directory
 cl()
@@ -16,20 +16,22 @@ function cdl { cd $1; ls;}
 # Make your directories and files access rights sane.
 function sanitize() { chmod -R u=rwX,g=rX,o= "$@" ;}
 
-# Mac cleanup
-function cleanup()
-{
-  echo -e "\n${LIGHTGREEN}Deleting f'in .DS_Store files...${NC}"
-  sudo find . -type f -name '*.DS_Store' -printf \ \ \ \ %p"\n" -exec rm -rf {} \;
-  echo -e "\n${LIGHTGREEN}Deleting f'in ._ files...$NC"
-  sudo find . -type f -name '._*' -printf \ \ \ \ %p"\n" -exec rm -rf {} \;
-  echo -e "\n${LIGHTGREEN}Deleting f'in Thumbnail db files...$NC"
-  sudo find . -type f -name 'Thumbs.db' -printf \ \ \ \ %p"\n" -exec rm -rf {} \;
-  echo -e "\n${LIGHTGREEN}Deleting f'in __MACOSX files...$NC"
-  sudo find . -type d -name '__MAC*' -printf \ \ \ \ %p"\n" -exec rm -rf {} \;
-}
-
 # Create a new directory and enter it
 function mkd() {
   mkdir -p "$@" && cd "$@"
+}
+
+function cleanfiles()
+{
+  for var in "$@"
+  do
+    echo -e "\n${LIGHTGREEN}Deleting f'in $var files...${NC}"
+    sudo find . -type f -name "$var" -printf \ \ \ \ %p"\n" -exec rm -rf {} \;     
+  done
+}
+
+# Mac cleanup
+function cleanup()
+{
+  cleanfiles *.DS_Store ._* Thumbs.db __MAC* desktop.ini
 }

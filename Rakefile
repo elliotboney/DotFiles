@@ -33,6 +33,10 @@ task :install do
     end
     `ln -s "$PWD/#{linkable}" "#{target}"`
   end
+  target = "#{ENV["HOME"]}/.dotfilelocation"
+   FileUtils.rm_rf(target) 
+  `echo "DOTPATH='$PWD'" >> "$HOME"/.dotfilelocation`
+  `echo "export DOTPATH;" >> "$HOME"/.dotfilelocation`
 end
 
 task :uninstall do

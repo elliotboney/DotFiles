@@ -8,8 +8,16 @@ function pushdots()   # Get current host related info.
     cl
 }
 
+function updatedotfiles() {
+  cd $DOTPATH
+  git pull
+  reloadenv
+}
+
 function tester()
 {
-    echo $0
+  DIR=$(python -c "import os; print os.path.realpath(\"${1}\")")
+  echo $DIR
+    # resolve_symlink ~/.vim
 
 }

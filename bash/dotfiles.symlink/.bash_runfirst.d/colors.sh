@@ -30,22 +30,28 @@ On_White='\x1b[47m'       # White
 
 NC="\x1b[m"               # Color Reset
 
-export BBlue;
+export Black;
+export Red;
+export Green;
+export Yellow;
+export Blue;
+export Purple;
+export Cyan;
+export White;
 export BBlack;
 export BRed;
-
-function ii()   # Get current host related info.
-{
-    echo -e "\nYou are logged on ${BRed}$HOST"
-    echo -e "${BRed}Additionnal information:$NC " ; uname -a
-    echo -e "${BRed}Users logged on:$NC " ; w -hs |
-             cut -d " " -f1 | sort | uniq
-    echo -e "${BRed}Current date :$NC " ; date
-    echo -e "${BRed}Machine stats :$NC " ; uptime
-    echo -e "${BRed}Memory stats :$NC " ; free
-    echo -e "${BRed}Diskspace :$NC " ; mydf / $HOME
-    echo -e "${BRed}Local IP Address :$NC" ; localip
-    echo -e "${BRed}Public IP Address :$NC" ; ip
-#    echo -e "${BRed}Open connections :$NC "; netstat -an -p tcp;
-    echo
-}
+export BGreen;
+export BYellow;
+export BBlue;
+export BPurple;
+export BCyan;
+export BWhite;
+export On_Black;
+export On_Red;
+export On_Green;
+export On_Yellow;
+export On_Blue;
+export On_Purple;
+export On_Cyan;
+export On_White;
+export NC;
