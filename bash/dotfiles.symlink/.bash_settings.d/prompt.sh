@@ -59,7 +59,7 @@ BIPurple='\e[1;95m'     # Purple
 # BIWhite='\e[1;97m'      # White
 # High Intensity backgrounds
 # On_IBlack='\e[0;100m'   # Black
-# On_IRed='\e[0;101m'     # Red
+On_IRed='\e[0;101m'     # Red
 # On_IGreen='\e\e[0;92m[0;102m'   # Green
 # On_IYellow='\e[0;103m'  # Yellow
 # On_IBlue='\e[0;104m'    # Blue
@@ -72,7 +72,7 @@ On_IPurple='\e[0;105m'  # Purple
 if [ $(hostname) = "trudg.in" ]; then
    CNX=${On_IPurple}
 elif [ -n "$SSH_CLIENT" ]; then
-    CNX=${ALERT}        # Connected on remote machine, via ssh (good).
+    CNX=${On_IRed}        # Connected on remote machine, via ssh (good).
 elif [[ "${DISPLAY%%:0*}" != "" ]]; then
     CNX=${IBlue}        # Connected on remote machine, not via ssh (bad).
 else
