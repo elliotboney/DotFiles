@@ -10,7 +10,7 @@ function pushdots()   # Get current host related info.
 
 function updatedotfiles() {
   cd ${DOTPATH}
-  pwd
+  echo `pwd`
   git pull
   reloadenv
 }
