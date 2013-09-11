@@ -13,13 +13,5 @@ export EDITOR="vim"
 # Make some commands not show up in history
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
 
-               GREP_COLORS="ms=48;5;199;38;5;255:"
-GREP_COLORS=${GREP_COLORS}:"mc=01;33:"
-GREP_COLORS=${GREP_COLORS}:"sl=38;5;245:"
-GREP_COLORS=${GREP_COLORS}:"cx=38;5;238:"
-GREP_COLORS=${GREP_COLORS}:"fn=31:"
-GREP_COLORS=${GREP_COLORS}:"ln=32:"
-GREP_COLORS=${GREP_COLORS}:"bn=38;5;238:"
-GREP_COLORS=${GREP_COLORS}:"se=38;5;238:"
 # Use home for ruby gems
 #export GEM_HOME="~/.gem"

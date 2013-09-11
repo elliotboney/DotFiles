@@ -11,7 +11,7 @@ function pushjs () {
 }
 
 function push () {
-  if [[ -z "$1" ]]; then
+  if [[ -z "$var" ]]; then
    cat $1 | ssh $3 "cat > $2/$1"
   else 
      echo -e "\n\t${BWhite}Useage: push <local> <remotepath> <sshhost>${NC}"
