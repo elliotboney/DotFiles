@@ -17,6 +17,7 @@ case $(uname -s) in
       PATH=${PATH}:"usr/local/share/npm/bin"
       PATH=${PATH}:"~/bin"
       PATH=${PATH}:"~/adb/sdk/tools"
+      PATH=${PATH}:"~/Android/sdk/tools"
       export PATH
 
       export node="/usr/local/Cellar/node/0.10.5/bin/node"

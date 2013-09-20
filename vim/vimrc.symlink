@@ -18,9 +18,7 @@ if has("gui")
 endif
 
 " Bundle Sheeeet: {{{1
-   "if filereadable(expand("~/.dotfiles/.vimrc.bundles"))
       source ~/.vimrc.bundles
-   "endif
    " }}}
 
 " Environment: {{{1
@@ -38,9 +36,9 @@ endif
       au! BufWritePost *.vim colorscheme FlatLand 
    augroup END " }
       "}}}
-   " Persistent Undo: {{{2
-      "silent !mkdir ~/.vim/backups > /dev/null 2>&1 
-      "}}}
+   " Persistent Undo: {{{2"{{{
+      silent !mkdir ~/.vim/backups > /dev/null 2>&1 
+      "}}}"}}}
 
 " KeyBindings: {{{1
    " Clipboard: {{{2
@@ -104,7 +102,7 @@ endif
       nmap <silent> <leader>v :e ~/.vimrc<CR>
       nmap <silent> <leader>vv :e ~/.vimrc.bundles<CR>
       nmap <silent> <leader>b :e ~/.bashrc<CR>
-      nmap <silent> <leader>r :source ~/.vimrc<CR>
+      "nmap <silent> <leader>r :source ~/.vimrc<CR>
       " Tidy HTML:
       nmap <silent> <leader>x :%!tidy -q -i --show-errors 0 -w 100<CR>
       " Toggle search highlighting
@@ -163,7 +161,6 @@ endif
    " Color Scheme: {{{2
       set background=dark
       colorscheme FlatLand 
-      "ChubyNinja
       "}}}
    " Search Stuff: {{{2
       set hlsearch
@@ -172,7 +169,7 @@ endif
       set smartcase     " Ignore case unless capital
 "      if has("unix")
          "set undodir=~/.vim/backups
-         "set undofile
+         set undofile
       "endif
       set viewoptions=folds,options,cursor,unix,slash " Better Unix / Windows compat
       set virtualedit=onemore " Allow for cursor beyond last character
@@ -180,7 +177,7 @@ endif
       "}}}
    " Display: {{{2
       set t_Co=256            " Enable full-color support
-      set title               " Set the title of the window in the terminal to the file
+      "set title               " Set the title of the window in the terminal to the file
       set laststatus=2        " Always show the status line
       if has("unix")
          set listchars=tab:▸\    " ┐
@@ -236,7 +233,7 @@ endif
             "set wildignore+=*~,*.sw?,*.tmp
          "endif
       set number
-      set numberwidth=5
+      set numberwidth=6
       set shortmess=aAItW " Avoid all the hit-enter prompts
       set ttyfast         " Enable fast terminal connection (more characters
                           " will be send to the screen for redrawing)
@@ -280,7 +277,7 @@ endif
    map <c-j> :call JsBeautify()<cr>
       "}}}
    " Powerline {{{2
-      set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+      "set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
       set noshowmode     " Don't show the mode since Powerline shows it
       "}}} }}}
 
@@ -307,7 +304,7 @@ endif
 
 
 let vimrc_already_sourced = 1
-let g:Powerline_symbols = 'fancy'
+"let g:Powerline_symbols = 'fancy'
 
 " XML Formatter: {{{2
    function! DoFormatXML() range
@@ -413,23 +410,21 @@ endfunction
 "}}}
 set mat=2
 set acd
-set autoread ar
-setl autoread
 
-" Should fix annoying warnings:
-let s:IgnoreChange=0
-autocmd! FileChangedRO * nested
-    \ let s:IgnoreChange=1 |
-    \ call system("p4 edit " . expand("%")) |
-    \ set noreadonly
-autocmd! FileChangedShell *
-    \ if 1 == s:IgnoreChange |
-    \   let v:fcs_choice="" |
-    \   let s:IgnoreChange=0 |
-    \ else |
-    \   let v:fcs_choice="ask" |
-    \ endif
+"" Should fix annoying warnings:
+"let s:IgnoreChange=0
+"autocmd! FileChangedRO * nested
+    "\ let s:IgnoreChange=1 |
+    "\ call system("p4 edit " . expand("%")) |
+    "\ set noreadonly
+"autocmd! FileChangedShell *
+    "\ if 1 == s:IgnoreChange |
+    "\   let v:fcs_choice="" |
+    "\   let s:IgnoreChange=0 |
+    "\ else |
+    "\   let v:fcs_choice="ask" |
+    "\ endif
 
 "Directories for swp files
-set backupdir=~/.backup
-set directory=~/.backup
+set backupdir=~/.vim/backups
+set directory=~/.vim/backups
