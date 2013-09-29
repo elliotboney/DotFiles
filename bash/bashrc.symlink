@@ -24,7 +24,7 @@ echo $HOST_NAME
 #if ! type -p shell_is_login ; then
   shell_is_linux       () { [[ "$OSTYPE" == *'linux'* ]] ; }
   shell_is_osx         () { [[ "$OSTYPE" == *'darwin'* ]] ; }
-  shell_is_elliot      () { [[ "$HOST_NAME" == *'iScrit'* || "$HOST_NAME" == *'MAINPC'* ]] ; }
+  shell_is_elliot      () { [[ "$HOST_NAME" == *'iScrit'* || "$HOST_NAME" == *'mainpc'* ]] ; }
   shell_is_login       () { shopt -q login_shell ; }
   shell_is_interactive () { test -n "$PS1" ; }
   shell_is_script      () { ! shell_is_interactive ; }
