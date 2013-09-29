@@ -25,7 +25,7 @@ if shell_is_osx; then
    #}}}
 else
    alias grep='grep --color=auto'
-   alias ls="ls --color=always -hF"
+   alias ls="ls --color=always -hF --group-directories-first"
 fi
 
 # List all files colorized in long format, including dot files

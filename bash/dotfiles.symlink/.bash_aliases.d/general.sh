@@ -1,9 +1,29 @@
-# Shortcuts for home
-alias mountmainpc='sshfs eboney@mainpc:/ /Users/eboney/mainpc2/ -ocache=no -onolocalcaches -ovolname=mainpc'
-
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update npm -g; npm update -g; sudo gem update'
 
-alias mksubl='ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl'
+UCMD=""
+if shell_is_osx; then
 
-alias createdocs='phpdoc -d . -t docs --template new-black'
+    UCMD=${UCMD}'sudo softwareupdate -i -a'
+    command_exists brew && UCMD=${UCMD}"; brew update; brew upgrade; brew cleanup"
+    command_exists npm && UCMD=${UCMD}"; npm update npm -g; npm update -g"
+    command_exists gem && UCMD=${UCMD}"; gem update"
+    command_exists pear && UCMD=${UCMD}"; pear upgrade-all"
+ else 
+    UCMD=${UCMD}'sudo apt-get update; sudo apt-get dist-upgrade'
+    command_exists brew && UCMD=${UCMD}"; brew update; brew upgrade; brew cleanup"
+    command_exists npm && UCMD=${UCMD}"; npm update npm -g; npm update -g"
+    command_exists gem && UCMD=${UCMD}"; gem update"
+    command_exists pear && UCMD=${UCMD}"; pear upgrade-all"
+fi
+    alias update=$UCMD
+
+if shell_is_elliot; then
+    alias createdocs='phpdoc -d . -t docs --template new-black'
+    alias mountmainpc='sshfs eboney@mainpc:/ /Users/eboney/mainpc2/ -ocache=no -onolocalcaches -ovolname=mainpc'
+fi
+
+if shell_is_linux; then
+    alias service='sudo service'
+fi
+
+# command_exists brew ] && echo "true"

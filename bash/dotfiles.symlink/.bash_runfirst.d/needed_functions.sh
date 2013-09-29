@@ -10,3 +10,7 @@ function resolve_symlink {
     if [ ! "${SCRIPT:0:1}" = '/' ]; then SCRIPT=$PWD/$SCRIPT; fi    
     echo $(dirname $SCRIPT)
 }
+
+command_exists () {
+    type "$1" &> /dev/null ;
+}
