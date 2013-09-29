@@ -61,13 +61,13 @@ TERM xterm-termite
 
 # NOTE: string consists of one or more of the following numeric codes:
 # Attribute codes:
-#                   00=none 01=bold 04=underscore 05=blink 07=reverse 08=concealed
+#                   00 =none 01=bold 04=underscore 05=blink 07=reverse 08=concealed
 # 
 # Text color codes:
-#                   30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
+#                   30 =black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
 # 
 # Background color codes:
-# 40               =black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
+# 40                   =black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
 #
 # Text 256 color coding:
 # 38;5;COLOR_NUMBER
@@ -261,10 +261,16 @@ EXEC                01;38;5;83
 .dbshell            00;38;5;174
 .screenrc           00;38;5;174
 .vpnc               00;38;5;174
+.tslintrc           00;38;5;174
+.tags               00;38;5;174
 .bashrc.local       00;38;5;174
 .dotfilelocation    00;38;5;174
 
 
 .torrent            00;38;5;245
 
-.symlink            00;38;5;50
+.symlink            00;38;5;25
+
+# Project files
+.sublime-project    00;38;5;2
+.sublime-workspace  00;38;5;2

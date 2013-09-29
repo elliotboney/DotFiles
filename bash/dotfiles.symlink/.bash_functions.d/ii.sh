@@ -1,22 +1,22 @@
 # Normal Colors
-Black='\x1b[0;30m'        # Black
-Red='\x1b[0;31m'          # Red
-Green='\x1b[0;32m'        # Green
-Yellow='\x1b[0;33m'       # Yellow
-Blue='\x1b[0;34m'         # Blue
-Purple='\x1b[0;35m'       # Purple
-Cyan='\x1b[0;36m'         # Cyan
-White='\x1b[0;37m'        # White
+# Black='\x1b[0;30m'        # Black
+# Red='\x1b[0;31m'          # Red
+# Green='\x1b[0;32m'        # Green
+# Yellow='\x1b[0;33m'       # Yellow
+# Blue='\x1b[0;34m'         # Blue
+# Purple='\x1b[0;35m'       # Purple
+# Cyan='\x1b[0;36m'         # Cyan
+# White='\x1b[0;37m'        # White
 
-# Bold
-BBlack='\x1b[1;30m'       # Black
-BRed='\x1b[1;31m'         # Red
-BGreen='\x1b[1;32m'       # Green
-BYellow='\x1b[1;33m'      # Yellow
-BBlue='\x1b[1;34m'        # Blue
-BPurple='\x1b[1;35m'      # Purple
-BCyan='\x1b[1;36m'        # Cyan
-BWhite='\x1b[1;37m'       # White
+# # Bold
+# BBlack='\x1b[1;30m'       # Black
+# BRed='\x1b[1;31m'         # Red
+# BGreen='\x1b[1;32m'       # Green
+# BYellow='\x1b[1;33m'      # Yellow
+# BBlue='\x1b[1;34m'        # Blue
+# BPurple='\x1b[1;35m'      # Purple
+# BCyan='\x1b[1;36m'        # Cyan
+# BWhite='\x1b[1;37m'       # White
 
 # Background
 On_Black='\x1b[40m'       # Black

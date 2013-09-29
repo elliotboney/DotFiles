@@ -10,7 +10,7 @@ NO_COLOR='\e[0m' #disable any colors
 # Blue='\e[0;34m'         # Blue
 # Purple='\e[0;35m'       # Purple
 # Cyan='\e[0;36m'         # Cyan
-White='\e[0;37m'        # White
+PWhite='\e[38;5;25m'        # PWhite
 # emphasized (bolded) colors
 # BBlack='\e[1;30m'       # Black
 # BRed='\e[1;31m'         # Red
@@ -18,8 +18,8 @@ White='\e[0;37m'        # White
 # BYellow='\e[1;33m'      # Yellow
 # BBlue='\e[1;34m'        # Blue
 # BPurple='\e[1;35m'      # Purple
-BCyan='\e[1;36m'        # Cyan
-# BWhite='\e[1;37m'       # White
+PBCyan='\e[1;36m'        # Cyan
+# BPWhite='\e[1;37m'       # PWhite
 # underlined colors
 # UBlack='\e[4;30m'       # Black
 # URed='\e[4;31m'         # Red
@@ -28,7 +28,7 @@ BCyan='\e[1;36m'        # Cyan
 # UBlue='\e[4;34m'        # Blue
 # UPurple='\e[4;35m'      # Purple
 # UCyan='\e[4;36m'        # Cyan
-# UWhite='\e[4;37m'       # White
+# UPWhite='\e[4;37m'       # PWhite
 # background colors
 # On_Black='\e[40m'       # Black
 # On_Red='\e[41m'         # Red
@@ -38,48 +38,48 @@ BCyan='\e[1;36m'        # Cyan
 # On_Blue='\e[44m'        # Blue
 # On_Purple='\e[45m'      # Purple
 # On_Cyan='\e[46m'        # Cyan
-# On_White='\e[47m'       # White
+# On_PWhite='\e[47m'       # PWhite
 # High Intensity
-IBlack='\e[0;90m'       # Black
+PIBlack='\e[0;90m'       # Black
 # IRed='\e[0;91m'         # Red
 # IGreen='\e[0;32m'       # Green
 # IYellow='\e[0;93m'      # Yellow
-IBlue='\e[0;94m'        # Blue
+PIBlue='\e[38;5;45m'        # Blue
 # IPurple='\e[0;95m'      # Purple
 # ICyan='\e[0;96m'        # Cyan
-IWhite='\e[0;97m'       # White
+IPWhite='\e[0;97m'       # PWhite
 # Bold High Intensity
-# BIBlack='\e[1;90m'      # Black
+BPIBlack='\e[38;5;227m'      # Black
 # BIRed='\e[1;91m'        # Red
 # BIGreen='\e[1;92m'      # Green
-BIYellow='\e[93m'     # Yellow
-# BIBlue='\e[1;94m'       # Blue
-BIPurple='\e[1;95m'     # Purple
+PBIYellow='\e[93m'     # Yellow
+# BPIBlue='\e[1;94m'       # Blue
+PBIPurple='\e[1;95m'     # Purple
 # BICyan='\e[1;96m'       # Cyan
-# BIWhite='\e[1;97m'      # White
+# BIPWhite='\e[1;97m'      # PWhite
 # High Intensity backgrounds
-# On_IBlack='\e[0;100m'   # Black
-On_IRed='\e[0;101m'     # Red
+# On_PIBlack='\e[0;100m'   # Black
+POn_Red='\e[0;101m'     # Red
 # On_IGreen='\e\e[0;92m[0;102m'   # Green
 # On_IYellow='\e[0;103m'  # Yellow
-# On_IBlue='\e[0;104m'    # Blue
-On_IPurple='\e[0;105m'  # Purple
+# On_PIBlue='\e[0;104m'    # Blue
+POn_Purple='\e[0;105m'  # Purple
 # On_ICyan='\e[0;106m'    # Cyan
-# On_IWhite='\e[0;107m'   # White
+# On_IPWhite='\e[0;107m'   # PWhite
 #LS_COLORS='di=01;37;44'; export LS_COLORS
 
 # Test connection type:
 if [ $(hostname) = "trudg.in" ]; then
-   CNX=${On_IPurple}
+   CNX=${POn_Purple}
 elif [ -n "$SSH_CLIENT" ]; then
-    CNX=${On_IRed}        # Connected on remote machine, via ssh (good).
+    CNX=${POn_Red}        # Connected on remote machine, via ssh (good).
 elif [[ "${DISPLAY%%:0*}" != "" ]]; then
-    CNX=${IBlue}        # Connected on remote machine, not via ssh (bad).
+    CNX=${PIBlue}        # Connected on remote machine, not via ssh (bad).
 else
-    CNX=$BCyan        # Connected on local machine.
+    CNX=$PBCyan        # Connected on local machine.
 fi
 
-export PS1="\[$IBlack\][\[$White\]\u\[$BIBlack\]@\[${CNX}\]\h\[$IBlack\]] \[$BIYellow\]\w\[$IWhite\] \$ \[$BIPurple\]${BRANCH}\[$BIBlack\]: \[$NO_COLOR\]";
+export PS1="\[$PIBlack\][\[$PWhite\]\u\[$BPIBlack\]@\[${CNX}\]\h\[$PIBlack\]] \[$PBIYellow\]\w\[$IPWhite\] \$ \[$PBIPurple\]${BRANCH}\[$BPIBlack\]: \[$NO_COLOR\]";
 
 ### This Resets the color after <CR> is pressed
 trap 'echo -ne "\x1b[0m"' DEBUG

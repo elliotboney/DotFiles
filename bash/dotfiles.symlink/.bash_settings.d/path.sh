@@ -5,6 +5,7 @@ case $(uname -s) in
       export FDK_EXE
 
       PATH="/usr/local/bin"
+       PATH=${PATH}:"/usr/local/share/npm/bin"
       PATH=${PATH}:"/usr/local/sbin"
       PATH=${PATH}:"/bin"
       PATH=${PATH}:"/sbin"
