@@ -82,3 +82,6 @@ then
     source ~/.dotfilelocation
 fi
 
+
+
+

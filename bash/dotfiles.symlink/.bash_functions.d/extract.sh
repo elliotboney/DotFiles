@@ -16,6 +16,7 @@ extract () {
       *.tbz2)     tar xvjf $1 && cd    $(basename "$1" .tbz2) ;;
       *.tgz)      tar xvzf $1 && cd    $(basename "$1" .tgz) ;;
       *.zip)      unzip $1 && cd       $(basename "$1" .zip) ;;
+      *.sublime-package)      unzip $1 && cd       $(basename "$1" .sublime-package) ;;
       *.Z)        uncompress $1 && cd  $(basename "$1" .Z) ;;
       *.7z)       7z x $1 && cd        $(basename "$1" .7z) ;;
       *)          echo "don't know how to extract '$1'..." ;;

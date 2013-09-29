@@ -5,7 +5,7 @@ case $(uname -s) in
       export FDK_EXE
 
       PATH="/usr/local/bin"
-       PATH=${PATH}:"/usr/local/share/npm/bin"
+      PATH=${PATH}:"/usr/local/share/npm/bin"
       PATH=${PATH}:"/usr/local/sbin"
       PATH=${PATH}:"/bin"
       PATH=${PATH}:"/sbin"
@@ -14,8 +14,7 @@ case $(uname -s) in
       PATH=${PATH}:"/usr/bin"
       PATH=${PATH}:"/usr/sbin"
       PATH=${PATH}:"/usr/local/lib/python2.7/site-packages"
-      PATH=${PATH}:"/usr/local/node/bin"
-      PATH=${PATH}:"usr/local/share/npm/bin"
+      # PATH=${PATH}:"/usr/local/node/bin"
       PATH=${PATH}:"~/bin"
       PATH=${PATH}:"~/adb/sdk/tools"
       PATH=${PATH}:"~/Android/sdk/tools"
