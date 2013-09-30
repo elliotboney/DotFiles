@@ -1,6 +1,7 @@
 function pushdots()   # Get current host related info.
 {
-    cd ~/Dropbox/DotFiles && git add -A . && git commit -m "{$1}" && git push && cd -
+    cd ~/Dropbox/DotFiles 
+    git add -A . && git commit -m "{$1}" && git push && cd -
 }
 
 function updatedotfiles() {
