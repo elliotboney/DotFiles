@@ -12,6 +12,7 @@ call vundle#rc()
 " Let Vundle manage Vundle
 Bundle 'gmarik/vundle'
 
+Bundle 'marijnh/tern_for_vim'
 Bundle 'itchyny/lightline.vim'
 Bundle 'xterm-color-table.vim'
 Bundle 'vim-coffee-script'
