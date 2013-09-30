@@ -37,7 +37,7 @@ endif
    augroup END " }
       "}}}
    " Persistent Undo: {{{2"{{{
-      silent !mkdir ~/.vim/backups > /dev/null 2>&1 
+      silent !mkdir ~/.backups > /dev/null 2>&1 
       "}}}"}}}
 
 " KeyBindings: {{{1
@@ -250,7 +250,7 @@ endif
 
 "  Filetype Statements: {{{
      " Autocmd Statements: {{{2
-      autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+      "autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
       autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
       autocmd FileType css set omnifunc=csscomplete#CompleteCSS
       autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
@@ -411,20 +411,23 @@ endfunction
 set mat=2
 set acd
 
-"" Should fix annoying warnings:
-"let s:IgnoreChange=0
-"autocmd! FileChangedRO * nested
-    "\ let s:IgnoreChange=1 |
-    "\ call system("p4 edit " . expand("%")) |
-    "\ set noreadonly
-"autocmd! FileChangedShell *
-    "\ if 1 == s:IgnoreChange |
-    "\   let v:fcs_choice="" |
-    "\   let s:IgnoreChange=0 |
-    "\ else |
-    "\   let v:fcs_choice="ask" |
-    "\ endif
-
 "Directories for swp files
-set backupdir=~/.vim/backups
-set directory=~/.vim/backups
+set backupdir=~/.backups
+set directory=~/.backups
+
+" Completion
+let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_autoclose_preview_window_after_insertion=1
+
+" Tern stuff
+nmap <silent> <F12> :TernDef<CR>
+
+" align on equals
+nmap <silent> <leader>A <esc>VAA
+
+"nerd tree and tag list
+nmap <silent> <leader>T :TagbarToggle<CR>
+
+" FF will use grep to find word under cursor and open quickfix window
+" " automatically
+nmap FF :execute " grep -srnw --binary-files=without-match --exclude-dir=.git . -e " . expand("<cword>") . " " <bar> cwindow<CR>

@@ -17,10 +17,10 @@ if shell_is_osx; then
 fi
     alias update=$UCMD
 
-if shell_is_elliot; then
+# if shell_is_elliot; then
     alias createdocs='phpdoc -d . -t docs --template new-black'
     alias mountmainpc='sshfs eboney@mainpc:/ /Users/eboney/mainpc2/ -ocache=no -onolocalcaches -ovolname=mainpc'
-fi
+# fi
 
 if shell_is_linux; then
     alias service='sudo service'
