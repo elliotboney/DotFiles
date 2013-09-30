@@ -9,5 +9,5 @@ function pushdots()   # Get current host related info.
 }
 
 function updatedotfiles() {
-  cd ${DOTPATH} && git pull && cd - && source $HOME/.bashrc
+  cd ${DOTPATH} && git reset --hard && git pull && cd - && source $HOME/.bashrc
 }
