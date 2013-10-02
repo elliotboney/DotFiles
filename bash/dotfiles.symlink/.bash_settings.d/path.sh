@@ -24,3 +24,5 @@ case $(uname -s) in
       export JAVA_HOME=$(/usr/libexec/java_home)
    ;;
 esac
+
+PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"

@@ -42,97 +42,99 @@ complete -f -o default -X '!*.+(zip|ZIP|z|Z|gz|GZ|bz2|BZ2|sublime-package)' extr
 
 COMP_WORDBREAKS=${COMP_WORDBREAKS/=/}
 
-# _get_longopts()
-# {
-#   #$1 --help | sed  -e '/--/!d' -e 's/.*--\([^[:space:].,]*\).*/--\1/'| \
-#   #grep ^"$2" |sort -u ;
-#     $1 --help | grep -o -e "--[^[:space:].,]*" | grep -e "$2" |sort -u
-# }
+_get_longopts()
+{
+  # $1 --help | sed  -e '/--/!d' -e 's/.*--\([^[:space:].,]*\).*/--\1/'| \
+   # grep ^"$2" |sort -u ;
+    $1 --help | grep -o -e "--[^[:space:].,]*" | grep -e "$2" |sort -u
+}
 
-# _longopts()
-# {
-#     local cur
-#     cur=${COMP_WORDS[COMP_CWORD]}
+_longopts()
+{
+    local cur
+    cur=${COMP_WORDS[COMP_CWORD]}
 
-#     case "${cur:-*}" in
-#        -*)      ;;
-#         *)      return ;;
-#     esac
+    case "${cur:-*}" in
+       -*)      ;;
+        *)      return ;;
+    esac
 
-#     case "$1" in
-#        \~*)     eval cmd="$1" ;;
-#          *)     cmd="$1" ;;
-#     esac
-#     COMPREPLY=( $(_get_longopts ${1} ${cur} ) )
-# }
-# complete  -o default -F _longopts configure bash
-# complete  -o default -F _longopts wget id info a2ps ls recode
+    case "$1" in
+       \~*)     eval cmd="$1" ;;
+         *)     cmd="$1" ;;
+    esac
+    COMPREPLY=( $(_get_longopts ${1} ${cur} ) )
+}
 
-# _tar()
-# {
-#     local cur ext regex tar untar
+# ------------- Add Long Option Commands Here ---------------
+complete  -o default -F _longopts configure bash
+complete  -o default -F _longopts wget id info a2ps gls recode
 
-#     COMPREPLY=()
-#     cur=${COMP_WORDS[COMP_CWORD]}
+_tar()
+{
+    local cur ext regex tar untar
 
-#     # If we want an option, return the possible long options.
-#     case "$cur" in
-#         -*)     COMPREPLY=( $(_get_longopts $1 $cur ) ); return 0;;
-#     esac
+    COMPREPLY=()
+    cur=${COMP_WORDS[COMP_CWORD]}
 
-#     if [ $COMP_CWORD -eq 1 ]; then
-#         COMPREPLY=( $( compgen -W 'c t x u r d A' -- $cur ) )
-#         return 0
-#     fi
+    # If we want an option, return the possible long options.
+    case "$cur" in
+        -*)     COMPREPLY=( $(_get_longopts $1 $cur ) ); return 0;;
+    esac
 
-#     case "${COMP_WORDS[1]}" in
-#         ?(-)c*f)
-#             COMPREPLY=( $( compgen -f $cur ) )
-#             return 0
-#             ;;
-#         +([^Izjy])f)
-#             ext='tar'
-#             regex=$ext
-#             ;;
-#         *z*f)
-#             ext='tar.gz'
-#             regex='t\(ar\.\)\(gz\|Z\)'
-#             ;;
-#         *[Ijy]*f)
-#             ext='t?(ar.)bz?(2)'
-#             regex='t\(ar\.\)bz2\?'
-#             ;;
-#         *)
-#             COMPREPLY=( $( compgen -f $cur ) )
-#             return 0
-#             ;;
+    if [ $COMP_CWORD -eq 1 ]; then
+        COMPREPLY=( $( compgen -W 'c t x u r d A' -- $cur ) )
+        return 0
+    fi
 
-#     esac
+    case "${COMP_WORDS[1]}" in
+        ?(-)c*f)
+            COMPREPLY=( $( compgen -f $cur ) )
+            return 0
+            ;;
+        +([^Izjy])f)
+            ext='tar'
+            regex=$ext
+            ;;
+        *z*f)
+            ext='tar.gz'
+            regex='t\(ar\.\)\(gz\|Z\)'
+            ;;
+        *[Ijy]*f)
+            ext='t?(ar.)bz?(2)'
+            regex='t\(ar\.\)bz2\?'
+            ;;
+        *)
+            COMPREPLY=( $( compgen -f $cur ) )
+            return 0
+            ;;
 
-#     if [[ "$COMP_LINE" == tar*.$ext' '* ]]; then
-#         # Complete on files in tar file.
-#         #
-#         # Get name of tar file from command line.
-#         tar=$( echo "$COMP_LINE" | \
-#                         sed -e 's|^.* \([^ ]*'$regex'\) .*$|\1|' )
-#         # Devise how to untar and list it.
-#         untar=t${COMP_WORDS[1]//[^Izjyf]/}
+    esac
 
-#         COMPREPLY=( $( compgen -W "$( echo $( tar $untar $tar \
-#                                 2>/dev/null ) )" -- "$cur" ) )
-#         return 0
+    if [[ "$COMP_LINE" == tar*.$ext' '* ]]; then
+        # Complete on files in tar file.
+        #
+        # Get name of tar file from command line.
+        tar=$( echo "$COMP_LINE" | \
+                        sed -e 's|^.* \([^ ]*'$regex'\) .*$|\1|' )
+        # Devise how to untar and list it.
+        untar=t${COMP_WORDS[1]//[^Izjyf]/}
 
-#     else
-#         # File completion on relevant files.
-#         COMPREPLY=( $( compgen -G $cur\*.$ext ) )
+        COMPREPLY=( $( compgen -W "$( echo $( tar $untar $tar \
+                                2>/dev/null ) )" -- "$cur" ) )
+        return 0
 
-#     fi
+    else
+        # File completion on relevant files.
+        COMPREPLY=( $( compgen -G $cur\*.$ext ) )
 
-#     return 0
+    fi
 
-# }
+    return 0
 
-# complete -F _tar -o default tar
+}
+
+complete -F _tar -o default tar
 
 _make()
 {
