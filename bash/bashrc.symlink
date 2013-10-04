@@ -64,7 +64,7 @@ $fn_cmd HOST_NAME
    function include_d {
       dir=$1
       if [ -d $HOME/.dotfiles/.$dir.d -a -r $HOME/.dotfiles/.$dir.d -a -x $HOME/.dotfiles/.$dir.d ]; then
-         for i in $HOME/.dotfiles/.$dir.d/*.sh; do
+         for i in $HOME/.dotfiles/.$dir.d/*sh; do
            #echo $i
             . $i
          done
@@ -74,7 +74,7 @@ $fn_cmd HOST_NAME
    include_d bash_runfirst
    include_d bash_functions
    include_d bash_aliases
-   # include_d bash_completion
+   include_d bash_completion
    include_d bash_settings
 # }}}
 # fi
