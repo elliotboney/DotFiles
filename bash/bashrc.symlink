@@ -4,6 +4,10 @@
 #                   in other scripts.
 EXPORT_FUNCTIONS=true
 
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+
+
 # Code
 # ----
 # Avoid recursive invocation
@@ -45,12 +49,12 @@ else
 fi
 
 $fn_cmd SHELL_PLATFORM
-$fn_cmd -f shell_is_linux
-$fn_cmd -f shell_is_osx
-$fn_cmd -f shell_is_login
-$fn_cmd -f shell_is_interactive
-$fn_cmd -f shell_is_script
-$fn_cmd -f shell_is_elliot
+# $fn_cmd -f shell_is_linux
+# $fn_cmd -f shell_is_osx
+# $fn_cmd -f shell_is_login
+# $fn_cmd -f shell_is_interactive
+# $fn_cmd -f shell_is_script
+# $fn_cmd -f shell_is_elliot
 $fn_cmd HOST_NAME
 
 # NEW PART: {{{1 
@@ -70,7 +74,7 @@ $fn_cmd HOST_NAME
    include_d bash_runfirst
    include_d bash_functions
    include_d bash_aliases
-   include_d bash_completion
+   # include_d bash_completion
    include_d bash_settings
 # }}}
 # fi
@@ -92,6 +96,4 @@ then
     source ~/.dotfilelocation
 fi
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 

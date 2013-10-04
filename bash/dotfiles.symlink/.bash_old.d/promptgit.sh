@@ -410,3 +410,14 @@ __git_ps1 ()
     fi
   fi
 }
+
+GIT_PS1_SHOWUPSTREAM="auto"
+GIT_PS1_SHOWUNTRACKEDFILES='verbose'
+GIT_PS1_SHOWDIRTYSTATE=true
+
+if [ "\$(type -t __git_ps1)" ]; then # if we're in a Git repo, show current branch
+   BRANCH="\$(__git_ps1 '[%s] ')"
+fi
+
+export PS1="\[$PIBlack\][\[$PWhite\]\u\[$BPIBlack\]@\[${CNX}\]\h\[$PIBlack\]] \[$PBIYellow\]\w\[$IPWhite\] \$ \[$PBIPurple\]${BRANCH}\[$BPIBlack\]: \[$NO_COLOR\]";
+

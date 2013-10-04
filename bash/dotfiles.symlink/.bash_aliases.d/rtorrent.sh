@@ -1,6 +1,6 @@
-if shell_is_elliot; then
+if [ "$HOST_NAME" = 'iScrit' ]; then
     # For Rutorrent
-    if [ "$HOST_NAME" == 'mainpc' ]; then
+    if [ "$HOST_NAME" = 'mainpc' ]; then
         alias rt='screen -rd rtorrent'
         alias startrt='screen -t rtorrent rtorrent'
     else 

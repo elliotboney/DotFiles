@@ -79,7 +79,14 @@ else
     CNX=$PBCyan        # Connected on local machine.
 fi
 
-export PS1="\[$PIBlack\][\[$PWhite\]\u\[$BPIBlack\]@\[${CNX}\]\h\[$PIBlack\]] \[$PBIYellow\]\w\[$IPWhite\] \$ \[$PBIPurple\]${BRANCH}\[$BPIBlack\]: \[$NO_COLOR\]";
+# if [ "\$(type -t __git_ps1)" ]; then # if we're in a Git repo, show current branch
+#    BRANCH="\$(__git_ps1 '[ %s ] ')"
+# fi
+
+
+# export PS1="\[$PIBlack\][\[$PWhite\]\u\[$BPIBlack\]@\[${CNX}\]\h\[$PIBlack\]] \[$PBIYellow\]\w\[$IPWhite\] \$ \[$PBIPurple\]${BRANCH}\[$BPIBlack\]: \[$NO_COLOR\]";
+
+# export PS1="\[$PIBlack\][\[$PWhite\]\u\[$BPIBlack\]@\[${CNX}\]\h\[$PIBlack\]] \[$PBIYellow\]\w\[$IPWhite\] \$ \[$PBIPurple\]${BRANCH}\[$BPIBlack\]: \[$NO_COLOR\]";
 
 ### This Resets the color after <CR> is pressed
 trap 'echo -ne "\x1b[0m"' DEBUG

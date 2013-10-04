@@ -3,8 +3,11 @@ case $(uname -s) in
    Darwin)  #MAC     
       FDK_EXE="/Users/eboney/bin/FDK/Tools/osx"
       export FDK_EXE
+      
+      # Ruby
+      PATH=$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-      PATH="/usr/local/bin"
+      PATH=${PATH}:"/usr/local/bin"
       PATH=${PATH}:"/usr/local/share/npm/bin"
       PATH=${PATH}:"/usr/local/sbin"
       PATH=${PATH}:"/bin"
