@@ -33,5 +33,14 @@ function cleanfiles()
 # Mac cleanup
 function cleanup()
 {
-  cleanfiles *.DS_Store ._* Thumbs.db __MAC* desktop.ini
+  echo -e "\n${LIGHTGREEN}Deleting f'in .DS_Store files...${NC}"
+  sudo find . -type f -name '*.DS_Store' -printf \ \ \ \ %p"\n" -exec rm -rf {} \;
+  echo -e "\n${LIGHTGREEN}Deleting f'in ._ files...$NC"
+  sudo find . -type f -name '._*' -printf \ \ \ \ %p"\n" -exec rm -rf {} \;
+  echo -e "\n${LIGHTGREEN}Deleting f'in Thumbnail db files...$NC"
+  sudo find . -type f -name 'Thumbs.db' -printf \ \ \ \ %p"\n" -exec rm -rf {} \;
+  echo -e "\n${LIGHTGREEN}Deleting f'in __MACOSX files...$NC"
+  sudo find . -type d -name '__MAC*' -printf \ \ \ \ %p"\n" -exec rm -rf {} \;
+  echo -e "\n${LIGHTGREEN}Deleting f'in desktopini files...$NC"
+  sudo find . -type d -name 'desktop.ini' -printf \ \ \ \ %p"\n" -exec rm -rf {} \;
 }
