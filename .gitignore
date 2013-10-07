@@ -3,7 +3,7 @@
 .LSOverride
 Icon
 ssh
-ssh/*
+ruby
 # Thumbnails
 ._*
 
