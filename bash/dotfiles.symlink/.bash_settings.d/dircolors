@@ -86,7 +86,7 @@ DIR                 00;38;5;33 # directory 00;34
 LINK                00;38;5;14  # symbolic link. (If you set this to 'target' instead of a
 RESET               00 # reset to "normal" color
 
-MULTIHARDLINK       00;38;5;14 #00 # regular file with more than one link
+# MULTIHARDLINK       00;38;5;14 #00 # regular file with more than one link
 FIFO                48;5;230;38;5;213;01 # pipe
 SOCK                48;5;230;38;5;214;01 # socket
 DOOR                48;5;230;38;5;215;01 # door
