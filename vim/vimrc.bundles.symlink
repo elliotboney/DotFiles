@@ -16,7 +16,7 @@ Bundle 'gmarik/vundle'
 " Javascript And Coffee Script: {{{
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'helino/vim-json'
-Bundle 'maksimr/vim-jsbeautify'
+"Bundle 'maksimr/vim-jsbeautify'
 Bundle 'einars/js-beautify'
 Bundle 'marijnh/tern_for_vim'
 Bundle 'jelera/vim-javascript-syntax'
