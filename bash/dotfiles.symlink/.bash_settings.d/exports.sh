@@ -21,8 +21,7 @@ GREP_COLORS=${GREP_COLORS}:"fn=31:"
 GREP_COLORS=${GREP_COLORS}:"ln=32:"
 GREP_COLORS=${GREP_COLORS}:"bn=38;5;238:"
 GREP_COLORS=${GREP_COLORS}:"se=38;5;238:"
-# Use home for ruby gems
-export GEM_HOME="~/.gem"
+
 
 
 # XDG Base Directory Specification

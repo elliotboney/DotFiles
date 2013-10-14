@@ -1,49 +1,61 @@
-# All the different paths for mac
-case $(uname -s) in
-   Darwin)  #MAC     
-      FDK_EXE="/Users/eboney/bin/FDK/Tools/osx"
-      export FDK_EXE
-      
-      GOROOT="/usr/local/go"
-      GOPATH="/usr/local/go/bin"
+# ---------------------------------
+# Path Section
+
+# add all the paths we want to array
+paths=("$HOME/bin" "/usr/local/opt/coreutils/libexec/gnubin" "/usr/local/bin" "/usr/local/sbin" 
+    "/usr/local/share/npm/bin" "/usr/local/share/python" "$HOME/.rvm/bin" "$HOME/.gem/bin" 
+    "/usr/local/lib/python2.7/site-packages" "/usr/local/lib/python3.3/site-packages" 
+    "${GOROOT}/bin" "/bin" "/sbin" "/opt/local/bin" "/opt/local/sbin" "/usr/bin" "/usr/sbin" 
+    "$HOME/adb/sdk/tools" "$HOME/Android/sdk/tools")
+
+# iterate through array
+for p in "${paths[@]}";
+do
+    #check if dir exists first
+    if [ -d $p ]; then
+        #if it does, add to path
+        PATH=$PATH:$p
+        echo $p 
+    else 
+        echo "[X]" $p 
+    fi
+done
+
+export PATH
+
+# End of Path Section comment block
+# ---------------------------------
 
 
-      PATH=${HOME}/bin
-      PATH=${PATH}:"/usr/local/opt/coreutils/libexec/gnubin"
-      PATH=${PATH}:"/usr/local/bin"
-      PATH=${PATH}:"/usr/local/sbin"
-      PATH=${PATH}:"/usr/local/node/bin"
-      PATH=${PATH}:"/usr/local/share/npm/bin"
-      PATH=${PATH}:"/usr/local/share/python"
-      PATH=${PATH}:$HOME/.rvm/bin # Add RVM to PATH for scripting
-      PATH=${PATH}:$HOME/.gem/bin
-      # PATH=${PATH}:"/usr/local/lib/python2.7/site-packages"
-      PATH=${PATH}:"/usr/local/lib/python3.3/site-packages"
-      PATH=$PATH:$GOROOT/bin
-      PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-      
-      PATH=${PATH}:"/bin"
-      PATH=${PATH}:"/sbin"
-      PATH=${PATH}:"/opt/local/bin"
-      PATH=${PATH}:"/opt/local/sbin"
-      PATH=${PATH}:"/usr/bin"
-      PATH=${PATH}:"/usr/sbin"
-      PATH=${PATH}:$HOME/adb/sdk/tools
-      PATH=${PATH}:$HOME/Android/sdk/tools
+if [ -d ~/bin/FDK/Tools/osx ]; then
+    export FDK_EXE="~/bin/FDK/Tools/osx"
+fi
 
-      source ~/perl5/perlbrew/etc/bashrc
+if [ -d /usr/local/go ]; then
+    export GOROOT="/usr/local/go"
+fi
 
-      export node="/usr/local/Cellar/node/0.10.5/bin/node"
-      # :$PYTHONPATH
-      export JAVA_HOME=$(/usr/libexec/java_home)
-      export GOROOT
-      export GOPATH
+if [ -d /usr/local/go/bin ]; then
+    export GOPATH="/usr/local/go/bin"
+fi
 
-   ;;
-esac
+if [ -d /usr/local/Cellar/node/0.10.5/bin/node ]; then
+    export node="/usr/local/Cellar/node/0.10.5/bin/node"
+fi
 
-PYTHONPATH="/usr/local/lib/python2.7/site-packages"
+if [ -d /usr/local/Cellar/node/0.10.5/bin/node ]; then
+    export JAVA_HOME=$(/usr/libexec/java_home)
+fi
 
-      export PATH
-      export PYTHONPATH
+if [ -d /usr/local/Cellar/node/0.10.5/bin/node ]; then
+    export PYTHONPATH="/usr/local/lib/python2.7/site-packages"
+fi
+
+if [ -d ~/.gem ]; then
+export GEM_HOME="~/.gem"
+fi 
+
+if [ -f ~/perl5/perlbrew/etc/bashrc ]; then
+    source ~/perl5/perlbrew/etc/bashrc
+fi
 
