@@ -15,9 +15,9 @@ do
     if [ -d $p ]; then
         #if it does, add to path
         PATH=$PATH:$p
-        echo $p 
-    else 
-        echo "[X]" $p 
+        # echo $p 
+    # else 
+        # echo "[X]" $p 
     fi
 done
 
