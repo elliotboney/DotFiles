@@ -1,6 +1,6 @@
 # ---------------------------------
 # Path Section
-
+PATH=""
 # add all the paths we want to array
 paths=("$HOME/bin" "/usr/local/opt/coreutils/libexec/gnubin" "/usr/local/bin" "/usr/local/sbin" 
     "/usr/local/share/npm/bin" "/usr/local/share/python" "$HOME/.rvm/bin" "$HOME/.gem/bin" 
