@@ -28,5 +28,5 @@ if shell_is_elliot; then
     # Connect to boxeebox
     alias boxee='telnet 192.168.2.101 2323'
 
-    alias profittunnel='ssh -L 3306:profittunnel.cin9lenenfmf.us-east-1.rds.amazonaws.com:3306 profit'
+    # alias profittunnel='ssh -L 3306:profittunnel.cin9lenenfmf.us-east-1.rds.amazonaws.com:3306 profit'
 fi

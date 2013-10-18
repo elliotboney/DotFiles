@@ -19,7 +19,7 @@ fi
 
 # if shell_is_elliot; then
     alias createdocs='phpdoc -d . -t docs --template new-black'
-    alias mountmainpc='sshfs eboney@mainpc:/ /Users/eboney/mainpc2/ -ocache=no -onolocalcaches -ovolname=mainpc'
+    alias mountmainpc='sshfs eboney@mainpc.local:/ /Users/eboney/mainpc/ -ocache=no -onolocalcaches -ovolname=mainpc'
 # fi
 
 if shell_is_linux; then
