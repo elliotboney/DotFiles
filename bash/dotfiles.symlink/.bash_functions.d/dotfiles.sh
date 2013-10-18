@@ -10,5 +10,5 @@ function pushdots()   # Get current host related info.
 }
 
 function updatedotfiles() {
-    cd ${DOTPATH} && git reset --hard && git pull && cd - && source $HOME/.zshrc
+    cd ${DOTPATH} && git reset --hard origin/master && git pull && cd - && source $HOME/.zshrc
 }
