@@ -1,5 +1,8 @@
 export TERM=xterm-256color
 
+
+export XML_CATALOG_FILES="/usr/local/etc/xml/catalog"
+
 # Always enable colored `grep` output
 export GREP_OPTIONS="--color=auto"
 

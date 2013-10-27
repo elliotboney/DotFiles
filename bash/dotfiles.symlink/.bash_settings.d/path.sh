@@ -3,11 +3,11 @@
 PATH=""
 # add all the paths we want to array
 paths=("$HOME/bin" "/usr/local/opt/coreutils/libexec/gnubin" "/usr/local/bin" "/usr/local/sbin" 
-    "/usr/local/share/npm/bin" "/usr/local/share/python" "$HOME/.rvm/bin" "$HOME/.gem/bin" 
+    "/usr/local/share/npm/bin"  "$HOME/.rvm/bin" "$HOME/.gem/bin" 
     "/usr/local/lib/python2.7/site-packages" "/usr/local/lib/python3.3/site-packages" 
     "${GOROOT}/bin" "/bin" "/sbin" "/opt/local/bin" "/opt/local/sbin" "/usr/bin" "/usr/sbin" 
-    "$HOME/adb/sdk/tools" "$HOME/Android/sdk/tools")
-
+    "$HOME/adb/sdk/tools" "$HOME/Android/sdk/tools" "/usr/local/Cellar/php55/5.5.5/bin/")
+#"/usr/local/share/python"
 # iterate through array
 for p in "${paths[@]}";
 do
