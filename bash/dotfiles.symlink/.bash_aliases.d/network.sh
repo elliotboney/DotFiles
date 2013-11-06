@@ -26,7 +26,7 @@ if shell_is_elliot; then
     #alias onramp='sudo vpnc ~/Dropbox/myvpn.conf --debug 99 --natt-mode cisco-udp'
     
     # Connect to boxeebox
-    alias boxee='telnet 192.168.2.101 2323'
+    alias boxee='telnet 192.168.1.101 2323'
 
     # alias profittunnel='ssh -L 3306:profittunnel.cin9lenenfmf.us-east-1.rds.amazonaws.com:3306 profit'
 fi

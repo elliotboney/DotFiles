@@ -21,6 +21,7 @@ if shell_is_osx; then
    alias ln="gln"
    ## Colorize the grep command output for ease of use (good for log files) ##
    alias grep='ggrep --color=auto'
+   alias igrep='ggrep -i --color=auto'
    alias find='gfind'
    #}}}
 else

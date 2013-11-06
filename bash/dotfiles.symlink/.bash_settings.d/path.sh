@@ -6,20 +6,24 @@ paths=("$HOME/bin" "/usr/local/opt/coreutils/libexec/gnubin" "/usr/local/bin" "/
     "/usr/local/share/npm/bin"  "$HOME/.rvm/bin" "$HOME/.gem/bin" 
     "/usr/local/lib/python2.7/site-packages" "/usr/local/lib/python3.3/site-packages" 
     "${GOROOT}/bin" "/bin" "/sbin" "/opt/local/bin" "/opt/local/sbin" "/usr/bin" "/usr/sbin" 
-    "$HOME/adb/sdk/tools" "$HOME/Android/sdk/tools" "/usr/local/Cellar/php55/5.5.5/bin/")
+    "$HOME/adb/sdk/tools" "$HOME/Android/sdk/tools" "/usr/local/Cellar/php55/5.5.5/bin")
 #"/usr/local/share/python"
 # iterate through array
 for p in "${paths[@]}";
 do
     #check if dir exists first
-    if [ -d $p ]; then
+    if [ -e $p ] || [ -d $p ]; then
         #if it does, add to path
         PATH=$PATH:$p
         # echo $p 
-    # else 
+     # else 
         # echo "[X]" $p 
     fi
 done
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+PATH="$HOME/.gem/bin":$PATH
 
 export PATH
 
@@ -52,10 +56,10 @@ if [ -d /usr/local/Cellar/node/0.10.5/bin/node ]; then
 fi
 
 if [ -d ~/.gem ]; then
-export GEM_HOME="~/.gem"
+export GEM_HOME="$HOME/.gem"
 fi 
 
 if [ -f ~/perl5/perlbrew/etc/bashrc ]; then
-    source ~/perl5/perlbrew/etc/bashrc
+    # source ~/perl5/perlbrew/etc/bashrc
 fi
 

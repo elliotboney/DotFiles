@@ -80,8 +80,8 @@ TERM xterm-termite
 
 ## Special files
 
-NORMAL              08;38;5;240 # no color code at all
-FILE                08;38;5;245 # regular file: use no color at all
+NORMAL              00;38;5;240 # no color code at all
+FILE                00;38;5;245 # regular file: use no color at all
 DIR                 00;38;5;33 # directory 00;34
 LINK                00;38;5;14  # symbolic link. (If you set this to 'target' instead of a
 RESET               00 # reset to "normal" color
@@ -112,10 +112,18 @@ EXEC                01;38;5;83
 .pdf                00;38;5;156
 .epub               00;38;5;156
 .docx               00;38;5;156
+.tmTheme            00;38;5;156
 
 #source Files
 .html               00;38;5;137
 .php                00;38;5;155
+.sublime-settings   00;38;5;137
+.sublime-keymap     00;38;5;174
+.sublime-commands   00;38;5;95
+.tmLanguage         00;38;5;176
+.sublime-build      00;38;5;37
+
+
 
 
 ## Big file image formats
@@ -146,6 +154,8 @@ EXEC                01;38;5;83
 .rz                 00;38;5;61
 .apk                00;38;5;61
 .gem                00;38;5;61
+.sublime-package    00;38;5;61
+
 
 # Image formats (yellow)
 .jpg                00;38;5;214
@@ -164,9 +174,9 @@ EXEC                01;38;5;83
 *Makefile           00;38;5;205
 *Rakefile           00;38;5;205
 *build.xml          00;38;5;205
-*1                  00;38;5;205
 .nfo                00;38;5;205
 *README             01;38;5;245
+*README.md          01;38;5;245
 *README.txt         01;38;5;245
 *readme.txt         01;38;5;245
 .md                 01;38;5;166
@@ -217,6 +227,8 @@ EXEC                01;38;5;83
 .wmv                00;38;5;166
 .avi                00;38;5;166
 .flv                00;38;5;166
+.jade              00;38;5;14
+
 
 # --------------------
 # Added by elliot
