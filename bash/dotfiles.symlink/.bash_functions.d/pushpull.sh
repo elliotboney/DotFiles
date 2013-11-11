@@ -16,9 +16,8 @@ function push () {
     echo -e "\texample: push file.txt /home/user sshhost\n"
    
   else 
-    echo $1
-     cat $1 | ssh $3 "cat > $2"
-    
+    echo -e "\n\tpushing ${BCyan}$(basename $1) ${White}to ${BGreen}$2/$(basename $1) ${White}on ${BRed}$3\n"
+    cat $1 | ssh $3 "cat > $2/$(basename $1)"
   fi
 }
 
