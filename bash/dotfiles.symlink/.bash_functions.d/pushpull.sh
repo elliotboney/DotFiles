@@ -1,15 +1,3 @@
-function pushimage () {
-  cat $1 | ssh profit "cat > /var/www/iwillbefamo.us/content/shared/img/$1"
-}
-
-function pushcss () {
-  cat $1 | ssh profit "cat > /var/www/iwillbefamo.us/content/shared/css/$1"
-}
-
-function pushjs () {
-  cat $1 | ssh profit "cat > /var/www/iwillbefamo.us/content/shared/js/$1"
-}
-
 function push () {
   if [[ -z "$1" ]]; then
     echo -e "\n\t${BWhite}Useage: push <local> <remotepath> <sshhost>${NC}"
@@ -27,5 +15,14 @@ function pull () {
     echo -e "\texample: pull sshhost /var/www/index.php ~/file.txt \n"
   else 
     ssh $1 "cat $2" > $3
+  fi
+}
+
+function syncstaging() {
+  if [[ -z "$1" ]]; then
+    rsync --exclude .git --exclude .php --exclude languages --exclude .ai --exclude .DS_Store -e "ssh" -vz --modify-window=1 --super /private/var/www/wordpress.staging/content/themes/dgbootstrap/ eboney@digitalgrove.org:/var/www/wordpress.staging/content/themes/dgbootstrap/ --dry-run
+    echo -e "\n\tOnly did a ${BRed}DRY RUN ${NC}. To actually sync, do ${BCyan}syncstaging something${NC}\n"
+  else 
+    rsync --exclude .git --exclude .php --exclude languages --exclude .ai --exclude .DS_Store -e "ssh" -avz --super /private/var/www/wordpress.staging/content/themes/dgbootstrap/ eboney@digitalgrove.org:/var/www/wordpress.staging/content/themes/dgbootstrap/
   fi
 }
