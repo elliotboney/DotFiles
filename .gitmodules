@@ -1,6 +1,6 @@
 [submodule "private"]
     path = private
-    url = ssh://git@bitbucket.org/elliotboney/privatedotfiles.git
+    url = git@bitbucket.org/elliotboney/privatedotfiles.git
 [submodule "vim/vim.symlink/bundle/powerline"]
     path = vim/vim.symlink/bundle/powerline
     url = git@github.com:Lokaltog/powerline.git
