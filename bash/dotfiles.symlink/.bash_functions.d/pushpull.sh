@@ -20,9 +20,16 @@ function pull () {
 
 function syncstaging() {
   if [[ -z "$1" ]]; then
-    rsync --exclude .git --exclude .php --exclude languages --exclude .ai --exclude .DS_Store -e "ssh" -vz --modify-window=1 --super /private/var/www/wordpress.staging/content/themes/dgbootstrap/ eboney@digitalgrove.org:/var/www/wordpress.staging/content/themes/dgbootstrap/ --dry-run
+    rsync --exclude .git --exclude languages --exclude .DS_Store -e "ssh" -vz --modify-window=1 --super /private/var/www/wordpress.staging/content/themes/dgbootstrap/ eboney@digitalgrove.org:/var/www/wordpress.staging/content/themes/dgbootstrap/ --dry-run
     echo -e "\n\tOnly did a ${BRed}DRY RUN ${NC}. To actually sync, do ${BCyan}syncstaging something${NC}\n"
   else 
-    rsync --exclude .git --exclude .php --exclude languages --exclude .ai --exclude .DS_Store -e "ssh" -avz --super /private/var/www/wordpress.staging/content/themes/dgbootstrap/ eboney@digitalgrove.org:/var/www/wordpress.staging/content/themes/dgbootstrap/
+    echo -e "\n\t${BCyan}Changing owner to ${BRed} eboney:eboney${NC}\n"    
+    ssh -t eboney@digitalgrove.org 'sudo chown -R eboney:eboney /var/www/wordpress.staging/content/themes/dgbootstrap/' > /dev/null 2>&1
+    rsync --exclude .git --exclude languages --exclude .DS_Store --progress -e "ssh" --modify-window=1 -auvz --super /private/var/www/wordpress.staging/content/themes/dgbootstrap/ eboney@digitalgrove.org:/var/www/wordpress.staging/content/themes/dgbootstrap/
+    echo -e "\n\t${BCyan}Changing owner to ${BGreen}www-data:www-data${NC}\n"    
+    ssh -t eboney@digitalgrove.org 'sudo chmod -R g+rw /var/www/wordpress.staging/content/themes/dgbootstrap/' > /dev/null 2>&1
+    echo -e "\n\t${BCyan}Setting permissions to ${BGreen}g+rw${NC}\n"    
+    ssh -t eboney@digitalgrove.org 'sudo chown -R www-data:www-data /var/www/wordpress.staging/content/themes/dgbootstrap/' > /dev/null 2>&1
+
   fi
 }
