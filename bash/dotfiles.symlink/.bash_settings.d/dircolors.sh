@@ -1,6 +1,6 @@
 # Execute dir colors
 if [ -f /usr/local/bin/gdircolors ] ; then
-    eval $(gdircolors -b ~/.dotfiles/.bash_settings.d/dircolors)
+    eval $(/usr/local/bin/gdircolors -b ~/.dotfiles/.bash_settings.d/dircolors)
 else
    eval $(dircolors -b ~/.dotfiles/.bash_settings.d/dircolors)
 fi
