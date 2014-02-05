@@ -1,0 +1,53 @@
+<scope ilk="blob" lang="Ruby" name="minitest/spec">
+      <scope ilk="namespace" name="MiniTest">
+        <scope ilk="namespace" name="Expectations">
+          <scope doc="See MiniTest::Assertions#assert_operator &#10; n.must_be :&lt;=, 42" ilk="function" name="must_be" signature="must_be" />
+          <scope doc="See MiniTest::Assertions#assert_empty. &#10; collection.must_be_empty" ilk="function" name="must_be_empty" signature="must_be_empty" />
+          <scope doc="See MiniTest::Assertions#assert_instance_of &#10; obj.must_be_instance_of klass" ilk="function" name="must_be_instance_of" signature="must_be_instance_of" />
+          <scope doc="See MiniTest::Assertions#assert_kind_of &#10; obj.must_be_kind_of mod" ilk="function" name="must_be_kind_of" signature="must_be_kind_of" />
+          <scope doc="See MiniTest::Assertions#assert_nil &#10; obj.must_be_nil" ilk="function" name="must_be_nil" signature="must_be_nil" />
+          <scope doc="See MiniTest::Assertions#assert_same &#10; a.must_be_same_as b" ilk="function" name="must_be_same_as" signature="must_be_same_as" />
+          <scope doc="See MiniTest::Assertions#assert_silent &#10; proc { ... }.must_be_silent" ilk="function" name="must_be_silent" signature="must_be_silent" />
+          <scope doc="See MiniTest::Assertions#assert_in_delta &#10; n.must_be_close_to m [, delta]" ilk="function" name="must_be_within_delta" signature="must_be_within_delta" />
+          <scope doc="See MiniTest::Assertions#assert_in_epsilon &#10; n.must_be_within_epsilon m [, epsilon]" ilk="function" name="must_be_within_epsilon" signature="must_be_within_epsilon" />
+          <scope doc="See MiniTest::Assertions#assert_equal &#10; a.must_equal b" ilk="function" name="must_equal" signature="must_equal" />
+          <scope doc="See MiniTest::Assertions#assert_includes &#10; collection.must_include obj" ilk="function" name="must_include" signature="must_include" />
+          <scope doc="See MiniTest::Assertions#assert_match &#10; a.must_match b" ilk="function" name="must_match" signature="must_match" />
+          <scope doc="See MiniTest::Assertions#assert_output &#10; proc { ... }.must_output out_or_nil [, err]" ilk="function" name="must_output" signature="must_output" />
+          <scope doc="See MiniTest::Assertions#assert_raises &#10; proc { ... }.must_raise exception" ilk="function" name="must_raise" signature="must_raise" />
+          <scope doc="See MiniTest::Assertions#assert_respond_to &#10; obj.must_respond_to msg" ilk="function" name="must_respond_to" signature="must_respond_to" />
+          <scope doc="See MiniTest::Assertions#assert_send TODO: remove me &#10; a.must_send" ilk="function" name="must_send" signature="must_send" />
+          <scope doc="See MiniTest::Assertions#assert_throws &#10; proc { ... }.must_throw sym" ilk="function" name="must_throw" signature="must_throw" />
+          <scope doc="See MiniTest::Assertions#refute_operator &#10; n.wont_be :&lt;=, 42" ilk="function" name="wont_be" signature="wont_be" />
+          <scope ilk="function" name="wont_be_close_to" signature="wont_be_close_to" />
+          <scope doc="See MiniTest::Assertions#refute_empty &#10; collection.wont_be_empty" ilk="function" name="wont_be_empty" signature="wont_be_empty" />
+          <scope doc="See MiniTest::Assertions#refute_instance_of &#10; obj.wont_be_instance_of klass" ilk="function" name="wont_be_instance_of" signature="wont_be_instance_of" />
+          <scope doc="See MiniTest::Assertions#refute_kind_of &#10; obj.wont_be_kind_of mod" ilk="function" name="wont_be_kind_of" signature="wont_be_kind_of" />
+          <scope doc="See MiniTest::Assertions#refute_nil &#10; obj.wont_be_nil" ilk="function" name="wont_be_nil" signature="wont_be_nil" />
+          <scope doc="See MiniTest::Assertions#refute_same &#10; a.wont_be_same_as b" ilk="function" name="wont_be_same_as" signature="wont_be_same_as" />
+          <scope doc="See MiniTest::Assertions#refute_in_delta &#10; n.wont_be_close_to m [, delta]" ilk="function" name="wont_be_within_delta" signature="wont_be_within_delta" />
+          <scope doc="See MiniTest::Assertions#refute_in_epsilon &#10; n.wont_be_within_epsilon m [, epsilon]" ilk="function" name="wont_be_within_epsilon" signature="wont_be_within_epsilon" />
+          <scope doc="See MiniTest::Assertions#refute_equal &#10; a.wont_equal b" ilk="function" name="wont_equal" signature="wont_equal" />
+          <scope doc="See MiniTest::Assertions#refute_includes &#10; collection.wont_include obj" ilk="function" name="wont_include" signature="wont_include" />
+          <scope doc="See MiniTest::Assertions#refute_match &#10; a.wont_match b" ilk="function" name="wont_match" signature="wont_match" />
+          <scope doc="See MiniTest::Assertions#refute_respond_to &#10; obj.wont_respond_to msg" ilk="function" name="wont_respond_to" signature="wont_respond_to" />
+        </scope>
+        <scope classrefs="MiniTest::Unit::TestCase" ilk="class" name="Spec">
+          <scope attributes="__classmethod__" doc="Define an 'after' action. Inherits the way normal methods should. &#10; NOTE: +type+ is ignored and is only there to make porting easier. &#10; Equivalent to MiniTest::Unit::TestCase#teardown." ilk="function" name="after" signature="after(type = :each, &amp;block)" />
+          <scope attributes="__classmethod__" doc="Define a 'before' action. Inherits the way normal methods should. &#10; NOTE: +type+ is ignored and is only there to make porting easier. &#10; Equivalent to MiniTest::Unit::TestCase#setup." ilk="function" name="before" signature="before(type = :each, &amp;block)" />
+          <scope attributes="__classmethod__" doc="This is used to define a new benchmark method. You usually don't use this directly and is intended for those needing to write new performance curve fits (eg: you need a specific polynomial fit). &#10; See ::bench_performance_linear for an example of how to use this." ilk="function" name="bench" signature="bench(name, &amp;block)" />
+          <scope attributes="__classmethod__" doc="Create a benchmark that verifies that the performance is constant. &#10; describe &quot;my class&quot; do&#10;  bench_performance_constant &quot;zoom_algorithm!&quot; do&#10;    @obj.zoom_algorithm!&#10;  end&#10;end" ilk="function" name="bench_performance_constant" signature="bench_performance_constant(name, threshold = 0.99, &amp;work)" />
+          <scope attributes="__classmethod__" doc="Create a benchmark that verifies that the performance is exponential. &#10; describe &quot;my class&quot; do&#10;  bench_performance_exponential &quot;algorithm&quot; do&#10;    @obj.algorithm&#10;  end&#10;end" ilk="function" name="bench_performance_exponential" signature="bench_performance_exponential(name, threshold = 0.99, &amp;work)" />
+          <scope attributes="__classmethod__" doc="Create a benchmark that verifies that the performance is linear. &#10; describe &quot;my class&quot; do&#10;  bench_performance_linear &quot;fast_algorithm&quot;, 0.9999 do&#10;    @obj.fast_algorithm&#10;  end&#10;end" ilk="function" name="bench_performance_linear" signature="bench_performance_linear(name, threshold = 0.99, &amp;work)" />
+          <scope attributes="__classmethod__" ilk="function" name="bench_range" signature="bench_range(&amp;block)" />
+          <scope attributes="__classmethod__" doc="Returns the children of this spec." ilk="function" name="children" signature="children()" />
+          <scope attributes="__classmethod__" doc="Define an expectation with name +desc+. Name gets morphed to a proper test method name. For some freakish reason, people who write specs don't like class inheritence, so this goes way out of its way to make sure that expectations aren't inherited. &#10; Hint: If you _do_ want inheritence, use minitest/unit. You can mix and match between assertions and expectations as much as you want." ilk="function" name="it" signature="it(desc, &amp;block)" />
+          <scope attributes="__classmethod__" ilk="function" name="let" signature="let(name, &amp;block)" />
+          <scope attributes="__classmethod__" doc="Register a new type of spec that matches the spec's description. This method can take either a Regexp and a spec class or a spec class and a block that takes the description and returns true if it matches. &#10; Eg: &#10; register_spec_type(/Controller$/, MiniTest::Spec::Rails)&#10; or: &#10; register_spec_type(MiniTest::Spec::RailsModel) do |desc|&#10;  desc.superclass == ActiveRecord::Base&#10;end" ilk="function" name="register_spec_type" signature="register_spec_type(*args, &amp;block)" />
+          <scope attributes="__classmethod__" doc="Figure out the spec class to use based on a spec's description. Eg: &#10; spec_type(&quot;BlahController&quot;) # =&gt; MiniTest::Spec::Rails" ilk="function" name="spec_type" signature="spec_type(desc)" />
+          <scope attributes="__classmethod__" ilk="function" name="subject" signature="subject(&amp;block)" />
+          <variable attributes="__const__" citdl="Object" name="TYPES" />
+        </scope>
+      </scope>
+    </scope>
+    

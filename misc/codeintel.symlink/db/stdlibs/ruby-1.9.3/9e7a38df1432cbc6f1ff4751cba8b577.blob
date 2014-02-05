@@ -1,0 +1,66 @@
+<scope ilk="blob" lang="Ruby" name="rss/maker/taxonomy">
+      <scope ilk="namespace" name="RSS">
+        <scope ilk="namespace" name="Maker">
+          <scope classrefs="RSS::Maker::Base" ilk="class" name="ChannelBase">
+            <import symbol="DublinCoreModel" />
+            <import symbol="Maker::ITunesChannelModel" />
+            <import symbol="Maker::ImageFaviconModel" />
+            <import symbol="SetupDefaultDate" />
+            <import symbol="SyndicationModel" />
+            <import symbol="TaxonomyTopicsModel" />
+            <scope ilk="function" name="date=" signature="date=(_date)" />
+            <scope ilk="function" name="icon" signature="icon()" />
+            <scope ilk="function" name="icon=" signature="icon=(url)" />
+            <scope ilk="function" name="lastBuildDate=" signature="lastBuildDate=(_date)" />
+            <scope ilk="function" name="logo" signature="logo()" />
+            <scope ilk="function" name="logo=" signature="logo=(url)" />
+            <scope ilk="function" name="pubDate" signature="pubDate()" />
+            <scope ilk="function" name="pubDate=" signature="pubDate=(date)" />
+            <scope ilk="function" name="updated" signature="updated()" />
+            <scope ilk="function" name="updated=" signature="updated=(date)" />
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="Maker">
+          <scope classrefs="RSS::Maker::Base" ilk="class" name="RSSBase">
+            <import symbol="TaxonomyTopicModel" />
+            <scope attributes="__classmethod__" ilk="function" name="make" signature="make(*args, &amp;block)" />
+            <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(feed_version)" />
+            <scope ilk="function" name="make" signature="make()" />
+            <scope ilk="function" name="to_feed" signature="to_feed()" />
+            <scope ilk="function" name="encoding" />
+            <scope ilk="function" name="encoding=" />
+            <scope ilk="function" name="feed_version" />
+            <scope ilk="function" name="rss_version" />
+            <scope ilk="function" name="standalone" />
+            <scope ilk="function" name="standalone=" />
+            <scope ilk="function" name="version" />
+            <scope ilk="function" name="version=" />
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="Maker">
+          <scope ilk="namespace" name="TaxonomyTopicModel">
+            <scope classrefs="RSS::Maker::Base" ilk="class" name="TaxonomyTopicsBase">
+              <scope classrefs="RSS::Maker::Base" ilk="class" name="TaxonomyTopicBase">
+                <import symbol="DublinCoreModel" />
+                <import symbol="TaxonomyTopicsModel" />
+                <scope ilk="function" name="have_required_values?" signature="have_required_values?()" />
+                <scope ilk="function" name="taxo_link" />
+                <scope ilk="function" name="taxo_link=" />
+                <scope ilk="function" name="taxo_link=" />
+                <scope ilk="function" name="taxo_link==" />
+                <scope ilk="function" name="value" />
+                <scope ilk="function" name="value=" />
+              </scope>
+            </scope>
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="Maker">
+          <scope ilk="namespace" name="TaxonomyTopicsModel">
+            <scope classrefs="RSS::Maker::Base" ilk="class" name="TaxonomyTopicsBase">
+              <scope ilk="function" name="resources" />
+            </scope>
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

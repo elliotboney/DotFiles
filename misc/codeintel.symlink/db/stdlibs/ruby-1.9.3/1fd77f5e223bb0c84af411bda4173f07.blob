@@ -1,0 +1,38 @@
+<scope ilk="blob" lang="Ruby" name="rss/2.0">
+      <scope ilk="namespace" name="RSS">
+        <scope ilk="namespace" name="Maker">
+          <scope ilk="namespace" name="RSS09">
+            <scope ilk="namespace" name="Items">
+              <scope ilk="namespace" name="Item">
+                <scope classrefs="GuidBase" ilk="class" name="Guid">
+                  <scope ilk="function" name="to_feed" signature="to_feed(*args)" />
+                </scope>
+              </scope>
+            </scope>
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="Maker">
+          <scope ilk="namespace" name="RSS10">
+            <scope ilk="namespace" name="Items">
+              <scope ilk="namespace" name="Item">
+                <scope classrefs="GuidBase" ilk="class" name="Guid">
+                  <scope ilk="function" name="to_feed" signature="to_feed(*args)" />
+                </scope>
+              </scope>
+            </scope>
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="Maker">
+          <scope ilk="namespace" name="RSS20">
+            <scope ilk="namespace" name="Items">
+              <scope ilk="namespace" name="Item">
+                <scope classrefs="RSS::RSS09::Items::Item::Guid" ilk="class" name="Guid">
+                  <scope ilk="function" name="to_feed" signature="to_feed(rss, item)" />
+                </scope>
+              </scope>
+            </scope>
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

@@ -1,0 +1,12 @@
+<scope ilk="blob" lang="Ruby" name="rdoc/markup/verbatim">
+      <scope ilk="namespace" name="RDoc">
+        <scope ilk="namespace" name="Markup">
+          <scope classrefs="RDoc::Markup::Raw" ilk="class" name="Verbatim">
+            <scope doc="Calls #accept_verbatim on +visitor+" ilk="function" name="accept" signature="accept(visitor)" />
+            <scope doc="Collapses 3+ newlines into two newlines" ilk="function" name="normalize" signature="normalize()" />
+            <scope doc="The text of the section" ilk="function" name="text" signature="text()" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

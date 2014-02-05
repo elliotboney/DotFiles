@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="PHP" name="page_section.php" src="/private/var/www/kw/plugins/dgrove_post_types/page_section.php"><scope ilk="function" line="4" lineend="37" name="page_section_register" signature="page_section_register()"><variable citdl="array()" line="33" name="args" /><variable citdl="array()" line="18" name="labels" /></scope></scope>

@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="PHP" name="index.php" src="/private/var/www/wordpress.staging/content/themes/ninezeroseven/index.php"><variable citdl="sort_sections()" line="10" name="page_sort_sections" /><variable citdl="array()" line="17" name="args" /><variable citdl="WP_Query" line="19" name="home_query" /></scope>

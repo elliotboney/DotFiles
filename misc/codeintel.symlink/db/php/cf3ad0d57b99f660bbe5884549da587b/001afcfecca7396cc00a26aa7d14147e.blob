@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="PHP" name="header.php" src="/private/var/www/wordpress.staging/plugins/w3-total-cache/inc/options/common/header.php"><import line="19" module="/edd/buy.php" /><variable line="6" name="licensing_visible" /><variable attributes="__not_yet_defined__" line="33" name="error" /><variable attributes="__not_yet_defined__" line="71" name="note" /></scope>

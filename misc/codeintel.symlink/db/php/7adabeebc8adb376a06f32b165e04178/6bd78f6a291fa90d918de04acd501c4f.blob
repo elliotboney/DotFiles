@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="PHP" name="bootstrap.php" src="/usr/local/pear/share/pear/PhpDocumentor/vendor/nikic/php-parser/lib/bootstrap.php"><import line="3" module="/PHPParser/Autoloader.php" /><scope ilk="function" line="10" lineend="13" name="lcfirst" returns="string" signature="lcfirst($string)"><variable ilk="argument" line="10" name="string" /></scope></scope>

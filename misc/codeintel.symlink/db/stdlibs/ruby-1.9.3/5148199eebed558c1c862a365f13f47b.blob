@@ -1,0 +1,14 @@
+<scope ilk="blob" lang="Ruby" name="rdoc/generator/markup">
+      <scope ilk="namespace" name="RDoc">
+        <scope ilk="namespace" name="Generator">
+          <scope ilk="namespace" name="Markup">
+            <scope doc="Generates a relative URL from this object's path to +target_path+" ilk="function" name="aref_to" signature="aref_to(target_path)" />
+            <scope doc="Generates a relative URL from +from_path+ to this object's path" ilk="function" name="as_href" signature="as_href(from_path)" />
+            <scope doc="Build a webcvs URL starting for the given +url+ with +full_path+ appended as the destination path.  If +url+ contains '%s' +full_path+ will be sprintf'd into +url+ instead." ilk="function" name="cvs_url" signature="cvs_url(url, full_path)" />
+            <scope doc="Handy wrapper for marking up this object's comment" ilk="function" name="description" signature="description()" />
+            <scope doc="Creates an RDoc::Markup::ToHtmlCrossref formatter" ilk="function" name="formatter" signature="formatter()" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

@@ -1,0 +1,9 @@
+<scope ilk="blob" lang="Ruby" name="dl/types">
+      <scope ilk="namespace" name="DL">
+        <scope ilk="namespace" name="BasicTypes">
+        </scope>
+        <scope ilk="namespace" name="Win32Types">
+        </scope>
+      </scope>
+    </scope>
+    

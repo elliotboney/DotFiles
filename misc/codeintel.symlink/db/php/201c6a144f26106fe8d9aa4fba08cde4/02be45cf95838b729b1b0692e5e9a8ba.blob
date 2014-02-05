@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="PHP" name="plugin-editor.php" src="/private/var/www/paperless/wp-admin/network/plugin-editor.php"><import line="11" module="./admin.php" /><import line="16" module="../plugin-editor.php" /></scope>

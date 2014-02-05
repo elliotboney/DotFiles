@@ -1,0 +1,32 @@
+<scope ilk="blob" lang="Ruby" name="xmlrpc/utils">
+      <scope ilk="namespace" name="XMLRPC">
+        <scope attributes="__classmethod__" doc="short-cut for creating a PublicInstanceMethodsInterface" ilk="function" name="iPIMethods" signature="iPIMethods(prefix)" />
+        <scope attributes="__classmethod__" doc="short-form to create a Service::Interface" ilk="function" name="interface" signature="interface(prefix, &amp;p)" />
+        <scope ilk="namespace" name="Marshallable">
+        </scope>
+        <scope ilk="namespace" name="ParseContentType">
+          <scope ilk="function" name="parse_content_type" signature="parse_content_type(str)" />
+        </scope>
+        <scope ilk="namespace" name="ParserWriterChooseMixin">
+          <scope ilk="function" name="set_parser" signature="set_parser(parser)" />
+          <scope ilk="function" name="set_writer" signature="set_writer(writer)" />
+        </scope>
+        <scope ilk="namespace" name="Service">
+          <scope classrefs="Object" ilk="class" name="BasicInterface">
+            <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(prefix)" />
+            <scope ilk="function" name="add_method" signature="add_method(sig, help=nil, meth_name=nil)" />
+            <scope ilk="function" name="methods" />
+            <scope ilk="function" name="prefix" />
+          </scope>
+          <scope classrefs="XMLRPC::Service::BasicInterface" ilk="class" name="Interface">
+            <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(prefix, &amp;p)" />
+            <scope ilk="function" name="get_methods" signature="get_methods(obj, delim=&quot;.&quot;)" />
+          </scope>
+          <scope classrefs="XMLRPC::Service::BasicInterface" ilk="class" name="PublicInstanceMethodsInterface">
+            <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(prefix)" />
+            <scope ilk="function" name="get_methods" signature="get_methods(obj, delim=&quot;.&quot;)" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

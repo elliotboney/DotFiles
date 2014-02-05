@@ -1,0 +1,25 @@
+<scope ilk="blob" lang="Ruby" name="xmlrpc/datetime">
+      <scope ilk="namespace" name="XMLRPC">
+        <scope classrefs="Object" ilk="class" name="DateTime">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(year, month, day, hour, min, sec)" />
+          <scope ilk="function" name="day=" signature="day=(value)" />
+          <scope ilk="function" name="hour=" signature="hour=(value)" />
+          <scope ilk="function" name="min=" signature="min=(value)" />
+          <scope ilk="function" name="mon=" signature="mon=(value)" />
+          <scope ilk="function" name="month=" signature="month=(value)" />
+          <scope ilk="function" name="sec=" signature="sec=(value)" />
+          <scope ilk="function" name="to_a" signature="to_a()" />
+          <scope ilk="function" name="to_date" signature="to_date()" />
+          <scope ilk="function" name="to_time" signature="to_time()" />
+          <scope ilk="function" name="year=" signature="year=(value)" />
+          <scope ilk="function" name="day" />
+          <scope ilk="function" name="hour" />
+          <scope ilk="function" name="min" />
+          <scope ilk="function" name="mon" />
+          <scope ilk="function" name="month" />
+          <scope ilk="function" name="sec" />
+          <scope ilk="function" name="year" />
+        </scope>
+      </scope>
+    </scope>
+    

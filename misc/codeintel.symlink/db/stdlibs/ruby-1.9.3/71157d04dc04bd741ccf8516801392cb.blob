@@ -1,0 +1,13 @@
+<scope ilk="blob" lang="Ruby" name="irb/workspace">
+      <scope ilk="namespace" name="IRB">
+        <scope classrefs="Object" ilk="class" name="WorkSpace">
+          <scope attributes="__classmethod__ __ctor__" doc="create new workspace. set self to main if specified, otherwise inherit main from TOPLEVEL_BINDING." ilk="function" name="new" signature="new(*main)" />
+          <scope ilk="function" name="__evaluate__" signature="__evaluate__(context, statements, file = __FILE__, line = __LINE__)" />
+          <scope ilk="function" name="evaluate" signature="evaluate(context, statements, file = __FILE__, line = __LINE__)" />
+          <scope doc="error message manipulator" ilk="function" name="filter_backtrace" signature="filter_backtrace(bt)" />
+          <scope ilk="function" name="binding" />
+          <scope ilk="function" name="main" />
+        </scope>
+      </scope>
+    </scope>
+    

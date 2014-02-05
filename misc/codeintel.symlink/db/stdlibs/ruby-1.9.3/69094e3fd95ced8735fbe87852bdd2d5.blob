@@ -1,0 +1,9 @@
+<scope ilk="blob" lang="Ruby" name="rdoc/ri">
+      <scope ilk="namespace" name="RDoc">
+        <scope ilk="namespace" name="RI">
+          <scope classrefs="RDoc::Error" ilk="class" name="Error">
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

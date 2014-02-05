@@ -1,0 +1,48 @@
+<scope ilk="blob" lang="Ruby" name="dbm">
+      <scope classrefs="Object" ilk="class" name="DBM">
+        <import symbol="Enumerable" />
+        <scope attributes="__classmethod__ __ctor__" doc="Open a dbm database with the specified name, which can include a directory path. Any file extensions needed will be supplied automatically by the dbm library. For example, Berkeley DB appends '.db', and GNU gdbm uses two physical files with extensions '.dir' and '.pag'. &#10; The mode should be an integer, as for Unix chmod. &#10; Flags should be one of READER, WRITER, WRCREAT or NEWDB." ilk="function" name="new" signature="new(p1, p2 = v2, p3 = v3)" />
+        <scope attributes="__classmethod__" doc="Open a dbm database and yields it if a block is given. See also DBM.new." ilk="function" name="open" signature="open(*args)" />
+        <scope doc="Deletes all data from the database." ilk="function" name="clear" signature="clear()" />
+        <scope doc="Closes the database." ilk="function" name="close" signature="close()" />
+        <scope doc="Returns true if the database is closed, false otherwise." ilk="function" name="closed?" signature="closed?()" />
+        <scope doc="Deletes an entry from the database." ilk="function" name="delete" signature="delete(p1)" />
+        <scope doc="Deletes all entries for which the code block returns true. Returns self." ilk="function" name="delete_if" signature="delete_if()" />
+        <scope doc="Calls the block once for each [key, value] pair in the database. Returns self." ilk="function" name="each" signature="each()" />
+        <scope doc="Calls the block once for each key string in the database. Returns self." ilk="function" name="each_key" signature="each_key()" />
+        <scope doc="Calls the block once for each [key, value] pair in the database. Returns self." ilk="function" name="each_pair" signature="each_pair()" />
+        <scope doc="Calls the block once for each value string in the database. Returns self." ilk="function" name="each_value" signature="each_value()" />
+        <scope doc="Returns true if the database is empty, false otherwise." ilk="function" name="empty?" signature="empty?()" />
+        <scope doc="Return a value from the database by locating the key string provided.  If the key is not found, returns +ifnone+. If +ifnone+ is not given, raises IndexError." ilk="function" name="fetch" signature="fetch(p1, p2 = v2)" />
+        <scope doc="Returns true if the database contains the specified key, false otherwise." ilk="function" name="has_key?" signature="has_key?(p1)" />
+        <scope doc="Returns true if the database contains the specified string value, false otherwise." ilk="function" name="has_value?" signature="has_value?(p1)" />
+        <scope doc="Returns true if the database contains the specified key, false otherwise." ilk="function" name="include?" signature="include?(p1)" />
+        <scope doc="Returns a Hash (not a DBM database) created by using each value in the database as a key, with the corresponding key as its value." ilk="function" name="invert" signature="invert()" />
+        <scope doc="Returns the key for the specified value." ilk="function" name="key" signature="key(p1)" />
+        <scope doc="Returns true if the database contains the specified key, false otherwise." ilk="function" name="key?" signature="key?(p1)" />
+        <scope doc="Returns an array of all the string keys in the database." ilk="function" name="keys" signature="keys()" />
+        <scope doc="Returns the number of entries in the database." ilk="function" name="length" signature="length()" />
+        <scope doc="Returns true if the database contains the specified key, false otherwise." ilk="function" name="member?" signature="member?(p1)" />
+        <scope doc="Converts the contents of the database to an in-memory Hash, then calls Hash#reject with the specified code block, returning a new Hash." ilk="function" name="reject" signature="reject()" />
+        <scope doc="Deletes all entries for which the code block returns true. Returns self." ilk="function" name="reject!" signature="reject!()" />
+        <scope doc="Replaces the contents of the database with the contents of the specified object. Takes any object which implements the each_pair method, including Hash and DBM objects." ilk="function" name="replace" signature="replace(p1)" />
+        <scope doc="Returns a new array consisting of the [key, value] pairs for which the code block returns true." ilk="function" name="select" signature="select()" />
+        <scope doc="Removes a [key, value] pair from the database, and returns it. If the database is empty, returns nil. The order in which values are removed/returned is not guaranteed." ilk="function" name="shift" signature="shift()" />
+        <scope doc="Returns the number of entries in the database." ilk="function" name="size" signature="size()" />
+        <scope doc="Stores the specified string value in the database, indexed via the string key provided." ilk="function" name="store" signature="store(p1, p2)" />
+        <scope doc="Converts the contents of the database to an array of [key, value] arrays, and returns it." ilk="function" name="to_a" signature="to_a()" />
+        <scope doc="Converts the contents of the database to an in-memory Hash object, and returns it." ilk="function" name="to_hash" signature="to_hash()" />
+        <scope doc="Updates the database with multiple values from the specified object. Takes any object which implements the each_pair method, including Hash and DBM objects." ilk="function" name="update" signature="update(p1)" />
+        <scope doc="Returns true if the database contains the specified string value, false otherwise." ilk="function" name="value?" signature="value?(p1)" />
+        <scope doc="Returns an array of all the string values in the database." ilk="function" name="values" signature="values()" />
+        <scope doc="Returns an array containing the values associated with the given keys." ilk="function" name="values_at" signature="values_at(*args)" />
+        <variable attributes="__const__" citdl="Object" name="READER" />
+        <variable attributes="__const__" citdl="Object" name="WRITER" />
+        <variable attributes="__const__" citdl="Object" name="WRCREAT" />
+        <variable attributes="__const__" citdl="Object" name="NEWDB" />
+        <variable attributes="__const__" citdl="Object" name="VERSION" />
+      </scope>
+      <scope classrefs="StandardError" ilk="class" name="DBMError">
+      </scope>
+    </scope>
+    

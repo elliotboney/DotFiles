@@ -1,0 +1,36 @@
+<scope ilk="blob" lang="Ruby" name="rake/packagetask">
+      <scope ilk="namespace" name="Rake">
+        <scope classrefs="Rake::TaskLib" ilk="class" name="PackageTask">
+          <scope attributes="__classmethod__ __ctor__" doc="Create a Package Task with the given name and version.  Use +:noversion+ as the version to build a package without a version or to provide a fully-versioned package name." ilk="function" name="new" signature="new(name=nil, version=nil)" />
+          <scope doc="Create the tasks defined by this task library." ilk="function" name="define" signature="define()" />
+          <scope doc="Initialization that bypasses the &quot;yield self&quot; and &quot;define&quot; step." ilk="function" name="init" signature="init(name, version)" />
+          <scope ilk="function" name="package_dir_path" signature="package_dir_path()" />
+          <scope ilk="function" name="package_name" signature="package_name()" />
+          <scope ilk="function" name="tar_bz2_file" signature="tar_bz2_file()" />
+          <scope ilk="function" name="tar_gz_file" signature="tar_gz_file()" />
+          <scope ilk="function" name="tgz_file" signature="tgz_file()" />
+          <scope ilk="function" name="zip_file" signature="zip_file()" />
+          <scope ilk="function" name="name" />
+          <scope ilk="function" name="name=" />
+          <scope ilk="function" name="need_tar" />
+          <scope ilk="function" name="need_tar=" />
+          <scope ilk="function" name="need_tar_bz2" />
+          <scope ilk="function" name="need_tar_bz2=" />
+          <scope ilk="function" name="need_tar_gz" />
+          <scope ilk="function" name="need_tar_gz=" />
+          <scope ilk="function" name="need_zip" />
+          <scope ilk="function" name="need_zip=" />
+          <scope ilk="function" name="package_dir" />
+          <scope ilk="function" name="package_dir=" />
+          <scope ilk="function" name="package_files" />
+          <scope ilk="function" name="package_files=" />
+          <scope ilk="function" name="tar_command" />
+          <scope ilk="function" name="tar_command=" />
+          <scope ilk="function" name="version" />
+          <scope ilk="function" name="version=" />
+          <scope ilk="function" name="zip_command" />
+          <scope ilk="function" name="zip_command=" />
+        </scope>
+      </scope>
+    </scope>
+    

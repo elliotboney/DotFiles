@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="PHP" name="dbcache.php" src="/private/var/www/wordpress.staging/plugins/w3-total-cache/inc/options/dbcache.php"><import line="2" module="/options/common/header.php" /><import line="101" module="/options/common/footer.php" /><variable attributes="__not_yet_defined__" line="6" name="dbcache_enabled" /></scope>

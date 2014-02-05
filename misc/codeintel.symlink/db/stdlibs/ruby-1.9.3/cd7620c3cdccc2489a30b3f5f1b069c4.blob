@@ -1,0 +1,13 @@
+<scope ilk="blob" lang="Ruby" name="rdoc/parser/simple">
+      <scope ilk="namespace" name="RDoc">
+        <scope ilk="namespace" name="Parser">
+          <scope classrefs="RDoc::Parser" ilk="class" name="Simple">
+            <scope attributes="__classmethod__ __ctor__" doc="Prepare to parse a plain file" ilk="function" name="new" signature="new(top_level, file_name, content, options, stats)" />
+            <scope doc="Removes the encoding magic comment from +text+" ilk="function" name="remove_coding_comment" signature="remove_coding_comment(text)" />
+            <scope doc="Removes comments wrapped in --/++" ilk="function" name="remove_private_comments" signature="remove_private_comments(text)" />
+            <scope doc="Extract the file contents and attach them to the TopLevel as a comment" ilk="function" name="scan" signature="scan()" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

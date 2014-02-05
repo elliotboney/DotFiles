@@ -1,0 +1,14 @@
+<scope ilk="blob" lang="Ruby" name="rdoc/token_stream">
+      <scope ilk="namespace" name="RDoc">
+        <scope ilk="namespace" name="TokenStream">
+          <scope ilk="function" name="add_token" signature="add_token(*tokens)" />
+          <scope doc="Adds +tokens+ to the collected tokens" ilk="function" name="add_tokens" signature="add_tokens(*tokens)" />
+          <scope doc="Starts collecting tokens" ilk="function" name="collect_tokens" signature="collect_tokens()" />
+          <scope doc="Remove the last token from the collected tokens" ilk="function" name="pop_token" signature="pop_token()" />
+          <scope ilk="function" name="start_collecting_tokens" signature="start_collecting_tokens()" />
+          <scope doc="Current token stream" ilk="function" name="token_stream" signature="token_stream()" />
+          <scope doc="Returns a string representation of the token stream" ilk="function" name="tokens_to_s" signature="tokens_to_s()" />
+        </scope>
+      </scope>
+    </scope>
+    

@@ -1,0 +1,72 @@
+<scope ilk="blob" lang="Ruby" name="rss/xml">
+      <scope ilk="namespace" name="RSS">
+        <scope classrefs="Object" ilk="class" name="Element">
+          <import symbol="SetupMaker" />
+          <import symbol="Utils" />
+          <scope attributes="__classmethod__" ilk="function" name="add_have_children_element" signature="add_have_children_element(variable_name, plural_name)" />
+          <scope attributes="__classmethod__" ilk="function" name="add_need_initialize_variable" signature="add_need_initialize_variable(variable_name)" />
+          <scope attributes="__classmethod__" ilk="function" name="add_plural_form" signature="add_plural_form(singular, plural)" />
+          <scope attributes="__classmethod__" ilk="function" name="add_to_element_method" signature="add_to_element_method(method_name)" />
+          <scope attributes="__classmethod__" ilk="function" name="content_setup" signature="content_setup(type=nil, disp_name=nil)" />
+          <scope attributes="__classmethod__" ilk="function" name="def_corresponded_attr_reader" signature="def_corresponded_attr_reader(name, type=nil)" />
+          <scope attributes="__classmethod__" ilk="function" name="def_corresponded_attr_writer" signature="def_corresponded_attr_writer(name, type=nil, disp_name=nil)" />
+          <scope attributes="__classmethod__" ilk="function" name="get_attributes" signature="get_attributes()" />
+          <scope attributes="__classmethod__" ilk="function" name="have_children_elements" signature="have_children_elements()" />
+          <scope attributes="__classmethod__" ilk="function" name="have_content?" signature="have_content?()" />
+          <scope attributes="__classmethod__" ilk="function" name="inherited" signature="inherited(klass)" />
+          <scope attributes="__classmethod__" ilk="function" name="inherited_base" signature="inherited_base()" />
+          <scope attributes="__classmethod__" ilk="function" name="install_get_attribute" signature="install_get_attribute(name, uri, required=true, type=nil, disp_name=nil, element_name=nil)" />
+          <scope attributes="__classmethod__" ilk="function" name="install_model" signature="install_model(tag, uri, occurs=nil, getter=nil, plural=false)" />
+          <scope attributes="__classmethod__" ilk="function" name="install_must_call_validator" signature="install_must_call_validator(prefix, uri)" />
+          <scope attributes="__classmethod__" ilk="function" name="install_ns" signature="install_ns(prefix, uri)" />
+          <scope attributes="__classmethod__" ilk="function" name="models" signature="models()" />
+          <scope attributes="__classmethod__" ilk="function" name="must_call_validators" signature="must_call_validators()" />
+          <scope attributes="__classmethod__" ilk="function" name="need_initialize_variables" signature="need_initialize_variables()" />
+          <scope attributes="__classmethod__" ilk="function" name="need_parent?" signature="need_parent?()" />
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(do_validate=true, attrs=nil)" />
+          <scope attributes="__classmethod__" ilk="function" name="plural_forms" signature="plural_forms()" />
+          <scope attributes="__classmethod__" ilk="function" name="required_prefix" signature="required_prefix()" />
+          <scope attributes="__classmethod__" ilk="function" name="required_uri" signature="required_uri()" />
+          <scope attributes="__classmethod__" ilk="function" name="tag_name" signature="tag_name()" />
+          <scope attributes="__classmethod__" ilk="function" name="to_element_methods" signature="to_element_methods()" />
+          <scope ilk="function" name="convert" signature="convert(value)" />
+          <scope ilk="function" name="converter=" signature="converter=(converter)" />
+          <scope ilk="function" name="full_name" signature="full_name()" />
+          <scope ilk="function" name="have_xml_content?" signature="have_xml_content?()" />
+          <scope ilk="function" name="need_base64_encode?" signature="need_base64_encode?()" />
+          <scope ilk="function" name="set_next_element" signature="set_next_element(tag_name, next_element)" />
+          <scope ilk="function" name="tag_name" signature="tag_name()" />
+          <scope ilk="function" name="to_s" signature="to_s(need_convert=true, indent='')" />
+          <scope ilk="function" name="valid?" signature="valid?(ignore_unknown_element=true)" />
+          <scope ilk="function" name="validate" signature="validate(ignore_unknown_element=true)" />
+          <scope ilk="function" name="validate_for_stream" signature="validate_for_stream(tags, ignore_unknown_element=true)" />
+          <scope ilk="function" name="do_validate" />
+          <scope ilk="function" name="do_validate=" />
+          <scope ilk="function" name="parent" />
+          <scope ilk="function" name="parent=" />
+          <variable attributes="__const__" citdl="Object" name="INDENT" />
+          <variable attributes="__const__" citdl="Object" name="MUST_CALL_VALIDATORS" />
+          <variable attributes="__const__" citdl="Object" name="MODELS" />
+          <variable attributes="__const__" citdl="Object" name="GET_ATTRIBUTES" />
+          <variable attributes="__const__" citdl="Object" name="HAVE_CHILDREN_ELEMENTS" />
+          <variable attributes="__const__" citdl="Object" name="TO_ELEMENT_METHODS" />
+          <variable attributes="__const__" citdl="Object" name="NEED_INITIALIZE_VARIABLES" />
+          <variable attributes="__const__" citdl="Object" name="PLURAL_FORMS" />
+        </scope>
+        <scope ilk="namespace" name="XML">
+          <scope classrefs="Object" ilk="class" name="Element">
+            <import symbol="Enumerable" />
+            <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(name, prefix=nil, uri=nil, attributes={}, children=[])" />
+            <scope ilk="function" name="each" signature="each(&amp;block)" />
+            <scope ilk="function" name="full_name" signature="full_name()" />
+            <scope ilk="function" name="to_s" signature="to_s()" />
+            <scope ilk="function" name="attributes" />
+            <scope ilk="function" name="children" />
+            <scope ilk="function" name="name" />
+            <scope ilk="function" name="prefix" />
+            <scope ilk="function" name="uri" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

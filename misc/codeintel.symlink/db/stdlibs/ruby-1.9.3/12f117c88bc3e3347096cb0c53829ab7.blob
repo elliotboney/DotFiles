@@ -1,0 +1,37 @@
+<scope ilk="blob" lang="Ruby" name="irb/input-method">
+      <scope ilk="namespace" name="IRB">
+        <scope classrefs="IRB::InputMethod" ilk="class" name="FileInputMethod">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(file)" />
+          <scope ilk="function" name="encoding" signature="encoding()" />
+          <scope ilk="function" name="eof?" signature="eof?()" />
+          <scope ilk="function" name="gets" signature="gets()" />
+          <scope ilk="function" name="file_name" />
+        </scope>
+        <scope classrefs="Object" ilk="class" name="InputMethod">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(file = STDIN_FILE_NAME)" />
+          <scope ilk="function" name="gets" signature="gets()" />
+          <scope ilk="function" name="readable_atfer_eof?" signature="readable_atfer_eof?()" />
+          <scope ilk="function" name="file_name" />
+          <scope ilk="function" name="prompt" />
+          <scope ilk="function" name="prompt=" />
+        </scope>
+        <scope classrefs="IRB::InputMethod" ilk="class" name="ReadlineInputMethod">
+          <import symbol="Readline" />
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new()" />
+          <scope ilk="function" name="encoding" signature="encoding()" />
+          <scope ilk="function" name="eof?" signature="eof?()" />
+          <scope ilk="function" name="gets" signature="gets()" />
+          <scope ilk="function" name="line" signature="line(line_no)" />
+          <scope ilk="function" name="readable_atfer_eof?" signature="readable_atfer_eof?()" />
+        </scope>
+        <scope classrefs="IRB::InputMethod" ilk="class" name="StdioInputMethod">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new()" />
+          <scope ilk="function" name="encoding" signature="encoding()" />
+          <scope ilk="function" name="eof?" signature="eof?()" />
+          <scope ilk="function" name="gets" signature="gets()" />
+          <scope ilk="function" name="line" signature="line(line_no)" />
+          <scope ilk="function" name="readable_atfer_eof?" signature="readable_atfer_eof?()" />
+        </scope>
+      </scope>
+    </scope>
+    

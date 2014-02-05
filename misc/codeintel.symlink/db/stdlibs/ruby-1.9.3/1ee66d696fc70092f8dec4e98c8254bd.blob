@@ -1,0 +1,42 @@
+<scope ilk="blob" lang="Ruby" name="rdoc/parser/c">
+      <scope ilk="namespace" name="RDoc">
+        <scope ilk="namespace" name="Parser">
+          <scope classrefs="RDoc::Parser" ilk="class" name="C">
+            <import symbol="RDoc::Text" />
+            <scope attributes="__classmethod__ __ctor__" doc="Prepare to parse a C file" ilk="function" name="new" signature="new(top_level, file_name, content, options, stats)" />
+            <scope attributes="__classmethod__" doc="Resets cross-file state.  Call when parsing different projects that need separate documentation." ilk="function" name="reset" signature="reset()" />
+            <scope doc="Scans #content for rb_define_alias" ilk="function" name="do_aliases" signature="do_aliases()" />
+            <scope doc="Scans #content for rb_attr and rb_define_attr" ilk="function" name="do_attrs" signature="do_attrs()" />
+            <scope doc="Scans #content for rb_define_module, rb_define_class, boot_defclass, rb_define_module_under, rb_define_class_under and rb_singleton_class" ilk="function" name="do_classes" signature="do_classes()" />
+            <scope doc="Scans #content for rb_define_variable, rb_define_readonly_variable, rb_define_const and rb_define_global_const" ilk="function" name="do_constants" signature="do_constants()" />
+            <scope doc="Scans #content for rb_include_module" ilk="function" name="do_includes" signature="do_includes()" />
+            <scope doc="Scans #content for rb_define_method, rb_define_singleton_method, rb_define_module_function, rb_define_private_method, rb_define_global_function and define_filetest_function" ilk="function" name="do_methods" signature="do_methods()" />
+            <scope doc="Finds the comment for an alias on +class_name+ from +new_name+ to +old_name+" ilk="function" name="find_alias_comment" signature="find_alias_comment(class_name, new_name, old_name)" />
+            <scope doc="Finds a comment for rb_define_attr, rb_attr or Document-attr. &#10; +var_name+ is the C class variable the attribute is defined on. +attr_name+ is the attribute's name. &#10; +read+ and +write+ are the read/write flags ('1' or '0').  Either both or neither must be provided." ilk="function" name="find_attr_comment" signature="find_attr_comment(var_name, attr_name, read = nil, write = nil)" />
+            <scope doc="Find the C code corresponding to a Ruby method" ilk="function" name="find_body" signature="find_body(class_name, meth_name, meth_obj, file_content, quiet = false)" />
+            <scope doc="Finds a RDoc::NormalClass or RDoc::NormalModule for +raw_name+" ilk="function" name="find_class" signature="find_class(raw_name, name)" />
+            <scope doc="Look for class or module documentation above Init_+class_name+(void), in a Document-class +class_name+ (or module) comment or above an rb_define_class (or module).  If a comment is supplied above a matching Init_ and a rb_define_class the Init_ comment is used. &#10; /*&#10; * This is a comment for Foo&#10; */&#10;Init_Foo(void) {&#10;    VALUE cFoo = rb_define_class(&quot;Foo&quot;, rb_cObject);&#10;}&#10;/*&#10; * Document-class: Foo&#10; * This is a comment for Foo&#10; */&#10;Init_foo(void) {&#10;    VALUE cFoo = rb_define_class(&quot;Foo&quot;, rb_cObject);" ilk="function" name="find_class_comment" signature="find_class_comment(class_name, class_mod)" />
+            <scope doc="Finds a comment matching +type+ and +const_name+ either above the comment or in the matching Document- section." ilk="function" name="find_const_comment" signature="find_const_comment(type, const_name, class_name = nil)" />
+            <scope doc="Handles modifiers in +comment+ and updates +meth_obj+ as appropriate. &#10; If :nodoc: is found, documentation on +meth_obj+ is suppressed. &#10; If :yields: is followed by an argument list it is used for the #block_params of +meth_obj+. &#10; If the comment block contains a  call-seq:&#10;   ARGF.readlines(sep=$/)     -&gt; array&#10;   ARGF.readlines(limit)      -&gt; array&#10;   ARGF.readlines(sep, limit) -&gt; array&#10;&#10;   ARGF.to_a(sep=$/)     -&gt; array&#10;   ARGF.to_a(limit)      -&gt; array&#10;   ARGF.to_a(sep, limit) -&gt; array&#10; it is used for the parameters of +meth_obj+." ilk="function" name="find_modifiers" signature="find_modifiers(comment, meth_obj)" />
+            <scope doc="Finds a Document-method override for +meth_obj+ on +class_name+" ilk="function" name="find_override_comment" signature="find_override_comment(class_name, meth_obj)" />
+            <scope doc="Creates a new RDoc::Attr +attr_name+ on class +var_name+ that is either +read+, +write+ or both" ilk="function" name="handle_attr" signature="handle_attr(var_name, attr_name, read, write)" />
+            <scope doc="Creates a new RDoc::NormalClass or RDoc::NormalModule based on +type+ named +class_name+ in +parent+ which was assigned to the C +var_name+." ilk="function" name="handle_class_module" signature="handle_class_module(var_name, type, class_name, parent, in_module)" />
+            <scope doc="Adds constants.  By providing some_value: at the start of the comment you can override the C value of the comment to give a friendly definition. &#10; /* 300: The perfect score in bowling */&#10;rb_define_const(cFoo, &quot;PERFECT&quot;, INT2FIX(300);&#10; Will override INT2FIX(300) with the value +300+ in the output RDoc.  Values may include quotes and escaped colons (\:)." ilk="function" name="handle_constants" signature="handle_constants(type, var_name, const_name, definition)" />
+            <scope doc="Removes #ifdefs that would otherwise confuse us" ilk="function" name="handle_ifdefs_in" signature="handle_ifdefs_in(body)" />
+            <scope doc="Adds an RDoc::AnyMethod +meth_name+ defined on a class or module assigned to +var_name+.  +type+ is the type of method definition function used. +singleton_method+ and +module_function+ create a singleton method." ilk="function" name="handle_method" signature="handle_method(type, var_name, meth_name, function, param_count, source_file = nil)" />
+            <scope doc="Registers a singleton class +sclass_var+ as a singleton of +class_var+" ilk="function" name="handle_singleton" signature="handle_singleton(sclass_var, class_var)" />
+            <scope doc="Normalizes tabs in +body+" ilk="function" name="handle_tab_width" signature="handle_tab_width(body)" />
+            <scope doc="Look for directives in a normal comment block: &#10; /*&#10; * :title: My Awesome Project&#10; */&#10; This method modifies the +comment+" ilk="function" name="look_for_directives_in" signature="look_for_directives_in(context, comment)" />
+            <scope doc="Extracts parameters from the +method_body+ and returns a method parameter string.  Follows 1.9.3dev's scan-arg-spec, see README.EXT" ilk="function" name="rb_scan_args" signature="rb_scan_args(method_body)" />
+            <scope doc="Removes lines that are commented out that might otherwise get picked up when scanning for classes and methods" ilk="function" name="remove_commented_out_lines" signature="remove_commented_out_lines()" />
+            <scope doc="Removes private comments from +comment+" ilk="function" name="remove_private_comments" signature="remove_private_comments(comment)" />
+            <scope doc="Extracts the classes, modules, methods, attributes, constants and aliases from a C file and returns an RDoc::TopLevel for this file" ilk="function" name="scan" signature="scan()" />
+            <scope ilk="function" name="content" />
+            <scope ilk="function" name="content=" />
+            <scope ilk="function" name="known_classes" />
+            <scope ilk="function" name="singleton_classes" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

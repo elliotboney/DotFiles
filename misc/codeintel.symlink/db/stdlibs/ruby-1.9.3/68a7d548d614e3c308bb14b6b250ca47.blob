@@ -1,0 +1,12 @@
+<scope ilk="blob" lang="Ruby" name="rexml/parsers/treeparser">
+      <scope ilk="namespace" name="REXML">
+        <scope ilk="namespace" name="Parsers">
+          <scope classrefs="Object" ilk="class" name="TreeParser">
+            <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new( source, build_context = Document.new )" />
+            <scope ilk="function" name="add_listener" signature="add_listener( listener )" />
+            <scope ilk="function" name="parse" signature="parse()" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

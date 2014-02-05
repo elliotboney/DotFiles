@@ -1,0 +1,11 @@
+<scope ilk="blob" lang="Ruby" name="rexml/output">
+      <scope ilk="namespace" name="REXML">
+        <scope classrefs="Object" ilk="class" name="Output">
+          <import symbol="Encoding" />
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(real_IO, encd=&quot;iso-8859-1&quot;)" />
+          <scope ilk="function" name="to_s" signature="to_s()" />
+          <scope ilk="function" name="encoding" />
+        </scope>
+      </scope>
+    </scope>
+    

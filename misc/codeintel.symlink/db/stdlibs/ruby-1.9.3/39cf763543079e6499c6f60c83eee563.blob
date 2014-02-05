@@ -1,0 +1,24 @@
+<scope ilk="blob" lang="Ruby" name="rexml/sax2listener">
+      <scope ilk="namespace" name="REXML">
+        <scope ilk="namespace" name="SAX2Listener">
+          <scope doc="If a doctype includes an ATTLIST declaration, it will cause this method to be called.  The content is the declaration itself, unparsed. EG, &lt;!ATTLIST el attr CDATA #REQUIRED&gt; will come to this method as &quot;el attr CDATA #REQUIRED&quot;.  This is the same for all of the .*decl methods." ilk="function" name="attlistdecl" signature="attlistdecl(element, pairs, contents)" />
+          <scope doc="Called when &lt;![CDATA[ ... ]]&gt; is encountered in a document. @p content &quot;...&quot;" ilk="function" name="cdata" signature="cdata(content)" />
+          <scope ilk="function" name="characters" signature="characters(text)" />
+          <scope doc="Called when a comment is encountered. @p comment The content of the comment" ilk="function" name="comment" signature="comment(comment)" />
+          <scope doc="Handles a doctype declaration. Any attributes of the doctype which are not supplied will be nil.  # EG, &lt;!DOCTYPE me PUBLIC &quot;foo&quot; &quot;bar&quot;&gt; @p name the name of the doctype; EG, &quot;me&quot; @p pub_sys &quot;PUBLIC&quot;, &quot;SYSTEM&quot;, or nil.  EG, &quot;PUBLIC&quot; @p long_name the supplied long name, or nil.  EG, &quot;foo&quot; @p uri the uri of the doctype, or nil.  EG, &quot;bar&quot;" ilk="function" name="doctype" signature="doctype(name, pub_sys, long_name, uri)" />
+          <scope doc="&lt;!ELEMENT ...&gt;" ilk="function" name="elementdecl" signature="elementdecl(content)" />
+          <scope ilk="function" name="end_document" signature="end_document()" />
+          <scope ilk="function" name="end_element" signature="end_element(uri, localname, qname)" />
+          <scope ilk="function" name="end_prefix_mapping" signature="end_prefix_mapping(prefix)" />
+          <scope doc="&lt;!ENTITY ...&gt; The argument passed to this method is an array of the entity declaration.  It can be in a number of formats, but in general it returns (example, result): &lt;!ENTITY % YN '&quot;Yes&quot;'&gt;&#10;[&quot;%&quot;, &quot;YN&quot;, &quot;'\&quot;Yes\&quot;'&quot;, &quot;\&quot;&quot;]&#10;&lt;!ENTITY % YN 'Yes'&gt;&#10;[&quot;%&quot;, &quot;YN&quot;, &quot;'Yes'&quot;, &quot;s&quot;]&#10;&lt;!ENTITY WhatHeSaid &quot;He said %YN;&quot;&gt;&#10;[&quot;WhatHeSaid&quot;, &quot;\&quot;He said %YN;\&quot;&quot;, &quot;YN&quot;]&#10;&lt;!ENTITY open-hatch SYSTEM &quot;http://www.textuality.com/boilerplate/OpenHatch.xml&quot;&gt;&#10;[&quot;open-hatch&quot;, &quot;SYSTEM&quot;, &quot;\&quot;http://www.textuality.com/boilerplate/OpenHatch.xml\&quot;&quot;]&#10;&lt;!ENTITY open-hatch PUBLIC &quot;-//Textuality//TEXT Standard open-hatch boilerplate//EN&quot; &quot;http://www.textuality.com/boilerplate/OpenHatch.xml&quot;&gt;&#10;[&quot;open-hatch&quot;, &quot;PUBLIC&quot;, &quot;\&quot;-//Textuality//TEXT Standard open-hatch boilerplate//EN\&quot;&quot;, &quot;\&quot;http://www.textuality.com/boilerplate/OpenHatch.xml\&quot;&quot;]&#10;&lt;!ENTITY hatch-pic SYSTEM &quot;../grafix/OpenHatch.gif&quot; NDATA gif&gt;&#10;[&quot;hatch-pic&quot;, &quot;SYSTEM&quot;, &quot;\&quot;../grafix/OpenHatch.gif\&quot;&quot;, &quot;\n\t\t\t\t\t\t\tNDATA gif&quot;, &quot;gif&quot;]" ilk="function" name="entitydecl" signature="entitydecl(name, decl)" />
+          <scope doc="&lt;!NOTATION ...&gt;" ilk="function" name="notationdecl" signature="notationdecl(content)" />
+          <scope ilk="function" name="processing_instruction" signature="processing_instruction(target, data)" />
+          <scope ilk="function" name="progress" signature="progress(position)" />
+          <scope ilk="function" name="start_document" signature="start_document()" />
+          <scope ilk="function" name="start_element" signature="start_element(uri, localname, qname, attributes)" />
+          <scope ilk="function" name="start_prefix_mapping" signature="start_prefix_mapping(prefix, uri)" />
+          <scope doc="Called when an XML PI is encountered in the document. EG: &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf&quot;?&gt; @p version the version attribute value.  EG, &quot;1.0&quot; @p encoding the encoding attribute value, or nil.  EG, &quot;utf&quot; @p standalone the standalone attribute value, or nil.  EG, nil @p spaced the declaration is followed by a line break" ilk="function" name="xmldecl" signature="xmldecl(version, encoding, standalone)" />
+        </scope>
+      </scope>
+    </scope>
+    

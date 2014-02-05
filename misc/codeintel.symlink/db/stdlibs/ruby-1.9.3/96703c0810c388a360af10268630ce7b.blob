@@ -1,0 +1,35 @@
+<scope ilk="blob" lang="Ruby" name="rdoc/ri/store">
+      <scope ilk="namespace" name="RDoc">
+        <scope ilk="namespace" name="RI">
+          <scope classrefs="Object" ilk="class" name="Store">
+            <scope attributes="__classmethod__ __ctor__" doc="Creates a new Store of +type+ that will load or save to +path+" ilk="function" name="new" signature="new(path, type = nil)" />
+            <scope doc="Ancestors cache accessor.  Maps a klass name to an Array of its ancestors in this store.  If Foo in this store inherits from Object, Kernel won't be listed (it will be included from ruby's ri store)." ilk="function" name="ancestors" signature="ancestors()" />
+            <scope doc="Attributes cache accessor.  Maps a class to an Array of its attributes." ilk="function" name="attributes" signature="attributes()" />
+            <scope doc="Path to the cache file" ilk="function" name="cache_path" signature="cache_path()" />
+            <scope doc="Path to the ri data for +klass_name+" ilk="function" name="class_file" signature="class_file(klass_name)" />
+            <scope doc="Class methods cache accessor.  Maps a class to an Array of its class methods (not full name)." ilk="function" name="class_methods" signature="class_methods()" />
+            <scope doc="Path where data for +klass_name+ will be stored (methods or class data)" ilk="function" name="class_path" signature="class_path(klass_name)" />
+            <scope doc="Friendly rendition of #path" ilk="function" name="friendly_path" signature="friendly_path()" />
+            <scope doc="Instance methods cache accessor.  Maps a class to an Array of its instance methods (not full name)." ilk="function" name="instance_methods" signature="instance_methods()" />
+            <scope doc="Loads cache file for this store" ilk="function" name="load_cache" signature="load_cache()" />
+            <scope doc="Loads ri data for +klass_name+" ilk="function" name="load_class" signature="load_class(klass_name)" />
+            <scope doc="Loads ri data for +method_name+ in +klass_name+" ilk="function" name="load_method" signature="load_method(klass_name, method_name)" />
+            <scope doc="Path to the ri data for +method_name+ in +klass_name+" ilk="function" name="method_file" signature="method_file(klass_name, method_name)" />
+            <scope doc="Modules cache accessor.  An Array of all the modules (and classes) in the store." ilk="function" name="modules" signature="modules()" />
+            <scope doc="Writes the cache file for this store" ilk="function" name="save_cache" signature="save_cache()" />
+            <scope doc="Writes the ri data for +klass+" ilk="function" name="save_class" signature="save_class(klass)" />
+            <scope doc="Writes the ri data for +method+ on +klass+" ilk="function" name="save_method" signature="save_method(klass, method)" />
+            <scope ilk="function" name="cache" />
+            <scope ilk="function" name="dry_run" />
+            <scope ilk="function" name="dry_run=" />
+            <scope ilk="function" name="encoding" />
+            <scope ilk="function" name="encoding=" />
+            <scope ilk="function" name="path" />
+            <scope ilk="function" name="path=" />
+            <scope ilk="function" name="type" />
+            <scope ilk="function" name="type=" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

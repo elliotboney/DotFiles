@@ -1,0 +1,47 @@
+<scope ilk="blob" lang="Ruby" name="webrick/httputils">
+      <scope ilk="namespace" name="WEBrick">
+        <scope ilk="namespace" name="HTTPUtils">
+          <scope attributes="__classmethod__" ilk="function" name="dequote" signature="dequote(str)" />
+          <scope attributes="__classmethod__" doc="Load Apache compatible mime.types file." ilk="function" name="load_mime_types" signature="load_mime_types(file)" />
+          <scope attributes="__classmethod__" ilk="function" name="mime_type" signature="mime_type(filename, mime_tab)" />
+          <scope attributes="__classmethod__" ilk="function" name="normalize_path" signature="normalize_path(path)" />
+          <scope attributes="__classmethod__" ilk="function" name="parse_form_data" signature="parse_form_data(io, boundary)" />
+          <scope attributes="__classmethod__" ilk="function" name="parse_header" signature="parse_header(raw)" />
+          <scope attributes="__classmethod__" ilk="function" name="parse_query" signature="parse_query(str)" />
+          <scope attributes="__classmethod__" ilk="function" name="parse_qvalues" signature="parse_qvalues(value)" />
+          <scope attributes="__classmethod__" ilk="function" name="parse_range_header" signature="parse_range_header(ranges_specifier)" />
+          <scope attributes="__classmethod__" ilk="function" name="quote" signature="quote(str)" />
+          <scope attributes="__classmethod__" ilk="function" name="split_header_value" signature="split_header_value(str)" />
+          <scope ilk="function" name="_escape" signature="_escape(str, regex)" />
+          <scope ilk="function" name="_make_regex" signature="_make_regex(str)" />
+          <scope ilk="function" name="_make_regex!" signature="_make_regex!(str)" />
+          <scope ilk="function" name="_unescape" signature="_unescape(str, regex)" />
+          <scope ilk="function" name="escape" signature="escape(str)" />
+          <scope ilk="function" name="escape8bit" signature="escape8bit(str)" />
+          <scope ilk="function" name="escape_form" signature="escape_form(str)" />
+          <scope ilk="function" name="escape_path" signature="escape_path(str)" />
+          <scope ilk="function" name="unescape" signature="unescape(str)" />
+          <scope ilk="function" name="unescape_form" signature="unescape_form(str)" />
+          <variable attributes="__const__" citdl="Object" name="UNESCAPED" />
+          <variable attributes="__const__" citdl="Object" name="UNESCAPED_FORM" />
+          <variable attributes="__const__" citdl="Object" name="NONASCII" />
+          <variable attributes="__const__" citdl="Object" name="ESCAPED" />
+          <variable attributes="__const__" citdl="Object" name="UNESCAPED_PCHAR" />
+          <scope classrefs="String" ilk="class" name="FormData">
+            <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(*args)" />
+            <scope ilk="function" name="append_data" signature="append_data(data)" />
+            <scope ilk="function" name="each_data" signature="each_data()" />
+            <scope ilk="function" name="list" signature="list()" />
+            <scope ilk="function" name="to_ary" signature="to_ary()" />
+            <scope ilk="function" name="to_s" signature="to_s()" />
+            <scope ilk="function" name="filename" />
+            <scope ilk="function" name="filename=" />
+            <scope ilk="function" name="name" />
+            <scope ilk="function" name="name=" />
+            <scope ilk="function" name="next_data" />
+            <scope ilk="function" name="next_data=" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

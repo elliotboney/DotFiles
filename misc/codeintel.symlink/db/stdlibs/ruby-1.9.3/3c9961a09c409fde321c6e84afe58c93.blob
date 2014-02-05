@@ -1,0 +1,331 @@
+<scope ilk="blob" lang="Ruby" name="curses">
+      <scope ilk="namespace" name="Curses">
+        <scope attributes="__classmethod__" doc="Returns the total time, in milliseconds, for which curses will await a character sequence, e.g., a function key" ilk="function" name="ESCDELAY" signature="ESCDELAY()" />
+        <scope attributes="__classmethod__" doc="Sets the ESCDELAY to Integer +value+" ilk="function" name="ESCDELAY=" signature="ESCDELAY=(p1)" />
+        <scope attributes="__classmethod__" doc="Returns the number of positions in a tab." ilk="function" name="TABSIZE" signature="TABSIZE()" />
+        <scope attributes="__classmethod__" doc="Sets the TABSIZE to Integer +value+" ilk="function" name="TABSIZE=" signature="TABSIZE=(p1)" />
+        <scope attributes="__classmethod__" doc="Add a character +ch+, with attributes, then advance the cursor. &#10; see also the system manual for curs_addch(3)" ilk="function" name="addch" signature="addch(p1)" />
+        <scope attributes="__classmethod__" doc="add a string of characters +str+, to the window and advance cursor" ilk="function" name="addstr" signature="addstr(p1)" />
+        <scope attributes="__classmethod__" doc="Turns on the named attributes +attrs+ without affecting any others. &#10; See also Curses::Window.attrset for additional information." ilk="function" name="attroff" signature="attroff(p1)" />
+        <scope attributes="__classmethod__" doc="Turns off the named attributes +attrs+ without turning any other attributes on or off. &#10; See also Curses::Window.attrset for additional information." ilk="function" name="attron" signature="attron(p1)" />
+        <scope attributes="__classmethod__" doc="Sets the current attributes of the given window to +attrs+. &#10; see also Curses::Window.attrset" ilk="function" name="attrset" signature="attrset(p1)" />
+        <scope attributes="__classmethod__" doc="Sounds an audible alarm on the terminal, if possible; otherwise it flashes the screen (visual bell). &#10; see also Curses.flash" ilk="function" name="beep" signature="beep()" />
+        <scope attributes="__classmethod__" doc="Window background manipulation routines. &#10; Set the background property of the current and then apply the character Integer +ch+ setting to every character position in that window. &#10; see also the system manual for curs_bkgd(3)" ilk="function" name="bkgd" signature="bkgd(p1)" />
+        <scope attributes="__classmethod__" doc="Manipulate the background of the named window with character Integer +ch+ &#10; The background becomes a property of the character and moves with the character through any scrolling and insert/delete line/character operations. &#10; see also the system manual for curs_bkgd(3)" ilk="function" name="bkgdset" signature="bkgdset(p1)" />
+        <scope attributes="__classmethod__" doc="Returns +true+ or +false+ depending on whether the terminal can change color attributes" ilk="function" name="can_change_color?" signature="can_change_color?()" />
+        <scope attributes="__classmethod__" doc="Put the terminal into cbreak mode. &#10; Normally, the tty driver buffers typed characters until a newline or carriage return is typed. The Curses.cbreak routine disables line buffering and erase/kill character-processing (interrupt and flow control characters are unaffected), making characters typed by the user immediately available to the program. &#10; The Curses.nocbreak routine returns the terminal to normal (cooked) mode. &#10; Initially the terminal may or may not be in cbreak mode, as the mode is inherited; therefore, a program should call Curses.cbreak or Curses.nocbreak explicitly. Most interactive programs using curses set the cbreak mode. Note that Curses.cbreak overrides Curses.raw. &#10; see also Curses.raw" ilk="function" name="cbreak" signature="cbreak()" />
+        <scope attributes="__classmethod__" doc="Clears every position on the screen completely, so that a subsequent call by Curses.refresh for the screen/window will be repainted from scratch." ilk="function" name="clear" signature="clear()" />
+        <scope attributes="__classmethod__" doc="A program should always call Curses.close_screen before exiting or escaping from curses mode temporarily. This routine restores tty modes, moves the cursor to the lower left-hand corner of the screen and resets the terminal into the proper non-visual mode. &#10; Calling Curses.refresh or Curses.doupdate after a temporary escape causes the program to resume visual mode." ilk="function" name="close_screen" signature="close_screen()" />
+        <scope attributes="__classmethod__" doc="Returns +true+ if the window/screen has been closed, without any subsequent Curses.refresh calls, returns +false+ otherwise." ilk="function" name="closed?" signature="closed?()" />
+        <scope attributes="__classmethod__" doc="Clears to the end of line, that the cursor is currently on." ilk="function" name="clrtoeol" signature="clrtoeol()" />
+        <scope attributes="__classmethod__" doc="Returns an 3 item Array of the RGB values in +color+" ilk="function" name="color_content" signature="color_content(p1)" />
+        <scope attributes="__classmethod__" doc="Sets the color pair attributes to +attrs+. &#10; This should be equivalent to Curses.attrset(COLOR_PAIR(+attrs+)) &#10; TODO: validate that equivalency" ilk="function" name="color_pair" signature="color_pair(p1)" />
+        <scope attributes="__classmethod__" doc="Returns the COLOR_PAIRS available, if the curses library supports it." ilk="function" name="color_pairs" signature="color_pairs()" />
+        <scope attributes="__classmethod__" doc="returns COLORS" ilk="function" name="colors" signature="colors()" />
+        <scope attributes="__classmethod__" doc="Returns the number of columns on the screen" ilk="function" name="cols" signature="cols()" />
+        <scope attributes="__classmethod__" doc="Put the terminal into normal mode (out of cbreak mode). &#10; See Curses.cbreak for more detail." ilk="function" name="crmode" signature="crmode()" />
+        <scope attributes="__classmethod__" doc="Sets Cursor Visibility. 0: invisible 1: visible 2: very visible" ilk="function" name="curs_set" signature="curs_set(p1)" />
+        <scope attributes="__classmethod__" doc="Save the current terminal modes as the &quot;program&quot; state for use by the Curses.reset_prog_mode &#10; This is done automatically by Curses.init_screen" ilk="function" name="def_prog_mode" signature="def_prog_mode()" />
+        <scope attributes="__classmethod__" doc="Delete the character under the cursor" ilk="function" name="delch" signature="delch()" />
+        <scope attributes="__classmethod__" doc="Delete the line under the cursor." ilk="function" name="deleteln" signature="deleteln()" />
+        <scope attributes="__classmethod__" doc="Refreshes the windows and lines. &#10; Curses.doupdate allows multiple updates with more efficiency than Curses.refresh alone." ilk="function" name="doupdate" signature="doupdate()" />
+        <scope attributes="__classmethod__" doc="Enables characters typed by the user to be echoed by Curses.getch as they are typed." ilk="function" name="echo" signature="echo()" />
+        <scope attributes="__classmethod__" doc="Flashs the screen, for visual alarm on the terminal, if possible; otherwise it sounds the alert. &#10; see also Curses.beep" ilk="function" name="flash" signature="flash()" />
+        <scope attributes="__classmethod__" doc="Read and returns a character from the window. &#10; See Curses::Key to all the function KEY_* available" ilk="function" name="getch" signature="getch()" />
+        <scope attributes="__classmethod__" doc="Returns coordinates of the mouse. &#10; This will read and pop the mouse event data off the queue &#10; See the BUTTON*, ALL_MOUSE_EVENTS and REPORT_MOUSE_POSITION constants, to examine the mask of the event" ilk="function" name="getmouse" signature="getmouse()" />
+        <scope attributes="__classmethod__" doc="This is equivalent to a series f Curses::Window.getch calls" ilk="function" name="getstr" signature="getstr()" />
+        <scope attributes="__classmethod__" doc="Returns +true+ or +false+ depending on whether the terminal has color capbilities." ilk="function" name="has_colors?" signature="has_colors?()" />
+        <scope attributes="__classmethod__" doc="Returns the character at the current position." ilk="function" name="inch" signature="inch()" />
+        <scope attributes="__classmethod__" doc="Changes the definition of a color. It takes four arguments: the number of the color to be changed, +color+&#10;the amount of red, +r+&#10;the amount of green, +g+&#10;the amount of blue, +b+ &#10; The value of the first argument must be between 0 and  COLORS. (See the section Colors for the default color index.)  Each of the last three arguments must be a value between 0 and 1000. When Curses.init_color is used, all occurrences of that color on the screen immediately change to the new definition." ilk="function" name="init_color" signature="init_color(p1, p2, p3, p4)" />
+        <scope attributes="__classmethod__" doc="Changes the definition of a color-pair. &#10; It takes three arguments: the number of the color-pair to be changed +pair+, the foreground color number +f+, and the background color number +b+. &#10; If the color-pair was previously initialized, the screen is refreshed and all occurrences of that color-pair are changed to the new definition." ilk="function" name="init_pair" signature="init_pair(p1, p2, p3)" />
+        <scope attributes="__classmethod__" doc="Initialize a standard screen &#10; see also Curses.stdscr" ilk="function" name="init_screen" signature="init_screen()" />
+        <scope attributes="__classmethod__" doc="Insert a character +ch+, before the cursor." ilk="function" name="insch" signature="insch(p1)" />
+        <scope attributes="__classmethod__" doc="Inserts a line above the cursor, and the bottom line is lost" ilk="function" name="insertln" signature="insertln()" />
+        <scope attributes="__classmethod__" doc="Returns the character string corresponding to key +c+" ilk="function" name="keyname" signature="keyname(p1)" />
+        <scope attributes="__classmethod__" doc="Returns the number of lines on the screen" ilk="function" name="lines" signature="lines()" />
+        <scope attributes="__classmethod__" doc="The Curses.mouseinterval function sets the maximum time (in thousands of a second) that can elapse between press and release events for them to be recognized as a click. &#10; Use Curses.mouseinterval(0) to disable click resolution. This function returns the previous interval value. &#10; Use Curses.mouseinterval(-1) to obtain the interval without altering it. &#10; The default is one sixth of a second." ilk="function" name="mouseinterval" signature="mouseinterval(p1)" />
+        <scope attributes="__classmethod__" doc="Returns the +mask+ of the reportable events" ilk="function" name="mousemask" signature="mousemask(p1)" />
+        <scope attributes="__classmethod__" doc="Enable the underlying display device to translate the return key into newline on input, and whether it translates newline into return and line-feed on output (in either case, the call Curses.addch('\n') does the equivalent of return and line feed on the virtual screen). &#10; Initially, these translations do occur. If you disable them using Curses.nonl, curses will be able to make better use of the line-feed capability, resulting in faster cursor motion. Also, curses will then be able to detect the return key." ilk="function" name="nl" signature="nl()" />
+        <scope attributes="__classmethod__" doc="Put the terminal into normal mode (out of cbreak mode). &#10; See Curses.cbreak for more detail." ilk="function" name="nocbreak" signature="nocbreak()" />
+        <scope attributes="__classmethod__" doc="Put the terminal into normal mode (out of cbreak mode). &#10; See Curses.cbreak for more detail." ilk="function" name="nocrmode" signature="nocrmode()" />
+        <scope attributes="__classmethod__" doc="Disables characters typed by the user to be echoed by Curses.getch as they are typed." ilk="function" name="noecho" signature="noecho()" />
+        <scope attributes="__classmethod__" doc="Disable the underlying display device to translate the return key into newline on input &#10; See Curses.nl for more detail" ilk="function" name="nonl" signature="nonl()" />
+        <scope attributes="__classmethod__" doc="Put the terminal out of raw mode. &#10; see Curses.raw for more detail" ilk="function" name="noraw" signature="noraw()" />
+        <scope attributes="__classmethod__" doc="Returns a 2 item Array, with the foreground and background color, in +pair+" ilk="function" name="pair_content" signature="pair_content(p1)" />
+        <scope attributes="__classmethod__" doc="Returns the Fixnum color pair number of attributes +attrs+." ilk="function" name="pair_number" signature="pair_number(p1)" />
+        <scope attributes="__classmethod__" doc="Put the terminal into raw mode. &#10; Raw mode is similar to Curses.cbreak mode, in that characters typed are immediately passed through to the user program. &#10; The differences are that in raw mode, the interrupt, quit, suspend, and flow control characters are all passed through uninterpreted, instead of generating a signal. The behavior of the BREAK key depends on other bits in the tty driver that are not set by curses." ilk="function" name="raw" signature="raw()" />
+        <scope attributes="__classmethod__" doc="Refreshes the windows and lines." ilk="function" name="refresh" signature="refresh()" />
+        <scope attributes="__classmethod__" doc="Reset the current terminal modes to the saved state by the Curses.def_prog_mode &#10; This is done automatically by Curses.close_screen" ilk="function" name="reset_prog_mode" signature="reset_prog_mode()" />
+        <scope attributes="__classmethod__" doc="Resize the current term to Fixnum +lines+ and Fixnum +cols+" ilk="function" name="resize" signature="resize(p1, p2)" />
+        <scope attributes="__classmethod__" doc="Resize the current term to Fixnum +lines+ and Fixnum +cols+" ilk="function" name="resizeterm" signature="resizeterm(p1, p2)" />
+        <scope attributes="__classmethod__" doc="Scrolls the current window Fixnum +num+ lines. The current cursor position is not changed. &#10; For positive +num+, it scrolls up. &#10; For negative +num+, it scrolls down." ilk="function" name="scrl" signature="scrl(p1)" />
+        <scope attributes="__classmethod__" doc="A setter for the position of the cursor, using coordinates +x+ and +y+" ilk="function" name="setpos" signature="setpos(p1, p2)" />
+        <scope attributes="__classmethod__" doc="Set a software scrolling region in a window. +top+ and +bottom+ are lines numbers of the margin. &#10; If this option and Curses.scrollok are enabled, an attempt to move off the bottom margin line causes all lines in the scrolling region to scroll one line in the direction of the first line. Only the text of the window is scrolled." ilk="function" name="setscrreg" signature="setscrreg(p1, p2)" />
+        <scope attributes="__classmethod__" doc="Enables the Normal display (no highlight) &#10; This is equivalent to Curses.attron(A_NORMAL) &#10; see also Curses::Window.attrset for additional information." ilk="function" name="standend" signature="standend()" />
+        <scope attributes="__classmethod__" doc="Enables the best highlighting mode of the terminal. &#10; This is equivalent to Curses:Window.attron(A_STANDOUT) &#10; see also Curses::Window.attrset additional information" ilk="function" name="standout" signature="standout()" />
+        <scope attributes="__classmethod__" doc="Initializes the color attributes, for terminals that support it. &#10; This must be called, in order to use color attributes. It is good practice to call it just after Curses.init_screen" ilk="function" name="start_color" signature="start_color()" />
+        <scope attributes="__classmethod__" doc="The Standard Screen.&#10;&#10;Upon initializing curses, a default window called stdscr,&#10;which is the size of the terminal screen, is created.&#10;&#10;Many curses functions use this window.&#10; Initialize a standard screen &#10; see also Curses.stdscr" ilk="function" name="stdscr" signature="stdscr()" />
+        <scope attributes="__classmethod__" doc="Sets block and non-blocking reads for the window. If delay is negative, blocking read is used (i.e., waits indefinitely for input).&#10;If delay is zero, then non-blocking read is used (i.e., read returns ERR if no input is waiting).&#10;If delay is positive, then read blocks for delay milliseconds, and returns ERR if there is still no input." ilk="function" name="timeout=" signature="timeout=(p1)" />
+        <scope attributes="__classmethod__" doc="Places +ch+ back onto the input queue to be returned by the next call to Curses.getch. &#10; There is just one input queue for all windows." ilk="function" name="ungetch" signature="ungetch(p1)" />
+        <scope attributes="__classmethod__" doc="It pushes a KEY_MOUSE event onto the input queue, and associates with that event the given state data and screen-relative character-cell coordinates. &#10; The Curses.ungetmouse function behaves analogously to Curses.ungetch." ilk="function" name="ungetmouse" signature="ungetmouse(p1)" />
+        <scope attributes="__classmethod__" doc="tells the curses library to use terminal's default colors. &#10; see also the system manual for default_colors(3)" ilk="function" name="use_default_colors" signature="use_default_colors()" />
+        <variable attributes="__const__" citdl="Object" name="A_ATTRIBUTES" />
+        <variable attributes="__const__" citdl="Object" name="A_NORMAL" />
+        <variable attributes="__const__" citdl="Object" name="A_STANDOUT" />
+        <variable attributes="__const__" citdl="Object" name="A_UNDERLINE" />
+        <variable attributes="__const__" citdl="Object" name="A_REVERSE" />
+        <variable attributes="__const__" citdl="Object" name="A_BLINK" />
+        <variable attributes="__const__" citdl="Object" name="A_DIM" />
+        <variable attributes="__const__" citdl="Object" name="A_BOLD" />
+        <variable attributes="__const__" citdl="Object" name="A_PROTECT" />
+        <variable attributes="__const__" citdl="Object" name="A_INVIS" />
+        <variable attributes="__const__" citdl="Object" name="A_ALTCHARSET" />
+        <variable attributes="__const__" citdl="Object" name="A_CHARTEXT" />
+        <variable attributes="__const__" citdl="Object" name="A_HORIZONTAL" />
+        <variable attributes="__const__" citdl="Object" name="A_LEFT" />
+        <variable attributes="__const__" citdl="Object" name="A_LOW" />
+        <variable attributes="__const__" citdl="Object" name="A_RIGHT" />
+        <variable attributes="__const__" citdl="Object" name="A_TOP" />
+        <variable attributes="__const__" citdl="Object" name="A_VERTICAL" />
+        <variable attributes="__const__" citdl="Object" name="A_COLOR" />
+        <variable attributes="__const__" citdl="Object" name="COLORS" />
+        <variable attributes="__const__" citdl="Object" name="COLOR_BLACK" />
+        <variable attributes="__const__" citdl="Object" name="COLOR_RED" />
+        <variable attributes="__const__" citdl="Object" name="COLOR_GREEN" />
+        <variable attributes="__const__" citdl="Object" name="COLOR_YELLOW" />
+        <variable attributes="__const__" citdl="Object" name="COLOR_BLUE" />
+        <variable attributes="__const__" citdl="Object" name="COLOR_MAGENTA" />
+        <variable attributes="__const__" citdl="Object" name="COLOR_CYAN" />
+        <variable attributes="__const__" citdl="Object" name="COLOR_WHITE" />
+        <variable attributes="__const__" citdl="Object" name="BUTTON_SHIFT" />
+        <variable attributes="__const__" citdl="Object" name="BUTTON_CTRL" />
+        <variable attributes="__const__" citdl="Object" name="BUTTON_ALT" />
+        <variable attributes="__const__" citdl="Object" name="ALL_MOUSE_EVENTS" />
+        <variable attributes="__const__" citdl="Object" name="REPORT_MOUSE_POSITION" />
+        <variable attributes="__const__" citdl="Object" name="KEY_MOUSE" />
+        <variable attributes="__const__" citdl="Object" name="KEY_MIN" />
+        <variable attributes="__const__" citdl="Object" name="KEY_BREAK" />
+        <variable attributes="__const__" citdl="Object" name="KEY_DOWN" />
+        <variable attributes="__const__" citdl="Object" name="KEY_UP" />
+        <variable attributes="__const__" citdl="Object" name="KEY_LEFT" />
+        <variable attributes="__const__" citdl="Object" name="KEY_RIGHT" />
+        <variable attributes="__const__" citdl="Object" name="KEY_HOME" />
+        <variable attributes="__const__" citdl="Object" name="KEY_BACKSPACE" />
+        <variable attributes="__const__" citdl="Object" name="KEY_DL" />
+        <variable attributes="__const__" citdl="Object" name="KEY_IL" />
+        <variable attributes="__const__" citdl="Object" name="KEY_DC" />
+        <variable attributes="__const__" citdl="Object" name="KEY_IC" />
+        <variable attributes="__const__" citdl="Object" name="KEY_EIC" />
+        <variable attributes="__const__" citdl="Object" name="KEY_CLEAR" />
+        <variable attributes="__const__" citdl="Object" name="KEY_EOS" />
+        <variable attributes="__const__" citdl="Object" name="KEY_EOL" />
+        <variable attributes="__const__" citdl="Object" name="KEY_SF" />
+        <variable attributes="__const__" citdl="Object" name="KEY_SR" />
+        <variable attributes="__const__" citdl="Object" name="KEY_NPAGE" />
+        <variable attributes="__const__" citdl="Object" name="KEY_PPAGE" />
+        <variable attributes="__const__" citdl="Object" name="KEY_STAB" />
+        <variable attributes="__const__" citdl="Object" name="KEY_CTAB" />
+        <variable attributes="__const__" citdl="Object" name="KEY_CATAB" />
+        <variable attributes="__const__" citdl="Object" name="KEY_ENTER" />
+        <variable attributes="__const__" citdl="Object" name="KEY_SRESET" />
+        <variable attributes="__const__" citdl="Object" name="KEY_RESET" />
+        <variable attributes="__const__" citdl="Object" name="KEY_PRINT" />
+        <variable attributes="__const__" citdl="Object" name="KEY_LL" />
+        <variable attributes="__const__" citdl="Object" name="KEY_BTAB" />
+        <variable attributes="__const__" citdl="Object" name="KEY_BEG" />
+        <variable attributes="__const__" citdl="Object" name="KEY_CANCEL" />
+        <variable attributes="__const__" citdl="Object" name="KEY_CLOSE" />
+        <variable attributes="__const__" citdl="Object" name="KEY_COMMAND" />
+        <variable attributes="__const__" citdl="Object" name="KEY_COPY" />
+        <variable attributes="__const__" citdl="Object" name="KEY_CREATE" />
+        <variable attributes="__const__" citdl="Object" name="KEY_END" />
+        <variable attributes="__const__" citdl="Object" name="KEY_EXIT" />
+        <variable attributes="__const__" citdl="Object" name="KEY_FIND" />
+        <variable attributes="__const__" citdl="Object" name="KEY_HELP" />
+        <variable attributes="__const__" citdl="Object" name="KEY_MARK" />
+        <variable attributes="__const__" citdl="Object" name="KEY_MESSAGE" />
+        <variable attributes="__const__" citdl="Object" name="KEY_MOVE" />
+        <variable attributes="__const__" citdl="Object" name="KEY_NEXT" />
+        <variable attributes="__const__" citdl="Object" name="KEY_OPEN" />
+        <variable attributes="__const__" citdl="Object" name="KEY_OPTIONS" />
+        <variable attributes="__const__" citdl="Object" name="KEY_PREVIOUS" />
+        <variable attributes="__const__" citdl="Object" name="KEY_REDO" />
+        <variable attributes="__const__" citdl="Object" name="KEY_REFERENCE" />
+        <variable attributes="__const__" citdl="Object" name="KEY_REFRESH" />
+        <variable attributes="__const__" citdl="Object" name="KEY_REPLACE" />
+        <variable attributes="__const__" citdl="Object" name="KEY_RESTART" />
+        <variable attributes="__const__" citdl="Object" name="KEY_RESUME" />
+        <variable attributes="__const__" citdl="Object" name="KEY_SAVE" />
+        <variable attributes="__const__" citdl="Object" name="KEY_SBEG" />
+        <variable attributes="__const__" citdl="Object" name="KEY_SCANCEL" />
+        <variable attributes="__const__" citdl="Object" name="KEY_SCOMMAND" />
+        <variable attributes="__const__" citdl="Object" name="KEY_SCOPY" />
+        <variable attributes="__const__" citdl="Object" name="KEY_SCREATE" />
+        <variable attributes="__const__" citdl="Object" name="KEY_SDC" />
+        <variable attributes="__const__" citdl="Object" name="KEY_SDL" />
+        <variable attributes="__const__" citdl="Object" name="KEY_SELECT" />
+        <variable attributes="__const__" citdl="Object" name="KEY_SEND" />
+        <variable attributes="__const__" citdl="Object" name="KEY_SEOL" />
+        <variable attributes="__const__" citdl="Object" name="KEY_SEXIT" />
+        <variable attributes="__const__" citdl="Object" name="KEY_SFIND" />
+        <variable attributes="__const__" citdl="Object" name="KEY_SHELP" />
+        <variable attributes="__const__" citdl="Object" name="KEY_SHOME" />
+        <variable attributes="__const__" citdl="Object" name="KEY_SIC" />
+        <variable attributes="__const__" citdl="Object" name="KEY_SLEFT" />
+        <variable attributes="__const__" citdl="Object" name="KEY_SMESSAGE" />
+        <variable attributes="__const__" citdl="Object" name="KEY_SMOVE" />
+        <variable attributes="__const__" citdl="Object" name="KEY_SNEXT" />
+        <variable attributes="__const__" citdl="Object" name="KEY_SOPTIONS" />
+        <variable attributes="__const__" citdl="Object" name="KEY_SPREVIOUS" />
+        <variable attributes="__const__" citdl="Object" name="KEY_SPRINT" />
+        <variable attributes="__const__" citdl="Object" name="KEY_SREDO" />
+        <variable attributes="__const__" citdl="Object" name="KEY_SREPLACE" />
+        <variable attributes="__const__" citdl="Object" name="KEY_SRIGHT" />
+        <variable attributes="__const__" citdl="Object" name="KEY_SRSUME" />
+        <variable attributes="__const__" citdl="Object" name="KEY_SSAVE" />
+        <variable attributes="__const__" citdl="Object" name="KEY_SSUSPEND" />
+        <variable attributes="__const__" citdl="Object" name="KEY_SUNDO" />
+        <variable attributes="__const__" citdl="Object" name="KEY_SUSPEND" />
+        <variable attributes="__const__" citdl="Object" name="KEY_UNDO" />
+        <variable attributes="__const__" citdl="Object" name="KEY_RESIZE" />
+        <variable attributes="__const__" citdl="Object" name="KEY_MAX" />
+        <scope ilk="namespace" name="Key">
+          <variable attributes="__const__" citdl="Object" name="MOUSE" />
+          <variable attributes="__const__" citdl="Object" name="MIN" />
+          <variable attributes="__const__" citdl="Object" name="BREAK" />
+          <variable attributes="__const__" citdl="Object" name="DOWN" />
+          <variable attributes="__const__" citdl="Object" name="UP" />
+          <variable attributes="__const__" citdl="Object" name="LEFT" />
+          <variable attributes="__const__" citdl="Object" name="RIGHT" />
+          <variable attributes="__const__" citdl="Object" name="HOME" />
+          <variable attributes="__const__" citdl="Object" name="BACKSPACE" />
+          <variable attributes="__const__" citdl="Object" name="DL" />
+          <variable attributes="__const__" citdl="Object" name="IL" />
+          <variable attributes="__const__" citdl="Object" name="DC" />
+          <variable attributes="__const__" citdl="Object" name="IC" />
+          <variable attributes="__const__" citdl="Object" name="EIC" />
+          <variable attributes="__const__" citdl="Object" name="CLEAR" />
+          <variable attributes="__const__" citdl="Object" name="EOS" />
+          <variable attributes="__const__" citdl="Object" name="EOL" />
+          <variable attributes="__const__" citdl="Object" name="SF" />
+          <variable attributes="__const__" citdl="Object" name="SR" />
+          <variable attributes="__const__" citdl="Object" name="NPAGE" />
+          <variable attributes="__const__" citdl="Object" name="PPAGE" />
+          <variable attributes="__const__" citdl="Object" name="STAB" />
+          <variable attributes="__const__" citdl="Object" name="CTAB" />
+          <variable attributes="__const__" citdl="Object" name="CATAB" />
+          <variable attributes="__const__" citdl="Object" name="ENTER" />
+          <variable attributes="__const__" citdl="Object" name="SRESET" />
+          <variable attributes="__const__" citdl="Object" name="RESET" />
+          <variable attributes="__const__" citdl="Object" name="PRINT" />
+          <variable attributes="__const__" citdl="Object" name="LL" />
+          <variable attributes="__const__" citdl="Object" name="BTAB" />
+          <variable attributes="__const__" citdl="Object" name="BEG" />
+          <variable attributes="__const__" citdl="Object" name="CANCEL" />
+          <variable attributes="__const__" citdl="Object" name="CLOSE" />
+          <variable attributes="__const__" citdl="Object" name="COMMAND" />
+          <variable attributes="__const__" citdl="Object" name="COPY" />
+          <variable attributes="__const__" citdl="Object" name="CREATE" />
+          <variable attributes="__const__" citdl="Object" name="END" />
+          <variable attributes="__const__" citdl="Object" name="EXIT" />
+          <variable attributes="__const__" citdl="Object" name="FIND" />
+          <variable attributes="__const__" citdl="Object" name="HELP" />
+          <variable attributes="__const__" citdl="Object" name="MARK" />
+          <variable attributes="__const__" citdl="Object" name="MESSAGE" />
+          <variable attributes="__const__" citdl="Object" name="MOVE" />
+          <variable attributes="__const__" citdl="Object" name="NEXT" />
+          <variable attributes="__const__" citdl="Object" name="OPEN" />
+          <variable attributes="__const__" citdl="Object" name="OPTIONS" />
+          <variable attributes="__const__" citdl="Object" name="PREVIOUS" />
+          <variable attributes="__const__" citdl="Object" name="REDO" />
+          <variable attributes="__const__" citdl="Object" name="REFERENCE" />
+          <variable attributes="__const__" citdl="Object" name="REFRESH" />
+          <variable attributes="__const__" citdl="Object" name="REPLACE" />
+          <variable attributes="__const__" citdl="Object" name="RESTART" />
+          <variable attributes="__const__" citdl="Object" name="RESUME" />
+          <variable attributes="__const__" citdl="Object" name="SAVE" />
+          <variable attributes="__const__" citdl="Object" name="SBEG" />
+          <variable attributes="__const__" citdl="Object" name="SCANCEL" />
+          <variable attributes="__const__" citdl="Object" name="SCOMMAND" />
+          <variable attributes="__const__" citdl="Object" name="SCOPY" />
+          <variable attributes="__const__" citdl="Object" name="SCREATE" />
+          <variable attributes="__const__" citdl="Object" name="SDC" />
+          <variable attributes="__const__" citdl="Object" name="SDL" />
+          <variable attributes="__const__" citdl="Object" name="SELECT" />
+          <variable attributes="__const__" citdl="Object" name="SEND" />
+          <variable attributes="__const__" citdl="Object" name="SEOL" />
+          <variable attributes="__const__" citdl="Object" name="SEXIT" />
+          <variable attributes="__const__" citdl="Object" name="SFIND" />
+          <variable attributes="__const__" citdl="Object" name="SHELP" />
+          <variable attributes="__const__" citdl="Object" name="SHOME" />
+          <variable attributes="__const__" citdl="Object" name="SIC" />
+          <variable attributes="__const__" citdl="Object" name="SLEFT" />
+          <variable attributes="__const__" citdl="Object" name="SMESSAGE" />
+          <variable attributes="__const__" citdl="Object" name="SMOVE" />
+          <variable attributes="__const__" citdl="Object" name="SNEXT" />
+          <variable attributes="__const__" citdl="Object" name="SOPTIONS" />
+          <variable attributes="__const__" citdl="Object" name="SPREVIOUS" />
+          <variable attributes="__const__" citdl="Object" name="SPRINT" />
+          <variable attributes="__const__" citdl="Object" name="SREDO" />
+          <variable attributes="__const__" citdl="Object" name="SREPLACE" />
+          <variable attributes="__const__" citdl="Object" name="SRIGHT" />
+          <variable attributes="__const__" citdl="Object" name="SRSUME" />
+          <variable attributes="__const__" citdl="Object" name="SSAVE" />
+          <variable attributes="__const__" citdl="Object" name="SSUSPEND" />
+          <variable attributes="__const__" citdl="Object" name="SUNDO" />
+          <variable attributes="__const__" citdl="Object" name="SUSPEND" />
+          <variable attributes="__const__" citdl="Object" name="UNDO" />
+          <variable attributes="__const__" citdl="Object" name="RESIZE" />
+          <variable attributes="__const__" citdl="Object" name="MAX" />
+        </scope>
+        <scope classrefs="Object" ilk="class" name="MouseEvent">
+        </scope>
+        <scope classrefs="Data" ilk="class" name="Window">
+          <scope attributes="__classmethod__ __ctor__" doc="Contruct a new Curses::Window with constraints of +height+ lines, +width+ columns, begin at +top+ line, and begin +left+ most column. &#10; A new window using full screen is called as Curses::Window.new(0,0,0,0)" ilk="function" name="new" signature="new(p1, p2, p3, p4)" />
+          <scope doc="Add a character +ch+, with attributes, to the window, then advance the cursor. &#10; see also the system manual for curs_addch(3)" ilk="function" name="addch" signature="addch(p1)" />
+          <scope doc="add a string of characters +str+, to the window and advance cursor" ilk="function" name="addstr" signature="addstr(p1)" />
+          <scope doc="Turns on the named attributes +attrs+ without affecting any others. &#10; See also Curses::Window.attrset" ilk="function" name="attroff" signature="attroff(p1)" />
+          <scope doc="Turns off the named attributes +attrs+ without turning any other attributes on or off. &#10; See also Curses::Window.attrset" ilk="function" name="attron" signature="attron(p1)" />
+          <scope doc="Sets the current attributes of the given window to +attrs+. &#10; The following video attributes, defined in &lt;curses.h&gt;, can be passed to the routines Curses::Window.attron, Curses::Window.attroff, and Curses::Window.attrset, or OR'd with the characters passed to addch. A_NORMAL        Normal display (no highlight)&#10;A_STANDOUT      Best highlighting mode of the terminal.&#10;A_UNDERLINE     Underlining&#10;A_REVERSE       Reverse video&#10;A_BLINK         Blinking&#10;A_DIM           Half bright&#10;A_BOLD          Extra bright or bold&#10;A_PROTECT       Protected mode&#10;A_INVIS         Invisible or blank mode&#10;A_ALTCHARSET    Alternate character set&#10;A_CHARTEXT      Bit-mask to extract a character&#10;COLOR_PAIR(n)   Color-pair number n" ilk="function" name="attrset" signature="attrset(p1)" />
+          <scope doc="A getter for the beginning column (X coord) of the window" ilk="function" name="begx" signature="begx()" />
+          <scope doc="A getter for the beginning line (Y coord) of the window" ilk="function" name="begy" signature="begy()" />
+          <scope doc="Set the background of the current window and apply character Integer +ch+ to every character. &#10; see also Curses.bkgd" ilk="function" name="bkgd" signature="bkgd(p1)" />
+          <scope doc="Manipulate the background of the current window with character Integer +ch+ &#10; see also Curses.bkgdset" ilk="function" name="bkgdset" signature="bkgdset(p1)" />
+          <scope doc="set the characters to frame the window in. The vertical +vert+ and horizontal +hor+ character. &#10; win = Curses::Window.new(5,5,5,5)&#10;win.box(?|, ?-)" ilk="function" name="box" signature="box(p1, p2, p3 = v3)" />
+          <scope doc="Clear the window." ilk="function" name="clear" signature="clear()" />
+          <scope doc="Deletes the window, and frees the memory" ilk="function" name="close" signature="close()" />
+          <scope doc="Clear the window to the end of line, that the cursor is currently on." ilk="function" name="clrtoeol" signature="clrtoeol()" />
+          <scope doc="Sets the current color of the given window to the foreground/background combination described by the Fixnum +col+." ilk="function" name="color_set" signature="color_set(p1)" />
+          <scope doc="A getter for the current column (X coord) of the window" ilk="function" name="curx" signature="curx()" />
+          <scope doc="A getter for the current line (Y coord) of the window" ilk="function" name="cury" signature="cury()" />
+          <scope doc="Delete the character under the cursor" ilk="function" name="delch" signature="delch()" />
+          <scope doc="Delete the line under the cursor." ilk="function" name="deleteln" signature="deleteln()" />
+          <scope doc="Returns an Interer (+ch+) for the character property in the current window." ilk="function" name="getbkgd" signature="getbkgd()" />
+          <scope doc="Read and returns a character from the window. &#10; See Curses::Key to all the function KEY_* available" ilk="function" name="getch" signature="getch()" />
+          <scope doc="This is equivalent to a series f Curses::Window.getch calls" ilk="function" name="getstr" signature="getstr()" />
+          <scope doc="If +bool+ is +true+ curses considers using the hardware insert/delete line feature of terminals so equipped. &#10; If +bool+ is +false+, disables use of line insertion and deletion. This option should be enabled only if the application needs insert/delete line, for example, for a screen editor. &#10; It is disabled by default because insert/delete line tends to be visually annoying when used in applications where it is not really needed. If insert/delete line cannot be used, curses redraws the changed portions of all lines." ilk="function" name="idlok" signature="idlok(p1)" />
+          <scope doc="Returns the character at the current position of the window." ilk="function" name="inch" signature="inch()" />
+          <scope doc="Insert a character +ch+, before the cursor, in the current window" ilk="function" name="insch" signature="insch(p1)" />
+          <scope doc="Inserts a line above the cursor, and the bottom line is lost" ilk="function" name="insertln" signature="insertln()" />
+          <scope doc="Enables the keypad of the user's terminal. &#10; If enabled (+bool+ is +true+), the user can press a function key (such as an arrow key) and wgetch returns a single value representing the function key, as in KEY_LEFT.  If disabled (+bool+ is +false+), curses does not treat function keys specially and the program has to interpret the escape sequences itself.  If the keypad in the terminal can be turned on (made to transmit) and off (made to work locally), turning on this option causes the terminal keypad to be turned on when Curses::Window.getch is called. &#10; The default value for keypad is false." ilk="function" name="keypad" signature="keypad(p1)" />
+          <scope doc="Enables the keypad of the user's terminal. &#10; If enabled (+bool+ is +true+), the user can press a function key (such as an arrow key) and wgetch returns a single value representing the function key, as in KEY_LEFT.  If disabled (+bool+ is +false+), curses does not treat function keys specially and the program has to interpret the escape sequences itself.  If the keypad in the terminal can be turned on (made to transmit) and off (made to work locally), turning on this option causes the terminal keypad to be turned on when Curses::Window.getch is called. &#10; The default value for keypad is false." ilk="function" name="keypad=" signature="keypad=(p1)" />
+          <scope doc="A getter for the maximum columns for the window" ilk="function" name="maxx" signature="maxx()" />
+          <scope doc="A getter for the maximum lines for the window" ilk="function" name="maxy" signature="maxy()" />
+          <scope doc="Moves the window so that the upper left-hand corner is at position (+y+, +x+)" ilk="function" name="move" signature="move(p1, p2)" />
+          <scope doc="Causes Curses::Window.getch to be a non-blocking call.  If no input is ready, getch returns ERR. &#10; If disabled (+bool+ is +false+), Curses::Window.getch waits until a key is pressed." ilk="function" name="nodelay=" signature="nodelay=(p1)" />
+          <scope doc="Refreshes the windows and lines. &#10; Curses::Window.noutrefresh allows multiple updates with more efficiency than Curses::Window.refresh alone." ilk="function" name="noutrefresh" signature="noutrefresh()" />
+          <scope doc="Refreshes the windows and lines." ilk="function" name="refresh" signature="refresh()" />
+          <scope doc="Resize the current window to Fixnum +lines+ and Fixnum +cols+" ilk="function" name="resize" signature="resize(p1, p2)" />
+          <scope doc="Scrolls the current window Fixnum +num+ lines. The current cursor position is not changed. &#10; For positive +num+, it scrolls up. &#10; For negative +num+, it scrolls down." ilk="function" name="scrl" signature="scrl(p1)" />
+          <scope doc="Scrolls the current window up one line." ilk="function" name="scroll" signature="scroll()" />
+          <scope doc="Controls what happens when the cursor of a window is moved off the edge of the window or scrolling region, either as a result of a newline action on the bottom line, or typing the last character of the last line. &#10; If disabled, (+bool+ is false), the cursor is left on the bottom line. &#10; If enabled, (+bool+ is true), the window is scrolled up one line (Note that to get the physical scrolling effect on the terminal, it is also necessary to call Curses::Window.idlok)" ilk="function" name="scrollok" signature="scrollok(p1)" />
+          <scope doc="A setter for the position of the cursor in the current window, using coordinates +x+ and +y+" ilk="function" name="setpos" signature="setpos(p1, p2)" />
+          <scope doc="Set a software scrolling region in a window. +top+ and +bottom+ are lines numbers of the margin. &#10; If this option and Curses::Window.scrollok are enabled, an attempt to move off the bottom margin line causes all lines in the scrolling region to scroll one line in the direction of the first line.  Only the text of the window is scrolled." ilk="function" name="setscrreg" signature="setscrreg(p1, p2)" />
+          <scope doc="Enables the Normal display (no highlight) &#10; This is equivalent to Curses::Window.attron(A_NORMAL) &#10; see also Curses::Window.attrset" ilk="function" name="standend" signature="standend()" />
+          <scope doc="Enables the best highlighting mode of the terminal. &#10; This is equivalent to Curses::Window.attron(A_STANDOUT) &#10; see also Curses::Window.attrset" ilk="function" name="standout" signature="standout()" />
+          <scope doc="Contruct a new subwindow with constraints of +height+ lines, +width+ columns, begin at +top+ line, and begin +left+ most column." ilk="function" name="subwin" signature="subwin(p1, p2, p3, p4)" />
+          <scope doc="Sets block and non-blocking reads for the window. If delay is negative, blocking read is used (i.e., waits indefinitely for input).&#10;If delay is zero, then non-blocking read is used (i.e., read returns ERR if no input is waiting).&#10;If delay is positive, then read blocks for delay milliseconds, and returns ERR if there is still no input." ilk="function" name="timeout=" signature="timeout=(p1)" />
+        </scope>
+      </scope>
+    </scope>
+    

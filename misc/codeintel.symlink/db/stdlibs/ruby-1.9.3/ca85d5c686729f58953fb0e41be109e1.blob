@@ -1,0 +1,27 @@
+<scope ilk="blob" lang="Ruby" name="rdoc/ruby_token">
+      <scope ilk="namespace" name="RDoc">
+        <scope ilk="namespace" name="RubyToken">
+          <scope classrefs="RDoc::RubyToken::Token" ilk="class" name="TkError">
+          </scope>
+          <scope classrefs="RDoc::RubyToken::Token" ilk="class" name="TkId">
+          </scope>
+          <scope classrefs="RDoc::RubyToken::TkId" ilk="class" name="TkKW">
+          </scope>
+          <scope classrefs="RDoc::RubyToken::Token" ilk="class" name="TkNode">
+          </scope>
+          <scope classrefs="RDoc::RubyToken::TkOp" ilk="class" name="TkOPASGN">
+          </scope>
+          <scope classrefs="RDoc::RubyToken::Token" ilk="class" name="TkOp">
+          </scope>
+          <scope classrefs="Object" ilk="class" name="TkSYMBOL">
+          </scope>
+          <scope classrefs="RDoc::RubyToken::Token" ilk="class" name="TkUnknownChar">
+          </scope>
+          <scope classrefs="RDoc::RubyToken::Token" ilk="class" name="TkVal">
+          </scope>
+          <scope classrefs="Object" ilk="class" name="Token">
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

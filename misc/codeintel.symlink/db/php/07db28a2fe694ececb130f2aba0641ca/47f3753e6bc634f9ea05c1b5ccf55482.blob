@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="PHP" name="index.php" src="/private/var/www/paperless/index.php"><import line="17" module="./wp-blog-header.php" /><variable citdl="boolean" ilk="constant" line="14" name="WP_USE_THEMES" /></scope>

@@ -1,0 +1,11 @@
+<scope ilk="blob" lang="Ruby" name="rexml/formatters/default">
+      <scope ilk="namespace" name="REXML">
+        <scope ilk="namespace" name="Formatters">
+          <scope classrefs="Object" ilk="class" name="Default">
+            <scope attributes="__classmethod__ __ctor__" doc="Prints out the XML document with no formatting -- except if id_hack is set. &#10; If set to true, then inserts whitespace before the close of an empty tag, so that IE's bad XML parser doesn't choke." ilk="function" name="new" signature="new( ie_hack=false )" />
+            <scope doc="Writes the node to some output. &#10; The node to write&#10;A class implementing &lt;TT&gt;&amp;lt;&amp;lt;&lt;/TT&gt;.  Pass in an Output object to change the output encoding." ilk="function" name="write" signature="write( node, output )" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

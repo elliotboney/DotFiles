@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="PHP" name="win.php" src="/usr/local/Cellar/php55/5.5.7/lib/php/doc/Log/examples/win.php"><import line="3" module="Log.php" /><variable citdl="array()" line="5" name="conf" /><variable citdl="Log.singleton()" line="6" name="logger" /><variable line="7" name="i" /></scope>

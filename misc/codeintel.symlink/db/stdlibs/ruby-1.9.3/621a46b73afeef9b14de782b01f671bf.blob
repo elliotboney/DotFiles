@@ -1,0 +1,20 @@
+<scope ilk="blob" lang="Ruby" name="rss/maker/0.9">
+      <scope ilk="namespace" name="RSS">
+        <scope ilk="namespace" name="Maker">
+          <scope classrefs="RSSBase" ilk="class" name="RSS09">
+            <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(feed_version)" />
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="Maker">
+          <scope classrefs="RSS::Maker::RSS09" ilk="class" name="RSS091">
+            <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(feed_version=&quot;0.91&quot;)" />
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="Maker">
+          <scope classrefs="RSS::Maker::RSS09" ilk="class" name="RSS092">
+            <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(feed_version=&quot;0.92&quot;)" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="PHP" name="testConnection.php" src="/private/var/www/paperless/wp-content/themes/paperless-agent/iSDK/Samples/testConnection.php"><import line="2" module="isdk.php" /><variable citdl="iSDK" line="4" name="app" /></scope>

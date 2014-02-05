@@ -1,0 +1,22 @@
+<scope ilk="blob" lang="Ruby" name="rdoc/generator/darkfish">
+      <scope ilk="namespace" name="RDoc">
+        <scope ilk="namespace" name="Generator">
+          <scope classrefs="Object" ilk="class" name="Darkfish">
+            <import symbol="ERB::Util" />
+            <scope attributes="__classmethod__ __ctor__" doc="Initialize a few instance variables before we start" ilk="function" name="new" signature="new(options)" />
+            <scope doc="Directory where generated class HTML files live relative to the output dir." ilk="function" name="class_dir" signature="class_dir()" />
+            <scope doc="Output progress information if debugging is enabled" ilk="function" name="debug_msg" signature="debug_msg(*msg)" />
+            <scope doc="Directory where generated class HTML files live relative to the output dir." ilk="function" name="file_dir" signature="file_dir()" />
+            <scope doc="Create the directories the generated docs will live in if they don't already exist." ilk="function" name="gen_sub_directories" signature="gen_sub_directories()" />
+            <scope doc="Build the initial indices and output objects based on an array of TopLevel objects containing the extracted information." ilk="function" name="generate" signature="generate(top_levels)" />
+            <scope doc="Copy over the stylesheet into the appropriate place in the output directory." ilk="function" name="write_style_sheet" signature="write_style_sheet()" />
+            <scope ilk="function" name="outputdir" />
+            <variable attributes="__const__" citdl="Object" name="GENERATOR_DIR" />
+            <variable attributes="__const__" citdl="Object" name="VERSION" />
+            <variable attributes="__const__" citdl="Object" name="DESCRIPTION" />
+            <variable attributes="__const__" citdl="Object" name="SVNID_PATTERN" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

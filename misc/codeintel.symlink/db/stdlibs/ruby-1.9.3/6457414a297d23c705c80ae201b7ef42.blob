@@ -1,0 +1,10 @@
+<scope ilk="blob" lang="Ruby" name="rake/rule_recursion_overflow_error">
+      <scope ilk="namespace" name="Rake">
+        <scope classrefs="StandardError" ilk="class" name="RuleRecursionOverflowError">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(*args)" />
+          <scope ilk="function" name="add_target" signature="add_target(target)" />
+          <scope ilk="function" name="message" signature="message()" />
+        </scope>
+      </scope>
+    </scope>
+    

@@ -1,0 +1,12 @@
+<scope ilk="blob" lang="Ruby" name="rake/pseudo_status">
+      <scope ilk="namespace" name="Rake">
+        <scope classrefs="Object" ilk="class" name="PseudoStatus">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(code=0)" />
+          <scope ilk="function" name="exited?" signature="exited?()" />
+          <scope ilk="function" name="stopped?" signature="stopped?()" />
+          <scope ilk="function" name="to_i" signature="to_i()" />
+          <scope ilk="function" name="exitstatus" />
+        </scope>
+      </scope>
+    </scope>
+    

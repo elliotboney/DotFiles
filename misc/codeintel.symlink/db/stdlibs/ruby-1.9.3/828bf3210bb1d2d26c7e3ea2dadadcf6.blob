@@ -1,0 +1,18 @@
+<scope ilk="blob" lang="Ruby" name="nkf">
+      <scope ilk="namespace" name="NKF">
+        <scope attributes="__classmethod__" doc="Returns guessed encoding of _str_ by nkf routine." ilk="function" name="guess" signature="guess(p1)" />
+        <scope attributes="__classmethod__" doc="Convert _str_ and return converted result. Conversion details are specified by _opt_ as String. &#10; require 'nkf'&#10;output = NKF.nkf(&quot;-s&quot;, input)" ilk="function" name="nkf" signature="nkf(p1, p2)" />
+        <variable attributes="__const__" citdl="Object" name="AUTO" />
+        <variable attributes="__const__" citdl="Object" name="NOCONV" />
+        <variable attributes="__const__" citdl="Object" name="UNKNOWN" />
+        <variable attributes="__const__" citdl="Object" name="BINARY" />
+        <variable attributes="__const__" citdl="Object" name="ASCII" />
+        <variable attributes="__const__" citdl="Object" name="JIS" />
+        <variable attributes="__const__" citdl="Object" name="EUC" />
+        <variable attributes="__const__" citdl="Object" name="SJIS" />
+        <variable attributes="__const__" citdl="Object" name="VERSION" />
+        <variable attributes="__const__" citdl="Object" name="NKF_VERSION" />
+        <variable attributes="__const__" citdl="Object" name="NKF_RELEASE_DATE" />
+      </scope>
+    </scope>
+    

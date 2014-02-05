@@ -1,0 +1,33 @@
+<scope ilk="blob" lang="Ruby" name="e2mmap">
+      <scope ilk="namespace" name="Exception2MessageMapper">
+        <scope attributes="__classmethod__" ilk="function" name="Fail" signature="Fail(klass = E2MM, err = nil, *rest)" />
+        <scope attributes="__classmethod__" doc="Fail(klass, err, *rest) klass:  class to define exception under.&#10;err:    exception&#10;rest:   message arguments" ilk="function" name="Raise" signature="Raise(klass = E2MM, err = nil, *rest)" />
+        <scope attributes="__classmethod__" doc="E2MM.def_e2message(k, e, m)     k:  class to define exception under.&#10;    e:  exception&#10;    m:  message_form&#10;define exception c with message m." ilk="function" name="def_e2message" signature="def_e2message(k, c, m)" />
+        <scope attributes="__classmethod__" doc="E2MM.def_exception(k, n, m, s)     k:  class to define exception under.&#10;    n:  exception_name&#10;    m:  message_form&#10;    s:  superclass(default: StandardError)&#10;define exception named ``c'' with message m." ilk="function" name="def_exception" signature="def_exception(k, n, m, s = StandardError)" />
+        <scope attributes="__classmethod__" ilk="function" name="e2mm_message" signature="e2mm_message(klass, exp)" />
+        <scope attributes="__classmethod__" ilk="function" name="extend_object" signature="extend_object(cl)" />
+        <scope attributes="__classmethod__" ilk="function" name="message" signature="message(klass, exp)" />
+        <scope ilk="function" name="Fail" signature="Fail(err = nil, *rest)" />
+        <scope doc="Fail(err, *rest) err:    exception&#10;rest:   message arguments" ilk="function" name="Raise" signature="Raise(err = nil, *rest)" />
+        <scope ilk="function" name="bind" signature="bind(cl)" />
+        <scope doc="def_e2message(c, m)     c:  exception&#10;    m:  message_form&#10;define exception c with message m." ilk="function" name="def_e2message" signature="def_e2message(c, m)" />
+        <scope doc="def_exception(n, m, s)     n:  exception_name&#10;    m:  message_form&#10;    s:  superclass(default: StandardError)&#10;define exception named ``c'' with message m." ilk="function" name="def_exception" signature="def_exception(n, m, s = StandardError)" />
+        <scope ilk="function" name="fail" signature="fail(err = nil, *rest)" />
+        <scope ilk="namespace" name="E2MM">
+          <scope attributes="__classmethod__" ilk="function" name="Fail" signature="Fail(klass = E2MM, err = nil, *rest)" />
+          <scope attributes="__classmethod__" doc="Fail(klass, err, *rest) klass:  class to define exception under.&#10;err:    exception&#10;rest:   message arguments" ilk="function" name="Raise" signature="Raise(klass = E2MM, err = nil, *rest)" />
+          <scope attributes="__classmethod__" doc="E2MM.def_e2message(k, e, m)     k:  class to define exception under.&#10;    e:  exception&#10;    m:  message_form&#10;define exception c with message m." ilk="function" name="def_e2message" signature="def_e2message(k, c, m)" />
+          <scope attributes="__classmethod__" doc="E2MM.def_exception(k, n, m, s)     k:  class to define exception under.&#10;    n:  exception_name&#10;    m:  message_form&#10;    s:  superclass(default: StandardError)&#10;define exception named ``c'' with message m." ilk="function" name="def_exception" signature="def_exception(k, n, m, s = StandardError)" />
+          <scope attributes="__classmethod__" ilk="function" name="e2mm_message" signature="e2mm_message(klass, exp)" />
+          <scope attributes="__classmethod__" ilk="function" name="extend_object" signature="extend_object(cl)" />
+          <scope attributes="__classmethod__" ilk="function" name="message" signature="message(klass, exp)" />
+          <scope ilk="function" name="Fail" signature="Fail(err = nil, *rest)" />
+          <scope doc="Fail(err, *rest) err:    exception&#10;rest:   message arguments" ilk="function" name="Raise" signature="Raise(err = nil, *rest)" />
+          <scope ilk="function" name="bind" signature="bind(cl)" />
+          <scope doc="def_e2message(c, m)     c:  exception&#10;    m:  message_form&#10;define exception c with message m." ilk="function" name="def_e2message" signature="def_e2message(c, m)" />
+          <scope doc="def_exception(n, m, s)     n:  exception_name&#10;    m:  message_form&#10;    s:  superclass(default: StandardError)&#10;define exception named ``c'' with message m." ilk="function" name="def_exception" signature="def_exception(n, m, s = StandardError)" />
+          <scope ilk="function" name="fail" signature="fail(err = nil, *rest)" />
+        </scope>
+      </scope>
+    </scope>
+    

@@ -1,0 +1,17 @@
+<scope ilk="blob" lang="Ruby" name="rexml/child">
+      <scope ilk="namespace" name="REXML">
+        <scope classrefs="Object" ilk="class" name="Child">
+          <import symbol="Node" />
+          <scope attributes="__classmethod__ __ctor__" doc="Constructor.  Any inheritors of this class should call super to make sure this method is called. if supplied, the parent of this child will be set to the supplied value, and self will be added to the parent" ilk="function" name="new" signature="new( parent = nil )" />
+          <scope doc="This doesn't yet handle encodings" ilk="function" name="bytes" signature="bytes()" />
+          <scope doc="the document this child belongs to, or nil if this child belongs to no document" ilk="function" name="document" signature="document()" />
+          <scope doc="Sets the next sibling of this child.  This can be used to insert a child after some other child. a = Element.new(&quot;a&quot;)&#10;b = a.add_element(&quot;b&quot;)&#10;c = Element.new(&quot;c&quot;)&#10;b.next_sibling = c&#10;# =&gt; &lt;a&gt;&lt;b/&gt;&lt;c/&gt;&lt;/a&gt;" ilk="function" name="next_sibling=" signature="next_sibling=( other )" />
+          <scope doc="Sets the parent of this child to the supplied argument. &#10; Must be a Parent object.  If this object is the same object as the existing parent of this child, no action is taken. Otherwise, this child is removed from the current parent (if one exists), and is added to the new parent.&#10;The parent added" ilk="function" name="parent=" signature="parent=( other )" />
+          <scope doc="Sets the previous sibling of this child.  This can be used to insert a child before some other child. a = Element.new(&quot;a&quot;)&#10;b = a.add_element(&quot;b&quot;)&#10;c = Element.new(&quot;c&quot;)&#10;b.previous_sibling = c&#10;# =&gt; &lt;a&gt;&lt;b/&gt;&lt;c/&gt;&lt;/a&gt;" ilk="function" name="previous_sibling=" signature="previous_sibling=(other)" />
+          <scope doc="Removes this child from the parent. &#10; self" ilk="function" name="remove" signature="remove()" />
+          <scope doc="Replaces this object with another object.  Basically, calls Parent.replace_child &#10; self" ilk="function" name="replace_with" signature="replace_with( child )" />
+          <scope ilk="function" name="parent" />
+        </scope>
+      </scope>
+    </scope>
+    

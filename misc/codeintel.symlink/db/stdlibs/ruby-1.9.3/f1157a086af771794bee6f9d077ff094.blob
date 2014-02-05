@@ -1,0 +1,17 @@
+<scope ilk="blob" lang="Ruby" name="drb/extservm">
+      <scope ilk="namespace" name="DRb">
+        <scope classrefs="Object" ilk="class" name="ExtServManager">
+          <import symbol="DRbUndumped" />
+          <import symbol="MonitorMixin" />
+          <scope attributes="__classmethod__" ilk="function" name="command" signature="command()" />
+          <scope attributes="__classmethod__" ilk="function" name="command=" signature="command=(cmd)" />
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new()" />
+          <scope ilk="function" name="regist" signature="regist(name, ro)" />
+          <scope ilk="function" name="service" signature="service(name)" />
+          <scope ilk="function" name="unregist" signature="unregist(name)" />
+          <scope ilk="function" name="uri" />
+          <scope ilk="function" name="uri=" />
+        </scope>
+      </scope>
+    </scope>
+    

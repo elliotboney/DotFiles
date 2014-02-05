@@ -1,0 +1,47 @@
+<scope ilk="blob" lang="Ruby" name="xmlrpc/server">
+      <scope ilk="namespace" name="XMLRPC">
+        <scope classrefs="Object" ilk="class" name="BasicServer">
+          <import symbol="ParseContentType" />
+          <import symbol="ParserWriterChooseMixin" />
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(class_delim=&quot;.&quot;)" />
+          <scope ilk="function" name="add_handler" signature="add_handler(prefix, obj_or_signature=nil, help=nil, &amp;block)" />
+          <scope ilk="function" name="add_introspection" signature="add_introspection()" />
+          <scope ilk="function" name="add_multicall" signature="add_multicall()" />
+          <scope ilk="function" name="get_default_handler" signature="get_default_handler()" />
+          <scope ilk="function" name="get_service_hook" signature="get_service_hook()" />
+          <scope ilk="function" name="process" signature="process(data)" />
+          <scope ilk="function" name="set_default_handler" signature="set_default_handler(&amp;handler)" />
+          <scope ilk="function" name="set_service_hook" signature="set_service_hook(&amp;handler)" />
+          <variable attributes="__const__" citdl="Object" name="ERR_METHOD_MISSING" />
+          <variable attributes="__const__" citdl="Object" name="ERR_UNCAUGHT_EXCEPTION" />
+          <variable attributes="__const__" citdl="Object" name="ERR_MC_WRONG_PARAM" />
+          <variable attributes="__const__" citdl="Object" name="ERR_MC_MISSING_PARAMS" />
+          <variable attributes="__const__" citdl="Object" name="ERR_MC_MISSING_METHNAME" />
+          <variable attributes="__const__" citdl="Object" name="ERR_MC_RECURSIVE_CALL" />
+          <variable attributes="__const__" citdl="Object" name="ERR_MC_WRONG_PARAM_PARAMS" />
+          <variable attributes="__const__" citdl="Object" name="ERR_MC_EXPECTED_STRUCT" />
+        </scope>
+        <scope classrefs="XMLRPC::BasicServer" ilk="class" name="CGIServer">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(*a)" />
+          <scope ilk="function" name="serve" signature="serve()" />
+        </scope>
+        <scope classrefs="XMLRPC::BasicServer" ilk="class" name="ModRubyServer">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(*a)" />
+          <scope ilk="function" name="serve" signature="serve()" />
+        </scope>
+        <scope classrefs="XMLRPC::WEBrickServlet" ilk="class" name="Server">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(port=8080, host=&quot;127.0.0.1&quot;, maxConnections=4, stdlog=$stdout, audit=true, debug=true, *a)" />
+          <scope ilk="function" name="serve" signature="serve()" />
+          <scope ilk="function" name="shutdown" signature="shutdown()" />
+        </scope>
+        <scope classrefs="XMLRPC::BasicServer" ilk="class" name="WEBrickServlet">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(*a)" />
+          <scope ilk="function" name="get_instance" signature="get_instance(config, *options)" />
+          <scope ilk="function" name="get_valid_ip" signature="get_valid_ip()" />
+          <scope doc="deprecated from WEBrick/1.2.2. but does not break anything." ilk="function" name="require_path_info?" signature="require_path_info?()" />
+          <scope ilk="function" name="service" signature="service(request, response)" />
+          <scope ilk="function" name="set_valid_ip" signature="set_valid_ip(*ip_addr)" />
+        </scope>
+      </scope>
+    </scope>
+    

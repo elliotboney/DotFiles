@@ -1,0 +1,18 @@
+<scope ilk="blob" lang="Ruby" name="rake/invocation_chain">
+      <scope ilk="namespace" name="Rake">
+        <scope classrefs="Object" ilk="class" name="InvocationChain">
+          <scope attributes="__classmethod__" ilk="function" name="append" signature="append(value, chain)" />
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(value, tail)" />
+          <scope ilk="function" name="append" signature="append(value)" />
+          <scope ilk="function" name="member?" signature="member?(obj)" />
+          <scope ilk="function" name="to_s" signature="to_s()" />
+          <variable attributes="__const__" citdl="Object" name="EMPTY" />
+          <scope classrefs="Object" ilk="class" name="EmptyInvocationChain">
+            <scope ilk="function" name="append" signature="append(value)" />
+            <scope ilk="function" name="member?" signature="member?(obj)" />
+            <scope ilk="function" name="to_s" signature="to_s()" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

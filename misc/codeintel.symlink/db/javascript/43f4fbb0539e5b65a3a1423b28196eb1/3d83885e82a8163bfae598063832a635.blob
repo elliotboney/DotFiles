@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="JavaScript" name="global.js" src="/Volumes/eboney/Code/Javascript/Nodejs/infusiontesting/node_modules/grunt-contrib-jshint/node_modules/jshint/node_modules/shelljs/global.js"><variable citdl="require()" line="1" name="shell" required_library_name="./shell.js" /><variable citdl="shell[cmd]" line="3" name="global" /></scope>

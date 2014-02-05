@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="PHP" name="feed-rssjs.php" src="/private/var/www/kw/wp-includes/feed-rssjs.php"><variable citdl="stdClass" line="10" name="json" /><variable citdl="apply_filters()" line="36" name="callback" /><variable citdl="stdClass" line="66" name="item" /><variable citdl="json_encode()" line="96" name="json_str" /></scope>

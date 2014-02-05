@@ -1,0 +1,21 @@
+<scope ilk="blob" lang="Ruby" name="webrick/httpauth/digestauth">
+      <scope ilk="namespace" name="WEBrick">
+        <scope ilk="namespace" name="HTTPAuth">
+          <scope classrefs="Object" ilk="class" name="DigestAuth">
+            <import symbol="Authenticator" />
+            <scope attributes="__classmethod__" doc="Used by UserDB to create a digest password entry" ilk="function" name="make_passwd" signature="make_passwd(realm, user, pass)" />
+            <scope attributes="__classmethod__ __ctor__" doc="Creates a new DigestAuth instance.  Be sure to use the same DigestAuth instance for multiple requests as it saves state between requests in order to perform authentication. &#10; See WEBrick::Config::DigestAuth for default configuration entries &#10; You must supply the following configuration entries: &#10; The name of the realm being protected.&#10;A database of usernames and passwords. A WEBrick::HTTPAuth::Htdigest instance should be used." ilk="function" name="new" signature="new(config, default=Config::DigestAuth)" />
+            <scope doc="Authenticates a +req+ and returns a 401 Unauthorized using +res+ if the authentication was not correct." ilk="function" name="authenticate" signature="authenticate(req, res)" />
+            <scope doc="Returns a challenge response which asks for for authentication information" ilk="function" name="challenge" signature="challenge(req, res, stale=false)" />
+            <scope ilk="function" name="algorithm" />
+            <scope ilk="function" name="qop" />
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="HTTPAuth">
+          <scope classrefs="WEBrick::HTTPAuth::DigestAuth" ilk="class" name="ProxyDigestAuth">
+            <import symbol="ProxyAuthenticator" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

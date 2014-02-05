@@ -1,0 +1,175 @@
+<scope ilk="blob" lang="Ruby" name="rss/trackback">
+      <scope ilk="namespace" name="RSS">
+        <scope ilk="namespace" name="BaseTrackBackModel">
+          <import symbol="TrackBackUtils" />
+          <scope ilk="function" name="append_features" signature="append_features(klass)" />
+          <variable attributes="__const__" citdl="Object" name="ELEMENTS" />
+        </scope>
+        <scope ilk="namespace" name="Maker">
+          <scope ilk="namespace" name="RSS09">
+            <scope classrefs="RSS::Maker::ChannelBase" ilk="class" name="Channel">
+              <scope ilk="function" name="to_feed" signature="to_feed(rss)" />
+            </scope>
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="Maker">
+          <scope ilk="namespace" name="RSS09">
+            <scope ilk="namespace" name="Items">
+              <scope classrefs="ItemBase" ilk="class" name="Item">
+                <scope ilk="function" name="to_feed" signature="to_feed(rss)" />
+              </scope>
+            </scope>
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="Maker">
+          <scope ilk="namespace" name="RSS091">
+            <scope classrefs="RSS::Maker::RSS09::Channel" ilk="class" name="Channel">
+            </scope>
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="Maker">
+          <scope ilk="namespace" name="RSS091">
+            <scope ilk="namespace" name="Items">
+              <scope classrefs="RSS::Maker::RSS09::Items::Item" ilk="class" name="Item">
+              </scope>
+            </scope>
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="Maker">
+          <scope ilk="namespace" name="RSS092">
+            <scope classrefs="RSS::Maker::RSS09::Channel" ilk="class" name="Channel">
+            </scope>
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="Maker">
+          <scope ilk="namespace" name="RSS092">
+            <scope ilk="namespace" name="Items">
+              <scope classrefs="RSS::Maker::RSS09::Items::Item" ilk="class" name="Item">
+              </scope>
+            </scope>
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="Maker">
+          <scope ilk="namespace" name="RSS10">
+            <scope classrefs="RSS::Maker::ChannelBase" ilk="class" name="Channel">
+              <import symbol="SetupDefaultLanguage" />
+              <scope ilk="function" name="to_feed" signature="to_feed(rss)" />
+            </scope>
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="Maker">
+          <scope ilk="namespace" name="RSS10">
+            <scope ilk="namespace" name="Items">
+              <scope classrefs="ItemBase" ilk="class" name="Item">
+                <scope ilk="function" name="to_feed" signature="to_feed(rss)" />
+              </scope>
+            </scope>
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="Maker">
+          <scope ilk="namespace" name="RSS20">
+            <scope classrefs="RSS::RSS09::Channel" ilk="class" name="Channel">
+            </scope>
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="Maker">
+          <scope ilk="namespace" name="RSS20">
+            <scope ilk="namespace" name="Items">
+              <scope classrefs="RSS::RSS09::Items::Item" ilk="class" name="Item">
+              </scope>
+            </scope>
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="Maker">
+          <scope ilk="namespace" name="TrackBackModel">
+            <scope attributes="__classmethod__" ilk="function" name="append_features" signature="append_features(klass)" />
+          </scope>
+        </scope>
+        <scope classrefs="Element" ilk="class" name="RDF">
+          <import symbol="RSS10" />
+          <import symbol="RootElementMixin" />
+          <import symbol="TaxonomyTopicModel" />
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(version=nil, encoding=nil, standalone=nil)" />
+          <scope attributes="__classmethod__" ilk="function" name="required_uri" signature="required_uri()" />
+          <scope ilk="function" name="full_name" signature="full_name()" />
+          <variable attributes="__const__" citdl="Object" name="PREFIX" />
+          <variable attributes="__const__" citdl="Object" name="URI" />
+          <scope classrefs="Element" ilk="class" name="Channel">
+            <import symbol="DublinCoreModel" />
+            <import symbol="ImageFaviconModel" />
+            <import symbol="RSS10" />
+            <import symbol="SyndicationModel" />
+            <import symbol="TaxonomyTopicsModel" />
+            <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(*args)" />
+            <scope attributes="__classmethod__" ilk="function" name="required_uri" signature="required_uri()" />
+          </scope>
+          <scope classrefs="Element" ilk="class" name="Item">
+            <import symbol="ContentModel" />
+            <import symbol="DublinCoreModel" />
+            <import symbol="ImageItemModel" />
+            <import symbol="RSS10" />
+            <import symbol="SlashModel" />
+            <import symbol="TaxonomyTopicsModel" />
+            <import symbol="TrackBackModel10" />
+            <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(*args)" />
+            <scope attributes="__classmethod__" ilk="function" name="required_uri" signature="required_uri()" />
+          </scope>
+        </scope>
+        <scope classrefs="RSS::Element" ilk="class" name="Rss">
+          <import symbol="RootElementMixin" />
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(feed_version, version=nil, encoding=nil, standalone=nil)" />
+          <scope ilk="function" name="image" signature="image()" />
+          <scope ilk="function" name="items" signature="items()" />
+          <scope ilk="function" name="setup_maker_elements" signature="setup_maker_elements(maker)" />
+          <scope ilk="function" name="textinput" signature="textinput()" />
+          <scope ilk="function" name="feed_version=" />
+          <scope ilk="function" name="rss_version" />
+          <scope ilk="function" name="rss_version=" />
+          <scope classrefs="RSS::Element" ilk="class" name="Channel">
+            <import symbol="DublinCoreModel" />
+            <import symbol="ITunesChannelModel" />
+            <scope classrefs="RSS::Element" ilk="class" name="Item">
+              <import symbol="ContentModel" />
+              <import symbol="DublinCoreModel" />
+              <import symbol="ITunesItemModel" />
+              <import symbol="TrackBackModel20" />
+            </scope>
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="TrackBackModel10">
+          <scope classrefs="Element" ilk="class" name="TrackBackAbout">
+            <import symbol="RSS10" />
+            <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(*args)" />
+            <scope attributes="__classmethod__" ilk="function" name="required_prefix" signature="required_prefix()" />
+            <scope attributes="__classmethod__" ilk="function" name="required_uri" signature="required_uri()" />
+            <scope ilk="function" name="full_name" signature="full_name()" />
+          </scope>
+          <scope classrefs="Element" ilk="class" name="TrackBackPing">
+            <import symbol="RSS10" />
+            <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(*args)" />
+            <scope attributes="__classmethod__" ilk="function" name="required_prefix" signature="required_prefix()" />
+            <scope attributes="__classmethod__" ilk="function" name="required_uri" signature="required_uri()" />
+            <scope ilk="function" name="full_name" signature="full_name()" />
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="TrackBackModel20">
+          <scope classrefs="Element" ilk="class" name="TrackBackAbout">
+            <import symbol="RSS09" />
+            <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(*args)" />
+            <scope attributes="__classmethod__" ilk="function" name="required_prefix" signature="required_prefix()" />
+            <scope attributes="__classmethod__" ilk="function" name="required_uri" signature="required_uri()" />
+            <scope ilk="function" name="full_name" signature="full_name()" />
+          </scope>
+          <scope classrefs="Element" ilk="class" name="TrackBackPing">
+            <import symbol="RSS09" />
+            <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(*args)" />
+            <scope attributes="__classmethod__" ilk="function" name="required_prefix" signature="required_prefix()" />
+            <scope attributes="__classmethod__" ilk="function" name="required_uri" signature="required_uri()" />
+            <scope ilk="function" name="full_name" signature="full_name()" />
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="TrackBackUtils">
+        </scope>
+      </scope>
+    </scope>
+    

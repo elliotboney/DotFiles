@@ -1,0 +1,33 @@
+<scope ilk="blob" lang="Ruby" name="openssl/buffering">
+      <scope ilk="namespace" name="OpenSSL">
+        <scope ilk="namespace" name="Buffering">
+          <import symbol="Enumerable" />
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(*args)" />
+          <scope doc="Closes the SSLSocket and flushes any unwritten data." ilk="function" name="close" signature="close()" />
+          <scope doc="Executes the block for every line in the stream where lines are separated by +eol+. &#10; See also #gets" ilk="function" name="each" signature="each(eol=$/)" />
+          <scope doc="Calls the given block once for each byte in the stream." ilk="function" name="each_byte" signature="each_byte()" />
+          <scope ilk="function" name="each_line" signature="each_line(eol=$/)" />
+          <scope ilk="function" name="eof" signature="eof()" />
+          <scope doc="Returns true if the stream is at file which means there is no more data to be read." ilk="function" name="eof?" signature="eof?()" />
+          <scope doc="Flushes buffered data to the SSLSocket." ilk="function" name="flush" signature="flush()" />
+          <scope doc="Reads one character from the stream.  Returns nil if called at end of file." ilk="function" name="getc" signature="getc()" />
+          <scope doc="Reads the next &quot;line+ from the stream.  Lines are separated by +eol+.  If +limit+ is provided the result will not be longer than the given number of bytes. &#10; +eol+ may be a String or Regexp. &#10; Unlike IO#gets the line read will not be assigned to +$_+. &#10; Unlike IO#gets the separator must be provided if a limit is provided." ilk="function" name="gets" signature="gets(eol=$/, limit=nil)" />
+          <scope doc="Writes +args+ to the stream. &#10; See IO#print for full details." ilk="function" name="print" signature="print(*args)" />
+          <scope doc="Formats and writes to the stream converting parameters under control of the format string. &#10; See Kernel#sprintf for format string details." ilk="function" name="printf" signature="printf(s, *args)" />
+          <scope doc="Writes +args+ to the stream along with a record separator. &#10; See IO#puts for full details." ilk="function" name="puts" signature="puts(*args)" />
+          <scope doc="Reads +size+ bytes from the stream.  If +buf+ is provided it must reference a string which will receive the data. &#10; See IO#read for full details." ilk="function" name="read" signature="read(size=nil, buf=nil)" />
+          <scope doc="Reads at most +maxlen+ bytes in the non-blocking manner. &#10; When no data can be read without blocking it raises OpenSSL::SSL::SSLError extended by IO::WaitReadable or IO::WaitWritable. &#10; IO::WaitReadable means SSL needs to read internally so read_nonblock should be called again when the underlying IO is readable. &#10; IO::WaitWritable means SSL needs to write internally so read_nonblock should be called again after the underlying IO is writable. &#10; OpenSSL::Buffering#read_nonblock needs two rescue clause as follows: &#10; # emulates blocking read (readpartial).&#10;begin&#10;  result = ssl.read_nonblock(maxlen)&#10;rescue IO::WaitReadable&#10;  IO.select([io])&#10;  retry&#10;rescue IO::WaitWritable&#10;  IO.select(nil, [io])" ilk="function" name="read_nonblock" signature="read_nonblock(maxlen, buf=nil)" />
+          <scope doc="Reads a one-character string from the stream.  Raises an EOFError at end of file." ilk="function" name="readchar" signature="readchar()" />
+          <scope doc="Reads a line from the stream which is separated by +eol+. &#10; Raises EOFError if at end of file." ilk="function" name="readline" signature="readline(eol=$/)" />
+          <scope doc="Reads lines from the stream which are separated by +eol+. &#10; See also #gets" ilk="function" name="readlines" signature="readlines(eol=$/)" />
+          <scope doc="Reads at most +maxlen+ bytes from the stream.  If +buf+ is provided it must reference a string which will receive the data. &#10; See IO#readpartial for full details." ilk="function" name="readpartial" signature="readpartial(maxlen, buf=nil)" />
+          <scope doc="Pushes character +c+ back onto the stream such that a subsequent buffered character read will return it. &#10; Unlike IO#getc multiple bytes may be pushed back onto the stream. &#10; Has no effect on unbuffered reads (such as #sysread)." ilk="function" name="ungetc" signature="ungetc(c)" />
+          <scope doc="Writes +s+ to the stream.  If the argument is not a string it will be converted using String#to_s.  Returns the number of bytes written." ilk="function" name="write" signature="write(s)" />
+          <scope doc="Writes +str+ in the non-blocking manner. &#10; If there is buffered data, it is flushed first.  This may block. &#10; write_nonblock returns number of bytes written to the SSL connection. &#10; When no data can be written without blocking it raises OpenSSL::SSL::SSLError extended by IO::WaitReadable or IO::WaitWritable. &#10; IO::WaitReadable means SSL needs to read internally so write_nonblock should be called again after the underlying IO is readable. &#10; IO::WaitWritable means SSL needs to write internally so write_nonblock should be called again after underlying IO is writable. &#10; So OpenSSL::Buffering#write_nonblock needs two rescue clause as follows. &#10; # emulates blocking write.&#10;begin&#10;  result = ssl.write_nonblock(str)&#10;rescue IO::WaitReadable&#10;  IO.select([io])&#10;  retry" ilk="function" name="write_nonblock" signature="write_nonblock(s)" />
+          <scope ilk="function" name="sync" />
+          <scope ilk="function" name="sync=" />
+          <variable attributes="__const__" citdl="Object" name="BLOCK_SIZE" />
+        </scope>
+      </scope>
+    </scope>
+    

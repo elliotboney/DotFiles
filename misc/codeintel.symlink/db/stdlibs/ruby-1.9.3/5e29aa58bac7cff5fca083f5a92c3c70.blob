@@ -1,0 +1,14 @@
+<scope ilk="blob" lang="Ruby" name="cgi/session/pstore">
+      <scope ilk="namespace" name="CGI">
+        <scope ilk="namespace" name="Session">
+          <scope classrefs="Object" ilk="class" name="PStore">
+            <scope attributes="__classmethod__ __ctor__" doc="Create a new CGI::Session::PStore instance &#10; This constructor is used internally by CGI::Session.  The user does not generally need to call it directly. &#10; +session+ is the session for which this instance is being created.  The session id must only contain alphanumeric characters; automatically generated session ids observe this requirement. &#10; +option+ is a hash of options for the initializer.  The following options are recognised: &#10; the directory to use for storing the PStore file.  Defaults to Dir::tmpdir (generally &quot;/tmp&quot; on Unix systems).&#10;the prefix to add to the session id when generating the filename for this session's PStore file. Defaults to the empty string. &#10; This session's PStore file will be created if it does not exist, or opened if it does." ilk="function" name="new" signature="new(session, option={})" />
+            <scope doc="Update and close the session's PStore file." ilk="function" name="close" signature="close()" />
+            <scope doc="Close and delete the session's PStore file." ilk="function" name="delete" signature="delete()" />
+            <scope doc="Restore session state from the session's PStore file. &#10; Returns the session state as a hash." ilk="function" name="restore" signature="restore()" />
+            <scope doc="Save session state to the session's PStore file." ilk="function" name="update" signature="update()" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

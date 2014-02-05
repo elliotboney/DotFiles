@@ -1,0 +1,91 @@
+<scope ilk="blob" lang="Ruby" name="test/unit">
+      <scope ilk="namespace" name="Test">
+        <scope ilk="namespace" name="Unit">
+          <variable attributes="__const__" citdl="Object" name="TEST_UNIT_IMPLEMENTATION" />
+          <scope classrefs="Object" ilk="class" name="AutoRunner">
+            <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(force_standalone = false, default_dir = nil, argv = ARGV)" />
+            <scope attributes="__classmethod__" ilk="function" name="run" signature="run(*args)" />
+            <scope ilk="function" name="process_args" signature="process_args(*args)" />
+            <scope ilk="function" name="run" signature="run()" />
+            <scope ilk="function" name="options" />
+            <scope ilk="function" name="options=" />
+            <scope ilk="function" name="to_run" />
+            <scope ilk="function" name="to_run=" />
+            <scope classrefs="Test::Unit::Runner" ilk="class" name="Runner">
+              <import symbol="Test::Unit::RequireFiles" />
+            </scope>
+          </scope>
+          <scope ilk="namespace" name="GCStressOption">
+            <scope ilk="function" name="non_options" signature="non_options(files, options)" />
+            <scope ilk="function" name="setup_options" signature="setup_options(parser, options)" />
+          </scope>
+          <scope ilk="namespace" name="GlobOption">
+            <import symbol="Options" />
+            <scope ilk="function" name="non_options" signature="non_options(files, options)" />
+            <scope ilk="function" name="setup_options" signature="setup_options(parser, options)" />
+          </scope>
+          <scope ilk="namespace" name="LoadPathOption">
+            <import symbol="Options" />
+            <scope ilk="function" name="setup_options" signature="setup_options(parser, options)" />
+          </scope>
+          <scope ilk="namespace" name="Options">
+            <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(*, &amp;block)" />
+            <scope ilk="function" name="option_parser" signature="option_parser()" />
+            <scope ilk="function" name="process_args" signature="process_args(args = [])" />
+          </scope>
+          <scope ilk="namespace" name="RequireFiles">
+            <scope ilk="function" name="non_options" signature="non_options(files, options)" />
+          </scope>
+          <scope ilk="namespace" name="RunCount">
+            <scope attributes="__classmethod__" ilk="function" name="have_run?" signature="have_run?()" />
+            <scope attributes="__classmethod__" ilk="function" name="run_once" signature="run_once()" />
+            <scope ilk="function" name="run" signature="run(*)" />
+          </scope>
+          <scope classrefs="MiniTest::Unit" ilk="class" name="Runner">
+            <import symbol="Test::Unit::GCStressOption" />
+            <import symbol="Test::Unit::GlobOption" />
+            <import symbol="Test::Unit::LoadPathOption" />
+            <import symbol="Test::Unit::Options" />
+            <import symbol="Test::Unit::RunCount" />
+            <scope attributes="__classmethod__" ilk="function" name="autorun" signature="autorun()" />
+            <scope ilk="function" name="_run_parallel" signature="_run_parallel(suites, type, result)" />
+            <scope ilk="function" name="_run_suites" signature="_run_suites(suites, type)" />
+            <scope ilk="function" name="after_worker_down" signature="after_worker_down(worker, e=nil, c=false)" />
+            <scope ilk="function" name="after_worker_quit" signature="after_worker_quit(worker)" />
+            <scope ilk="function" name="del_jobs_status" signature="del_jobs_status()" />
+            <scope ilk="function" name="jobs_status" signature="jobs_status()" />
+            <scope doc="Overriding of MiniTest::Unit#puke" ilk="function" name="puke" signature="puke(klass, meth, e)" />
+            <scope ilk="function" name="status" signature="status(*args)" />
+            <scope classrefs="Object" ilk="class" name="Worker">
+              <scope attributes="__classmethod__" ilk="function" name="launch" signature="launch(ruby,args=[])" />
+              <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(io, pid, status)" />
+              <scope ilk="function" name="close" signature="close()" />
+              <scope ilk="function" name="died" signature="died(*additional)" />
+              <scope ilk="function" name="hook" signature="hook(id,&amp;block)" />
+              <scope ilk="function" name="puts" signature="puts(*args)" />
+              <scope ilk="function" name="read" signature="read()" />
+              <scope ilk="function" name="run" signature="run(task,type)" />
+              <scope ilk="function" name="to_s" signature="to_s()" />
+              <scope ilk="function" name="file" />
+              <scope ilk="function" name="file=" />
+              <scope ilk="function" name="io" />
+              <scope ilk="function" name="loadpath" />
+              <scope ilk="function" name="loadpath=" />
+              <scope ilk="function" name="pid" />
+              <scope ilk="function" name="real_file" />
+              <scope ilk="function" name="real_file=" />
+              <scope ilk="function" name="status" />
+              <scope ilk="function" name="status=" />
+            </scope>
+          </scope>
+          <scope classrefs="Runner" ilk="class" name="Worker">
+            <scope ilk="function" name="_run_suite" signature="_run_suite(suite, type)" />
+            <scope ilk="function" name="_run_suites" signature="_run_suites(suites, type)" />
+            <scope ilk="function" name="increment_io" signature="increment_io(orig)" />
+            <scope ilk="function" name="orig_run_suite" signature="orig_run_suite(suite, type)" />
+            <scope ilk="function" name="run" signature="run(args = [])" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

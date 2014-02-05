@@ -1,0 +1,18 @@
+<scope ilk="blob" lang="Ruby" name="rake/contrib/sshpublisher">
+      <scope ilk="namespace" name="Rake">
+        <scope classrefs="Object" ilk="class" name="SshDirPublisher">
+          <import symbol="Rake::DSL" />
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(host, remote_dir, local_dir)" />
+          <scope ilk="function" name="upload" signature="upload()" />
+        </scope>
+        <scope classrefs="Object" ilk="class" name="SshFilePublisher">
+          <import symbol="Rake::DSL" />
+          <scope attributes="__classmethod__ __ctor__" doc="Create a publisher using the give host information." ilk="function" name="new" signature="new(host, remote_dir, local_dir, *files)" />
+          <scope doc="Upload the local directory to the remote directory." ilk="function" name="upload" signature="upload()" />
+        </scope>
+        <scope classrefs="Rake::SshDirPublisher" ilk="class" name="SshFreshDirPublisher">
+          <scope ilk="function" name="upload" signature="upload()" />
+        </scope>
+      </scope>
+    </scope>
+    

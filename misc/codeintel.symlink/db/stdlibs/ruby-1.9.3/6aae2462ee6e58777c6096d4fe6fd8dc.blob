@@ -1,0 +1,25 @@
+<scope ilk="blob" lang="Ruby" name="delegate">
+      <scope classrefs="BasicObject" ilk="class" name="Delegator">
+        <scope attributes="__classmethod__" ilk="function" name="delegating_block" signature="delegating_block(mid)" />
+        <scope attributes="__classmethod__ __ctor__" doc="Pass in the _obj_ to delegate method calls to.  All methods supported by _obj_ will be delegated to." ilk="function" name="new" signature="new(obj)" />
+        <scope doc="This method must be overridden by subclasses and should return the object method calls are being delegated to." ilk="function" name="__getobj__" signature="__getobj__()" />
+        <scope doc="This method must be overridden by subclasses and change the object delegate to _obj_." ilk="function" name="__setobj__" signature="__setobj__(obj)" />
+        <scope doc="Freeze both the object returned by \_\_getobj\_\_ and self." ilk="function" name="freeze" signature="freeze" />
+        <scope doc="Serialization support for the object returned by \_\_getobj\_\_." ilk="function" name="marshal_dump" signature="marshal_dump()" />
+        <scope doc="Reinitializes delegation from a serialized object." ilk="function" name="marshal_load" signature="marshal_load(data)" />
+        <scope doc="Handles the magic of delegation through \_\_getobj\_\_." ilk="function" name="method_missing" signature="method_missing(m, *args, &amp;block)" />
+        <scope doc="Returns the methods available to this delegate object as the union of this object's and \_\_getobj\_\_ methods." ilk="function" name="methods" signature="methods()" />
+        <scope doc="Returns the methods available to this delegate object as the union of this object's and \_\_getobj\_\_ protected methods." ilk="function" name="protected_methods" signature="protected_methods(all=true)" />
+        <scope doc="Returns the methods available to this delegate object as the union of this object's and \_\_getobj\_\_ public methods." ilk="function" name="public_methods" signature="public_methods(all=true)" />
+        <scope doc="Checks for a method provided by this the delegate object by forwarding the call through \_\_getobj\_\_." ilk="function" name="respond_to_missing?" signature="respond_to_missing?(m, include_private)" />
+        <scope doc="Taint both the object returned by \_\_getobj\_\_ and self." ilk="function" name="taint" signature="taint" />
+        <scope doc="Trust both the object returned by \_\_getobj\_\_ and self." ilk="function" name="trust" signature="trust" />
+        <scope doc="Untaint both the object returned by \_\_getobj\_\_ and self." ilk="function" name="untaint" signature="untaint" />
+        <scope doc="Untrust both the object returned by \_\_getobj\_\_ and self." ilk="function" name="untrust" signature="untrust" />
+      </scope>
+      <scope classrefs="Delegator" ilk="class" name="SimpleDelegator">
+        <scope doc="Returns the current object method calls are being delegated to." ilk="function" name="__getobj__" signature="__getobj__()" />
+        <scope doc="Changes the delegate object to _obj_. &#10; It's important to note that this does *not* cause SimpleDelegator's methods to change.  Because of this, you probably only want to change delegation to objects of the same type as the original delegate. &#10; Here's an example of changing the delegation object. &#10; names = SimpleDelegator.new(%w{James Edward Gray II})&#10;puts names[1]    # =&gt; Edward&#10;names.__setobj__(%w{Gavin Sinclair})&#10;puts names[1]    # =&gt; Sinclair" ilk="function" name="__setobj__" signature="__setobj__(obj)" />
+      </scope>
+    </scope>
+    

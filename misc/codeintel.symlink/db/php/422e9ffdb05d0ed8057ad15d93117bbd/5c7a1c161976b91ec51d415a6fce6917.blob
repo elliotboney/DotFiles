@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="PHP" name="Expr.php" src="/usr/local/pear/share/pear/PhpDocumentor/vendor/nikic/php-parser/lib/PHPParser/Node/Expr.php"><scope attributes="abstract" classrefs="PHPParser_NodeAbstract" ilk="class" line="3" lineend="5" name="PHPParser_Node_Expr" /></scope>

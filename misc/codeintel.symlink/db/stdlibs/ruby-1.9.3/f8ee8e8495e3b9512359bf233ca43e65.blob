@@ -1,0 +1,52 @@
+<scope ilk="blob" lang="Ruby" name="rss/maker/itunes">
+      <scope ilk="namespace" name="RSS">
+        <scope ilk="namespace" name="Maker">
+          <scope ilk="namespace" name="ChannelBase">
+            <scope classrefs="ITunesCategoriesBase" ilk="class" name="ITunesCategories">
+            </scope>
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="Maker">
+          <scope ilk="namespace" name="ITunesChannelModel">
+            <scope classrefs="Base" ilk="class" name="ITunesCategoriesBase">
+              <scope classrefs="Base" ilk="class" name="ITunesCategoryBase">
+                <scope ilk="function" name="have_required_values?" signature="have_required_values?()" />
+                <scope ilk="function" name="to_feed" signature="to_feed(feed, current)" />
+                <scope ilk="function" name="to_feed_for_categories" signature="to_feed_for_categories(feed, current)" />
+                <scope ilk="function" name="text" />
+                <scope ilk="function" name="text=" />
+              </scope>
+            </scope>
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="Maker">
+          <scope ilk="namespace" name="ITunesChannelModel">
+            <scope classrefs="Base" ilk="class" name="ITunesImageBase">
+              <scope ilk="function" name="to_feed" signature="to_feed(feed, current)" />
+              <scope ilk="function" name="href" />
+              <scope ilk="function" name="href=" />
+            </scope>
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="Maker">
+          <scope ilk="namespace" name="ITunesChannelModel">
+            <scope classrefs="Base" ilk="class" name="ITunesOwnerBase">
+              <scope ilk="function" name="to_feed" signature="to_feed(feed, current)" />
+            </scope>
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="Maker">
+          <scope ilk="namespace" name="ITunesItemModel">
+            <scope classrefs="Base" ilk="class" name="ITunesDurationBase">
+              <scope ilk="function" name="content=" signature="content=(content)" />
+              <scope ilk="function" name="hour=" signature="hour=(hour)" />
+              <scope ilk="function" name="minute=" signature="minute=(minute)" />
+              <scope ilk="function" name="second=" signature="second=(second)" />
+              <scope ilk="function" name="to_feed" signature="to_feed(feed, current)" />
+              <scope ilk="function" name="content" />
+            </scope>
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

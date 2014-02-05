@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="PHP" name="InterfaceA.php" src="/usr/local/pear/share/pear/PhpDocumentor/vendor/jms/metadata/tests/Metadata/Tests/Fixtures/ComplexHierarchy/InterfaceA.php"><scope ilk="namespace" line="3" name="Metadata\Tests\Fixtures\ComplexHierarchy"><scope ilk="interface" line="5" lineend="7" name="InterfaceA" signature="InterfaceA" /></scope></scope>

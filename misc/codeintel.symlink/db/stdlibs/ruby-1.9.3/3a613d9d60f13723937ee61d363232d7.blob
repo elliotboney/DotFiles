@@ -1,0 +1,37 @@
+<scope ilk="blob" lang="Ruby" name="rexml/parsers/pullparser">
+      <scope ilk="namespace" name="REXML">
+        <scope ilk="namespace" name="Parsers">
+          <scope classrefs="Object" ilk="class" name="PullEvent">
+            <scope attributes="__classmethod__ __ctor__" doc="The type of this event.  Will be one of :tag_start, :tag_end, :text, :processing_instruction, :comment, :doctype, :attlistdecl, :entitydecl, :notationdecl, :entity, :cdata, :xmldecl, or :error." ilk="function" name="new" signature="new(arg)" />
+            <scope doc="Content: [ String text ]" ilk="function" name="attlistdecl?" signature="attlistdecl?()" />
+            <scope doc="Content: [ String text ]" ilk="function" name="cdata?" signature="cdata?()" />
+            <scope doc="Content: [ String text ]" ilk="function" name="comment?" signature="comment?()" />
+            <scope doc="Content: [ String name, String pub_sys, String long_name, String uri ]" ilk="function" name="doctype?" signature="doctype?()" />
+            <scope doc="Content: [ String text ]" ilk="function" name="elementdecl?" signature="elementdecl?()" />
+            <scope doc="Content: [ String tag_name ]" ilk="function" name="end_element?" signature="end_element?()" />
+            <scope doc="Content: [ String text ]" ilk="function" name="entity?" signature="entity?()" />
+            <scope doc="Due to the wonders of DTDs, an entity declaration can be just about anything.  There's no way to normalize it; you'll have to interpret the content yourself.  However, the following is true: &#10; If the entity declaration is an internal entity: &#10; Content: [ String text ]" ilk="function" name="entitydecl?" signature="entitydecl?()" />
+            <scope ilk="function" name="error?" signature="error?()" />
+            <scope ilk="function" name="event_type" signature="event_type()" />
+            <scope ilk="function" name="inspect" signature="inspect()" />
+            <scope doc="Content: [ String text ]" ilk="function" name="instruction?" signature="instruction?()" />
+            <scope doc="Content: [ String text ]" ilk="function" name="notationdecl?" signature="notationdecl?()" />
+            <scope doc="Content: [ String tag_name, Hash attributes ]" ilk="function" name="start_element?" signature="start_element?()" />
+            <scope doc="Content: [ String raw_text, String unnormalized_text ]" ilk="function" name="text?" signature="text?()" />
+            <scope doc="Content: [ String version, String encoding, String standalone ]" ilk="function" name="xmldecl?" signature="xmldecl?()" />
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="Parsers">
+          <scope classrefs="Object" ilk="class" name="PullParser">
+            <import symbol="XMLTokens" />
+            <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(stream)" />
+            <scope ilk="function" name="add_listener" signature="add_listener( listener )" />
+            <scope ilk="function" name="each" signature="each()" />
+            <scope ilk="function" name="peek" signature="peek(depth=0)" />
+            <scope ilk="function" name="pull" signature="pull()" />
+            <scope ilk="function" name="unshift" signature="unshift(token)" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

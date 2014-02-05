@@ -1,0 +1,52 @@
+<scope ilk="blob" lang="Ruby" name="rake/file_list">
+      <scope ilk="namespace" name="Rake">
+        <import symbol="Test::Unit::Assertions" />
+        <scope attributes="__classmethod__" doc="Current Rake Application" ilk="function" name="application" signature="application()" />
+        <scope attributes="__classmethod__" doc="Set the current Rake application object." ilk="function" name="application=" signature="application=(app)" />
+        <scope attributes="__classmethod__" doc="Load a rakefile." ilk="function" name="load_rakefile" signature="load_rakefile(path)" />
+        <scope attributes="__classmethod__" doc="Return the original directory where the Rake application was started." ilk="function" name="original_dir" signature="original_dir()" />
+        <scope ilk="function" name="run_tests" signature="run_tests(pattern='test/test*.rb', log_enabled=false)" />
+        <variable attributes="__const__" citdl="Object" name="EMPTY_TASK_ARGS" />
+        <variable attributes="__const__" citdl="Object" name="EARLY" />
+        <variable attributes="__const__" citdl="Object" name="VERSION" />
+        <scope classrefs="Object" ilk="class" name="FileList">
+          <import symbol="Cloneable" />
+          <scope attributes="__classmethod__ __ctor__" doc="Create a file list from the globbable patterns given.  If you wish to perform multiple includes or excludes at object build time, use the &quot;yield self&quot; pattern. &#10; Example: file_list = FileList.new('lib/**/*.rb', 'test/test*.rb')&#10;&#10;pkg_files = FileList.new('lib/**/*') do |fl|&#10;  fl.exclude(/\bCVS\b/)&#10;end" ilk="function" name="new" signature="new(*patterns)" />
+          <scope ilk="function" name="add" signature="add(*filenames)" />
+          <scope doc="Clear all the exclude patterns so that we exclude nothing." ilk="function" name="clear_exclude" signature="clear_exclude()" />
+          <scope doc="Grep each of the files in the filelist using the given pattern. If a block is given, call the block on each matching line, passing the file name, line number, and the matching line of text.  If no block is given, a standard emacs style file:linenumber:line message will be printed to standard out.  Returns the number of matched items." ilk="function" name="egrep" signature="egrep(pattern, *options)" />
+          <scope doc="Register a list of file name patterns that should be excluded from the list.  Patterns may be regular expressions, glob patterns or regular strings.  In addition, a block given to exclude will remove entries that return true when given to the block. &#10; Note that glob patterns are expanded against the file system. If a file is explicitly added to a file list, but does not exist in the file system, then an glob pattern in the exclude list will not exclude the file. &#10; Examples: FileList['a.c', 'b.c'].exclude(&quot;a.c&quot;) =&gt; ['b.c']&#10;FileList['a.c', 'b.c'].exclude(/^a/)  =&gt; ['b.c']&#10; If &quot;a.c&quot; is a file, then ... FileList['a.c', 'b.c'].exclude(&quot;a.*&quot;) =&gt; ['b.c']&#10; If &quot;a.c&quot; is not a file, then ... FileList['a.c', 'b.c'].exclude(&quot;a.*&quot;) =&gt; ['a.c', 'b.c']" ilk="function" name="exclude" signature="exclude(*patterns, &amp;block)" />
+          <scope doc="Should the given file name be excluded?" ilk="function" name="exclude?" signature="exclude?(fn)" />
+          <scope doc="Return a new file list that only contains file names from the current file list that exist on the file system." ilk="function" name="existing" signature="existing()" />
+          <scope doc="Modify the current file list so that it contains only file name that exist on the file system." ilk="function" name="existing!" signature="existing!()" />
+          <scope doc="Return a new FileList with String#ext method applied to each member of the array. &#10; This method is a shortcut for: &#10; array.collect { |item| item.ext(newext) }&#10; +ext+ is a user added method for the Array class." ilk="function" name="ext" signature="ext(newext='')" />
+          <scope doc="Return a new FileList with the results of running +gsub+ against each element of the original list. &#10; Example: FileList['lib/test/file', 'x/y'].gsub(/\//, &quot;\\&quot;)&#10;   =&gt; ['lib\\test\\file', 'x\\y']" ilk="function" name="gsub" signature="gsub(pat, rep)" />
+          <scope doc="Same as +gsub+ except that the original file list is modified." ilk="function" name="gsub!" signature="gsub!(pat, rep)" />
+          <scope ilk="function" name="import" signature="import(array)" />
+          <scope doc="Add file names defined by glob patterns to the file list.  If an array is given, add each element of the array. &#10; Example: file_list.include(&quot;*.java&quot;, &quot;*.cfg&quot;)&#10;file_list.include %w( math.c lib.h *.o )" ilk="function" name="include" signature="include(*filenames)" />
+          <scope doc="Lie about our class." ilk="function" name="is_a?" signature="is_a?(klass)" />
+          <scope ilk="function" name="kind_of?" signature="kind_of?(klass)" />
+          <scope doc="Apply the pathmap spec to each of the included file names, returning a new file list with the modified paths.  (See String#pathmap for details.)" ilk="function" name="pathmap" signature="pathmap(spec=nil)" />
+          <scope doc="Resolve all the pending adds now." ilk="function" name="resolve" signature="resolve()" />
+          <scope doc="Return a new FileList with the results of running +sub+ against each element of the original list. &#10; Example: FileList['a.c', 'b.c'].sub(/\.c$/, '.o')  =&gt; ['a.o', 'b.o']" ilk="function" name="sub" signature="sub(pat, rep)" />
+          <scope doc="Same as +sub+ except that the original file list is modified." ilk="function" name="sub!" signature="sub!(pat, rep)" />
+          <scope doc="Return the internal array object." ilk="function" name="to_a" signature="to_a()" />
+          <scope doc="Return the internal array object." ilk="function" name="to_ary" signature="to_ary()" />
+          <scope doc="Convert a FileList to a string by joining all elements with a space." ilk="function" name="to_s" signature="to_s()" />
+          <variable attributes="__const__" citdl="Object" name="ARRAY_METHODS" />
+          <variable attributes="__const__" citdl="Object" name="MUST_DEFINE" />
+          <variable attributes="__const__" citdl="Object" name="MUST_NOT_DEFINE" />
+          <variable attributes="__const__" citdl="Object" name="SPECIAL_RETURN" />
+          <variable attributes="__const__" citdl="Object" name="DELEGATING_METHODS" />
+          <variable attributes="__const__" citdl="Object" name="DEFAULT_IGNORE_PATTERNS" />
+          <variable attributes="__const__" citdl="Object" name="DEFAULT_IGNORE_PROCS" />
+        </scope>
+        <scope classrefs="SshDirPublisher" ilk="class" name="RubyForgePublisher">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(projname, user)" />
+          <scope ilk="function" name="proj_id" />
+          <scope ilk="function" name="project" />
+          <scope ilk="function" name="user" />
+        </scope>
+      </scope>
+    </scope>
+    

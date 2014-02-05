@@ -1,0 +1,58 @@
+<scope ilk="blob" lang="Ruby" name="irb/init">
+      <scope ilk="namespace" name="IRB">
+        <scope attributes="__classmethod__" ilk="function" name="CurrentContext" signature="CurrentContext()" />
+        <scope attributes="__classmethod__" ilk="function" name="Inspector" signature="Inspector(inspect, init = nil)" />
+        <scope attributes="__classmethod__" ilk="function" name="JobManager" signature="JobManager()" />
+        <scope attributes="__classmethod__" ilk="function" name="conf" signature="conf()" />
+        <scope attributes="__classmethod__" ilk="function" name="delete_caller" signature="delete_caller()" />
+        <scope attributes="__classmethod__" doc="@CONF default setting" ilk="function" name="init_config" signature="init_config(ap_path)" />
+        <scope attributes="__classmethod__" ilk="function" name="init_error" signature="init_error()" />
+        <scope attributes="__classmethod__" doc="initialize tracing function" ilk="function" name="initialize_tracer" signature="initialize_tracer()" />
+        <scope attributes="__classmethod__" doc="invoke multi-irb" ilk="function" name="irb" signature="irb(file = nil, *main)" />
+        <scope attributes="__classmethod__" ilk="function" name="irb_abort" signature="irb_abort(irb, exception = Abort)" />
+        <scope attributes="__classmethod__" ilk="function" name="irb_at_exit" signature="irb_at_exit()" />
+        <scope attributes="__classmethod__" ilk="function" name="irb_exit" signature="irb_exit(irb, ret)" />
+        <scope attributes="__classmethod__" doc="loading modules" ilk="function" name="load_modules" signature="load_modules()" />
+        <scope attributes="__classmethod__" doc="option analyzing" ilk="function" name="parse_opts" signature="parse_opts()" />
+        <scope attributes="__classmethod__" ilk="function" name="print_usage" signature="print_usage()" />
+        <scope attributes="__classmethod__" ilk="function" name="rc_file" signature="rc_file(ext = IRBRC_EXT)" />
+        <scope attributes="__classmethod__" doc="enumerate possible rc-file base name generators" ilk="function" name="rc_file_generators" signature="rc_file_generators()" />
+        <scope attributes="__classmethod__" doc="running config" ilk="function" name="run_config" signature="run_config()" />
+        <scope attributes="__classmethod__" doc="initialize config" ilk="function" name="setup" signature="setup(ap_path)" />
+        <scope attributes="__classmethod__" doc="initialize IRB and start TOP_LEVEL irb" ilk="function" name="start" signature="start(ap_path = nil)" />
+        <scope attributes="__classmethod__" doc="IRB version method" ilk="function" name="version" signature="version()" />
+        <variable attributes="__const__" citdl="Object" name="FEATURE_IOPT_CHANGE_VERSION" />
+        <variable attributes="__const__" citdl="Object" name="IRBRC_EXT" />
+        <variable attributes="__const__" citdl="Object" name="STDIN_FILE_NAME" />
+        <variable attributes="__const__" citdl="Object" name="INSPECTORS" />
+        <scope classrefs="Exception" ilk="class" name="Abort">
+        </scope>
+        <scope classrefs="Object" ilk="class" name="History">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(size = 16)" />
+          <scope ilk="function" name="inspect" signature="inspect()" />
+          <scope ilk="function" name="push" signature="push(no, val)" />
+          <scope ilk="function" name="real_inspect" signature="real_inspect()" />
+          <scope ilk="function" name="size" signature="size(size)" />
+        </scope>
+        <scope ilk="namespace" name="HistorySavingAbility">
+          <import symbol="Readline" />
+          <scope attributes="__classmethod__" doc="def HistorySavingAbility.create_finalizer proc do&#10;if num = IRB.conf[:SAVE_HISTORY] and (num = num.to_i) &gt; 0&#10;  if hf = IRB.conf[:HISTORY_FILE]&#10;    file = File.expand_path(hf)&#10;  end&#10;  file = IRB.rc_file(&quot;_history&quot;) unless file&#10;  open(file, 'w' ) do |f|&#10;    hist = HISTORY.to_a&#10;    f.puts(hist[-num..-1] || hist)&#10;  end&#10;end&#10;end&#10; end" ilk="function" name="extended" signature="extended(obj)" />
+          <scope ilk="function" name="load_history" signature="load_history()" />
+          <scope ilk="function" name="save_history" signature="save_history()" />
+        </scope>
+        <scope ilk="namespace" name="INSPECTORS">
+          <scope attributes="__classmethod__" doc="ex) INSPECTORS.def_inspector(key, init_p=nil){|v| v.inspect} INSPECTORS.def_inspector([key1,..], init_p=nil){|v| v.inspect} INSPECTORS.def_inspector(key, inspector) INSPECTORS.def_inspector([key1,...], inspector)" ilk="function" name="def_inspector" signature="def_inspector(key, arg=nil, &amp;block)" />
+          <scope attributes="__classmethod__" ilk="function" name="keys_with_inspector" signature="keys_with_inspector(inspector)" />
+        </scope>
+        <scope ilk="namespace" name="IrbLoader">
+          <scope ilk="function" name="irb_load" signature="irb_load(fn, priv = nil)" />
+          <scope ilk="function" name="load_file" signature="load_file(path, priv = nil)" />
+          <scope ilk="function" name="old" signature="old()" />
+          <scope ilk="function" name="search_file_from_ruby_path" signature="search_file_from_ruby_path(fn)" />
+          <scope ilk="function" name="source_file" signature="source_file(path)" />
+        </scope>
+        <scope classrefs="Exception" ilk="class" name="LoadAbort">
+        </scope>
+      </scope>
+    </scope>
+    

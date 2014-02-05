@@ -1,0 +1,39 @@
+<scope ilk="blob" lang="Ruby" name="rdoc/method_attr">
+      <scope ilk="namespace" name="RDoc">
+        <scope classrefs="RDoc::CodeObject" ilk="class" name="MethodAttr">
+          <import symbol="Comparable" />
+          <scope attributes="__classmethod__ __ctor__" doc="Creates a new MethodAttr from token stream +text+ and method or attribute name +name+. &#10; Usually this is called by super from a subclass." ilk="function" name="new" signature="new(text, name)" />
+          <scope doc="Abstract method. Contexts in their building phase call this to register a new alias for this known method/attribute. &#10; creates a new AnyMethod/Attribute +newa+ named an_alias.new_name;&#10;adds +self+ as +newa.is_alias_for+;&#10;adds +newa+ to #aliases&#10;adds +newa+ to the methods/attributes of +context+." ilk="function" name="add_alias" signature="add_alias(an_alias, context)" />
+          <scope doc="HTML fragment reference for this method" ilk="function" name="aref" signature="aref()" />
+          <scope doc="Prefix for +aref+, defined by subclasses." ilk="function" name="aref_prefix" signature="aref_prefix()" />
+          <scope doc="Attempts to sanitize the content passed by the ruby parser: remove outer parentheses, etc." ilk="function" name="block_params=" signature="block_params=(value)" />
+          <scope doc="A method/attribute is documented if any of the following is true: it was marked with :nodoc:;&#10;it has a comment;&#10;it is an alias for a documented method;&#10;it has a +#see+ method that is documented." ilk="function" name="documented?" signature="documented?()" />
+          <scope doc="Full method/attribute name including namespace" ilk="function" name="full_name" signature="full_name()" />
+          <scope doc="HTML id-friendly method/attribute name" ilk="function" name="html_name" signature="html_name()" />
+          <scope doc="'::' for a class method/attribute, '#' for an instance method." ilk="function" name="name_prefix" signature="name_prefix()" />
+          <scope doc="Name of our parent with special handling for un-marshaled methods" ilk="function" name="parent_name" signature="parent_name()" />
+          <scope doc="Path to this method" ilk="function" name="path" signature="path()" />
+          <scope doc="Method/attribute name with class/instance indicator" ilk="function" name="pretty_name" signature="pretty_name()" />
+          <scope doc="A method/attribute to look at, in particular if this method/attribute has no documentation. &#10; It can be a method/attribute of the superclass or of an included module, including the Kernel module, which is always appended to the included modules. &#10; Returns +nil+ if there is no such method/attribute. The +#is_alias_for+ method/attribute, if any, is not included. &#10; Templates may generate a &quot;see also ...&quot; if this method/attribute has documentation, and &quot;see ...&quot; if it does not." ilk="function" name="see" signature="see()" />
+          <scope doc="Type of method/attribute (class or instance)" ilk="function" name="type" signature="type()" />
+          <scope ilk="function" name="aliases" />
+          <scope ilk="function" name="arglists" />
+          <scope ilk="function" name="block_params" />
+          <scope ilk="function" name="call_seq" />
+          <scope ilk="function" name="call_seq=" />
+          <scope ilk="function" name="is_alias_for" />
+          <scope ilk="function" name="is_alias_for=" />
+          <scope ilk="function" name="name" />
+          <scope ilk="function" name="name=" />
+          <scope ilk="function" name="param_seq" />
+          <scope ilk="function" name="params" />
+          <scope ilk="function" name="params=" />
+          <scope ilk="function" name="singleton" />
+          <scope ilk="function" name="singleton=" />
+          <scope ilk="function" name="text" />
+          <scope ilk="function" name="visibility" />
+          <scope ilk="function" name="visibility=" />
+        </scope>
+      </scope>
+    </scope>
+    

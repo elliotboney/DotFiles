@@ -1,0 +1,7 @@
+<scope ilk="blob" lang="Ruby" name="rubygems/test_utilities">
+      <scope classrefs="Tempfile" ilk="class" name="TempIO">
+        <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(string = '')" />
+        <scope ilk="function" name="string" signature="string()" />
+      </scope>
+    </scope>
+    

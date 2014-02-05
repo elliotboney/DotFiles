@@ -1,0 +1,44 @@
+<scope ilk="blob" lang="Ruby" name="cmath">
+      <scope ilk="namespace" name="CMath">
+        <import symbol="Math" />
+        <scope attributes="__classmethod__" doc="returns the arc cosine of +z+" ilk="function" name="acos" signature="acos(z)" />
+        <scope attributes="__classmethod__" ilk="function" name="acos!" signature="acos!(z)" />
+        <scope attributes="__classmethod__" doc="returns the inverse hyperbolic cosine of +z+" ilk="function" name="acosh" signature="acosh(z)" />
+        <scope attributes="__classmethod__" ilk="function" name="acosh!" signature="acosh!(z)" />
+        <scope attributes="__classmethod__" doc="returns the arc sine of +z+" ilk="function" name="asin" signature="asin(z)" />
+        <scope attributes="__classmethod__" ilk="function" name="asin!" signature="asin!(z)" />
+        <scope attributes="__classmethod__" doc="returns the inverse hyperbolic sine of +z+" ilk="function" name="asinh" signature="asinh(z)" />
+        <scope attributes="__classmethod__" ilk="function" name="asinh!" signature="asinh!(z)" />
+        <scope attributes="__classmethod__" doc="returns the arc tangent of +z+" ilk="function" name="atan" signature="atan(z)" />
+        <scope attributes="__classmethod__" ilk="function" name="atan!" signature="atan!(z)" />
+        <scope attributes="__classmethod__" doc="returns the arc tangent of +y+ divided by +x+ using the signs of +y+ and +x+ to determine the quadrant" ilk="function" name="atan2" signature="atan2(y,x)" />
+        <scope attributes="__classmethod__" ilk="function" name="atan2!" signature="atan2!(y,x)" />
+        <scope attributes="__classmethod__" doc="returns the inverse hyperbolic tangent of +z+" ilk="function" name="atanh" signature="atanh(z)" />
+        <scope attributes="__classmethod__" ilk="function" name="atanh!" signature="atanh!(z)" />
+        <scope attributes="__classmethod__" doc="returns the principal value of the cube root of +z+" ilk="function" name="cbrt" signature="cbrt(z)" />
+        <scope attributes="__classmethod__" ilk="function" name="cbrt!" signature="cbrt!(z)" />
+        <scope attributes="__classmethod__" doc="returns the cosine of +z+, where +z+ is given in radians" ilk="function" name="cos" signature="cos(z)" />
+        <scope attributes="__classmethod__" ilk="function" name="cos!" signature="cos!(z)" />
+        <scope attributes="__classmethod__" doc="returns the hyperbolic cosine of +z+, where +z+ is given in radians" ilk="function" name="cosh" signature="cosh(z)" />
+        <scope attributes="__classmethod__" ilk="function" name="cosh!" signature="cosh!(z)" />
+        <scope attributes="__classmethod__" doc="Math::E raised to the +z+ power &#10; exp(Complex(0,0))      =&gt; 1.0+0.0i&#10;exp(Complex(0,PI))     =&gt; -1.0+1.2246467991473532e-16i&#10;exp(Complex(0,PI/2.0)) =&gt; 6.123233995736766e-17+1.0i" ilk="function" name="exp" signature="exp(z)" />
+        <scope attributes="__classmethod__" ilk="function" name="exp!" signature="exp!(z)" />
+        <scope attributes="__classmethod__" doc="Returns the natural logarithm of Complex.  If a second argument is given, it will be the base of logarithm. &#10; log(Complex(0,0)) =&gt; -Infinity+0.0i" ilk="function" name="log" signature="log(*args)" />
+        <scope attributes="__classmethod__" ilk="function" name="log!" signature="log!(*args)" />
+        <scope attributes="__classmethod__" doc="returns the base 10 logarithm of +z+" ilk="function" name="log10" signature="log10(z)" />
+        <scope attributes="__classmethod__" ilk="function" name="log10!" signature="log10!(z)" />
+        <scope attributes="__classmethod__" doc="returns the base 2 logarithm of +z+" ilk="function" name="log2" signature="log2(z)" />
+        <scope attributes="__classmethod__" ilk="function" name="log2!" signature="log2!(z)" />
+        <scope attributes="__classmethod__" doc="returns the sine of +z+, where +z+ is given in radians" ilk="function" name="sin" signature="sin(z)" />
+        <scope attributes="__classmethod__" ilk="function" name="sin!" signature="sin!(z)" />
+        <scope attributes="__classmethod__" doc="returns the hyperbolic sine of +z+, where +z+ is given in radians" ilk="function" name="sinh" signature="sinh(z)" />
+        <scope attributes="__classmethod__" ilk="function" name="sinh!" signature="sinh!(z)" />
+        <scope attributes="__classmethod__" doc="Returns the non-negative square root of Complex. sqrt(-1)            =&gt; 0+1.0i&#10;sqrt(Complex(-1,0)) =&gt; 0.0+1.0i&#10;sqrt(Complex(0,8))  =&gt; 2.0+2.0i" ilk="function" name="sqrt" signature="sqrt(z)" />
+        <scope attributes="__classmethod__" ilk="function" name="sqrt!" signature="sqrt!(z)" />
+        <scope attributes="__classmethod__" doc="returns the tangent of +z+, where +z+ is given in radians" ilk="function" name="tan" signature="tan(z)" />
+        <scope attributes="__classmethod__" ilk="function" name="tan!" signature="tan!(z)" />
+        <scope attributes="__classmethod__" doc="returns the hyperbolic tangent of +z+, where +z+ is given in radians" ilk="function" name="tanh" signature="tanh(z)" />
+        <scope attributes="__classmethod__" ilk="function" name="tanh!" signature="tanh!(z)" />
+      </scope>
+    </scope>
+    

@@ -1,0 +1,7 @@
+<scope ilk="blob" lang="Ruby" name="rdoc/ruby_lex">
+      <scope ilk="namespace" name="RDoc">
+        <scope classrefs="Object" ilk="class" name="RubyLex">
+        </scope>
+      </scope>
+    </scope>
+    

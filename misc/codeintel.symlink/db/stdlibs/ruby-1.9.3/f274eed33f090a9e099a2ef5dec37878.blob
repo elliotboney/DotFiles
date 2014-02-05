@@ -1,0 +1,7 @@
+<scope ilk="blob" lang="Ruby" name="rdoc/generator">
+      <scope ilk="namespace" name="RDoc">
+        <scope ilk="namespace" name="Generator">
+        </scope>
+      </scope>
+    </scope>
+    

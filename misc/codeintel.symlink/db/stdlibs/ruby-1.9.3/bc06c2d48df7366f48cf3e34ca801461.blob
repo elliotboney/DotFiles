@@ -1,0 +1,104 @@
+<scope ilk="blob" lang="Ruby" name="irb/extend-command">
+      <scope ilk="namespace" name="IRB">
+        <scope ilk="namespace" name="ContextExtender">
+          <scope attributes="__classmethod__" ilk="function" name="def_extend_command" signature="def_extend_command(cmd_name, load_file, *aliases)" />
+          <scope attributes="__classmethod__" ilk="function" name="install_extend_commands" signature="install_extend_commands()" />
+          <variable attributes="__const__" citdl="Object" name="CE" />
+          <scope ilk="namespace" name="CE">
+            <scope attributes="__classmethod__" ilk="function" name="def_extend_command" signature="def_extend_command(cmd_name, load_file, *aliases)" />
+            <scope attributes="__classmethod__" ilk="function" name="install_extend_commands" signature="install_extend_commands()" />
+            <variable attributes="__const__" citdl="Object" name="CE" />
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="ExtendCommand">
+          <scope classrefs="Nop" ilk="class" name="ChangeWorkspace">
+            <scope ilk="function" name="execute" signature="execute(*obj)" />
+          </scope>
+          <scope classrefs="Nop" ilk="class" name="CurrentWorkingWorkspace">
+            <scope ilk="function" name="execute" signature="execute(*obj)" />
+          </scope>
+          <scope classrefs="Nop" ilk="class" name="Foreground">
+            <scope ilk="function" name="execute" signature="execute(key)" />
+          </scope>
+          <scope classrefs="IRB::ExtendCommand::Nop" ilk="class" name="Fork">
+            <scope ilk="function" name="execute" signature="execute(&amp;block)" />
+          </scope>
+          <scope classrefs="IRB::ExtendCommand::Nop" ilk="class" name="Help">
+            <scope ilk="function" name="execute" signature="execute(*names)" />
+          </scope>
+          <scope classrefs="Nop" ilk="class" name="IrbCommand">
+            <scope ilk="function" name="execute" signature="execute(*obj)" />
+          </scope>
+          <scope classrefs="Nop" ilk="class" name="Jobs">
+            <scope ilk="function" name="execute" signature="execute()" />
+          </scope>
+          <scope classrefs="Nop" ilk="class" name="Kill">
+            <scope ilk="function" name="execute" signature="execute(*keys)" />
+          </scope>
+          <scope classrefs="IRB::ExtendCommand::Nop" ilk="class" name="Load">
+            <import symbol="IrbLoader" />
+            <scope ilk="function" name="execute" signature="execute(file_name, priv = nil)" />
+          </scope>
+          <scope classrefs="Object" ilk="class" name="Nop">
+            <scope attributes="__classmethod__" ilk="function" name="execute" signature="execute(conf, *opts)" />
+            <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(conf)" />
+            <scope ilk="function" name="execute" signature="execute(*opts)" />
+            <scope ilk="function" name="irb" signature="irb()" />
+            <scope ilk="function" name="irb_context" />
+          </scope>
+          <scope classrefs="IRB::ExtendCommand::Workspaces" ilk="class" name="PopWorkspace">
+            <scope ilk="function" name="execute" signature="execute(*obj)" />
+          </scope>
+          <scope classrefs="IRB::ExtendCommand::Workspaces" ilk="class" name="PushWorkspace">
+            <scope ilk="function" name="execute" signature="execute(*obj)" />
+          </scope>
+          <scope classrefs="IRB::ExtendCommand::Nop" ilk="class" name="Require">
+            <import symbol="IrbLoader" />
+            <scope ilk="function" name="execute" signature="execute(file_name)" />
+          </scope>
+          <scope classrefs="IRB::ExtendCommand::Nop" ilk="class" name="Source">
+            <import symbol="IrbLoader" />
+            <scope ilk="function" name="execute" signature="execute(file_name)" />
+          </scope>
+          <scope classrefs="IRB::ExtendCommand::Nop" ilk="class" name="Workspaces">
+            <scope ilk="function" name="execute" signature="execute(*obj)" />
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="ExtendCommandBundle">
+          <scope attributes="__classmethod__" doc="aliases = [commands_alias, flag], ..." ilk="function" name="def_extend_command" signature="def_extend_command(cmd_name, cmd_class, load_file = nil, *aliases)" />
+          <scope attributes="__classmethod__" ilk="function" name="extend_object" signature="extend_object(obj)" />
+          <scope attributes="__classmethod__" ilk="function" name="install_extend_commands" signature="install_extend_commands()" />
+          <scope attributes="__classmethod__" ilk="function" name="irb_original_method_name" signature="irb_original_method_name(method_name)" />
+          <scope doc="override = {NO_OVERRIDE, OVERRIDE_PRIVATE_ONLY, OVERRIDE_ALL}" ilk="function" name="install_alias_method" signature="install_alias_method(to, from, override = NO_OVERRIDE)" />
+          <scope ilk="function" name="irb_context" signature="irb_context()" />
+          <scope ilk="function" name="irb_exit" signature="irb_exit(ret = 0)" />
+          <scope ilk="function" name="irb_load" signature="irb_load(*opts, &amp;b)" />
+          <scope ilk="function" name="irb_require" signature="irb_require(*opts, &amp;b)" />
+          <variable attributes="__const__" citdl="Object" name="EXCB" />
+          <variable attributes="__const__" citdl="Object" name="NO_OVERRIDE" />
+          <variable attributes="__const__" citdl="Object" name="OVERRIDE_PRIVATE_ONLY" />
+          <variable attributes="__const__" citdl="Object" name="OVERRIDE_ALL" />
+          <scope ilk="namespace" name="EXCB">
+            <scope attributes="__classmethod__" doc="aliases = [commands_alias, flag], ..." ilk="function" name="def_extend_command" signature="def_extend_command(cmd_name, cmd_class, load_file = nil, *aliases)" />
+            <scope attributes="__classmethod__" ilk="function" name="extend_object" signature="extend_object(obj)" />
+            <scope attributes="__classmethod__" ilk="function" name="install_extend_commands" signature="install_extend_commands()" />
+            <scope attributes="__classmethod__" ilk="function" name="irb_original_method_name" signature="irb_original_method_name(method_name)" />
+            <scope doc="override = {NO_OVERRIDE, OVERRIDE_PRIVATE_ONLY, OVERRIDE_ALL}" ilk="function" name="install_alias_method" signature="install_alias_method(to, from, override = NO_OVERRIDE)" />
+            <scope ilk="function" name="irb_context" signature="irb_context()" />
+            <scope ilk="function" name="irb_exit" signature="irb_exit(ret = 0)" />
+            <scope ilk="function" name="irb_load" signature="irb_load(*opts, &amp;b)" />
+            <scope ilk="function" name="irb_require" signature="irb_require(*opts, &amp;b)" />
+            <variable attributes="__const__" citdl="Object" name="EXCB" />
+            <variable attributes="__const__" citdl="Object" name="NO_OVERRIDE" />
+            <variable attributes="__const__" citdl="Object" name="OVERRIDE_PRIVATE_ONLY" />
+            <variable attributes="__const__" citdl="Object" name="OVERRIDE_ALL" />
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="MethodExtender">
+          <scope ilk="function" name="def_post_proc" signature="def_post_proc(base_method, extend_method)" />
+          <scope ilk="function" name="def_pre_proc" signature="def_pre_proc(base_method, extend_method)" />
+          <scope doc="return #{prefix}#{name}#{postfix}&lt;num&gt;" ilk="function" name="new_alias_name" signature="new_alias_name(name, prefix = &quot;__alias_of__&quot;, postfix = &quot;__&quot;)" />
+        </scope>
+      </scope>
+    </scope>
+    

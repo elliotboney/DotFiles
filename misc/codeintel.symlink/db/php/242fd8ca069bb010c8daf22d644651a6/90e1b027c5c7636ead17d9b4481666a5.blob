@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="PHP" name="S3.php" src="/private/var/www/kw/plugins/w3-total-cache/lib/W3/Cdn/S3/Cf/S3.php"><scope classrefs="W3_Cdn_S3_Cf" ilk="class" line="12" lineend="14" name="W3_Cdn_S3_Cf_S3"><variable citdl="W3TC_CDN_CF_TYPE_S3" line="13" name="type" /></scope></scope>

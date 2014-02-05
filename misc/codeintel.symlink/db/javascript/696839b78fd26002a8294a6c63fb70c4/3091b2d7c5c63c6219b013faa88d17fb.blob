@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="JavaScript" name="dumper.js" src="/private/var/www/kw/content/themes/goodlife/node_modules/grunt/node_modules/js-yaml/examples/dumper.js"><variable citdl="require()" line="4" name="yaml" required_library_name="../lib/js-yaml" /><variable citdl="require()" line="5" name="object" required_library_name="./dumper.json" /></scope>

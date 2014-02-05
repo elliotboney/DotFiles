@@ -1,0 +1,86 @@
+<scope ilk="blob" lang="Ruby" name="rexml/parsers/baseparser">
+      <scope ilk="namespace" name="REXML">
+        <scope ilk="namespace" name="Parsers">
+          <scope classrefs="Object" ilk="class" name="BaseParser">
+            <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new( source )" />
+            <scope ilk="function" name="add_listener" signature="add_listener( listener )" />
+            <scope doc="Returns true if there are no more events" ilk="function" name="empty?" signature="empty?()" />
+            <scope ilk="function" name="entity" signature="entity( reference, entities )" />
+            <scope doc="Returns true if there are more events.  Synonymous with !empty?" ilk="function" name="has_next?" signature="has_next?()" />
+            <scope doc="Escapes all possible entities" ilk="function" name="normalize" signature="normalize( input, entities=nil, entity_filter=nil )" />
+            <scope doc="Peek at the +depth+ event in the stack.  The first element on the stack is at depth 0.  If +depth+ is -1, will parse to the end of the input stream and return the last event, which is always :end_document. Be aware that this causes the stream to be parsed up to the +depth+ event, so you can effectively pre-parse the entire document (pull the entire thing into memory) using this method." ilk="function" name="peek" signature="peek(depth=0)" />
+            <scope ilk="function" name="position" signature="position()" />
+            <scope doc="Returns the next event.  This is a +PullEvent+ object." ilk="function" name="pull" signature="pull()" />
+            <scope ilk="function" name="stream=" signature="stream=( source )" />
+            <scope doc="Unescapes all possible entities" ilk="function" name="unnormalize" signature="unnormalize( string, entities=nil, filter=nil )" />
+            <scope doc="Push an event back on the head of the stream.  This method has (theoretically) infinite depth." ilk="function" name="unshift" signature="unshift(token)" />
+            <scope ilk="function" name="source" />
+            <variable attributes="__const__" citdl="Object" name="LETTER" />
+            <variable attributes="__const__" citdl="Object" name="DIGIT" />
+            <variable attributes="__const__" citdl="Object" name="COMBININGCHAR" />
+            <variable attributes="__const__" citdl="Object" name="EXTENDER" />
+            <variable attributes="__const__" citdl="Object" name="NCNAME_STR" />
+            <variable attributes="__const__" citdl="Object" name="NAME_STR" />
+            <variable attributes="__const__" citdl="Object" name="UNAME_STR" />
+            <variable attributes="__const__" citdl="Object" name="NAMECHAR" />
+            <variable attributes="__const__" citdl="Object" name="NAME" />
+            <variable attributes="__const__" citdl="Object" name="NMTOKEN" />
+            <variable attributes="__const__" citdl="Object" name="NMTOKENS" />
+            <variable attributes="__const__" citdl="Object" name="REFERENCE" />
+            <variable attributes="__const__" citdl="Object" name="REFERENCE_RE" />
+            <variable attributes="__const__" citdl="Object" name="DOCTYPE_START" />
+            <variable attributes="__const__" citdl="Object" name="DOCTYPE_PATTERN" />
+            <variable attributes="__const__" citdl="Object" name="ATTRIBUTE_PATTERN" />
+            <variable attributes="__const__" citdl="Object" name="COMMENT_START" />
+            <variable attributes="__const__" citdl="Object" name="COMMENT_PATTERN" />
+            <variable attributes="__const__" citdl="Object" name="CDATA_START" />
+            <variable attributes="__const__" citdl="Object" name="CDATA_END" />
+            <variable attributes="__const__" citdl="Object" name="CDATA_PATTERN" />
+            <variable attributes="__const__" citdl="Object" name="XMLDECL_START" />
+            <variable attributes="__const__" citdl="Object" name="XMLDECL_PATTERN" />
+            <variable attributes="__const__" citdl="Object" name="INSTRUCTION_START" />
+            <variable attributes="__const__" citdl="Object" name="INSTRUCTION_PATTERN" />
+            <variable attributes="__const__" citdl="Object" name="TAG_MATCH" />
+            <variable attributes="__const__" citdl="Object" name="CLOSE_MATCH" />
+            <variable attributes="__const__" citdl="Object" name="VERSION" />
+            <variable attributes="__const__" citdl="Object" name="ENCODING" />
+            <variable attributes="__const__" citdl="Object" name="STANDALONE" />
+            <variable attributes="__const__" citdl="Object" name="ENTITY_START" />
+            <variable attributes="__const__" citdl="Object" name="IDENTITY" />
+            <variable attributes="__const__" citdl="Object" name="ELEMENTDECL_START" />
+            <variable attributes="__const__" citdl="Object" name="ELEMENTDECL_PATTERN" />
+            <variable attributes="__const__" citdl="Object" name="SYSTEMENTITY" />
+            <variable attributes="__const__" citdl="Object" name="ENUMERATION" />
+            <variable attributes="__const__" citdl="Object" name="NOTATIONTYPE" />
+            <variable attributes="__const__" citdl="Object" name="ENUMERATEDTYPE" />
+            <variable attributes="__const__" citdl="Object" name="ATTTYPE" />
+            <variable attributes="__const__" citdl="Object" name="ATTVALUE" />
+            <variable attributes="__const__" citdl="Object" name="DEFAULTDECL" />
+            <variable attributes="__const__" citdl="Object" name="ATTDEF" />
+            <variable attributes="__const__" citdl="Object" name="ATTDEF_RE" />
+            <variable attributes="__const__" citdl="Object" name="ATTLISTDECL_START" />
+            <variable attributes="__const__" citdl="Object" name="ATTLISTDECL_PATTERN" />
+            <variable attributes="__const__" citdl="Object" name="NOTATIONDECL_START" />
+            <variable attributes="__const__" citdl="Object" name="PUBLIC" />
+            <variable attributes="__const__" citdl="Object" name="SYSTEM" />
+            <variable attributes="__const__" citdl="Object" name="TEXT_PATTERN" />
+            <variable attributes="__const__" citdl="Object" name="PUBIDCHAR" />
+            <variable attributes="__const__" citdl="Object" name="SYSTEMLITERAL" />
+            <variable attributes="__const__" citdl="Object" name="PUBIDLITERAL" />
+            <variable attributes="__const__" citdl="Object" name="EXTERNALID" />
+            <variable attributes="__const__" citdl="Object" name="NDATADECL" />
+            <variable attributes="__const__" citdl="Object" name="PEREFERENCE" />
+            <variable attributes="__const__" citdl="Object" name="ENTITYVALUE" />
+            <variable attributes="__const__" citdl="Object" name="PEDEF" />
+            <variable attributes="__const__" citdl="Object" name="ENTITYDEF" />
+            <variable attributes="__const__" citdl="Object" name="PEDECL" />
+            <variable attributes="__const__" citdl="Object" name="GEDECL" />
+            <variable attributes="__const__" citdl="Object" name="ENTITYDECL" />
+            <variable attributes="__const__" citdl="Object" name="EREFERENCE" />
+            <variable attributes="__const__" citdl="Object" name="DEFAULT_ENTITIES" />
+            <variable attributes="__const__" citdl="Object" name="MISSING_ATTRIBUTE_QUOTES" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

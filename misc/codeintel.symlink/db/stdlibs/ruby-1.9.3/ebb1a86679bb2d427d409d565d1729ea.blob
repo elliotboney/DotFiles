@@ -1,0 +1,25 @@
+<scope ilk="blob" lang="Ruby" name="webrick/httpservlet/filehandler">
+      <scope ilk="namespace" name="WEBrick">
+        <scope ilk="namespace" name="HTTPServlet">
+          <scope classrefs="WEBrick::HTTPServlet::AbstractServlet" ilk="class" name="DefaultFileHandler">
+            <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(server, local_path)" />
+            <scope ilk="function" name="do_GET" signature="do_GET(req, res)" />
+            <scope ilk="function" name="make_partial_content" signature="make_partial_content(req, res, filename, filesize)" />
+            <scope ilk="function" name="not_modified?" signature="not_modified?(req, res, mtime, etag)" />
+            <scope ilk="function" name="prepare_range" signature="prepare_range(range, filesize)" />
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="HTTPServlet">
+          <scope classrefs="WEBrick::HTTPServlet::AbstractServlet" ilk="class" name="FileHandler">
+            <scope attributes="__classmethod__" doc="Allow custom handling of requests for files with +suffix+ by class +handler+" ilk="function" name="add_handler" signature="add_handler(suffix, handler)" />
+            <scope attributes="__classmethod__ __ctor__" doc="Creates a FileHandler servlet on +server+ that serves files starting at directory +root+ &#10; If +options+ is a Hash the following keys are allowed: &#10; Array of languages allowed for accept-language&#10;Allows preprocessing of directory requests&#10;If true, show an index for directories&#10;Allows preprocessing of file requests&#10;Allows preprocessing of requests&#10;Maps file suffixes to file handlers. DefaultFileHandler is used by default but any servlet can be used.&#10;Do not show files matching this array of globs&#10;Directory inside ~user to serve content from for /~user requests.  Only works if mounted on / &#10; If +options+ is true or false then +:FancyIndexing+ is enabled or disabled respectively." ilk="function" name="new" signature="new(server, root, options={}, default=Config::FileHandler)" />
+            <scope attributes="__classmethod__" doc="Remove custom handling of requests for files with +suffix+" ilk="function" name="remove_handler" signature="remove_handler(suffix)" />
+            <scope ilk="function" name="do_GET" signature="do_GET(req, res)" />
+            <scope ilk="function" name="do_OPTIONS" signature="do_OPTIONS(req, res)" />
+            <scope ilk="function" name="do_POST" signature="do_POST(req, res)" />
+            <scope ilk="function" name="service" signature="service(req, res)" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

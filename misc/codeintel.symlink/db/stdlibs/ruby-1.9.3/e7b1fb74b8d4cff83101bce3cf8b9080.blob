@@ -1,0 +1,16 @@
+<scope ilk="blob" lang="Ruby" name="rdoc">
+      <scope ilk="namespace" name="RDoc">
+        <variable attributes="__const__" citdl="Object" name="KNOWN_CLASSES" />
+        <variable attributes="__const__" citdl="Object" name="VERSION" />
+        <variable attributes="__const__" citdl="Object" name="VISIBILITIES" />
+        <variable attributes="__const__" citdl="Object" name="DOT_DOC_FILENAME" />
+        <variable attributes="__const__" citdl="Object" name="GENERAL_MODIFIERS" />
+        <variable attributes="__const__" citdl="Object" name="CLASS_MODIFIERS" />
+        <variable attributes="__const__" citdl="Object" name="ATTR_MODIFIERS" />
+        <variable attributes="__const__" citdl="Object" name="CONSTANT_MODIFIERS" />
+        <variable attributes="__const__" citdl="Object" name="METHOD_MODIFIERS" />
+        <scope classrefs="RuntimeError" ilk="class" name="Error">
+        </scope>
+      </scope>
+    </scope>
+    

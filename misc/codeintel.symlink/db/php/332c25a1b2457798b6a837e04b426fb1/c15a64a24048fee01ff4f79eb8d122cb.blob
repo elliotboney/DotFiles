@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="PHP" name="composite.php" src="/usr/local/Cellar/php55/5.5.7/lib/php/doc/Log/examples/composite.php"><import line="3" module="Log.php" /><variable citdl="Log.singleton()" line="5" name="console" /><variable citdl="Log.singleton()" line="6" name="file" /><variable citdl="Log.singleton()" line="8" name="composite" /></scope>

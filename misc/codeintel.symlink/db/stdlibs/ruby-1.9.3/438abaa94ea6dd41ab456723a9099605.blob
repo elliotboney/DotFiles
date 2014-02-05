@@ -1,0 +1,17 @@
+<scope ilk="blob" lang="Ruby" name="json/common">
+      <scope ilk="namespace" name="JSON">
+        <scope classrefs="JSON::JSONError" ilk="class" name="GeneratorError">
+        </scope>
+        <scope classrefs="StandardError" ilk="class" name="JSONError">
+        </scope>
+        <scope classrefs="JSON::JSONError" ilk="class" name="MissingUnicodeSupport">
+        </scope>
+        <scope classrefs="JSON::ParserError" ilk="class" name="NestingError">
+        </scope>
+        <scope classrefs="JSON::JSONError" ilk="class" name="ParserError">
+        </scope>
+        <scope classrefs="JSON::JSONError" ilk="class" name="UnparserError">
+        </scope>
+      </scope>
+    </scope>
+    

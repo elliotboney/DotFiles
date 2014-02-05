@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="PHP" name="index.php" src="/private/var/www/paperless/SpecialOffer/index.php"><import line="2" module="/setup/skin_top.php" /><import line="6" module="/setup/skin_bottom.php" /><variable citdl="string" line="1" name="page_title" /></scope>

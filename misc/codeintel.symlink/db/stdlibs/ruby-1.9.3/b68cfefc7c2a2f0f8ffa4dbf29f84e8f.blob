@@ -1,0 +1,26 @@
+<scope ilk="blob" lang="Ruby" name="webrick/httpserver">
+      <scope ilk="namespace" name="WEBrick">
+        <scope classrefs="WEBrick::GenericServer" ilk="class" name="HTTPServer">
+          <scope attributes="__classmethod__ __ctor__" doc="Creates a new HTTP server according to +config+ &#10; An HTTP server uses the following attributes: &#10; An array of access logs.  See WEBrick::AccessLog&#10;Local address for the server to bind to&#10;Root path to serve files from&#10;Options for the default HTTPServlet::FileHandler&#10;The HTTP version of this server&#10;Port to listen on&#10;Called with a request and response before each request is serviced.&#10;Maximum time to wait between requests&#10;Array of alternate names for this server for virtual hosting&#10;Name for this server for virtual hosting" ilk="function" name="new" signature="new(config={}, default=Config::HTTP)" />
+          <scope ilk="function" name="access_log" signature="access_log(config, req, res)" />
+          <scope ilk="function" name="do_OPTIONS" signature="do_OPTIONS(req, res)" />
+          <scope doc="Finds the appropriate virtual host to handle +req+" ilk="function" name="lookup_server" signature="lookup_server(req)" />
+          <scope doc="Mounts +servlet+ on +dir+ passing +options+ to the servlet at creation time" ilk="function" name="mount" signature="mount(dir, servlet, *options)" />
+          <scope doc="Mounts +proc+ or +block+ on +dir+ and calls it with a WEBrick::HTTPRequest and WEBrick::HTTPResponse" ilk="function" name="mount_proc" signature="mount_proc(dir, proc=nil, &amp;block)" />
+          <scope doc="Processes requests on +sock+" ilk="function" name="run" signature="run(sock)" />
+          <scope doc="Finds a servlet for +path+" ilk="function" name="search_servlet" signature="search_servlet(path)" />
+          <scope doc="Services +req+ and fills in +res+" ilk="function" name="service" signature="service(req, res)" />
+          <scope ilk="function" name="umount" signature="umount(dir)" />
+          <scope doc="Unmounts +dir+" ilk="function" name="unmount" signature="unmount(dir)" />
+          <scope doc="Adds +server+ as a virtual host." ilk="function" name="virtual_host" signature="virtual_host(server)" />
+          <scope classrefs="Object" ilk="class" name="MountTable">
+            <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new()" />
+            <scope ilk="function" name="delete" signature="delete(dir)" />
+            <scope ilk="function" name="scan" signature="scan(path)" />
+          </scope>
+        </scope>
+        <scope classrefs="ServerError" ilk="class" name="HTTPServerError">
+        </scope>
+      </scope>
+    </scope>
+    

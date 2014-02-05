@@ -1,0 +1,26 @@
+<scope ilk="blob" lang="Ruby" name="webrick/cgi">
+      <scope ilk="namespace" name="WEBrick">
+        <scope classrefs="Object" ilk="class" name="CGI">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(*args)" />
+          <scope ilk="function" name="service" signature="service(req, res)" />
+          <scope ilk="function" name="start" signature="start(env=ENV, stdin=$stdin, stdout=$stdout)" />
+          <scope ilk="function" name="config" />
+          <scope ilk="function" name="logger" />
+          <scope classrefs="Object" ilk="class" name="Socket">
+            <import symbol="Enumerable" />
+            <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(config, env, stdin, stdout)" />
+            <scope ilk="function" name="addr" signature="addr()" />
+            <scope ilk="function" name="cert" signature="cert()" />
+            <scope ilk="function" name="cipher" signature="cipher()" />
+            <scope ilk="function" name="each" signature="each()" />
+            <scope ilk="function" name="eof?" signature="eof?()" />
+            <scope ilk="function" name="gets" signature="gets(eol=LF, size=nil)" />
+            <scope ilk="function" name="peer_cert" signature="peer_cert()" />
+            <scope ilk="function" name="peer_cert_chain" signature="peer_cert_chain()" />
+            <scope ilk="function" name="peeraddr" signature="peeraddr()" />
+            <scope ilk="function" name="read" signature="read(size=nil)" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

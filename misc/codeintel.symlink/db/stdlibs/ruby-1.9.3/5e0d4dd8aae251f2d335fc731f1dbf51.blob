@@ -1,0 +1,25 @@
+<scope ilk="blob" lang="Ruby" name="webrick/utils">
+      <scope ilk="namespace" name="WEBrick">
+        <scope ilk="namespace" name="Utils">
+          <scope attributes="__classmethod__" doc="Creates TCP server sockets bound to +address+:+port+ and returns them. &#10; It will create IPV4 and IPV6 sockets on all interfaces." ilk="function" name="create_listeners" signature="create_listeners(address, port, logger=nil)" />
+          <scope attributes="__classmethod__" ilk="function" name="create_self_signed_cert" signature="create_self_signed_cert(bits, cn, comment)" />
+          <scope attributes="__classmethod__" doc="The server hostname" ilk="function" name="getservername" signature="getservername()" />
+          <scope attributes="__classmethod__" doc="Generates a random string of length +len+" ilk="function" name="random_string" signature="random_string(len)" />
+          <scope attributes="__classmethod__" doc="Sets the close on exec flag for +io+" ilk="function" name="set_close_on_exec" signature="set_close_on_exec(io)" />
+          <scope attributes="__classmethod__" doc="Sets IO operations on +io+ to be non-blocking" ilk="function" name="set_non_blocking" signature="set_non_blocking(io)" />
+          <scope attributes="__classmethod__" doc="Changes the process's uid and gid to the ones of +user+" ilk="function" name="su" signature="su(user)" />
+          <scope attributes="__classmethod__" doc="Executes the passed block and raises +exception+ if execution takes more than +seconds+. &#10; If +seconds+ is zero or nil, simply executes the block" ilk="function" name="timeout" signature="timeout(seconds, exception=Timeout::Error)" />
+          <variable attributes="__const__" citdl="Object" name="RAND_CHARS" />
+          <scope classrefs="Object" ilk="class" name="TimeoutHandler">
+            <import symbol="Singleton" />
+            <scope attributes="__classmethod__" doc="Cancels the timeout handler +id+" ilk="function" name="cancel" signature="cancel(id)" />
+            <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new()" />
+            <scope attributes="__classmethod__" doc="Registers a new timeout handler &#10; Timeout in seconds&#10;Exception to raise when timeout elapsed" ilk="function" name="register" signature="register(seconds, exception)" />
+            <scope doc="Cancels the timeout handler +id+" ilk="function" name="cancel" signature="cancel(thread, id)" />
+            <scope doc="Interrupts the timeout handler +id+ and raises +exception+" ilk="function" name="interrupt" signature="interrupt(thread, id, exception)" />
+            <scope doc="Registers a new timeout handler &#10; Timeout in seconds&#10;Exception to raise when timeout elapsed" ilk="function" name="register" signature="register(thread, time, exception)" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

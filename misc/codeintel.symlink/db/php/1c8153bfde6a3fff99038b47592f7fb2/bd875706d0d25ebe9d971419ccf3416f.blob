@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="PHP" name="popup.php" src="/private/var/www/wordpress.staging/content/themes/ninezeroseven/admin/zilla-shortcodes/tinymce/popup.php"><import line="4" module="shortcodes.class.php" /><variable citdl="trim()" line="7" name="popup" /><variable citdl="zilla_shortcodes" line="8" name="shortcode" /></scope>

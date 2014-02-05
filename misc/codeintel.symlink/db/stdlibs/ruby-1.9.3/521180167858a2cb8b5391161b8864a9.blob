@@ -1,0 +1,35 @@
+<scope ilk="blob" lang="Ruby" name="rexml/source">
+      <scope ilk="namespace" name="REXML">
+        <scope classrefs="REXML::Source" ilk="class" name="IOSource">
+          <scope attributes="__classmethod__ __ctor__" doc="block_size has been deprecated" ilk="function" name="new" signature="new(arg, block_size=500, encoding=nil)" />
+          <scope ilk="function" name="consume" signature="consume( pattern )" />
+          <scope doc="@return the current line in the source" ilk="function" name="current_line" signature="current_line()" />
+          <scope ilk="function" name="empty?" signature="empty?()" />
+          <scope ilk="function" name="match" signature="match( pattern, cons=false )" />
+          <scope ilk="function" name="position" signature="position()" />
+          <scope ilk="function" name="read" signature="read()" />
+          <scope ilk="function" name="scan" signature="scan(pattern, cons=false)" />
+        </scope>
+        <scope classrefs="Object" ilk="class" name="Source">
+          <import symbol="Encoding" />
+          <scope attributes="__classmethod__ __ctor__" doc="Constructor @param arg must be a String, and should be a valid XML document @param encoding if non-null, sets the encoding of the source to this value, overriding all encoding detection" ilk="function" name="new" signature="new(arg, encoding=nil)" />
+          <scope ilk="function" name="consume" signature="consume( pattern )" />
+          <scope doc="@return the current line in the source" ilk="function" name="current_line" signature="current_line()" />
+          <scope doc="@return true if the Source is exhausted" ilk="function" name="empty?" signature="empty?()" />
+          <scope doc="Inherited from Encoding Overridden to support optimized en/decoding" ilk="function" name="encoding=" signature="encoding=(enc)" />
+          <scope ilk="function" name="match" signature="match(pattern, cons=false)" />
+          <scope ilk="function" name="match_to" signature="match_to( char, pattern )" />
+          <scope ilk="function" name="match_to_consume" signature="match_to_consume( char, pattern )" />
+          <scope ilk="function" name="position" signature="position()" />
+          <scope ilk="function" name="read" signature="read()" />
+          <scope doc="Scans the source for a given pattern.  Note, that this is not your usual scan() method.  For one thing, the pattern argument has some requirements; for another, the source can be consumed.  You can easily confuse this method.  Originally, the patterns were easier to construct and this method more robust, because this method generated search regexes on the fly; however, this was computationally expensive and slowed down the entire REXML package considerably, since this is by far the most commonly called method. @param pattern must be a Regexp, and must be in the form of /^\s*(#{your pattern, with no groups})(.*)/.  The first group will be returned; the second group is used if the consume flag is set. @param consume if true, the pattern returned will be consumed, leaving everything after it in the Source. @return the pattern, if found, or nil if the Source is empty or the pattern is not found." ilk="function" name="scan" signature="scan(pattern, cons=false)" />
+          <scope ilk="function" name="buffer" />
+          <scope ilk="function" name="encoding" />
+          <scope ilk="function" name="line" />
+        </scope>
+        <scope classrefs="Object" ilk="class" name="SourceFactory">
+          <scope attributes="__classmethod__" doc="Generates a Source object @param arg Either a String, or an IO @return a Source, or nil if a bad argument was given" ilk="function" name="create_from" signature="create_from(arg)" />
+        </scope>
+      </scope>
+    </scope>
+    

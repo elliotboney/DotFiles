@@ -1,0 +1,36 @@
+<scope ilk="blob" lang="Ruby" name="rdoc/markup/to_html">
+      <scope ilk="namespace" name="RDoc">
+        <scope ilk="namespace" name="Markup">
+          <scope classrefs="RDoc::Markup::Formatter" ilk="class" name="ToHtml">
+            <import symbol="RDoc::Text" />
+            <scope attributes="__classmethod__" doc="Converts a target url to one that is relative to a given path" ilk="function" name="gen_relative_url" signature="gen_relative_url(path, target)" />
+            <scope attributes="__classmethod__ __ctor__" doc="Creates a new formatter that will output HTML" ilk="function" name="new" signature="new(markup = nil)" />
+            <scope doc="Adds +blank_line+ to the output" ilk="function" name="accept_blank_line" signature="accept_blank_line(blank_line)" />
+            <scope doc="Adds +heading+ to the output" ilk="function" name="accept_heading" signature="accept_heading(heading)" />
+            <scope doc="Finishes consumption of +list+" ilk="function" name="accept_list_end" signature="accept_list_end(list)" />
+            <scope doc="Finishes consumption of +list_item+" ilk="function" name="accept_list_item_end" signature="accept_list_item_end(list_item)" />
+            <scope doc="Prepares the visitor for consuming +list_item+" ilk="function" name="accept_list_item_start" signature="accept_list_item_start(list_item)" />
+            <scope doc="Prepares the visitor for consuming +list+" ilk="function" name="accept_list_start" signature="accept_list_start(list)" />
+            <scope doc="Adds +paragraph+ to the output" ilk="function" name="accept_paragraph" signature="accept_paragraph(paragraph)" />
+            <scope doc="Adds +raw+ to the output" ilk="function" name="accept_raw" signature="accept_raw(raw)" />
+            <scope doc="Adds +rule+ to the output" ilk="function" name="accept_rule" signature="accept_rule(rule)" />
+            <scope doc="Adds +verbatim+ to the output" ilk="function" name="accept_verbatim" signature="accept_verbatim(verbatim)" />
+            <scope doc="CGI escapes +text+" ilk="function" name="convert_string" signature="convert_string(text)" />
+            <scope doc="Returns the generated output" ilk="function" name="end_accepting" signature="end_accepting()" />
+            <scope doc="Generate a link for +url+, labeled with +text+.  Handles the special cases for img: and link: described under handle_special_HYPERLINK" ilk="function" name="gen_url" signature="gen_url(url, text)" />
+            <scope doc="+special+ is a potential link.  The following schemes are handled: &#10; Inserted as-is.&#10;Links are checked to see if they reference an image. If so, that image gets inserted using an &lt;img&gt; tag. Otherwise a conventional &lt;a href&gt; is used.&#10;Reference to a local file relative to the output directory." ilk="function" name="handle_special_HYPERLINK" signature="handle_special_HYPERLINK(special)" />
+            <scope doc="This +special+ is a link where the label is different from the URL label[url] or {long label}[url]" ilk="function" name="handle_special_TIDYLINK" signature="handle_special_TIDYLINK(special)" />
+            <scope doc="Determines the HTML list element for +list_type+ and +open_tag+" ilk="function" name="html_list_name" signature="html_list_name(list_type, open_tag)" />
+            <scope doc="Maps attributes to HTML tags" ilk="function" name="init_tags" signature="init_tags()" />
+            <scope doc="Returns the HTML end-tag for +list_type+" ilk="function" name="list_end_for" signature="list_end_for(list_type)" />
+            <scope doc="Returns the HTML tag for +list_type+, possible using a label from +list_item+" ilk="function" name="list_item_start" signature="list_item_start(list_item, list_type)" />
+            <scope doc="Prepares the visitor for HTML generation" ilk="function" name="start_accepting" signature="start_accepting()" />
+            <scope doc="Converts +item+ to HTML using RDoc::Text#to_html" ilk="function" name="to_html" signature="to_html(item)" />
+            <scope ilk="function" name="from_path" />
+            <scope ilk="function" name="from_path=" />
+            <variable attributes="__const__" citdl="Object" name="LIST_TYPE_TO_HTML" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

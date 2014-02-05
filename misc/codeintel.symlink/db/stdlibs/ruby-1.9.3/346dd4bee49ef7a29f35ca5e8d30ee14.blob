@@ -1,0 +1,33 @@
+<scope ilk="blob" lang="Ruby" name="webrick/httpstatus">
+      <scope ilk="namespace" name="WEBrick">
+        <scope ilk="namespace" name="HTTPStatus">
+          <scope attributes="__classmethod__" doc="Is +code+ a client error status?" ilk="function" name="client_error?" signature="client_error?(code)" />
+          <scope attributes="__classmethod__" doc="Is +code+ an error status?" ilk="function" name="error?" signature="error?(code)" />
+          <scope attributes="__classmethod__" doc="Is +code+ an informational status?" ilk="function" name="info?" signature="info?(code)" />
+          <scope attributes="__classmethod__" doc="Returns the description corresponding to the HTTP status +code+ &#10; WEBrick::HTTPStatus.reason_phrase 404&#10;=&gt; &quot;Not Found&quot;" ilk="function" name="reason_phrase" signature="reason_phrase(code)" />
+          <scope attributes="__classmethod__" doc="Is +code+ a redirection status?" ilk="function" name="redirect?" signature="redirect?(code)" />
+          <scope attributes="__classmethod__" doc="Is +code+ a server error status?" ilk="function" name="server_error?" signature="server_error?(code)" />
+          <scope attributes="__classmethod__" doc="Is +code+ a successful status?" ilk="function" name="success?" signature="success?(code)" />
+          <scope classrefs="WEBrick::HTTPStatus::Error" ilk="class" name="ClientError">
+          </scope>
+          <scope classrefs="StandardError" ilk="class" name="EOFError">
+          </scope>
+          <scope classrefs="WEBrick::HTTPStatus::Status" ilk="class" name="Error">
+          </scope>
+          <scope classrefs="WEBrick::HTTPStatus::Status" ilk="class" name="Info">
+          </scope>
+          <scope classrefs="WEBrick::HTTPStatus::Status" ilk="class" name="Redirect">
+          </scope>
+          <scope classrefs="WEBrick::HTTPStatus::Error" ilk="class" name="ServerError">
+          </scope>
+          <scope classrefs="StandardError" ilk="class" name="Status">
+            <scope doc="Returns the HTTP status code" ilk="function" name="code" signature="code()" />
+            <scope doc="Returns the HTTP status description" ilk="function" name="reason_phrase" signature="reason_phrase()" />
+            <scope ilk="function" name="to_i" signature="to_i()" />
+          </scope>
+          <scope classrefs="WEBrick::HTTPStatus::Status" ilk="class" name="Success">
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

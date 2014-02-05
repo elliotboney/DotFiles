@@ -1,0 +1,60 @@
+<scope ilk="blob" lang="Ruby" name="prettyprint">
+      <scope classrefs="Object" ilk="class" name="PrettyPrint">
+        <scope attributes="__classmethod__" doc="This is a convenience method which is same as follows: &#10; begin&#10;  q = PrettyPrint.new(output, maxwidth, newline, &amp;genspace)&#10;  ...&#10;  q.flush&#10;  output&#10;end" ilk="function" name="format" signature="format(output='', maxwidth=79, newline=&quot;\n&quot;, genspace=lambda {|n| ' ' * n})" />
+        <scope attributes="__classmethod__ __ctor__" doc="Creates a buffer for pretty printing. &#10; +output+ is an output target. If it is not specified, '' is assumed. It should have a &lt;&lt; method which accepts the first argument +obj+ of PrettyPrint#text, the first argument +sep+ of PrettyPrint#breakable, the first argument +newline+ of PrettyPrint.new, and the result of a given block for PrettyPrint.new. &#10; +maxwidth+ specifies maximum line length. If it is not specified, 79 is assumed. However actual outputs may overflow +maxwidth+ if long non-breakable texts are provided. &#10; +newline+ is used for line breaks. &quot;\n&quot; is used if it is not specified. &#10; The block is used to generate spaces. {|width| ' ' * width} is used if it is not given." ilk="function" name="new" signature="new(output='', maxwidth=79, newline=&quot;\n&quot;, &amp;genspace)" />
+        <scope attributes="__classmethod__" doc="This is similar to PrettyPrint::format but the result has no breaks. &#10; +maxwidth+, +newline+ and +genspace+ are ignored. &#10; The invocation of +breakable+ in the block doesn't break a line and is treated as just an invocation of +text+." ilk="function" name="singleline_format" signature="singleline_format(output='', maxwidth=nil, newline=nil, genspace=nil)" />
+        <scope doc="Breaks the buffer into lines that are shorter than #maxwidth" ilk="function" name="break_outmost_groups" signature="break_outmost_groups()" />
+        <scope doc="This says &quot;you can break a line here if necessary&quot;, and a +width+\-column text +sep+ is inserted if a line is not broken at the point. &#10; If +sep+ is not specified, &quot; &quot; is used. &#10; If +width+ is not specified, +sep.length+ is used. You will have to specify this when +sep+ is a multibyte character, for example." ilk="function" name="breakable" signature="breakable(sep=' ', width=sep.length)" />
+        <scope doc="Returns the group most recently added to the stack." ilk="function" name="current_group" signature="current_group()" />
+        <scope doc="This is similar to #breakable except the decision to break or not is determined individually. &#10; Two #fill_breakable under a group may cause 4 results: (break,break), (break,non-break), (non-break,break), (non-break,non-break). This is different to #breakable because two #breakable under a group may cause 2 results: (break,break), (non-break,non-break). &#10; The text sep+ is inserted if a line is not broken at this point. &#10; If +sep+ is not specified, &quot; &quot; is used. &#10; If +width+ is not specified, +sep.length+ is used. You will have to specify this when +sep+ is a multibyte character, for example." ilk="function" name="fill_breakable" signature="fill_breakable(sep=' ', width=sep.length)" />
+        <scope doc="first? is a predicate to test the call is a first call to first? with current group. &#10; It is useful to format comma separated values as: &#10; q.group(1, '[', ']') {&#10;  xxx.each {|yyy|&#10;    unless q.first?&#10;      q.text ','&#10;      q.breakable&#10;    end&#10;    ... pretty printing yyy ...&#10;  }&#10;}&#10; first? is obsoleted in 1.8.2." ilk="function" name="first?" signature="first?()" />
+        <scope doc="outputs buffered data." ilk="function" name="flush" signature="flush()" />
+        <scope doc="Groups line break hints added in the block. The line break hints are all to be used or not. &#10; If +indent+ is specified, the method call is regarded as nested by nest(indent) { ... }. &#10; If +open_obj+ is specified, text open_obj, open_width is called before grouping. If +close_obj+ is specified, text close_obj, close_width is called after grouping." ilk="function" name="group" signature="group(indent=0, open_obj='', close_obj='', open_width=open_obj.length, close_width=close_obj.length)" />
+        <scope ilk="function" name="group_sub" signature="group_sub()" />
+        <scope doc="Increases left margin after newline with +indent+ for line breaks added in the block." ilk="function" name="nest" signature="nest(indent)" />
+        <scope doc="This adds +obj+ as a text of +width+ columns in width. &#10; If +width+ is not specified, obj.length is used." ilk="function" name="text" signature="text(obj, width=obj.length)" />
+        <scope ilk="function" name="genspace" />
+        <scope ilk="function" name="group_queue" />
+        <scope ilk="function" name="indent" />
+        <scope ilk="function" name="maxwidth" />
+        <scope ilk="function" name="newline" />
+        <scope ilk="function" name="output" />
+        <scope classrefs="Object" ilk="class" name="Breakable">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(sep, width, q)" />
+          <scope ilk="function" name="output" signature="output(out, output_width)" />
+          <scope ilk="function" name="indent" />
+          <scope ilk="function" name="obj" />
+          <scope ilk="function" name="width" />
+        </scope>
+        <scope classrefs="Object" ilk="class" name="Group">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(depth)" />
+          <scope ilk="function" name="break" signature="break()" />
+          <scope ilk="function" name="break?" signature="break?()" />
+          <scope ilk="function" name="first?" signature="first?()" />
+          <scope ilk="function" name="breakables" />
+          <scope ilk="function" name="depth" />
+        </scope>
+        <scope classrefs="Object" ilk="class" name="GroupQueue">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(*groups)" />
+          <scope ilk="function" name="delete" signature="delete(group)" />
+          <scope ilk="function" name="deq" signature="deq()" />
+          <scope ilk="function" name="enq" signature="enq(group)" />
+        </scope>
+        <scope classrefs="Object" ilk="class" name="SingleLine">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(output, maxwidth=nil, newline=nil)" />
+          <scope ilk="function" name="breakable" signature="breakable(sep=' ', width=nil)" />
+          <scope ilk="function" name="first?" signature="first?()" />
+          <scope ilk="function" name="flush" signature="flush()" />
+          <scope ilk="function" name="group" signature="group(indent=nil, open_obj='', close_obj='', open_width=nil, close_width=nil)" />
+          <scope ilk="function" name="nest" signature="nest(indent)" />
+          <scope ilk="function" name="text" signature="text(obj, width=nil)" />
+        </scope>
+        <scope classrefs="Object" ilk="class" name="Text">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new()" />
+          <scope ilk="function" name="add" signature="add(obj, width)" />
+          <scope ilk="function" name="output" signature="output(out, output_width)" />
+          <scope ilk="function" name="width" />
+        </scope>
+      </scope>
+    </scope>
+    

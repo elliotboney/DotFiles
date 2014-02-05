@@ -1,0 +1,58 @@
+<scope ilk="blob" lang="Ruby" name="rdoc/markup/formatter_test_case">
+      <scope ilk="namespace" name="RDoc">
+        <scope ilk="namespace" name="Markup">
+          <scope classrefs="MiniTest::Unit::TestCase" ilk="class" name="FormatterTestCase">
+            <scope attributes="__classmethod__" doc="Call to add the visitor tests to your test case" ilk="function" name="add_visitor_tests" signature="add_visitor_tests()" />
+            <scope doc="Call #setup when inheriting from this test case. &#10; Provides the following instance variables: &#10; RDoc::Markup.new&#10;RDoc::Markup # to reduce typing&#10;@RM::List.new :BULLET, # ...&#10;@RM::List.new :LABEL, # ...&#10;@RM::List.new :LALPHA, # ...&#10;@RM::List.new :NOTE, # ...&#10;@RM::List.new :NUMBER, # ...&#10;@RM::List.new :UALPHA, # ..." ilk="function" name="setup" signature="setup()" />
+            <scope doc="Calls accept_blank_line" ilk="function" name="test_accept_blank_line" signature="test_accept_blank_line()" />
+            <scope doc="Test case that calls @to.accept_document" ilk="function" name="test_accept_document" signature="test_accept_document()" />
+            <scope doc="Calls accept_heading with a level 5 RDoc::Markup::Heading" ilk="function" name="test_accept_heading" signature="test_accept_heading()" />
+            <scope doc="Calls accept_heading_1 with a level 1 RDoc::Markup::Heading" ilk="function" name="test_accept_heading_1" signature="test_accept_heading_1()" />
+            <scope doc="Calls accept_heading_2 with a level 2 RDoc::Markup::Heading" ilk="function" name="test_accept_heading_2" signature="test_accept_heading_2()" />
+            <scope doc="Calls accept_heading_3 with a level 3 RDoc::Markup::Heading" ilk="function" name="test_accept_heading_3" signature="test_accept_heading_3()" />
+            <scope doc="Calls accept_heading_4 with a level 4 RDoc::Markup::Heading" ilk="function" name="test_accept_heading_4" signature="test_accept_heading_4()" />
+            <scope doc="Calls accept_heading_b with a bold level 1 RDoc::Markup::Heading" ilk="function" name="test_accept_heading_b" signature="test_accept_heading_b()" />
+            <scope doc="Calls accept_heading_suppressed_crossref with a level 1 RDoc::Markup::Heading containing a suppressed crossref" ilk="function" name="test_accept_heading_suppressed_crossref" signature="test_accept_heading_suppressed_crossref()" />
+            <scope doc="Calls accept_list_end_bullet" ilk="function" name="test_accept_list_end_bullet" signature="test_accept_list_end_bullet()" />
+            <scope doc="Calls accept_list_end_label" ilk="function" name="test_accept_list_end_label" signature="test_accept_list_end_label()" />
+            <scope doc="Calls accept_list_end_lalpha" ilk="function" name="test_accept_list_end_lalpha" signature="test_accept_list_end_lalpha()" />
+            <scope doc="Calls accept_list_end_note" ilk="function" name="test_accept_list_end_note" signature="test_accept_list_end_note()" />
+            <scope doc="Calls accept_list_end_number" ilk="function" name="test_accept_list_end_number" signature="test_accept_list_end_number()" />
+            <scope doc="Calls accept_list_end_ulpha" ilk="function" name="test_accept_list_end_ualpha" signature="test_accept_list_end_ualpha()" />
+            <scope doc="Calls accept_list_item_end_bullet" ilk="function" name="test_accept_list_item_end_bullet" signature="test_accept_list_item_end_bullet()" />
+            <scope doc="Calls accept_list_item_end_label" ilk="function" name="test_accept_list_item_end_label" signature="test_accept_list_item_end_label()" />
+            <scope doc="Calls accept_list_item_end_lalpha" ilk="function" name="test_accept_list_item_end_lalpha" signature="test_accept_list_item_end_lalpha()" />
+            <scope doc="Calls accept_list_item_end_note" ilk="function" name="test_accept_list_item_end_note" signature="test_accept_list_item_end_note()" />
+            <scope doc="Calls accept_list_item_end_number" ilk="function" name="test_accept_list_item_end_number" signature="test_accept_list_item_end_number()" />
+            <scope doc="Calls accept_list_item_end_ualpha" ilk="function" name="test_accept_list_item_end_ualpha" signature="test_accept_list_item_end_ualpha()" />
+            <scope doc="Calls accept_list_item_start_bullet" ilk="function" name="test_accept_list_item_start_bullet" signature="test_accept_list_item_start_bullet()" />
+            <scope doc="Calls accept_list_item_start_label" ilk="function" name="test_accept_list_item_start_label" signature="test_accept_list_item_start_label()" />
+            <scope doc="Calls accept_list_item_start_lalpha" ilk="function" name="test_accept_list_item_start_lalpha" signature="test_accept_list_item_start_lalpha()" />
+            <scope doc="Calls accept_list_item_start_note" ilk="function" name="test_accept_list_item_start_note" signature="test_accept_list_item_start_note()" />
+            <scope doc="Calls accept_list_item_start_note_2" ilk="function" name="test_accept_list_item_start_note_2" signature="test_accept_list_item_start_note_2()" />
+            <scope doc="Calls accept_list_item_start_number" ilk="function" name="test_accept_list_item_start_number" signature="test_accept_list_item_start_number()" />
+            <scope doc="Calls accept_list_item_start_ualpha" ilk="function" name="test_accept_list_item_start_ualpha" signature="test_accept_list_item_start_ualpha()" />
+            <scope doc="Calls accept_list_start_bullet" ilk="function" name="test_accept_list_start_bullet" signature="test_accept_list_start_bullet()" />
+            <scope doc="Calls accept_list_start_label" ilk="function" name="test_accept_list_start_label" signature="test_accept_list_start_label()" />
+            <scope doc="Calls accept_list_start_lalpha" ilk="function" name="test_accept_list_start_lalpha" signature="test_accept_list_start_lalpha()" />
+            <scope doc="Calls accept_list_start_note" ilk="function" name="test_accept_list_start_note" signature="test_accept_list_start_note()" />
+            <scope doc="Calls accept_list_start_number" ilk="function" name="test_accept_list_start_number" signature="test_accept_list_start_number()" />
+            <scope doc="Calls accept_list_start_ualpha" ilk="function" name="test_accept_list_start_ualpha" signature="test_accept_list_start_ualpha()" />
+            <scope doc="Calls accept_paragraph" ilk="function" name="test_accept_paragraph" signature="test_accept_paragraph()" />
+            <scope doc="Calls accept_paragraph_b with a RDoc::Markup::Paragraph containing bold words" ilk="function" name="test_accept_paragraph_b" signature="test_accept_paragraph_b()" />
+            <scope doc="Calls accept_paragraph_i with a RDoc::Markup::Paragraph containing emphasized words" ilk="function" name="test_accept_paragraph_i" signature="test_accept_paragraph_i()" />
+            <scope doc="Calls accept_paragraph_plus with a RDoc::Markup::Paragraph containing teletype words" ilk="function" name="test_accept_paragraph_plus" signature="test_accept_paragraph_plus()" />
+            <scope doc="Calls accept_paragraph_star with a RDoc::Markup::Paragraph containing bold words" ilk="function" name="test_accept_paragraph_star" signature="test_accept_paragraph_star()" />
+            <scope doc="Calls accept_paragraph_underscore with a RDoc::Markup::Paragraph containing emphasized words" ilk="function" name="test_accept_paragraph_underscore" signature="test_accept_paragraph_underscore()" />
+            <scope doc="Calls accept_raw with a RDoc::Markup::Raw" ilk="function" name="test_accept_raw" signature="test_accept_raw()" />
+            <scope doc="Calls accept_rule with a RDoc::Markup::Rule" ilk="function" name="test_accept_rule" signature="test_accept_rule()" />
+            <scope doc="Calls accept_verbatim with a RDoc::Markup::Verbatim" ilk="function" name="test_accept_verbatim" signature="test_accept_verbatim()" />
+            <scope doc="Calls end_accepting on your test case which needs to call @to.end_accepting and verify document generation" ilk="function" name="test_end_accepting" signature="test_end_accepting()" />
+            <scope doc="Calls list_nested with a two-level list" ilk="function" name="test_list_nested" signature="test_list_nested()" />
+            <scope doc="Calls list_verbatim with a list containing a verbatim block" ilk="function" name="test_list_verbatim" signature="test_list_verbatim()" />
+            <scope doc="Calls start_accepting which needs to verify startup state" ilk="function" name="test_start_accepting" signature="test_start_accepting()" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

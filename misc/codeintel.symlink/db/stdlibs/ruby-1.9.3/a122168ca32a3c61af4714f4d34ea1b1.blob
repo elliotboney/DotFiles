@@ -1,0 +1,7 @@
+<scope ilk="blob" lang="Ruby" name="rdoc/anon_class">
+      <scope ilk="namespace" name="RDoc">
+        <scope classrefs="RDoc::ClassModule" ilk="class" name="AnonClass">
+        </scope>
+      </scope>
+    </scope>
+    

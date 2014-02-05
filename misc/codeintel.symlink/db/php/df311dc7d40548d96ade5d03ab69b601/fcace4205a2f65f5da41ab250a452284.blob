@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="PHP" name="index.php" src="/private/var/www/paperless/wp-content/themes/paperless-agent/iSDK/src/xmlrpc-3.0/debugger/index.php"><variable citdl="string" line="3" name="query" /><variable attributes="__not_yet_defined__" line="4" name="_GET" /><variable citdl="parse_url()" line="6" name="path" /></scope>

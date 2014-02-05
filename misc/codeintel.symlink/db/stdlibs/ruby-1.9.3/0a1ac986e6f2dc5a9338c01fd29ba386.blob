@@ -1,0 +1,72 @@
+<scope ilk="blob" lang="Ruby" name="rdoc/options">
+      <scope ilk="namespace" name="RDoc">
+        <scope classrefs="Object" ilk="class" name="Options">
+          <scope doc="Check that the files on the command line exist" ilk="function" name="check_files" signature="check_files()" />
+          <scope doc="Ensure only one generator is loaded" ilk="function" name="check_generator" signature="check_generator()" />
+          <scope doc="Set the title, but only if not already set. Used to set the title from a source file, so that a title set from the command line will have the priority." ilk="function" name="default_title=" signature="default_title=(string)" />
+          <scope doc="Completes any unfinished option setup business such as filtering for existent files, creating a regexp for #exclude and setting a default #template." ilk="function" name="finish" signature="finish()" />
+          <scope doc="Returns a properly-space list of generators and their descriptions." ilk="function" name="generator_descriptions" signature="generator_descriptions()" />
+          <scope doc="Parses command line options." ilk="function" name="parse" signature="parse(argv)" />
+          <scope doc="Don't display progress as we process the files" ilk="function" name="quiet" signature="quiet()" />
+          <scope doc="Set quietness to +bool+" ilk="function" name="quiet=" signature="quiet=(bool)" />
+          <scope doc="Set up an output generator for the named +generator_name+. &#10; If the found generator responds to :setup_options it will be called with the options instance.  This allows generators to add custom options or set default options." ilk="function" name="setup_generator" signature="setup_generator(generator_name = @generator_name)" />
+          <scope doc="Finds the template dir for +template+" ilk="function" name="template_dir_for" signature="template_dir_for(template)" />
+          <scope ilk="function" name="charset" />
+          <scope ilk="function" name="charset=" />
+          <scope ilk="function" name="coverage_report" />
+          <scope ilk="function" name="coverage_report=" />
+          <scope ilk="function" name="dry_run" />
+          <scope ilk="function" name="dry_run=" />
+          <scope ilk="function" name="encoding" />
+          <scope ilk="function" name="encoding=" />
+          <scope ilk="function" name="exclude" />
+          <scope ilk="function" name="exclude=" />
+          <scope ilk="function" name="files" />
+          <scope ilk="function" name="files=" />
+          <scope ilk="function" name="force_output" />
+          <scope ilk="function" name="force_output=" />
+          <scope ilk="function" name="force_update" />
+          <scope ilk="function" name="force_update=" />
+          <scope ilk="function" name="formatter" />
+          <scope ilk="function" name="formatter=" />
+          <scope ilk="function" name="generator" />
+          <scope ilk="function" name="generator=" />
+          <scope ilk="function" name="generator_options" />
+          <scope ilk="function" name="generator_options=" />
+          <scope ilk="function" name="hyperlink_all" />
+          <scope ilk="function" name="hyperlink_all=" />
+          <scope ilk="function" name="line_numbers" />
+          <scope ilk="function" name="line_numbers=" />
+          <scope ilk="function" name="main_page" />
+          <scope ilk="function" name="main_page=" />
+          <scope ilk="function" name="op_dir" />
+          <scope ilk="function" name="op_dir=" />
+          <scope ilk="function" name="option_parser" />
+          <scope ilk="function" name="option_parser=" />
+          <scope ilk="function" name="pipe" />
+          <scope ilk="function" name="pipe=" />
+          <scope ilk="function" name="rdoc_include" />
+          <scope ilk="function" name="rdoc_include=" />
+          <scope ilk="function" name="show_hash" />
+          <scope ilk="function" name="show_hash=" />
+          <scope ilk="function" name="tab_width" />
+          <scope ilk="function" name="tab_width=" />
+          <scope ilk="function" name="template" />
+          <scope ilk="function" name="template=" />
+          <scope ilk="function" name="template_dir" />
+          <scope ilk="function" name="template_dir=" />
+          <scope ilk="function" name="title" />
+          <scope ilk="function" name="title=" />
+          <scope ilk="function" name="update_output_dir" />
+          <scope ilk="function" name="update_output_dir=" />
+          <scope ilk="function" name="verbosity" />
+          <scope ilk="function" name="verbosity=" />
+          <scope ilk="function" name="visibility" />
+          <scope ilk="function" name="visibility=" />
+          <scope ilk="function" name="webcvs" />
+          <scope ilk="function" name="webcvs=" />
+          <variable attributes="__const__" citdl="Object" name="DEPRECATED" />
+        </scope>
+      </scope>
+    </scope>
+    

@@ -1,0 +1,41 @@
+<scope ilk="blob" lang="Ruby" name="iconv">
+      <scope classrefs="Data" ilk="class" name="Iconv">
+        <scope attributes="__classmethod__" doc="Returns the map from canonical name to system dependent name." ilk="function" name="charset_map" signature="charset_map()" />
+        <scope attributes="__classmethod__" doc="Shorthand for Iconv.iconv(to, from, str).join&#10; See Iconv.iconv." ilk="function" name="conv" signature="conv(p1, p2, p3)" />
+        <scope attributes="__classmethod__" doc="Returns available iconvctl() method list." ilk="function" name="ctlmethods" signature="ctlmethods()" />
+        <scope attributes="__classmethod__" doc="Shorthand for Iconv.open(to, from) { |cd|&#10;  (strs + [nil]).collect { |s| cd.iconv(s) }&#10;}&#10; Parameters &#10; see Iconv.new&#10;strings to be converted &#10; Exceptions &#10; Exceptions thrown by Iconv.new, Iconv.open and Iconv#iconv." ilk="function" name="iconv" signature="iconv(*args)" />
+        <scope attributes="__classmethod__" doc="Iterates each alias sets." ilk="function" name="list" signature="list()" />
+        <scope attributes="__classmethod__ __ctor__" doc="Creates new code converter from a coding-system designated with +from+ to another one designated with +to+. &#10; Parameters &#10; encoding name for destination&#10;encoding name for source&#10;options for converter &#10; Exceptions &#10; if +to+ or +from+ aren't String&#10;if designated converter couldn't find out&#10;if iconv_open(3) fails" ilk="function" name="new" signature="new(p1, p2, p3 = v3)" />
+        <scope attributes="__classmethod__" doc="Equivalent to Iconv.new except that when it is called with a block, it yields with the new instance and closes it, and returns the result which returned from the block." ilk="function" name="open" signature="open(p1, p2, p3 = v3)" />
+        <scope doc="Finishes conversion. &#10; After calling this, calling Iconv#iconv will cause an exception, but multiple calls of #close are guaranteed to end successfully. &#10; Returns a string containing the byte sequence to change the output buffer to its initial shift state." ilk="function" name="close" signature="close()" />
+        <scope doc="Equivalent to &#10; iconv(nil, str..., nil).join" ilk="function" name="conv" signature="conv(*args)" />
+        <scope doc="Sets discard_ilseq flag." ilk="function" name="discard_ilseq=" signature="discard_ilseq=(p1)" />
+        <scope doc="Returns discard_ilseq flag." ilk="function" name="discard_ilseq?" signature="discard_ilseq?()" />
+        <scope doc="Converts string and returns the result. If +str+ is a String, converts str[start, length] and returns the converted string.&#10;If +str+ is +nil+, places converter itself into initial shift state and just returns a string containing the byte sequence to change the output buffer to its initial shift state.&#10;Otherwise, raises an exception. &#10; Parameters &#10; string to be converted, or nil&#10;starting offset&#10;conversion length; nil or -1 means whole the string from start &#10; Exceptions &#10; IconvIllegalSequence&#10;IconvInvalidCharacter&#10;IconvOutOfRange &#10; Examples &#10; See the Iconv documentation." ilk="function" name="iconv" signature="iconv(p1, p2 = v2, p3 = v3)" />
+        <scope doc="Sets transliterate flag." ilk="function" name="transliterate=" signature="transliterate=(p1)" />
+        <scope doc="Returns transliterate flag." ilk="function" name="transliterate?" signature="transliterate?()" />
+        <scope doc="Returns trivial flag." ilk="function" name="trivial?" signature="trivial?()" />
+        <scope classrefs="RuntimeError" ilk="class" name="BrokenLibrary">
+          <import symbol="Iconv::Failure" />
+        </scope>
+        <scope ilk="namespace" name="Failure">
+          <scope attributes="__classmethod__ __ctor__" doc="Creates new code converter from a coding-system designated with +from+ to another one designated with +to+. &#10; Parameters &#10; encoding name for destination&#10;encoding name for source&#10;options for converter &#10; Exceptions &#10; if +to+ or +from+ aren't String&#10;if designated converter couldn't find out&#10;if iconv_open(3) fails" ilk="function" name="new" signature="new(p1, p2, p3)" />
+          <scope doc="Returns substring of the original string passed to Iconv that starts at the character caused the exception." ilk="function" name="failed" signature="failed()" />
+          <scope doc="Returns inspected string like as: #&lt;_class_: _success_, _failed_&gt;" ilk="function" name="inspect" signature="inspect()" />
+          <scope doc="Returns string(s) translated successfully until the exception occurred. In the case of failure occurred within Iconv.iconv, returned value is an array of strings translated successfully preceding failure and the last element is string on the way." ilk="function" name="success" signature="success()" />
+        </scope>
+        <scope classrefs="ArgError" ilk="class" name="IllegalSequence">
+          <import symbol="Iconv::Failure" />
+        </scope>
+        <scope classrefs="ArgError" ilk="class" name="InvalidCharacter">
+          <import symbol="Iconv::Failure" />
+        </scope>
+        <scope classrefs="ArgError" ilk="class" name="InvalidEncoding">
+          <import symbol="Iconv::Failure" />
+        </scope>
+        <scope classrefs="RuntimeError" ilk="class" name="OutOfRange">
+          <import symbol="Iconv::Failure" />
+        </scope>
+      </scope>
+    </scope>
+    

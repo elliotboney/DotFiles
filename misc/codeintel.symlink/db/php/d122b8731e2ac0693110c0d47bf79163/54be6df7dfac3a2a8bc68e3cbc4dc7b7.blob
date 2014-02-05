@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="PHP" name="sapi_array.php" src="/usr/local/Cellar/php55/5.5.7/lib/php/PHP/CompatInfo/sapi_array.php"><import line="20" module="PHP/CompatInfo/" /><variable citdl="php_sapi_name()" line="17" name="sapi_name" /><variable citdl="string" line="18" name="sapi_runtime" /></scope>

@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="PHP" name="pci180_loadversion.php" src="/usr/local/Cellar/php55/5.5.7/lib/php/doc/PHP_CompatInfo/docs/examples/pci180_loadversion.php"><import line="20" module="PHP/CompatInfo.php" /><variable citdl="PHP_CompatInfo" line="22" name="compatInfo" /><variable citdl="compatInfo.loadVersion()" line="24" name="r" /></scope>

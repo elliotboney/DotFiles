@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="PHP" name="template-loader.php" src="/private/var/www/paperless/wp-includes/template-loader.php"><import line="21" module="wp-trackback.php" /><variable attributes="__not_yet_defined__" line="10" name="_SERVER" /><variable citdl="boolean" line="26" name="template" /></scope>

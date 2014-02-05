@@ -1,0 +1,44 @@
+<scope ilk="blob" lang="Ruby" name="webrick/httpresponse">
+      <scope ilk="namespace" name="WEBrick">
+        <scope classrefs="Object" ilk="class" name="HTTPResponse">
+          <scope attributes="__classmethod__ __ctor__" doc="Creates a new HTTP response object" ilk="function" name="new" signature="new(config)" />
+          <scope doc="Enables chunked transfer encoding." ilk="function" name="chunked=" signature="chunked=(val)" />
+          <scope doc="Will this response body be returned using chunked transfer-encoding?" ilk="function" name="chunked?" signature="chunked?()" />
+          <scope doc="The content-length header" ilk="function" name="content_length" signature="content_length()" />
+          <scope doc="Sets the content-length header to +len+" ilk="function" name="content_length=" signature="content_length=(len)" />
+          <scope doc="The content-type header" ilk="function" name="content_type" signature="content_type()" />
+          <scope doc="Sets the content-type header to +type+" ilk="function" name="content_type=" signature="content_type=(type)" />
+          <scope doc="Iterates over each header in the resopnse" ilk="function" name="each" signature="each()" />
+          <scope doc="Will this response's connection be kept alive?" ilk="function" name="keep_alive?" signature="keep_alive?()" />
+          <scope doc="Sends the body on +socket+" ilk="function" name="send_body" signature="send_body(socket)" />
+          <scope doc="Sends the headers on +socket+" ilk="function" name="send_header" signature="send_header(socket)" />
+          <scope doc="Sends the response on +socket+" ilk="function" name="send_response" signature="send_response(socket)" />
+          <scope doc="Creates an error page for exception +ex+ with an optional +backtrace+" ilk="function" name="set_error" signature="set_error(ex, backtrace=false)" />
+          <scope doc="Redirects to +url+ with a WEBrick::HTTPStatus::Redirect +status+. &#10; Example: &#10; res.set_redirect WEBrick::HTTPStatus::TemporaryRedirect" ilk="function" name="set_redirect" signature="set_redirect(status, url)" />
+          <scope doc="Sets up the headers for sending" ilk="function" name="setup_header" signature="setup_header()" />
+          <scope doc="Sets the response's status to the +status+ code" ilk="function" name="status=" signature="status=(status)" />
+          <scope doc="The response's HTTP status line" ilk="function" name="status_line" signature="status_line()" />
+          <scope ilk="function" name="body" />
+          <scope ilk="function" name="body=" />
+          <scope ilk="function" name="config" />
+          <scope ilk="function" name="cookies" />
+          <scope ilk="function" name="filename" />
+          <scope ilk="function" name="filename=" />
+          <scope ilk="function" name="header" />
+          <scope ilk="function" name="http_version" />
+          <scope ilk="function" name="keep_alive" />
+          <scope ilk="function" name="keep_alive=" />
+          <scope ilk="function" name="reason_phrase" />
+          <scope ilk="function" name="reason_phrase=" />
+          <scope ilk="function" name="request_http_version" />
+          <scope ilk="function" name="request_http_version=" />
+          <scope ilk="function" name="request_method" />
+          <scope ilk="function" name="request_method=" />
+          <scope ilk="function" name="request_uri" />
+          <scope ilk="function" name="request_uri=" />
+          <scope ilk="function" name="sent_size" />
+          <scope ilk="function" name="status" />
+        </scope>
+      </scope>
+    </scope>
+    

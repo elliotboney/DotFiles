@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="JavaScript" name="test_weekofyear.js" src="/private/var/www/kw/content/themes/goodlife/node_modules/grunt/node_modules/dateformat/test/test_weekofyear.js"><variable citdl="require()" line="1" name="dateFormat" required_library_name="../lib/dateformat.js" /><variable citdl="process.argv[2]" line="3" name="val" /></scope>

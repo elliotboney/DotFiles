@@ -1,0 +1,8 @@
+<scope ilk="blob" lang="Ruby" name="uri/ldaps">
+      <scope ilk="namespace" name="URI">
+        <scope classrefs="LDAP" ilk="class" name="LDAPS">
+          <variable attributes="__const__" citdl="Object" name="DEFAULT_PORT" />
+        </scope>
+      </scope>
+    </scope>
+    

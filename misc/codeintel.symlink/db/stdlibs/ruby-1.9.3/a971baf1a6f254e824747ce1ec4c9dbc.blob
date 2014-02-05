@@ -1,0 +1,21 @@
+<scope ilk="blob" lang="Ruby" name="irb">
+      <scope ilk="namespace" name="IRB">
+        <scope classrefs="Object" ilk="class" name="Irb">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(workspace = nil, input_method = nil, output_method = nil)" />
+          <scope ilk="function" name="eval_input" signature="eval_input()" />
+          <scope ilk="function" name="inspect" signature="inspect()" />
+          <scope ilk="function" name="output_value" signature="output_value()" />
+          <scope ilk="function" name="prompt" signature="prompt(prompt, ltype, indent, line_no)" />
+          <scope ilk="function" name="signal_handle" signature="signal_handle()" />
+          <scope ilk="function" name="signal_status" signature="signal_status(status)" />
+          <scope ilk="function" name="suspend_context" signature="suspend_context(context)" />
+          <scope ilk="function" name="suspend_input_method" signature="suspend_input_method(input_method)" />
+          <scope ilk="function" name="suspend_name" signature="suspend_name(path = nil, name = nil)" />
+          <scope ilk="function" name="suspend_workspace" signature="suspend_workspace(workspace)" />
+          <scope ilk="function" name="context" />
+          <scope ilk="function" name="scanner" />
+          <scope ilk="function" name="scanner=" />
+        </scope>
+      </scope>
+    </scope>
+    

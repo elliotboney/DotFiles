@@ -1,0 +1,149 @@
+<scope ilk="blob" lang="Ruby" name="resolv">
+      <scope classrefs="Object" ilk="class" name="Resolv">
+        <scope attributes="__classmethod__" doc="Iterates over all IP addresses for +name+." ilk="function" name="each_address" signature="each_address(name, &amp;block)" />
+        <scope attributes="__classmethod__" doc="Iterates over all hostnames for +address+." ilk="function" name="each_name" signature="each_name(address, &amp;proc)" />
+        <scope attributes="__classmethod__" doc="Looks up the first IP address for +name+." ilk="function" name="getaddress" signature="getaddress(name)" />
+        <scope attributes="__classmethod__" doc="Looks up all IP address for +name+." ilk="function" name="getaddresses" signature="getaddresses(name)" />
+        <scope attributes="__classmethod__" doc="Looks up the hostname of +address+." ilk="function" name="getname" signature="getname(address)" />
+        <scope attributes="__classmethod__" doc="Looks up all hostnames for +address+." ilk="function" name="getnames" signature="getnames(address)" />
+        <scope attributes="__classmethod__ __ctor__" doc="Creates a new Resolv using +resolvers+." ilk="function" name="new" signature="new(resolvers=[Hosts.new, DNS.new])" />
+        <scope doc="Iterates over all IP addresses for +name+." ilk="function" name="each_address" signature="each_address(name)" />
+        <scope doc="Iterates over all hostnames for +address+." ilk="function" name="each_name" signature="each_name(address)" />
+        <scope doc="Looks up the first IP address for +name+." ilk="function" name="getaddress" signature="getaddress(name)" />
+        <scope doc="Looks up all IP address for +name+." ilk="function" name="getaddresses" signature="getaddresses(name)" />
+        <scope doc="Looks up the hostname of +address+." ilk="function" name="getname" signature="getname(address)" />
+        <scope doc="Looks up all hostnames for +address+." ilk="function" name="getnames" signature="getnames(address)" />
+        <scope classrefs="Object" ilk="class" name="DNS">
+          <scope attributes="__classmethod__ __ctor__" doc="Creates a new DNS resolver. &#10; +config_info+ can be: &#10; Uses /etc/resolv.conf.&#10;Path to a file using /etc/resolv.conf's format.&#10;Must contain :nameserver, :search and :ndots keys. :nameserver_port can be used to specify port number of nameserver address. &#10; The value of :nameserver should be an address string or an array of address strings. :nameserver =&gt; '8.8.8.8'&#10;:nameserver =&gt; ['8.8.8.8', '8.8.4.4'] &#10; The value of :nameserver_port should be an array of pair of nameserver address and port number. :nameserver_port =&gt; [['8.8.8.8', 53], ['8.8.4.4', 53]] &#10; Example: &#10; Resolv::DNS.new(:nameserver =&gt; ['210.251.121.21'],&#10;                :search =&gt; ['ruby-lang.org'],&#10;                :ndots =&gt; 1)" ilk="function" name="new" signature="new(config_info=nil)" />
+          <scope attributes="__classmethod__" doc="Creates a new DNS resolver.  See Resolv::DNS.new for argument details. &#10; Yields the created DNS resolver to the block, if given, otherwise returns it." ilk="function" name="open" signature="open(*args)" />
+          <scope doc="Closes the DNS resolver." ilk="function" name="close" signature="close()" />
+          <scope doc="Iterates over all IP addresses for +name+ retrieved from the DNS resolver. &#10; +name+ can be a Resolv::DNS::Name or a String.  Retrieved addresses will be a Resolv::IPv4 or Resolv::IPv6" ilk="function" name="each_address" signature="each_address(name)" />
+          <scope doc="Iterates over all hostnames for +address+ retrieved from the DNS resolver. &#10; +address+ must be a Resolv::IPv4, Resolv::IPv6 or a String.  Retrieved names will be Resolv::DNS::Name instances." ilk="function" name="each_name" signature="each_name(address)" />
+          <scope doc="Iterates over all +typeclass+ DNS resources for +name+.  See #getresource for argument details." ilk="function" name="each_resource" signature="each_resource(name, typeclass, &amp;proc)" />
+          <scope doc="Gets the IP address of +name+ from the DNS resolver. &#10; +name+ can be a Resolv::DNS::Name or a String.  Retrieved address will be a Resolv::IPv4 or Resolv::IPv6" ilk="function" name="getaddress" signature="getaddress(name)" />
+          <scope doc="Gets all IP addresses for +name+ from the DNS resolver. &#10; +name+ can be a Resolv::DNS::Name or a String.  Retrieved addresses will be a Resolv::IPv4 or Resolv::IPv6" ilk="function" name="getaddresses" signature="getaddresses(name)" />
+          <scope doc="Gets the hostname for +address+ from the DNS resolver. &#10; +address+ must be a Resolv::IPv4, Resolv::IPv6 or a String.  Retrieved name will be a Resolv::DNS::Name." ilk="function" name="getname" signature="getname(address)" />
+          <scope doc="Gets all hostnames for +address+ from the DNS resolver. &#10; +address+ must be a Resolv::IPv4, Resolv::IPv6 or a String.  Retrieved names will be Resolv::DNS::Name instances." ilk="function" name="getnames" signature="getnames(address)" />
+          <scope doc="Look up the +typeclass+ DNS resource of +name+. &#10; +name+ must be a Resolv::DNS::Name or a String. &#10; +typeclass+ should be one of the following: &#10; Resolv::DNS::Resource::IN::A&#10;Resolv::DNS::Resource::IN::AAAA&#10;Resolv::DNS::Resource::IN::ANY&#10;Resolv::DNS::Resource::IN::CNAME&#10;Resolv::DNS::Resource::IN::HINFO&#10;Resolv::DNS::Resource::IN::MINFO&#10;Resolv::DNS::Resource::IN::MX&#10;Resolv::DNS::Resource::IN::NS&#10;Resolv::DNS::Resource::IN::PTR&#10;Resolv::DNS::Resource::IN::SOA" ilk="function" name="getresource" signature="getresource(name, typeclass)" />
+          <scope doc="Looks up all +typeclass+ DNS resources for +name+.  See #getresource for argument details." ilk="function" name="getresources" signature="getresources(name, typeclass)" />
+          <scope classrefs="Object" ilk="class" name="Config">
+            <scope classrefs="Resolv::ResolvError" ilk="class" name="NXDomain">
+            </scope>
+            <scope classrefs="Resolv::ResolvError" ilk="class" name="OtherResolvError">
+            </scope>
+          </scope>
+          <scope classrefs="StandardError" ilk="class" name="DecodeError">
+          </scope>
+          <scope classrefs="StandardError" ilk="class" name="EncodeError">
+          </scope>
+          <scope classrefs="Object" ilk="class" name="Name">
+            <scope attributes="__classmethod__" doc="Creates a new DNS name from +arg+.  +arg+ can be: &#10; returns +arg+.&#10;Creates a new Name." ilk="function" name="create" signature="create(arg)" />
+            <scope doc="True if this name is absolute." ilk="function" name="absolute?" signature="absolute?()" />
+            <scope doc="Returns true if +other+ is a subdomain. &#10; Example: &#10; domain = Resolv::DNS::Name.create(&quot;y.z&quot;)&#10;p Resolv::DNS::Name.create(&quot;w.x.y.z&quot;).subdomain_of?(domain) =&gt; true&#10;p Resolv::DNS::Name.create(&quot;x.y.z&quot;).subdomain_of?(domain) =&gt; true&#10;p Resolv::DNS::Name.create(&quot;y.z&quot;).subdomain_of?(domain) =&gt; false&#10;p Resolv::DNS::Name.create(&quot;z&quot;).subdomain_of?(domain) =&gt; false&#10;p Resolv::DNS::Name.create(&quot;x.y.z.&quot;).subdomain_of?(domain) =&gt; false&#10;p Resolv::DNS::Name.create(&quot;w.z&quot;).subdomain_of?(domain) =&gt; false" ilk="function" name="subdomain_of?" signature="subdomain_of?(other)" />
+            <scope doc="returns the domain name as a string. &#10; The domain name doesn't have a trailing dot even if the name object is absolute. &#10; Example: &#10; p Resolv::DNS::Name.create(&quot;x.y.z.&quot;).to_s =&gt; &quot;x.y.z&quot;&#10;p Resolv::DNS::Name.create(&quot;x.y.z&quot;).to_s =&gt; &quot;x.y.z&quot;" ilk="function" name="to_s" signature="to_s()" />
+          </scope>
+          <scope classrefs="Object" ilk="class" name="Query">
+          </scope>
+          <scope classrefs="Object" ilk="class" name="Requester">
+            <scope classrefs="StandardError" ilk="class" name="RequestError">
+            </scope>
+          </scope>
+          <scope classrefs="Resolv::DNS::Query" ilk="class" name="Resource">
+            <scope ilk="function" name="ttl" />
+            <scope classrefs="Resolv::DNS::Query" ilk="class" name="ANY">
+            </scope>
+            <scope classrefs="Resolv::DNS::Resource::DomainName" ilk="class" name="CNAME">
+            </scope>
+            <scope classrefs="Resolv::DNS::Resource" ilk="class" name="DomainName">
+              <scope attributes="__classmethod__ __ctor__" doc="Creates a new DomainName from +name+." ilk="function" name="new" signature="new(name)" />
+              <scope ilk="function" name="name" />
+            </scope>
+            <scope classrefs="Resolv::DNS::Resource" ilk="class" name="Generic">
+              <scope attributes="__classmethod__ __ctor__" doc="Creates a new generic resource." ilk="function" name="new" signature="new(data)" />
+              <scope ilk="function" name="data" />
+            </scope>
+            <scope classrefs="Resolv::DNS::Resource" ilk="class" name="HINFO">
+              <scope attributes="__classmethod__ __ctor__" doc="Creates a new HINFO running +os+ on +cpu+." ilk="function" name="new" signature="new(cpu, os)" />
+              <scope ilk="function" name="cpu" />
+              <scope ilk="function" name="os" />
+            </scope>
+            <scope ilk="namespace" name="IN">
+              <scope classrefs="Resolv::DNS::Resource" ilk="class" name="A">
+                <scope attributes="__classmethod__ __ctor__" doc="Creates a new A for +address+." ilk="function" name="new" signature="new(address)" />
+                <scope ilk="function" name="address" />
+              </scope>
+              <scope classrefs="Resolv::DNS::Resource" ilk="class" name="AAAA">
+                <scope attributes="__classmethod__ __ctor__" doc="Creates a new AAAA for +address+." ilk="function" name="new" signature="new(address)" />
+                <scope ilk="function" name="address" />
+              </scope>
+              <scope classrefs="Resolv::DNS::Resource" ilk="class" name="SRV">
+                <scope attributes="__classmethod__ __ctor__" doc="Create a SRV resource record. &#10; See the documentation for #priority, #weight, #port and #target for +priority+, +weight+, +port and +target+ respectively." ilk="function" name="new" signature="new(priority, weight, port, target)" />
+                <scope ilk="function" name="port" />
+                <scope ilk="function" name="priority" />
+                <scope ilk="function" name="target" />
+                <scope ilk="function" name="weight" />
+              </scope>
+              <scope classrefs="Resolv::DNS::Resource" ilk="class" name="WKS">
+                <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(address, protocol, bitmap)" />
+                <scope ilk="function" name="address" />
+                <scope ilk="function" name="bitmap" />
+                <scope ilk="function" name="protocol" />
+              </scope>
+            </scope>
+            <scope classrefs="Resolv::DNS::Resource" ilk="class" name="MINFO">
+              <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(rmailbx, emailbx)" />
+              <scope ilk="function" name="emailbx" />
+              <scope ilk="function" name="rmailbx" />
+            </scope>
+            <scope classrefs="Resolv::DNS::Resource" ilk="class" name="MX">
+              <scope attributes="__classmethod__ __ctor__" doc="Creates a new MX record with +preference+, accepting mail at +exchange+." ilk="function" name="new" signature="new(preference, exchange)" />
+              <scope ilk="function" name="exchange" />
+              <scope ilk="function" name="preference" />
+            </scope>
+            <scope classrefs="Resolv::DNS::Resource::DomainName" ilk="class" name="NS">
+            </scope>
+            <scope classrefs="Resolv::DNS::Resource::DomainName" ilk="class" name="PTR">
+            </scope>
+            <scope classrefs="Resolv::DNS::Resource" ilk="class" name="SOA">
+              <scope attributes="__classmethod__ __ctor__" doc="Creates a new SOA record.  See the attr documentation for the details of each argument." ilk="function" name="new" signature="new(mname, rname, serial, refresh, retry_, expire, minimum)" />
+              <scope ilk="function" name="expire" />
+              <scope ilk="function" name="minimum" />
+              <scope ilk="function" name="mname" />
+              <scope ilk="function" name="refresh" />
+              <scope ilk="function" name="retry" />
+              <scope ilk="function" name="rname" />
+              <scope ilk="function" name="serial" />
+            </scope>
+            <scope classrefs="Resolv::DNS::Resource" ilk="class" name="TXT">
+              <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(first_string, *rest_strings)" />
+              <scope doc="Returns the first string from +strings+." ilk="function" name="data" signature="data()" />
+              <scope ilk="function" name="strings" />
+            </scope>
+          </scope>
+        </scope>
+        <scope classrefs="Object" ilk="class" name="Hosts">
+          <scope attributes="__classmethod__ __ctor__" doc="Creates a new Resolv::Hosts, using +filename+ for its data source." ilk="function" name="new" signature="new(filename = DefaultFileName)" />
+          <scope doc="Iterates over all IP addresses for +name+ retrieved from the hosts file." ilk="function" name="each_address" signature="each_address(name, &amp;proc)" />
+          <scope doc="Iterates over all hostnames for +address+ retrieved from the hosts file." ilk="function" name="each_name" signature="each_name(address, &amp;proc)" />
+          <scope doc="Gets the IP address of +name+ from the hosts file." ilk="function" name="getaddress" signature="getaddress(name)" />
+          <scope doc="Gets all IP addresses for +name+ from the hosts file." ilk="function" name="getaddresses" signature="getaddresses(name)" />
+          <scope doc="Gets the hostname of +address+ from the hosts file." ilk="function" name="getname" signature="getname(address)" />
+          <scope doc="Gets all hostnames for +address+ from the hosts file." ilk="function" name="getnames" signature="getnames(address)" />
+        </scope>
+        <scope classrefs="Object" ilk="class" name="IPv4">
+          <scope attributes="__classmethod__" ilk="function" name="create" signature="create(arg)" />
+          <scope doc="Turns this IPv4 address into a Resolv::DNS::Name." ilk="function" name="to_name" signature="to_name()" />
+          <scope ilk="function" name="address" />
+        </scope>
+        <scope classrefs="Object" ilk="class" name="IPv6">
+          <scope attributes="__classmethod__" doc="Creates a new IPv6 address from +arg+ which may be: &#10; returns +arg+.&#10;+arg+ must match one of the IPv6::Regex* constants" ilk="function" name="create" signature="create(arg)" />
+          <scope doc="Turns this IPv6 address into a Resolv::DNS::Name." ilk="function" name="to_name" signature="to_name()" />
+          <scope ilk="function" name="address" />
+        </scope>
+        <scope classrefs="StandardError" ilk="class" name="ResolvError">
+        </scope>
+        <scope classrefs="Timeout::Error" ilk="class" name="ResolvTimeout">
+        </scope>
+      </scope>
+    </scope>
+    

@@ -1,0 +1,39 @@
+<scope ilk="blob" lang="Ruby" name="rss">
+      <scope ilk="namespace" name="RSS">
+        <variable attributes="__const__" citdl="Object" name="ITUNES_PREFIX" />
+        <variable attributes="__const__" citdl="Object" name="ITUNES_URI" />
+        <variable attributes="__const__" citdl="Object" name="SY_PREFIX" />
+        <variable attributes="__const__" citdl="Object" name="SY_URI" />
+        <variable attributes="__const__" citdl="Object" name="AVAILABLE_PARSER_LIBRARIES" />
+        <variable attributes="__const__" citdl="Object" name="AVAILABLE_PARSERS" />
+        <variable attributes="__const__" citdl="Object" name="TRACKBACK_PREFIX" />
+        <variable attributes="__const__" citdl="Object" name="TRACKBACK_URI" />
+        <variable attributes="__const__" citdl="Object" name="VERSION" />
+        <variable attributes="__const__" citdl="Object" name="URI" />
+        <variable attributes="__const__" citdl="Object" name="DEBUG" />
+        <variable attributes="__const__" citdl="Object" name="DC_PREFIX" />
+        <variable attributes="__const__" citdl="Object" name="DC_URI" />
+        <variable attributes="__const__" citdl="Object" name="CONTENT_PREFIX" />
+        <variable attributes="__const__" citdl="Object" name="CONTENT_URI" />
+        <variable attributes="__const__" citdl="Object" name="SLASH_PREFIX" />
+        <variable attributes="__const__" citdl="Object" name="SLASH_URI" />
+        <variable attributes="__const__" citdl="Object" name="IMAGE_PREFIX" />
+        <variable attributes="__const__" citdl="Object" name="IMAGE_URI" />
+        <variable attributes="__const__" citdl="Object" name="IMAGE_ELEMENTS" />
+        <variable attributes="__const__" citdl="Object" name="TAXO_PREFIX" />
+        <variable attributes="__const__" citdl="Object" name="TAXO_URI" />
+        <variable attributes="__const__" citdl="Object" name="TAXO_ELEMENTS" />
+        <scope ilk="namespace" name="DublincoreModel">
+          <variable attributes="__const__" citdl="Object" name="TEXT_ELEMENTS" />
+          <variable attributes="__const__" citdl="Object" name="DATE_ELEMENTS" />
+          <variable attributes="__const__" citdl="Object" name="ELEMENT_NAME_INFOS" />
+          <variable attributes="__const__" citdl="Object" name="ELEMENTS" />
+        </scope>
+        <scope ilk="class" name="RSS09">
+          <scope attributes="__classmethod__" ilk="function" name="append_features" signature="append_features(klass)" />
+          <variable attributes="__const__" citdl="Object" name="NSPOOL" />
+          <variable attributes="__const__" citdl="Object" name="ELEMENTS" />
+        </scope>
+      </scope>
+    </scope>
+    

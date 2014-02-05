@@ -1,0 +1,7 @@
+<scope ilk="blob" lang="Ruby" name="rdoc/meta_method">
+      <scope ilk="namespace" name="RDoc">
+        <scope classrefs="RDoc::AnyMethod" ilk="class" name="MetaMethod">
+        </scope>
+      </scope>
+    </scope>
+    

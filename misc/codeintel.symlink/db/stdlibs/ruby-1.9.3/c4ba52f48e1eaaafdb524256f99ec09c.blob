@@ -1,0 +1,28 @@
+<scope ilk="blob" lang="Ruby" name="rake/contrib/ftptools">
+      <scope ilk="namespace" name="Rake">
+        <scope classrefs="Object" ilk="class" name="FtpFile">
+          <scope attributes="__classmethod__" ilk="function" name="date" signature="date()" />
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(path, entry)" />
+          <scope attributes="__classmethod__" ilk="function" name="time" signature="time()" />
+          <scope ilk="function" name="directory?" signature="directory?()" />
+          <scope ilk="function" name="mode" signature="mode()" />
+          <scope ilk="function" name="path" signature="path()" />
+          <scope ilk="function" name="symlink?" signature="symlink?()" />
+          <scope ilk="function" name="group" />
+          <scope ilk="function" name="name" />
+          <scope ilk="function" name="owner" />
+          <scope ilk="function" name="size" />
+          <scope ilk="function" name="time" />
+        </scope>
+        <scope classrefs="Object" ilk="class" name="FtpUploader">
+          <scope attributes="__classmethod__" doc="Create an uploader and pass it to the given block as +up+. When the block is complete, close the uploader." ilk="function" name="connect" signature="connect(path, host, account, password)" />
+          <scope attributes="__classmethod__ __ctor__" doc="Create an FTP uploader targeting the directory +path+ on +host+ using the given account and password.  +path+ will be the root path of the uploader." ilk="function" name="new" signature="new(path, host, account, password)" />
+          <scope doc="Close the uploader." ilk="function" name="close" signature="close()" />
+          <scope doc="Create the directory +path+ in the uploader root path." ilk="function" name="makedirs" signature="makedirs(path)" />
+          <scope doc="Upload all files matching +wildcard+ to the uploader's root path." ilk="function" name="upload_files" signature="upload_files(wildcard)" />
+          <scope ilk="function" name="verbose" />
+          <scope ilk="function" name="verbose=" />
+        </scope>
+      </scope>
+    </scope>
+    

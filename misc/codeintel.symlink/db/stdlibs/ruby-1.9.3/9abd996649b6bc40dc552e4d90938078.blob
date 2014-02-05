@@ -1,0 +1,19 @@
+<scope ilk="blob" lang="Ruby" name="rake/file_utils_ext">
+      <scope ilk="namespace" name="Rake">
+        <scope ilk="namespace" name="FileUtilsExt">
+          <import symbol="FileUtils" />
+          <scope doc="Get/set the nowrite flag controlling output from the FileUtils utilities.  If verbose is true, then the utility method is echoed to standard output. &#10; Examples: nowrite              # return the current value of the&#10;                     # nowrite flag&#10;nowrite(v)           # set the nowrite flag to _v_.&#10;nowrite(v) { code }  # Execute code with the nowrite flag set&#10;                     # temporarily to _v_. Return to the&#10;                     # original value when code is done." ilk="function" name="nowrite" signature="nowrite(value=nil)" />
+          <scope doc="Check that the options do not contain options not listed in +optdecl+.  An ArgumentError exception is thrown if non-declared options are found." ilk="function" name="rake_check_options" signature="rake_check_options(options, *optdecl)" />
+          <scope doc="Merge the given options with the default values." ilk="function" name="rake_merge_option" signature="rake_merge_option(args, defaults)" />
+          <scope doc="Send the message to the default rake output (which is $stderr)." ilk="function" name="rake_output_message" signature="rake_output_message(message)" />
+          <scope doc="Get/set the verbose flag controlling output from the FileUtils utilities.  If verbose is true, then the utility method is echoed to standard output. &#10; Examples: verbose              # return the current value of the&#10;                     # verbose flag&#10;verbose(v)           # set the verbose flag to _v_.&#10;verbose(v) { code }  # Execute code with the verbose flag set&#10;                     # temporarily to _v_.  Return to the&#10;                     # original value when code is done." ilk="function" name="verbose" signature="verbose(value=nil)" />
+          <scope doc="Use this function to prevent potentially destructive ruby code from running when the :nowrite flag is set. &#10; Example: &#10; when_writing(&quot;Building Project&quot;) do&#10;  project.build&#10;end&#10; The following code will build the project under normal conditions. If the nowrite(true) flag is set, then the example will print: &#10; DRYRUN: Building Project&#10; instead of actually building the project." ilk="function" name="when_writing" signature="when_writing(msg=nil)" />
+          <scope ilk="function" name="nowrite_flag" />
+          <scope ilk="function" name="nowrite_flag=" />
+          <scope ilk="function" name="verbose_flag" />
+          <scope ilk="function" name="verbose_flag=" />
+          <variable attributes="__const__" citdl="Object" name="DEFAULT" />
+        </scope>
+      </scope>
+    </scope>
+    

@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="PHP" name="cotendo.php" src="/private/var/www/wordpress.staging/plugins/w3-total-cache/inc/options/cdn/cotendo.php"><import line="37" module="/options/cdn/common/cnames.php" /><variable citdl="this._config.get_array()" line="37" name="cnames" /></scope>

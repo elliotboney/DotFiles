@@ -1,0 +1,56 @@
+<scope ilk="blob" lang="Ruby" name="rdoc/parser/ruby">
+      <scope ilk="namespace" name="RDoc">
+        <scope ilk="namespace" name="Parser">
+          <scope classrefs="RDoc::Parser" ilk="class" name="Ruby">
+            <import symbol="RDoc::Parser::RubyTools" />
+            <import symbol="RDoc::RubyToken" />
+            <import symbol="RDoc::TokenStream" />
+            <scope attributes="__classmethod__ __ctor__" doc="Creates a new Ruby parser." ilk="function" name="new" signature="new(top_level, file_name, content, options, stats)" />
+            <scope doc="Look for the first comment in a file that isn't a shebang line." ilk="function" name="collect_first_comment" signature="collect_first_comment()" />
+            <scope doc="Aborts with +msg+" ilk="function" name="error" signature="error(msg)" />
+            <scope doc="Look for a 'call-seq' in the comment, and override the normal parameter stuff" ilk="function" name="extract_call_seq" signature="extract_call_seq(comment, meth)" />
+            <scope doc="Looks for a true or false token.  Returns false if TkFALSE or TkNIL are found." ilk="function" name="get_bool" signature="get_bool()" />
+            <scope doc="or&#10;separated named) and return the ultimate name, the associated container, and the given name (with the ::)." ilk="function" name="get_class_or_module" signature="get_class_or_module(container)" />
+            <scope doc="Return a superclass, which can be either a constant of an expression" ilk="function" name="get_class_specification" signature="get_class_specification()" />
+            <scope doc="Parse a constant, which might be qualified by one or more class or module names" ilk="function" name="get_constant" signature="get_constant()" />
+            <scope doc="Get a constant that may be surrounded by parens" ilk="function" name="get_constant_with_optional_parens" signature="get_constant_with_optional_parens()" />
+            <scope doc="Extracts a name or symbol from the token stream." ilk="function" name="get_symbol_or_name" signature="get_symbol_or_name()" />
+            <scope doc="Look for directives in a normal comment block: &#10; # :stopdoc:&#10;# Don't display comment from this point forward&#10; This routine modifies its +comment+ parameter." ilk="function" name="look_for_directives_in" signature="look_for_directives_in(context, comment)" />
+            <scope doc="Adds useful info about the parser to +message+" ilk="function" name="make_message" signature="make_message(message)" />
+            <scope doc="Parses an +alias+ in +context+ with +comment+" ilk="function" name="parse_alias" signature="parse_alias(context, single, tk, comment)" />
+            <scope doc="Creates an RDoc::Attr for the name following +tk+, setting the comment to +comment+." ilk="function" name="parse_attr" signature="parse_attr(context, single, tk, comment)" />
+            <scope doc="Creates an RDoc::Attr for each attribute listed after +tk+, setting the comment for each to +comment+." ilk="function" name="parse_attr_accessor" signature="parse_attr_accessor(context, single, tk, comment)" />
+            <scope doc="Extracts call parameters from the token stream." ilk="function" name="parse_call_parameters" signature="parse_call_parameters(tk)" />
+            <scope doc="Parses a class in +context+ with +comment+" ilk="function" name="parse_class" signature="parse_class(container, single, tk, comment)" />
+            <scope doc="Generates an RDoc::Method or RDoc::Attr from +comment+ by looking for :method: or :attr: directives in +comment+." ilk="function" name="parse_comment" signature="parse_comment(container, tk, comment)" />
+            <scope doc="Parses a constant in +context+ with +comment+" ilk="function" name="parse_constant" signature="parse_constant(container, tk, comment)" />
+            <scope doc="Parses an +include+ in +context+ with +comment+" ilk="function" name="parse_include" signature="parse_include(context, comment)" />
+            <scope doc="Parses a meta-programmed attribute and creates an RDoc::Attr. &#10; To create foo and bar attributes on class C with comment &quot;My attributes&quot;: &#10; class C&#10;  ##&#10;  # :attr:&#10;  #&#10;  # My attributes&#10;  my_attr :foo, :bar&#10;end&#10; To create a foo attribute on class C with comment &quot;My attribute&quot;: &#10; class C&#10;  ##&#10;  # :attr: foo" ilk="function" name="parse_meta_attr" signature="parse_meta_attr(context, single, tk, comment)" />
+            <scope doc="Parses a meta-programmed method" ilk="function" name="parse_meta_method" signature="parse_meta_method(container, single, tk, comment)" />
+            <scope doc="Parses a normal method defined by +def+" ilk="function" name="parse_method" signature="parse_method(container, single, tk, comment)" />
+            <scope doc="Extracts +yield+ parameters from +method+" ilk="function" name="parse_method_or_yield_parameters" signature="parse_method_or_yield_parameters(method = nil, modifiers = RDoc::METHOD_MODIFIERS)" />
+            <scope doc="Capture the method's parameters. Along the way, look for a comment containing: &#10; # yields: ....&#10; and add this as the block_params for the method" ilk="function" name="parse_method_parameters" signature="parse_method_parameters(method)" />
+            <scope doc="Parses an RDoc::NormalModule in +container+ with +comment+" ilk="function" name="parse_module" signature="parse_module(container, single, tk, comment)" />
+            <scope doc="Parses an RDoc::Require in +context+ containing +comment+" ilk="function" name="parse_require" signature="parse_require(context, comment)" />
+            <scope doc="The core of the ruby parser." ilk="function" name="parse_statements" signature="parse_statements(container, single = NORMAL, current_method = nil, comment = '')" />
+            <scope doc="Parse up to +no+ symbol arguments" ilk="function" name="parse_symbol_arg" signature="parse_symbol_arg(no = nil)" />
+            <scope doc="Returns symbol text from the next token" ilk="function" name="parse_symbol_in_arg" signature="parse_symbol_in_arg()" />
+            <scope doc="Parses statements in the top-level +container+" ilk="function" name="parse_top_level_statements" signature="parse_top_level_statements(container)" />
+            <scope doc="Determines the visibility in +container+ from +tk+" ilk="function" name="parse_visibility" signature="parse_visibility(container, single, tk)" />
+            <scope doc="Determines the block parameter for +context+" ilk="function" name="parse_yield" signature="parse_yield(context, single, tk, method)" />
+            <scope doc="Directives are modifier comments that can appear after class, module, or method names. For example: &#10; def fred # :yields: a, b&#10; or: &#10; class MyClass # :nodoc:&#10; We return the directive name and any parameters as a two element array" ilk="function" name="read_directive" signature="read_directive(allowed)" />
+            <scope doc="Handles the directive for +context+ if the directive is listed in +allow+. This method is called for directives following a definition." ilk="function" name="read_documentation_modifiers" signature="read_documentation_modifiers(context, allow)" />
+            <scope doc="Removes private comments from +comment+" ilk="function" name="remove_private_comments" signature="remove_private_comments(comment)" />
+            <scope doc="Scans this ruby file for ruby constructs" ilk="function" name="scan" signature="scan()" />
+            <scope doc="skip the var [in] part of a 'for' statement" ilk="function" name="skip_for_variable" signature="skip_for_variable()" />
+            <scope doc="Skips the next method in +container+" ilk="function" name="skip_method" signature="skip_method(container)" />
+            <scope doc="while, until, and for have an optional do" ilk="function" name="skip_optional_do_after_expression" signature="skip_optional_do_after_expression()" />
+            <scope doc="Skip spaces until a comment is found" ilk="function" name="skip_tkspace_comment" signature="skip_tkspace_comment(skip_nl = true)" />
+            <scope doc="Prints +msg+ to +$stderr+ unless we're being quiet" ilk="function" name="warn" signature="warn(msg)" />
+            <variable attributes="__const__" citdl="Object" name="NORMAL" />
+            <variable attributes="__const__" citdl="Object" name="SINGLE" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

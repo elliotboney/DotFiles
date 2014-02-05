@@ -1,0 +1,73 @@
+<scope ilk="blob" lang="Ruby" name="rexml/doctype">
+      <scope ilk="namespace" name="REXML">
+        <scope ilk="namespace" name="DTD">
+          <scope classrefs="Child" ilk="class" name="ElementDecl">
+            <scope attributes="__classmethod__ __ctor__" doc="\s*(((([&quot;']).*?\5)|[^\/'&quot;&gt;]*)*?)(\/)?&gt;/um, true)" ilk="function" name="new" signature="new(match)" />
+            <variable attributes="__const__" citdl="Object" name="START" />
+            <variable attributes="__const__" citdl="Object" name="START_RE" />
+            <variable attributes="__const__" citdl="Object" name="PATTERN_RE" />
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="DTD">
+          <scope classrefs="Child" ilk="class" name="NotationDecl">
+            <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(src)" />
+            <scope attributes="__classmethod__" ilk="function" name="parse_source" signature="parse_source(source, listener)" />
+            <scope ilk="function" name="to_s" signature="to_s()" />
+            <scope ilk="function" name="write" signature="write( output, indent )" />
+            <variable attributes="__const__" citdl="Object" name="START" />
+            <variable attributes="__const__" citdl="Object" name="START_RE" />
+            <variable attributes="__const__" citdl="Object" name="PUBLIC" />
+            <variable attributes="__const__" citdl="Object" name="SYSTEM" />
+          </scope>
+        </scope>
+        <scope classrefs="Child" ilk="class" name="Declaration">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(src)" />
+          <scope ilk="function" name="to_s" signature="to_s()" />
+          <scope doc="DEPRECATED See REXML::Formatters" ilk="function" name="write" signature="write( output, indent )" />
+        </scope>
+        <scope classrefs="Parent" ilk="class" name="DocType">
+          <import symbol="XMLTokens" />
+          <scope attributes="__classmethod__ __ctor__" doc="Constructor &#10; dt = DocType.new( 'foo', '-//I/Hate/External/IDs' )&#10;# &lt;!DOCTYPE foo '-//I/Hate/External/IDs'&gt;&#10;dt = DocType.new( doctype_to_clone )&#10;# Incomplete.  Shallow clone of doctype&#10; +Note+ that the constructor: &#10; Doctype.new( Source.new( &quot;&lt;!DOCTYPE foo 'bar'&gt;&quot; ) )&#10; is _deprecated_.  Do not use it.  It will probably disappear." ilk="function" name="new" signature="new( first, parent=nil )" />
+          <scope ilk="function" name="add" signature="add(child)" />
+          <scope ilk="function" name="attribute_of" signature="attribute_of(element, attribute)" />
+          <scope ilk="function" name="attributes_of" signature="attributes_of(element)" />
+          <scope ilk="function" name="clone" signature="clone()" />
+          <scope ilk="function" name="context" signature="context()" />
+          <scope ilk="function" name="entity" signature="entity( name )" />
+          <scope ilk="function" name="node_type" signature="node_type()" />
+          <scope doc="Retrieves a named notation. Only notations declared in the internal DTD subset can be retrieved. &#10; Method contributed by Henrik Martensson" ilk="function" name="notation" signature="notation(name)" />
+          <scope doc="This method returns a list of notations that have been declared in the _internal_ DTD subset. Notations in the external DTD subset are not listed. &#10; Method contributed by Henrik Martensson" ilk="function" name="notations" signature="notations()" />
+          <scope doc="This method retrieves the public identifier identifying the document's DTD. &#10; Method contributed by Henrik Martensson" ilk="function" name="public" signature="public()" />
+          <scope doc="This method retrieves the system identifier identifying the document's DTD &#10; Method contributed by Henrik Martensson" ilk="function" name="system" signature="system()" />
+          <scope doc="Where to write the string&#10;An integer.  If -1, no indentation will be used; otherwise, the indentation will be this number of spaces, and children will be indented an additional amount.&#10;Ignored&#10;Ignored" ilk="function" name="write" signature="write( output, indent=0, transitive=false, ie_hack=false )" />
+          <scope ilk="function" name="entities" />
+          <scope ilk="function" name="external_id" />
+          <scope ilk="function" name="name" />
+          <scope ilk="function" name="namespaces" />
+          <variable attributes="__const__" citdl="Object" name="START" />
+          <variable attributes="__const__" citdl="Object" name="STOP" />
+          <variable attributes="__const__" citdl="Object" name="SYSTEM" />
+          <variable attributes="__const__" citdl="Object" name="PUBLIC" />
+          <variable attributes="__const__" citdl="Object" name="DEFAULT_ENTITIES" />
+        </scope>
+        <scope classrefs="REXML::Declaration" ilk="class" name="ElementDecl">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new( src )" />
+        </scope>
+        <scope classrefs="Child" ilk="class" name="ExternalEntity">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new( src )" />
+          <scope ilk="function" name="to_s" signature="to_s()" />
+          <scope ilk="function" name="write" signature="write( output, indent )" />
+        </scope>
+        <scope classrefs="Child" ilk="class" name="NotationDecl">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(name, middle, pub, sys)" />
+          <scope doc="This method retrieves the name of the notation. &#10; Method contributed by Henrik Martensson" ilk="function" name="name" signature="name()" />
+          <scope ilk="function" name="to_s" signature="to_s()" />
+          <scope ilk="function" name="write" signature="write( output, indent=-1 )" />
+          <scope ilk="function" name="public" />
+          <scope ilk="function" name="public=" />
+          <scope ilk="function" name="system" />
+          <scope ilk="function" name="system=" />
+        </scope>
+      </scope>
+    </scope>
+    

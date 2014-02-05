@@ -1,0 +1,24 @@
+<scope ilk="blob" lang="Ruby" name="rake/contrib/sys">
+      <scope ilk="namespace" name="Sys">
+        <scope doc="Copy a single file from +file_name+ to +dest_file+." ilk="function" name="copy" signature="copy(file_name, dest_file)" />
+        <scope doc="Copy all files matching +wildcard+ into the directory +dest_dir+." ilk="function" name="copy_files" signature="copy_files(wildcard, dest_dir)" />
+        <scope doc="Remove all files matching +wildcard+.  If a matching file is a directory, it must be empty to be removed.  used +delete_all+ to recursively delete directories." ilk="function" name="delete" signature="delete(*wildcards)" />
+        <scope doc="Recursively delete all files and directories matching +wildcard+." ilk="function" name="delete_all" signature="delete_all(*wildcards)" />
+        <scope doc="Perform a block with each file matching a set of wildcards." ilk="function" name="for_files" signature="for_files(*wildcards)" />
+        <scope doc="Make +dir+ the current working directory for the duration of executing the given block." ilk="function" name="indir" signature="indir(dir)" />
+        <scope doc="Install all the files matching +wildcard+ into the +dest_dir+ directory.  The permission mode is set to +mode+." ilk="function" name="install" signature="install(wildcard, dest_dir, mode)" />
+        <scope doc="Link +file_name+ to +dest_file+." ilk="function" name="link" signature="link(file_name, dest_file)" />
+        <scope doc="Link all files matching +wildcard+ into the directory +dest_dir+." ilk="function" name="link_files" signature="link_files(wildcard, dest_dir)" />
+        <scope doc="Write a message to standard error if $verbose is enabled." ilk="function" name="log" signature="log(msg)" />
+        <scope doc="Make the directories given in +dirs+." ilk="function" name="makedirs" signature="makedirs(*dirs)" />
+        <scope doc="Perform a block with $verbose disabled." ilk="function" name="quiet" signature="quiet(&amp;block)" />
+        <scope doc="Run a Ruby interpreter with the given arguments." ilk="function" name="ruby" signature="ruby(*args)" />
+        <scope doc="Run the system command +cmd+." ilk="function" name="run" signature="run(cmd)" />
+        <scope doc="Split a file path into individual directory names. &#10; For example: split_all(&quot;a/b/c&quot;) =&gt;  ['a', 'b', 'c']" ilk="function" name="split_all" signature="split_all(path)" />
+        <scope doc="Symlink +file_name+ to +dest_file+." ilk="function" name="symlink" signature="symlink(file_name, dest_file)" />
+        <scope doc="Symlink all files matching +wildcard+ into the directory +dest_dir+." ilk="function" name="symlink_files" signature="symlink_files(wildcard, dest_dir)" />
+        <scope doc="Perform a block with $verbose enabled." ilk="function" name="verbose" signature="verbose(&amp;block)" />
+        <variable attributes="__const__" citdl="Object" name="RUBY" />
+      </scope>
+    </scope>
+    

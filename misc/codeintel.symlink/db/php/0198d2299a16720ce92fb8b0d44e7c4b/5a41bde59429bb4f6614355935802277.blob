@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="PHP" name="dbcluster-config.php" src="/private/var/www/wordpress.staging/plugins/w3-total-cache/inc/options/enterprise/dbcluster-config.php"><import line="2" module="/options/common/header.php" /><import line="29" module="/options/common/footer.php" /><variable attributes="__not_yet_defined__" line="12" name="content" /></scope>

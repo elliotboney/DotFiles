@@ -1,0 +1,7 @@
+<scope ilk="blob" lang="Ruby" name="find">
+      <scope ilk="namespace" name="Find">
+        <scope attributes="__classmethod__" doc="Calls the associated block with the name of every file and directory listed as arguments, then recursively on their subdirectories, and so on. &#10; See the +Find+ module documentation for an example." ilk="function" name="find" signature="find(*paths)" />
+        <scope attributes="__classmethod__" doc="Skips the current file or directory, restarting the loop with the next entry. If the current file is a directory, that directory will not be recursively entered. Meaningful only within the block associated with Find::find. &#10; See the +Find+ module documentation for an example." ilk="function" name="prune" signature="prune()" />
+      </scope>
+    </scope>
+    

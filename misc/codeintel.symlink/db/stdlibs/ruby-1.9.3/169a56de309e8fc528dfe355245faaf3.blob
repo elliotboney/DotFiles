@@ -1,0 +1,15 @@
+<scope ilk="blob" lang="Ruby" name="rake/task">
+      <scope ilk="namespace" name="Rake">
+        <scope classrefs="Object" ilk="class" name="Task">
+          <scope ilk="function" name="actions" />
+          <scope ilk="function" name="application" />
+          <scope ilk="function" name="application=" />
+          <scope ilk="function" name="comment" />
+          <scope ilk="function" name="full_comment" />
+          <scope ilk="function" name="locations" />
+          <scope ilk="function" name="prerequisites" />
+          <scope ilk="function" name="scope" />
+        </scope>
+      </scope>
+    </scope>
+    

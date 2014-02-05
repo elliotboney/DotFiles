@@ -1,0 +1,86 @@
+<scope ilk="blob" lang="Ruby" name="rexml/validation/relaxng">
+      <scope ilk="namespace" name="REXML">
+        <scope ilk="namespace" name="Validation">
+          <scope classrefs="REXML::Validation::State" ilk="class" name="Choice">
+            <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(context)" />
+            <scope ilk="function" name="expected" signature="expected()" />
+            <scope ilk="function" name="inspect" signature="inspect()" />
+            <scope ilk="function" name="matches?" signature="matches?( event )" />
+            <scope ilk="function" name="next" signature="next( event )" />
+            <scope ilk="function" name="reset" signature="reset()" />
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="Validation">
+          <scope classrefs="REXML::Validation::Choice" ilk="class" name="Interleave">
+            <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(context)" />
+            <scope ilk="function" name="expected" signature="expected()" />
+            <scope ilk="function" name="inspect" signature="inspect()" />
+            <scope ilk="function" name="matches?" signature="matches?( event )" />
+            <scope ilk="function" name="next" signature="next( event )" />
+            <scope ilk="function" name="next_current" signature="next_current( event )" />
+            <scope ilk="function" name="reset" signature="reset()" />
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="Validation">
+          <scope classrefs="REXML::Validation::State" ilk="class" name="OneOrMore">
+            <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(context)" />
+            <scope ilk="function" name="expected" signature="expected()" />
+            <scope ilk="function" name="matches?" signature="matches?( event )" />
+            <scope ilk="function" name="next" signature="next( event )" />
+            <scope ilk="function" name="reset" signature="reset()" />
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="Validation">
+          <scope classrefs="REXML::Validation::State" ilk="class" name="Optional">
+            <scope ilk="function" name="expected" signature="expected()" />
+            <scope ilk="function" name="matches?" signature="matches?(event)" />
+            <scope ilk="function" name="next" signature="next( event )" />
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="Validation">
+          <scope classrefs="Object" ilk="class" name="Ref">
+            <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(value)" />
+            <scope ilk="function" name="inspect" signature="inspect()" />
+            <scope ilk="function" name="to_s" signature="to_s()" />
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="Validation">
+          <scope classrefs="Object" ilk="class" name="RelaxNG">
+            <import symbol="Validator" />
+            <scope attributes="__classmethod__ __ctor__" doc="FIXME: Namespaces" ilk="function" name="new" signature="new(source)" />
+            <scope ilk="function" name="receive" signature="receive(event)" />
+            <scope ilk="function" name="count" />
+            <scope ilk="function" name="count=" />
+            <scope ilk="function" name="current" />
+            <scope ilk="function" name="current=" />
+            <scope ilk="function" name="references" />
+            <variable attributes="__const__" citdl="Object" name="INFINITY" />
+            <variable attributes="__const__" citdl="Object" name="EMPTY" />
+            <variable attributes="__const__" citdl="Object" name="TEXT" />
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="Validation">
+          <scope classrefs="REXML::Validation::State" ilk="class" name="Sequence">
+            <scope ilk="function" name="matches?" signature="matches?(event)" />
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="Validation">
+          <scope classrefs="Object" ilk="class" name="State">
+            <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new( context )" />
+            <scope ilk="function" name="expected" signature="expected()" />
+            <scope ilk="function" name="inspect" signature="inspect()" />
+            <scope ilk="function" name="next" signature="next( event )" />
+            <scope ilk="function" name="previous=" signature="previous=( previous )" />
+            <scope ilk="function" name="reset" signature="reset()" />
+            <scope ilk="function" name="to_s" signature="to_s()" />
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="Validation">
+          <scope classrefs="REXML::Validation::Optional" ilk="class" name="ZeroOrMore">
+            <scope ilk="function" name="expected" signature="expected()" />
+            <scope ilk="function" name="next" signature="next( event )" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

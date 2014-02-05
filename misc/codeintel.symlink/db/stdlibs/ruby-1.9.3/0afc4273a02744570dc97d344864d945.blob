@@ -1,0 +1,31 @@
+<scope ilk="blob" lang="Ruby" name="rss/xml-stylesheet">
+      <scope ilk="namespace" name="RSS">
+        <scope ilk="namespace" name="Maker">
+          <scope ilk="namespace" name="XMLStyleSheets">
+            <scope classrefs="RSS::Maker::Base" ilk="class" name="XMLStyleSheet">
+              <scope ilk="function" name="to_feed" signature="to_feed(feed)" />
+            </scope>
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="XML">
+        </scope>
+        <scope classrefs="Object" ilk="class" name="XMLStyleSheet">
+          <import symbol="Utils" />
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(*attrs)" />
+          <scope ilk="function" name="alternate=" signature="alternate=(value)" />
+          <scope ilk="function" name="href=" signature="href=(value)" />
+          <scope ilk="function" name="setup_maker" signature="setup_maker(maker)" />
+          <scope ilk="function" name="to_s" signature="to_s()" />
+          <scope ilk="function" name="do_validate" />
+          <scope ilk="function" name="do_validate=" />
+          <variable attributes="__const__" citdl="Object" name="ATTRIBUTES" />
+          <variable attributes="__const__" citdl="Object" name="GUESS_TABLE" />
+        </scope>
+        <scope ilk="namespace" name="XMLStyleSheetMixin">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(*args)" />
+          <scope ilk="function" name="xml_stylesheets" />
+          <scope ilk="function" name="xml_stylesheets=" />
+        </scope>
+      </scope>
+    </scope>
+    

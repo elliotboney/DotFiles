@@ -1,0 +1,17 @@
+<scope ilk="blob" lang="Ruby" name="webrick/httpproxy">
+      <scope ilk="namespace" name="WEBrick">
+        <scope classrefs="WEBrick::HTTPServer" ilk="class" name="HTTPProxyServer">
+          <scope attributes="__classmethod__ __ctor__" doc="Proxy server configurations.  The proxy server handles the following configuration items in addition to those supported by HTTPServer: &#10; Called with a request and response to authorize a request&#10;Appended to the via header&#10;The proxy server's URI&#10;Called with a request and resopnse and allows modification of the response&#10;Sets the proxy timeouts to 30 seconds for open and 60 seconds for read operations" ilk="function" name="new" signature="new(config={}, default=Config::HTTP)" />
+          <scope ilk="function" name="do_CONNECT" signature="do_CONNECT(req, res)" />
+          <scope ilk="function" name="do_GET" signature="do_GET(req, res)" />
+          <scope ilk="function" name="do_HEAD" signature="do_HEAD(req, res)" />
+          <scope ilk="function" name="do_OPTIONS" signature="do_OPTIONS(req, res)" />
+          <scope ilk="function" name="do_POST" signature="do_POST(req, res)" />
+          <scope ilk="function" name="proxy_auth" signature="proxy_auth(req, res)" />
+          <scope ilk="function" name="proxy_service" signature="proxy_service(req, res)" />
+          <scope ilk="function" name="proxy_uri" signature="proxy_uri(req, res)" />
+          <scope ilk="function" name="service" signature="service(req, res)" />
+        </scope>
+      </scope>
+    </scope>
+    

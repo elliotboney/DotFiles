@@ -1,0 +1,10 @@
+<scope ilk="blob" lang="Ruby" name="rdoc/markup/rule">
+      <scope ilk="namespace" name="RDoc">
+        <scope ilk="namespace" name="Markup">
+          <scope classrefs="Struct.new :weight" ilk="class" name="Rule">
+            <scope doc="Calls #accept_rule on +visitor+" ilk="function" name="accept" signature="accept(visitor)" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

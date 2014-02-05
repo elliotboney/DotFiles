@@ -1,0 +1,94 @@
+<scope ilk="blob" lang="Ruby" name="drb/drb">
+      <scope ilk="namespace" name="DRb">
+        <scope classrefs="Object" ilk="class" name="DRbArray">
+          <scope attributes="__classmethod__" ilk="function" name="_load" signature="_load(s)" />
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(ary)" />
+          <scope ilk="function" name="_dump" signature="_dump(lv)" />
+        </scope>
+        <scope classrefs="DRb::DRbError" ilk="class" name="DRbBadScheme">
+        </scope>
+        <scope classrefs="DRb::DRbError" ilk="class" name="DRbBadURI">
+        </scope>
+        <scope classrefs="Object" ilk="class" name="DRbConn">
+          <variable attributes="__const__" citdl="Object" name="POOL_SIZE" />
+        </scope>
+        <scope classrefs="DRb::DRbError" ilk="class" name="DRbConnError">
+        </scope>
+        <scope classrefs="RuntimeError" ilk="class" name="DRbError">
+        </scope>
+        <scope classrefs="Object" ilk="class" name="DRbIdConv">
+        </scope>
+        <scope classrefs="Object" ilk="class" name="DRbMessage">
+        </scope>
+        <scope classrefs="Object" ilk="class" name="DRbObject">
+        </scope>
+        <scope ilk="namespace" name="DRbProtocol">
+          <scope attributes="__classmethod__" doc="Add a new protocol to the DRbProtocol module." ilk="function" name="add_protocol" signature="add_protocol(prot)" />
+          <scope attributes="__classmethod__" doc="Open a client connection to +uri+ with the configuration +config+. &#10; The DRbProtocol module asks each registered protocol in turn to try to open the URI.  Each protocol signals that it does not handle that URI by raising a DRbBadScheme error.  If no protocol recognises the URI, then a DRbBadURI error is raised.  If a protocol accepts the URI, but an error occurs in opening it, a DRbConnError is raised." ilk="function" name="open" signature="open(uri, config, first=true)" />
+          <scope attributes="__classmethod__" doc="Open a server listening for connections at +uri+ with configuration +config+. &#10; The DRbProtocol module asks each registered protocol in turn to try to open a server at the URI.  Each protocol signals that it does not handle that URI by raising a DRbBadScheme error.  If no protocol recognises the URI, then a DRbBadURI error is raised.  If a protocol accepts the URI, but an error occurs in opening it, the underlying error is passed on to the caller." ilk="function" name="open_server" signature="open_server(uri, config, first=true)" />
+          <scope attributes="__classmethod__" doc="Parse +uri+ into a [uri, option] pair. &#10; The DRbProtocol module asks each registered protocol in turn to try to parse the URI.  Each protocol signals that it does not handle that URI by raising a DRbBadScheme error.  If no protocol recognises the URI, then a DRbBadURI error is raised." ilk="function" name="uri_option" signature="uri_option(uri, config, first=true)" />
+        </scope>
+        <scope classrefs="DRb::DRbError" ilk="class" name="DRbRemoteError">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(error)" />
+          <scope ilk="function" name="reason" />
+        </scope>
+        <scope classrefs="Object" ilk="class" name="DRbServer">
+          <scope attributes="__classmethod__" doc="Set the default value for the :acl option. &#10; See #new().  The initial default value is nil." ilk="function" name="default_acl" signature="default_acl(acl)" />
+          <scope attributes="__classmethod__" doc="Set the default value for the :argc_limit option. &#10; See #new().  The initial default value is 256." ilk="function" name="default_argc_limit" signature="default_argc_limit(argc)" />
+          <scope attributes="__classmethod__" doc="Set the default value for the :id_conv option. &#10; See #new().  The initial default value is a DRbIdConv instance." ilk="function" name="default_id_conv" signature="default_id_conv(idconv)" />
+          <scope attributes="__classmethod__" doc="Set the default value for the :load_limit option. &#10; See #new().  The initial default value is 25 MB." ilk="function" name="default_load_limit" signature="default_load_limit(sz)" />
+          <scope attributes="__classmethod__" ilk="function" name="default_safe_level" signature="default_safe_level(level)" />
+          <scope attributes="__classmethod__ __ctor__" doc="Create a new DRbServer instance. &#10; +uri+ is the URI to bind to.  This is normally of the form 'druby://&lt;hostname&gt;:&lt;port&gt;' where &lt;hostname&gt; is a hostname of the local machine.  If nil, then the system's default hostname will be bound to, on a port selected by the system; these value can be retrieved from the +uri+ attribute.  'druby:' specifies the default dRuby transport protocol: another protocol, such as 'drbunix:', can be specified instead. &#10; +front+ is the front object for the server, that is, the object to which remote method calls on the server will be passed.  If nil, then the server will not accept remote method calls. &#10; If +config_or_acl+ is a hash, it is the configuration to use for this server.  The following options are recognised: &#10; an id-to-object conversion object.  This defaults to an instance of the class DRb::DRbIdConv.&#10;if true, all unsuccessful remote calls on objects in the server will be logged to $stdout. false by default.&#10;the access control list for this server.  See the ACL class from the main dRuby distribution.&#10;the maximum message size in bytes accepted by the server.  Defaults to 25 MB (26214400).&#10;the maximum number of arguments to a remote method accepted by the server.  Defaults to 256. &#10; The default values of these options can be modified on a class-wide basis by the class methods #default_argc_limit, #default_load_limit, #default_acl, #default_id_conv, and #verbose= &#10; If +config_or_acl+ is not a hash, but is not nil, it is assumed to be the access control list for this server. See the :tcp_acl option for more details. &#10; If no other server is currently set as the primary server, this will become the primary server. &#10; The server will immediately start running in its own thread." ilk="function" name="new" signature="new(uri=nil, front=nil, config_or_acl=nil)" />
+          <scope attributes="__classmethod__" doc="Get the default value of the :verbose option." ilk="function" name="verbose" signature="verbose()" />
+          <scope attributes="__classmethod__" doc="Set the default value of the :verbose option. &#10; See #new().  The initial default value is false." ilk="function" name="verbose=" signature="verbose=(on)" />
+          <scope doc="Is this server alive?" ilk="function" name="alive?" signature="alive?()" />
+          <scope doc="Check that a method is callable via dRuby. &#10; +obj+ is the object we want to invoke the method on. +msg_id+ is the method name, as a Symbol. &#10; If the method is an insecure method (see #insecure_method?) a SecurityError is thrown.  If the method is private or undefined, a NameError is thrown." ilk="function" name="check_insecure_method" signature="check_insecure_method(obj, msg_id)" />
+          <scope ilk="function" name="here?" signature="here?(uri)" />
+          <scope doc="Stop this server." ilk="function" name="stop_service" signature="stop_service()" />
+          <scope doc="Convert a local object to a dRuby reference." ilk="function" name="to_id" signature="to_id(obj)" />
+          <scope doc="Convert a dRuby reference to the local object it refers to." ilk="function" name="to_obj" signature="to_obj(ref)" />
+          <scope doc="Get whether the server is in verbose mode. &#10; In verbose mode, failed calls are logged to stdout." ilk="function" name="verbose" signature="verbose()" />
+          <scope doc="Set whether to operate in verbose mode. &#10; In verbose mode, failed calls are logged to stdout." ilk="function" name="verbose=" signature="verbose=(v)" />
+          <scope ilk="function" name="config" />
+          <scope ilk="function" name="front" />
+          <scope ilk="function" name="safe_level" />
+          <scope ilk="function" name="thread" />
+          <scope ilk="function" name="uri" />
+          <variable attributes="__const__" citdl="Object" name="INSECURE_METHOD" />
+        </scope>
+        <scope classrefs="DRb::DRbError" ilk="class" name="DRbServerNotFound">
+        </scope>
+        <scope classrefs="Object" ilk="class" name="DRbTCPSocket">
+          <scope attributes="__classmethod__" ilk="function" name="getservername" signature="getservername()" />
+          <scope attributes="__classmethod__ __ctor__" doc="Create a new DRbTCPSocket instance. &#10; +uri+ is the URI we are connected to. +soc+ is the tcp socket we are bound to.  +config+ is our configuration." ilk="function" name="new" signature="new(uri, soc, config={})" />
+          <scope attributes="__classmethod__" doc="Open a client connection to +uri+ using configuration +config+." ilk="function" name="open" signature="open(uri, config)" />
+          <scope attributes="__classmethod__" doc="Open a server listening for connections at +uri+ using configuration +config+." ilk="function" name="open_server" signature="open_server(uri, config)" />
+          <scope attributes="__classmethod__" ilk="function" name="open_server_inaddr_any" signature="open_server_inaddr_any(host, port)" />
+          <scope attributes="__classmethod__" doc="Parse +uri+ into a [uri, option] pair." ilk="function" name="uri_option" signature="uri_option(uri, config)" />
+          <scope doc="On the server side, for an instance returned by #open_server, accept a client connection and return a new instance to handle the server's side of this client-server session." ilk="function" name="accept" signature="accept()" />
+          <scope doc="Check to see if this connection is alive." ilk="function" name="alive?" signature="alive?()" />
+          <scope doc="Close the connection. &#10; If this is an instance returned by #open_server, then this stops listening for new connections altogether.  If this is an instance returned by #open or by #accept, then it closes this particular client-server session." ilk="function" name="close" signature="close()" />
+          <scope doc="Get the address of our TCP peer (the other end of the socket we are bound to." ilk="function" name="peeraddr" signature="peeraddr()" />
+          <scope doc="On the client side, receive a reply from the server." ilk="function" name="recv_reply" signature="recv_reply()" />
+          <scope doc="On the server side, receive a request from the client." ilk="function" name="recv_request" signature="recv_request()" />
+          <scope doc="On the server side, send a reply to the client." ilk="function" name="send_reply" signature="send_reply(succ, result)" />
+          <scope doc="On the client side, send a request to the server." ilk="function" name="send_request" signature="send_request(ref, msg_id, arg, b)" />
+          <scope doc="Get the socket." ilk="function" name="stream" signature="stream()" />
+          <scope ilk="function" name="uri" />
+        </scope>
+        <scope ilk="namespace" name="DRbUndumped">
+        </scope>
+        <scope classrefs="Object" ilk="class" name="DRbUnknown">
+          <scope attributes="__classmethod__ __ctor__" doc="Create a new DRbUnknown object. &#10; +buf+ is a string containing a marshalled object that could not be unmarshalled.  +err+ is the error message that was raised when the unmarshalling failed.  It is used to determine the name of the unmarshalled object." ilk="function" name="new" signature="new(err, buf)" />
+          <scope doc="Create a DRbUnknownError exception containing this object." ilk="function" name="exception" signature="exception()" />
+          <scope doc="Attempt to load the wrapped marshalled object again. &#10; If the class of the object is now known locally, the object will be unmarshalled and returned.  Otherwise, a new but identical DRbUnknown object will be returned." ilk="function" name="reload" signature="reload()" />
+          <scope ilk="function" name="buf" />
+          <scope ilk="function" name="name" />
+        </scope>
+        <scope classrefs="DRb::DRbError" ilk="class" name="DRbUnknownError">
+          <scope attributes="__classmethod__ __ctor__" doc="Create a new DRbUnknownError for the DRb::DRbUnknown object +unknown+" ilk="function" name="new" signature="new(unknown)" />
+          <scope ilk="function" name="unknown" />
+        </scope>
+      </scope>
+    </scope>
+    

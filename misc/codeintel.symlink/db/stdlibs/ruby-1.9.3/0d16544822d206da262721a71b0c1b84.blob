@@ -1,0 +1,10 @@
+<scope ilk="blob" lang="Ruby" name="racc/parser">
+      <scope ilk="namespace" name="Racc">
+        <scope classrefs="StandardError" ilk="class" name="ParseError">
+        </scope>
+        <scope classrefs="Object" ilk="class" name="Parser">
+          <scope attributes="__classmethod__" ilk="function" name="racc_runtime_type" signature="racc_runtime_type()" />
+        </scope>
+      </scope>
+    </scope>
+    

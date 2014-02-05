@@ -1,0 +1,24 @@
+<scope ilk="blob" lang="Ruby" name="pstore">
+      <scope classrefs="Object" ilk="class" name="PStore">
+        <scope attributes="__classmethod__ __ctor__" doc="To construct a PStore object, pass in the _file_ path where you would like the data to be stored. &#10; PStore objects are always reentrant. But if _thread_safe_ is set to true, then it will become thread-safe at the cost of a minor performance hit." ilk="function" name="new" signature="new(file, thread_safe = false)" />
+        <scope doc="Ends the current PStore#transaction, discarding any changes to the data store. &#10; Example: &#10; require &quot;pstore&quot;&#10;&#10;store = PStore.new(&quot;data_file.pstore&quot;)&#10;store.transaction do  # begin transaction&#10;  store[:one] = 1     # this change is not applied, see below...&#10;  store[:two] = 2     # this change is not applied, see below...&#10;&#10;  store.abort         # end transaction here, discard all changes&#10;&#10;  store[:three] = 3   # this change is never reached&#10;end&#10; *WARNING*:  This method is only valid in a PStore#transaction.  It will raise PStore::Error if called at any other time." ilk="function" name="abort" signature="abort()" />
+        <scope doc="Ends the current PStore#transaction, committing any changes to the data store immediately. &#10; Example: &#10; require &quot;pstore&quot;&#10;&#10;store = PStore.new(&quot;data_file.pstore&quot;)&#10;store.transaction do  # begin transaction&#10;  # load some data into the store...&#10;  store[:one] = 1&#10;  store[:two] = 2&#10;&#10;  store.commit        # end transaction here, committing changes&#10;&#10;  store[:three] = 3   # this change is never reached&#10;end&#10; *WARNING*:  This method is only valid in a PStore#transaction.  It will raise PStore::Error if called at any other time." ilk="function" name="commit" signature="commit()" />
+        <scope doc="Removes an object hierarchy from the data store, by _name_. &#10; *WARNING*:  This method is only valid in a PStore#transaction and it cannot be read-only.  It will raise PStore::Error if called at any other time." ilk="function" name="delete" signature="delete(name)" />
+        <scope doc="This method is just like PStore#[], save that you may also provide a _default_ value for the object.  In the event the specified _name_ is not found in the data store, your _default_ will be returned instead.  If you do not specify a default, PStore::Error will be raised if the object is not found. &#10; *WARNING*:  This method is only valid in a PStore#transaction.  It will raise PStore::Error if called at any other time." ilk="function" name="fetch" signature="fetch(name, default=PStore::Error)" />
+        <scope doc="Returns the path to the data store file." ilk="function" name="path" signature="path()" />
+        <scope doc="Returns true if the supplied _name_ is currently in the data store. &#10; *WARNING*:  This method is only valid in a PStore#transaction.  It will raise PStore::Error if called at any other time." ilk="function" name="root?" signature="root?(name)" />
+        <scope doc="Returns the names of all object hierarchies currently in the store. &#10; *WARNING*:  This method is only valid in a PStore#transaction.  It will raise PStore::Error if called at any other time." ilk="function" name="roots" signature="roots()" />
+        <scope doc="Opens a new transaction for the data store.  Code executed inside a block passed to this method may read and write data to and from the data store file. &#10; At the end of the block, changes are committed to the data store automatically.  You may exit the transaction early with a call to either PStore#commit or PStore#abort.  See those methods for details about how changes are handled.  Raising an uncaught Exception in the block is equivalent to calling PStore#abort. &#10; If _read_only_ is set to +true+, you will only be allowed to read from the data store during the transaction and any attempts to change the data will raise a PStore::Error. &#10; Note that PStore does not support nested transactions." ilk="function" name="transaction" signature="transaction(read_only = false)" />
+        <scope ilk="function" name="ultra_safe" />
+        <scope ilk="function" name="ultra_safe=" />
+        <variable attributes="__const__" citdl="Object" name="RDWR_ACCESS" />
+        <variable attributes="__const__" citdl="Object" name="RD_ACCESS" />
+        <variable attributes="__const__" citdl="Object" name="WR_ACCESS" />
+        <variable attributes="__const__" citdl="Object" name="EMPTY_STRING" />
+        <variable attributes="__const__" citdl="Object" name="EMPTY_MARSHAL_DATA" />
+        <variable attributes="__const__" citdl="Object" name="EMPTY_MARSHAL_CHECKSUM" />
+        <scope classrefs="StandardError" ilk="class" name="Error">
+        </scope>
+      </scope>
+    </scope>
+    

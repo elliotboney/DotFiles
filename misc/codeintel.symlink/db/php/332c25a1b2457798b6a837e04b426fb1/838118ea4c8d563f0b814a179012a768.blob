@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="PHP" name="firebug.php" src="/usr/local/Cellar/php55/5.5.7/lib/php/doc/Log/examples/firebug.php"><import line="3" module="Log.php" /><variable citdl="Log.singleton()" line="8" name="logger" /><variable line="10" name="i" /></scope>

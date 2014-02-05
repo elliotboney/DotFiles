@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="PHP" name="edgecast.php" src="/private/var/www/wordpress.staging/plugins/w3-total-cache/inc/options/cdn/edgecast.php"><import line="30" module="/options/cdn/common/cnames.php" /><variable citdl="this._config.get_array()" line="30" name="cnames" /></scope>

@@ -1,0 +1,8 @@
+<scope ilk="blob" lang="Ruby" name="rake/dsl_definition">
+      <scope ilk="namespace" name="Rake">
+        <scope ilk="namespace" name="DSL">
+          <import symbol="FileUtilsExt" />
+        </scope>
+      </scope>
+    </scope>
+    

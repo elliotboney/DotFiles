@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="PHP" name="asssu.php" src="/private/var/www/paperless/wp-content/old-plugins/amazon-s3-uploads/asssu.php"><import line="11" module="/asssu-models.php" /><variable citdl="AsssuPlugin" line="12" name="asssu" /></scope>

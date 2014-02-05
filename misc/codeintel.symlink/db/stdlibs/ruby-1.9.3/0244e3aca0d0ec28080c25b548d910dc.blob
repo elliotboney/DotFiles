@@ -1,0 +1,19 @@
+<scope ilk="blob" lang="Ruby" name="rexml/xpath_parser">
+      <scope ilk="namespace" name="REXML">
+        <scope classrefs="Object" ilk="class" name="XPathParser">
+          <import symbol="XMLTokens" />
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new( )" />
+          <scope doc="Performs a depth-first (document order) XPath search, and returns the first match.  This is the fastest, lightest way to return a single result. &#10; FIXME: This method is incomplete!" ilk="function" name="first" signature="first( path_stack, node )" />
+          <scope ilk="function" name="get_first" signature="get_first(path, nodeset)" />
+          <scope ilk="function" name="match" signature="match( path_stack, nodeset )" />
+          <scope ilk="function" name="namespaces=" signature="namespaces=( namespaces={} )" />
+          <scope ilk="function" name="parse" signature="parse(path, nodeset)" />
+          <scope ilk="function" name="predicate" signature="predicate(path, nodeset)" />
+          <scope ilk="function" name="variables=" signature="variables=( vars={} )" />
+          <variable attributes="__const__" citdl="Object" name="LITERAL" />
+          <variable attributes="__const__" citdl="Object" name="ALL" />
+          <variable attributes="__const__" citdl="Object" name="ELEMENTS" />
+        </scope>
+      </scope>
+    </scope>
+    

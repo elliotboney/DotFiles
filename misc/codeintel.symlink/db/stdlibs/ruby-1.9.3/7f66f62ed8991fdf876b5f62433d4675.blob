@@ -1,0 +1,19 @@
+<scope ilk="blob" lang="Ruby" name="rdoc/text">
+      <scope ilk="namespace" name="RDoc">
+        <scope ilk="namespace" name="Text">
+          <scope attributes="__classmethod__" doc="Transcodes +character+ to +encoding+ with a +fallback+ character." ilk="function" name="encode_fallback" signature="encode_fallback(character, encoding, fallback)" />
+          <scope doc="Expands tab characters in +text+ to eight spaces" ilk="function" name="expand_tabs" signature="expand_tabs(text)" />
+          <scope doc="Flush +text+ left based on the shortest line" ilk="function" name="flush_left" signature="flush_left(text)" />
+          <scope doc="Convert a string in markup format into HTML. &#10; Requires the including class to implement #formatter" ilk="function" name="markup" signature="markup(text)" />
+          <scope doc="Strips hashes, expands tabs then flushes +text+ to the left" ilk="function" name="normalize_comment" signature="normalize_comment(text)" />
+          <scope doc="Normalizes +text+ then builds a RDoc::Markup::Document from it" ilk="function" name="parse" signature="parse(text)" />
+          <scope doc="Strips leading # characters from +text+" ilk="function" name="strip_hashes" signature="strip_hashes(text)" />
+          <scope doc="Strips leading and trailing \n characters from +text+" ilk="function" name="strip_newlines" signature="strip_newlines(text)" />
+          <scope doc="Strips /* */ style comments" ilk="function" name="strip_stars" signature="strip_stars(text)" />
+          <scope doc="Converts ampersand, dashes, ellipsis, quotes, copyright and registered trademark symbols in +text+ to properly encoded characters." ilk="function" name="to_html" signature="to_html(text)" />
+          <scope doc="Wraps +txt+ to +line_len+" ilk="function" name="wrap" signature="wrap(txt, line_len = 76)" />
+          <variable attributes="__const__" citdl="Object" name="TO_HTML_CHARACTERS" />
+        </scope>
+      </scope>
+    </scope>
+    

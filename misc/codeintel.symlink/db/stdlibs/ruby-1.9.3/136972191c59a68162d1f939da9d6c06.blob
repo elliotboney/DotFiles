@@ -1,0 +1,12 @@
+<scope ilk="blob" lang="Ruby" name="rake/win32">
+      <scope ilk="namespace" name="Rake">
+        <scope ilk="namespace" name="Win32">
+          <scope attributes="__classmethod__" doc="Normalize a win32 path so that the slashes are all forward slashes." ilk="function" name="normalize" signature="normalize(path)" />
+          <scope attributes="__classmethod__" doc="Run a command line on windows." ilk="function" name="rake_system" signature="rake_system(*cmd)" />
+          <scope attributes="__classmethod__" doc="True if running on a windows system." ilk="function" name="windows?" signature="windows?()" />
+          <scope classrefs="RuntimeError" ilk="class" name="Win32HomeError">
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

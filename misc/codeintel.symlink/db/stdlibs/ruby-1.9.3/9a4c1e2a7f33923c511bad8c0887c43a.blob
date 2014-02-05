@@ -1,0 +1,7 @@
+<scope ilk="blob" lang="Ruby" name="thwait">
+      <scope classrefs="Object" ilk="class" name="ThreadsWait">
+        <scope ilk="function" name="threads" />
+        <variable attributes="__const__" citdl="Object" name="RCS_ID" />
+      </scope>
+    </scope>
+    

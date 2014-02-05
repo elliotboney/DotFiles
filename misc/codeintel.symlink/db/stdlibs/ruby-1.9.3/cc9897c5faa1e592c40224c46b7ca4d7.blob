@@ -1,0 +1,12 @@
+<scope ilk="blob" lang="Ruby" name="drb/gw">
+      <scope ilk="namespace" name="DRb">
+        <scope classrefs="Object" ilk="class" name="GW">
+          <import symbol="MonitorMixin" />
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new()" />
+        </scope>
+        <scope classrefs="DRbIdConv" ilk="class" name="GWIdConv">
+          <scope ilk="function" name="to_obj" signature="to_obj(ref)" />
+        </scope>
+      </scope>
+    </scope>
+    

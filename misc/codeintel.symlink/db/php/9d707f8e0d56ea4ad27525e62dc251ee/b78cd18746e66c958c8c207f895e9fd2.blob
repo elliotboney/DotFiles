@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="PHP" name="InvalidArgumentException.php" src="/usr/local/pear/share/pear/PhpDocumentor/vendor/psr/log/Psr/Log/InvalidArgumentException.php"><scope ilk="namespace" line="3" name="Psr\Log"><scope classrefs="\InvalidArgumentException" ilk="class" line="5" lineend="7" name="InvalidArgumentException" /></scope></scope>

@@ -1,0 +1,30 @@
+<scope ilk="blob" lang="Ruby" name="tracer">
+      <scope classrefs="Object" ilk="class" name="Tracer">
+        <scope attributes="__classmethod__" doc="Used to filter unwanted trace output &#10; Example which only outputs lines of code executed within the Kernel class: &#10; Tracer.add_filter do |event, file, line, id, binding, klass, *rest|&#10;  &quot;Kernel&quot; == klass.to_s&#10;end" ilk="function" name="add_filter" signature="add_filter(p = proc)" />
+        <scope attributes="__classmethod__" doc="Disable tracing" ilk="function" name="off" signature="off()" />
+        <scope attributes="__classmethod__" doc="Start tracing &#10; Example &#10; Tracer.on&#10;# code to trace here&#10;Tracer.off&#10; You can also pass a block: &#10; Tracer.on {&#10;  # trace everything in this block&#10;}" ilk="function" name="on" signature="on()" />
+        <scope attributes="__classmethod__" doc="Register an event handler p which is called everytime a line in +file_name+ is executed. &#10; Example: &#10; Tracer.set_get_line_procs(&quot;example.rb&quot;, lambda { |line|&#10;  puts &quot;line number executed is #{line}&quot;&#10;})" ilk="function" name="set_get_line_procs" signature="set_get_line_procs(file_name, p = proc)" />
+        <scope attributes="__classmethod__" ilk="function" name="trace_func" signature="trace_func(*vars)" />
+        <scope ilk="function" name="display_c_call" />
+        <scope ilk="function" name="display_c_call=" />
+        <scope ilk="function" name="display_c_call?" />
+        <scope ilk="function" name="display_c_call?=" />
+        <scope ilk="function" name="display_process_id" />
+        <scope ilk="function" name="display_process_id=" />
+        <scope ilk="function" name="display_process_id?" />
+        <scope ilk="function" name="display_process_id?=" />
+        <scope ilk="function" name="display_thread_id" />
+        <scope ilk="function" name="display_thread_id=" />
+        <scope ilk="function" name="display_thread_id?" />
+        <scope ilk="function" name="display_thread_id?=" />
+        <scope ilk="function" name="stdout" />
+        <scope ilk="function" name="stdout=" />
+        <scope ilk="function" name="stdout_mutex" />
+        <scope ilk="function" name="verbose" />
+        <scope ilk="function" name="verbose=" />
+        <scope ilk="function" name="verbose?" />
+        <scope ilk="function" name="verbose?=" />
+        <variable attributes="__const__" citdl="Object" name="EVENT_SYMBOL" />
+      </scope>
+    </scope>
+    

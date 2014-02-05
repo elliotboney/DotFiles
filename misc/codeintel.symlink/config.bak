@@ -1,0 +1,49 @@
+{
+  "JavaScript": {
+    "codeintel_max_recursive_dir_depth": 10,
+    "javascriptExtraPaths": [
+      "./node_modules"
+    ]
+  },
+  "PHP": {
+    "codeintel_max_recursive_dir_depth": 10,
+    "php": "/usr/local/bin/php",
+    "phpConfigFile": "/usr/local/etc/php/5.5/php.ini",
+    "phpExtraPaths": [
+      "/private/var/www/WordPress/wp-admin",
+      "/private/var/www/WordPress/wp-include"
+    ]
+  },
+  "Perl": {
+    "codeintel_max_recursive_dir_depth": 10,
+    "perl": "/Users/eboney/perl5/perlbrew/perls/perl-5.18.1/bin/perl",
+    "perlExtraPaths": []
+  },
+  "Python": {
+    "codeintel_max_recursive_dir_depth": 10,
+    "env": {
+      "PATH": "/usr/local/bin:/usr/local/sbin:$PATH",
+      "PYTHONPATH": "/usr/local/lib/python2.7/site-packages:/usr/local/lib/python:$PYTHONPATH"
+    },
+    "python": "/usr/local/bin/python",
+    "pythonExtraPaths": [
+      "/Applications/Sublime Text.app/Contents/MacOS"
+    ]
+  },
+  "Python3": {
+    "codeintel_max_recursive_dir_depth": 10,
+    "python": "/usr/local/bin/python3'",
+    "pythonExtraPaths": [
+      "/Applications/Sublime Text.app/Contents/MacOS"
+    ],
+    "env": {
+      "PATH": "/usr/local/bin:/usr/local/sbin:$PATH",
+      "PYTHONPATH": "/usr/local/lib/python3.3/site-packages:/usr/local/lib/python:$PYTHONPATH"
+    }
+  },
+  "Ruby": {
+    "codeintel_max_recursive_dir_depth": 10,
+    "ruby": "/Users/eboney/.rvm/rubies/ruby-2.0.0-p247/bin/ruby",
+    "rubyExtraPaths": []
+  }
+}

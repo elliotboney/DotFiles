@@ -1,0 +1,9 @@
+<scope ilk="blob" lang="Ruby" name="rdoc/markup/to_test">
+      <scope ilk="namespace" name="RDoc">
+        <scope ilk="namespace" name="Markup">
+          <scope classrefs="RDoc::Markup::Formatter" ilk="class" name="ToTest">
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

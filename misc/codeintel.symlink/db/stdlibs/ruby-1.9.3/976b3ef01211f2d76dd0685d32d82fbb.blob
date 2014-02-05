@@ -1,0 +1,44 @@
+<scope ilk="blob" lang="Ruby" name="rdoc/code_object">
+      <scope ilk="namespace" name="RDoc">
+        <scope classrefs="Object" ilk="class" name="CodeObject">
+          <import symbol="RDoc::Text" />
+          <scope attributes="__classmethod__ __ctor__" doc="Creates a new CodeObject that will document itself and its children" ilk="function" name="new" signature="new()" />
+          <scope doc="Replaces our comment with +comment+, unless it is empty." ilk="function" name="comment=" signature="comment=(comment)" />
+          <scope doc="Should this CodeObject be shown in documentation?" ilk="function" name="display?" signature="display?()" />
+          <scope doc="Enables or disables documentation of this CodeObject's children unless it has been turned off by :enddoc:" ilk="function" name="document_children=" signature="document_children=(document_children)" />
+          <scope doc="Enables or disables documentation of this CodeObject unless it has been turned off by :enddoc:.  If the argument is +nil+ it means the documentation is turned off by +:nodoc:+." ilk="function" name="document_self=" signature="document_self=(document_self)" />
+          <scope doc="Does this object have a comment with content or is #received_nodoc true?" ilk="function" name="documented?" signature="documented?()" />
+          <scope doc="Turns documentation on/off, and turns on/off #document_self and #document_children. &#10; Once documentation has been turned off (by +:enddoc:+), the object will refuse to turn #document_self or #document_children on, so +:doc:+ and +:start_doc:+ directives will have no effect in the current file." ilk="function" name="done_documenting=" signature="done_documenting=(value)" />
+          <scope doc="Yields each parent of this CodeObject.  See also RDoc::ClassModule#each_ancestor" ilk="function" name="each_parent" signature="each_parent()" />
+          <scope doc="File name where this CodeObject was found. &#10; See also RDoc::Context#in_files" ilk="function" name="file_name" signature="file_name()" />
+          <scope doc="Force the documentation of this object unless documentation has been turned off by :endoc:" ilk="function" name="force_documentation=" signature="force_documentation=(value)" />
+          <scope doc="Sets the full_name overriding any computed full name. &#10; Set to +nil+ to clear RDoc's cached value" ilk="function" name="full_name=" signature="full_name=(full_name)" />
+          <scope doc="Use this to ignore a CodeObject and all its children until found again (#record_location is called).  An ignored item will not be shown in documentation. &#10; See github issue #55 &#10; The ignored status is temporary in order to allow implementation details to be hidden.  At the end of processing a file RDoc allows all classes and modules to add new documentation to previously created classes. &#10; If a class was ignored (via stopdoc) then reopened later with additional documentation it should be shown.  If a class was ignored and never reopened it should not be shown.  The ignore flag allows this to occur." ilk="function" name="ignore" signature="ignore()" />
+          <scope doc="Has this class been ignored?" ilk="function" name="ignored?" signature="ignored?()" />
+          <scope doc="File name of our parent" ilk="function" name="parent_file_name" signature="parent_file_name()" />
+          <scope doc="Name of our parent" ilk="function" name="parent_name" signature="parent_name()" />
+          <scope doc="Records the RDoc::TopLevel (file) where this code object was defined" ilk="function" name="record_location" signature="record_location(top_level)" />
+          <scope doc="Enable capture of documentation unless documentation has been turned off by :endoc:" ilk="function" name="start_doc" signature="start_doc()" />
+          <scope doc="Disable capture of documentation" ilk="function" name="stop_doc" signature="stop_doc()" />
+          <scope ilk="function" name="comment" />
+          <scope ilk="function" name="document_children" />
+          <scope ilk="function" name="document_self" />
+          <scope ilk="function" name="done_documenting" />
+          <scope ilk="function" name="file" />
+          <scope ilk="function" name="force_documentation" />
+          <scope ilk="function" name="line" />
+          <scope ilk="function" name="line=" />
+          <scope ilk="function" name="metadata" />
+          <scope ilk="function" name="offset" />
+          <scope ilk="function" name="offset=" />
+          <scope ilk="function" name="parent" />
+          <scope ilk="function" name="parent=" />
+          <scope ilk="function" name="received_nodoc" />
+          <scope ilk="function" name="section" />
+          <scope ilk="function" name="section=" />
+          <scope ilk="function" name="viewer" />
+          <scope ilk="function" name="viewer=" />
+        </scope>
+      </scope>
+    </scope>
+    

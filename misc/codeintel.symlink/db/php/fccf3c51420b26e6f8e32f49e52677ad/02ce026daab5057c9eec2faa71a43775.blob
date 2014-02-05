@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="PHP" name="cdn_rename_domain.php" src="/private/var/www/wordpress.staging/plugins/w3-total-cache/inc/popup/cdn_rename_domain.php"><import line="2" module="/popup/common/header.php" /><import line="53" module="/popup/common/footer.php" /><variable attributes="__not_yet_defined__" line="15" name="total" /></scope>

@@ -1,0 +1,15 @@
+<scope ilk="blob" lang="Ruby" name="rdoc/markup/to_bs">
+      <scope ilk="namespace" name="RDoc">
+        <scope ilk="namespace" name="Markup">
+          <scope classrefs="RDoc::Markup::ToRdoc" ilk="class" name="ToBs">
+            <scope attributes="__classmethod__ __ctor__" doc="Returns a new ToBs that is ready for hot backspace action!" ilk="function" name="new" signature="new(markup = nil)" />
+            <scope doc="Makes heading text bold." ilk="function" name="accept_heading" signature="accept_heading(heading)" />
+            <scope doc="Turns on or off special handling for +convert_string+" ilk="function" name="annotate" signature="annotate(tag)" />
+            <scope doc="Calls convert_string on the result of convert_special" ilk="function" name="convert_special" signature="convert_special(special)" />
+            <scope doc="Adds bold or underline mixed with backspaces" ilk="function" name="convert_string" signature="convert_string(string)" />
+            <scope doc="Sets a flag that is picked up by #annotate to do the right thing in #convert_string" ilk="function" name="init_tags" signature="init_tags()" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

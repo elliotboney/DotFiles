@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="PHP" name="TestParent.php" src="/usr/local/pear/share/pear/PhpDocumentor/vendor/jms/metadata/tests/Metadata/Tests/Fixtures/TestParent.php"><scope ilk="namespace" line="3" name="Metadata\Tests\Fixtures"><scope classrefs="TestObject" ilk="class" line="5" lineend="7" name="TestParent" /></scope></scope>

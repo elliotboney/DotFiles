@@ -1,0 +1,82 @@
+<scope ilk="blob" lang="Ruby" name="rss/parser">
+      <scope ilk="namespace" name="RSS">
+        <scope classrefs="Object" ilk="class" name="BaseListener">
+          <scope attributes="__classmethod__" doc="return the tag_names for setters associated with uri" ilk="function" name="available_tags" signature="available_tags(uri)" />
+          <scope attributes="__classmethod__" doc="retrieve class_name for the supplied uri and tag_name If it doesn't exist, capitalize the tag_name" ilk="function" name="class_name" signature="class_name(uri, tag_name)" />
+          <scope attributes="__classmethod__" ilk="function" name="getter" signature="getter(uri, tag_name)" />
+          <scope attributes="__classmethod__" doc="record class_name for the supplied uri and tag_name" ilk="function" name="install_class_name" signature="install_class_name(uri, tag_name, class_name)" />
+          <scope attributes="__classmethod__" ilk="function" name="install_get_text_element" signature="install_get_text_element(uri, name, accessor_base)" />
+          <scope attributes="__classmethod__" ilk="function" name="raise_for_undefined_entity?" signature="raise_for_undefined_entity?()" />
+          <scope attributes="__classmethod__" doc="register uri against this name." ilk="function" name="register_uri" signature="register_uri(uri, name)" />
+          <scope attributes="__classmethod__" doc="return the setter for the uri, tag_name pair, or nil." ilk="function" name="setter" signature="setter(uri, tag_name)" />
+          <scope attributes="__classmethod__" doc="test if this uri is registered against this name" ilk="function" name="uri_registered?" signature="uri_registered?(uri, name)" />
+        </scope>
+        <scope classrefs="Object" ilk="class" name="BaseParser">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(rss)" />
+          <scope attributes="__classmethod__" ilk="function" name="raise_for_undefined_entity?" signature="raise_for_undefined_entity?()" />
+          <scope ilk="function" name="do_validate" signature="do_validate()" />
+          <scope ilk="function" name="do_validate=" signature="do_validate=(new_value)" />
+          <scope ilk="function" name="ignore_unknown_element" signature="ignore_unknown_element()" />
+          <scope ilk="function" name="ignore_unknown_element=" signature="ignore_unknown_element=(new_value)" />
+          <scope ilk="function" name="parse" signature="parse()" />
+          <scope ilk="function" name="rss" signature="rss()" />
+        </scope>
+        <scope ilk="namespace" name="ListenerMixin">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new()" />
+          <scope ilk="function" name="instruction" signature="instruction(name, content)" />
+          <scope ilk="function" name="tag_end" signature="tag_end(name)" />
+          <scope ilk="function" name="tag_start" signature="tag_start(name, attributes)" />
+          <scope ilk="function" name="text" signature="text(data)" />
+          <scope doc="set instance vars for version, encoding, standalone" ilk="function" name="xmldecl" signature="xmldecl(version, encoding, standalone)" />
+          <scope ilk="function" name="do_validate" />
+          <scope ilk="function" name="do_validate=" />
+          <scope ilk="function" name="ignore_unknown_element" />
+          <scope ilk="function" name="ignore_unknown_element=" />
+          <scope ilk="function" name="rss" />
+          <variable attributes="__const__" citdl="Object" name="CONTENT_PATTERN" />
+          <variable attributes="__const__" citdl="Object" name="NAMESPLIT" />
+        </scope>
+        <scope ilk="namespace" name="Maker">
+          <scope classrefs="Object" ilk="class" name="Base">
+            <import symbol="Enumerable" />
+            <scope attributes="__classmethod__" ilk="function" name="add_need_initialize_variable" signature="add_need_initialize_variable(variable_name, init_value=nil, &amp;init_block)" />
+            <scope attributes="__classmethod__" ilk="function" name="add_other_element" signature="add_other_element(variable_name)" />
+            <scope attributes="__classmethod__" ilk="function" name="def_array_element" signature="def_array_element(name, plural=nil, klass_name=nil)" />
+            <scope attributes="__classmethod__" ilk="function" name="def_classed_element" signature="def_classed_element(name, class_name=nil, attribute_name=nil)" />
+            <scope attributes="__classmethod__" ilk="function" name="def_classed_element_without_accessor" signature="def_classed_element_without_accessor(name, class_name=nil)" />
+            <scope attributes="__classmethod__" ilk="function" name="def_classed_elements" signature="def_classed_elements(name, attribute, plural_class_name=nil, plural_name=nil, new_name=nil)" />
+            <scope attributes="__classmethod__" ilk="function" name="def_csv_element" signature="def_csv_element(name, type=nil)" />
+            <scope attributes="__classmethod__" ilk="function" name="def_other_element" signature="def_other_element(name)" />
+            <scope attributes="__classmethod__" ilk="function" name="def_other_element_without_accessor" signature="def_other_element_without_accessor(name)" />
+            <scope attributes="__classmethod__" ilk="function" name="inherited" signature="inherited(subclass)" />
+            <scope attributes="__classmethod__" ilk="function" name="inherited_base" signature="inherited_base()" />
+            <scope attributes="__classmethod__" ilk="function" name="need_initialize_variables" signature="need_initialize_variables()" />
+            <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(maker)" />
+            <scope attributes="__classmethod__" ilk="function" name="other_elements" signature="other_elements()" />
+            <scope ilk="function" name="have_required_values?" signature="have_required_values?()" />
+            <scope ilk="function" name="variable_is_set?" signature="variable_is_set?()" />
+            <scope ilk="function" name="maker" />
+            <variable attributes="__const__" citdl="Object" name="OTHER_ELEMENTS" />
+            <variable attributes="__const__" citdl="Object" name="NEED_INITIALIZE_VARIABLES" />
+          </scope>
+        </scope>
+        <scope classrefs="InvalidRSSError" ilk="class" name="NSError">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(tag, prefix, require_uri)" />
+          <scope ilk="function" name="prefix" />
+          <scope ilk="function" name="tag" />
+          <scope ilk="function" name="uri" />
+        </scope>
+        <scope classrefs="Error" ilk="class" name="NotValidXMLParser">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(parser)" />
+        </scope>
+        <scope classrefs="Error" ilk="class" name="NotWellFormedError">
+          <scope attributes="__classmethod__ __ctor__" doc="Create a new NotWellFormedError for an error at +line+ in +element+.  If a block is given the return value of the block ends up in the error message." ilk="function" name="new" signature="new(line=nil, element=nil)" />
+          <scope ilk="function" name="element" />
+          <scope ilk="function" name="line" />
+        </scope>
+        <scope classrefs="Error" ilk="class" name="XMLParserNotFound">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new()" />
+        </scope>
+      </scope>
+    </scope>
+    

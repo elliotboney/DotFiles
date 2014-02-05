@@ -1,0 +1,214 @@
+<scope ilk="blob" lang="Ruby" name="dl">
+      <scope ilk="namespace" name="DL">
+        <scope attributes="__classmethod__" ilk="function" name="dlopen" signature="dlopen(*args)" />
+        <scope attributes="__classmethod__" ilk="function" name="dlunwrap" signature="dlunwrap(p1)" />
+        <scope attributes="__classmethod__" ilk="function" name="dlwrap" signature="dlwrap(p1)" />
+        <scope attributes="__classmethod__" ilk="function" name="fiddle?" signature="fiddle?()" />
+        <scope attributes="__classmethod__" doc="Free the memory at address +addr+" ilk="function" name="free" signature="free(p1)" />
+        <scope attributes="__classmethod__" doc="Allocate +size+ bytes of memory and return the integer memory address for the allocated memory." ilk="function" name="malloc" signature="malloc(p1)" />
+        <scope attributes="__classmethod__" doc="Change the size of the memory allocated at the memory location +addr+ to +size+ bytes.  Returns the memory address of the reallocated memory, which may be different than the address passed in." ilk="function" name="realloc" signature="realloc(p1, p2)" />
+        <scope ilk="function" name="remove_callback" signature="remove_callback(addr, ctype = nil)" />
+        <scope ilk="function" name="remove_callback_internal" signature="remove_callback_internal(proc_entry, addr_entry, addr, ctype = nil)" />
+        <scope ilk="function" name="remove_cdecl_callback" signature="remove_cdecl_callback(addr, ctype = nil)" />
+        <scope ilk="function" name="remove_stdcall_callback" signature="remove_stdcall_callback(addr, ctype = nil)" />
+        <scope ilk="function" name="set_callback" signature="set_callback(ty, argc, &amp;cbp)" />
+        <scope ilk="function" name="set_callback_internal" signature="set_callback_internal(proc_entry, addr_entry, argc, ty, abi = nil, &amp;cbp)" />
+        <scope ilk="function" name="set_cdecl_callback" signature="set_cdecl_callback(ty, argc, &amp;cbp)" />
+        <scope ilk="function" name="set_stdcall_callback" signature="set_stdcall_callback(ty, argc, &amp;cbp)" />
+        <variable attributes="__const__" citdl="Object" name="NULL" />
+        <variable attributes="__const__" citdl="Object" name="MAX_CALLBACK" />
+        <variable attributes="__const__" citdl="Object" name="DLSTACK_SIZE" />
+        <variable attributes="__const__" citdl="Object" name="RTLD_GLOBAL" />
+        <variable attributes="__const__" citdl="Object" name="RTLD_LAZY" />
+        <variable attributes="__const__" citdl="Object" name="RTLD_NOW" />
+        <variable attributes="__const__" citdl="Object" name="TYPE_VOID" />
+        <variable attributes="__const__" citdl="Object" name="TYPE_VOIDP" />
+        <variable attributes="__const__" citdl="Object" name="TYPE_CHAR" />
+        <variable attributes="__const__" citdl="Object" name="TYPE_SHORT" />
+        <variable attributes="__const__" citdl="Object" name="TYPE_INT" />
+        <variable attributes="__const__" citdl="Object" name="TYPE_LONG" />
+        <variable attributes="__const__" citdl="Object" name="TYPE_LONG_LONG" />
+        <variable attributes="__const__" citdl="Object" name="TYPE_FLOAT" />
+        <variable attributes="__const__" citdl="Object" name="TYPE_DOUBLE" />
+        <variable attributes="__const__" citdl="Object" name="ALIGN_VOIDP" />
+        <variable attributes="__const__" citdl="Object" name="ALIGN_CHAR" />
+        <variable attributes="__const__" citdl="Object" name="ALIGN_SHORT" />
+        <variable attributes="__const__" citdl="Object" name="ALIGN_INT" />
+        <variable attributes="__const__" citdl="Object" name="ALIGN_LONG" />
+        <variable attributes="__const__" citdl="Object" name="ALIGN_LONG_LONG" />
+        <variable attributes="__const__" citdl="Object" name="ALIGN_FLOAT" />
+        <variable attributes="__const__" citdl="Object" name="ALIGN_DOUBLE" />
+        <variable attributes="__const__" citdl="Object" name="SIZEOF_VOIDP" />
+        <variable attributes="__const__" citdl="Object" name="SIZEOF_CHAR" />
+        <variable attributes="__const__" citdl="Object" name="SIZEOF_SHORT" />
+        <variable attributes="__const__" citdl="Object" name="SIZEOF_INT" />
+        <variable attributes="__const__" citdl="Object" name="SIZEOF_LONG" />
+        <variable attributes="__const__" citdl="Object" name="SIZEOF_LONG_LONG" />
+        <variable attributes="__const__" citdl="Object" name="SIZEOF_FLOAT" />
+        <variable attributes="__const__" citdl="Object" name="SIZEOF_DOUBLE" />
+        <variable attributes="__const__" citdl="Object" name="RUBY_FREE" />
+        <variable attributes="__const__" citdl="Object" name="BUILD_RUBY_PLATFORM" />
+        <variable attributes="__const__" citdl="Object" name="BUILD_RUBY_VERSION" />
+        <variable attributes="__const__" citdl="Object" name="SEM" />
+        <scope ilk="namespace" name="CParser">
+          <scope ilk="function" name="parse_ctype" signature="parse_ctype(ty, tymap=nil)" />
+          <scope ilk="function" name="parse_signature" signature="parse_signature(signature, tymap=nil)" />
+          <scope ilk="function" name="parse_struct_signature" signature="parse_struct_signature(signature, tymap=nil)" />
+        </scope>
+        <scope classrefs="Object" ilk="class" name="CStruct">
+          <scope attributes="__classmethod__" ilk="function" name="entity_class" signature="entity_class()" />
+        </scope>
+        <scope ilk="namespace" name="CStructBuilder">
+          <scope attributes="__classmethod__" ilk="function" name="create" signature="create(klass, types, members)" />
+        </scope>
+        <scope classrefs="DL::CPtr" ilk="class" name="CStructEntity">
+          <import symbol="PackInfo" />
+          <import symbol="ValueUtil" />
+          <scope attributes="__classmethod__" ilk="function" name="malloc" signature="malloc(types, func = nil)" />
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(addr, types, func = nil)" />
+          <scope attributes="__classmethod__" ilk="function" name="size" signature="size(types)" />
+          <scope ilk="function" name="assign_names" signature="assign_names(members)" />
+          <scope ilk="function" name="set_ctypes" signature="set_ctypes(types)" />
+          <scope ilk="function" name="to_s" signature="to_s()" />
+        </scope>
+        <scope classrefs="Object" ilk="class" name="CUnion">
+          <scope attributes="__classmethod__" ilk="function" name="entity_class" signature="entity_class()" />
+        </scope>
+        <scope classrefs="DL::CStructEntity" ilk="class" name="CUnionEntity">
+          <import symbol="PackInfo" />
+          <scope attributes="__classmethod__" ilk="function" name="malloc" signature="malloc(types, func=nil)" />
+          <scope attributes="__classmethod__" ilk="function" name="size" signature="size(types)" />
+          <scope ilk="function" name="set_ctypes" signature="set_ctypes(types)" />
+        </scope>
+        <scope classrefs="DL::Function" ilk="class" name="CarriedFunction">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(cfunc, argtypes, n)" />
+          <scope ilk="function" name="bind_at_call" signature="bind_at_call(&amp;block)" />
+          <scope ilk="function" name="create_carrier" signature="create_carrier(data)" />
+        </scope>
+        <scope classrefs="Object" ilk="class" name="CompositeHandler">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(handlers)" />
+          <scope ilk="function" name="handlers" signature="handlers()" />
+          <scope ilk="function" name="sym" signature="sym(symbol)" />
+        </scope>
+        <scope classrefs="StandardError" ilk="class" name="DLError">
+        </scope>
+        <scope classrefs="DL::DLError" ilk="class" name="DLTypeError">
+        </scope>
+        <scope classrefs="parent" ilk="class" name="Function">
+          <import symbol="DL" />
+          <import symbol="ValueUtil" />
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(cfunc, argtypes, abi = nil, &amp;block)" />
+          <scope ilk="function" name="bind" signature="bind(&amp;block)" />
+          <scope ilk="function" name="bind_at_call" signature="bind_at_call(&amp;block)" />
+          <scope ilk="function" name="bound?" signature="bound?()" />
+          <scope ilk="function" name="call" signature="call(*args, &amp;block)" />
+          <scope ilk="function" name="name" signature="name()" />
+          <scope ilk="function" name="to_i" signature="to_i()" />
+          <scope ilk="function" name="unbind" signature="unbind()" />
+          <scope ilk="function" name="unbind_at_call" signature="unbind_at_call()" />
+          <scope ilk="function" name="wrap_result" signature="wrap_result(r)" />
+        </scope>
+        <scope ilk="namespace" name="PackInfo">
+          <scope attributes="__classmethod__" ilk="function" name="align" signature="align(addr, align)" />
+          <variable attributes="__const__" citdl="Object" name="ALIGN_MAP" />
+          <variable attributes="__const__" citdl="Object" name="PACK_MAP" />
+          <variable attributes="__const__" citdl="Object" name="SIZE_MAP" />
+        </scope>
+        <scope classrefs="Object" ilk="class" name="Packer">
+          <import symbol="PackInfo" />
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(types)" />
+          <scope ilk="function" name="pack" signature="pack(ary)" />
+          <scope ilk="function" name="size" signature="size()" />
+          <scope ilk="function" name="unpack" signature="unpack(ary)" />
+        </scope>
+        <scope classrefs="Object" ilk="class" name="Stack">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(types)" />
+          <scope ilk="function" name="pack" signature="pack(ary)" />
+          <scope ilk="function" name="size" signature="size()" />
+          <scope ilk="function" name="types" signature="types()" />
+          <scope ilk="function" name="unpack" signature="unpack(ary)" />
+          <variable attributes="__const__" citdl="Object" name="ALIGN_MAP" />
+          <variable attributes="__const__" citdl="Object" name="PACK_MAP" />
+          <variable attributes="__const__" citdl="Object" name="SIZE_MAP" />
+        </scope>
+        <scope classrefs="DL::Function" ilk="class" name="TempFunction">
+          <scope ilk="function" name="bind_at_call" signature="bind_at_call(&amp;block)" />
+          <scope ilk="function" name="unbind_at_call" signature="unbind_at_call()" />
+        </scope>
+        <scope ilk="namespace" name="ValueUtil">
+          <scope ilk="function" name="signed_value" signature="signed_value(val, ty)" />
+          <scope ilk="function" name="unsigned_value" signature="unsigned_value(val, ty)" />
+          <scope ilk="function" name="wrap_arg" signature="wrap_arg(arg, ty, funcs = [], &amp;block)" />
+          <scope ilk="function" name="wrap_args" signature="wrap_args(args, tys, funcs, &amp;block)" />
+        </scope>
+        <scope classrefs="Object" ilk="class" name="CFunc">
+          <scope attributes="__classmethod__" doc="Returns the last error for the current executing thread" ilk="function" name="last_error" signature="last_error()" />
+          <scope attributes="__classmethod__ __ctor__" doc="Create a new function that points to +address+ with an optional return type of +type+, a name of +name+ and a calltype of +calltype+." ilk="function" name="new" signature="new(p1, p2 = v2, p3 = v3, p4 = v4)" />
+          <scope attributes="__classmethod__" doc="Returns the last win32 error for the current executing thread" ilk="function" name="win32_last_error" signature="win32_last_error()" />
+          <scope doc="Calls the function pointer passing in +ary+ as values to the underlying C function.  The return value depends on the ctype." ilk="function" name="call" signature="call(p1)" />
+          <scope doc="Get the call type of this function." ilk="function" name="calltype" signature="calltype()" />
+          <scope doc="Set the call type for this function." ilk="function" name="calltype=" signature="calltype=(p1)" />
+          <scope doc="Get the C function return value type.  See DL for a list of constants corresponding to this method's return value." ilk="function" name="ctype" signature="ctype()" />
+          <scope doc="Set the C function return value type to +type+." ilk="function" name="ctype=" signature="ctype=(p1)" />
+          <scope doc="Returns a string formatted with an easily readable representation of the internal state of the DL::CFunc" ilk="function" name="inspect" signature="inspect()" />
+          <scope doc="Get the name of this function" ilk="function" name="name" signature="name()" />
+          <scope doc="Get the underlying function pointer as a DL::CPtr object." ilk="function" name="ptr" signature="ptr()" />
+          <scope doc="Set the underlying function pointer to a DL::CPtr named +pointer+." ilk="function" name="ptr=" signature="ptr=(p1)" />
+          <scope doc="Returns the memory location of this function pointer as an integer." ilk="function" name="to_i" signature="to_i()" />
+          <scope doc="Returns a string formatted with an easily readable representation of the internal state of the DL::CFunc" ilk="function" name="to_s" signature="to_s()" />
+        </scope>
+        <scope classrefs="Object" ilk="class" name="CPtr">
+          <scope attributes="__classmethod__" doc="Allocate +size+ bytes of memory and associate it with an optional +freefunc+ that will be called when the pointer is garbage collected. +freefunc+ must be an address pointing to a function or an instance of DL::CFunc" ilk="function" name="malloc" signature="malloc(p1, p2 = v2)" />
+          <scope attributes="__classmethod__ __ctor__" doc="Create a new pointer to +address+ with an optional +size+ and +freefunc+. +freefunc+ will be called when the instance is garbage collected." ilk="function" name="new" signature="new(p1, p2 = v2, p3 = v3)" />
+          <scope attributes="__classmethod__" doc="Get the underlying pointer for ruby object +val+ and return it as a DL::CPtr object." ilk="function" name="to_ptr" signature="to_ptr(p1)" />
+          <scope doc="Returns true if +other+ wraps the same pointer, otherwise returns false." ilk="function" name="eql?" signature="eql?(p1)" />
+          <scope doc="Get the free function for this pointer.  Returns  DL::CFunc or nil." ilk="function" name="free" signature="free()" />
+          <scope doc="Set the free function for this pointer to the DL::CFunc in +function+." ilk="function" name="free=" signature="free=(p1)" />
+          <scope doc="Returns a string formatted with an easily readable representation of the internal state of the DL::CPtr" ilk="function" name="inspect" signature="inspect()" />
+          <scope doc="Returns true if this is a null pointer." ilk="function" name="null?" signature="null?()" />
+          <scope doc="Returns a DL::CPtr that is a dereferenced pointer for this DL::CPtr. Analogous to the star operator in C." ilk="function" name="ptr" signature="ptr()" />
+          <scope doc="Returns a DL::CPtr that is a reference pointer for this DL::CPtr. Analogous to the ampersand operator in C." ilk="function" name="ref" signature="ref()" />
+          <scope doc="Get the size of this pointer." ilk="function" name="size" signature="size()" />
+          <scope doc="Set the size of this pointer to +size+" ilk="function" name="size=" signature="size=(p1)" />
+          <scope doc="Returns the integer memory location of this DL::CPtr." ilk="function" name="to_i" signature="to_i()" />
+          <scope doc="Returns the integer memory location of this DL::CPtr." ilk="function" name="to_int" signature="to_int()" />
+          <scope doc="Returns the pointer contents as a string.  When called with no arguments, this method will return the contents until the first NULL byte.  When called with +len+, a string of +len+ bytes will be returned." ilk="function" name="to_s" signature="to_s(p1 = v1)" />
+          <scope doc="Returns the pointer contents as a string.  When called with no arguments, this method will return the contents with the length of this pointer's +size+. When called with +len+, a string of +len+ bytes will be returned." ilk="function" name="to_str" signature="to_str(p1 = v1)" />
+          <scope doc="Cast this CPtr to a ruby object." ilk="function" name="to_value" signature="to_value()" />
+        </scope>
+        <scope classrefs="Object" ilk="class" name="Handle">
+          <scope attributes="__classmethod__ __ctor__" doc="Create a new handler that opens library named +lib+ with +flags+.  If no library is specified, RTLD_DEFAULT is used." ilk="function" name="new" signature="new(p1 = v1, p2 = v2)" />
+          <scope attributes="__classmethod__" doc="Document-method: [] &#10; Get the address as an Integer for the function named +name+." ilk="function" name="sym" signature="sym(p1)" />
+          <scope doc="Close this DL::Handle.  Calling close more than once will raise a DL::DLError exception." ilk="function" name="close" signature="close()" />
+          <scope doc="Returns +true+ if dlclose() will be called when this DL::Handle is garbage collected." ilk="function" name="close_enabled?" signature="close_enabled?()" />
+          <scope doc="Disable a call to dlclose() when this DL::Handle is garbage collected." ilk="function" name="disable_close" signature="disable_close()" />
+          <scope doc="Enable a call to dlclose() when this DL::Handle is garbage collected." ilk="function" name="enable_close" signature="enable_close()" />
+          <scope doc="Document-method: [] &#10; Get the address as an Integer for the function named +name+." ilk="function" name="sym" signature="sym(p1)" />
+          <scope doc="Returns the memory address for this handle." ilk="function" name="to_i" signature="to_i()" />
+          <variable attributes="__const__" citdl="Object" name="NEXT" />
+          <variable attributes="__const__" citdl="Object" name="DEFAULT" />
+        </scope>
+      </scope>
+      <scope ilk="namespace" name="Fiddle">
+        <scope classrefs="Object" ilk="class" name="Pointer">
+          <scope attributes="__classmethod__" doc="Allocate +size+ bytes of memory and associate it with an optional +freefunc+ that will be called when the pointer is garbage collected. +freefunc+ must be an address pointing to a function or an instance of DL::CFunc" ilk="function" name="malloc" signature="malloc(p1, p2 = v2)" />
+          <scope attributes="__classmethod__ __ctor__" doc="Create a new pointer to +address+ with an optional +size+ and +freefunc+. +freefunc+ will be called when the instance is garbage collected." ilk="function" name="new" signature="new(p1, p2 = v2, p3 = v3)" />
+          <scope attributes="__classmethod__" doc="Get the underlying pointer for ruby object +val+ and return it as a DL::CPtr object." ilk="function" name="to_ptr" signature="to_ptr(p1)" />
+          <scope doc="Returns true if +other+ wraps the same pointer, otherwise returns false." ilk="function" name="eql?" signature="eql?(p1)" />
+          <scope doc="Get the free function for this pointer.  Returns  DL::CFunc or nil." ilk="function" name="free" signature="free()" />
+          <scope doc="Set the free function for this pointer to the DL::CFunc in +function+." ilk="function" name="free=" signature="free=(p1)" />
+          <scope doc="Returns a string formatted with an easily readable representation of the internal state of the DL::CPtr" ilk="function" name="inspect" signature="inspect()" />
+          <scope doc="Returns true if this is a null pointer." ilk="function" name="null?" signature="null?()" />
+          <scope doc="Returns a DL::CPtr that is a dereferenced pointer for this DL::CPtr. Analogous to the star operator in C." ilk="function" name="ptr" signature="ptr()" />
+          <scope doc="Returns a DL::CPtr that is a reference pointer for this DL::CPtr. Analogous to the ampersand operator in C." ilk="function" name="ref" signature="ref()" />
+          <scope doc="Get the size of this pointer." ilk="function" name="size" signature="size()" />
+          <scope doc="Set the size of this pointer to +size+" ilk="function" name="size=" signature="size=(p1)" />
+          <scope doc="Returns the integer memory location of this DL::CPtr." ilk="function" name="to_i" signature="to_i()" />
+          <scope doc="Returns the integer memory location of this DL::CPtr." ilk="function" name="to_int" signature="to_int()" />
+          <scope doc="Returns the pointer contents as a string.  When called with no arguments, this method will return the contents until the first NULL byte.  When called with +len+, a string of +len+ bytes will be returned." ilk="function" name="to_s" signature="to_s(p1 = v1)" />
+          <scope doc="Returns the pointer contents as a string.  When called with no arguments, this method will return the contents with the length of this pointer's +size+. When called with +len+, a string of +len+ bytes will be returned." ilk="function" name="to_str" signature="to_str(p1 = v1)" />
+          <scope doc="Cast this CPtr to a ruby object." ilk="function" name="to_value" signature="to_value()" />
+        </scope>
+      </scope>
+    </scope>
+    

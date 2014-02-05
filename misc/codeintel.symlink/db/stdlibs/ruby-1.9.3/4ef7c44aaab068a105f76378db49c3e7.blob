@@ -1,0 +1,97 @@
+<scope ilk="blob" lang="Ruby" name="pathname">
+      <scope classrefs="Object" ilk="class" name="Pathname">
+        <scope attributes="__classmethod__" doc="See Dir.getwd.  Returns the current working directory as a Pathname." ilk="function" name="getwd" signature="getwd()" />
+        <scope attributes="__classmethod__" doc="See Dir.glob.  Returns or yields Pathname objects." ilk="function" name="glob" signature="glob(p1, p2 = v2)" />
+        <scope attributes="__classmethod__ __ctor__" doc="Create a Pathname object from the given String (or String-like object). If +path+ contains a NUL character (\0), an ArgumentError is raised." ilk="function" name="new" signature="new(p1)" />
+        <scope attributes="__classmethod__" doc="See Dir.getwd.  Returns the current working directory as a Pathname." ilk="function" name="pwd" signature="pwd()" />
+        <scope doc="Predicate method for testing whether a path is absolute. It returns +true+ if the pathname begins with a slash." ilk="function" name="absolute?" signature="absolute?()" />
+        <scope doc="Iterates over and yields a new Pathname object for each element in the given path in ascending order. &#10; Pathname.new('/path/to/some/file.rb').ascend {|v| p v}&#10;   #&lt;Pathname:/path/to/some/file.rb&gt;&#10;   #&lt;Pathname:/path/to/some&gt;&#10;   #&lt;Pathname:/path/to&gt;&#10;   #&lt;Pathname:/path&gt;&#10;   #&lt;Pathname:/&gt;&#10;Pathname.new('path/to/some/file.rb').ascend {|v| p v}&#10;   #&lt;Pathname:path/to/some/file.rb&gt;&#10;   #&lt;Pathname:path/to/some&gt;&#10;   #&lt;Pathname:path/to&gt;&#10;   #&lt;Pathname:path&gt;&#10; It doesn't access actual filesystem. " ilk="function" name="ascend" signature="ascend()" />
+        <scope doc="See File.atime.  Returns last access time." ilk="function" name="atime" signature="atime()" />
+        <scope doc="See File.basename.  Returns the last component of the path." ilk="function" name="basename" signature="basename(p1 = v1)" />
+        <scope doc="See IO.binread.  Returns all the bytes from the file, or the first +N+ if specified." ilk="function" name="binread" signature="binread(p1 = v1, p2 = v2)" />
+        <scope doc="See FileTest.blockdev?." ilk="function" name="blockdev?" signature="blockdev?()" />
+        <scope doc="See FileTest.chardev?." ilk="function" name="chardev?" signature="chardev?()" />
+        <scope doc="Returns the children of the directory (files and subdirectories, not recursive) as an array of Pathname objects.  By default, the returned pathnames will have enough information to access the files.  If you set +with_directory+ to +false+, then the returned pathnames will contain the filename only. &#10; For example: pn = Pathname(&quot;/usr/lib/ruby/1.8&quot;)&#10;pn.children&#10;    # -&gt; [ Pathname:/usr/lib/ruby/1.8/English.rb,&#10;           Pathname:/usr/lib/ruby/1.8/Env.rb,&#10;           Pathname:/usr/lib/ruby/1.8/abbrev.rb, ... ]&#10;pn.children(false)&#10;    # -&gt; [ Pathname:English.rb, Pathname:Env.rb, Pathname:abbrev.rb, ... ]&#10; Note that the results never contain the entries . and .. in the directory because they are not children. &#10; This method has existed since 1.8.1." ilk="function" name="children" signature="children(with_directory=true)" />
+        <scope doc="See File.chmod.  Changes permissions." ilk="function" name="chmod" signature="chmod(p1)" />
+        <scope doc="See File.chown.  Change owner and group of file." ilk="function" name="chown" signature="chown(p1, p2)" />
+        <scope doc="Returns clean pathname of +self+ with consecutive slashes and useless dots removed.  The filesystem is not accessed. &#10; If +consider_symlink+ is +true+, then a more conservative algorithm is used to avoid breaking symbolic linkages.  This may retain more .. entries than absolutely necessary, but without accessing the filesystem, this can't be avoided.  See #realpath." ilk="function" name="cleanpath" signature="cleanpath(consider_symlink=false)" />
+        <scope doc="See File.ctime.  Returns last (directory entry, not file) change time." ilk="function" name="ctime" signature="ctime()" />
+        <scope doc="Removes a file or directory, using File.unlink or Dir.unlink as necessary." ilk="function" name="delete" signature="delete()" />
+        <scope doc="Iterates over and yields a new Pathname object for each element in the given path in descending order. &#10; Pathname.new('/path/to/some/file.rb').descend {|v| p v}&#10;   #&lt;Pathname:/&gt;&#10;   #&lt;Pathname:/path&gt;&#10;   #&lt;Pathname:/path/to&gt;&#10;   #&lt;Pathname:/path/to/some&gt;&#10;   #&lt;Pathname:/path/to/some/file.rb&gt;&#10;Pathname.new('path/to/some/file.rb').descend {|v| p v}&#10;   #&lt;Pathname:path&gt;&#10;   #&lt;Pathname:path/to&gt;&#10;   #&lt;Pathname:path/to/some&gt;&#10;   #&lt;Pathname:path/to/some/file.rb&gt;&#10; It doesn't access actual filesystem. " ilk="function" name="descend" signature="descend()" />
+        <scope doc="See FileTest.directory?." ilk="function" name="directory?" signature="directory?()" />
+        <scope doc="See File.dirname.  Returns all but the last component of the path." ilk="function" name="dirname" signature="dirname()" />
+        <scope doc="Iterates over the children of the directory (files and subdirectories, not recursive). It yields Pathname object for each child. By default, the yielded pathnames will have enough information to access the files. If you set +with_directory+ to +false+, then the returned pathnames will contain the filename only. &#10; Pathname(&quot;/usr/local&quot;).each_child {|f| p f }&#10;=&gt; #&lt;Pathname:/usr/local/share&gt;&#10;#   #&lt;Pathname:/usr/local/bin&gt;&#10;#   #&lt;Pathname:/usr/local/games&gt;&#10;#   #&lt;Pathname:/usr/local/lib&gt;&#10;#   #&lt;Pathname:/usr/local/include&gt;&#10;#   #&lt;Pathname:/usr/local/sbin&gt;&#10;#   #&lt;Pathname:/usr/local/src&gt;&#10;#   #&lt;Pathname:/usr/local/man&gt;&#10;Pathname(&quot;/usr/local&quot;).each_child(false) {|f| p f }&#10;=&gt; #&lt;Pathname:share&gt;&#10;#   #&lt;Pathname:bin&gt;" ilk="function" name="each_child" signature="each_child(with_directory=true, &amp;b)" />
+        <scope doc="Iterates over the entries (files and subdirectories) in the directory.  It yields a Pathname object for each entry. &#10; This method has available since 1.8.1." ilk="function" name="each_entry" signature="each_entry()" />
+        <scope doc="Iterates over each component of the path. &#10; Pathname.new(&quot;/usr/bin/ruby&quot;).each_filename {|filename| ... }&#10;  # yields &quot;usr&quot;, &quot;bin&quot;, and &quot;ruby&quot;." ilk="function" name="each_filename" signature="each_filename()" />
+        <scope doc="#each_line iterates over the line in the file.  It yields a String object for each line. &#10; This method is availabel since 1.8.1." ilk="function" name="each_line" signature="each_line(p1 = v1, p2 = v2, p3 = v3)" />
+        <scope doc="Return the entries (files and subdirectories) in the directory, each as a Pathname object. &#10; The result may contain the current directory #&lt;Pathname:.&gt; and the parent directory #&lt;Pathname:..&gt;." ilk="function" name="entries" signature="entries()" />
+        <scope doc="Compare this pathname with +other+.  The comparison is string-based. Be aware that two different paths (foo.txt and ./foo.txt) can refer to the same file." ilk="function" name="eql?" signature="eql?(p1)" />
+        <scope doc="See FileTest.executable?." ilk="function" name="executable?" signature="executable?()" />
+        <scope doc="See FileTest.executable_real?." ilk="function" name="executable_real?" signature="executable_real?()" />
+        <scope doc="See FileTest.exist?." ilk="function" name="exist?" signature="exist?()" />
+        <scope doc="See File.expand_path." ilk="function" name="expand_path" signature="expand_path(p1 = v1)" />
+        <scope doc="See File.extname.  Returns the file's extension." ilk="function" name="extname" signature="extname()" />
+        <scope doc="See FileTest.file?." ilk="function" name="file?" signature="file?()" />
+        <scope doc="Pathname#find is an iterator to traverse a directory tree in a depth first manner.  It yields a Pathname for each file under &quot;this&quot; directory. &#10; Since it is implemented by find.rb, Find.prune can be used to control the traversal. &#10; If +self+ is ., yielded pathnames begin with a filename in the current directory, not ./." ilk="function" name="find" signature="find()" />
+        <scope doc="See File.fnmatch.  Return +true+ if the receiver matches the given pattern." ilk="function" name="fnmatch" signature="fnmatch(p1, p2 = v2)" />
+        <scope doc="See File.fnmatch.  Return +true+ if the receiver matches the given pattern." ilk="function" name="fnmatch?" signature="fnmatch?(p1, p2 = v2)" />
+        <scope ilk="function" name="freeze" signature="freeze()" />
+        <scope doc="See File.ftype.  Returns &quot;type&quot; of file (&quot;file&quot;, &quot;directory&quot;, etc)." ilk="function" name="ftype" signature="ftype()" />
+        <scope doc="See FileTest.grpowned?." ilk="function" name="grpowned?" signature="grpowned?()" />
+        <scope doc="Pathname#join joins pathnames. &#10; path0.join(path1, ..., pathN) is the same as path0 + path1 + ... + pathN." ilk="function" name="join" signature="join(*args)" />
+        <scope doc="See File.lchmod." ilk="function" name="lchmod" signature="lchmod(p1)" />
+        <scope doc="See File.lchown." ilk="function" name="lchown" signature="lchown(p1, p2)" />
+        <scope doc="See File.lstat." ilk="function" name="lstat" signature="lstat()" />
+        <scope doc="See File.link.  Creates a hard link at _pathname_." ilk="function" name="make_link" signature="make_link(p1)" />
+        <scope doc="See File.symlink.  Creates a symbolic link." ilk="function" name="make_symlink" signature="make_symlink(p1)" />
+        <scope doc="See Dir.mkdir.  Create the referenced directory." ilk="function" name="mkdir" signature="mkdir(p1 = v1)" />
+        <scope doc="See FileUtils.mkpath.  Creates a full path, including any intermediate directories that don't yet exist." ilk="function" name="mkpath" signature="mkpath()" />
+        <scope doc="mountpoint? returns +true+ if self points to a mountpoint." ilk="function" name="mountpoint?" signature="mountpoint?()" />
+        <scope doc="See File.mtime.  Returns last modification time." ilk="function" name="mtime" signature="mtime()" />
+        <scope doc="See File.open.  Opens the file for reading or writing." ilk="function" name="open" signature="open(p1 = v1, p2 = v2, p3 = v3)" />
+        <scope doc="See Dir.open." ilk="function" name="opendir" signature="opendir()" />
+        <scope doc="See FileTest.owned?." ilk="function" name="owned?" signature="owned?()" />
+        <scope doc="#parent returns the parent directory. &#10; This is same as self + '..'." ilk="function" name="parent" signature="parent()" />
+        <scope doc="See FileTest.pipe?." ilk="function" name="pipe?" signature="pipe?()" />
+        <scope doc="See IO.read.  Returns all data from the file, or the first +N+ bytes if specified." ilk="function" name="read" signature="read(p1 = v1, p2 = v2, p3 = v3)" />
+        <scope doc="See FileTest.readable?." ilk="function" name="readable?" signature="readable?()" />
+        <scope doc="See FileTest.readable_real?." ilk="function" name="readable_real?" signature="readable_real?()" />
+        <scope doc="See IO.readlines.  Returns all the lines from the file." ilk="function" name="readlines" signature="readlines(p1 = v1, p2 = v2, p3 = v3)" />
+        <scope doc="See File.readlink.  Read symbolic link." ilk="function" name="readlink" signature="readlink()" />
+        <scope doc="Returns the real (absolute) pathname of +self+ in the actual filesystem. The real pathname doesn't contain symlinks or useless dots. &#10; The last component of the real pathname can be nonexistent." ilk="function" name="realdirpath" signature="realdirpath(p1 = v1)" />
+        <scope doc="Returns the real (absolute) pathname of +self+ in the actual filesystem not containing symlinks or useless dots. &#10; All components of the pathname must exist when this method is called." ilk="function" name="realpath" signature="realpath(p1 = v1)" />
+        <scope doc="The opposite of #absolute?" ilk="function" name="relative?" signature="relative?()" />
+        <scope doc="#relative_path_from returns a relative path from the argument to the receiver.  If +self+ is absolute, the argument must be absolute too.  If +self+ is relative, the argument must be relative too. &#10; #relative_path_from doesn't access the filesystem.  It assumes no symlinks. &#10; ArgumentError is raised when it cannot find a relative path. &#10; This method has existed since 1.8.1." ilk="function" name="relative_path_from" signature="relative_path_from(base_directory)" />
+        <scope doc="See File.rename.  Rename the file." ilk="function" name="rename" signature="rename(p1)" />
+        <scope doc="See Dir.rmdir.  Remove the referenced directory." ilk="function" name="rmdir" signature="rmdir()" />
+        <scope doc="See FileUtils.rm_r.  Deletes a directory and all beneath it." ilk="function" name="rmtree" signature="rmtree()" />
+        <scope doc="#root? is a predicate for root directories.  I.e. it returns +true+ if the pathname consists of consecutive slashes. &#10; It doesn't access actual filesystem.  So it may return +false+ for some pathnames which points to roots such as /usr/..." ilk="function" name="root?" signature="root?()" />
+        <scope doc="See FileTest.setgid?." ilk="function" name="setgid?" signature="setgid?()" />
+        <scope doc="See FileTest.setuid?." ilk="function" name="setuid?" signature="setuid?()" />
+        <scope doc="See FileTest.size." ilk="function" name="size" signature="size()" />
+        <scope doc="See FileTest.size?." ilk="function" name="size?" signature="size?()" />
+        <scope doc="See FileTest.socket?." ilk="function" name="socket?" signature="socket?()" />
+        <scope doc="See File.split.  Returns the #dirname and the #basename in an Array." ilk="function" name="split" signature="split()" />
+        <scope doc="See File.stat.  Returns a File::Stat object." ilk="function" name="stat" signature="stat()" />
+        <scope doc="See FileTest.sticky?." ilk="function" name="sticky?" signature="sticky?()" />
+        <scope doc="Return a pathname which is substituted by String#sub." ilk="function" name="sub" signature="sub(*args)" />
+        <scope doc="Return a pathname which the extension of the basename is substituted by repl. &#10; If self has no extension part, repl is appended." ilk="function" name="sub_ext" signature="sub_ext(p1)" />
+        <scope doc="See FileTest.symlink?." ilk="function" name="symlink?" signature="symlink?()" />
+        <scope doc="See IO.sysopen." ilk="function" name="sysopen" signature="sysopen(p1 = v1, p2 = v2)" />
+        <scope ilk="function" name="taint" signature="taint()" />
+        <scope doc="Return the path as a String. &#10; to_path is implemented so Pathname objects are usable with File.open, etc." ilk="function" name="to_path" signature="to_path()" />
+        <scope doc="Return the path as a String. &#10; to_path is implemented so Pathname objects are usable with File.open, etc." ilk="function" name="to_s" signature="to_s()" />
+        <scope doc="See File.truncate.  Truncate the file to +length+ bytes." ilk="function" name="truncate" signature="truncate(p1)" />
+        <scope doc="Removes a file or directory, using File.unlink or Dir.unlink as necessary." ilk="function" name="unlink" signature="unlink()" />
+        <scope ilk="function" name="untaint" signature="untaint()" />
+        <scope doc="See File.utime.  Update the access and modification times." ilk="function" name="utime" signature="utime(p1, p2)" />
+        <scope doc="See FileTest.world_readable?." ilk="function" name="world_readable?" signature="world_readable?()" />
+        <scope doc="See FileTest.world_writable?." ilk="function" name="world_writable?" signature="world_writable?()" />
+        <scope doc="See FileTest.writable?." ilk="function" name="writable?" signature="writable?()" />
+        <scope doc="See FileTest.writable_real?." ilk="function" name="writable_real?" signature="writable_real?()" />
+        <scope doc="See FileTest.zero?." ilk="function" name="zero?" signature="zero?()" />
+        <variable attributes="__const__" citdl="Object" name="SEPARATOR_LIST" />
+        <variable attributes="__const__" citdl="Object" name="SEPARATOR_PAT" />
+      </scope>
+    </scope>
+    

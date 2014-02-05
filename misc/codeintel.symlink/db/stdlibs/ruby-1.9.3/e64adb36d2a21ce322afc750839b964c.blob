@@ -1,0 +1,22 @@
+<scope ilk="blob" lang="Ruby" name="rexml/quickpath">
+      <scope ilk="namespace" name="REXML">
+        <scope classrefs="Object" ilk="class" name="QuickPath">
+          <import symbol="Functions" />
+          <import symbol="XMLTokens" />
+          <scope attributes="__classmethod__" ilk="function" name="attribute" signature="attribute( name )" />
+          <scope attributes="__classmethod__" ilk="function" name="axe" signature="axe( elements, axe_name, rest )" />
+          <scope attributes="__classmethod__" ilk="function" name="each" signature="each(element, path, namespaces=EMPTY_HASH, &amp;block)" />
+          <scope attributes="__classmethod__" doc="Given an array of nodes it filters the array based on the path. The result is that when this method returns, the array will contain elements which match the path" ilk="function" name="filter" signature="filter(elements, path)" />
+          <scope attributes="__classmethod__" ilk="function" name="first" signature="first(element, path, namespaces=EMPTY_HASH)" />
+          <scope attributes="__classmethod__" ilk="function" name="function" signature="function( elements, fname, rest )" />
+          <scope attributes="__classmethod__" ilk="function" name="match" signature="match(element, path, namespaces=EMPTY_HASH)" />
+          <scope attributes="__classmethod__" ilk="function" name="method_missing" signature="method_missing( id, *args )" />
+          <scope attributes="__classmethod__" ilk="function" name="name" signature="name()" />
+          <scope attributes="__classmethod__" ilk="function" name="parse_args" signature="parse_args( element, string )" />
+          <scope attributes="__classmethod__" doc="A predicate filters a node-set with respect to an axis to produce a new node-set. For each node in the node-set to be filtered, the PredicateExpr is evaluated with that node as the context node, with the number of nodes in the node-set as the context size, and with the proximity position of the node in the node-set with respect to the axis as the context position; if PredicateExpr evaluates to true for that node, the node is included in the new node-set; otherwise, it is not included. &#10; A PredicateExpr is evaluated by evaluating the Expr and converting the result to a boolean. If the result is a number, the result will be converted to true if the number is equal to the context position and will be converted to false otherwise; if the result is not a number, then the result will be converted as if by a call to the boolean function. Thus a location path para[3] is equivalent to para[position()=3]." ilk="function" name="predicate" signature="predicate( elements, path )" />
+          <variable attributes="__const__" citdl="Object" name="EMPTY_HASH" />
+          <variable attributes="__const__" citdl="Object" name="OPERAND_" />
+        </scope>
+      </scope>
+    </scope>
+    

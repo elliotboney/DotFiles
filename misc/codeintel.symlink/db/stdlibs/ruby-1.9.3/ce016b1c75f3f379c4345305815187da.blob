@@ -1,0 +1,12 @@
+<scope ilk="blob" lang="Ruby" name="minitest/mock">
+      <scope ilk="namespace" name="MiniTest">
+        <variable attributes="__const__" citdl="Object" name="MINI_DIR" />
+        <scope classrefs="Object" ilk="class" name="Mock">
+          <scope doc="Expect that method +name+ is called, optionally with +args+, and returns +retval+. &#10; @mock.expect(:meaning_of_life, 42)&#10;@mock.meaning_of_life # =&gt; 42&#10;&#10;@mock.expect(:do_something_with, true, [some_obj, true])&#10;@mock.do_something_with(some_obj, true) # =&gt; true&#10; +args+ is compared to the expected args using case equality (ie, the '===' operator), allowing for less specific expectations. &#10; @mock.expect(:uses_any_string, true, [String])&#10;@mock.uses_any_string(&quot;foo&quot;) # =&gt; true&#10;@mock.verify  # =&gt; true&#10;&#10;@mock.expect(:uses_one_string, true, [&quot;foo&quot;]&#10;@mock.uses_one_string(&quot;bar&quot;) # =&gt; true&#10;@mock.verify  # =&gt; raises MockExpectationError" ilk="function" name="expect" signature="expect(name, retval, args=[])" />
+          <scope doc="Verify that all methods were called as expected. Raises +MockExpectationError+ if the mock object was not called as expected." ilk="function" name="verify" signature="verify()" />
+        </scope>
+      </scope>
+      <scope classrefs="StandardError" ilk="class" name="MockExpectationError">
+      </scope>
+    </scope>
+    

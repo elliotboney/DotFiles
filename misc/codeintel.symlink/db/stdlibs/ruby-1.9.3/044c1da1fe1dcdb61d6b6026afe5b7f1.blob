@@ -1,0 +1,15 @@
+<scope ilk="blob" lang="Ruby" name="rdoc/markup/raw">
+      <scope ilk="namespace" name="RDoc">
+        <scope ilk="namespace" name="Markup">
+          <scope classrefs="Object" ilk="class" name="Raw">
+            <scope attributes="__classmethod__ __ctor__" doc="Creates a new Raw containing +parts+" ilk="function" name="new" signature="new(*parts)" />
+            <scope doc="Calls #accept_raw+ on +visitor+" ilk="function" name="accept" signature="accept(visitor)" />
+            <scope doc="Appends +other+'s parts" ilk="function" name="merge" signature="merge(other)" />
+            <scope doc="Appends +texts+ onto this Paragraph" ilk="function" name="push" signature="push(*texts)" />
+            <scope doc="The raw text" ilk="function" name="text" signature="text()" />
+            <scope ilk="function" name="parts" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

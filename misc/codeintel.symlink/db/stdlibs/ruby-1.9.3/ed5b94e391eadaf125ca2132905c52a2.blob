@@ -1,0 +1,9 @@
+<scope ilk="blob" lang="Ruby" name="rake/file_task">
+      <scope ilk="namespace" name="Rake">
+        <scope classrefs="Rake::Task" ilk="class" name="FileTask">
+          <scope doc="Is this file task needed?  Yes if it doesn't exist, or if its time stamp is out of date." ilk="function" name="needed?" signature="needed?()" />
+          <scope doc="Time stamp for file task." ilk="function" name="timestamp" signature="timestamp()" />
+        </scope>
+      </scope>
+    </scope>
+    

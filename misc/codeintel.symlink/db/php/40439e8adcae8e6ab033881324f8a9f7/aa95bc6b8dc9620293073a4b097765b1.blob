@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="PHP" name="extensions.php" src="/usr/local/Cellar/php55/5.5.7/lib/php/test/PHP_CompatInfo/tests/parseDir/extensions.php"><scope ilk="function" line="4" lineend="9" name="test_extensions" returns="image" signature="test_extensions()"><variable citdl="imagecreate()" line="6" name="image" /></scope><variable line="14" name="prefix" /></scope>

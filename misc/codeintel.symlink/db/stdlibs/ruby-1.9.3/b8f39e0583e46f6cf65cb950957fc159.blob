@@ -1,0 +1,21 @@
+<scope ilk="blob" lang="Ruby" name="rdoc/parser/ruby_tools">
+      <scope ilk="namespace" name="RDoc">
+        <scope ilk="namespace" name="Parser">
+          <scope ilk="namespace" name="RubyTools">
+            <import symbol="RDoc::RubyToken" />
+            <scope doc="Adds a token listener +obj+, but you should probably use token_listener" ilk="function" name="add_token_listener" signature="add_token_listener(obj)" />
+            <scope doc="Fetches the next token from the scanner" ilk="function" name="get_tk" signature="get_tk()" />
+            <scope doc="Reads and returns all tokens up to one of +tokens+.  Leaves the matched token in the token list." ilk="function" name="get_tk_until" signature="get_tk_until(*tokens)" />
+            <scope doc="Retrieves a String representation of the read tokens" ilk="function" name="get_tkread" signature="get_tkread()" />
+            <scope doc="Peek equivalent for get_tkread" ilk="function" name="peek_read" signature="peek_read()" />
+            <scope doc="Peek at the next token, but don't remove it from the stream" ilk="function" name="peek_tk" signature="peek_tk()" />
+            <scope doc="Removes the token listener +obj+" ilk="function" name="remove_token_listener" signature="remove_token_listener(obj)" />
+            <scope doc="Resets the tools" ilk="function" name="reset" signature="reset()" />
+            <scope doc="Skips whitespace tokens including newlines if +skip_nl+ is true" ilk="function" name="skip_tkspace" signature="skip_tkspace(skip_nl = true)" />
+            <scope doc="Has +obj+ listen to tokens" ilk="function" name="token_listener" signature="token_listener(obj)" />
+            <scope doc="Returns +tk+ to the scanner" ilk="function" name="unget_tk" signature="unget_tk(tk)" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

@@ -1,0 +1,12 @@
+<scope ilk="blob" lang="Ruby" name="rexml/encoding">
+      <scope ilk="namespace" name="REXML">
+        <scope ilk="namespace" name="Encoding">
+          <scope ilk="function" name="check_encoding" signature="check_encoding(xml)" />
+          <scope ilk="function" name="decode" signature="decode(string)" />
+          <scope ilk="function" name="encode" signature="encode(string)" />
+          <scope ilk="function" name="encoding=" signature="encoding=(encoding)" />
+          <scope ilk="function" name="encoding" />
+        </scope>
+      </scope>
+    </scope>
+    

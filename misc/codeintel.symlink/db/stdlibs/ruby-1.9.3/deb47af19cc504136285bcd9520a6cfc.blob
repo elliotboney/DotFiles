@@ -1,0 +1,10 @@
+<scope ilk="blob" lang="Ruby" name="rake/contrib/compositepublisher">
+      <scope ilk="namespace" name="Rake">
+        <scope classrefs="Object" ilk="class" name="CompositePublisher">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new()" />
+          <scope doc="Add a publisher to the composite." ilk="function" name="add" signature="add(pub)" />
+          <scope doc="Upload all the individual publishers." ilk="function" name="upload" signature="upload()" />
+        </scope>
+      </scope>
+    </scope>
+    

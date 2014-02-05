@@ -1,0 +1,14 @@
+<scope ilk="blob" lang="Ruby" name="webrick/httpauth/userdb">
+      <scope ilk="namespace" name="WEBrick">
+        <scope ilk="namespace" name="HTTPAuth">
+          <scope ilk="namespace" name="UserDB">
+            <scope doc="Retrieves a password in +realm+ for +user+ for the auth_type of this database.  +reload_db+ is a dummy value." ilk="function" name="get_passwd" signature="get_passwd(realm, user, reload_db=false)" />
+            <scope doc="Creates an obscured password in +realm+ with +user+ and +password+ using the auth_type of this database." ilk="function" name="make_passwd" signature="make_passwd(realm, user, pass)" />
+            <scope doc="Sets a password in +realm+ with +user+ and +password+ for the auth_type of this database." ilk="function" name="set_passwd" signature="set_passwd(realm, user, pass)" />
+            <scope ilk="function" name="auth_type" />
+            <scope ilk="function" name="auth_type=" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

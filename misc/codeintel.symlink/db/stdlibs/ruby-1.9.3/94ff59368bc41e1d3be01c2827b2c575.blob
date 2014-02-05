@@ -1,0 +1,14 @@
+<scope ilk="blob" lang="Ruby" name="rexml/xmltokens">
+      <scope ilk="namespace" name="REXML">
+        <scope ilk="namespace" name="XMLTokens">
+          <variable attributes="__const__" citdl="Object" name="NCNAME_STR" />
+          <variable attributes="__const__" citdl="Object" name="NAME_STR" />
+          <variable attributes="__const__" citdl="Object" name="NAMECHAR" />
+          <variable attributes="__const__" citdl="Object" name="NAME" />
+          <variable attributes="__const__" citdl="Object" name="NMTOKEN" />
+          <variable attributes="__const__" citdl="Object" name="NMTOKENS" />
+          <variable attributes="__const__" citdl="Object" name="REFERENCE" />
+        </scope>
+      </scope>
+    </scope>
+    

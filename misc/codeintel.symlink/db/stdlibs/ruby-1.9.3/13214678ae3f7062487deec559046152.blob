@@ -1,0 +1,33 @@
+<scope ilk="blob" lang="Ruby" name="rexml/light/node">
+      <scope ilk="namespace" name="REXML">
+        <variable attributes="__const__" citdl="Object" name="COPYRIGHT" />
+        <variable attributes="__const__" citdl="Object" name="DATE" />
+        <variable attributes="__const__" citdl="Object" name="VERSION" />
+        <variable attributes="__const__" citdl="Object" name="REVISION" />
+        <scope ilk="namespace" name="Light">
+          <scope classrefs="Object" ilk="class" name="Node">
+            <scope attributes="__classmethod__ __ctor__" doc="Create a new element." ilk="function" name="new" signature="new(node=nil)" />
+            <scope ilk="function" name="children" signature="children()" />
+            <scope ilk="function" name="each" signature="each( &amp;block )" />
+            <scope ilk="function" name="has_name?" signature="has_name?( name, namespace = '' )" />
+            <scope ilk="function" name="local_name" signature="local_name()" />
+            <scope ilk="function" name="local_name=" signature="local_name=( name_str )" />
+            <scope ilk="function" name="name" signature="name()" />
+            <scope ilk="function" name="name=" signature="name=( name_str, ns=nil )" />
+            <scope ilk="function" name="namespace" signature="namespace( prefix=prefix() )" />
+            <scope ilk="function" name="namespace=" signature="namespace=( namespace )" />
+            <scope ilk="function" name="node_type" signature="node_type()" />
+            <scope ilk="function" name="parent" signature="parent()" />
+            <scope ilk="function" name="parent=" signature="parent=( node )" />
+            <scope ilk="function" name="prefix" signature="prefix( namespace=nil )" />
+            <scope ilk="function" name="root" signature="root()" />
+            <scope ilk="function" name="size" signature="size()" />
+            <scope ilk="function" name="text=" signature="text=( foo )" />
+            <scope ilk="function" name="to_s" signature="to_s()" />
+            <variable attributes="__const__" citdl="Object" name="NAMESPLIT" />
+            <variable attributes="__const__" citdl="Object" name="PARENTS" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

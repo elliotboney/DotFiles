@@ -1,0 +1,13 @@
+<scope ilk="blob" lang="Ruby" name="rexml/parsers/lightparser">
+      <scope ilk="namespace" name="REXML">
+        <scope ilk="namespace" name="Parsers">
+          <scope classrefs="Object" ilk="class" name="LightParser">
+            <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(stream)" />
+            <scope ilk="function" name="add_listener" signature="add_listener( listener )" />
+            <scope ilk="function" name="parse" signature="parse()" />
+            <scope ilk="function" name="rewind" signature="rewind()" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

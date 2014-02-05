@@ -1,0 +1,15 @@
+<scope ilk="blob" lang="Ruby" name="rake/alt_system">
+      <scope ilk="namespace" name="Rake">
+        <scope ilk="namespace" name="AltSystem">
+          <scope attributes="__classmethod__" ilk="function" name="define_module_function" signature="define_module_function(name, &amp;block)" />
+          <scope ilk="function" name="backticks" signature="backticks(cmd)" />
+          <scope ilk="function" name="find_runnable" signature="find_runnable(file)" />
+          <scope ilk="function" name="repair_command" signature="repair_command(cmd)" />
+          <scope ilk="function" name="system" signature="system(cmd, *args)" />
+          <variable attributes="__const__" citdl="Object" name="WINDOWS" />
+          <variable attributes="__const__" citdl="Object" name="RUNNABLE_EXTS" />
+          <variable attributes="__const__" citdl="Object" name="RUNNABLE_PATTERN" />
+        </scope>
+      </scope>
+    </scope>
+    

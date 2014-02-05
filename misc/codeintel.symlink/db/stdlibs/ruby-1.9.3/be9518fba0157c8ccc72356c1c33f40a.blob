@@ -1,0 +1,107 @@
+<scope ilk="blob" lang="Ruby" name="irb/context">
+      <scope ilk="namespace" name="IRB">
+        <scope classrefs="Object" ilk="class" name="Context">
+          <scope attributes="__classmethod__ __ctor__" doc="Arguments: input_method: nil -- stdin or readline&#10;              String -- File&#10;              other -- using this as InputMethod" ilk="function" name="new" signature="new(irb, workspace = nil, input_method = nil, output_method = nil)" />
+          <scope ilk="function" name="__exit__" signature="__exit__(ret = 0)" />
+          <scope ilk="function" name="__inspect__" signature="__inspect__()" />
+          <scope ilk="function" name="__to_s__" signature="__to_s__()" />
+          <scope ilk="function" name="_set_last_value" signature="_set_last_value(value)" />
+          <scope ilk="function" name="change_workspace" signature="change_workspace(*_main)" />
+          <scope ilk="function" name="debug?" signature="debug?()" />
+          <scope ilk="function" name="debug_level=" signature="debug_level=(value)" />
+          <scope ilk="function" name="eval_history=" signature="eval_history=(no)" />
+          <scope ilk="function" name="evaluate" signature="evaluate(line, line_no)" />
+          <scope ilk="function" name="exit" signature="exit(ret = 0)" />
+          <scope ilk="function" name="file_input?" signature="file_input?()" />
+          <scope ilk="function" name="history_file" signature="history_file()" />
+          <scope ilk="function" name="history_file=" signature="history_file=(hist)" />
+          <scope ilk="function" name="home_workspace" signature="home_workspace()" />
+          <scope ilk="function" name="init_save_history" signature="init_save_history()" />
+          <scope ilk="function" name="inspect" signature="inspect()" />
+          <scope ilk="function" name="inspect?" signature="inspect?()" />
+          <scope ilk="function" name="inspect_last_value" signature="inspect_last_value()" />
+          <scope ilk="function" name="inspect_mode=" signature="inspect_mode=(opt)" />
+          <scope ilk="function" name="irb_level" signature="irb_level()" />
+          <scope ilk="function" name="main" signature="main()" />
+          <scope ilk="function" name="math_mode=" signature="math_mode=(opt)" />
+          <scope ilk="function" name="pop_workspace" signature="pop_workspace()" />
+          <scope ilk="function" name="prompt_mode=" signature="prompt_mode=(mode)" />
+          <scope ilk="function" name="prompting?" signature="prompting?()" />
+          <scope ilk="function" name="push_workspace" signature="push_workspace(*_main)" />
+          <scope ilk="function" name="save_history" signature="save_history()" />
+          <scope ilk="function" name="save_history=" signature="save_history=(val)" />
+          <scope ilk="function" name="set_last_value" signature="set_last_value(value)" />
+          <scope ilk="function" name="to_s" signature="to_s()" />
+          <scope ilk="function" name="use_loader" signature="use_loader()" />
+          <scope ilk="function" name="use_loader=" signature="use_loader=(opt)" />
+          <scope ilk="function" name="use_loader?" signature="use_loader?()" />
+          <scope ilk="function" name="use_readline=" signature="use_readline=(opt)" />
+          <scope ilk="function" name="use_tracer=" signature="use_tracer=(opt)" />
+          <scope ilk="function" name="verbose?" signature="verbose?()" />
+          <scope ilk="function" name="workspaces" signature="workspaces()" />
+          <scope ilk="function" name="ap_name" />
+          <scope ilk="function" name="ap_name=" />
+          <scope ilk="function" name="auto_indent_mode" />
+          <scope ilk="function" name="auto_indent_mode=" />
+          <scope ilk="function" name="back_trace_limit" />
+          <scope ilk="function" name="back_trace_limit=" />
+          <scope ilk="function" name="debug_level" />
+          <scope ilk="function" name="echo" />
+          <scope ilk="function" name="echo=" />
+          <scope ilk="function" name="echo?" />
+          <scope ilk="function" name="echo?=" />
+          <scope ilk="function" name="eval_history" />
+          <scope ilk="function" name="ignore_eof" />
+          <scope ilk="function" name="ignore_eof=" />
+          <scope ilk="function" name="ignore_eof?" />
+          <scope ilk="function" name="ignore_eof?=" />
+          <scope ilk="function" name="ignore_sigint" />
+          <scope ilk="function" name="ignore_sigint=" />
+          <scope ilk="function" name="ignore_sigint?" />
+          <scope ilk="function" name="ignore_sigint?=" />
+          <scope ilk="function" name="inspect_mode" />
+          <scope ilk="function" name="io" />
+          <scope ilk="function" name="io=" />
+          <scope ilk="function" name="irb" />
+          <scope ilk="function" name="irb=" />
+          <scope ilk="function" name="irb_name" />
+          <scope ilk="function" name="irb_name=" />
+          <scope ilk="function" name="irb_path" />
+          <scope ilk="function" name="irb_path=" />
+          <scope ilk="function" name="last_value" />
+          <scope ilk="function" name="load_modules" />
+          <scope ilk="function" name="load_modules=" />
+          <scope ilk="function" name="math?" />
+          <scope ilk="function" name="math_mode" />
+          <scope ilk="function" name="prompt_c" />
+          <scope ilk="function" name="prompt_c=" />
+          <scope ilk="function" name="prompt_i" />
+          <scope ilk="function" name="prompt_i=" />
+          <scope ilk="function" name="prompt_mode" />
+          <scope ilk="function" name="prompt_n" />
+          <scope ilk="function" name="prompt_n=" />
+          <scope ilk="function" name="prompt_s" />
+          <scope ilk="function" name="prompt_s=" />
+          <scope ilk="function" name="rc" />
+          <scope ilk="function" name="rc=" />
+          <scope ilk="function" name="rc?" />
+          <scope ilk="function" name="rc?=" />
+          <scope ilk="function" name="return_format" />
+          <scope ilk="function" name="return_format=" />
+          <scope ilk="function" name="thread" />
+          <scope ilk="function" name="use_readline" />
+          <scope ilk="function" name="use_readline?" />
+          <scope ilk="function" name="use_tracer" />
+          <scope ilk="function" name="use_tracer?" />
+          <scope ilk="function" name="verbose" />
+          <scope ilk="function" name="verbose=" />
+          <scope ilk="function" name="workspace" />
+          <scope ilk="function" name="workspace=" />
+          <scope ilk="function" name="workspace_home" />
+          <variable attributes="__const__" citdl="Object" name="NOPRINTING_IVARS" />
+          <variable attributes="__const__" citdl="Object" name="NO_INSPECTING_IVARS" />
+          <variable attributes="__const__" citdl="Object" name="IDNAME_IVARS" />
+        </scope>
+      </scope>
+    </scope>
+    

@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="PHP" name="example.php" src="/usr/local/pear/share/pear/PhpDocumentor/vendor/cilex/cilex/example.php"><import line="2" module="/vendor/autoload.php" /><variable citdl="\Cilex\Application" line="4" name="app" /></scope>

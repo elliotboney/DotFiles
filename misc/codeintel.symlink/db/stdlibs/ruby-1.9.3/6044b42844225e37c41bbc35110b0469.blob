@@ -1,0 +1,16 @@
+<scope ilk="blob" lang="Ruby" name="webrick/httpauth/authenticator">
+      <scope ilk="namespace" name="WEBrick">
+        <scope ilk="namespace" name="HTTPAuth">
+          <scope ilk="namespace" name="Authenticator">
+            <scope ilk="function" name="logger" />
+            <scope ilk="function" name="realm" />
+            <scope ilk="function" name="userdb" />
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="HTTPAuth">
+          <scope ilk="namespace" name="ProxyAuthenticator">
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

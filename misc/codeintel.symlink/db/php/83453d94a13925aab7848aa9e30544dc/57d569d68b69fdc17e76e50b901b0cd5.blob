@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="PHP" name="feed-rss2-comments.php" src="/private/var/www/kw/wp-includes/feed-rss2-comments.php"><variable citdl="GLOBALS" line="57" name="comment_post" /><variable citdl="get_the_title()" line="62" name="title" /></scope>

@@ -1,0 +1,15 @@
+<scope ilk="blob" lang="Ruby" name="xmlrpc/config">
+      <scope ilk="namespace" name="XMLRPC">
+        <scope ilk="namespace" name="Config">
+          <variable attributes="__const__" citdl="Object" name="DEFAULT_WRITER" />
+          <variable attributes="__const__" citdl="Object" name="DEFAULT_PARSER" />
+          <variable attributes="__const__" citdl="Object" name="ENABLE_NIL_CREATE" />
+          <variable attributes="__const__" citdl="Object" name="ENABLE_NIL_PARSER" />
+          <variable attributes="__const__" citdl="Object" name="ENABLE_BIGINT" />
+          <variable attributes="__const__" citdl="Object" name="ENABLE_MARSHALLING" />
+          <variable attributes="__const__" citdl="Object" name="ENABLE_MULTICALL" />
+          <variable attributes="__const__" citdl="Object" name="ENABLE_INTROSPECTION" />
+        </scope>
+      </scope>
+    </scope>
+    

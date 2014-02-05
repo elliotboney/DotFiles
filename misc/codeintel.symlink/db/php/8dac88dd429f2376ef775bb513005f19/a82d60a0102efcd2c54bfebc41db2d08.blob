@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="JavaScript" name="TotalCache.php" src="/private/var/www/wordpress.staging/plugins/w3-total-cache/lib/W3/Plugin/TotalCache.php"><scope ilk="function" line="807" lineend="809" name="w3tc_popupadmin_bar" signature="w3tc_popupadmin_bar(url)"><variable ilk="argument" line="807" name="url" /></scope></scope>

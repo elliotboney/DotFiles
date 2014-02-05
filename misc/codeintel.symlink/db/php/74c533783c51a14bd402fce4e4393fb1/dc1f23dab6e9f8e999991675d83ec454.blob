@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="PHP" name="feed-rss2.php" src="/private/var/www/paperless/wp-includes/feed-rss2.php"><variable citdl="int" line="9" name="more" /><variable citdl="get_the_content_feed()" line="47" name="content" /></scope>

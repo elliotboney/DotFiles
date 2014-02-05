@@ -1,0 +1,168 @@
+<scope ilk="blob" lang="Ruby" name="optparse">
+      <scope classrefs="Object" ilk="class" name="OptionParser">
+        <scope attributes="__classmethod__" doc="See #accept." ilk="function" name="accept" signature="accept(*args, &amp;blk)" />
+        <scope attributes="__classmethod__" ilk="function" name="each_const" signature="each_const(path, base = ::Object)" />
+        <scope attributes="__classmethod__" doc="See #getopts." ilk="function" name="getopts" signature="getopts(*args)" />
+        <scope attributes="__classmethod__" doc="Returns an incremented value of +default+ according to +arg+." ilk="function" name="inc" signature="inc(arg, default = nil)" />
+        <scope attributes="__classmethod__ __ctor__" doc="Initializes the instance and yields itself if called with a block. &#10; Banner message.&#10;Summary width.&#10;Summary indent." ilk="function" name="new" signature="new(banner = nil, width = 32, indent = ' ' * 4)" />
+        <scope attributes="__classmethod__" doc="See #reject." ilk="function" name="reject" signature="reject(*args, &amp;blk)" />
+        <scope attributes="__classmethod__" ilk="function" name="search_const" signature="search_const(klass, name)" />
+        <scope attributes="__classmethod__" ilk="function" name="show_version" signature="show_version(*pkgs)" />
+        <scope attributes="__classmethod__" ilk="function" name="terminate" signature="terminate(arg = nil)" />
+        <scope attributes="__classmethod__" ilk="function" name="top" signature="top()" />
+        <scope attributes="__classmethod__" doc="Initializes a new instance and evaluates the optional block in context of the instance. Arguments +args+ are passed to #new, see there for description of parameters. &#10; This method is *deprecated*, its behavior corresponds to the older #new method." ilk="function" name="with" signature="with(*args, &amp;block)" />
+        <scope ilk="function" name="abort" signature="abort(mesg = $!)" />
+        <scope doc="Directs to accept specified class +t+. The argument string is passed to the block in which it should be converted to the desired class. &#10; Argument class specifier, any object including Class.&#10;Pattern for argument, defaults to +t+ if it responds to match. &#10; accept(t, pat, &amp;block)" ilk="function" name="accept" signature="accept(*args, &amp;blk)" />
+        <scope doc="Heading banner preceding summary." ilk="function" name="banner" />
+        <scope doc="Subject of #on_tail." ilk="function" name="base" signature="base()" />
+        <scope ilk="function" name="candidate" signature="candidate(word)" />
+        <scope ilk="function" name="def_head_option" signature="def_head_option(*opts, &amp;block)" />
+        <scope ilk="function" name="def_option" signature="def_option(*opts, &amp;block)" />
+        <scope ilk="function" name="def_tail_option" signature="def_tail_option(*opts, &amp;block)" />
+        <scope ilk="function" name="define" signature="define(*opts, &amp;block)" />
+        <scope ilk="function" name="define_head" signature="define_head(*opts, &amp;block)" />
+        <scope ilk="function" name="define_tail" signature="define_tail(*opts, &amp;block)" />
+        <scope doc="Parses environment variable +env+ or its uppercase with splitting like a shell. &#10; +env+ defaults to the basename of the program." ilk="function" name="environment" signature="environment(env = File.basename($0, '.*'))" />
+        <scope doc="Wrapper method for getopts.rb. &#10; params = ARGV.getopts(&quot;ab:&quot;, &quot;foo&quot;, &quot;bar:&quot;)&#10;# params[:a] = true   # -a&#10;# params[:b] = &quot;1&quot;    # -b1&#10;# params[:foo] = &quot;1&quot;  # --foo&#10;# params[:bar] = &quot;x&quot;  # --bar x" ilk="function" name="getopts" signature="getopts(*args)" />
+        <scope doc="Returns option summary string." ilk="function" name="help" signature="help()" />
+        <scope ilk="function" name="inc" signature="inc(*args)" />
+        <scope doc="Loads options from file names as +filename+. Does nothing when the file is not present. Returns whether successfully loaded. &#10; +filename+ defaults to basename of the program without suffix in a directory ~/.options." ilk="function" name="load" signature="load(filename = nil)" />
+        <scope doc="Creates an OptionParser::Switch from the parameters. The parsed argument value is passed to the given block, where it can be processed. &#10; See at the beginning of OptionParser for some full examples. &#10; +opts+ can include the following elements: &#10; One of the following: :NONE, :REQUIRED, :OPTIONAL&#10;Acceptable option argument format, must be pre-defined with OptionParser.accept or OptionParser#accept, or Regexp. This can appear once or assigned as String if not present, otherwise causes an ArgumentError. Examples: Float, Time, Array&#10;Hash or Array. [:text, :binary, :auto]&#10;%w[iso-2022-jp shift_jis euc-jp utf8 binary]&#10;{ &quot;jis&quot; =&gt; &quot;iso-2022-jp&quot;, &quot;sjis&quot; =&gt; &quot;shift_jis&quot; }&#10;Specifies a long style switch which takes a mandatory, optional or no argument. It's a string of the following form: &quot;--switch=MANDATORY&quot; or &quot;--switch MANDATORY&quot;&#10;&quot;--switch[=OPTIONAL]&quot;&#10;&quot;--switch&quot;&#10;Specifies short style switch which takes a mandatory, optional or no argument. It's a string of the following form: &quot;-xMANDATORY&quot;&#10;&quot;-x[OPTIONAL]&quot;" ilk="function" name="make_switch" signature="make_switch(opts, block = nil)" />
+        <scope doc="Pushes a new List." ilk="function" name="new" signature="new()" />
+        <scope doc="Add option switch and handler. See #make_switch for an explanation of parameters." ilk="function" name="on" signature="on(*opts, &amp;block)" />
+        <scope doc="Add option switch like with #on, but at head of summary." ilk="function" name="on_head" signature="on_head(*opts, &amp;block)" />
+        <scope doc="Add option switch like with #on, but at tail of summary." ilk="function" name="on_tail" signature="on_tail(*opts, &amp;block)" />
+        <scope doc="Parses command line arguments +argv+ in order. When a block is given, each non-option argument is yielded. &#10; Returns the rest of +argv+ left unparsed." ilk="function" name="order" signature="order(*argv, &amp;block)" />
+        <scope doc="Same as #order, but removes switches destructively." ilk="function" name="order!" signature="order!(argv = default_argv, &amp;nonopt)" />
+        <scope doc="Parses command line arguments +argv+ in order when environment variable POSIXLY_CORRECT is set, and in permutation mode otherwise." ilk="function" name="parse" signature="parse(*argv)" />
+        <scope doc="Same as #parse, but removes switches destructively." ilk="function" name="parse!" signature="parse!(argv = default_argv)" />
+        <scope doc="Parses command line arguments +argv+ in permutation mode and returns list of non-option arguments." ilk="function" name="permute" signature="permute(*argv)" />
+        <scope doc="Same as #permute, but removes switches destructively." ilk="function" name="permute!" signature="permute!(argv = default_argv)" />
+        <scope doc="Program name to be emitted in error message and default banner, defaults to $0." ilk="function" name="program_name" />
+        <scope doc="Directs to reject specified class argument. &#10; Argument class specifier, any object including Class. &#10; reject(t)" ilk="function" name="reject" signature="reject(*args, &amp;blk)" />
+        <scope doc="Release code" ilk="function" name="release" />
+        <scope doc="Removes the last List." ilk="function" name="remove" signature="remove()" />
+        <scope doc="Add separator in summary." ilk="function" name="separator" signature="separator(string)" />
+        <scope doc="Puts option summary into +to+ and returns +to+. Yields each line if a block is given. &#10; Output destination, which must have method &lt;&lt;. Defaults to [].&#10;Width of left side, defaults to @summary_width.&#10;Maximum length allowed for left side, defaults to +width+ - 1.&#10;Indentation, defaults to @summary_indent." ilk="function" name="summarize" signature="summarize(to = [], width = @summary_width, max = width - 1, indent = @summary_indent, &amp;blk)" />
+        <scope doc="Terminates option parsing. Optional parameter +arg+ is a string pushed back to be the first non-option argument." ilk="function" name="terminate" signature="terminate(arg = nil)" />
+        <scope doc="Returns option summary list." ilk="function" name="to_a" signature="to_a()" />
+        <scope ilk="function" name="to_s" signature="to_s()" />
+        <scope doc="Subject of #on / #on_head, #accept / #reject" ilk="function" name="top" signature="top()" />
+        <scope doc="Returns version string from program_name, version and release." ilk="function" name="ver" signature="ver()" />
+        <scope doc="Version" ilk="function" name="version" />
+        <scope ilk="function" name="warn" signature="warn(mesg = $!)" />
+        <scope ilk="function" name="banner=" />
+        <scope ilk="function" name="default_argv" />
+        <scope ilk="function" name="default_argv=" />
+        <scope ilk="function" name="program_name=" />
+        <scope ilk="function" name="release=" />
+        <scope ilk="function" name="set_banner=" />
+        <scope ilk="function" name="set_program_name=" />
+        <scope ilk="function" name="set_summary_indent" />
+        <scope ilk="function" name="set_summary_indent=" />
+        <scope ilk="function" name="set_summary_width" />
+        <scope ilk="function" name="set_summary_width=" />
+        <scope ilk="function" name="summary_indent" />
+        <scope ilk="function" name="summary_indent=" />
+        <scope ilk="function" name="summary_width" />
+        <scope ilk="function" name="summary_width=" />
+        <scope ilk="function" name="version=" />
+        <variable attributes="__const__" citdl="Object" name="SPLAT_PROC" />
+        <scope ilk="namespace" name="Acceptables">
+        </scope>
+        <scope classrefs="OptionParser::InvalidArgument" ilk="class" name="AmbiguousArgument">
+        </scope>
+        <scope classrefs="OptionParser::ParseError" ilk="class" name="AmbiguousOption">
+        </scope>
+        <scope ilk="namespace" name="Arguable">
+          <scope attributes="__classmethod__" doc="Initializes instance variable." ilk="function" name="extend_object" signature="extend_object(obj)" />
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(*args)" />
+          <scope doc="Substitution of getopts is possible as follows. Also see OptionParser#getopts. &#10; def getopts(*args)&#10;  ($OPT = ARGV.getopts(*args)).each do |opt, val|&#10;    eval &quot;$OPT_#{opt.gsub(/[^A-Za-z0-9_]/, '_')} = val&quot;&#10;  end&#10;rescue OptionParser::ParseError&#10;end" ilk="function" name="getopts" signature="getopts(*args)" />
+          <scope doc="Actual OptionParser object, automatically created if nonexistent. &#10; If called with a block, yields the OptionParser object and returns the result of the block. If an OptionParser::ParseError exception occurs in the block, it is rescued, a error message printed to STDERR and +nil+ returned." ilk="function" name="options" signature="options()" />
+          <scope doc="Sets OptionParser object, when +opt+ is +false+ or +nil+, methods OptionParser::Arguable#options and OptionParser::Arguable#options= are undefined. Thus, there is no ways to access the OptionParser object via the receiver object." ilk="function" name="options=" signature="options=(opt)" />
+          <scope doc="Parses +self+ destructively in order and returns +self+ containing the rest arguments left unparsed." ilk="function" name="order!" signature="order!(&amp;blk)" />
+          <scope doc="Parses +self+ destructively and returns +self+ containing the rest arguments left unparsed." ilk="function" name="parse!" signature="parse!()" />
+          <scope doc="Parses +self+ destructively in permutation mode and returns +self+ containing the rest arguments left unparsed." ilk="function" name="permute!" signature="permute!()" />
+        </scope>
+        <scope classrefs="Hash" ilk="class" name="CompletingHash">
+          <import symbol="Completion" />
+          <scope doc="Completion for hash key." ilk="function" name="match" signature="match(key)" />
+        </scope>
+        <scope ilk="namespace" name="Completion">
+          <scope attributes="__classmethod__" ilk="function" name="candidate" signature="candidate(key, icase = false, pat = nil, &amp;block)" />
+          <scope attributes="__classmethod__" ilk="function" name="regexp" signature="regexp(key, icase)" />
+          <scope ilk="function" name="candidate" signature="candidate(key, icase = false, pat = nil)" />
+          <scope ilk="function" name="complete" signature="complete(key, icase = false, pat = nil)" />
+          <scope ilk="function" name="convert" signature="convert(opt = nil, val = nil, *)" />
+        </scope>
+        <scope classrefs="OptionParser::ParseError" ilk="class" name="InvalidArgument">
+        </scope>
+        <scope classrefs="OptionParser::ParseError" ilk="class" name="InvalidOption">
+        </scope>
+        <scope classrefs="Object" ilk="class" name="List">
+          <scope attributes="__classmethod__ __ctor__" doc="Just initializes all instance variables." ilk="function" name="new" signature="new()" />
+          <scope doc="See OptionParser.accept." ilk="function" name="accept" signature="accept(t, pat = /.*/m, &amp;block)" />
+          <scope doc="Appends +switch+ at the tail of the list, and associates short, long and negated long options. Arguments are: &#10; OptionParser::Switch instance to be inserted.&#10;List of short style options.&#10;List of long style options.&#10;List of long style options with &quot;no-&quot; prefix. &#10; append(switch, short_opts, long_opts, nolong_opts)" ilk="function" name="append" signature="append(*args)" />
+          <scope doc="Searches list +id+ for +opt+ and the optional patterns for completion +pat+. If +icase+ is true, the search is case insensitive. The result is returned or yielded if a block is given. If it isn't found, nil is returned." ilk="function" name="complete" signature="complete(id, opt, icase = false, *pat, &amp;block)" />
+          <scope doc="Iterates over each option, passing the option to the +block+." ilk="function" name="each_option" signature="each_option(&amp;block)" />
+          <scope doc="Inserts +switch+ at the head of the list, and associates short, long and negated long options. Arguments are: &#10; OptionParser::Switch instance to be inserted.&#10;List of short style options.&#10;List of long style options.&#10;List of long style options with &quot;no-&quot; prefix. &#10; prepend(switch, short_opts, long_opts, nolong_opts)" ilk="function" name="prepend" signature="prepend(*args)" />
+          <scope doc="See OptionParser.reject." ilk="function" name="reject" signature="reject(t)" />
+          <scope doc="Searches +key+ in +id+ list. The result is returned or yielded if a block is given. If it isn't found, nil is returned." ilk="function" name="search" signature="search(id, key)" />
+          <scope doc="Creates the summary table, passing each line to the +block+ (without newline). The arguments +args+ are passed along to the summarize method which is called on every option." ilk="function" name="summarize" signature="summarize(*args, &amp;block)" />
+          <scope ilk="function" name="atype" />
+          <scope ilk="function" name="list" />
+          <scope ilk="function" name="long" />
+          <scope ilk="function" name="short" />
+        </scope>
+        <scope classrefs="OptionParser::ParseError" ilk="class" name="MissingArgument">
+        </scope>
+        <scope classrefs="OptionParser::ParseError" ilk="class" name="NeedlessArgument">
+        </scope>
+        <scope classrefs="Hash" ilk="class" name="OptionMap">
+          <import symbol="Completion" />
+        </scope>
+        <scope classrefs="RuntimeError" ilk="class" name="ParseError">
+          <scope attributes="__classmethod__" ilk="function" name="filter_backtrace" signature="filter_backtrace(array)" />
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(*args)" />
+          <scope ilk="function" name="inspect" signature="inspect()" />
+          <scope doc="Default stringizing method to emit standard error message." ilk="function" name="message" signature="message()" />
+          <scope ilk="function" name="reason" />
+          <scope doc="Pushes back erred argument(s) to +argv+." ilk="function" name="recover" signature="recover(argv)" />
+          <scope ilk="function" name="set_backtrace" signature="set_backtrace(array)" />
+          <scope ilk="function" name="set_option" signature="set_option(opt, eq)" />
+          <scope ilk="function" name="to_s" signature="to_s()" />
+          <scope ilk="function" name="args" />
+          <scope ilk="function" name="reason=" />
+        </scope>
+        <scope classrefs="Object" ilk="class" name="Switch">
+          <scope attributes="__classmethod__" doc="Guesses argument style from +arg+.  Returns corresponding OptionParser::Switch class (OptionalArgument, etc.)." ilk="function" name="guess" signature="guess(arg)" />
+          <scope attributes="__classmethod__" ilk="function" name="incompatible_argument_styles" signature="incompatible_argument_styles(arg, t)" />
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(pattern = nil, conv = nil, short = nil, long = nil, arg = nil, desc = ([] if short or long), block = Proc.new)" />
+          <scope attributes="__classmethod__" ilk="function" name="pattern" signature="pattern()" />
+          <scope doc="Produces the summary text. Each line of the summary is yielded to the block (without newline). &#10; Already summarized short style options keyed hash.&#10;Already summarized long style options keyed hash.&#10;Width of left side (option part). In other words, the right side (description part) starts after +width+ columns.&#10;Maximum width of left side -&gt; the options are filled within +max+ columns.&#10;Prefix string indents all summarized lines." ilk="function" name="summarize" signature="summarize(sdone = [], ldone = [], width = 1, max = width - 1, indent = &quot;&quot;)" />
+          <scope doc="Main name of the switch." ilk="function" name="switch_name" signature="switch_name()" />
+          <scope ilk="function" name="arg" />
+          <scope ilk="function" name="block" />
+          <scope ilk="function" name="conv" />
+          <scope ilk="function" name="desc" />
+          <scope ilk="function" name="long" />
+          <scope ilk="function" name="pattern" />
+          <scope ilk="function" name="short" />
+          <scope classrefs="self" ilk="class" name="NoArgument">
+            <scope attributes="__classmethod__" ilk="function" name="incompatible_argument_styles" signature="incompatible_argument_styles(*)" />
+            <scope attributes="__classmethod__" ilk="function" name="pattern" signature="pattern()" />
+            <scope doc="Raises an exception if any arguments given." ilk="function" name="parse" signature="parse(arg, argv)" />
+          </scope>
+          <scope classrefs="self" ilk="class" name="OptionalArgument">
+            <scope doc="Parses argument if given, or uses default value." ilk="function" name="parse" signature="parse(arg, argv, &amp;error)" />
+          </scope>
+          <scope classrefs="self" ilk="class" name="PlacedArgument">
+            <scope doc="Returns nil if argument is not present or begins with '-'." ilk="function" name="parse" signature="parse(arg, argv, &amp;error)" />
+          </scope>
+          <scope classrefs="self" ilk="class" name="RequiredArgument">
+            <scope doc="Raises an exception if argument is not present." ilk="function" name="parse" signature="parse(arg, argv)" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

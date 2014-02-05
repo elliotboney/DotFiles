@@ -1,0 +1,167 @@
+<scope ilk="blob" lang="Ruby" name="zlib">
+      <scope ilk="namespace" name="Zlib">
+        <scope attributes="__classmethod__" doc="Calculates Adler-32 checksum for +string+, and returns updated value of +adler+. If +string+ is omitted, it returns the Adler-32 initial value. If +adler+ is omitted, it assumes that the initial value is given to +adler+. &#10; FIXME: expression." ilk="function" name="adler32" signature="adler32(*args)" />
+        <scope attributes="__classmethod__" doc="Combine two Adler-32 check values in to one.  +alder1+ is the first Adler-32 value, +adler2+ is the second Adler-32 value.  +len2+ is the length of the string used to generate +adler2+." ilk="function" name="adler32_combine" signature="adler32_combine(p1, p2, p3)" />
+        <scope attributes="__classmethod__" doc="Calculates CRC checksum for +string+, and returns updated value of +crc+. If +string+ is omitted, it returns the CRC initial value. If +crc+ is omitted, it assumes that the initial value is given to +crc+. &#10; FIXME: expression." ilk="function" name="crc32" signature="crc32(*args)" />
+        <scope attributes="__classmethod__" doc="Combine two CRC-32 check values in to one.  +crc1+ is the first CRC-32 value, +crc2+ is the second CRC-32 value.  +len2+ is the length of the string used to generate +crc2+." ilk="function" name="crc32_combine" signature="crc32_combine(p1, p2, p3)" />
+        <scope attributes="__classmethod__" doc="Returns the table for calculating CRC checksum as an array." ilk="function" name="crc_table" signature="crc_table()" />
+        <scope attributes="__classmethod__" doc="Compresses the given +string+. Valid values of level are NO_COMPRESSION, BEST_SPEED, BEST_COMPRESSION, DEFAULT_COMPRESSION, and an integer from 0 to 9 (the default is 6). &#10; This method is almost equivalent to the following code: &#10; def deflate(string, level)&#10;  z = Zlib::Deflate.new(level)&#10;  dst = z.deflate(string, Zlib::NO_FLUSH)&#10;  z.close&#10;  dst&#10;end&#10; See also Zlib.inflate" ilk="function" name="deflate" signature="deflate(p1, p2 = v2)" />
+        <scope attributes="__classmethod__" doc="Decompresses +string+. Raises a Zlib::NeedDict exception if a preset dictionary is needed for decompression. &#10; This method is almost equivalent to the following code: &#10; def inflate(string)&#10;  zstream = Zlib::Inflate.new&#10;  buf = zstream.inflate(string)&#10;  zstream.finish&#10;  zstream.close&#10;  buf&#10;end&#10; See also Zlib.deflate" ilk="function" name="inflate" signature="inflate(p1)" />
+        <scope attributes="__classmethod__" doc="Returns the string which represents the version of zlib library." ilk="function" name="zlib_version" signature="zlib_version()" />
+        <variable attributes="__const__" citdl="Object" name="VERSION" />
+        <variable attributes="__const__" citdl="Object" name="ZLIB_VERSION" />
+        <variable attributes="__const__" citdl="Object" name="BINARY" />
+        <variable attributes="__const__" citdl="Object" name="ASCII" />
+        <variable attributes="__const__" citdl="Object" name="UNKNOWN" />
+        <variable attributes="__const__" citdl="Object" name="NO_COMPRESSION" />
+        <variable attributes="__const__" citdl="Object" name="BEST_SPEED" />
+        <variable attributes="__const__" citdl="Object" name="BEST_COMPRESSION" />
+        <variable attributes="__const__" citdl="Object" name="DEFAULT_COMPRESSION" />
+        <variable attributes="__const__" citdl="Object" name="FILTERED" />
+        <variable attributes="__const__" citdl="Object" name="HUFFMAN_ONLY" />
+        <variable attributes="__const__" citdl="Object" name="DEFAULT_STRATEGY" />
+        <variable attributes="__const__" citdl="Object" name="MAX_WBITS" />
+        <variable attributes="__const__" citdl="Object" name="DEF_MEM_LEVEL" />
+        <variable attributes="__const__" citdl="Object" name="MAX_MEM_LEVEL" />
+        <variable attributes="__const__" citdl="Object" name="NO_FLUSH" />
+        <variable attributes="__const__" citdl="Object" name="SYNC_FLUSH" />
+        <variable attributes="__const__" citdl="Object" name="FULL_FLUSH" />
+        <variable attributes="__const__" citdl="Object" name="FINISH" />
+        <variable attributes="__const__" citdl="Object" name="OS_CODE" />
+        <variable attributes="__const__" citdl="Object" name="OS_MSDOS" />
+        <variable attributes="__const__" citdl="Object" name="OS_AMIGA" />
+        <variable attributes="__const__" citdl="Object" name="OS_VMS" />
+        <variable attributes="__const__" citdl="Object" name="OS_UNIX" />
+        <variable attributes="__const__" citdl="Object" name="OS_ATARI" />
+        <variable attributes="__const__" citdl="Object" name="OS_MACOS" />
+        <variable attributes="__const__" citdl="Object" name="OS_VMCMS" />
+        <variable attributes="__const__" citdl="Object" name="OS_ZSYSTEM" />
+        <variable attributes="__const__" citdl="Object" name="OS_CPM" />
+        <variable attributes="__const__" citdl="Object" name="OS_QDOS" />
+        <variable attributes="__const__" citdl="Object" name="OS_RISCOS" />
+        <variable attributes="__const__" citdl="Object" name="OS_UNKNOWN" />
+        <scope classrefs="Zlib::Error" ilk="class" name="BufError">
+        </scope>
+        <scope classrefs="Zlib::Error" ilk="class" name="DataError">
+        </scope>
+        <scope classrefs="Zlib::ZStream" ilk="class" name="Deflate">
+          <scope attributes="__classmethod__" doc="Compresses the given +string+. Valid values of level are NO_COMPRESSION, BEST_SPEED, BEST_COMPRESSION, DEFAULT_COMPRESSION, and an integer from 0 to 9 (the default is 6). &#10; This method is almost equivalent to the following code: &#10; def deflate(string, level)&#10;  z = Zlib::Deflate.new(level)&#10;  dst = z.deflate(string, Zlib::NO_FLUSH)&#10;  z.close&#10;  dst&#10;end&#10; See also Zlib.inflate" ilk="function" name="deflate" signature="deflate(p1, p2 = v2)" />
+          <scope attributes="__classmethod__ __ctor__" doc="Arguments &#10; An Integer compression level between BEST_SPEED and BEST_COMPRESSION&#10;An Integer for the windowBits size. Should be in the range 8..15, larger values of this parameter result in better at the expense of memory usage.&#10;Specifies how much memory should be allocated for the internal compression state. Between DEF_MEM_LEVEL and MAX_MEM_LEVEL&#10;A parameter to tune the compression algorithm. Use the DEFAULT_STRATEGY for normal data, FILTERED for data produced by a filter (or predictor), HUFFMAN_ONLY to force Huffman encoding only (no string match). &#10; Description &#10; Creates a new deflate stream for compression. See zlib.h for details of each argument. If an argument is nil, the default value of that argument is used. &#10; examples &#10; basic &#10; f = File.new(&quot;compressed.file&quot;,&quot;w+&quot;)&#10;=&gt; #&lt;File:compressed.file&gt;&#10;f &lt;&lt; Zlib::Deflate.new().deflate(File.read(&quot;big.file&quot;))&#10;=&gt; #&lt;File:compressed.file&gt;" ilk="function" name="new" signature="new(p1 = v1, p2 = v2, p3 = v3, p4 = v4)" />
+          <scope doc="Arguments &#10; String &#10;&#10;Integer representing a flush code. Either NO_FLUSH, SYNC_FLUSH, FULL_FLUSH, or FINISH. See zlib.h for details. Normally the parameter flush is set to Z_NO_FLUSH, which allows deflate to decide how much data to accumulate before producing output, in order to maximize compression. &#10; Description &#10; Inputs +string+ into the deflate stream and returns the output from the stream.  On calling this method, both the input and the output buffers of the stream are flushed. &#10; If +string+ is nil, this method finishes the stream, just like Zlib::ZStream#finish. &#10; Usage &#10; comp = Zlib.deflate(File.read(&quot;big.file&quot;))&#10; or comp = Zlib.deflate(File.read(&quot;big.file&quot;), Zlib::FULL_FLUSH)" ilk="function" name="deflate" signature="deflate(p1, p2 = v2)" />
+          <scope doc="This method is equivalent to deflate('', flush).  If flush is omitted, SYNC_FLUSH is used as flush.  This method is just provided to improve the readability of your Ruby program. &#10; Please visit your zlib.h for a deeper detail on NO_FLUSH, SYNC_FLUSH, FULL_FLUSH, and FINISH" ilk="function" name="flush" signature="flush(p1 = v1)" />
+          <scope doc="Duplicates the deflate stream." ilk="function" name="initialize_copy" signature="initialize_copy(p1)" />
+          <scope doc="Changes the parameters of the deflate stream. See zlib.h for details. The output from the stream by changing the params is preserved in output buffer. &#10; An Integer compression level between BEST_SPEED and BEST_COMPRESSION&#10;A parameter to tune the compression algorithm. Use the DEFAULT_STRATEGY for normal data, FILTERED for data produced by a filter (or predictor), HUFFMAN_ONLY to force Huffman encoding only (no string match)." ilk="function" name="params" signature="params(p1, p2)" />
+          <scope doc="Sets the preset dictionary and returns +string+. This method is available just only after Zlib::Deflate.new or Zlib::ZStream#reset method was called. See zlib.h for details. &#10; Can raise errors of Z_STREAM_ERROR if a parameter is invalid (such as NULL dictionary) or the stream state is inconsistent, Z_DATA_ERROR if the given dictionary doesn't match the expected one (incorrect adler32 value)" ilk="function" name="set_dictionary" signature="set_dictionary(p1)" />
+        </scope>
+        <scope classrefs="StandardError" ilk="class" name="Error">
+        </scope>
+        <scope classrefs="Object" ilk="class" name="GzipFile">
+          <scope attributes="__classmethod__" doc="Creates a GzipFile object associated with +io+, and executes the block with the newly created GzipFile object, just like File.open. The GzipFile object will be closed automatically after executing the block. If you want to keep the associated IO object opening, you may call +Zlib::GzipFile#finish+ method in the block." ilk="function" name="wrap" signature="wrap(*args)" />
+          <scope doc="Closes the GzipFile object. This method calls close method of the associated IO object. Returns the associated IO object." ilk="function" name="close" signature="close()" />
+          <scope doc="Same as IO#closed?" ilk="function" name="closed?" signature="closed?()" />
+          <scope doc="Returns comments recorded in the gzip file header, or nil if the comments is not present." ilk="function" name="comment" signature="comment()" />
+          <scope doc="Returns CRC value of the uncompressed data." ilk="function" name="crc" signature="crc()" />
+          <scope doc="Closes the GzipFile object. Unlike Zlib::GzipFile#close, this method never calls the close method of the associated IO object. Returns the associated IO object." ilk="function" name="finish" signature="finish()" />
+          <scope doc="Returns compression level." ilk="function" name="level" signature="level()" />
+          <scope doc="Returns last modification time recorded in the gzip file header." ilk="function" name="mtime" signature="mtime()" />
+          <scope doc="Returns original filename recorded in the gzip file header, or +nil+ if original filename is not present." ilk="function" name="orig_name" signature="orig_name()" />
+          <scope doc="Returns OS code number recorded in the gzip file header." ilk="function" name="os_code" signature="os_code()" />
+          <scope doc="Same as IO#sync" ilk="function" name="sync" signature="sync()" />
+          <scope doc="Same as IO.  If flag is +true+, the associated IO object must respond to the +flush+ method.  While +sync+ mode is +true+, the compression ratio decreases sharply." ilk="function" name="sync=" signature="sync=(p1)" />
+          <scope doc="Same as IO." ilk="function" name="to_io" signature="to_io()" />
+          <scope classrefs="Zlib::GzipFile::Error" ilk="class" name="CRCError">
+          </scope>
+          <scope classrefs="Zlib::Error" ilk="class" name="Error">
+            <scope doc="Constructs a String of the GzipFile Error" ilk="function" name="inspect" signature="inspect()" />
+            <scope ilk="function" name="input" />
+          </scope>
+          <scope classrefs="Zlib::GzipFile::Error" ilk="class" name="LengthError">
+          </scope>
+          <scope classrefs="Zlib::GzipFile::Error" ilk="class" name="NoFooter">
+          </scope>
+        </scope>
+        <scope classrefs="Zlib::GzipFile" ilk="class" name="GzipReader">
+          <import symbol="Enumerable" />
+          <scope attributes="__classmethod__ __ctor__" doc="Creates a GzipReader object associated with +io+. The GzipReader object reads gzipped data from +io+, and parses/decompresses them.  At least, +io+ must have a +read+ method that behaves same as the +read+ method in IO class. &#10; If the gzip file header is incorrect, raises an Zlib::GzipFile::Error exception." ilk="function" name="new" signature="new(p1, p2 = {})" />
+          <scope attributes="__classmethod__" doc="Opens a file specified by +filename+ as a gzipped file, and returns a GzipReader object associated with that file.  Further details of this method are in Zlib::GzipReader.new and ZLib::GzipFile.wrap." ilk="function" name="open" signature="open(*args)" />
+          <scope doc="See Zlib::GzipReader documentation for a description." ilk="function" name="bytes" signature="bytes()" />
+          <scope doc="See Zlib::GzipReader documentation for a description." ilk="function" name="each" signature="each(*args)" />
+          <scope doc="See Zlib::GzipReader documentation for a description." ilk="function" name="each_byte" signature="each_byte()" />
+          <scope doc="See Zlib::GzipReader documentation for a description." ilk="function" name="each_char" signature="each_char()" />
+          <scope doc="See Zlib::GzipReader documentation for a description." ilk="function" name="each_line" signature="each_line(*args)" />
+          <scope doc="Returns +true+ or +false+ whether the stream has reached the end." ilk="function" name="eof" signature="eof()" />
+          <scope doc="Returns +true+ or +false+ whether the stream has reached the end." ilk="function" name="eof?" signature="eof?()" />
+          <scope doc="See Zlib::GzipReader documentation for a description." ilk="function" name="getbyte" signature="getbyte()" />
+          <scope doc="See Zlib::GzipReader documentation for a description." ilk="function" name="getc" signature="getc()" />
+          <scope doc="See Zlib::GzipReader documentation for a description." ilk="function" name="gets" signature="gets(*args)" />
+          <scope doc="The line number of the last row read from this file." ilk="function" name="lineno" signature="lineno()" />
+          <scope doc="Specify line number of the last row read from this file." ilk="function" name="lineno=" signature="lineno=(p1)" />
+          <scope doc="See Zlib::GzipReader documentation for a description." ilk="function" name="lines" signature="lines(*args)" />
+          <scope doc="Total number of output bytes output so far." ilk="function" name="pos" signature="pos()" />
+          <scope doc="See Zlib::GzipReader documentation for a description." ilk="function" name="read" signature="read(p1 = v1)" />
+          <scope doc="See Zlib::GzipReader documentation for a description." ilk="function" name="readbyte" signature="readbyte()" />
+          <scope doc="See Zlib::GzipReader documentation for a description." ilk="function" name="readchar" signature="readchar()" />
+          <scope doc="See Zlib::GzipReader documentation for a description." ilk="function" name="readline" signature="readline(*args)" />
+          <scope doc="See Zlib::GzipReader documentation for a description." ilk="function" name="readlines" signature="readlines(*args)" />
+          <scope doc="Reads at most maxlen bytes from the gziped stream but it blocks only if gzipreader has no data immediately available. If the optional outbuf argument is present, it must reference a String, which will receive the data. It raises EOFError on end of file." ilk="function" name="readpartial" signature="readpartial(p1, p2 = v2)" />
+          <scope doc="Resets the position of the file pointer to the point created the GzipReader object.  The associated IO object needs to respond to the +seek+ method." ilk="function" name="rewind" signature="rewind()" />
+          <scope doc="Total number of output bytes output so far." ilk="function" name="tell" signature="tell()" />
+          <scope doc="See Zlib::GzipReader documentation for a description." ilk="function" name="ungetbyte" signature="ungetbyte(p1)" />
+          <scope doc="See Zlib::GzipReader documentation for a description." ilk="function" name="ungetc" signature="ungetc(p1)" />
+          <scope doc="Returns the rest of the data which had read for parsing gzip format, or +nil+ if the whole gzip file is not parsed yet." ilk="function" name="unused" signature="unused()" />
+        </scope>
+        <scope classrefs="Zlib::GzipFile" ilk="class" name="GzipWriter">
+          <scope attributes="__classmethod__ __ctor__" doc="Creates a GzipWriter object associated with +io+. +level+ and +strategy+ should be the same as the arguments of Zlib::Deflate.new.  The GzipWriter object writes gzipped data to +io+.  At least, +io+ must respond to the +write+ method that behaves same as write method in IO class." ilk="function" name="new" signature="new(p1, p2 = v2, p3 = v3)" />
+          <scope attributes="__classmethod__" doc="Opens a file specified by +filename+ for writing gzip compressed data, and returns a GzipWriter object associated with that file.  Further details of this method are found in Zlib::GzipWriter.new and Zlib::GzipFile.wrap." ilk="function" name="open" signature="open(*args)" />
+          <scope doc="Specify the comment (+str+) in the gzip header." ilk="function" name="comment=" signature="comment=(p1)" />
+          <scope doc="Flushes all the internal buffers of the GzipWriter object.  The meaning of +flush+ is same as in Zlib::Deflate#deflate.  Zlib::SYNC_FLUSH is used if +flush+ is omitted.  It is no use giving flush Zlib::NO_FLUSH." ilk="function" name="flush" signature="flush(p1 = v1)" />
+          <scope doc="Specify the modification time (+mtime+) in the gzip header. Using a Fixnum or Integer" ilk="function" name="mtime=" signature="mtime=(p1)" />
+          <scope doc="Specify the original name (+str+) in the gzip header." ilk="function" name="orig_name=" signature="orig_name=(p1)" />
+          <scope doc="Total number of input bytes read so far." ilk="function" name="pos" signature="pos()" />
+          <scope doc="Same as IO.&#10; Same as IO." ilk="function" name="print" signature="print(*args)" />
+          <scope doc="Same as IO.&#10; Same as IO." ilk="function" name="printf" signature="printf(*args)" />
+          <scope doc="Same as IO." ilk="function" name="putc" signature="putc(p1)" />
+          <scope doc="Same as IO.&#10; Same as IO." ilk="function" name="puts" signature="puts(*args)" />
+          <scope doc="Total number of input bytes read so far." ilk="function" name="tell" signature="tell()" />
+          <scope doc="Same as IO." ilk="function" name="write" signature="write(p1)" />
+        </scope>
+        <scope classrefs="Zlib::ZStream" ilk="class" name="Inflate">
+          <scope attributes="__classmethod__" doc="Decompresses +string+. Raises a Zlib::NeedDict exception if a preset dictionary is needed for decompression. &#10; This method is almost equivalent to the following code: &#10; def inflate(string)&#10;  zstream = Zlib::Inflate.new&#10;  buf = zstream.inflate(string)&#10;  zstream.finish&#10;  zstream.close&#10;  buf&#10;end&#10; See also Zlib.deflate" ilk="function" name="inflate" signature="inflate(p1)" />
+          <scope attributes="__classmethod__ __ctor__" doc="Arguments &#10; An Integer for the windowBits size. Should be in the range 8..15, larger values of this parameter result in better at the expense of memory usage. &#10; Description &#10; Creates a new inflate stream for decompression. See zlib.h for details of the argument.  If +window_bits+ is +nil+, the default value is used. &#10; Example &#10; cf = File.open(&quot;compressed.file&quot;)&#10;ucf = File.open(&quot;uncompressed.file&quot;, &quot;w+&quot;)&#10;zi = Zlib::Inflate.new(Zlib::MAX_WBITS)&#10;ucf &lt;&lt; zi.inflate(cf.read)&#10;ucf.close&#10;zi.close&#10;cf.close&#10; or " ilk="function" name="new" signature="new(p1 = v1)" />
+          <scope doc="Inputs +string+ into the inflate stream and returns the output from the stream.  Calling this method, both the input and the output buffer of the stream are flushed.  If string is +nil+, this method finishes the stream, just like Zlib::ZStream#finish. &#10; Raises a Zlib::NeedDict exception if a preset dictionary is needed to decompress.  Set the dictionary by Zlib::Inflate#set_dictionary and then call this method again with an empty string.  (???) &#10; See also Zlib::Inflate.new" ilk="function" name="inflate" signature="inflate(p1)" />
+          <scope doc="Sets the preset dictionary and returns +string+.  This method is available just only after a Zlib::NeedDict exception was raised.  See zlib.h for details." ilk="function" name="set_dictionary" signature="set_dictionary(p1)" />
+          <scope doc="Inputs +string+ into the end of input buffer and skips data until a full flush point can be found.  If the point is found in the buffer, this method flushes the buffer and returns false.  Otherwise it returns +true+ and the following data of full flush point is preserved in the buffer." ilk="function" name="sync" signature="sync(p1)" />
+          <scope doc="Quoted verbatim from original documentation: &#10; What is this?&#10; :)" ilk="function" name="sync_point?" signature="sync_point?()" />
+        </scope>
+        <scope classrefs="Zlib::Error" ilk="class" name="MemError">
+        </scope>
+        <scope classrefs="Zlib::Error" ilk="class" name="NeedDict">
+        </scope>
+        <scope classrefs="Zlib::Error" ilk="class" name="StreamEnd">
+        </scope>
+        <scope classrefs="Zlib::Error" ilk="class" name="StreamError">
+        </scope>
+        <scope classrefs="Zlib::Error" ilk="class" name="VersionError">
+        </scope>
+        <scope classrefs="Object" ilk="class" name="ZStream">
+          <scope doc="Returns the adler-32 checksum." ilk="function" name="adler" signature="adler()" />
+          <scope doc="Returns bytes of data in the input buffer. Normally, returns 0." ilk="function" name="avail_in" signature="avail_in()" />
+          <scope doc="Returns number of bytes of free spaces in output buffer.  Because the free space is allocated automatically, this method returns 0 normally." ilk="function" name="avail_out" signature="avail_out()" />
+          <scope doc="Allocates +size+ bytes of free space in the output buffer. If there are more than +size+ bytes already in the buffer, the buffer is truncated. Because free space is allocated automatically, you usually don't need to use this method." ilk="function" name="avail_out=" signature="avail_out=(p1)" />
+          <scope doc="Closes the stream. All operations on the closed stream will raise an exception." ilk="function" name="close" signature="close()" />
+          <scope doc="Returns true if the stream is closed." ilk="function" name="closed?" signature="closed?()" />
+          <scope doc="Guesses the type of the data which have been inputed into the stream. The returned value is either BINARY, ASCII, or UNKNOWN." ilk="function" name="data_type" signature="data_type()" />
+          <scope doc="Closes the stream. All operations on the closed stream will raise an exception." ilk="function" name="end" signature="end()" />
+          <scope doc="Returns true if the stream is closed." ilk="function" name="ended?" signature="ended?()" />
+          <scope doc="Finishes the stream and flushes output buffer. See Zlib::Deflate#finish and Zlib::Inflate#finish for details of this behavior." ilk="function" name="finish" signature="finish()" />
+          <scope doc="Returns true if the stream is finished." ilk="function" name="finished?" signature="finished?()" />
+          <scope doc="Flushes input buffer and returns all data in that buffer." ilk="function" name="flush_next_in" signature="flush_next_in()" />
+          <scope doc="Flushes output buffer and returns all data in that buffer." ilk="function" name="flush_next_out" signature="flush_next_out()" />
+          <scope doc="Resets and initializes the stream. All data in both input and output buffer are discarded." ilk="function" name="reset" signature="reset()" />
+          <scope doc="Returns true if the stream is finished." ilk="function" name="stream_end?" signature="stream_end?()" />
+          <scope doc="Returns the total bytes of the input data to the stream.  FIXME" ilk="function" name="total_in" signature="total_in()" />
+          <scope doc="Returns the total bytes of the output data from the stream.  FIXME" ilk="function" name="total_out" signature="total_out()" />
+        </scope>
+      </scope>
+    </scope>
+  

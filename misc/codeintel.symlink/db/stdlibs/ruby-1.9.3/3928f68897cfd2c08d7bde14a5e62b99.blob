@@ -1,0 +1,25 @@
+<scope ilk="blob" lang="Ruby" name="rexml/parsers/xpathparser">
+      <scope ilk="namespace" name="REXML">
+        <scope ilk="namespace" name="Parsers">
+          <scope classrefs="Object" ilk="class" name="XPathParser">
+            <import symbol="XMLTokens" />
+            <scope ilk="function" name="abbreviate" signature="abbreviate( path )" />
+            <scope ilk="function" name="expand" signature="expand( path )" />
+            <scope ilk="function" name="namespaces=" signature="namespaces=( namespaces )" />
+            <scope ilk="function" name="parse" signature="parse(path)" />
+            <scope ilk="function" name="predicate" signature="predicate(path)" />
+            <scope ilk="function" name="predicate_to_string" signature="predicate_to_string( path, &amp;block )" />
+            <variable attributes="__const__" citdl="Object" name="LITERAL" />
+            <variable attributes="__const__" citdl="Object" name="AXIS" />
+            <variable attributes="__const__" citdl="Object" name="NCNAMETEST" />
+            <variable attributes="__const__" citdl="Object" name="QNAME" />
+            <variable attributes="__const__" citdl="Object" name="NODE_TYPE" />
+            <variable attributes="__const__" citdl="Object" name="PI" />
+            <variable attributes="__const__" citdl="Object" name="VARIABLE_REFERENCE" />
+            <variable attributes="__const__" citdl="Object" name="NUMBER" />
+            <variable attributes="__const__" citdl="Object" name="NT" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

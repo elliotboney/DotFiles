@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="PHP" name="helper.inc" src="/usr/local/Cellar/php55/5.5.7/lib/php/test/PHP_DocBlockGenerator/tests/helper.inc"><import line="4" module="PHPUnit/Autoload.php" /><import line="6" module="PHPUnit/Framework.php" /><import line="7" module="PHPUnit/TextUI/TestRunner.php" /><variable line="3" name="fp" /></scope>

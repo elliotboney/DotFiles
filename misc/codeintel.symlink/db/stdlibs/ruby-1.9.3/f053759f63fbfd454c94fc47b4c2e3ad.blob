@@ -1,0 +1,43 @@
+<scope ilk="blob" lang="Ruby" name="rss/maker/image">
+      <scope ilk="namespace" name="RSS">
+        <scope ilk="namespace" name="Maker">
+          <scope ilk="namespace" name="ImageFaviconModel">
+            <scope classrefs="RSS::Maker::Base" ilk="class" name="ImageFaviconBase">
+              <import symbol="Maker::DublinCoreModel" />
+              <scope ilk="function" name="have_required_values?" signature="have_required_values?()" />
+              <scope ilk="function" name="to_feed" signature="to_feed(feed, current)" />
+              <scope ilk="function" name="about" />
+              <scope ilk="function" name="about=" />
+              <scope ilk="function" name="image_size" />
+              <scope ilk="function" name="image_size=" />
+              <scope ilk="function" name="size" />
+              <scope ilk="function" name="size=" />
+              <scope ilk="function" name="size=" />
+              <scope ilk="function" name="size==" />
+            </scope>
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="Maker">
+          <scope ilk="namespace" name="ImageItemModel">
+            <scope classrefs="RSS::Maker::Base" ilk="class" name="ImageItemBase">
+              <import symbol="Maker::DublinCoreModel" />
+              <scope ilk="function" name="have_required_values?" signature="have_required_values?()" />
+              <scope ilk="function" name="to_feed" signature="to_feed(feed, current)" />
+              <scope ilk="function" name="about" />
+              <scope ilk="function" name="about=" />
+              <scope ilk="function" name="height=" />
+              <scope ilk="function" name="height==" />
+              <scope ilk="function" name="image_height" />
+              <scope ilk="function" name="image_height=" />
+              <scope ilk="function" name="image_width" />
+              <scope ilk="function" name="image_width=" />
+              <scope ilk="function" name="resource" />
+              <scope ilk="function" name="resource=" />
+              <scope ilk="function" name="width=" />
+              <scope ilk="function" name="width==" />
+            </scope>
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

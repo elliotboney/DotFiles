@@ -1,0 +1,22 @@
+<scope ilk="blob" lang="Ruby" name="shell/system-command">
+      <scope ilk="namespace" name="Shell">
+        <scope classrefs="Filter" ilk="class" name="SystemCommand">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(sh, command, *opts)" />
+          <scope ilk="function" name="active?" signature="active?()" />
+          <scope ilk="function" name="each" signature="each(rs = nil)" />
+          <scope ilk="function" name="flush" signature="flush()" />
+          <scope ilk="function" name="input=" signature="input=(inp)" />
+          <scope ilk="function" name="kill" signature="kill(sig)" />
+          <scope doc="ex) if you wish to output:&#10;   &quot;shell: job(#{@command}:#{@pid}) close pipe-out.&quot;&#10;then&#10;   mes: &quot;job(%id) close pipe-out.&quot;&#10;yorn: Boolean(@shell.debug? or @shell.verbose?)" ilk="function" name="notify" signature="notify(*opts, &amp;block)" />
+          <scope ilk="function" name="start" signature="start()" />
+          <scope ilk="function" name="start_export" signature="start_export()" />
+          <scope ilk="function" name="start_import" signature="start_import()" />
+          <scope ilk="function" name="super_each" signature="super_each(rs = nil)" />
+          <scope ilk="function" name="terminate" signature="terminate()" />
+          <scope ilk="function" name="wait?" signature="wait?()" />
+          <scope ilk="function" name="command" />
+          <scope ilk="function" name="name" />
+        </scope>
+      </scope>
+    </scope>
+    

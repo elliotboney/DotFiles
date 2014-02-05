@@ -1,0 +1,37 @@
+<scope ilk="blob" lang="Ruby" name="rdoc/rdoc">
+      <scope ilk="namespace" name="RDoc">
+        <scope classrefs="Object" ilk="class" name="RDoc">
+          <scope attributes="__classmethod__" doc="Add +klass+ that can generate output after parsing" ilk="function" name="add_generator" signature="add_generator(klass)" />
+          <scope attributes="__classmethod__" doc="Active RDoc::RDoc instance" ilk="function" name="current" signature="current()" />
+          <scope attributes="__classmethod__" doc="Sets the active RDoc::RDoc instance" ilk="function" name="current=" signature="current=(rdoc)" />
+          <scope attributes="__classmethod__ __ctor__" doc="Creates a new RDoc::RDoc instance.  Call #document to parse files and generate documentation." ilk="function" name="new" signature="new()" />
+          <scope attributes="__classmethod__" doc="Resets all internal state" ilk="function" name="reset" signature="reset()" />
+          <scope doc="Generates documentation or a coverage report depending upon the settings in +options+. &#10; +options+ can be either an RDoc::Options instance or an array of strings equivalent to the strings that would be passed on the command line like %w[-q -o doc -t My\ Doc\ Title].  #document will automatically call RDoc::Options#finish if an options instance was given. &#10; For a list of options, see either RDoc::Options or rdoc --help. &#10; By default, output will be stored in a directory called &quot;doc&quot; below the current directory, so make sure you're somewhere writable before invoking." ilk="function" name="document" signature="document(options)" />
+          <scope doc="Report an error message and exit" ilk="function" name="error" signature="error(msg)" />
+          <scope doc="Gathers a set of parseable files from the files and directories listed in +files+." ilk="function" name="gather_files" signature="gather_files(files)" />
+          <scope doc="Generates documentation for +file_info+ (from #parse_files) into the output dir using the generator selected by the RDoc options" ilk="function" name="generate" signature="generate(file_info)" />
+          <scope doc="Turns RDoc from stdin into HTML" ilk="function" name="handle_pipe" signature="handle_pipe()" />
+          <scope doc="Installs a siginfo handler that prints the current filename." ilk="function" name="install_siginfo_handler" signature="install_siginfo_handler()" />
+          <scope doc="Return a list of the files to be processed in a directory. We know that this directory doesn't have a .document file, so we're looking for real files. However we may well contain subdirectories which must be tested for .document files." ilk="function" name="list_files_in_directory" signature="list_files_in_directory(dir)" />
+          <scope doc="Given a list of files and directories, create a list of all the Ruby files they contain. &#10; If +force_doc+ is true we always add the given files, if false, only add files that we guarantee we can parse.  It is true when looking at files given on the command line, false when recursing through subdirectories. &#10; The effect of this is that if you want a file with a non-standard extension parsed, you must name it explicitly." ilk="function" name="normalized_file_list" signature="normalized_file_list(relative_files, force_doc = false, exclude_pattern = nil)" />
+          <scope doc="Return the path name of the flag file in an output directory." ilk="function" name="output_flag_file" signature="output_flag_file(op_dir)" />
+          <scope doc="The .document file contains a list of file and directory name patterns, representing candidates for documentation. It may also contain comments (starting with '#')" ilk="function" name="parse_dot_doc_file" signature="parse_dot_doc_file(in_dir, filename)" />
+          <scope doc="Parses +filename+ and returns an RDoc::TopLevel" ilk="function" name="parse_file" signature="parse_file(filename)" />
+          <scope doc="Parse each file on the command line, recursively entering directories." ilk="function" name="parse_files" signature="parse_files(files)" />
+          <scope doc="Removes a siginfo handler and replaces the previous" ilk="function" name="remove_siginfo_handler" signature="remove_siginfo_handler()" />
+          <scope doc="Removes file extensions known to be unparseable from +files+" ilk="function" name="remove_unparseable" signature="remove_unparseable(files)" />
+          <scope doc="Create an output dir if it doesn't exist. If it does exist, but doesn't contain the flag file created.rid then we refuse to use it, as we may clobber some manually generated documentation" ilk="function" name="setup_output_dir" signature="setup_output_dir(dir, force)" />
+          <scope doc="Update the flag file in an output directory." ilk="function" name="update_output_dir" signature="update_output_dir(op_dir, time, last = {})" />
+          <scope ilk="function" name="exclude" />
+          <scope ilk="function" name="exclude=" />
+          <scope ilk="function" name="generator" />
+          <scope ilk="function" name="generator=" />
+          <scope ilk="function" name="last_modified" />
+          <scope ilk="function" name="options" />
+          <scope ilk="function" name="options=" />
+          <scope ilk="function" name="stats" />
+          <variable attributes="__const__" citdl="Object" name="GENERATORS" />
+        </scope>
+      </scope>
+    </scope>
+    

@@ -1,0 +1,42 @@
+<scope ilk="blob" lang="Ruby" name="xmlrpc/client">
+      <scope ilk="namespace" name="XMLRPC">
+        <scope classrefs="Object" ilk="class" name="Client">
+          <import symbol="ParseContentType" />
+          <import symbol="ParserWriterChooseMixin" />
+          <scope attributes="__classmethod__ __ctor__" doc="Constructors -------------------------------------------------------------------" ilk="function" name="new" signature="new(host=nil, path=nil, port=nil, proxy_host=nil, proxy_port=nil, user=nil, password=nil, use_ssl=nil, timeout=nil)" />
+          <scope attributes="__classmethod__" ilk="function" name="new2" signature="new2(uri, proxy=nil, timeout=nil)" />
+          <scope attributes="__classmethod__" ilk="function" name="new3" signature="new3(hash={})" />
+          <scope attributes="__classmethod__" ilk="function" name="new_from_hash" signature="new_from_hash(hash={})" />
+          <scope attributes="__classmethod__" ilk="function" name="new_from_uri" signature="new_from_uri(uri, proxy=nil, timeout=nil)" />
+          <scope doc="Call methods --------------------------------------------------------------" ilk="function" name="call" signature="call(method, *args)" />
+          <scope ilk="function" name="call2" signature="call2(method, *args)" />
+          <scope ilk="function" name="call2_async" signature="call2_async(method, *args)" />
+          <scope ilk="function" name="call_async" signature="call_async(method, *args)" />
+          <scope doc="Multicall methods --------------------------------------------------------------" ilk="function" name="multicall" signature="multicall(*methods)" />
+          <scope ilk="function" name="multicall2" signature="multicall2(*methods)" />
+          <scope ilk="function" name="multicall2_async" signature="multicall2_async(*methods)" />
+          <scope ilk="function" name="multicall_async" signature="multicall_async(*methods)" />
+          <scope ilk="function" name="password=" signature="password=(new_password)" />
+          <scope doc="Proxy generating methods ------------------------------------------" ilk="function" name="proxy" signature="proxy(prefix=nil, *args)" />
+          <scope ilk="function" name="proxy2" signature="proxy2(prefix=nil, *args)" />
+          <scope ilk="function" name="proxy2_async" signature="proxy2_async(prefix=nil, *args)" />
+          <scope ilk="function" name="proxy_async" signature="proxy_async(prefix=nil, *args)" />
+          <scope ilk="function" name="timeout=" signature="timeout=(new_timeout)" />
+          <scope ilk="function" name="user=" signature="user=(new_user)" />
+          <scope ilk="function" name="cookie" />
+          <scope ilk="function" name="cookie=" />
+          <scope ilk="function" name="http_header_extra" />
+          <scope ilk="function" name="http_header_extra=" />
+          <scope ilk="function" name="http_last_response" />
+          <scope ilk="function" name="password" />
+          <scope ilk="function" name="timeout" />
+          <scope ilk="function" name="user" />
+          <variable attributes="__const__" citdl="Object" name="USER_AGENT" />
+          <scope classrefs="Object" ilk="class" name="Proxy">
+            <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(server, prefix, args=[], meth=:call, delim=&quot;.&quot;)" />
+            <scope ilk="function" name="method_missing" signature="method_missing(mid, *args)" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

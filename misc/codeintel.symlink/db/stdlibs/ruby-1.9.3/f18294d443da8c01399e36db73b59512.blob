@@ -1,0 +1,42 @@
+<scope ilk="blob" lang="Ruby" name="rss/taxonomy">
+      <scope ilk="namespace" name="RSS">
+        <scope ilk="namespace" name="Maker">
+          <scope ilk="namespace" name="TaxonomyTopicModel">
+            <scope attributes="__classmethod__" ilk="function" name="append_features" signature="append_features(klass)" />
+            <scope attributes="__classmethod__" ilk="function" name="install_taxo_topic" signature="install_taxo_topic(klass)" />
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="Maker">
+          <scope ilk="namespace" name="TaxonomyTopicsModel">
+            <scope attributes="__classmethod__" ilk="function" name="append_features" signature="append_features(klass)" />
+            <scope attributes="__classmethod__" ilk="function" name="install_taxo_topics" signature="install_taxo_topics(klass)" />
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="TaxonomyTopicModel">
+          <scope attributes="__classmethod__" ilk="function" name="append_features" signature="append_features(klass)" />
+          <scope classrefs="RSS::Element" ilk="class" name="TaxonomyTopic">
+            <import symbol="DublinCoreModel" />
+            <import symbol="RSS10" />
+            <import symbol="TaxonomyTopicsModel" />
+            <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(*args)" />
+            <scope attributes="__classmethod__" ilk="function" name="required_prefix" signature="required_prefix()" />
+            <scope attributes="__classmethod__" ilk="function" name="required_uri" signature="required_uri()" />
+            <scope ilk="function" name="full_name" signature="full_name()" />
+            <scope ilk="function" name="maker_target" signature="maker_target(target)" />
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="TaxonomyTopicsModel">
+          <scope attributes="__classmethod__" ilk="function" name="append_features" signature="append_features(klass)" />
+          <scope classrefs="RSS::Element" ilk="class" name="TaxonomyTopics">
+            <import symbol="RSS10" />
+            <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(*args)" />
+            <scope attributes="__classmethod__" ilk="function" name="required_prefix" signature="required_prefix()" />
+            <scope attributes="__classmethod__" ilk="function" name="required_uri" signature="required_uri()" />
+            <scope ilk="function" name="full_name" signature="full_name()" />
+            <scope ilk="function" name="maker_target" signature="maker_target(target)" />
+            <scope ilk="function" name="resources" signature="resources()" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

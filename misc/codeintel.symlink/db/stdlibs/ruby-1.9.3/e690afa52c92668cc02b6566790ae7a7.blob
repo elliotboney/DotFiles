@@ -1,0 +1,17 @@
+<scope ilk="blob" lang="Ruby" name="rexml/namespace">
+      <scope ilk="namespace" name="REXML">
+        <scope ilk="namespace" name="Namespace">
+          <import symbol="XMLTokens" />
+          <scope doc="Fully expand the name, even if the prefix wasn't specified in the source file." ilk="function" name="fully_expanded_name" signature="fully_expanded_name()" />
+          <scope doc="Compares names optionally WITH namespaces" ilk="function" name="has_name?" signature="has_name?( other, ns=nil )" />
+          <scope doc="Sets the name and the expanded name" ilk="function" name="name=" signature="name=( name )" />
+          <scope ilk="function" name="expanded_name" />
+          <scope ilk="function" name="local_name" />
+          <scope ilk="function" name="name" />
+          <scope ilk="function" name="prefix" />
+          <scope ilk="function" name="prefix=" />
+          <variable attributes="__const__" citdl="Object" name="NAMESPLIT" />
+        </scope>
+      </scope>
+    </scope>
+    

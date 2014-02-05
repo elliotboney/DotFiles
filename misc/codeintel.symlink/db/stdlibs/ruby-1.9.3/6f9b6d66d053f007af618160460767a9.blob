@@ -1,0 +1,16 @@
+<scope ilk="blob" lang="Ruby" name="mutex_m">
+      <scope ilk="namespace" name="Mutex_m">
+        <scope attributes="__classmethod__" ilk="function" name="append_features" signature="append_features(cl)" />
+        <scope attributes="__classmethod__" ilk="function" name="define_aliases" signature="define_aliases(cl)" />
+        <scope attributes="__classmethod__" ilk="function" name="extend_object" signature="extend_object(obj)" />
+        <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(*args)" />
+        <scope ilk="function" name="mu_extended" signature="mu_extended()" />
+        <scope ilk="function" name="mu_lock" signature="mu_lock()" />
+        <scope ilk="function" name="mu_locked?" signature="mu_locked?()" />
+        <scope doc="locking" ilk="function" name="mu_synchronize" signature="mu_synchronize(&amp;block)" />
+        <scope ilk="function" name="mu_try_lock" signature="mu_try_lock()" />
+        <scope ilk="function" name="mu_unlock" signature="mu_unlock()" />
+        <scope ilk="function" name="sleep" signature="sleep(timeout = nil)" />
+      </scope>
+    </scope>
+    

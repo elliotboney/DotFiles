@@ -1,0 +1,8 @@
+<scope ilk="blob" lang="Ruby" name="uri/https">
+      <scope ilk="namespace" name="URI">
+        <scope classrefs="URI::HTTP" ilk="class" name="HTTPS">
+          <variable attributes="__const__" citdl="Object" name="DEFAULT_PORT" />
+        </scope>
+      </scope>
+    </scope>
+    

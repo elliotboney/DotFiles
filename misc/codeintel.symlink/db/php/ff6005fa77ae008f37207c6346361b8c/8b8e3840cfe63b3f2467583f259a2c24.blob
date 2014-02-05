@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="PHP" name="settings.php" src="/private/var/www/paperless/SpecialOffer/setup/settings.php"><import line="20" module="/../central/config.php" /><variable line="22" name="uv1" /><variable line="24" name="uv2" /></scope>

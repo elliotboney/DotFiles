@@ -1,0 +1,35 @@
+<scope ilk="blob" lang="Ruby" name="cgi/session">
+      <scope ilk="namespace" name="CGI">
+        <scope classrefs="Object" ilk="class" name="Session">
+          <scope attributes="__classmethod__ __ctor__" doc="Create a new CGI::Session object for +request+. &#10; +request+ is an instance of the +CGI+ class (see cgi.rb). +option+ is a hash of options for initialising this CGI::Session instance.  The following options are recognised: &#10; the parameter name used for the session id. Defaults to '_session_id'.&#10;the session id to use.  If not provided, then it is retrieved from the +session_key+ parameter of the request, or automatically generated for a new session.&#10;if true, force creation of a new session.  If not set, a new session is only created if none currently exists.  If false, a new session is never created, and if none currently exists and the +session_id+ option is not set, an ArgumentError is raised.&#10;the name of the class providing storage facilities for session state persistence.  Built-in support is provided for +FileStore+ (the default), +MemoryStore+, and +PStore+ (from cgi/session/pstore.rb).  See the documentation for these classes for more details. &#10; The following options are also recognised, but only apply if the session id is stored in a cookie. &#10; the time the current session expires, as a +Time+ object.  If not set, the session will terminate when the user's browser is closed.&#10;the hostname domain for which this session is valid. If not set, defaults to the hostname of the server.&#10;if +true+, this session will only work over HTTPS.&#10;the path for which this session applies.  Defaults to the directory of the CGI script. &#10; +option+ is also passed on to the session storage class initializer; see the documentation for each session storage class for the options they support. &#10; The retrieved or created session is automatically added to +request+ as a cookie, and also to its +output_hidden+ table, which is used to add hidden input elements to forms. " ilk="function" name="new" signature="new(request, option={})" />
+          <scope doc="Store session data on the server and close the session storage. For some session storage types, this is a no-op." ilk="function" name="close" signature="close()" />
+          <scope doc="Delete the session from storage.  Also closes the storage. &#10; Note that the session's data is _not_ automatically deleted upon the session expiring." ilk="function" name="delete" signature="delete()" />
+          <scope doc="Store session data on the server.  For some session storage types, this is a no-op." ilk="function" name="update" signature="update()" />
+          <scope ilk="function" name="new_session" />
+          <scope ilk="function" name="session_id" />
+          <scope classrefs="Object" ilk="class" name="FileStore">
+            <scope attributes="__classmethod__ __ctor__" doc="Create a new FileStore instance. &#10; This constructor is used internally by CGI::Session.  The user does not generally need to call it directly. &#10; +session+ is the session for which this instance is being created.  The session id must only contain alphanumeric characters; automatically generated session ids observe this requirement. &#10; +option+ is a hash of options for the initializer.  The following options are recognised: &#10; the directory to use for storing the FileStore file.  Defaults to Dir::tmpdir (generally &quot;/tmp&quot; on Unix systems).&#10;the prefix to add to the session id when generating the filename for this session's FileStore file. Defaults to &quot;cgi_sid_&quot;.&#10;the prefix to add to the session id when generating the filename for this session's FileStore file. Defaults to the empty string. &#10; This session's FileStore file will be created if it does not exist, or opened if it does." ilk="function" name="new" signature="new(session, option={})" />
+            <scope doc="Update and close the session's FileStore file." ilk="function" name="close" signature="close()" />
+            <scope doc="Close and delete the session's FileStore file." ilk="function" name="delete" signature="delete()" />
+            <scope doc="Restore session state from the session's FileStore file. &#10; Returns the session state as a hash." ilk="function" name="restore" signature="restore()" />
+            <scope doc="Save session state to the session's FileStore file." ilk="function" name="update" signature="update()" />
+          </scope>
+          <scope classrefs="Object" ilk="class" name="MemoryStore">
+            <scope attributes="__classmethod__ __ctor__" doc="Create a new MemoryStore instance. &#10; +session+ is the session this instance is associated with. +option+ is a list of initialisation options.  None are currently recognised." ilk="function" name="new" signature="new(session, option=nil)" />
+            <scope doc="Close session storage. &#10; A no-op." ilk="function" name="close" signature="close()" />
+            <scope doc="Delete the session state." ilk="function" name="delete" signature="delete()" />
+            <scope doc="Restore session state. &#10; Returns session data as a hash." ilk="function" name="restore" signature="restore()" />
+            <scope doc="Update session state. &#10; A no-op." ilk="function" name="update" signature="update()" />
+            <variable attributes="__const__" citdl="Object" name="GLOBAL_HASH_TABLE" />
+          </scope>
+          <scope classrefs="Object" ilk="class" name="NullStore">
+            <scope attributes="__classmethod__ __ctor__" doc="Create a new NullStore instance. &#10; +session+ is the session this instance is associated with. +option+ is a list of initialisation options.  None are currently recognised." ilk="function" name="new" signature="new(session, option=nil)" />
+            <scope doc="Close session storage. &#10; A no-op." ilk="function" name="close" signature="close()" />
+            <scope doc="Delete the session state. &#10; A no-op." ilk="function" name="delete" signature="delete()" />
+            <scope doc="Restore (empty) session state." ilk="function" name="restore" signature="restore()" />
+            <scope doc="Update session state. &#10; A no-op." ilk="function" name="update" signature="update()" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

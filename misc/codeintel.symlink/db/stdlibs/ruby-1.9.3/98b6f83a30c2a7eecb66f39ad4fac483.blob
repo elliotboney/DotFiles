@@ -1,0 +1,13 @@
+<scope ilk="blob" lang="Ruby" name="webrick/server">
+      <scope ilk="namespace" name="WEBrick">
+        <scope classrefs="Object" ilk="class" name="Daemon">
+          <scope attributes="__classmethod__" doc="Performs the standard operations for daemonizing a process.  Runs a block, if given." ilk="function" name="start" signature="start()" />
+        </scope>
+        <scope classrefs="StandardError" ilk="class" name="ServerError">
+        </scope>
+        <scope classrefs="Object" ilk="class" name="SimpleServer">
+          <scope attributes="__classmethod__" ilk="function" name="start" signature="start()" />
+        </scope>
+      </scope>
+    </scope>
+    

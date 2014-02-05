@@ -1,0 +1,19 @@
+<scope ilk="blob" lang="Ruby" name="webrick/httpservlet/abstract">
+      <scope ilk="namespace" name="WEBrick">
+        <scope ilk="namespace" name="HTTPServlet">
+          <scope classrefs="Object" ilk="class" name="AbstractServlet">
+            <scope attributes="__classmethod__" doc="Factory for servlet instances that will handle a request from +server+ using +options+ from the mount point.  By default a new servlet instance is created for every call." ilk="function" name="get_instance" signature="get_instance(server, *options)" />
+            <scope attributes="__classmethod__ __ctor__" doc="Initializes a new servlet for +server+ using +options+ which are stored as-is in +@options+.  +@logger+ is also provided." ilk="function" name="new" signature="new(server, *options)" />
+            <scope doc="Raises a NotFound exception" ilk="function" name="do_GET" signature="do_GET(req, res)" />
+            <scope doc="Dispatches to do_GET" ilk="function" name="do_HEAD" signature="do_HEAD(req, res)" />
+            <scope doc="Returns the allowed HTTP request methods" ilk="function" name="do_OPTIONS" signature="do_OPTIONS(req, res)" />
+            <scope doc="Dispatches to a +do_+ method based on +req+ if such a method is available.  (+do_GET+ for a GET request).  Raises a MethodNotAllowed exception if the method is not implemented." ilk="function" name="service" signature="service(req, res)" />
+          </scope>
+        </scope>
+        <scope ilk="namespace" name="HTTPServlet">
+          <scope classrefs="StandardError" ilk="class" name="HTTPServletError">
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

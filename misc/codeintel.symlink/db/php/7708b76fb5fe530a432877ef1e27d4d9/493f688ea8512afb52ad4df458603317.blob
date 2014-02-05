@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="PHP" name="bootstrap.php" src="/usr/local/pear/share/pear/PhpDocumentor/vendor/phpdocumentor/fileset/tests/common/bootstrap.php"><import line="13" module="PHPUnit/Extensions/OutputTestCase.php" /><import line="14" module="/../../vendor/autoload.php" /></scope>

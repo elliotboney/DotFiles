@@ -1,0 +1,20 @@
+<scope ilk="blob" lang="Ruby" name="drb/timeridconv">
+      <scope ilk="namespace" name="DRb">
+        <scope classrefs="DRbIdConv" ilk="class" name="TimerIdConv">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(timeout=600)" />
+          <scope ilk="function" name="to_id" signature="to_id(obj)" />
+          <scope ilk="function" name="to_obj" signature="to_obj(ref)" />
+          <scope classrefs="Object" ilk="class" name="TimerHolder2">
+            <import symbol="MonitorMixin" />
+            <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(timeout=600)" />
+            <scope ilk="function" name="add" signature="add(obj)" />
+            <scope ilk="function" name="fetch" signature="fetch(key, dv=@sentinel)" />
+            <scope ilk="function" name="include?" signature="include?(key)" />
+            <scope ilk="function" name="peek" signature="peek(key)" />
+            <scope classrefs="RuntimeError" ilk="class" name="InvalidIndexError">
+            </scope>
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

@@ -1,0 +1,17 @@
+<scope ilk="blob" lang="Ruby" name="rdoc/markup/text_formatter_test_case">
+      <scope ilk="namespace" name="RDoc">
+        <scope ilk="namespace" name="Markup">
+          <scope classrefs="RDoc::Markup::FormatterTestCase" ilk="class" name="TextFormatterTestCase">
+            <scope attributes="__classmethod__" doc="Adds test cases to the calling TestCase." ilk="function" name="add_text_tests" signature="add_text_tests()" />
+            <scope doc="Test case that calls @to.accept_heading" ilk="function" name="test_accept_heading_indent" signature="test_accept_heading_indent()" />
+            <scope doc="Test case that calls @to.accept_paragraph with an indent" ilk="function" name="test_accept_paragraph_indent" signature="test_accept_paragraph_indent()" />
+            <scope doc="Test case that calls @to.accept_paragraph with a long line" ilk="function" name="test_accept_paragraph_wrap" signature="test_accept_paragraph_wrap()" />
+            <scope doc="Test case that calls @to.accept_rule" ilk="function" name="test_accept_rule_indent" signature="test_accept_rule_indent()" />
+            <scope doc="Test case that calls @to.accept_verbatim with a big indent" ilk="function" name="test_accept_verbatim_big_indent" signature="test_accept_verbatim_big_indent()" />
+            <scope doc="Test case that calls @to.accept_verbatim" ilk="function" name="test_accept_verbatim_indent" signature="test_accept_verbatim_indent()" />
+            <scope doc="Test case that calls @to.attributes with an escaped cross-reference.  If this test doesn't pass something may be very wrong." ilk="function" name="test_attributes" signature="test_attributes()" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

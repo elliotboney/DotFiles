@@ -1,0 +1,8 @@
+<scope ilk="blob" lang="Ruby" name="timeout">
+      <scope ilk="namespace" name="Timeout">
+        <scope attributes="__classmethod__" doc="Perform an operation in a block, timing it out if it takes longer than +sec+ seconds to complete. &#10; Number of seconds to wait for the block to terminate. Any number may be used, including Floats to specify fractional seconds.&#10;Exception Class to raise if the block fails to terminate in +sec+ seconds.  Omitting will use the default, Timeout::Error &#10; The block will be executed on another thread and will be given one argument: +sec+. &#10; Returns the result of the block *if* the block completed before +sec+ seconds, otherwise throws an exception, based on the value of +klass+. &#10; Note that this is both a method of module Timeout, so you can include Timeout into your classes so they have a #timeout method, as well as a module method, so you can call it directly as Timeout.timeout()." ilk="function" name="timeout" signature="timeout(sec, klass = nil)" />
+        <scope classrefs="RuntimeError" ilk="class" name="Error">
+        </scope>
+      </scope>
+    </scope>
+    

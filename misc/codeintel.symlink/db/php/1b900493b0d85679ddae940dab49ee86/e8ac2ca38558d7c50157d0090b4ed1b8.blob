@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="PHP" name="page-header.php" src="/private/var/www/kw/content/themes/goodlife/templates/page-header.php"><variable attributes="__not_yet_defined__" line="2" name="wp_query" /><variable citdl="get_post_meta()" line="5" name="template_name" /></scope>

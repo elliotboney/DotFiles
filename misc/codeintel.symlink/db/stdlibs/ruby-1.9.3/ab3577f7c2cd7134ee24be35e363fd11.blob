@@ -1,0 +1,9 @@
+<scope ilk="blob" lang="Ruby" name="weakref">
+      <scope classrefs="Delegator" ilk="class" name="WeakRef">
+        <scope attributes="__classmethod__ __ctor__" doc="Creates a weak reference to +orig+" ilk="function" name="new" signature="new(orig)" />
+        <scope doc="Returns true if the referenced object is still alive." ilk="function" name="weakref_alive?" signature="weakref_alive?()" />
+        <scope classrefs="StandardError" ilk="class" name="RefError">
+        </scope>
+      </scope>
+    </scope>
+    

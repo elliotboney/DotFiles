@@ -1,0 +1,33 @@
+<scope ilk="blob" lang="Ruby" name="rinda/ring">
+      <scope ilk="namespace" name="Rinda">
+        <scope classrefs="Object" ilk="class" name="RingFinger">
+          <scope attributes="__classmethod__" doc="Creates a singleton RingFinger and looks for a RingServer.  Returns the created RingFinger." ilk="function" name="finger" signature="finger()" />
+          <scope attributes="__classmethod__ __ctor__" doc="Creates a new RingFinger that will look for RingServers at +port+ on the addresses in +broadcast_list+." ilk="function" name="new" signature="new(broadcast_list=@@broadcast_list, port=Ring_PORT)" />
+          <scope attributes="__classmethod__" doc="Returns the first advertised TupleSpace." ilk="function" name="primary" signature="primary()" />
+          <scope attributes="__classmethod__" doc="Contains all discovered TupleSpaces except for the primary." ilk="function" name="to_a" signature="to_a()" />
+          <scope doc="Iterates over all discovered TupleSpaces starting with the primary." ilk="function" name="each" signature="each()" />
+          <scope doc="Looks up RingServers waiting +timeout+ seconds.  RingServers will be given +block+ as a callback, which will be called with the remote TupleSpace." ilk="function" name="lookup_ring" signature="lookup_ring(timeout=5, &amp;block)" />
+          <scope doc="Returns the first found remote TupleSpace.  Any further recovered TupleSpaces can be found by calling +to_a+." ilk="function" name="lookup_ring_any" signature="lookup_ring_any(timeout=5)" />
+          <scope doc="Contains all discovered TupleSpaces except for the primary." ilk="function" name="to_a" signature="to_a()" />
+          <scope ilk="function" name="broadcast_list" />
+          <scope ilk="function" name="broadcast_list=" />
+          <scope ilk="function" name="port" />
+          <scope ilk="function" name="port=" />
+          <scope ilk="function" name="primary" />
+          <scope ilk="function" name="primary=" />
+        </scope>
+        <scope classrefs="Object" ilk="class" name="RingProvider">
+          <scope attributes="__classmethod__ __ctor__" doc="Creates a RingProvider that will provide a +klass+ service running on +front+, with a +description+.  +renewer+ is optional." ilk="function" name="new" signature="new(klass, front, desc, renewer = nil)" />
+          <scope doc="Advertises this service on the primary remote TupleSpace." ilk="function" name="provide" signature="provide()" />
+        </scope>
+        <scope classrefs="Object" ilk="class" name="RingServer">
+          <import symbol="DRbUndumped" />
+          <scope attributes="__classmethod__ __ctor__" doc="Advertises +ts+ on the UDP broadcast address at +port+." ilk="function" name="new" signature="new(ts, port=Ring_PORT)" />
+          <scope doc="Pulls lookup tuples out of the TupleSpace and sends their DRb object the address of the local TupleSpace." ilk="function" name="do_reply" signature="do_reply()" />
+          <scope doc="Extracts the response URI from +msg+ and adds it to TupleSpace where it will be picked up by +reply_service+ for notification." ilk="function" name="do_write" signature="do_write(msg)" />
+          <scope doc="Creates a thread that notifies waiting clients from the TupleSpace." ilk="function" name="reply_service" signature="reply_service()" />
+          <scope doc="Creates a thread that picks up UDP packets and passes them to do_write for decoding." ilk="function" name="write_service" signature="write_service()" />
+        </scope>
+      </scope>
+    </scope>
+    

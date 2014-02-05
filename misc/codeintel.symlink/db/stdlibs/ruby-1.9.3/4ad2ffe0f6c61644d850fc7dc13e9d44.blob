@@ -1,0 +1,31 @@
+<scope ilk="blob" lang="Ruby" name="rake/testtask">
+      <scope ilk="namespace" name="Rake">
+        <scope classrefs="Rake::TaskLib" ilk="class" name="TestTask">
+          <scope attributes="__classmethod__ __ctor__" doc="Create a testing task." ilk="function" name="new" signature="new(name=:test)" />
+          <scope doc="Create the tasks defined by this task lib." ilk="function" name="define" signature="define()" />
+          <scope ilk="function" name="file_list_string" signature="file_list_string()" />
+          <scope ilk="function" name="lib_path" signature="lib_path()" />
+          <scope ilk="function" name="ruby_opts_string" signature="ruby_opts_string()" />
+          <scope ilk="function" name="ruby_version" signature="ruby_version()" />
+          <scope ilk="function" name="run_code" signature="run_code()" />
+          <scope doc="Explicitly define the list of test files to be included in a test.  +list+ is expected to be an array of file names (a FileList is acceptable).  If both +pattern+ and +test_files+ are used, then the list of test files is the union of the two." ilk="function" name="test_files=" signature="test_files=(list)" />
+          <scope ilk="function" name="libs" />
+          <scope ilk="function" name="libs=" />
+          <scope ilk="function" name="loader" />
+          <scope ilk="function" name="loader=" />
+          <scope ilk="function" name="name" />
+          <scope ilk="function" name="name=" />
+          <scope ilk="function" name="options" />
+          <scope ilk="function" name="options=" />
+          <scope ilk="function" name="pattern" />
+          <scope ilk="function" name="pattern=" />
+          <scope ilk="function" name="ruby_opts" />
+          <scope ilk="function" name="ruby_opts=" />
+          <scope ilk="function" name="verbose" />
+          <scope ilk="function" name="verbose=" />
+          <scope ilk="function" name="warning" />
+          <scope ilk="function" name="warning=" />
+        </scope>
+      </scope>
+    </scope>
+    

@@ -1,0 +1,10 @@
+<scope ilk="blob" lang="Ruby" name="rdoc/markup/heading">
+      <scope ilk="namespace" name="RDoc">
+        <scope ilk="namespace" name="Markup">
+          <scope classrefs="Struct.new :level, :text" ilk="class" name="Heading">
+            <scope doc="Calls #accept_heading on +visitor+" ilk="function" name="accept" signature="accept(visitor)" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

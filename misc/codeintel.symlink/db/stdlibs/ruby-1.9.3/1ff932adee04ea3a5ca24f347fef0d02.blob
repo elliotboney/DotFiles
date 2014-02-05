@@ -1,0 +1,28 @@
+<scope ilk="blob" lang="Ruby" name="rexml/parent">
+      <scope ilk="namespace" name="REXML">
+        <scope classrefs="Child" ilk="class" name="Parent">
+          <import symbol="Enumerable" />
+          <scope attributes="__classmethod__ __ctor__" doc="Constructor @param parent if supplied, will be set as the parent of this object" ilk="function" name="new" signature="new(parent=nil)" />
+          <scope ilk="function" name="add" signature="add( object )" />
+          <scope ilk="function" name="children" signature="children()" />
+          <scope doc="Deeply clones this object.  This creates a complete duplicate of this Parent, including all descendants." ilk="function" name="deep_clone" signature="deep_clone()" />
+          <scope ilk="function" name="delete" signature="delete( object )" />
+          <scope ilk="function" name="delete_at" signature="delete_at( index )" />
+          <scope ilk="function" name="delete_if" signature="delete_if( &amp;block )" />
+          <scope ilk="function" name="each" signature="each(&amp;block)" />
+          <scope ilk="function" name="each_child" signature="each_child(&amp;block)" />
+          <scope ilk="function" name="each_index" signature="each_index( &amp;block )" />
+          <scope doc="Fetches the index of a given child @param child the child to get the index of @return the index of the child, or nil if the object is not a child of this parent." ilk="function" name="index" signature="index( child )" />
+          <scope doc="Inserts an child after another child @param child1 this is either an xpath or an Element.  If an Element, child2 will be inserted after child1 in the child list of the parent. If an xpath, child2 will be inserted after the first child to match the xpath. @param child2 the child to insert @return the parent (self)" ilk="function" name="insert_after" signature="insert_after( child1, child2 )" />
+          <scope doc="Inserts an child before another child @param child1 this is either an xpath or an Element.  If an Element, child2 will be inserted before child1 in the child list of the parent. If an xpath, child2 will be inserted before the first child to match the xpath. @param child2 the child to insert @return the parent (self)" ilk="function" name="insert_before" signature="insert_before( child1, child2 )" />
+          <scope ilk="function" name="length" signature="length()" />
+          <scope ilk="function" name="parent?" signature="parent?()" />
+          <scope ilk="function" name="push" signature="push( object )" />
+          <scope doc="Replaces one child with another, making sure the nodelist is correct @param to_replace the child to replace (must be a Child) @param replacement the child to insert into the nodelist (must be a Child)" ilk="function" name="replace_child" signature="replace_child( to_replace, replacement )" />
+          <scope doc="@return the number of children of this parent" ilk="function" name="size" signature="size()" />
+          <scope ilk="function" name="to_a" signature="to_a()" />
+          <scope ilk="function" name="unshift" signature="unshift( object )" />
+        </scope>
+      </scope>
+    </scope>
+    

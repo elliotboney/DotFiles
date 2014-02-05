@@ -1,0 +1,9 @@
+<scope ilk="blob" lang="Ruby" name="rake/name_space">
+      <scope ilk="namespace" name="Rake">
+        <scope classrefs="Object" ilk="class" name="NameSpace">
+          <scope attributes="__classmethod__ __ctor__" doc="Create a namespace lookup object using the given task manager and the list of scopes." ilk="function" name="new" signature="new(task_manager, scope_list)" />
+          <scope doc="Return the list of tasks defined in this and nested namespaces." ilk="function" name="tasks" signature="tasks()" />
+        </scope>
+      </scope>
+    </scope>
+    

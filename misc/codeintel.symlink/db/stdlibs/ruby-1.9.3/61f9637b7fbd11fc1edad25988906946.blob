@@ -1,0 +1,28 @@
+<scope ilk="blob" lang="Ruby" name="rexml/attribute">
+      <scope ilk="namespace" name="REXML">
+        <scope classrefs="Object" ilk="class" name="Attribute">
+          <import symbol="Namespace" />
+          <import symbol="Node" />
+          <scope attributes="__classmethod__ __ctor__" doc="Constructor. FIXME: The parser doesn't catch illegal characters in attributes &#10; Either: an Attribute, which this new attribute will become a clone of; or a String, which is the name of this attribute&#10;If +first+ is an Attribute, then this may be an Element, or nil. If nil, then the Element parent of this attribute is the parent of the +first+ Attribute.  If the first argument is a String, then this must also be a String, and is the content of the attribute. If this is the content, it must be fully normalized (contain no illegal characters).&#10;Ignored unless +first+ is a String; otherwise, may be the Element parent of this attribute, or nil. &#10; Attribute.new( attribute_to_clone )&#10;Attribute.new( attribute_to_clone, parent_element )&#10;Attribute.new( &quot;attr&quot;, &quot;attr_value&quot; )&#10;Attribute.new( &quot;attr&quot;, &quot;attr_value&quot;, parent_element )" ilk="function" name="new" signature="new( first, second=nil, parent=nil )" />
+          <scope doc="Returns a copy of this attribute" ilk="function" name="clone" signature="clone()" />
+          <scope ilk="function" name="doctype" signature="doctype()" />
+          <scope doc="Sets the element of which this object is an attribute.  Normally, this is not directly called. &#10; Returns this attribute" ilk="function" name="element=" signature="element=( element )" />
+          <scope doc="Creates (and returns) a hash from both the name and value" ilk="function" name="hash" signature="hash()" />
+          <scope ilk="function" name="inspect" signature="inspect()" />
+          <scope doc="Returns the namespace URL, if defined, or nil otherwise &#10; e = Element.new(&quot;el&quot;)&#10;e.add_attributes({&quot;xmlns:ns&quot;, &quot;http://url&quot;})&#10;e.namespace( &quot;ns&quot; )              # -&gt; &quot;http://url&quot;" ilk="function" name="namespace" signature="namespace(arg=nil)" />
+          <scope ilk="function" name="node_type" signature="node_type()" />
+          <scope doc="Returns the namespace of the attribute. &#10; e = Element.new( &quot;elns:myelement&quot; )&#10;e.add_attribute( &quot;nsa:a&quot;, &quot;aval&quot; )&#10;e.add_attribute( &quot;b&quot;, &quot;bval&quot; )&#10;e.attributes.get_attribute( &quot;a&quot; ).prefix   # -&gt; &quot;nsa&quot;&#10;e.attributes.get_attribute( &quot;b&quot; ).prefix   # -&gt; &quot;elns&quot;&#10;a = Attribute.new( &quot;x&quot;, &quot;y&quot; )&#10;a.prefix                                   # -&gt; &quot;&quot;" ilk="function" name="prefix" signature="prefix()" />
+          <scope doc="Removes this Attribute from the tree, and returns true if successfull &#10; This method is usually not called directly." ilk="function" name="remove" signature="remove()" />
+          <scope doc="Returns the attribute value, with entities replaced" ilk="function" name="to_s" signature="to_s()" />
+          <scope doc="Returns this attribute out as XML source, expanding the name &#10; a = Attribute.new( &quot;x&quot;, &quot;y&quot; )&#10;a.to_string     # -&gt; &quot;x='y'&quot;&#10;b = Attribute.new( &quot;ns:x&quot;, &quot;y&quot; )&#10;b.to_string     # -&gt; &quot;ns:x='y'&quot;" ilk="function" name="to_string" signature="to_string()" />
+          <scope doc="Returns the UNNORMALIZED value of this attribute.  That is, entities have been expanded to their values" ilk="function" name="value" signature="value()" />
+          <scope doc="Writes this attribute (EG, puts 'key=&quot;value&quot;' to the output)" ilk="function" name="write" signature="write( output, indent=-1 )" />
+          <scope ilk="function" name="xpath" signature="xpath()" />
+          <scope ilk="function" name="element" />
+          <scope ilk="function" name="normalized=" />
+          <variable attributes="__const__" citdl="Object" name="PATTERN" />
+          <variable attributes="__const__" citdl="Object" name="NEEDS_A_SECOND_CHECK" />
+        </scope>
+      </scope>
+    </scope>
+    

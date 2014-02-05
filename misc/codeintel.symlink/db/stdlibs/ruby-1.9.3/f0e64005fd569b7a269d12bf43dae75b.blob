@@ -1,0 +1,61 @@
+<scope ilk="blob" lang="Ruby" name="rdoc/top_level">
+      <scope ilk="namespace" name="RDoc">
+        <scope classrefs="RDoc::Context" ilk="class" name="TopLevel">
+          <scope attributes="__classmethod__" doc="Returns all classes discovered by RDoc" ilk="function" name="all_classes" signature="all_classes()" />
+          <scope attributes="__classmethod__" doc="Returns all classes and modules discovered by RDoc" ilk="function" name="all_classes_and_modules" signature="all_classes_and_modules()" />
+          <scope attributes="__classmethod__" doc="Hash of all classes known to RDoc" ilk="function" name="all_classes_hash" signature="all_classes_hash()" />
+          <scope attributes="__classmethod__" doc="All TopLevels known to RDoc" ilk="function" name="all_files" signature="all_files()" />
+          <scope attributes="__classmethod__" doc="Hash of all files known to RDoc" ilk="function" name="all_files_hash" signature="all_files_hash()" />
+          <scope attributes="__classmethod__" doc="Returns all modules discovered by RDoc" ilk="function" name="all_modules" signature="all_modules()" />
+          <scope attributes="__classmethod__" doc="Hash of all modules known to RDoc" ilk="function" name="all_modules_hash" signature="all_modules_hash()" />
+          <scope attributes="__classmethod__" ilk="function" name="classes" signature="classes()" />
+          <scope attributes="__classmethod__" ilk="function" name="classes_hash" signature="classes_hash()" />
+          <scope attributes="__classmethod__" doc="Prepares the RDoc code object tree for use by a generator. &#10; It finds unique classes/modules defined, and replaces classes/modules that are aliases for another one by a copy with RDoc::ClassModule#is_alias_for set. &#10; It updates the RDoc::ClassModule#constant_aliases attribute of &quot;real&quot; classes or modules. &#10; It also completely removes the classes and modules that should be removed from the documentation and the methods that have a visibility below +min_visibility+, which is the --visibility option. &#10; See also RDoc::Context#remove_from_documentation?" ilk="function" name="complete" signature="complete(min_visibility)" />
+          <scope attributes="__classmethod__" ilk="function" name="files" signature="files()" />
+          <scope attributes="__classmethod__" ilk="function" name="files_hash" signature="files_hash()" />
+          <scope attributes="__classmethod__" doc="Finds the class with +name+ in all discovered classes" ilk="function" name="find_class_named" signature="find_class_named(name)" />
+          <scope attributes="__classmethod__" doc="Finds the class with +name+ starting in namespace +from+" ilk="function" name="find_class_named_from" signature="find_class_named_from(name, from)" />
+          <scope attributes="__classmethod__" doc="Finds the class or module with +name+" ilk="function" name="find_class_or_module" signature="find_class_or_module(name)" />
+          <scope attributes="__classmethod__" doc="Finds the file with +name+ in all discovered files" ilk="function" name="find_file_named" signature="find_file_named(name)" />
+          <scope attributes="__classmethod__" doc="Finds the module with +name+ in all discovered modules" ilk="function" name="find_module_named" signature="find_module_named(name)" />
+          <scope attributes="__classmethod__" doc="Finds unique classes/modules defined in +all_hash+, and returns them as an array. Performs the alias updates in +all_hash+: see ::complete." ilk="function" name="find_unique" signature="find_unique(all_hash)" />
+          <scope attributes="__classmethod__" doc="Fixes the erroneous BasicObject &lt; Object in 1.9. &#10; Because we assumed all classes without a stated superclass inherit from Object, we have the above wrong inheritance. &#10; We fix BasicObject right away if we are running in a Ruby version &gt;= 1.9. If not, we may be documenting 1.9 source while running under 1.8: we search the files of BasicObject for &quot;object.c&quot;, and fix the inheritance if we find it." ilk="function" name="fix_basic_object_inheritance" signature="fix_basic_object_inheritance()" />
+          <scope attributes="__classmethod__" ilk="function" name="modules" signature="modules()" />
+          <scope attributes="__classmethod__" ilk="function" name="modules_hash" signature="modules_hash()" />
+          <scope attributes="__classmethod__ __ctor__" doc="Creates a new RDoc::TopLevel with +file_name+ only if one with the same name does not exist in all_files." ilk="function" name="new" signature="new(file_name)" />
+          <scope attributes="__classmethod__" doc="Removes from +all_hash+ the contexts that are nodoc or have no content. &#10; See RDoc::Context#remove_from_documentation?" ilk="function" name="remove_nodoc" signature="remove_nodoc(all_hash)" />
+          <scope attributes="__classmethod__" doc="Empties RDoc of stored class, module and file information" ilk="function" name="reset" signature="reset()" />
+          <scope attributes="__classmethod__" doc="Returns the unique classes discovered by RDoc. &#10; ::complete must have been called prior to using this method." ilk="function" name="unique_classes" signature="unique_classes()" />
+          <scope attributes="__classmethod__" doc="Returns the unique classes and modules discovered by RDoc. ::complete must have been called prior to using this method." ilk="function" name="unique_classes_and_modules" signature="unique_classes_and_modules()" />
+          <scope attributes="__classmethod__" doc="Returns the unique modules discovered by RDoc. ::complete must have been called prior to using this method." ilk="function" name="unique_modules" signature="unique_modules()" />
+          <scope doc="Adds +an_alias+ to +Object+ instead of +self+." ilk="function" name="add_alias" signature="add_alias(an_alias)" />
+          <scope doc="Adds +constant+ to +Object+ instead of +self+." ilk="function" name="add_constant" signature="add_constant(constant)" />
+          <scope doc="Adds +include+ to +Object+ instead of +self+." ilk="function" name="add_include" signature="add_include(include)" />
+          <scope doc="Adds +method+ to +Object+ instead of +self+." ilk="function" name="add_method" signature="add_method(method)" />
+          <scope doc="Adds class or module +mod+. Used in the building phase by the ruby parser." ilk="function" name="add_to_classes_or_modules" signature="add_to_classes_or_modules(mod)" />
+          <scope doc="Base name of this file" ilk="function" name="base_name" signature="base_name()" />
+          <scope doc="Returns a URL for this source file on some web repository.  Use the -W command line option to set." ilk="function" name="cvs_url" signature="cvs_url()" />
+          <scope ilk="function" name="eql?" signature="eql?(other)" />
+          <scope doc="See RDoc::TopLevel::find_class_or_module" ilk="function" name="find_class_or_module" signature="find_class_or_module(name)" />
+          <scope doc="Finds a class or module named +symbol+" ilk="function" name="find_local_symbol" signature="find_local_symbol(symbol)" />
+          <scope doc="Finds a module or class with +name+" ilk="function" name="find_module_named" signature="find_module_named(name)" />
+          <scope doc="Returns the relative name of this file" ilk="function" name="full_name" signature="full_name()" />
+          <scope doc="An RDoc::TopLevel has the same hash as another with the same absolute_name" ilk="function" name="hash" signature="hash()" />
+          <scope doc="URL for this with a +prefix+" ilk="function" name="http_url" signature="http_url(prefix)" />
+          <scope doc="Time this file was last modified, if known" ilk="function" name="last_modified" signature="last_modified()" />
+          <scope ilk="function" name="name" signature="name()" />
+          <scope doc="Returns the NormalClass &quot;Object&quot;, creating it if not found. &#10; Records +self+ as a location in &quot;Object&quot;." ilk="function" name="object_class" signature="object_class()" />
+          <scope doc="Path to this file" ilk="function" name="path" signature="path()" />
+          <scope ilk="function" name="absolute_name" />
+          <scope ilk="function" name="absolute_name=" />
+          <scope ilk="function" name="classes_or_modules" />
+          <scope ilk="function" name="file_stat" />
+          <scope ilk="function" name="file_stat=" />
+          <scope ilk="function" name="parser" />
+          <scope ilk="function" name="parser=" />
+          <scope ilk="function" name="relative_name" />
+          <scope ilk="function" name="relative_name=" />
+        </scope>
+      </scope>
+    </scope>
+    

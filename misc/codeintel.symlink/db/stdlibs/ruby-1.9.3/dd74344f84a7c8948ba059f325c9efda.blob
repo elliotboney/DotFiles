@@ -1,0 +1,10 @@
+<scope ilk="blob" lang="Ruby" name="rake/early_time">
+      <scope ilk="namespace" name="Rake">
+        <scope classrefs="Object" ilk="class" name="EarlyTime">
+          <import symbol="Comparable" />
+          <import symbol="Singleton" />
+          <scope ilk="function" name="to_s" signature="to_s()" />
+        </scope>
+      </scope>
+    </scope>
+    

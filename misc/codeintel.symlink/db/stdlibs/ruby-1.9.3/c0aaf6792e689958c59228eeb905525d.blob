@@ -1,0 +1,12 @@
+<scope ilk="blob" lang="Ruby" name="rdoc/markup/indented_paragraph">
+      <scope ilk="namespace" name="RDoc">
+        <scope ilk="namespace" name="Markup">
+          <scope classrefs="RDoc::Markup::Raw" ilk="class" name="IndentedParagraph">
+            <scope attributes="__classmethod__ __ctor__" doc="Creates a new IndentedParagraph containing +parts+ indented with +indent+ spaces" ilk="function" name="new" signature="new(indent, *parts)" />
+            <scope doc="Calls #accept_indented_paragraph on +visitor+" ilk="function" name="accept" signature="accept(visitor)" />
+            <scope ilk="function" name="indent" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    

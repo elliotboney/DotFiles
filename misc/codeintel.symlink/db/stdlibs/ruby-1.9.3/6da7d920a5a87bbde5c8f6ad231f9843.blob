@@ -1,0 +1,108 @@
+<scope ilk="blob" lang="Ruby" name="rss/rss">
+      <scope ilk="namespace" name="RSS">
+        <scope ilk="namespace" name="BaseModel">
+          <import symbol="Utils" />
+          <scope ilk="function" name="install_date_element" signature="install_date_element(tag_name, uri, occurs, name=nil, type=nil, disp_name=nil)" />
+          <scope ilk="function" name="install_have_attribute_element" signature="install_have_attribute_element(tag_name, uri, occurs, name=nil, type=nil)" />
+          <scope ilk="function" name="install_have_child_element" signature="install_have_child_element(tag_name, uri, occurs, name=nil, type=nil)" />
+          <scope ilk="function" name="install_have_children_element" signature="install_have_children_element(tag_name, uri, occurs, name=nil, plural_name=nil)" />
+          <scope ilk="function" name="install_text_element" signature="install_text_element(tag_name, uri, occurs, name=nil, type=nil, disp_name=nil)" />
+        </scope>
+        <scope classrefs="RSS::Error" ilk="class" name="ConversionError">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(string, to, from)" />
+          <scope ilk="function" name="from" />
+          <scope ilk="function" name="string" />
+          <scope ilk="function" name="to" />
+        </scope>
+        <scope classrefs="StandardError" ilk="class" name="Error">
+        </scope>
+        <scope classrefs="RSS::Error" ilk="class" name="InvalidRSSError">
+        </scope>
+        <scope classrefs="RSS::InvalidRSSError" ilk="class" name="MissingAttributeError">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(tag, attribute)" />
+          <scope ilk="function" name="attribute" />
+          <scope ilk="function" name="tag" />
+        </scope>
+        <scope classrefs="RSS::InvalidRSSError" ilk="class" name="MissingTagError">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(tag, parent)" />
+          <scope ilk="function" name="parent" />
+          <scope ilk="function" name="tag" />
+        </scope>
+        <scope classrefs="RSS::InvalidRSSError" ilk="class" name="NotAvailableValueError">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(tag, value, attribute=nil)" />
+          <scope ilk="function" name="attribute" />
+          <scope ilk="function" name="tag" />
+          <scope ilk="function" name="value" />
+        </scope>
+        <scope classrefs="RSS::InvalidRSSError" ilk="class" name="NotExceptedTagError">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(tag, uri, parent)" />
+          <scope ilk="function" name="parent" />
+          <scope ilk="function" name="tag" />
+          <scope ilk="function" name="uri" />
+        </scope>
+        <scope classrefs="RSS::InvalidRSSError" ilk="class" name="NotExpectedTagError">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(tag, uri, parent)" />
+          <scope ilk="function" name="parent" />
+          <scope ilk="function" name="tag" />
+          <scope ilk="function" name="uri" />
+        </scope>
+        <scope classrefs="RSS::Error" ilk="class" name="NotSetError">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(name, variables)" />
+          <scope ilk="function" name="name" />
+          <scope ilk="function" name="variables" />
+        </scope>
+        <scope classrefs="RSS::Error" ilk="class" name="OverlappedPrefixError">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(prefix)" />
+          <scope ilk="function" name="prefix" />
+        </scope>
+        <scope ilk="namespace" name="RootElementMixin">
+          <import symbol="XMLStyleSheetMixin" />
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(feed_version, version=nil, encoding=nil, standalone=nil)" />
+          <scope ilk="function" name="feed_info" signature="feed_info()" />
+          <scope ilk="function" name="output_encoding=" signature="output_encoding=(enc)" />
+          <scope ilk="function" name="setup_maker" signature="setup_maker(maker)" />
+          <scope ilk="function" name="to_atom" signature="to_atom(type, &amp;block)" />
+          <scope ilk="function" name="to_feed" signature="to_feed(type, &amp;block)" />
+          <scope ilk="function" name="to_rss" signature="to_rss(type, &amp;block)" />
+          <scope ilk="function" name="to_xml" signature="to_xml(type=nil, &amp;block)" />
+          <scope ilk="function" name="encoding" />
+          <scope ilk="function" name="encoding=" />
+          <scope ilk="function" name="feed_subtype" />
+          <scope ilk="function" name="feed_type" />
+          <scope ilk="function" name="feed_version" />
+          <scope ilk="function" name="output_encoding" />
+          <scope ilk="function" name="standalone" />
+          <scope ilk="function" name="standalone=" />
+          <scope ilk="function" name="version" />
+          <scope ilk="function" name="version=" />
+        </scope>
+        <scope ilk="namespace" name="SetupMaker">
+          <scope ilk="function" name="setup_maker" signature="setup_maker(maker)" />
+        </scope>
+        <scope classrefs="RSS::InvalidRSSError" ilk="class" name="TooMuchTagError">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(tag, parent)" />
+          <scope ilk="function" name="parent" />
+          <scope ilk="function" name="tag" />
+        </scope>
+        <scope classrefs="RSS::Error" ilk="class" name="UnknownConversionMethodError">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(to, from)" />
+          <scope ilk="function" name="from" />
+          <scope ilk="function" name="to" />
+        </scope>
+        <scope classrefs="RSS::Error" ilk="class" name="UnknownConvertMethod">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(to, from)" />
+          <scope ilk="function" name="from" />
+          <scope ilk="function" name="to" />
+        </scope>
+        <scope classrefs="RSS::InvalidRSSError" ilk="class" name="UnknownTagError">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(tag, uri)" />
+          <scope ilk="function" name="tag" />
+          <scope ilk="function" name="uri" />
+        </scope>
+        <scope classrefs="RSS::Error" ilk="class" name="UnsupportedMakerVersionError">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(version)" />
+          <scope ilk="function" name="version" />
+        </scope>
+      </scope>
+    </scope>
+    

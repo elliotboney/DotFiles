@@ -1,0 +1,18 @@
+<scope ilk="blob" lang="Ruby" name="rexml/instruction">
+      <scope ilk="namespace" name="REXML">
+        <scope classrefs="Child" ilk="class" name="Instruction">
+          <scope attributes="__classmethod__ __ctor__" doc="Constructs a new Instruction @param target can be one of a number of things.  If String, then the target of this instruction is set to this.  If an Instruction, then the Instruction is shallowly cloned (target and content are copied).  If a Source, then the source is scanned and parsed for an Instruction declaration. @param content Must be either a String, or a Parent.  Can only be a Parent if the target argument is a Source.  Otherwise, this String is set as the content of this instruction." ilk="function" name="new" signature="new(target, content=nil)" />
+          <scope ilk="function" name="clone" signature="clone()" />
+          <scope ilk="function" name="inspect" signature="inspect()" />
+          <scope ilk="function" name="node_type" signature="node_type()" />
+          <scope doc="DEPRECATED See the rexml/formatters package" ilk="function" name="write" signature="write(writer, indent=-1, transitive=false, ie_hack=false)" />
+          <scope ilk="function" name="content" />
+          <scope ilk="function" name="content=" />
+          <scope ilk="function" name="target" />
+          <scope ilk="function" name="target=" />
+          <variable attributes="__const__" citdl="Object" name="START" />
+          <variable attributes="__const__" citdl="Object" name="STOP" />
+        </scope>
+      </scope>
+    </scope>
+    

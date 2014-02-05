@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="PHP" name="s3.php" src="/private/var/www/kw/plugins/w3-total-cache/inc/options/cdn/s3.php"><import line="48" module="/options/cdn/common/cnames.php" /><variable line="43" name="cdn_s3_bucket" /><variable citdl="this._config.get_array()" line="48" name="cnames" /></scope>

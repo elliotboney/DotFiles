@@ -1,0 +1,13 @@
+<scope ilk="blob" lang="Ruby" name="minitest/pride">
+      <scope classrefs="Object" ilk="class" name="PrideIO">
+        <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(io)" />
+        <scope ilk="function" name="method_missing" signature="method_missing(msg, *args)" />
+        <scope ilk="function" name="pride" signature="pride(string)" />
+        <scope ilk="function" name="print" signature="print(o)" />
+        <scope ilk="function" name="puts" signature="puts(*o)" />
+        <scope ilk="function" name="io" />
+        <variable attributes="__const__" citdl="Object" name="ESC" />
+        <variable attributes="__const__" citdl="Object" name="NND" />
+      </scope>
+    </scope>
+    

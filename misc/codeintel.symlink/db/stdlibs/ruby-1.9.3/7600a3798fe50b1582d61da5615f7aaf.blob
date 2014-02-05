@@ -1,0 +1,57 @@
+<scope ilk="blob" lang="Ruby" name="webrick/httprequest">
+      <scope ilk="namespace" name="WEBrick">
+        <scope classrefs="Object" ilk="class" name="HTTPRequest">
+          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(config)" />
+          <scope ilk="function" name="body" signature="body(&amp;block)" />
+          <scope doc="The content-length header" ilk="function" name="content_length" signature="content_length()" />
+          <scope doc="The content-type header" ilk="function" name="content_type" signature="content_type()" />
+          <scope doc="Generate HTTP/1.1 100 continue response if the client expects it, otherwise does nothing." ilk="function" name="continue" signature="continue()" />
+          <scope doc="Iterates over the request headers" ilk="function" name="each" signature="each()" />
+          <scope ilk="function" name="fixup" signature="fixup()" />
+          <scope doc="The host this request is for" ilk="function" name="host" signature="host()" />
+          <scope doc="Should the connection this request was made on be kept alive?" ilk="function" name="keep_alive?" signature="keep_alive?()" />
+          <scope doc="This method provides the metavariables defined by the revision 3 of &quot;The WWW Common Gateway Interface Version 1.1&quot; http://Web.Golux.Com/coar/cgi/" ilk="function" name="meta_vars" signature="meta_vars()" />
+          <scope ilk="function" name="orig_meta_vars" signature="orig_meta_vars()" />
+          <scope ilk="function" name="orig_parse" signature="orig_parse(socket=nil)" />
+          <scope ilk="function" name="orig_parse_uri" signature="orig_parse_uri(str, scheme=&quot;http&quot;)" />
+          <scope ilk="function" name="parse" signature="parse(socket=nil)" />
+          <scope doc="The port this request is for" ilk="function" name="port" signature="port()" />
+          <scope doc="Request query as a Hash" ilk="function" name="query" signature="query()" />
+          <scope doc="The client's IP address" ilk="function" name="remote_ip" signature="remote_ip()" />
+          <scope doc="The server name this request is for" ilk="function" name="server_name" signature="server_name()" />
+          <scope doc="Is this an SSL request?" ilk="function" name="ssl?" signature="ssl?()" />
+          <scope ilk="function" name="accept" />
+          <scope ilk="function" name="accept_charset" />
+          <scope ilk="function" name="accept_encoding" />
+          <scope ilk="function" name="accept_language" />
+          <scope ilk="function" name="addr" />
+          <scope ilk="function" name="attributes" />
+          <scope ilk="function" name="cipher" />
+          <scope ilk="function" name="client_cert" />
+          <scope ilk="function" name="cookies" />
+          <scope ilk="function" name="header" />
+          <scope ilk="function" name="http_version" />
+          <scope ilk="function" name="keep_alive" />
+          <scope ilk="function" name="path" />
+          <scope ilk="function" name="path_info" />
+          <scope ilk="function" name="path_info=" />
+          <scope ilk="function" name="peeraddr" />
+          <scope ilk="function" name="query_string" />
+          <scope ilk="function" name="query_string=" />
+          <scope ilk="function" name="raw_header" />
+          <scope ilk="function" name="request_line" />
+          <scope ilk="function" name="request_method" />
+          <scope ilk="function" name="request_time" />
+          <scope ilk="function" name="request_uri" />
+          <scope ilk="function" name="script_name" />
+          <scope ilk="function" name="script_name=" />
+          <scope ilk="function" name="server_cert" />
+          <scope ilk="function" name="unparsed_uri" />
+          <scope ilk="function" name="user" />
+          <scope ilk="function" name="user=" />
+          <variable attributes="__const__" citdl="Object" name="BODY_CONTAINABLE_METHODS" />
+          <variable attributes="__const__" citdl="Object" name="MAX_URI_LENGTH" />
+        </scope>
+      </scope>
+    </scope>
+    

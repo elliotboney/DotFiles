@@ -1,0 +1,54 @@
+<scope ilk="blob" lang="Ruby" name="gdbm">
+      <scope classrefs="Object" ilk="class" name="GDBM">
+        <import symbol="Enumerable" />
+        <scope attributes="__classmethod__ __ctor__" doc="Creates a new GDBM instance by opening a gdbm file named _filename_. If the file does not exist, a new file with file mode _mode_ will be created. _flags_ may be one of the following: *READER*  - open as a reader&#10;*WRITER*  - open as a writer&#10;*WRCREAT* - open as a writer; if the database does not exist, create a new one&#10;*NEWDB*   - open as a writer; overwrite any existing databases &#10; The values *WRITER*, *WRCREAT* and *NEWDB* may be combined with the following values by bitwise or: *SYNC*    - cause all database operations to be synchronized to the disk&#10;*NOLOCK*  - do not lock the database file &#10; If no _flags_ are specified, the GDBM object will try to open the database file as a writer and will create it if it does not already exist (cf. flag WRCREAT). If this fails (for instance, if another process has already opened the database as a reader), it will try to open the database file as a reader (cf. flag READER)." ilk="function" name="new" signature="new(p1, p2 = v2, p3 = v3)" />
+        <scope attributes="__classmethod__" doc="If called without a block, this is synonymous to GDBM::new. If a block is given, the new GDBM instance will be passed to the block as a parameter, and the corresponding database file will be closed after the execution of the block code has been finished. &#10; Example for an open call with a block: &#10; require 'gdbm'&#10;GDBM.open(&quot;fruitstore.db&quot;) do |gdbm|&#10;  gdbm.each_pair do |key, value|&#10;    print &quot;#{key}: #{value}\n&quot;&#10;  end&#10;end" ilk="function" name="open" signature="open(*args)" />
+        <scope doc="Sets the size of the internal bucket cache to _size_." ilk="function" name="cachesize=" signature="cachesize=(p1)" />
+        <scope doc="Removes all the key-value pairs within _gdbm_." ilk="function" name="clear" signature="clear()" />
+        <scope doc="Closes the associated database file." ilk="function" name="close" signature="close()" />
+        <scope doc="Returns true if the associated database file has been closed." ilk="function" name="closed?" signature="closed?()" />
+        <scope doc="Removes the key-value-pair with the specified _key_ from this database and returns the corresponding _value_. Returns nil if the database is empty." ilk="function" name="delete" signature="delete(p1)" />
+        <scope doc="Deletes every key-value pair from _gdbm_ for which _block_ evaluates to true." ilk="function" name="delete_if" signature="delete_if()" />
+        <scope doc="Executes _block_ for each key in the database, passing the _key_ and the correspoding _value_ as a parameter." ilk="function" name="each" signature="each()" />
+        <scope doc="Executes _block_ for each key in the database, passing the _key_ as a parameter." ilk="function" name="each_key" signature="each_key()" />
+        <scope doc="Executes _block_ for each key in the database, passing the _key_ and the correspoding _value_ as a parameter." ilk="function" name="each_pair" signature="each_pair()" />
+        <scope doc="Executes _block_ for each key in the database, passing the corresponding _value_ as a parameter." ilk="function" name="each_value" signature="each_value()" />
+        <scope doc="Returns true if the database is empty." ilk="function" name="empty?" signature="empty?()" />
+        <scope doc="Turns the database's fast mode on or off. If fast mode is turned on, gdbm does not wait for writes to be flushed to the disk before continuing. &#10; This option is obsolete for gdbm &gt;= 1.8 since fast mode is turned on by default. See also: #syncmode=" ilk="function" name="fastmode=" signature="fastmode=(p1)" />
+        <scope doc="Retrieves the _value_ corresponding to _key_. If there is no value associated with _key_, _default_ will be returned instead." ilk="function" name="fetch" signature="fetch(p1, p2 = v2)" />
+        <scope doc="Returns true if the given key _k_ exists within the database. Returns false otherwise." ilk="function" name="has_key?" signature="has_key?(p1)" />
+        <scope doc="Returns true if the given value _v_ exists within the database. Returns false otherwise." ilk="function" name="has_value?" signature="has_value?(p1)" />
+        <scope doc="Returns true if the given key _k_ exists within the database. Returns false otherwise." ilk="function" name="include?" signature="include?(p1)" />
+        <scope doc="Returns a hash created by using _gdbm_'s values as keys, and the keys as values." ilk="function" name="invert" signature="invert()" />
+        <scope doc="Returns the _key_ for a given _value_. If several keys may map to the same value, the key that is found first will be returned." ilk="function" name="key" signature="key(p1)" />
+        <scope doc="Returns true if the given key _k_ exists within the database. Returns false otherwise." ilk="function" name="key?" signature="key?(p1)" />
+        <scope doc="Returns an array of all keys of this database." ilk="function" name="keys" signature="keys()" />
+        <scope doc="Returns the number of key-value pairs in this database." ilk="function" name="length" signature="length()" />
+        <scope doc="Returns true if the given key _k_ exists within the database. Returns false otherwise." ilk="function" name="member?" signature="member?(p1)" />
+        <scope doc="Returns a hash copy of _gdbm_ where all key-value pairs from _gdbm_ for which _block_ evaluates to true are removed. See also: #delete_if" ilk="function" name="reject" signature="reject()" />
+        <scope doc="Deletes every key-value pair from _gdbm_ for which _block_ evaluates to true." ilk="function" name="reject!" signature="reject!()" />
+        <scope doc="Reorganizes the database file. This operation removes reserved space of elements that have already been deleted. It is only useful after a lot of deletions in the database." ilk="function" name="reorganize" signature="reorganize()" />
+        <scope doc="Replaces the content of _gdbm_ with the key-value pairs of _other_. _other_ must have an each_pair method." ilk="function" name="replace" signature="replace(p1)" />
+        <scope doc="Returns a new array of all key-value pairs of the database for which _block_ evaluates to true." ilk="function" name="select" signature="select()" />
+        <scope doc="Removes a key-value-pair from this database and returns it as a two-item array [ _key_, _value_ ]. Returns nil if the database is empty." ilk="function" name="shift" signature="shift()" />
+        <scope doc="Returns the number of key-value pairs in this database." ilk="function" name="size" signature="size()" />
+        <scope doc="Associates the value _value_ with the specified _key_." ilk="function" name="store" signature="store(p1, p2)" />
+        <scope doc="Unless the _gdbm_ object has been opened with the *SYNC* flag, it is not guarenteed that database modification operations are immediately applied to the database file. This method ensures that all recent modifications to the database are written to the file. Blocks until all writing operations to the disk have been finished." ilk="function" name="sync" signature="sync()" />
+        <scope doc="Turns the database's synchronization mode on or off. If the synchronization mode is turned on, the database's in-memory state will be synchronized to disk after every database modification operation. If the synchronization mode is turned off, GDBM does not wait for writes to be flushed to the disk before continuing. &#10; This option is only available for gdbm &gt;= 1.8 where syncmode is turned off by default. See also: #fastmode=" ilk="function" name="syncmode=" signature="syncmode=(p1)" />
+        <scope doc="Returns an array of all key-value pairs contained in the database." ilk="function" name="to_a" signature="to_a()" />
+        <scope doc="Returns a hash of all key-value pairs contained in the database." ilk="function" name="to_hash" signature="to_hash()" />
+        <scope doc="Adds the key-value pairs of _other_ to _gdbm_, overwriting entries with duplicate keys with those from _other_. _other_ must have an each_pair method." ilk="function" name="update" signature="update(p1)" />
+        <scope doc="Returns true if the given value _v_ exists within the database. Returns false otherwise." ilk="function" name="value?" signature="value?(p1)" />
+        <scope doc="Returns an array of all values of this database." ilk="function" name="values" signature="values()" />
+        <scope doc="Returns an array of the values associated with each specified _key_." ilk="function" name="values_at" signature="values_at(*args)" />
+        <variable attributes="__const__" citdl="Object" name="READER" />
+        <variable attributes="__const__" citdl="Object" name="WRITER" />
+        <variable attributes="__const__" citdl="Object" name="WRCREAT" />
+        <variable attributes="__const__" citdl="Object" name="NEWDB" />
+        <variable attributes="__const__" citdl="Object" name="FAST" />
+        <variable attributes="__const__" citdl="Object" name="SYNC" />
+        <variable attributes="__const__" citdl="Object" name="NOLOCK" />
+        <variable attributes="__const__" citdl="Object" name="VERSION" />
+      </scope>
+    </scope>
+    

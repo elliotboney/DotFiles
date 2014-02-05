@@ -1,0 +1,205 @@
+<scope ilk="blob" lang="Ruby" name="net/pop">
+      <scope ilk="namespace" name="Net">
+        <scope classrefs="Net::POP3" ilk="class" name="APOP">
+          <scope doc="Always returns true." ilk="function" name="apop?" signature="apop?()" />
+        </scope>
+        <scope classrefs="Net::POP3" ilk="class" name="APOPSession">
+          <scope doc="Always returns true." ilk="function" name="apop?" signature="apop?()" />
+        </scope>
+        <scope classrefs="Protocol" ilk="class" name="POP">
+          <scope attributes="__classmethod__" doc="Returns the APOP class if +isapop+ is true; otherwise, returns the POP class.  For example: &#10; # Example 1&#10;pop = Net::POP3::APOP($is_apop).new(addr, port)&#10;&#10;# Example 2&#10;Net::POP3::APOP($is_apop).start(addr, port) do |pop|&#10;  ....&#10;end" ilk="function" name="APOP" signature="APOP(isapop)" />
+          <scope attributes="__classmethod__" doc="Opens a POP3 session, attempts authentication, and quits. &#10; This method raises POPAuthenticationError if authentication fails. &#10; Example: normal POP3 &#10; Net::POP3.auth_only('pop.example.com', 110,&#10;                    'YourAccount', 'YourPassword')&#10; Example: APOP &#10; Net::POP3.auth_only('pop.example.com', 110,&#10;                    'YourAccount', 'YourPassword', true)" ilk="function" name="auth_only" signature="auth_only(address, port = nil, account = nil, password = nil, isapop = false)" />
+          <scope attributes="__classmethod__" doc="returns the :ca_file or :ca_path from POP3.ssh_params" ilk="function" name="certs" signature="certs()" />
+          <scope attributes="__classmethod__" doc="Constructs proper parameters from arguments" ilk="function" name="create_ssl_params" signature="create_ssl_params(verify_or_params = {}, certs = nil)" />
+          <scope attributes="__classmethod__" doc="The default port for POP3 connections, port 110" ilk="function" name="default_pop3_port" signature="default_pop3_port()" />
+          <scope attributes="__classmethod__" doc="The default port for POP3S connections, port 995" ilk="function" name="default_pop3s_port" signature="default_pop3s_port()" />
+          <scope attributes="__classmethod__" doc="returns the port for POP3" ilk="function" name="default_port" signature="default_port()" />
+          <scope attributes="__classmethod__" doc="Starts a POP3 session and deletes all messages on the server. If a block is given, each POPMail object is yielded to it before being deleted. &#10; This method raises a POPAuthenticationError if authentication fails. &#10; Example &#10; Net::POP3.delete_all('pop.example.com', 110,&#10;                     'YourAccount', 'YourPassword') do |m|&#10;  file.write m.pop&#10;end" ilk="function" name="delete_all" signature="delete_all(address, port = nil, account = nil, password = nil, isapop = false, &amp;block)" />
+          <scope attributes="__classmethod__" doc="Disable SSL for all new instances." ilk="function" name="disable_ssl" signature="disable_ssl()" />
+          <scope attributes="__classmethod__" doc="Enable SSL for all new instances. +params+ is passed to OpenSSL::SSLContext#set_params." ilk="function" name="enable_ssl" signature="enable_ssl(*args)" />
+          <scope attributes="__classmethod__" doc="Starts a POP3 session and iterates over each POPMail object, yielding it to the +block+. This method is equivalent to: &#10; Net::POP3.start(address, port, account, password) do |pop|&#10;  pop.each_mail do |m|&#10;    yield m&#10;  end&#10;end&#10; This method raises a POPAuthenticationError if authentication fails. &#10; Example &#10; Net::POP3.foreach('pop.example.com', 110,&#10;                  'YourAccount', 'YourPassword') do |m|&#10;  file.write m.pop&#10;  m.delete if $DELETE&#10;end" ilk="function" name="foreach" signature="foreach(address, port = nil, account = nil, password = nil, isapop = false)" />
+          <scope attributes="__classmethod__ __ctor__" doc="Creates a new POP3 object. &#10; +address+ is the hostname or ip address of your POP3 server. &#10; The optional +port+ is the port to connect to. &#10; The optional +isapop+ specifies whether this connection is going to use APOP authentication; it defaults to +false+. &#10; This method does *not* open the TCP connection." ilk="function" name="new" signature="new(addr, port = nil, isapop = false)" />
+          <scope attributes="__classmethod__" doc="returns the SSL Parameters &#10; see also POP3.enable_ssl" ilk="function" name="ssl_params" signature="ssl_params()" />
+          <scope attributes="__classmethod__" doc="Creates a new POP3 object and open the connection.  Equivalent to &#10; Net::POP3.new(address, port, isapop).start(account, password)&#10; If +block+ is provided, yields the newly-opened POP3 object to it, and automatically closes it at the end of the session. &#10; Example &#10; Net::POP3.start(addr, port, account, password) do |pop|&#10;  pop.each_mail do |m|&#10;    file.write m.pop&#10;    m.delete&#10;  end&#10;end" ilk="function" name="start" signature="start(address, port = nil, account = nil, password = nil, isapop = false)" />
+          <scope attributes="__classmethod__" doc="returns +true+ if POP3.ssl_params is set" ilk="function" name="use_ssl?" signature="use_ssl?()" />
+          <scope attributes="__classmethod__" doc="returns whether verify_mode is enable from POP3.ssl_params" ilk="function" name="verify" signature="verify()" />
+          <scope ilk="function" name="active?" signature="active?()" />
+          <scope doc="Does this instance use APOP authentication?" ilk="function" name="apop?" signature="apop?()" />
+          <scope doc="Starts a pop3 session, attempts authentication, and quits. This method must not be called while POP3 session is opened. This method raises POPAuthenticationError if authentication fails." ilk="function" name="auth_only" signature="auth_only(account, password)" />
+          <scope doc="Deletes all messages on the server. &#10; If called with a block, yields each message in turn before deleting it. &#10; Example &#10; n = 1&#10;pop.delete_all do |m|&#10;  File.open(&quot;inbox/#{n}&quot;) do |f|&#10;    f.write m.pop&#10;  end&#10;  n += 1&#10;end&#10; This method raises a POPError if an error occurs." ilk="function" name="delete_all" signature="delete_all()" />
+          <scope doc="Disable SSL for all new instances." ilk="function" name="disable_ssl" signature="disable_ssl()" />
+          <scope ilk="function" name="each" signature="each()" />
+          <scope doc="Yields each message to the passed-in block in turn. Equivalent to: &#10; pop3.mails.each do |popmail|&#10;  ....&#10;end&#10; This method raises a POPError if an error occurs." ilk="function" name="each_mail" signature="each_mail()" />
+          <scope doc="Enables SSL for this instance.  Must be called before the connection is established to have any effect. +params[:port]+ is port to establish the SSL connection on; Defaults to 995. +params+ (except :port) is passed to OpenSSL::SSLContext#set_params." ilk="function" name="enable_ssl" signature="enable_ssl(verify_or_params = {}, certs = nil, port = nil)" />
+          <scope doc="Finishes a POP3 session and closes TCP connection." ilk="function" name="finish" signature="finish()" />
+          <scope doc="Provide human-readable stringification of class state." ilk="function" name="inspect" signature="inspect()" />
+          <scope doc="deguging output for +msg+" ilk="function" name="logging" signature="logging(msg)" />
+          <scope doc="Returns an array of Net::POPMail objects, representing all the messages on the server.  This array is renewed when the session restarts; otherwise, it is fetched from the server the first time this method is called (directly or indirectly) and cached. &#10; This method raises a POPError if an error occurs." ilk="function" name="mails" signature="mails()" />
+          <scope doc="Returns the total size in bytes of all the messages on the POP server." ilk="function" name="n_bytes" signature="n_bytes()" />
+          <scope doc="Returns the number of messages on the POP server." ilk="function" name="n_mails" signature="n_mails()" />
+          <scope doc="The port number to connect to." ilk="function" name="port" signature="port()" />
+          <scope doc="Set the read timeout." ilk="function" name="read_timeout=" signature="read_timeout=(sec)" />
+          <scope doc="Resets the session.  This clears all &quot;deleted&quot; marks from messages. &#10; This method raises a POPError if an error occurs." ilk="function" name="reset" signature="reset()" />
+          <scope doc="*WARNING*: This method causes a serious security hole. Use this method only for debugging. &#10; Set an output stream for debugging. &#10; Example &#10; pop = Net::POP.new(addr, port)&#10;pop.set_debug_output $stderr&#10;pop.start(account, passwd) do |pop|&#10;  ....&#10;end" ilk="function" name="set_debug_output" signature="set_debug_output(arg)" />
+          <scope doc="Starts a POP3 session. &#10; When called with block, gives a POP3 object to the block and closes the session after block call finishes. &#10; This method raises a POPAuthenticationError if authentication fails." ilk="function" name="start" signature="start(account, password)" />
+          <scope doc="+true+ if the POP3 session has started." ilk="function" name="started?" signature="started?()" />
+          <scope doc="does this instance use SSL?" ilk="function" name="use_ssl?" signature="use_ssl?()" />
+          <scope ilk="function" name="address" />
+          <scope ilk="function" name="open_timeout" />
+          <scope ilk="function" name="open_timeout=" />
+          <scope ilk="function" name="read_timeout" />
+        </scope>
+        <scope classrefs="Protocol" ilk="class" name="POP3">
+          <scope attributes="__classmethod__" doc="Returns the APOP class if +isapop+ is true; otherwise, returns the POP class.  For example: &#10; # Example 1&#10;pop = Net::POP3::APOP($is_apop).new(addr, port)&#10;&#10;# Example 2&#10;Net::POP3::APOP($is_apop).start(addr, port) do |pop|&#10;  ....&#10;end" ilk="function" name="APOP" signature="APOP(isapop)" />
+          <scope attributes="__classmethod__" doc="Opens a POP3 session, attempts authentication, and quits. &#10; This method raises POPAuthenticationError if authentication fails. &#10; Example: normal POP3 &#10; Net::POP3.auth_only('pop.example.com', 110,&#10;                    'YourAccount', 'YourPassword')&#10; Example: APOP &#10; Net::POP3.auth_only('pop.example.com', 110,&#10;                    'YourAccount', 'YourPassword', true)" ilk="function" name="auth_only" signature="auth_only(address, port = nil, account = nil, password = nil, isapop = false)" />
+          <scope attributes="__classmethod__" doc="returns the :ca_file or :ca_path from POP3.ssh_params" ilk="function" name="certs" signature="certs()" />
+          <scope attributes="__classmethod__" doc="Constructs proper parameters from arguments" ilk="function" name="create_ssl_params" signature="create_ssl_params(verify_or_params = {}, certs = nil)" />
+          <scope attributes="__classmethod__" doc="The default port for POP3 connections, port 110" ilk="function" name="default_pop3_port" signature="default_pop3_port()" />
+          <scope attributes="__classmethod__" doc="The default port for POP3S connections, port 995" ilk="function" name="default_pop3s_port" signature="default_pop3s_port()" />
+          <scope attributes="__classmethod__" doc="returns the port for POP3" ilk="function" name="default_port" signature="default_port()" />
+          <scope attributes="__classmethod__" doc="Starts a POP3 session and deletes all messages on the server. If a block is given, each POPMail object is yielded to it before being deleted. &#10; This method raises a POPAuthenticationError if authentication fails. &#10; Example &#10; Net::POP3.delete_all('pop.example.com', 110,&#10;                     'YourAccount', 'YourPassword') do |m|&#10;  file.write m.pop&#10;end" ilk="function" name="delete_all" signature="delete_all(address, port = nil, account = nil, password = nil, isapop = false, &amp;block)" />
+          <scope attributes="__classmethod__" doc="Disable SSL for all new instances." ilk="function" name="disable_ssl" signature="disable_ssl()" />
+          <scope attributes="__classmethod__" doc="Enable SSL for all new instances. +params+ is passed to OpenSSL::SSLContext#set_params." ilk="function" name="enable_ssl" signature="enable_ssl(*args)" />
+          <scope attributes="__classmethod__" doc="Starts a POP3 session and iterates over each POPMail object, yielding it to the +block+. This method is equivalent to: &#10; Net::POP3.start(address, port, account, password) do |pop|&#10;  pop.each_mail do |m|&#10;    yield m&#10;  end&#10;end&#10; This method raises a POPAuthenticationError if authentication fails. &#10; Example &#10; Net::POP3.foreach('pop.example.com', 110,&#10;                  'YourAccount', 'YourPassword') do |m|&#10;  file.write m.pop&#10;  m.delete if $DELETE&#10;end" ilk="function" name="foreach" signature="foreach(address, port = nil, account = nil, password = nil, isapop = false)" />
+          <scope attributes="__classmethod__ __ctor__" doc="Creates a new POP3 object. &#10; +address+ is the hostname or ip address of your POP3 server. &#10; The optional +port+ is the port to connect to. &#10; The optional +isapop+ specifies whether this connection is going to use APOP authentication; it defaults to +false+. &#10; This method does *not* open the TCP connection." ilk="function" name="new" signature="new(addr, port = nil, isapop = false)" />
+          <scope attributes="__classmethod__" doc="returns the SSL Parameters &#10; see also POP3.enable_ssl" ilk="function" name="ssl_params" signature="ssl_params()" />
+          <scope attributes="__classmethod__" doc="Creates a new POP3 object and open the connection.  Equivalent to &#10; Net::POP3.new(address, port, isapop).start(account, password)&#10; If +block+ is provided, yields the newly-opened POP3 object to it, and automatically closes it at the end of the session. &#10; Example &#10; Net::POP3.start(addr, port, account, password) do |pop|&#10;  pop.each_mail do |m|&#10;    file.write m.pop&#10;    m.delete&#10;  end&#10;end" ilk="function" name="start" signature="start(address, port = nil, account = nil, password = nil, isapop = false)" />
+          <scope attributes="__classmethod__" doc="returns +true+ if POP3.ssl_params is set" ilk="function" name="use_ssl?" signature="use_ssl?()" />
+          <scope attributes="__classmethod__" doc="returns whether verify_mode is enable from POP3.ssl_params" ilk="function" name="verify" signature="verify()" />
+          <scope ilk="function" name="active?" signature="active?()" />
+          <scope doc="Does this instance use APOP authentication?" ilk="function" name="apop?" signature="apop?()" />
+          <scope doc="Starts a pop3 session, attempts authentication, and quits. This method must not be called while POP3 session is opened. This method raises POPAuthenticationError if authentication fails." ilk="function" name="auth_only" signature="auth_only(account, password)" />
+          <scope doc="Deletes all messages on the server. &#10; If called with a block, yields each message in turn before deleting it. &#10; Example &#10; n = 1&#10;pop.delete_all do |m|&#10;  File.open(&quot;inbox/#{n}&quot;) do |f|&#10;    f.write m.pop&#10;  end&#10;  n += 1&#10;end&#10; This method raises a POPError if an error occurs." ilk="function" name="delete_all" signature="delete_all()" />
+          <scope doc="Disable SSL for all new instances." ilk="function" name="disable_ssl" signature="disable_ssl()" />
+          <scope ilk="function" name="each" signature="each()" />
+          <scope doc="Yields each message to the passed-in block in turn. Equivalent to: &#10; pop3.mails.each do |popmail|&#10;  ....&#10;end&#10; This method raises a POPError if an error occurs." ilk="function" name="each_mail" signature="each_mail()" />
+          <scope doc="Enables SSL for this instance.  Must be called before the connection is established to have any effect. +params[:port]+ is port to establish the SSL connection on; Defaults to 995. +params+ (except :port) is passed to OpenSSL::SSLContext#set_params." ilk="function" name="enable_ssl" signature="enable_ssl(verify_or_params = {}, certs = nil, port = nil)" />
+          <scope doc="Finishes a POP3 session and closes TCP connection." ilk="function" name="finish" signature="finish()" />
+          <scope doc="Provide human-readable stringification of class state." ilk="function" name="inspect" signature="inspect()" />
+          <scope doc="deguging output for +msg+" ilk="function" name="logging" signature="logging(msg)" />
+          <scope doc="Returns an array of Net::POPMail objects, representing all the messages on the server.  This array is renewed when the session restarts; otherwise, it is fetched from the server the first time this method is called (directly or indirectly) and cached. &#10; This method raises a POPError if an error occurs." ilk="function" name="mails" signature="mails()" />
+          <scope doc="Returns the total size in bytes of all the messages on the POP server." ilk="function" name="n_bytes" signature="n_bytes()" />
+          <scope doc="Returns the number of messages on the POP server." ilk="function" name="n_mails" signature="n_mails()" />
+          <scope doc="The port number to connect to." ilk="function" name="port" signature="port()" />
+          <scope doc="Set the read timeout." ilk="function" name="read_timeout=" signature="read_timeout=(sec)" />
+          <scope doc="Resets the session.  This clears all &quot;deleted&quot; marks from messages. &#10; This method raises a POPError if an error occurs." ilk="function" name="reset" signature="reset()" />
+          <scope doc="*WARNING*: This method causes a serious security hole. Use this method only for debugging. &#10; Set an output stream for debugging. &#10; Example &#10; pop = Net::POP.new(addr, port)&#10;pop.set_debug_output $stderr&#10;pop.start(account, passwd) do |pop|&#10;  ....&#10;end" ilk="function" name="set_debug_output" signature="set_debug_output(arg)" />
+          <scope doc="Starts a POP3 session. &#10; When called with block, gives a POP3 object to the block and closes the session after block call finishes. &#10; This method raises a POPAuthenticationError if authentication fails." ilk="function" name="start" signature="start(account, password)" />
+          <scope doc="+true+ if the POP3 session has started." ilk="function" name="started?" signature="started?()" />
+          <scope doc="does this instance use SSL?" ilk="function" name="use_ssl?" signature="use_ssl?()" />
+          <scope ilk="function" name="address" />
+          <scope ilk="function" name="open_timeout" />
+          <scope ilk="function" name="open_timeout=" />
+          <scope ilk="function" name="read_timeout" />
+        </scope>
+        <scope classrefs="Protocol" ilk="class" name="POP3Session">
+          <scope attributes="__classmethod__" doc="Returns the APOP class if +isapop+ is true; otherwise, returns the POP class.  For example: &#10; # Example 1&#10;pop = Net::POP3::APOP($is_apop).new(addr, port)&#10;&#10;# Example 2&#10;Net::POP3::APOP($is_apop).start(addr, port) do |pop|&#10;  ....&#10;end" ilk="function" name="APOP" signature="APOP(isapop)" />
+          <scope attributes="__classmethod__" doc="Opens a POP3 session, attempts authentication, and quits. &#10; This method raises POPAuthenticationError if authentication fails. &#10; Example: normal POP3 &#10; Net::POP3.auth_only('pop.example.com', 110,&#10;                    'YourAccount', 'YourPassword')&#10; Example: APOP &#10; Net::POP3.auth_only('pop.example.com', 110,&#10;                    'YourAccount', 'YourPassword', true)" ilk="function" name="auth_only" signature="auth_only(address, port = nil, account = nil, password = nil, isapop = false)" />
+          <scope attributes="__classmethod__" doc="returns the :ca_file or :ca_path from POP3.ssh_params" ilk="function" name="certs" signature="certs()" />
+          <scope attributes="__classmethod__" doc="Constructs proper parameters from arguments" ilk="function" name="create_ssl_params" signature="create_ssl_params(verify_or_params = {}, certs = nil)" />
+          <scope attributes="__classmethod__" doc="The default port for POP3 connections, port 110" ilk="function" name="default_pop3_port" signature="default_pop3_port()" />
+          <scope attributes="__classmethod__" doc="The default port for POP3S connections, port 995" ilk="function" name="default_pop3s_port" signature="default_pop3s_port()" />
+          <scope attributes="__classmethod__" doc="returns the port for POP3" ilk="function" name="default_port" signature="default_port()" />
+          <scope attributes="__classmethod__" doc="Starts a POP3 session and deletes all messages on the server. If a block is given, each POPMail object is yielded to it before being deleted. &#10; This method raises a POPAuthenticationError if authentication fails. &#10; Example &#10; Net::POP3.delete_all('pop.example.com', 110,&#10;                     'YourAccount', 'YourPassword') do |m|&#10;  file.write m.pop&#10;end" ilk="function" name="delete_all" signature="delete_all(address, port = nil, account = nil, password = nil, isapop = false, &amp;block)" />
+          <scope attributes="__classmethod__" doc="Disable SSL for all new instances." ilk="function" name="disable_ssl" signature="disable_ssl()" />
+          <scope attributes="__classmethod__" doc="Enable SSL for all new instances. +params+ is passed to OpenSSL::SSLContext#set_params." ilk="function" name="enable_ssl" signature="enable_ssl(*args)" />
+          <scope attributes="__classmethod__" doc="Starts a POP3 session and iterates over each POPMail object, yielding it to the +block+. This method is equivalent to: &#10; Net::POP3.start(address, port, account, password) do |pop|&#10;  pop.each_mail do |m|&#10;    yield m&#10;  end&#10;end&#10; This method raises a POPAuthenticationError if authentication fails. &#10; Example &#10; Net::POP3.foreach('pop.example.com', 110,&#10;                  'YourAccount', 'YourPassword') do |m|&#10;  file.write m.pop&#10;  m.delete if $DELETE&#10;end" ilk="function" name="foreach" signature="foreach(address, port = nil, account = nil, password = nil, isapop = false)" />
+          <scope attributes="__classmethod__ __ctor__" doc="Creates a new POP3 object. &#10; +address+ is the hostname or ip address of your POP3 server. &#10; The optional +port+ is the port to connect to. &#10; The optional +isapop+ specifies whether this connection is going to use APOP authentication; it defaults to +false+. &#10; This method does *not* open the TCP connection." ilk="function" name="new" signature="new(addr, port = nil, isapop = false)" />
+          <scope attributes="__classmethod__" doc="returns the SSL Parameters &#10; see also POP3.enable_ssl" ilk="function" name="ssl_params" signature="ssl_params()" />
+          <scope attributes="__classmethod__" doc="Creates a new POP3 object and open the connection.  Equivalent to &#10; Net::POP3.new(address, port, isapop).start(account, password)&#10; If +block+ is provided, yields the newly-opened POP3 object to it, and automatically closes it at the end of the session. &#10; Example &#10; Net::POP3.start(addr, port, account, password) do |pop|&#10;  pop.each_mail do |m|&#10;    file.write m.pop&#10;    m.delete&#10;  end&#10;end" ilk="function" name="start" signature="start(address, port = nil, account = nil, password = nil, isapop = false)" />
+          <scope attributes="__classmethod__" doc="returns +true+ if POP3.ssl_params is set" ilk="function" name="use_ssl?" signature="use_ssl?()" />
+          <scope attributes="__classmethod__" doc="returns whether verify_mode is enable from POP3.ssl_params" ilk="function" name="verify" signature="verify()" />
+          <scope ilk="function" name="active?" signature="active?()" />
+          <scope doc="Does this instance use APOP authentication?" ilk="function" name="apop?" signature="apop?()" />
+          <scope doc="Starts a pop3 session, attempts authentication, and quits. This method must not be called while POP3 session is opened. This method raises POPAuthenticationError if authentication fails." ilk="function" name="auth_only" signature="auth_only(account, password)" />
+          <scope doc="Deletes all messages on the server. &#10; If called with a block, yields each message in turn before deleting it. &#10; Example &#10; n = 1&#10;pop.delete_all do |m|&#10;  File.open(&quot;inbox/#{n}&quot;) do |f|&#10;    f.write m.pop&#10;  end&#10;  n += 1&#10;end&#10; This method raises a POPError if an error occurs." ilk="function" name="delete_all" signature="delete_all()" />
+          <scope doc="Disable SSL for all new instances." ilk="function" name="disable_ssl" signature="disable_ssl()" />
+          <scope ilk="function" name="each" signature="each()" />
+          <scope doc="Yields each message to the passed-in block in turn. Equivalent to: &#10; pop3.mails.each do |popmail|&#10;  ....&#10;end&#10; This method raises a POPError if an error occurs." ilk="function" name="each_mail" signature="each_mail()" />
+          <scope doc="Enables SSL for this instance.  Must be called before the connection is established to have any effect. +params[:port]+ is port to establish the SSL connection on; Defaults to 995. +params+ (except :port) is passed to OpenSSL::SSLContext#set_params." ilk="function" name="enable_ssl" signature="enable_ssl(verify_or_params = {}, certs = nil, port = nil)" />
+          <scope doc="Finishes a POP3 session and closes TCP connection." ilk="function" name="finish" signature="finish()" />
+          <scope doc="Provide human-readable stringification of class state." ilk="function" name="inspect" signature="inspect()" />
+          <scope doc="deguging output for +msg+" ilk="function" name="logging" signature="logging(msg)" />
+          <scope doc="Returns an array of Net::POPMail objects, representing all the messages on the server.  This array is renewed when the session restarts; otherwise, it is fetched from the server the first time this method is called (directly or indirectly) and cached. &#10; This method raises a POPError if an error occurs." ilk="function" name="mails" signature="mails()" />
+          <scope doc="Returns the total size in bytes of all the messages on the POP server." ilk="function" name="n_bytes" signature="n_bytes()" />
+          <scope doc="Returns the number of messages on the POP server." ilk="function" name="n_mails" signature="n_mails()" />
+          <scope doc="The port number to connect to." ilk="function" name="port" signature="port()" />
+          <scope doc="Set the read timeout." ilk="function" name="read_timeout=" signature="read_timeout=(sec)" />
+          <scope doc="Resets the session.  This clears all &quot;deleted&quot; marks from messages. &#10; This method raises a POPError if an error occurs." ilk="function" name="reset" signature="reset()" />
+          <scope doc="*WARNING*: This method causes a serious security hole. Use this method only for debugging. &#10; Set an output stream for debugging. &#10; Example &#10; pop = Net::POP.new(addr, port)&#10;pop.set_debug_output $stderr&#10;pop.start(account, passwd) do |pop|&#10;  ....&#10;end" ilk="function" name="set_debug_output" signature="set_debug_output(arg)" />
+          <scope doc="Starts a POP3 session. &#10; When called with block, gives a POP3 object to the block and closes the session after block call finishes. &#10; This method raises a POPAuthenticationError if authentication fails." ilk="function" name="start" signature="start(account, password)" />
+          <scope doc="+true+ if the POP3 session has started." ilk="function" name="started?" signature="started?()" />
+          <scope doc="does this instance use SSL?" ilk="function" name="use_ssl?" signature="use_ssl?()" />
+          <scope ilk="function" name="address" />
+          <scope ilk="function" name="open_timeout" />
+          <scope ilk="function" name="open_timeout=" />
+          <scope ilk="function" name="read_timeout" />
+        </scope>
+        <scope classrefs="ProtoAuthError" ilk="class" name="POPAuthenticationError">
+        </scope>
+        <scope classrefs="Net::POPError" ilk="class" name="POPBadResponse">
+        </scope>
+        <scope classrefs="ProtocolError" ilk="class" name="POPError">
+        </scope>
+        <scope classrefs="Object" ilk="class" name="POPMail">
+          <scope ilk="function" name="all" signature="all( dest = '' )" />
+          <scope doc="Marks a message for deletion on the server.  Deletion does not actually occur until the end of the session; deletion may be cancelled for _all_ marked messages by calling POP3#reset(). &#10; This method raises a POPError if an error occurs. &#10; Example &#10; POP3.start('pop.example.com', 110,&#10;           'YourAccount, 'YourPassword') do |pop|&#10;  n = 1&#10;  pop.mails.each do |popmail|&#10;    File.open(&quot;inbox/#{n}&quot;, 'w') do |f|&#10;      f.write popmail.pop&#10;    end&#10;    popmail.delete         ####&#10;    n += 1&#10;  end" ilk="function" name="delete" signature="delete()" />
+          <scope ilk="function" name="delete!" signature="delete!()" />
+          <scope doc="True if the mail has been deleted." ilk="function" name="deleted?" signature="deleted?()" />
+          <scope doc="Fetches the message header. &#10; The optional +dest+ argument is obsolete. &#10; This method raises a POPError if an error occurs." ilk="function" name="header" signature="header(dest = '')" />
+          <scope doc="Provide human-readable stringification of class state." ilk="function" name="inspect" signature="inspect()" />
+          <scope ilk="function" name="mail" signature="mail( dest = '' )" />
+          <scope doc="This method fetches the message.  If called with a block, the message is yielded to the block one chunk at a time.  If called without a block, the message is returned as a String.  The optional +dest+ argument will be prepended to the returned String; this argument is essentially obsolete. &#10; Example without block &#10; POP3.start('pop.example.com', 110,&#10;           'YourAccount, 'YourPassword') do |pop|&#10;  n = 1&#10;  pop.mails.each do |popmail|&#10;    File.open(&quot;inbox/#{n}&quot;, 'w') do |f|&#10;      f.write popmail.pop&#10;    end&#10;    popmail.delete&#10;    n += 1&#10;  end&#10;end" ilk="function" name="pop" signature="pop( dest = '' )" />
+          <scope doc="Fetches the message header and +lines+ lines of body. &#10; The optional +dest+ argument is obsolete. &#10; This method raises a POPError if an error occurs." ilk="function" name="top" signature="top(lines, dest = '')" />
+          <scope ilk="function" name="uidl" signature="uidl()" />
+          <scope doc="Returns the unique-id of the message. Normally the unique-id is a hash string of the message. &#10; This method raises a POPError if an error occurs." ilk="function" name="unique_id" signature="unique_id()" />
+          <scope ilk="function" name="length" />
+          <scope ilk="function" name="number" />
+          <scope ilk="function" name="size" />
+        </scope>
+        <scope classrefs="Protocol" ilk="class" name="POPSession">
+          <scope attributes="__classmethod__" doc="Returns the APOP class if +isapop+ is true; otherwise, returns the POP class.  For example: &#10; # Example 1&#10;pop = Net::POP3::APOP($is_apop).new(addr, port)&#10;&#10;# Example 2&#10;Net::POP3::APOP($is_apop).start(addr, port) do |pop|&#10;  ....&#10;end" ilk="function" name="APOP" signature="APOP(isapop)" />
+          <scope attributes="__classmethod__" doc="Opens a POP3 session, attempts authentication, and quits. &#10; This method raises POPAuthenticationError if authentication fails. &#10; Example: normal POP3 &#10; Net::POP3.auth_only('pop.example.com', 110,&#10;                    'YourAccount', 'YourPassword')&#10; Example: APOP &#10; Net::POP3.auth_only('pop.example.com', 110,&#10;                    'YourAccount', 'YourPassword', true)" ilk="function" name="auth_only" signature="auth_only(address, port = nil, account = nil, password = nil, isapop = false)" />
+          <scope attributes="__classmethod__" doc="returns the :ca_file or :ca_path from POP3.ssh_params" ilk="function" name="certs" signature="certs()" />
+          <scope attributes="__classmethod__" doc="Constructs proper parameters from arguments" ilk="function" name="create_ssl_params" signature="create_ssl_params(verify_or_params = {}, certs = nil)" />
+          <scope attributes="__classmethod__" doc="The default port for POP3 connections, port 110" ilk="function" name="default_pop3_port" signature="default_pop3_port()" />
+          <scope attributes="__classmethod__" doc="The default port for POP3S connections, port 995" ilk="function" name="default_pop3s_port" signature="default_pop3s_port()" />
+          <scope attributes="__classmethod__" doc="returns the port for POP3" ilk="function" name="default_port" signature="default_port()" />
+          <scope attributes="__classmethod__" doc="Starts a POP3 session and deletes all messages on the server. If a block is given, each POPMail object is yielded to it before being deleted. &#10; This method raises a POPAuthenticationError if authentication fails. &#10; Example &#10; Net::POP3.delete_all('pop.example.com', 110,&#10;                     'YourAccount', 'YourPassword') do |m|&#10;  file.write m.pop&#10;end" ilk="function" name="delete_all" signature="delete_all(address, port = nil, account = nil, password = nil, isapop = false, &amp;block)" />
+          <scope attributes="__classmethod__" doc="Disable SSL for all new instances." ilk="function" name="disable_ssl" signature="disable_ssl()" />
+          <scope attributes="__classmethod__" doc="Enable SSL for all new instances. +params+ is passed to OpenSSL::SSLContext#set_params." ilk="function" name="enable_ssl" signature="enable_ssl(*args)" />
+          <scope attributes="__classmethod__" doc="Starts a POP3 session and iterates over each POPMail object, yielding it to the +block+. This method is equivalent to: &#10; Net::POP3.start(address, port, account, password) do |pop|&#10;  pop.each_mail do |m|&#10;    yield m&#10;  end&#10;end&#10; This method raises a POPAuthenticationError if authentication fails. &#10; Example &#10; Net::POP3.foreach('pop.example.com', 110,&#10;                  'YourAccount', 'YourPassword') do |m|&#10;  file.write m.pop&#10;  m.delete if $DELETE&#10;end" ilk="function" name="foreach" signature="foreach(address, port = nil, account = nil, password = nil, isapop = false)" />
+          <scope attributes="__classmethod__ __ctor__" doc="Creates a new POP3 object. &#10; +address+ is the hostname or ip address of your POP3 server. &#10; The optional +port+ is the port to connect to. &#10; The optional +isapop+ specifies whether this connection is going to use APOP authentication; it defaults to +false+. &#10; This method does *not* open the TCP connection." ilk="function" name="new" signature="new(addr, port = nil, isapop = false)" />
+          <scope attributes="__classmethod__" doc="returns the SSL Parameters &#10; see also POP3.enable_ssl" ilk="function" name="ssl_params" signature="ssl_params()" />
+          <scope attributes="__classmethod__" doc="Creates a new POP3 object and open the connection.  Equivalent to &#10; Net::POP3.new(address, port, isapop).start(account, password)&#10; If +block+ is provided, yields the newly-opened POP3 object to it, and automatically closes it at the end of the session. &#10; Example &#10; Net::POP3.start(addr, port, account, password) do |pop|&#10;  pop.each_mail do |m|&#10;    file.write m.pop&#10;    m.delete&#10;  end&#10;end" ilk="function" name="start" signature="start(address, port = nil, account = nil, password = nil, isapop = false)" />
+          <scope attributes="__classmethod__" doc="returns +true+ if POP3.ssl_params is set" ilk="function" name="use_ssl?" signature="use_ssl?()" />
+          <scope attributes="__classmethod__" doc="returns whether verify_mode is enable from POP3.ssl_params" ilk="function" name="verify" signature="verify()" />
+          <scope ilk="function" name="active?" signature="active?()" />
+          <scope doc="Does this instance use APOP authentication?" ilk="function" name="apop?" signature="apop?()" />
+          <scope doc="Starts a pop3 session, attempts authentication, and quits. This method must not be called while POP3 session is opened. This method raises POPAuthenticationError if authentication fails." ilk="function" name="auth_only" signature="auth_only(account, password)" />
+          <scope doc="Deletes all messages on the server. &#10; If called with a block, yields each message in turn before deleting it. &#10; Example &#10; n = 1&#10;pop.delete_all do |m|&#10;  File.open(&quot;inbox/#{n}&quot;) do |f|&#10;    f.write m.pop&#10;  end&#10;  n += 1&#10;end&#10; This method raises a POPError if an error occurs." ilk="function" name="delete_all" signature="delete_all()" />
+          <scope doc="Disable SSL for all new instances." ilk="function" name="disable_ssl" signature="disable_ssl()" />
+          <scope ilk="function" name="each" signature="each()" />
+          <scope doc="Yields each message to the passed-in block in turn. Equivalent to: &#10; pop3.mails.each do |popmail|&#10;  ....&#10;end&#10; This method raises a POPError if an error occurs." ilk="function" name="each_mail" signature="each_mail()" />
+          <scope doc="Enables SSL for this instance.  Must be called before the connection is established to have any effect. +params[:port]+ is port to establish the SSL connection on; Defaults to 995. +params+ (except :port) is passed to OpenSSL::SSLContext#set_params." ilk="function" name="enable_ssl" signature="enable_ssl(verify_or_params = {}, certs = nil, port = nil)" />
+          <scope doc="Finishes a POP3 session and closes TCP connection." ilk="function" name="finish" signature="finish()" />
+          <scope doc="Provide human-readable stringification of class state." ilk="function" name="inspect" signature="inspect()" />
+          <scope doc="deguging output for +msg+" ilk="function" name="logging" signature="logging(msg)" />
+          <scope doc="Returns an array of Net::POPMail objects, representing all the messages on the server.  This array is renewed when the session restarts; otherwise, it is fetched from the server the first time this method is called (directly or indirectly) and cached. &#10; This method raises a POPError if an error occurs." ilk="function" name="mails" signature="mails()" />
+          <scope doc="Returns the total size in bytes of all the messages on the POP server." ilk="function" name="n_bytes" signature="n_bytes()" />
+          <scope doc="Returns the number of messages on the POP server." ilk="function" name="n_mails" signature="n_mails()" />
+          <scope doc="The port number to connect to." ilk="function" name="port" signature="port()" />
+          <scope doc="Set the read timeout." ilk="function" name="read_timeout=" signature="read_timeout=(sec)" />
+          <scope doc="Resets the session.  This clears all &quot;deleted&quot; marks from messages. &#10; This method raises a POPError if an error occurs." ilk="function" name="reset" signature="reset()" />
+          <scope doc="*WARNING*: This method causes a serious security hole. Use this method only for debugging. &#10; Set an output stream for debugging. &#10; Example &#10; pop = Net::POP.new(addr, port)&#10;pop.set_debug_output $stderr&#10;pop.start(account, passwd) do |pop|&#10;  ....&#10;end" ilk="function" name="set_debug_output" signature="set_debug_output(arg)" />
+          <scope doc="Starts a POP3 session. &#10; When called with block, gives a POP3 object to the block and closes the session after block call finishes. &#10; This method raises a POPAuthenticationError if authentication fails." ilk="function" name="start" signature="start(account, password)" />
+          <scope doc="+true+ if the POP3 session has started." ilk="function" name="started?" signature="started?()" />
+          <scope doc="does this instance use SSL?" ilk="function" name="use_ssl?" signature="use_ssl?()" />
+          <scope ilk="function" name="address" />
+          <scope ilk="function" name="open_timeout" />
+          <scope ilk="function" name="open_timeout=" />
+          <scope ilk="function" name="read_timeout" />
+        </scope>
+      </scope>
+    </scope>
+    

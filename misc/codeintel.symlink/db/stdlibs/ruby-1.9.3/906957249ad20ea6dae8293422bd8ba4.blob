@@ -1,0 +1,13 @@
+<scope ilk="blob" lang="Ruby" name="rdoc/markup">
+      <scope ilk="namespace" name="RDoc">
+        <scope classrefs="Object" ilk="class" name="Markup">
+          <scope attributes="__classmethod__ __ctor__" doc="Take a block of text and use various heuristics to determine its structure (paragraphs, lists, and so on).  Invoke an event handler as we identify significant chunks." ilk="function" name="new" signature="new(attribute_manager = nil)" />
+          <scope doc="Add to the sequences recognized as general markup." ilk="function" name="add_html" signature="add_html(tag, name)" />
+          <scope doc="Add to other inline sequences.  For example, we could add WikiWords using something like: &#10; parser.add_special(/\b([A-Z][a-z]+[A-Z]\w+)/, :WIKIWORD)&#10; Each wiki word will be presented to the output formatter via the accept_special method." ilk="function" name="add_special" signature="add_special(pattern, name)" />
+          <scope doc="Add to the sequences used to add formatting to an individual word (such as *bold*).  Matching entries will generate attributes that the output formatters can recognize by their +name+." ilk="function" name="add_word_pair" signature="add_word_pair(start, stop, name)" />
+          <scope doc="We take +input+, parse it if necessary, then invoke the output +formatter+ using a Visitor to render the result." ilk="function" name="convert" signature="convert(input, formatter)" />
+          <scope ilk="function" name="attribute_manager" />
+        </scope>
+      </scope>
+    </scope>
+    

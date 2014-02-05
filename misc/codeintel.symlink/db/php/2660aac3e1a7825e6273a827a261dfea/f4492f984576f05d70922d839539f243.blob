@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="PHP" name="testTag.php" src="/private/var/www/paperless/wp-content/themes/paperless-agent/iSDK/Samples/testTag.php"><import line="2" module="isdk.php" /><variable citdl="iSDK" line="4" name="app" /><variable citdl="int" line="10" name="cid" /><variable citdl="int" line="12" name="tagId" /><variable citdl="app.grpAssign()" line="13" name="result" /></scope>

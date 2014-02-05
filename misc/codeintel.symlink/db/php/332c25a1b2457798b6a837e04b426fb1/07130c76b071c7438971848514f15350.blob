@@ -1,0 +1,1 @@
+<scope ilk="blob" lang="PHP" name="sqlite.php" src="/usr/local/Cellar/php55/5.5.7/lib/php/doc/Log/examples/sqlite.php"><import line="3" module="Log.php" /><variable citdl="array()" line="6" name="conf" /><variable citdl="Log.factory()" line="7" name="logger" /><variable citdl="sqlite_open()" line="11" name="db" /></scope>

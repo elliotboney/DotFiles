@@ -1,0 +1,12 @@
+<scope ilk="blob" lang="Ruby" name="webrick/httpservlet/cgihandler">
+      <scope ilk="namespace" name="WEBrick">
+        <scope ilk="namespace" name="HTTPServlet">
+          <scope classrefs="AbstractServlet" ilk="class" name="CGIHandler">
+            <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(server, name)" />
+            <scope ilk="function" name="do_GET" signature="do_GET(req, res)" />
+            <scope ilk="function" name="do_POST" signature="do_POST(req, res)" />
+          </scope>
+        </scope>
+      </scope>
+    </scope>
+    
