@@ -1,1 +1,0 @@
-<scope ilk="blob" lang="PHP" name="Core.php" src="/private/var/www/kw/wp-includes/SimplePie/Core.php"><scope classrefs="SimplePie" doc="SimplePie class.&#10;&#10;Class for backward compatibility.&#10;&#10;@deprecated Use {@see SimplePie} directly&#10;@package SimplePie&#10;@subpackage API" ilk="class" line="54" lineend="57" name="SimplePie_Core" /></scope>

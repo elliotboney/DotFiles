@@ -1,7 +1,0 @@
-<scope ilk="blob" lang="Ruby" name="rdoc/ghost_method">
-      <scope ilk="namespace" name="RDoc">
-        <scope classrefs="RDoc::AnyMethod" ilk="class" name="GhostMethod">
-        </scope>
-      </scope>
-    </scope>
-    

@@ -1,7 +1,0 @@
-<scope ilk="blob" lang="Ruby" name="shell/error">
-      <scope ilk="namespace" name="Shell">
-        <scope ilk="namespace" name="Error">
-        </scope>
-      </scope>
-    </scope>
-    

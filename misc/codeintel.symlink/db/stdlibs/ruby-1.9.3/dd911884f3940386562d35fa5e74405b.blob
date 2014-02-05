@@ -1,7 +1,0 @@
-<scope ilk="blob" lang="Ruby" name="rake/file_creation_task">
-      <scope ilk="namespace" name="Rake">
-        <scope classrefs="FileTask" ilk="class" name="FileCreationTask">
-        </scope>
-      </scope>
-    </scope>
-    

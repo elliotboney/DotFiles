@@ -1,1 +1,0 @@
-<scope ilk="blob" lang="PHP" name="scripts.php" src="/private/var/www/paperless/wp-content/old-plugins/cwk-wordpress-infusionsoft-integration/includes/scripts.php"><scope ilk="function" line="32" lineend="35" name="register_script" signature="register_script()" /><scope ilk="function" line="37" lineend="52" name="print_script" signature="print_script()" /></scope>

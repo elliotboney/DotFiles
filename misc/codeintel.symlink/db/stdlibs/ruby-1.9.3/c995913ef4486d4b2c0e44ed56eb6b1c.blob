@@ -1,7 +1,0 @@
-<scope ilk="blob" lang="Ruby" name="rake/task_argument_error">
-      <scope ilk="namespace" name="Rake">
-        <scope classrefs="ArgumentError" ilk="class" name="TaskArgumentError">
-        </scope>
-      </scope>
-    </scope>
-    

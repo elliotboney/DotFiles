@@ -1,1 +1,0 @@
-<scope ilk="blob" lang="PHP" name="profile.php" src="/private/var/www/wordpress.staging/wp-admin/profile.php"><import line="18" module="/user-edit.php" /><variable citdl="boolean" ilk="constant" line="15" name="IS_PROFILE_PAGE" /></scope>

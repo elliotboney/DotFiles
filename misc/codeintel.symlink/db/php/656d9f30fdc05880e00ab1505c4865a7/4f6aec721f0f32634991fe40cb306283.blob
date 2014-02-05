@@ -1,1 +1,0 @@
-<scope ilk="blob" lang="PHP" name="rscf.php" src="/private/var/www/kw/plugins/w3-total-cache/inc/options/cdn/rscf.php"><import line="49" module="/options/cdn/common/cnames.php" /><variable citdl="this._config.get_array()" line="49" name="cnames" /></scope>

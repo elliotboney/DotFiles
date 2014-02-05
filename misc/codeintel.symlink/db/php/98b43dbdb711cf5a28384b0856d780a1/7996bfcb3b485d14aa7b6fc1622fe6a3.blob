@@ -1,1 +1,0 @@
-<scope ilk="blob" lang="PHP" name="init.php" src="/private/var/www/kw/content/themes/goodlife/lib/init.php"><scope doc="Roots initial setup and constants" ilk="function" line="5" lineend="28" name="roots_setup" signature="roots_setup()" /><variable citdl="dirname()" ilk="constant" line="32" name="__DIR__" /></scope>

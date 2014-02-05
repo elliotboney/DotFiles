@@ -1,1 +1,0 @@
-<scope ilk="blob" lang="PHP" name="content-page.php" src="/private/var/www/kw/content/themes/roots/templates/content-page.php"><variable attributes="__not_yet_defined__" line="2" name="wp_query" /><variable citdl="get_post_meta()" line="15" name="template_name" /></scope>

@@ -1,1 +1,0 @@
-<scope ilk="blob" lang="PHP" name="bootstrap.php" src="/usr/local/pear/share/pear/PhpDocumentor/tests/common/bootstrap.php"><import line="16" module="/../../src/phpDocumentor/Bootstrap.php" /><scope ilk="namespace" line="20" name="phpDocumentor\PHPUnit"><variable citdl="realpath()" ilk="constant" line="20" name="TEMP_DIR" /></scope></scope>

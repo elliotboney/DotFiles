@@ -1,8 +1,0 @@
-<scope ilk="blob" lang="Ruby" name="irb/completion">
-      <scope ilk="namespace" name="IRB">
-        <scope ilk="namespace" name="InputCompletor">
-          <scope attributes="__classmethod__" ilk="function" name="select_message" signature="select_message(receiver, message, candidates, sep = &quot;.&quot;)" />
-        </scope>
-      </scope>
-    </scope>
-    

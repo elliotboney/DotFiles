@@ -1,9 +1,0 @@
-<scope ilk="blob" lang="Ruby" name="rake/tasklib">
-      <scope ilk="namespace" name="Rake">
-        <scope classrefs="Object" ilk="class" name="TaskLib">
-          <import symbol="Cloneable" />
-          <import symbol="Rake::DSL" />
-        </scope>
-      </scope>
-    </scope>
-    

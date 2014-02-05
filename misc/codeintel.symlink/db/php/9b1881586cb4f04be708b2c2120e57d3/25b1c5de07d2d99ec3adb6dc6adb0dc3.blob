@@ -1,1 +1,0 @@
-<scope ilk="blob" lang="PHP" name="admin.php" src="/private/var/www/paperless/wp-admin/user/admin.php"><import line="12" module="/admin.php" /><variable citdl="boolean" ilk="constant" line="10" name="WP_USER_ADMIN" /><variable citdl="apply_filters()" line="19" name="redirect_user_admin_request" /></scope>

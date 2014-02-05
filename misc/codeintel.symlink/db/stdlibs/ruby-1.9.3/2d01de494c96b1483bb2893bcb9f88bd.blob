@@ -1,9 +1,0 @@
-<scope ilk="blob" lang="Ruby" name="rdoc/encoding">
-      <scope ilk="namespace" name="RDoc">
-        <scope ilk="namespace" name="Encoding">
-          <scope attributes="__classmethod__" doc="Reads the contents of +filename+ and handles any encoding directives in the file. &#10; The content will be converted to the +encoding+.  If the file cannot be converted a warning will be printed and nil will be returned. &#10; If +force_transcode+ is true the document will be transcoded and any unknown character in the target encoding will be replaced with '?'" ilk="function" name="read_file" signature="read_file(filename, encoding, force_transcode = false)" />
-          <scope attributes="__classmethod__" doc="Sets the encoding of +string+ based on the magic comment" ilk="function" name="set_encoding" signature="set_encoding(string)" />
-        </scope>
-      </scope>
-    </scope>
-    

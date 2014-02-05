@@ -1,8 +1,0 @@
-<scope ilk="blob" lang="Ruby" name="rake/default_loader">
-      <scope ilk="namespace" name="Rake">
-        <scope classrefs="Object" ilk="class" name="DefaultLoader">
-          <scope ilk="function" name="load" signature="load(fn)" />
-        </scope>
-      </scope>
-    </scope>
-    

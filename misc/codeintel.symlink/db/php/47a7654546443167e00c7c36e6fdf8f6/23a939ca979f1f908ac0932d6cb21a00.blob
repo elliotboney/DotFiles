@@ -1,1 +1,0 @@
-<scope ilk="blob" lang="PHP" name="form-user-edit.php" src="/private/var/www/paperless/wp-content/plugins/bbpress/templates/default/bbpress/form-user-edit.php"><variable attributes="__not_yet_defined__" line="61" name="desc" /><variable line="61" name="name" /><variable citdl="get_option()" line="110" name="new_email" /></scope>

@@ -1,1 +1,0 @@
-<scope ilk="blob" lang="PHP" name="feed-atom-comments.php" src="/private/var/www/paperless/wp-includes/feed-atom-comments.php"><variable citdl="GLOBALS" line="45" name="comment_post" /><variable citdl="get_the_title()" line="50" name="title" /><variable citdl="get_comment()" line="77" name="parent_comment" /></scope>

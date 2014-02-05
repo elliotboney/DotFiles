@@ -1,1 +1,0 @@
-<scope ilk="blob" lang="PHP" name="wp-blog-header.php" src="/private/var/www/wordpress.staging/wp-blog-header.php"><import line="12" module="/wp-load.php" /><import line="16" module="/template-loader.php" /><variable attributes="__not_yet_defined__" citdl="boolean" line="8" name="wp_did_header" /></scope>

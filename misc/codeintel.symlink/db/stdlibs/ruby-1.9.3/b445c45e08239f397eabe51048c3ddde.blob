@@ -1,8 +1,0 @@
-<scope ilk="blob" lang="Ruby" name="bigdecimal/jacobian">
-      <scope ilk="namespace" name="Jacobian">
-        <scope doc="Computes the derivative of f[i] at x[i]. fx is the value of f at x." ilk="function" name="dfdxi" signature="dfdxi(f,fx,x,i)" />
-        <scope doc="Determines the equality of two numbers by comparing to zero, or using the epsilon value" ilk="function" name="isEqual" signature="isEqual(a,b,zero=0.0,e=1.0e-8)" />
-        <scope doc="Computes the Jacobian of f at x. fx is the value of f at x." ilk="function" name="jacobian" signature="jacobian(f,fx,x)" />
-      </scope>
-    </scope>
-    

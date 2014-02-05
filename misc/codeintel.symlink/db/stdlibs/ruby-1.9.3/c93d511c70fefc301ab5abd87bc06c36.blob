@@ -1,7 +1,0 @@
-<scope ilk="blob" lang="Ruby" name="json/ext">
-      <scope ilk="namespace" name="JSON">
-        <scope ilk="namespace" name="Ext">
-        </scope>
-      </scope>
-    </scope>
-    

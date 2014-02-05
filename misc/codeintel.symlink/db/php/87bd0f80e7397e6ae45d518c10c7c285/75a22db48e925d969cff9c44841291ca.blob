@@ -1,1 +1,0 @@
-<scope ilk="blob" lang="PHP" name="TraitUseAdaptation.php" src="/usr/local/pear/share/pear/PhpDocumentor/vendor/nikic/php-parser/lib/PHPParser/Node/Stmt/TraitUseAdaptation.php"><scope attributes="abstract" classrefs="PHPParser_Node_Stmt" ilk="class" line="3" lineend="5" name="PHPParser_Node_Stmt_TraitUseAdaptation" /></scope>

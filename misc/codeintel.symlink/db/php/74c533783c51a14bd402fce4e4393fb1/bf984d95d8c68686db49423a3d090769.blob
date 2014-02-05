@@ -1,1 +1,0 @@
-<scope ilk="blob" lang="PHP" name="feed-rss2-comments.php" src="/private/var/www/paperless/wp-includes/feed-rss2-comments.php"><variable citdl="GLOBALS" line="37" name="comment_post" /><variable citdl="get_the_title()" line="42" name="title" /></scope>

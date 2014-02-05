@@ -1,7 +1,0 @@
-<scope ilk="blob" lang="Ruby" name="rexml/dtd/notationdecl">
-      <scope ilk="namespace" name="REXML">
-        <scope ilk="namespace" name="DTD">
-        </scope>
-      </scope>
-    </scope>
-    

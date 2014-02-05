@@ -1,1 +1,0 @@
-<scope ilk="blob" lang="PHP" name="cf2.php" src="/private/var/www/wordpress.staging/plugins/w3-total-cache/inc/options/cdn/cf2.php"><import line="46" module="/options/cdn/common/cnames.php" /><variable citdl="this._config.get_array()" line="46" name="cnames" /></scope>

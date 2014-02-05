@@ -1,9 +1,0 @@
-<scope ilk="blob" lang="Ruby" name="drb/observer">
-      <scope ilk="namespace" name="DRb">
-        <scope ilk="namespace" name="DRbObservable">
-          <import symbol="Observable" />
-          <scope ilk="function" name="notify_observers" signature="notify_observers(*arg)" />
-        </scope>
-      </scope>
-    </scope>
-    

@@ -1,1 +1,0 @@
-<scope ilk="blob" lang="PHP" name="bootstrap.php" src="/usr/local/pear/share/pear/PhpDocumentor/vendor/pimple/pimple/tests/bootstrap.php"><import line="12" module="/../lib/Pimple.php" /><import line="13" module="/Pimple/Tests/Service.php" /><import line="14" module="/Pimple/Tests/Invokable.php" /><import line="15" module="/Pimple/Tests/NonInvokable.php" /></scope>

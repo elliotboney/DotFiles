@@ -1,1 +1,0 @@
-<scope ilk="blob" lang="PHP" name="example_lowercase.php" src="/usr/local/Cellar/php55/5.5.7/lib/php/doc/PHP_Beautifier/examples/example_lowercase.php"><scope doc="lowercase all" ilk="function" line="5" lineend="7" name="test" signature="test()" /><variable attributes="__not_yet_defined__" line="8" name="a" /><variable attributes="__not_yet_defined__" line="8" name="b" /></scope>

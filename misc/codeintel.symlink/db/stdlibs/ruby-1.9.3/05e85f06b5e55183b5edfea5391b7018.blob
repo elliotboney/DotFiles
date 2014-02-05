@@ -1,9 +1,0 @@
-<scope ilk="blob" lang="Ruby" name="openssl/cipher">
-      <scope ilk="namespace" name="OpenSSL">
-        <scope ilk="namespace" name="Cipher">
-          <scope classrefs="OpenSSL::Cipher" ilk="class" name="Cipher">
-          </scope>
-        </scope>
-      </scope>
-    </scope>
-    

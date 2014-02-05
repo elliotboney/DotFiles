@@ -1,9 +1,0 @@
-<scope ilk="blob" lang="Ruby" name="singleton">
-      <scope ilk="namespace" name="Singleton">
-        <scope attributes="__classmethod__" doc="By default calls instance(). Override to retain singleton state." ilk="function" name="_load" signature="_load" />
-        <scope doc="By default, do not retain any state when marshalling." ilk="function" name="_dump" signature="_dump(depth = -1)" />
-        <scope doc="Raises a TypeError to prevent cloning." ilk="function" name="clone" signature="clone()" />
-        <scope doc="Raises a TypeError to prevent duping." ilk="function" name="dup" signature="dup()" />
-      </scope>
-    </scope>
-    

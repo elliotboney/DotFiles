@@ -1,1 +1,0 @@
-<scope ilk="blob" lang="PHP" name="phpdoc.inc" src="/usr/local/pear/share/pear/PhpDocumentor/phpDocumentor/phpdoc.inc"><import line="60" module="phpDocumentor/Setup.inc.php" /><variable citdl="explode()" line="44" name="a" /><variable attributes="__not_yet_defined__" line="48" name="GLOBALS" /><variable citdl="phpDocumentor_setup" line="62" name="phpdoc" /></scope>

@@ -1,1 +1,0 @@
-<scope ilk="blob" lang="PHP" name="Exception.php" src="/private/var/www/paperless/wp-content/plugins/CustIS/custis/wordpress/Exception.php"><scope ilk="namespace" line="2" name="custis\wordpress"><scope classrefs="\Exception" doc="Base exception to throw when somehting happens in custis core" ilk="class" line="5" lineend="8" name="Exception" /></scope></scope>

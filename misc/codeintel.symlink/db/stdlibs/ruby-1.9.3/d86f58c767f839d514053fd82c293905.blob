@@ -1,7 +1,0 @@
-<scope ilk="blob" lang="Ruby" name="coverage">
-      <scope ilk="namespace" name="Coverage">
-        <scope attributes="__classmethod__" doc="Returns a hash that contains filename as key and coverage array as value and disables coverage measurement." ilk="function" name="result" signature="result()" />
-        <scope attributes="__classmethod__" doc="Enables coverage measurement." ilk="function" name="start" signature="start()" />
-      </scope>
-    </scope>
-    

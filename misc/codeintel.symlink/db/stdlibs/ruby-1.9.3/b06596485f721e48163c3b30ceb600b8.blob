@@ -1,9 +1,0 @@
-<scope ilk="blob" lang="Ruby" name="webrick/httpauth">
-      <scope ilk="namespace" name="WEBrick">
-        <scope ilk="namespace" name="HTTPAuth">
-          <scope doc="Simple wrapper for providing basic authentication for a request.  When called with a request +req+, response +res+, authentication +realm+ and +block+ the block will be called with a +username+ and +password+.  If the block returns true the request is allowed to continue, otherwise an HTTPStatus::Unauthorized error is raised." ilk="function" name="basic_auth" signature="basic_auth(req, res, realm)" />
-          <scope doc="Simple wrapper for providing basic authentication for a proxied request. When called with a request +req+, response +res+, authentication +realm+ and +block+ the block will be called with a +username+ and +password+. If the block returns true the request is allowed to continue, otherwise an HTTPStatus::ProxyAuthenticationRequired error is raised." ilk="function" name="proxy_basic_auth" signature="proxy_basic_auth(req, res, realm)" />
-        </scope>
-      </scope>
-    </scope>
-    

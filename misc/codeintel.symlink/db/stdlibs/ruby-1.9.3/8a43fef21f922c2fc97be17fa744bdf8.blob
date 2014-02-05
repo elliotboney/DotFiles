@@ -1,9 +1,0 @@
-<scope ilk="blob" lang="Ruby" name="scanf">
-      <scope ilk="namespace" name="Scanf">
-        <scope classrefs="Object" ilk="class" name="FormatSpecifier">
-        </scope>
-        <scope classrefs="Object" ilk="class" name="FormatString">
-        </scope>
-      </scope>
-    </scope>
-    

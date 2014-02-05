@@ -1,1 +1,0 @@
-<scope ilk="blob" lang="PHP" name="w3-total-cache.php" src="/private/var/www/kw/plugins/w3-total-cache/w3-total-cache.php"><import line="50" module="/lib/EDD/integration.php" /><import line="56" module="/inc/define.php" /><variable citdl="w3_instance()" line="65" name="root" /></scope>

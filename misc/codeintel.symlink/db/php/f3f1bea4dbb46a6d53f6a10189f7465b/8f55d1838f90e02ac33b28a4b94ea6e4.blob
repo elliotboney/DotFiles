@@ -1,1 +1,0 @@
-<scope ilk="blob" lang="PHP" name="tmpl_coaching_club_upsell.php" src="/private/var/www/paperless/wp-content/themes/paperless-agent/tmpl_coaching_club_upsell.php"><variable citdl="get_sub_field()" line="20" name="image_obj" /><variable citdl="wpautop()" line="53" name="copy_content" /><variable citdl="wpautop()" line="62" name="para_content" /></scope>

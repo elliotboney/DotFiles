@@ -1,1 +1,0 @@
-<scope ilk="blob" lang="PHP" name="raw_html.php" src="/private/var/www/kw/plugins/raw-html/raw_html.php"><import line="18" module="include/tag-handler.php" /><import line="19" module="include/formatting-override.php" /><import line="22" module="/editor-plugin/init.php" /><variable ilk="constant" line="16" name="RAWHTML_PLUGIN_FILE" /></scope>

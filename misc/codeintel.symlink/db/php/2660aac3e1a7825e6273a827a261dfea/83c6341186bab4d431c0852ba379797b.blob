@@ -1,1 +1,0 @@
-<scope ilk="blob" lang="PHP" name="createEmailTemplateTest.php" src="/private/var/www/paperless/wp-content/themes/paperless-agent/iSDK/Samples/createEmailTemplateTest.php"><import line="3" module="isdk.php" /><variable citdl="iSDK" line="5" name="app" /><variable citdl="app.createEmailTemplate()" line="13" name="tmpId" /></scope>

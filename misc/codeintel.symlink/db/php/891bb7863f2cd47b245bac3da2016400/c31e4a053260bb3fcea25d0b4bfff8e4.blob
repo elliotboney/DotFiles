@@ -1,1 +1,0 @@
-<scope ilk="blob" lang="PHP" name="peclcmd.php" src="/usr/local/pear/share/pear/peclcmd.php"><import line="30" module="pearcmd.php" /><variable citdl="boolean" line="24" name="raw" /><variable citdl="string" ilk="constant" line="29" name="PEAR_RUNTYPE" /></scope>

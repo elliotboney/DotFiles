@@ -1,9 +1,0 @@
-<scope ilk="blob" lang="Ruby" name="rake/cloneable">
-      <scope ilk="namespace" name="Rake">
-        <scope ilk="namespace" name="Cloneable">
-          <scope ilk="function" name="clone" signature="clone()" />
-          <scope doc="Clone an object by making a new object and setting all the instance variables to the same values." ilk="function" name="dup" signature="dup()" />
-        </scope>
-      </scope>
-    </scope>
-    

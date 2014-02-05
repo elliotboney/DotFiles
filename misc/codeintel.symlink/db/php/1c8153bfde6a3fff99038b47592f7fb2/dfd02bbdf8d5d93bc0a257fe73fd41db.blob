@@ -1,1 +1,0 @@
-<scope ilk="blob" lang="PHP" name="get_wp.php" src="/private/var/www/wordpress.staging/content/themes/ninezeroseven/admin/zilla-shortcodes/tinymce/get_wp.php"><import line="8" module="/wp-load.php" /><variable line="3" name="absolute_path" /><variable citdl="explode()" line="4" name="path_to_file" /><variable citdl="path_to_file" line="5" name="path_to_wp" /></scope>

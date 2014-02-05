@@ -1,1 +1,0 @@
-<scope ilk="blob" lang="PHP" name="example.php" src="/usr/local/Cellar/php55/5.5.7/lib/php/doc/Console_Getargs/examples/example.php"><import line="8" module="Console/Getargs.php" /><variable citdl="array()" line="47" name="config" /><variable citdl="Console_Getargs.factory()" line="49" name="args" /><variable citdl="string" line="58" name="header" /></scope>

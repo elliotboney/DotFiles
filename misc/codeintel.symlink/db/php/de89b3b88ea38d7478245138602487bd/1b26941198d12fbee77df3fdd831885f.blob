@@ -1,1 +1,0 @@
-<scope ilk="blob" lang="PHP" name="custom_types.php" src="/private/var/www/wordpress.staging/content/themes/dgbootstrap/custom_types.php"><scope ilk="function" line="7" lineend="42" name="create_projects_post_type" signature="create_projects_post_type()"><variable citdl="array()" line="40" name="args" /><variable citdl="array()" line="21" name="labels" /></scope></scope>

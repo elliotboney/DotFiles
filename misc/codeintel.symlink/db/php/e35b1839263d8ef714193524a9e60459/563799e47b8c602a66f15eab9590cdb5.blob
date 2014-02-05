@@ -1,1 +1,0 @@
-<scope ilk="blob" lang="PHP" name="featured-content.php" src="/private/var/www/kw/content/themes/twentyfourteen/featured-content.php"><variable citdl="twentyfourteen_get_featured_posts()" line="21" name="featured_posts" /><variable attributes="__not_yet_defined__" line="22" name="post" /><variable line="22" name="order" /></scope>

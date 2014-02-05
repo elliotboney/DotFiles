@@ -1,6 +1,0 @@
-<scope ilk="blob" lang="Ruby" name="win32ole/property">
-      <scope classrefs="Object" ilk="class" name="OLEProperty">
-        <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new(obj, dispid, gettypes, settypes)" />
-      </scope>
-    </scope>
-    

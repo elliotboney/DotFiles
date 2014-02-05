@@ -1,9 +1,0 @@
-<scope ilk="blob" lang="Ruby" name="rdoc/erbio">
-      <scope ilk="namespace" name="RDoc">
-        <scope classrefs="ERB" ilk="class" name="ERBIO">
-          <scope attributes="__classmethod__ __ctor__" doc="Defaults +eoutvar+ to 'io', otherwise is identical to ERB's initialize" ilk="function" name="new" signature="new(str, safe_level = nil, trim_mode = nil, eoutvar = 'io')" />
-          <scope doc="Instructs +compiler+ how to write to +io_variable+" ilk="function" name="set_eoutvar" signature="set_eoutvar(compiler, io_variable)" />
-        </scope>
-      </scope>
-    </scope>
-    

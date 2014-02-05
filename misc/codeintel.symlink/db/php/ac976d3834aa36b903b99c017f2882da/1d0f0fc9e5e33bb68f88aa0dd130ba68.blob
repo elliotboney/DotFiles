@@ -1,1 +1,0 @@
-<scope ilk="blob" lang="PHP" name="admin-post.php" src="/private/var/www/paperless/wp-admin/admin-post.php"><import line="17" module="wp-admin/includes/admin.php" /><variable citdl="boolean" ilk="constant" line="10" name="WP_ADMIN" /><variable citdl="string" line="23" name="action" /><variable attributes="__not_yet_defined__" line="28" name="_REQUEST" /></scope>

@@ -1,7 +1,0 @@
-<scope ilk="blob" lang="Ruby" name="rake/multi_task">
-      <scope ilk="namespace" name="Rake">
-        <scope classrefs="Rake::Task" ilk="class" name="MultiTask">
-        </scope>
-      </scope>
-    </scope>
-    

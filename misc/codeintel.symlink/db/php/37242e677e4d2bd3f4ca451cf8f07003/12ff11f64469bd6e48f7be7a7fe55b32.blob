@@ -1,1 +1,0 @@
-<scope ilk="blob" lang="PHP" name="admin-post.php" src="/private/var/www/kw/wp-admin/admin-post.php"><import line="22" module="wp-admin/includes/admin.php" /><variable citdl="boolean" ilk="constant" line="12" name="WP_ADMIN" /><variable citdl="string" line="29" name="action" /><variable attributes="__not_yet_defined__" line="34" name="_REQUEST" /></scope>

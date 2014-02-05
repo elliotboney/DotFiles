@@ -1,7 +1,0 @@
-<scope ilk="blob" lang="Ruby" name="webrick/httpservlet">
-      <scope ilk="namespace" name="WEBrick">
-        <scope ilk="namespace" name="HTTPServlet">
-        </scope>
-      </scope>
-    </scope>
-    

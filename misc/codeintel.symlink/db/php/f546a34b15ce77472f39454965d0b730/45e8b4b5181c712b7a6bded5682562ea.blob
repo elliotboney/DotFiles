@@ -1,1 +1,0 @@
-<scope ilk="blob" lang="PHP" name="parseFile.php" src="/usr/local/Cellar/php55/5.5.7/lib/php/doc/PHP_CompatInfo/docs/examples/parseFile.php"><import line="16" module="PHP/CompatInfo.php" /><variable citdl="PHP_CompatInfo" line="18" name="info" /><variable line="19" name="file" /><variable citdl="info.parseFile()" line="21" name="r" /></scope>

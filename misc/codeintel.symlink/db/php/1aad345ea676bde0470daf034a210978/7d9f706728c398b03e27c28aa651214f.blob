@@ -1,1 +1,0 @@
-<scope ilk="blob" lang="PHP" name="tmpl_speaking_page.php" src="/private/var/www/paperless/wp-content/themes/paperless-agent/old-templates/tmpl_speaking_page.php"><variable citdl="get_post_meta()" line="19" name="jwvid" /><variable citdl="get_post_meta()" line="31" name="cwk_testimonials" /></scope>

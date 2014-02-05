@@ -1,8 +1,0 @@
-<scope ilk="blob" lang="Ruby" name="webrick/htmlutils">
-      <scope ilk="namespace" name="WEBrick">
-        <scope ilk="namespace" name="HTMLUtils">
-          <scope attributes="__classmethod__" doc="Escapes &amp;, &quot;, &gt; and &lt; in +string+" ilk="function" name="escape" signature="escape(string)" />
-        </scope>
-      </scope>
-    </scope>
-    

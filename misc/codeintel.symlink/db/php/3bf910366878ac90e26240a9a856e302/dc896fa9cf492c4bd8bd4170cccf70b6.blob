@@ -1,1 +1,0 @@
-<scope ilk="blob" lang="PHP" name="phone.php" src="/private/var/www/kw/plugins/types/embedded/includes/fields/phone.php"><scope doc="Register data (called automatically).&#10;&#10;@return type" ilk="function" line="7" lineend="15" name="wpcf_fields_phone" returns="type" signature="type wpcf_fields_phone()" /></scope>

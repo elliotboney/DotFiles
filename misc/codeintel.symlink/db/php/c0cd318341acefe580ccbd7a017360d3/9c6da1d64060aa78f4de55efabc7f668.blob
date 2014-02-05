@@ -1,1 +1,0 @@
-<scope ilk="blob" lang="PHP" name="FilesNotFoundException.php" src="/usr/local/pear/share/pear/PhpDocumentor/src/phpDocumentor/Parser/Exception/FilesNotFoundException.php"><scope ilk="namespace" line="2" name="phpDocumentor\Parser\Exception"><scope classrefs="\Exception" ilk="class" line="4" lineend="6" name="FilesNotFoundException" /></scope></scope>

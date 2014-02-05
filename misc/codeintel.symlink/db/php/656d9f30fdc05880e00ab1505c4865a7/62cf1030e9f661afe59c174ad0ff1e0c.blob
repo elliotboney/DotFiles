@@ -1,1 +1,0 @@
-<scope ilk="blob" lang="PHP" name="netdna.php" src="/private/var/www/kw/plugins/w3-total-cache/inc/options/cdn/netdna.php"><import line="74" module="/options/cdn/common/cnames.php" /><variable attributes="__not_yet_defined__" line="8" name="authorized" /><variable attributes="__not_yet_defined__" line="8" name="pull_zones" /></scope>

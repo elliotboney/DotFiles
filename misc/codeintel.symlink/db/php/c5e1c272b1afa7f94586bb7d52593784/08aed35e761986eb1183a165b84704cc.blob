@@ -1,1 +1,0 @@
-<scope ilk="blob" lang="PHP" name="Offer.php" src="/private/var/www/paperless/SpecialOffer/Offer.php"><import line="21" module="/central/config.php" /><import line="22" module="/passAlong.php" /><import line="37" module="/central/upsellguts.php" /><variable line="35" name="uv2" /><variable citdl="string" line="36" name="redirectScriptName" /></scope>

@@ -1,1 +1,0 @@
-<scope ilk="blob" lang="PHP" name="content-thankyou.php" src="/private/var/www/kw/content/themes/goodlife/templates/content-thankyou.php"><variable citdl="get_post_meta()" line="4" name="my_meta" /><variable attributes="__not_yet_defined__" line="9" name="wp_query" /><variable attributes="__not_yet_defined__" line="15" name="_SERVER" /></scope>

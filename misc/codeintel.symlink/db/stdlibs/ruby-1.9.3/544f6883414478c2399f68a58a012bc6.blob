@@ -1,8 +1,0 @@
-<scope ilk="blob" lang="Ruby" name="rexml/undefinednamespaceexception">
-      <scope ilk="namespace" name="REXML">
-        <scope classrefs="REXML::ParseException" ilk="class" name="UndefinedNamespaceException">
-          <scope attributes="__classmethod__ __ctor__" ilk="function" name="new" signature="new( prefix, source, parser )" />
-        </scope>
-      </scope>
-    </scope>
-    
