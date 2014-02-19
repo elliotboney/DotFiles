@@ -2,10 +2,10 @@
 # Path Section
 PATH=""
 # add all the paths we want to array
-paths=("$HOME/bin" "/usr/local/opt/coreutils/libexec/gnubin" "/usr/local/bin" "/usr/local/sbin" 
-    "/usr/local/share/npm/bin"  "$HOME/.rvm/bin" "$HOME/.gem/bin" 
-    "/usr/local/lib/python2.7/site-packages" "/usr/local/lib/python3.3/site-packages" 
-    "${GOROOT}/bin" "/bin" "/sbin"  "/usr/bin" "/usr/sbin" 
+paths=("$HOME/bin" "/usr/local/opt/coreutils/libexec/gnubin" "/usr/local/bin" "/usr/local/sbin"
+    "/usr/local/share/npm/bin"  "$HOME/.rvm/bin" "$HOME/.gem/bin"
+    "/usr/local/lib/python2.7/site-packages" "/usr/local/lib/python3.3/site-packages"
+    "${GOROOT}/bin" "/bin" "/sbin"  "/usr/bin" "/usr/sbin"
     "$HOME/Android/sdk/tools" "/usr/local/Cellar/php55/$(/bin/ls /usr/local/Cellar/php55)/bin")
 
 #"/usr/local/share/python"
@@ -18,9 +18,9 @@ do
     if [ -e $p ] || [ -d $p ]; then
         #if it does, add to path
         PATH=$PATH:$p
-        # echo $p 
-     else 
-        echo "[X]" $p 
+        # echo $p
+     else
+        # echo "[X]" $p
     fi
 done
 
@@ -63,7 +63,7 @@ fi
 if [ -d ~/.gem ]; then
     # This was unset due to upgrade notes from rvm
     # export GEM_HOME="$HOME/.gem"
-fi 
+fi
 
 if [ -f ~/perl5/perlbrew/etc/bashrc ]; then
     # source ~/perl5/perlbrew/etc/bashrc
