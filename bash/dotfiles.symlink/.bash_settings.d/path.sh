@@ -5,9 +5,12 @@ PATH=""
 paths=("$HOME/bin" "/usr/local/opt/coreutils/libexec/gnubin" "/usr/local/bin" "/usr/local/sbin" 
     "/usr/local/share/npm/bin"  "$HOME/.rvm/bin" "$HOME/.gem/bin" 
     "/usr/local/lib/python2.7/site-packages" "/usr/local/lib/python3.3/site-packages" 
-    "${GOROOT}/bin" "/bin" "/sbin" "/opt/local/bin" "/opt/local/sbin" "/usr/bin" "/usr/sbin" 
-    "$HOME/adb/sdk/tools" "$HOME/Android/sdk/tools" "/usr/local/Cellar/php55/5.5.7/bin")
+    "${GOROOT}/bin" "/bin" "/sbin"  "/usr/bin" "/usr/sbin" 
+    "$HOME/Android/sdk/tools" "/usr/local/Cellar/php55/$(/bin/ls /usr/local/Cellar/php55)/bin")
+
 #"/usr/local/share/python"
+#"/opt/local/bin" "/opt/local/sbin"
+
 # iterate through array
 for p in "${paths[@]}";
 do
@@ -16,14 +19,14 @@ do
         #if it does, add to path
         PATH=$PATH:$p
         # echo $p 
-     # else 
-        # echo "[X]" $p 
+     else 
+        echo "[X]" $p 
     fi
 done
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-PATH="$HOME/.gem/bin":$PATH
+# PATH="$HOME/.gem/bin":$PATH
 
 export PATH
 
@@ -43,20 +46,23 @@ if [ -d /usr/local/go/bin ]; then
     export GOPATH="/usr/local/go/bin"
 fi
 
-if [ -d /usr/local/Cellar/node/0.10.5/bin/node ]; then
-    export node="/usr/local/Cellar/node/0.10.5/bin/node"
+if [ -d /usr/local/Cellar/node ]; then
+    # NODE="$(ls /usr/local/Cellar/node)"
+    # which node
+    export NODE="/usr/local/Cellar/node/$(ls /usr/local/Cellar/node)bin/node"
 fi
 
-if [ -d /usr/local/Cellar/node/0.10.5/bin/node ]; then
+if [ -d /usr/libexec/java_home ]; then
     export JAVA_HOME=$(/usr/libexec/java_home)
 fi
 
-if [ -d /usr/local/Cellar/node/0.10.5/bin/node ]; then
+if [ -d /usr/local/lib/python2.7/site-packages ]; then
     export PYTHONPATH="/usr/local/lib/python2.7/site-packages"
 fi
 
 if [ -d ~/.gem ]; then
-export GEM_HOME="$HOME/.gem"
+    # This was unset due to upgrade notes from rvm
+    # export GEM_HOME="$HOME/.gem"
 fi 
 
 if [ -f ~/perl5/perlbrew/etc/bashrc ]; then

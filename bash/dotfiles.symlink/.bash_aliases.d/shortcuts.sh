@@ -1,5 +1,6 @@
 # Shortcuts
-alias d="cd ~/Documents/Dropbox"
+alias staging="s /var/www/wordpress.staging/"
+alias d="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias g="cd ~/Git"

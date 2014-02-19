@@ -15,6 +15,8 @@ if [[ -d "$functionsd" ]] {
 # load completions system
 zmodload -i zsh/complist
 
+setopt menu_complete   # do not autoselect the first completion entry
+
 # auto rehash commands
 # http://www.zsh.org/mla/users/2011/msg00531.html
 zstyle ':completion:*' rehash true
@@ -29,7 +31,7 @@ zstyle ':completion:*' group-name ''
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # for all completions: selected item
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} ma=0\;47
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} ma=0\;30\;44
 
 # completion of .. directories
 zstyle ':completion:*' special-dirs true
@@ -72,17 +74,65 @@ zstyle ':completion::*:-tilde-:*:*' group-order named-directories users
 # ssh: reorder output sorting: user over hosts
 zstyle ':completion::*:ssh:*:*' tag-order "users hosts"
 
+# SSH Completion
+zstyle ':completion:*:scp:*' tag-order files 'hosts:-domain:domain'
+zstyle ':completion:*:scp:*' group-order files all-files users hosts-domain hosts-host hosts-ipaddr
+zstyle ':completion:*:ssh:*' tag-order 'hosts:-domain:domain'
+zstyle ':completion:*:ssh:*' group-order hosts-domain hosts-host users hosts-ipaddr
+
+
 # kill: advanced kill completion
 zstyle ':completion::*:kill:*:*' command 'ps xf -U $USER -o pid,%cpu,cmd'
 zstyle ':completion::*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;32'
 
 # rm: advanced completion (e.g. bak files first)
-zstyle ':completion::*:rm:*:*' file-patterns '*.o:object-files:object\ file *(~|.(old|bak|BAK)):backup-files:backup\ files *~*(~|.(o|old|bak|BAK)):all-files:all\ files'
+# zstyle ':completion::*:rm:*:*' file-patterns '*.o:object-files:object\ file *(~|.(old|bak|BAK)):backup-files:backup\ files *~*(~|.(o|old|bak|BAK)):all-files:all\ files'
 
 # vi: advanced completion (e.g. tex and rc files first)
 zstyle ':completion::*:s:*:*' file-patterns 'Makefile|*(rc|log)|*.(php|tex|bib|sql|zsh|ini|sh|vim|rb|sh|js|tpl|csv|rdf|txt|phtml|tex|py|n3):vi-files:vim\ likes\ these\ files *~(Makefile|*(rc|log)|*.(log|rc|php|tex|bib|sql|zsh|ini|sh|vim|rb|sh|js|tpl|csv|rdf|txt|phtml|tex|py|n3)):all-files:other\ files'
 
 zstyle :compinstall filename '~/.zshrc'
+
+function __filter_homebrew {
+  if [[ $1 == "" ]]; then
+    # cat $HOMEBREW_SEARCH_CACHE_PATH
+    brew search
+  else;
+    brew search $1
+  fi
+}
+
+_brew() {
+  if (( CURRENT == 2 )); then
+    compadd list
+    compadd install uninstall
+    compadd link unlink
+    compadd missing prune cleanup
+    compadd upgrade update outdated
+    compadd info edit options deps uses
+    compadd home doctor update search
+  elif (( CURRENT >= 3 )); then
+    if (( CURRENT == 3 )); then
+      if [[ $words[2] == "options" || $words[2] == "info" || $words[2] == "edit" || $words[2] == "options" || $words[2] == "deps" || $words[2] == "uses" || $words[2] == "home" ]]; then
+        compadd $(__filter_homebrew ${words[3]})
+      fi
+    fi
+
+    if [[ $words[2] == "install" ]]; then
+      compadd $(__filter_homebrew ${words[-1]})
+    elif [[ $words[2] == "uninstall" ]]; then
+      compadd $(brew list)
+    elif [[ $words[2] == "unlink" ]]; then
+      compadd $(brew list)
+    elif [[ $words[2] == "cleanup" ]]; then
+      compadd $(brew list --versions | grep ' .* ' | awk '{print $1}')
+    elif [[ $words[2] == "upgrade" ]]; then
+      compadd $(brew outdated | awk '{print $1}')
+    fi
+  fi
+}
+compdef _brew brew
+
 
 autoload -Uz compinit && compinit
 

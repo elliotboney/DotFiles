@@ -1,4 +1,16 @@
+# For brew autocompletion
+export HOMEBREW_SEARCH_CACHE_PATH=~/.homebrew-search-cache
+
 export TERM=xterm-256color
+
+# Less Colors for Man Pages
+export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
+export LESS_TERMCAP_md=$'\E[01;38;5;74m'  # begin bold
+export LESS_TERMCAP_me=$'\E[0m'           # end mode
+export LESS_TERMCAP_se=$'\E[0m'           # end standout-mode
+export LESS_TERMCAP_so=$'\E[38;5;246m'    # begin standout-mode - info box
+export LESS_TERMCAP_ue=$'\E[0m'           # end underline
+export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 
 
 export XML_CATALOG_FILES="/usr/local/etc/xml/catalog"
@@ -11,12 +23,12 @@ export LANG="en_US"
 export LC_ALL="en_US.UTF-8"
 
 # Make vim the default editor
-export EDITOR="vim"
+export EDITOR="s"
 
 # Make some commands not show up in history
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
 
-               GREP_COLORS="ms=48;5;199;38;5;255:"
+GREP_COLORS="ms=48;5;199;38;5;255:"
 GREP_COLORS=${GREP_COLORS}:"mc=01;33:"
 GREP_COLORS=${GREP_COLORS}:"sl=38;5;245:"
 GREP_COLORS=${GREP_COLORS}:"cx=38;5;238:"
