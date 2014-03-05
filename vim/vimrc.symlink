@@ -8,13 +8,13 @@
 "  ABOUT:
 " ---------------------------------------------------------------------
 " This is a baller ass vimrc for vim73+
-" 
+"
 "
 " }}}
-" asdasd
 "python import sys; sys.path.append("/usr/local/lib/python2.7/site-packages/")
+let g:ycm_path_to_python_interpreter = '/usr/local/bin/python3'
 if has("gui")
-      set gfn=Source\ Code\ Pro\ Light\ for\ Powerline:h14
+      set gfn=Inconsolata-DZ\ for\ Powerline:h11
 endif
 
 " Bundle Sheeeet: {{{1
@@ -24,20 +24,20 @@ endif
 " Environment: {{{1
    "_. Leader: {{{2
    let mapleader = ","
-   let g:mapleader="," 
+   let g:mapleader=","
    "}}}
    syntax enable           " Turn on syntax  highlighting
    filetype plugin indent on     " Turn on Filetype detection, plugins, and
 
    "_. Autosource Vimrc Edits And Snippets: {{{2
-   augroup vimfiles " {  
+   augroup vimfiles " {
       au! BufWritePost .vimrc nested source %
-      au! BufWritePost .vimrc.bundles source % 
-      au! BufWritePost *.vim colorscheme FlatLand 
+      au! BufWritePost .vimrc.bundles source %
+      au! BufWritePost *.vim colorscheme chance-of-storm
    augroup END " }
       "}}}
    " Persistent Undo: {{{2"{{{
-      silent !mkdir ~/.backups > /dev/null 2>&1 
+      silent !mkdir ~/.backups > /dev/null 2>&1
       "}}}"}}}
 
 " KeyBindings: {{{1
@@ -52,7 +52,7 @@ endif
          "nmap <C-v> :call setreg("\"",system("xclip -selection clipboard -o"))<CR>py
       "endif
       "}}}
-   " Control Key Bindings: {{{2 
+   " Control Key Bindings: {{{2
       " When you press <leader>r you can search and replace the selected text
       vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
       " ==== Control S for Saving ====
@@ -118,7 +118,7 @@ endif
          nmap <leader>f6 :set foldlevel=6<CR>
          nmap <leader>f7 :set foldlevel=7<CR>
          nmap <leader>f8 :set foldlevel=8<CR>
-         nmap <leader>f9 :set foldlevel=9<CR>  
+         nmap <leader>f9 :set foldlevel=9<CR>
          "}}}
 
       " fix windows endlines
@@ -160,7 +160,7 @@ endif
 " Set Statements: {{{
    " Color Scheme: {{{2
       set background=dark
-      colorscheme FlatLand 
+      colorscheme chance-of-storm
       "}}}
    " Search Stuff: {{{2
       set hlsearch
@@ -183,7 +183,7 @@ endif
          set listchars=tab:▸\    " ┐
          set listchars+=trail:·  " │ Use custom symbols to
          set listchars+=nbsp:_   " ┘ represent invisible characters
-      endif 
+      endif
       set scrolloff=5         " When the page starts to scroll, keep the cursor 5 lines
       set autoread
       set cursorline          " highlight the line the cursor is on
@@ -224,8 +224,8 @@ endif
                          " mode (by hitting <TAB> in command mode, it will
                          " show the possible matches just above the command
                          " line with the first match highlighted)
-     
-      "set wildmode=list:longest,full " Command <Tab> completion 
+
+      "set wildmode=list:longest,full " Command <Tab> completion
       "if has ("wildignore")
             "set wildignore+=*.a,*.pyc,*.o,*.orig
             "set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.jpeg,*.png
@@ -250,11 +250,11 @@ endif
 
 "  Filetype Statements: {{{
      " Autocmd Statements: {{{2
-      "autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+      autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
       autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
       autocmd FileType css set omnifunc=csscomplete#CompleteCSS
       autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-      autocmd FileType php set omnifunc=phpcomplete#CompletePHP 
+      autocmd FileType php set omnifunc=phpcomplete#CompletePHP
       "}}}
 " }}}
 
@@ -282,19 +282,19 @@ endif
       "}}} }}}
 
 " GLOBALS: {{{1
-   let g:ctrlp_show_hidden = 1
+   "let g:ctrlp_show_hidden = 1
    "let g:syntastic_check_on_open=1
    " }}}
 
 "_. Folding Settings: {{{1
-   if has("unix")   
+   if has("unix")
    set fcs=vert:\↕,fold:⋱
    endif
    " Custom Foldtext Function: {{{2
    if(!exists('vimrc_already_sourced'))
       function MyFoldText()
          let line = getline(v:foldstart)
-         let sub = substitute(line, '/\*\|\*/\|{{{\d\=', '', 'g') 
+         let sub = substitute(line, '/\*\|\*/\|{{{\d\=', '', 'g')
          "}}}
          return v:folddashes . sub
       endfunction
@@ -338,7 +338,7 @@ let vimrc_already_sourced = 1
       " Recalculate first and last lines of the edited code
       let l:newFirstLine=search('<PrettyXML>')
       let l:newLastLine=search('</PrettyXML>')
-      
+
       " Get inner range
       let l:innerFirstLine=l:newFirstLine+1
       let l:innerLastLine=l:newLastLine-1
@@ -415,13 +415,6 @@ set acd
 set backupdir=~/.backups
 set directory=~/.backups
 
-" Completion
-let g:ycm_autoclose_preview_window_after_completion=1
-let g:ycm_autoclose_preview_window_after_insertion=1
-
-" Tern stuff
-nmap <silent> <F12> :TernDef<CR>
-
 " align on equals
 nmap <silent> <leader>A <esc>VAA
 
@@ -431,3 +424,44 @@ nmap <silent> <leader>T :TagbarToggle<CR>
 " FF will use grep to find word under cursor and open quickfix window
 " " automatically
 nmap FF :execute " grep -srnw --binary-files=without-match --exclude-dir=.git . -e " . expand("<cword>") . " " <bar> cwindow<CR>
+" nuts sytnax
+au FileType javascript setl conceallevel=2 concealcursor=nc
+let g:syntax_js=['function', 'return']
+
+" ctrlp
+let g:ctrlp_extensions=['funky']
+let g:ctrlp_follow_symlinks=1
+let g:ctrlp_working_path_mode=0
+let g:ctrlp_custom_ignore={
+  \ 'dir':  '\.git$\|node_modules\|bin\|dist\|bower_components',
+  \ 'file': '\.exe$\|\.so$\|\.dat$'
+  \ }
+
+" funky hiles
+let g:ctrlp_funky_syntax_highlight=1
+
+" ycm completion
+let g:ycm_add_preview_to_completeopt=0
+let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_autoclose_preview_window_after_insertion=1
+let g:ycm_cache_omnifunc=1
+
+" tern
+let g:tern_show_signature_in_pum=1
+let g:tern_is_show_argument_hints_enabled=1
+" dont pop up preview window, ycm is enough
+set completeopt-=preview
+
+" funky action
+nnoremap <Leader>f :CtrlPFunky<Cr>
+nnoremap <Leader>F :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
+
+" Tern stuff
+nmap <silent> <F12> :TernDef<CR>
+nmap <silent> <c-s> :TernType<CR>
+
+" js syntax stuff
+let g:used_javascript_libs='underscore,backbone,jquery'
+
+" let syntastic clobber location list
+let g:syntastic_always_populate_loc_list=1

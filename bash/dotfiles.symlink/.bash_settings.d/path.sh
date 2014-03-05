@@ -6,7 +6,7 @@ paths=("$HOME/bin" "/usr/local/opt/coreutils/libexec/gnubin" "/usr/local/bin" "/
     "/usr/local/share/npm/bin"  "$HOME/.rvm/bin" "$HOME/.gem/bin"
     "/usr/local/lib/python2.7/site-packages" "/usr/local/lib/python3.3/site-packages"
     "${GOROOT}/bin" "/bin" "/sbin"  "/usr/bin" "/usr/sbin"
-    "$HOME/Android/sdk/tools" "/usr/local/Cellar/php55/$(/bin/ls /usr/local/Cellar/php55)/bin")
+    "$HOME/Android/sdk/tools" )
 
 #"/usr/local/share/python"
 #"/opt/local/bin" "/opt/local/sbin"
@@ -28,11 +28,17 @@ done
 
 # PATH="$HOME/.gem/bin":$PATH
 
-export PATH
+
 
 # End of Path Section comment block
 # ---------------------------------
 
+
+if [ -e "/usr/local/Cellar/php55" ] || [ -d "/usr/local/Cellar/php55" ]; then
+   PATH=$PATH:"/usr/local/Cellar/php55/$(/bin/ls /usr/local/Cellar/php55)/bin"
+fi
+
+export PATH
 
 if [ -d ~/bin/FDK/Tools/osx ]; then
     export FDK_EXE="~/bin/FDK/Tools/osx"

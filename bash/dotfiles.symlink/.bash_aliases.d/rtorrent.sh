@@ -1,4 +1,8 @@
 
+# DISABLE FILE
+return;
+
+
 # For Rutorrent
 if [ "$HOST_NAME" = 'mainpc' ]; then
     alias rt='screen -rd rtorrent'

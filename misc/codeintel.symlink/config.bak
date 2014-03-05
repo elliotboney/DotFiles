@@ -1,17 +1,17 @@
 {
   "JavaScript": {
-    "codeintel_max_recursive_dir_depth": 10,
+    "codeintel_max_recursive_dir_depth": 3,
+        "codeintel_scan_files_in_project": true,
     "javascriptExtraPaths": [
-      "./node_modules"
     ]
   },
   "PHP": {
     "codeintel_max_recursive_dir_depth": 10,
+    "codeintel_scan_files_in_project": true,
     "php": "/usr/local/bin/php",
     "phpConfigFile": "/usr/local/etc/php/5.5/php.ini",
     "phpExtraPaths": [
-      "/private/var/www/WordPress/wp-admin",
-      "/private/var/www/WordPress/wp-include"
+    "/usr/local/Cellar/php55/5.5.9/lib/php/"
     ]
   },
   "Perl": {

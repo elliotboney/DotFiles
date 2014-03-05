@@ -1,5 +1,6 @@
 # for bypassing safety prompt
 alias rmf='rm -f'
+alias rmrf='rm -rf'
 
 # Intuitive map function
 # For example, to list all directories that contain a certain file:
@@ -17,7 +18,7 @@ if shell_is_osx; then
    alias chown='gchown'
    alias mv='gmv'
    alias cp='gcp'
-   alias ls="gls -hF --color=auto --group-directories-first"
+   alias ls="gls -hF --color=always --group-directories-first"
    alias ln="gln"
    ## Colorize the grep command output for ease of use (good for log files) ##
    alias grep='ggrep --color=auto'
@@ -25,12 +26,14 @@ if shell_is_osx; then
    alias find='gfind'
    #}}}
 else
-   alias grep='grep --color=auto'
+   alias grep='grep --color=never'
    alias ls="ls --color=always -hF --group-directories-first"
 fi
 
 # List all files colorized in long format, including dot files
 alias la='ls -la --group-directories-first'
+alias lg='ls | ggrep -i --color=never'
+alias lag='la | ggrep -i --color=never'
 
 alias ..="cd .."
 alias ....="cd .. && cd .."
@@ -47,4 +50,4 @@ alias mv='mv -i'
 alias mkdir='mkdir -p'
 # }}
 
-alias lsperm="ls -al|awk '{k=0;s=0;for(i=0;i<=8;i++){;k+=((substr(\$1,i+2,1)~/[rwxst]/)*2^(8-i));};j=4;for(i=4;i<=10;i+=3){;s+=((substr(\$1,i,1)~/[stST]/)*j);j/=2;};if(k){;printf(\"%0o%0o \",s,k);};print;}'"
+alias lsperm="/bin/ls -al|awk '{k=0;s=0;for(i=0;i<=8;i++){;k+=((substr(\$1,i+2,1)~/[rwxst]/)*2^(8-i));};j=4;for(i=4;i<=10;i+=3){;s+=((substr(\$1,i,1)~/[stST]/)*j);j/=2;};if(k){;printf(\"%0o%0o \",s,k);};print;}'"

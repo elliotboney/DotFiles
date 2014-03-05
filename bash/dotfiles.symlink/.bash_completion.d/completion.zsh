@@ -15,7 +15,7 @@ if [[ -d "$functionsd" ]] {
 # load completions system
 zmodload -i zsh/complist
 
-setopt menu_complete   # do not autoselect the first completion entry
+# setopt menu_complete   # do not autoselect the first completion entry
 
 # auto rehash commands
 # http://www.zsh.org/mla/users/2011/msg00531.html
@@ -38,6 +38,7 @@ zstyle ':completion:*' special-dirs true
 
 # fault tolerance
 zstyle ':completion:*' completer _complete _correct _approximate
+
 # (1 error on 3 characters)
 zstyle -e ':completion:*:approximate:*' max-errors 'reply=( $(( ($#PREFIX+$#SUFFIX)/3 )) numeric )'
 
@@ -61,7 +62,7 @@ zstyle ':completion:*' verbose yes
 bindkey -M menuselect '^@' accept-and-infer-next-history
 
 # case-insensitive -> partial-word (cs) -> substring completion:
-zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'  
+zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 # caching of completion stuff
 zstyle ':completion:*' use-cache on
@@ -90,6 +91,9 @@ zstyle ':completion::*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;32'
 
 # vi: advanced completion (e.g. tex and rc files first)
 zstyle ':completion::*:s:*:*' file-patterns 'Makefile|*(rc|log)|*.(php|tex|bib|sql|zsh|ini|sh|vim|rb|sh|js|tpl|csv|rdf|txt|phtml|tex|py|n3):vi-files:vim\ likes\ these\ files *~(Makefile|*(rc|log)|*.(log|rc|php|tex|bib|sql|zsh|ini|sh|vim|rb|sh|js|tpl|csv|rdf|txt|phtml|tex|py|n3)):all-files:other\ files'
+
+# zstyle ':completion::*:lm:*:*' file-patterns '.*:all-files:other\ files'
+
 
 zstyle :compinstall filename '~/.zshrc'
 
@@ -133,6 +137,50 @@ _brew() {
 }
 compdef _brew brew
 
+_lm() {
+if (( CURRENT >= 2 )); then
+    compadd $(ls -1a --color=none | grep '^\.' | grep -v '@' | grep -v '/')
+  fi
+}
+compdef _lm lm
+
+_wp() {
+  compadd cache add decr delete flush get incr replace set type
+  # compadd cap add list remove
+  # compadd cli cmd-dump completions info param-dump version
+  # compadd comment approve count create delete exists get list spam status trash unapprove unspam untrash update url
+  # compadd comment-meta add delete get update
+  # compadd core config download install is-installed multisite-convert multisite-install update update-db version
+  # compadd db cli create drop export import optimize query repair reset
+  # compadd eval
+  # compadd eval-file
+  # compadd export
+  # compadd help
+  # compadd import
+  # compadd media import regenerate
+  # compadd network-meta add delete get update
+  # compadd option add delete get update
+  # compadd plugin activate deactivate delete get install is-installed list path search status toggle uninstall update
+  # compadd post create delete edit generate get list update url
+  # compadd post-meta add delete get update
+  # compadd rewrite flush list structure
+  # compadd role create delete exists list
+  # compadd scaffold _s child-theme plugin plugin-tests post-type taxonomy
+  # compadd search-replace
+  # compadd shell
+  # compadd site create delete empty list url
+  # compadd term create delete generate get list update
+  # compadd theme activate delete disable enable get install is-installed list path search status update
+  # compadd transient delete get set type
+  # compadd user add-cap add-role create delete generate get import-csv list list-caps remove-cap remove-role set-role update
+  # compadd user-meta add delete get update
+}
+compdef _wp wp
+# # echo "test"
+# echo ${BASH_SOURCE:-$0}
+# autoload bashcompinit
+# bashcompinit
+# source wp-completion.bash
 
 autoload -Uz compinit && compinit
 

@@ -23,7 +23,7 @@ export LANG="en_US"
 export LC_ALL="en_US.UTF-8"
 
 # Make vim the default editor
-export EDITOR="s"
+export EDITOR="/usr/local/bin/subl"
 
 # Make some commands not show up in history
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"

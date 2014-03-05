@@ -24,16 +24,22 @@ Bundle 'JavaScript-Indent'
 " }}}
 
 " General Utils: {{{
+Bundle 'scrooloose/syntastic'
+Bundle 'gregsexton/MatchTag'
 Bundle 'Tagbar'
-Bundle 'kien/ctrlp.vim'
-"Bundle 'Valloric/YouCompleteMe'
+Bundle 'Valloric/YouCompleteMe'
 Bundle 'itchyny/lightline.vim'
 Bundle 'xterm-color-table.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'vim-scripts/LustyJuggler'
-Bundle 'kien/ctrlp.vim'
+"Bundle 'vim-scripts/LustyJuggler'
 Bundle 'tpope/vim-markdown'
+" }}}
+
+" Panels Windows: {{{
+Bundle 'tacahiroy/ctrlp-funky'
+Bundle 'kien/ctrlp.vim'
+
 " }}}
 
 " Other Language Stuff: {{{
@@ -65,3 +71,5 @@ Bundle 'Align'
 "Bundle 'indenthtml.vim'
 "Bundle 'tidy'
 " }}}
+
+

@@ -9,16 +9,7 @@ function o {
   open ${@:-'.'}
 }
 
-function pullall {
-  for dir in */
-  do
-      # dir=${dir%*/}
-      cd ${dir}
-      echo "Entering and git pulling: ${dir}"
-      git pull
-      cd ..
-  done
-}
+
 # Go to last directory
 cl() {
   last_dir="$(ls -Frt | grep '/$' | tail -n1)"
@@ -42,7 +33,7 @@ function cleanfiles() {
   for var in "$@"
   do
     echo -e "\n${LIGHTGREEN}Deleting f'in $var files...${NC}"
-    sudo find . -type f -name "$var" -printf \ \ \ \ %p"\n" -exec rm -rf {} \;     
+    sudo find . -type f -name "$var" -printf \ \ \ \ %p"\n" -exec rm -rf {} \;
   done
 }
 
