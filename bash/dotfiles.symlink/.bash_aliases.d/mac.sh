@@ -1,5 +1,8 @@
 # Empty the Trash on all mounted volumes and the main HDD
 if shell_is_osx; then
+  #clean up the output of quicklook manage
+  alias qlf='qlmanage -p "$@" >& /dev/null'
+
   alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
   # Kill all the tabs in Chrome to free up memory
 

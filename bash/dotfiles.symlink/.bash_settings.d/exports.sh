@@ -1,3 +1,6 @@
+export ANDROID_HOME=~/Android/sdk
+export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+
 # For brew autocompletion
 export HOMEBREW_SEARCH_CACHE_PATH=~/.homebrew-search-cache
 
