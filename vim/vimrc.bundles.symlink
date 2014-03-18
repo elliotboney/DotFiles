@@ -47,7 +47,7 @@ Bundle 'othree/html5.vim'
 " }}}
 
 " My Own Custom Shit:
-Bundle 'elliotboney/eScrit'
+Bundle 'elliotboney/eVimBundle'
 
 " Gist: {{{
 Bundle 'vim-scripts/Gist.vim'
