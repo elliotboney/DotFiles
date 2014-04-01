@@ -1,5 +1,5 @@
 function tunnel () {
-ssh -f user@personal-server.com -L 2000:personal-server.com:25 -N
+    ssh -f user@personal-server.com -L 2000:personal-server.com:25 -N
 }
 
 
@@ -37,12 +37,12 @@ function servedirphp ()
 }
 
 # SSH to the given machine and add your id_rsa.pub or id_dsa.pub to authorized_keys.
-#
-#     henrik@Nyx ~$ sshkey hyper
-#     Password:
-#     sshkey done.
-
 function sshkey {
-  ssh $1 "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys" < ~/.ssh/id_?sa.pub  # '?sa' is a glob, not a typo!
-  echo "sshkey done."
+    if [[ -z "$1" ]]; then
+        # echo a help message if no port is specified
+        echo -e "\n\t${White}Useage: ${BCyan}sshkey ${LightGray}<remote host> ${NC}\n"
+    else
+        ssh $1 "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys" < ~/.ssh/id_?sa.pub  # '?sa' is a glob, not a typo!
+        echo "sshkey done."
+    fi
 }
