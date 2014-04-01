@@ -1,8 +1,0 @@
-@font-face {
-    font-family: 'CHIPSSBRegular';
-    src: url('chip-ssb.eot');
-    src: url('chip-ssb.eot') format('embedded-opentype'),
-         url('chip-ssb.woff') format('woff'),
-         url('chip-ssb.ttf') format('truetype'),
-         url('chip-ssb.svg#CHIPSSBRegular') format('svg');
-}

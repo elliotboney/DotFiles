@@ -1,8 +1,0 @@
-@font-face {
-    font-family: 'SuperMarioWorldSmall1andSmall2Regular';
-    src: url('super-mario-world-small-1-and-small-2.eot');
-    src: url('super-mario-world-small-1-and-small-2.eot') format('embedded-opentype'),
-         url('super-mario-world-small-1-and-small-2.woff') format('woff'),
-         url('super-mario-world-small-1-and-small-2.ttf') format('truetype'),
-         url('super-mario-world-small-1-and-small-2.svg#SuperMarioWorldSmall1andSmall2Regular') format('svg');
-}

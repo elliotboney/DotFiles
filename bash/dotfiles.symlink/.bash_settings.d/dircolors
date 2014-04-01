@@ -81,28 +81,30 @@ TERM xterm-termite
 ## Special files
 
 NORMAL              00;38;5;240 # no color code at all
+NORM                00;38;5;240 # no color code at all
 FILE                00;38;5;245 # regular file: use no color at all
 DIR                 00;38;5;33 # directory 00;34
 LINK                00;38;5;14  # symbolic link. (If you set this to 'target' instead of a
 RESET               00 # reset to "normal" color
 
 # MULTIHARDLINK       00;38;5;14 #00 # regular file with more than one link
-FIFO                48;5;230;38;5;213;01 # pipe
-SOCK                48;5;230;38;5;214;01 # socket
-DOOR                48;5;230;38;5;215;01 # door
-BLK                 48;5;230;38;5;244;01 # block device driver
-CHR                 48;5;230;38;5;244;01 # character device driver
-ORPHAN              48;5;235;38;5;160 # symlink to nonexistent file, or non-stat'able file
-MISSING             48;5;235;38;5;160 # symlink to nonexistent file, or non-stat'able file
-SETUID              48;5;160;38;5;230 # file that is setuid (u+s)
-SETGID              48;5;214;38;5;229 # file that is setgid (g+s)
-CAPABILITY          30;41 # file with capability
-STICKY_OTHER_WRITABLE 38;5;237 # dir that is sticky and other-writable (+t,o+w)
-STICKY              48;5;37;38;5;0 # dir that is other-writable (o+w) and not sticky
-OTHER_WRITABLE      48;5;33;38;5;230 # dir with the sticky bit set (+t) and not other-writable
+FIFO                  48;5;230;38;5;213;01 # pipe
+SOCK                  48;5;230;38;5;214;01 # socket
+DOOR                  48;5;230;38;5;215;01 # door
+BLK                   48;5;230;38;5;244;01 # block device driver
+CHR                   48;5;230;38;5;244;01 # character device driver
+CHAR                  48;5;230;38;5;244;01 # character device driver
+ORPHAN                48;5;235;38;5;160 # symlink to nonexistent file, or non-stat'able file
+MISSING               48;5;235;38;5;160 # symlink to nonexistent file, or non-stat'able file
+SETUID                00;38;5;153 # file that is setuid (u+s)
+SETGID                48;5;214;38;5;229 # file that is setgid (g+s)
+CAPABILITY            30;41 # file with capability
+STICKY_OTHER_WRITABLE 48;5;235;38;5;39 # dir that is sticky and other-writable (+t,o+w)
+STICKY                48;5;55;38;5;150 # dir that is other-writable (o+w) and not sticky
+OTHER_WRITABLE        48;5;33;38;5;230 # dir with the sticky bit set (+t) and not other-writable
 
 # This is for files with execute permission:
-EXEC                01;38;5;83
+EXEC                00;38;5;83
 #Or files that can be run
 .py                 00;38;5;46
 .sh                 00;38;5;42

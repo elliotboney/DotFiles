@@ -1,8 +1,0 @@
-@font-face {
-    font-family: 'ArwingRegular';
-    src: url('arwing.eot');
-    src: url('arwing.eot') format('embedded-opentype'),
-         url('arwing.woff') format('woff'),
-         url('arwing.ttf') format('truetype'),
-         url('arwing.svg#ArwingRegular') format('svg');
-}

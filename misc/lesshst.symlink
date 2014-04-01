@@ -5,4 +5,5 @@
 "-o
 "ignore
 "exclude
+"directory
 .shell

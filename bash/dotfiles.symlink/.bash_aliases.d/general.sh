@@ -1,4 +1,11 @@
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
+alias service='sudo service'
+alias apachectl='sudo apachectl'
+alias a2endmod='sudo a2endmod'
+alias a2dismod='sudo a2dismod'
+alias a2ensite='sudo a2ensite'
+alias a2dissite='sudo a2dissite'
+
 
 UCMD=""
 if shell_is_osx; then

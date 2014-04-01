@@ -14,8 +14,8 @@ alias findbig="find . -type f -exec ls -s {} \; | sort -n -r | head -5"
 if shell_is_osx; then
    # OSX Commands {{{2
    alias dircolors='gdircolors'
-   alias chmod='gchmod --preserve-root'
-   alias chown='gchown'
+   alias chmod='sudo gchmod'
+   alias chown='sudo gchown'
    alias mv='gmv'
    alias cp='gcp'
    alias ls="gls -hF --color=always --group-directories-first"

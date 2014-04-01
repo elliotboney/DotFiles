@@ -5,7 +5,7 @@ ssh -f user@personal-server.com -L 2000:personal-server.com:25 -N
 
 function ripsite()
 {
-    httrack "$@" -v -N1004
+    httrack "$@" -v -N1004 -s0
 }
 
 function servedir ()
