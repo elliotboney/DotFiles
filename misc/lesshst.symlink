@@ -6,4 +6,5 @@
 "ignore
 "exclude
 "directory
+"github.com/jpastuszek/iis-access-log-parser.git
 .shell

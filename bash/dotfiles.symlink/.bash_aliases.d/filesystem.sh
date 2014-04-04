@@ -51,3 +51,5 @@ alias mkdir='mkdir -p'
 # }}
 
 alias lsperm="/bin/ls -al|awk '{k=0;s=0;for(i=0;i<=8;i++){;k+=((substr(\$1,i+2,1)~/[rwxst]/)*2^(8-i));};j=4;for(i=4;i<=10;i+=3){;s+=((substr(\$1,i,1)~/[stST]/)*j);j/=2;};if(k){;printf(\"%0o%0o \",s,k);};print;}'"
+
+alias cleanemptydir='find . -type d -empty -exec rmdir {} \;'
