@@ -34,6 +34,11 @@ export BBlue;
 export BBlack;
 export BRed;
 
+function freemem() {
+    echo `top -l 1 | head -n 10 | grep PhysMem`
+}
+
+
 function ii()   # Get current host related info.
 {
     echo -e "\nYou are logged on ${BRed}$HOST"
@@ -42,7 +47,7 @@ function ii()   # Get current host related info.
              cut -d " " -f1 | sort | uniq
     echo -e "${BRed}Current date :$NC " ; date
     echo -e "${BRed}Machine stats :$NC " ; uptime
-    echo -e "${BRed}Memory stats :$NC " ; free
+    echo -e "${BRed}Memory stats :$NC " ; freemem
     echo -e "${BRed}Diskspace :$NC " ; df / $HOME
     echo -e "${BRed}Local IP Address :$NC" ; localip
     echo -e "${BRed}Public IP Address :$NC" ; dig +short myip.opendns.com @resolver1.opendns.com

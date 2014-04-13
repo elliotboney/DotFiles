@@ -1,4 +1,4 @@
-return;
+# return;
 if shell_is_osx; then   
 
     # Menu bar: hide the useless Time Machine and Volume icons

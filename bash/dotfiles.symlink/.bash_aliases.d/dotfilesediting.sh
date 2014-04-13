@@ -1,5 +1,5 @@
 # For editing/reloading dotfiles
 alias editenv='subl . $HOME/.dotfiles/'
-alias seditenv="cd ~/.dotfiles && subl . && cd -"
+alias seditenv="cd ~/.dotfiles && subl . && cd - && subl ~/.zshrc"
 alias editalias='subl . $HOME/.dotfiles/.bash_aliases.d'
 alias reloadenv='source $HOME/.zshrc'

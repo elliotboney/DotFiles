@@ -1,9 +1,12 @@
 # ---------------------------------
 # Path Section
 PATH=""
+if [ -e "/usr/local/Cellar/php55" ] || [ -d "/usr/local/Cellar/php55" ]; then
+   PATH=$PATH:"/usr/local/Cellar/php55/$(/bin/ls /usr/local/Cellar/php55)/bin"
+fi
 # add all the paths we want to array
 paths=("$HOME/bin" "/usr/local/opt/coreutils/libexec/gnubin" "/usr/local/bin" "/usr/local/sbin"
-    "/usr/local/share/npm/bin"  "$HOME/.rvm/bin" "$HOME/.gem/bin"
+    "/usr/local/share/npm/bin" "/usr/local/Cellar/php55/5.5.10/bin"
     "/usr/local/lib/python2.7/site-packages" "/usr/local/lib/python3.3/site-packages"
     "${GOROOT}/bin" "/bin" "/sbin"  "/usr/bin" "/usr/sbin"
     "$HOME/Android/sdk/tools" )
@@ -34,9 +37,7 @@ done
 # ---------------------------------
 
 
-if [ -e "/usr/local/Cellar/php55" ] || [ -d "/usr/local/Cellar/php55" ]; then
-   PATH=$PATH:"/usr/local/Cellar/php55/$(/bin/ls /usr/local/Cellar/php55)/bin"
-fi
+
 
 export PATH
 

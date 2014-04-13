@@ -4,7 +4,7 @@ alias download='curl -O'
 
 # IP addresses
 alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
-alias localip='ipconfig getifaddr en1'
+alias localip="ifconfig | grep \"inet \" | grep -v \"127.0\" | cut -d' ' -f 2"
 
 
 

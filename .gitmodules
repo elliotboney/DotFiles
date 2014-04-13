@@ -1,6 +1,3 @@
-[submodule "private"]
-    path = private
-    url = git@bitbucket.org/elliotboney/privatedotfiles.git
 [submodule "vim/vim.symlink/bundle/powerline"]
     path = vim/vim.symlink/bundle/powerline
     url = git@github.com:Lokaltog/powerline.git
@@ -94,3 +91,6 @@
 [submodule "zsh/oh-my-zsh.symlink"]
     path = zsh/oh-my-zsh.symlink
     url = https://github.com/robbyrussell/oh-my-zsh.git
+[submodule "private"]
+	path = private
+	url = https://elliotboney@bitbucket.org/elliotboney/privatedotfiles.git

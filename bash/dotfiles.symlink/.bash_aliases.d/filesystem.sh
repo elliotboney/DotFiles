@@ -21,19 +21,19 @@ if shell_is_osx; then
    alias ls="gls -hF --color=always --group-directories-first"
    alias ln="gln"
    ## Colorize the grep command output for ease of use (good for log files) ##
-   alias grep='ggrep --color=auto'
-   alias igrep='ggrep -i --color=auto'
+   # alias grep='grep --color=auto'
+   alias igrep='grep -i --color=auto'
    alias find='gfind'
    #}}}
 else
-   alias grep='grep --color=never'
+   # alias grep='grep --color=never'
    alias ls="ls --color=always -hF --group-directories-first"
 fi
 
 # List all files colorized in long format, including dot files
 alias la='ls -la --group-directories-first'
-alias lg='ls | ggrep -i --color=never'
-alias lag='la | ggrep -i --color=never'
+alias lg='ls | grep -i --color=never'
+alias lag='la | grep -i --color=never'
 
 alias ..="cd .."
 alias ....="cd .. && cd .."
