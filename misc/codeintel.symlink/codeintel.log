@@ -1,0 +1,1137 @@
+Starting logging SublimeCodeIntel v2.0.6 rev GIT-unknown (1385626433) on Mon Apr 14 20:43:16 2014
+=================================================================================================
++ Debug: Invalid language: Plain text. Available: TemplateToolkit, PHP, Node.js, CSS, Sass, JavaScript, XSLT, RHTML, SCSS, XML, Smarty, Perl, HTML, Django, Ruby, Twig, Python3, XUL, Tcl, Python, HTML5, Less, Mason, XBL
++ Debug: Invalid language: Plain text. Available: TemplateToolkit, PHP, Node.js, CSS, Sass, JavaScript, XSLT, RHTML, SCSS, XML, Smarty, Perl, HTML, Django, Ruby, Twig, Python3, XUL, Tcl, Python, HTML5, Less, Mason, XBL
++ Debug: Invalid language: Plain text. Available: TemplateToolkit, PHP, Node.js, CSS, Sass, JavaScript, XSLT, RHTML, SCSS, XML, Smarty, Perl, HTML, Django, Ruby, Twig, Python3, XUL, Tcl, Python, HTML5, Less, Mason, XBL
++ Debug: Invalid language: Plain text. Available: TemplateToolkit, PHP, Node.js, CSS, Sass, JavaScript, XSLT, RHTML, SCSS, XML, Smarty, Perl, HTML, Django, Ruby, Twig, Python3, XUL, Tcl, Python, HTML5, Less, Mason, XBL
++ Debug: Invalid language: Plain text. Available: TemplateToolkit, PHP, Node.js, CSS, Sass, JavaScript, XSLT, RHTML, SCSS, XML, Smarty, Perl, HTML, Django, Ruby, Twig, Python3, XUL, Tcl, Python, HTML5, Less, Mason, XBL
++ Debug: Invalid language: Plain text. Available: TemplateToolkit, PHP, Node.js, CSS, Sass, JavaScript, XSLT, RHTML, SCSS, XML, Smarty, Perl, HTML, Django, Ruby, Twig, Python3, XUL, Tcl, Python, HTML5, Less, Mason, XBL
++ Debug: Invalid language: Plain text. Available: TemplateToolkit, PHP, Node.js, CSS, Sass, JavaScript, XSLT, RHTML, SCSS, XML, Smarty, Perl, HTML, Django, Ruby, Twig, Python3, XUL, Tcl, Python, HTML5, Less, Mason, XBL
++ Debug: Invalid language: Plain text. Available: TemplateToolkit, PHP, Node.js, CSS, Sass, JavaScript, XSLT, RHTML, SCSS, XML, Smarty, Perl, HTML, Django, Ruby, Twig, Python3, XUL, Tcl, Python, HTML5, Less, Mason, XBL
++ Info: processing `JavaScript': please wait...
+New env with catalogs for 'JavaScript': HTML5, jQuery
+Updating indexes for 'JavaScript'... The first time this can take a while.
+scan_purelang: path: '/Users/eboney/Code/Clients/BlackCoin/blackcoinpool/main.js' lang: JavaScript
+VAR: stratum on line 29, type:'' (class <class 'lang_javascript.JSVariable'>)
+VAR: sharesThisInterval on line 29, type:'' (class <class 'lang_javascript.JSVariable'>)
+VAR: mhashPerSecond on line 29, type:'string' (class <class 'lang_javascript.JSVariable'>)
+VAR: activeWorkers on line 29, type:'Object' (class <class 'lang_javascript.JSVariable'>)
+incBlock: depth:1, line:29, currentScope:'activeWorkers'
+decBlock: depth:1, line:29, leavingScope:'activeWorkers'
+VAR: totalShares on line 30, type:'int' (class <class 'lang_javascript.JSVariable'>)
+VAR: coinprofit on line 31, type:'Array' (class <class 'lang_javascript.JSVariable'>)
+VAR: currentcoinindex on line 32, type:'int' (class <class 'lang_javascript.JSVariable'>)
+VAR: coinValues on line 33, type:'Object' (class <class 'lang_javascript.JSVariable'>)
+incBlock: depth:1, line:33, currentScope:'coinValues'
+decBlock: depth:1, line:33, leavingScope:'coinValues'
+VAR: workerSharesThisInterval on line 34, type:'Object' (class <class 'lang_javascript.JSVariable'>)
+incBlock: depth:1, line:34, currentScope:'workerSharesThisInterval'
+decBlock: depth:1, line:34, leavingScope:'workerSharesThisInterval'
+VAR: workerShares on line 35, type:'Object' (class <class 'lang_javascript.JSVariable'>)
+incBlock: depth:1, line:35, currentScope:'workerShares'
+decBlock: depth:1, line:35, leavingScope:'workerShares'
+VAR: workerHashrateThisInterval on line 36, type:'Object' (class <class 'lang_javascript.JSVariable'>)
+incBlock: depth:1, line:36, currentScope:'workerHashrateThisInterval'
+decBlock: depth:1, line:36, leavingScope:'workerHashrateThisInterval'
+VAR: timeoutCountSite on line 44, type:'int' (class <class 'lang_javascript.JSVariable'>)
+VAR: timeoutCountMiner on line 44, type:'int' (class <class 'lang_javascript.JSVariable'>)
+VAR: ignoreSiteAPI on line 44, type:'boolean' (class <class 'lang_javascript.JSVariable'>)
+VAR: ignoreMinerAPI on line 44, type:'boolean' (class <class 'lang_javascript.JSVariable'>)
+addAnonymousFunction: (anonymous 1)([])
+incBlock: depth:1, line:47, currentScope:'(anonymous 1)'
+decBlock: depth:1, line:50, leavingScope:'(anonymous 1)'
+addAnonymousFunction: (anonymous 2)([])
+incBlock: depth:1, line:53, currentScope:'(anonymous 2)'
+decBlock: depth:1, line:56, leavingScope:'(anonymous 2)'
+incBlock: depth:1, line:75, currentScope:'main.js'
+decBlock: depth:1, line:75, leavingScope:'main.js'
+incBlock: depth:1, line:81, currentScope:'main.js'
+incBlock: depth:2, line:82, currentScope:'main.js'
+decBlock: depth:2, line:82, leavingScope:'main.js'
+incBlock: depth:2, line:83, currentScope:'main.js'
+decBlock: depth:2, line:83, leavingScope:'main.js'
+incBlock: depth:2, line:84, currentScope:'main.js'
+decBlock: depth:2, line:84, leavingScope:'main.js'
+incBlock: depth:2, line:85, currentScope:'main.js'
+decBlock: depth:2, line:85, leavingScope:'main.js'
+decBlock: depth:1, line:86, leavingScope:'main.js'
+incBlock: depth:1, line:111, currentScope:'main.js'
+decBlock: depth:1, line:114, leavingScope:'main.js'
+incBlock: depth:1, line:115, currentScope:'main.js'
+VAR: algo on line 116, type:'string' (class <class 'lang_javascript.JSVariable'>)
+VAR: port on line 117, type:'configvars.HTTP_PORT_SCRYPT' (class <class 'lang_javascript.JSAlias'>)
+decBlock: depth:1, line:118, leavingScope:'main.js'
+incBlock: depth:1, line:119, currentScope:'main.js'
+decBlock: depth:1, line:121, leavingScope:'main.js'
+addAnonymousFunction: (anonymous 3)([])
+incBlock: depth:1, line:127, currentScope:'(anonymous 3)'
+decBlock: depth:1, line:132, leavingScope:'(anonymous 3)'
+VAR: readline on line 134, type:'require()' (class <class 'lang_javascript.JSAlias'>)
+incBlock: depth:1, line:135, currentScope:'main.js'
+decBlock: depth:1, line:139, leavingScope:'main.js'
+addAnonymousFunction: (anonymous 4)([])
+incBlock: depth:1, line:146, currentScope:'(anonymous 4)'
+incBlock: depth:2, line:147, currentScope:'(anonymous 4)'
+decBlock: depth:2, line:149, leavingScope:'(anonymous 4)'
+incBlock: depth:2, line:150, currentScope:'(anonymous 4)'
+decBlock: depth:2, line:152, leavingScope:'(anonymous 4)'
+decBlock: depth:1, line:153, leavingScope:'(anonymous 4)'
+addAnonymousFunction: (anonymous 5)(['d'])
+VAR:d, line:155, type:'', scope:'(anonymous 5)', meta:None
+incBlock: depth:1, line:155, currentScope:'(anonymous 5)'
+incBlock: depth:2, line:158, currentScope:'(anonymous 5)'
+VAR:args, line:159, type:'Array', scope:'(anonymous 5)', meta:{}
+incBlock: depth:3, line:160, currentScope:'(anonymous 5)'
+decBlock: depth:3, line:164, leavingScope:'(anonymous 5)'
+incBlock: depth:3, line:166, currentScope:'(anonymous 5)'
+incBlock: depth:4, line:174, currentScope:'(anonymous 5)'
+VAR:coins, line:176, type:'args.slice()', scope:'(anonymous 5)', meta:{}
+decBlock: depth:4, line:177, leavingScope:'(anonymous 5)'
+incBlock: depth:4, line:178, currentScope:'(anonymous 5)'
+decBlock: depth:4, line:180, leavingScope:'(anonymous 5)'
+incBlock: depth:4, line:184, currentScope:'(anonymous 5)'
+decBlock: depth:4, line:187, leavingScope:'(anonymous 5)'
+incBlock: depth:4, line:189, currentScope:'(anonymous 5)'
+decBlock: depth:4, line:192, leavingScope:'(anonymous 5)'
+incBlock: depth:4, line:193, currentScope:'(anonymous 5)'
+decBlock: depth:4, line:195, leavingScope:'(anonymous 5)'
+decBlock: depth:3, line:210, leavingScope:'(anonymous 5)'
+decBlock: depth:2, line:212, leavingScope:'(anonymous 5)'
+incBlock: depth:2, line:212, currentScope:'(anonymous 5)'
+VAR: configvars on line 213, type:'Object' (class <class 'lang_javascript.JSVariable'>)
+Could not find 'configvars' in scope: '(anonymous 5)', creating variable (type=Object) for it on scope 'main.js'!!!
+VAR:NEWS, line:213, type:'args.join()', scope:'configvars', meta:{}
+decBlock: depth:2, line:216, leavingScope:'(anonymous 5)'
+decBlock: depth:1, line:217, leavingScope:'(anonymous 5)'
+FUNC: optionallyStartStratum([]) isLocal:False adding to file 'main.js'
+incBlock: depth:1, line:220, currentScope:'optionallyStartStratum'
+incBlock: depth:2, line:222, currentScope:'optionallyStartStratum'
+decBlock: depth:2, line:224, leavingScope:'optionallyStartStratum'
+incBlock: depth:2, line:226, currentScope:'optionallyStartStratum'
+decBlock: depth:2, line:229, leavingScope:'optionallyStartStratum'
+incBlock: depth:2, line:231, currentScope:'optionallyStartStratum'
+decBlock: depth:2, line:233, leavingScope:'optionallyStartStratum'
+decBlock: depth:1, line:234, leavingScope:'optionallyStartStratum'
+incBlock: depth:1, line:237, currentScope:'main.js'
+incBlock: depth:2, line:240, currentScope:'main.js'
+decBlock: depth:2, line:242, leavingScope:'main.js'
+decBlock: depth:1, line:243, leavingScope:'main.js'
+addAnonymousFunction: (anonymous 6)(['e'])
+VAR:e, line:245, type:'', scope:'(anonymous 6)', meta:None
+incBlock: depth:1, line:245, currentScope:'(anonymous 6)'
+incBlock: depth:2, line:250, currentScope:'(anonymous 6)'
+incBlock: depth:3, line:251, currentScope:'(anonymous 6)'
+decBlock: depth:3, line:254, leavingScope:'(anonymous 6)'
+incBlock: depth:3, line:254, currentScope:'(anonymous 6)'
+decBlock: depth:3, line:256, leavingScope:'(anonymous 6)'
+decBlock: depth:2, line:257, leavingScope:'(anonymous 6)'
+incBlock: depth:2, line:261, currentScope:'(anonymous 6)'
+incBlock: depth:3, line:263, currentScope:'(anonymous 6)'
+decBlock: depth:3, line:265, leavingScope:'(anonymous 6)'
+decBlock: depth:2, line:266, leavingScope:'(anonymous 6)'
+incBlock: depth:2, line:270, currentScope:'(anonymous 6)'
+VAR:intervalShares, line:271, type:'workerSharesThisInterval[key]', scope:'(anonymous 6)', meta:{}
+incBlock: depth:3, line:273, currentScope:'(anonymous 6)'
+decBlock: depth:3, line:275, leavingScope:'(anonymous 6)'
+incBlock: depth:3, line:277, currentScope:'(anonymous 6)'
+incBlock: depth:4, line:280, currentScope:'(anonymous 6)'
+decBlock: depth:4, line:282, leavingScope:'(anonymous 6)'
+decBlock: depth:3, line:283, leavingScope:'(anonymous 6)'
+decBlock: depth:2, line:284, leavingScope:'(anonymous 6)'
+incBlock: depth:2, line:288, currentScope:'(anonymous 6)'
+decBlock: depth:2, line:293, leavingScope:'(anonymous 6)'
+VAR:workerSharesThisInterval, line:296, type:'Object', scope:'(anonymous 6)', meta:None
+incBlock: depth:2, line:296, currentScope:'workerSharesThisInterval'
+decBlock: depth:2, line:296, leavingScope:'workerSharesThisInterval'
+addAnonymousFunction: (anonymous 7)(['total'])
+VAR:total, line:318, type:'', scope:'(anonymous 7)', meta:None
+incBlock: depth:2, line:318, currentScope:'(anonymous 7)'
+decBlock: depth:2, line:320, leavingScope:'(anonymous 7)'
+decBlock: depth:1, line:322, leavingScope:'(anonymous 6)'
+FUNC: getCoinProfit(['theAlgo', 'coinChoices', 'callback']) isLocal:False adding to file 'main.js'
+VAR:theAlgo, line:328, type:'', scope:'getCoinProfit', meta:None
+VAR:coinChoices, line:328, type:'', scope:'getCoinProfit', meta:None
+VAR:callback, line:328, type:'', scope:'getCoinProfit', meta:None
+incBlock: depth:1, line:328, currentScope:'getCoinProfit'
+VAR:coinwarztemp, line:329, type:'', scope:'getCoinProfit', meta:{}
+VAR:options, line:330, type:'Object', scope:'getCoinProfit', meta:None
+incBlock: depth:2, line:330, currentScope:'options'
+VAR:host, line:331, type:'string', scope:'options', meta:None
+VAR:port, line:332, type:'int', scope:'options', meta:None
+VAR:path, line:333, type:'string', scope:'options', meta:None
+VAR:method, line:334, type:'string', scope:'options', meta:None
+decBlock: depth:2, line:335, leavingScope:'options'
+addAnonymousFunction: (anonymous 8)(['res'])
+VAR:res, line:337, type:'', scope:'(anonymous 8)', meta:None
+incBlock: depth:2, line:337, currentScope:'(anonymous 8)'
+addAnonymousFunction: (anonymous 9)(['chunk'])
+VAR:chunk, line:340, type:'', scope:'(anonymous 9)', meta:None
+incBlock: depth:3, line:340, currentScope:'(anonymous 9)'
+decBlock: depth:3, line:342, leavingScope:'(anonymous 9)'
+addAnonymousFunction: (anonymous 10)([])
+incBlock: depth:3, line:343, currentScope:'(anonymous 10)'
+VAR:mostProfitable, line:345, type:'', scope:'(anonymous 10)', meta:{}
+incBlock: depth:4, line:347, currentScope:'(anonymous 10)'
+incBlock: depth:5, line:349, currentScope:'(anonymous 10)'
+incBlock: depth:6, line:352, currentScope:'(anonymous 10)'
+decBlock: depth:6, line:354, leavingScope:'(anonymous 10)'
+decBlock: depth:5, line:355, leavingScope:'(anonymous 10)'
+incBlock: depth:5, line:357, currentScope:'(anonymous 10)'
+decBlock: depth:5, line:359, leavingScope:'(anonymous 10)'
+decBlock: depth:4, line:360, leavingScope:'(anonymous 10)'
+incBlock: depth:4, line:362, currentScope:'(anonymous 10)'
+decBlock: depth:4, line:369, leavingScope:'(anonymous 10)'
+decBlock: depth:3, line:370, leavingScope:'(anonymous 10)'
+decBlock: depth:2, line:371, leavingScope:'(anonymous 8)'
+addAnonymousFunction: (anonymous 11)(['e'])
+VAR:e, line:372, type:'', scope:'(anonymous 11)', meta:None
+incBlock: depth:2, line:372, currentScope:'(anonymous 11)'
+decBlock: depth:2, line:374, leavingScope:'(anonymous 11)'
+decBlock: depth:1, line:378, leavingScope:'getCoinProfit'
+FUNC: logNowMining(['coinname']) isLocal:False adding to file 'main.js'
+VAR:coinname, line:381, type:'', scope:'logNowMining', meta:None
+incBlock: depth:1, line:381, currentScope:'logNowMining'
+decBlock: depth:1, line:383, leavingScope:'logNowMining'
+incBlock: depth:1, line:388, currentScope:'main.js'
+VAR: idx on line 389, type:'' (class <class 'lang_javascript.JSVariable'>)
+incBlock: depth:2, line:389, currentScope:'main.js'
+decBlock: depth:2, line:391, leavingScope:'main.js'
+addAnonymousFunction: (anonymous 12)([])
+incBlock: depth:2, line:399, currentScope:'(anonymous 12)'
+decBlock: depth:2, line:401, leavingScope:'(anonymous 12)'
+VAR: autoTimeout on line 401, type:'setTimeout()' (class <class 'lang_javascript.JSAlias'>)
+decBlock: depth:1, line:402, leavingScope:'main.js'
+incBlock: depth:1, line:409, currentScope:'main.js'
+VAR: theAlgo on line 411, type:'isScryptServer' (class <class 'lang_javascript.JSAlias'>)
+addAnonymousFunction: (anonymous 13)(['coinTag'])
+VAR:coinTag, line:413, type:'', scope:'(anonymous 13)', meta:None
+incBlock: depth:2, line:413, currentScope:'(anonymous 13)'
+incBlock: depth:3, line:416, currentScope:'(anonymous 13)'
+decBlock: depth:3, line:420, leavingScope:'(anonymous 13)'
+addAnonymousFunction: (anonymous 14)([])
+incBlock: depth:3, line:423, currentScope:'(anonymous 14)'
+VAR: interval on line 424, type:'' (class <class 'lang_javascript.JSVariable'>)
+decBlock: depth:3, line:425, leavingScope:'(anonymous 14)'
+decBlock: depth:2, line:427, leavingScope:'(anonymous 13)'
+decBlock: depth:1, line:428, leavingScope:'main.js'
+FUNC: setupStratum(['coinname']) isLocal:False adding to file 'main.js'
+VAR:coinname, line:430, type:'', scope:'setupStratum', meta:None
+incBlock: depth:1, line:430, currentScope:'setupStratum'
+incBlock: depth:2, line:431, currentScope:'setupStratum'
+decBlock: depth:2, line:434, leavingScope:'setupStratum'
+incBlock: depth:2, line:436, currentScope:'setupStratum'
+incBlock: depth:3, line:437, currentScope:'setupStratum'
+decBlock: depth:3, line:440, leavingScope:'setupStratum'
+decBlock: depth:2, line:441, leavingScope:'setupStratum'
+addAnonymousFunction: (anonymous 15)(['err', 'data'])
+VAR:err, line:443, type:'', scope:'(anonymous 15)', meta:None
+VAR:data, line:443, type:'', scope:'(anonymous 15)', meta:None
+incBlock: depth:2, line:443, currentScope:'(anonymous 15)'
+incBlock: depth:3, line:445, currentScope:'(anonymous 15)'
+decBlock: depth:3, line:448, leavingScope:'(anonymous 15)'
+incBlock: depth:3, line:452, currentScope:'(anonymous 15)'
+decBlock: depth:3, line:452, leavingScope:'(anonymous 15)'
+incBlock: depth:3, line:456, currentScope:'(anonymous 15)'
+incBlock: depth:4, line:460, currentScope:'(anonymous 15)'
+decBlock: depth:4, line:465, leavingScope:'(anonymous 15)'
+addAnonymousFunction: (anonymous 16)(['close'])
+VAR:close, line:466, type:'', scope:'(anonymous 16)', meta:None
+incBlock: depth:4, line:466, currentScope:'(anonymous 16)'
+decBlock: depth:4, line:468, leavingScope:'(anonymous 16)'
+decBlock: depth:3, line:471, leavingScope:'(anonymous 15)'
+addAnonymousFunction: (anonymous 17)(['ip', 'workerName', 'password', 'callback'])
+VAR:ip, line:474, type:'', scope:'(anonymous 17)', meta:None
+VAR:workerName, line:474, type:'', scope:'(anonymous 17)', meta:None
+VAR:password, line:474, type:'', scope:'(anonymous 17)', meta:None
+VAR:callback, line:474, type:'', scope:'(anonymous 17)', meta:None
+incBlock: depth:3, line:474, currentScope:'(anonymous 17)'
+incBlock: depth:4, line:482, currentScope:'(anonymous 17)'
+incBlock: depth:5, line:483, currentScope:None
+VAR:error, line:484, type:'string', scope:None, meta:None
+VAR:authorized, line:485, type:'boolean', scope:None, meta:None
+VAR:disconnect, line:486, type:'boolean', scope:None, meta:None
+decBlock: depth:5, line:487, leavingScope:None
+decBlock: depth:4, line:488, leavingScope:'(anonymous 17)'
+incBlock: depth:4, line:494, currentScope:'(anonymous 17)'
+decBlock: depth:4, line:498, leavingScope:'(anonymous 17)'
+decBlock: depth:3, line:500, leavingScope:'(anonymous 17)'
+addAnonymousFunction: (anonymous 18)(['isValidShare', 'isValidBlock', 'data'])
+VAR:isValidShare, line:502, type:'', scope:'(anonymous 18)', meta:None
+VAR:isValidBlock, line:502, type:'', scope:'(anonymous 18)', meta:None
+VAR:data, line:502, type:'', scope:'(anonymous 18)', meta:None
+incBlock: depth:3, line:502, currentScope:'(anonymous 18)'
+incBlock: depth:4, line:513, currentScope:'(anonymous 18)'
+decBlock: depth:4, line:515, leavingScope:'(anonymous 18)'
+incBlock: depth:4, line:517, currentScope:'(anonymous 18)'
+decBlock: depth:4, line:519, leavingScope:'(anonymous 18)'
+decBlock: depth:3, line:523, leavingScope:'(anonymous 18)'
+addAnonymousFunction: (anonymous 19)(['severity', 'logKey', 'logText'])
+VAR:severity, line:525, type:'', scope:'(anonymous 19)', meta:None
+VAR:logKey, line:525, type:'', scope:'(anonymous 19)', meta:None
+VAR:logText, line:525, type:'', scope:'(anonymous 19)', meta:None
+incBlock: depth:3, line:525, currentScope:'(anonymous 19)'
+decBlock: depth:3, line:527, leavingScope:'(anonymous 19)'
+decBlock: depth:2, line:532, leavingScope:'(anonymous 15)'
+decBlock: depth:1, line:533, leavingScope:'setupStratum'
+FUNC: getCurrentProfitability([]) isLocal:False adding to file 'main.js'
+incBlock: depth:1, line:536, currentScope:'getCurrentProfitability'
+incBlock: depth:2, line:537, currentScope:'getCurrentProfitability'
+decBlock: depth:2, line:539, leavingScope:'getCurrentProfitability'
+incBlock: depth:2, line:539, currentScope:'getCurrentProfitability'
+decBlock: depth:2, line:541, leavingScope:'getCurrentProfitability'
+decBlock: depth:1, line:542, leavingScope:'getCurrentProfitability'
+FUNC: handleTimeout(['site']) isLocal:False adding to file 'main.js'
+VAR:site, line:544, type:'', scope:'handleTimeout', meta:None
+incBlock: depth:1, line:544, currentScope:'handleTimeout'
+incBlock: depth:2, line:545, currentScope:'handleTimeout'
+incBlock: depth:3, line:547, currentScope:'handleTimeout'
+decBlock: depth:3, line:549, leavingScope:'handleTimeout'
+decBlock: depth:2, line:550, leavingScope:'handleTimeout'
+incBlock: depth:2, line:551, currentScope:'handleTimeout'
+incBlock: depth:3, line:553, currentScope:'handleTimeout'
+decBlock: depth:3, line:555, leavingScope:'handleTimeout'
+decBlock: depth:2, line:556, leavingScope:'handleTimeout'
+decBlock: depth:1, line:557, leavingScope:'handleTimeout'
+FUNC: getStats(['port', 'callback']) isLocal:False adding to file 'main.js'
+VAR:port, line:560, type:'', scope:'getStats', meta:None
+VAR:callback, line:560, type:'', scope:'getStats', meta:None
+incBlock: depth:1, line:560, currentScope:'getStats'
+incBlock: depth:2, line:561, currentScope:'getStats'
+incBlock: depth:3, line:563, currentScope:'getStats'
+decBlock: depth:3, line:567, leavingScope:'getStats'
+decBlock: depth:2, line:569, leavingScope:'getStats'
+incBlock: depth:2, line:571, currentScope:None
+VAR:timeout, line:571, type:'int', scope:None, meta:None
+decBlock: depth:2, line:571, leavingScope:None
+addAnonymousFunction: (anonymous 20)(['ms'])
+VAR:ms, line:571, type:'', scope:'(anonymous 20)', meta:None
+incBlock: depth:2, line:571, currentScope:'(anonymous 20)'
+incBlock: depth:3, line:574, currentScope:'(anonymous 20)'
+decBlock: depth:3, line:578, leavingScope:'(anonymous 20)'
+decBlock: depth:2, line:579, leavingScope:'(anonymous 20)'
+addAnonymousFunction: (anonymous 21)(['data', 'response'])
+VAR:data, line:579, type:'', scope:'(anonymous 21)', meta:None
+VAR:response, line:579, type:'', scope:'(anonymous 21)', meta:None
+incBlock: depth:2, line:579, currentScope:'(anonymous 21)'
+decBlock: depth:2, line:581, leavingScope:'(anonymous 21)'
+decBlock: depth:1, line:582, leavingScope:'getStats'
+FUNC: getMinerStats(['id', 'port', 'callback']) isLocal:False adding to file 'main.js'
+VAR:id, line:585, type:'', scope:'getMinerStats', meta:None
+VAR:port, line:585, type:'', scope:'getMinerStats', meta:None
+VAR:callback, line:585, type:'', scope:'getMinerStats', meta:None
+incBlock: depth:1, line:585, currentScope:'getMinerStats'
+incBlock: depth:2, line:586, currentScope:'getMinerStats'
+incBlock: depth:3, line:588, currentScope:'getMinerStats'
+decBlock: depth:3, line:592, leavingScope:'getMinerStats'
+decBlock: depth:2, line:594, leavingScope:'getMinerStats'
+incBlock: depth:2, line:596, currentScope:None
+VAR:timeout, line:596, type:'int', scope:None, meta:None
+decBlock: depth:2, line:596, leavingScope:None
+addAnonymousFunction: (anonymous 22)(['ms'])
+VAR:ms, line:596, type:'', scope:'(anonymous 22)', meta:None
+incBlock: depth:2, line:596, currentScope:'(anonymous 22)'
+incBlock: depth:3, line:599, currentScope:'(anonymous 22)'
+decBlock: depth:3, line:603, leavingScope:'(anonymous 22)'
+decBlock: depth:2, line:604, leavingScope:'(anonymous 22)'
+addAnonymousFunction: (anonymous 23)(['data', 'response'])
+VAR:data, line:604, type:'', scope:'(anonymous 23)', meta:None
+VAR:response, line:604, type:'', scope:'(anonymous 23)', meta:None
+incBlock: depth:2, line:604, currentScope:'(anonymous 23)'
+decBlock: depth:2, line:606, leavingScope:'(anonymous 23)'
+decBlock: depth:1, line:607, leavingScope:'getMinerStats'
+addAnonymousFunction: (anonymous 24)(['req', 'res'])
+VAR:req, line:611, type:'', scope:'(anonymous 24)', meta:None
+VAR:res, line:611, type:'', scope:'(anonymous 24)', meta:None
+incBlock: depth:1, line:611, currentScope:'(anonymous 24)'
+addAnonymousFunction: (anonymous 25)(['scryptStats'])
+VAR:scryptStats, line:614, type:'', scope:'(anonymous 25)', meta:None
+incBlock: depth:2, line:614, currentScope:'(anonymous 25)'
+addAnonymousFunction: (anonymous 26)(['shaStats'])
+VAR:shaStats, line:616, type:'', scope:'(anonymous 26)', meta:None
+incBlock: depth:3, line:616, currentScope:'(anonymous 26)'
+incBlock: depth:4, line:618, currentScope:'(anonymous 26)'
+VAR:id, line:619, type:'req.query.miner', scope:'(anonymous 26)', meta:{}
+incBlock: depth:5, line:621, currentScope:'(anonymous 26)'
+decBlock: depth:5, line:624, leavingScope:'(anonymous 26)'
+decBlock: depth:4, line:625, leavingScope:'(anonymous 26)'
+incBlock: depth:4, line:627, currentScope:None
+VAR:layout, line:628, type:'string', scope:None, meta:None
+VAR:news, line:628, type:'configvars.NEWS', scope:None, meta:None
+VAR:totalhashrate, line:629, type:"scryptStats['hashRate']", scope:None, meta:None
+VAR:totalminers, line:630, type:"scryptStats['miners']", scope:None, meta:None
+VAR:totalshares, line:631, type:"scryptStats['totalShares']", scope:None, meta:None
+VAR:shatotalhashrate, line:633, type:"shaStats['hashRate']", scope:None, meta:None
+VAR:shatotalminers, line:634, type:"shaStats['miners']", scope:None, meta:None
+VAR:shatotalshares, line:635, type:"shaStats['totalShares']", scope:None, meta:None
+VAR:version, line:636, type:'configvars.VERSION', scope:None, meta:None
+VAR:nodeversion, line:637, type:'nodeVersion.node', scope:None, meta:None
+decBlock: depth:4, line:637, leavingScope:None
+decBlock: depth:3, line:638, leavingScope:'(anonymous 26)'
+decBlock: depth:2, line:639, leavingScope:'(anonymous 25)'
+decBlock: depth:1, line:640, leavingScope:'(anonymous 24)'
+VAR: currmining on line 640, type:'getCurrentProfitability()' (class <class 'lang_javascript.JSAlias'>)
+addAnonymousFunction: (anonymous 27)(['req', 'res'])
+VAR:req, line:642, type:'', scope:'(anonymous 27)', meta:None
+VAR:res, line:642, type:'', scope:'(anonymous 27)', meta:None
+incBlock: depth:1, line:642, currentScope:'(anonymous 27)'
+addAnonymousFunction: (anonymous 28)(['scryptStats'])
+VAR:scryptStats, line:644, type:'', scope:'(anonymous 28)', meta:None
+incBlock: depth:2, line:644, currentScope:'(anonymous 28)'
+addAnonymousFunction: (anonymous 29)(['shaStats'])
+VAR:shaStats, line:646, type:'', scope:'(anonymous 29)', meta:None
+incBlock: depth:3, line:646, currentScope:'(anonymous 29)'
+incBlock: depth:4, line:647, currentScope:None
+VAR:layout, line:648, type:'string', scope:None, meta:None
+VAR:news, line:648, type:'configvars.NEWS', scope:None, meta:None
+VAR:totalhashrate, line:649, type:"scryptStats['hashRate']", scope:None, meta:None
+VAR:totalminers, line:650, type:"scryptStats['miners']", scope:None, meta:None
+VAR:totalshares, line:651, type:"scryptStats['totalShares']", scope:None, meta:None
+VAR:shatotalhashrate, line:653, type:"shaStats['hashRate']", scope:None, meta:None
+VAR:shatotalminers, line:654, type:"shaStats['miners']", scope:None, meta:None
+VAR:shatotalshares, line:655, type:"shaStats['totalShares']", scope:None, meta:None
+VAR:version, line:656, type:'configvars.VERSION', scope:None, meta:None
+VAR:nodeversion, line:657, type:'nodeVersion.node', scope:None, meta:None
+decBlock: depth:4, line:657, leavingScope:None
+decBlock: depth:3, line:658, leavingScope:'(anonymous 29)'
+decBlock: depth:2, line:659, leavingScope:'(anonymous 28)'
+decBlock: depth:1, line:660, leavingScope:'(anonymous 27)'
+FUNC: renderMinerJade(['id', 'scryptStats', 'shaStats', 'res']) isLocal:False adding to file 'main.js'
+VAR:id, line:662, type:'', scope:'renderMinerJade', meta:None
+VAR:scryptStats, line:662, type:'', scope:'renderMinerJade', meta:None
+VAR:shaStats, line:662, type:'', scope:'renderMinerJade', meta:None
+VAR:res, line:662, type:'', scope:'renderMinerJade', meta:None
+incBlock: depth:1, line:662, currentScope:'renderMinerJade'
+VAR:wmhashPerSecond, line:663, type:'string', scope:'renderMinerJade', meta:{}
+addAnonymousFunction: (anonymous 30)(['data'])
+VAR:data, line:667, type:'', scope:'(anonymous 30)', meta:None
+incBlock: depth:2, line:667, currentScope:'(anonymous 30)'
+VAR:minerStats, line:670, type:"data['minerStats']", scope:'(anonymous 30)', meta:{}
+VAR:minerShaStats, line:670, type:"data['minerShaStats']", scope:'(anonymous 30)', meta:{}
+incBlock: depth:3, line:672, currentScope:'(anonymous 30)'
+decBlock: depth:3, line:679, leavingScope:'(anonymous 30)'
+FUNC: processRow([]) isLocal:True adding to function '(anonymous 30)'
+incBlock: depth:3, line:682, currentScope:'processRow'
+VAR: row on line 683, type:'Object' (class <class 'lang_javascript.JSVariable'>)
+Could not find 'row' in scope: 'processRow', creating variable (type=Object) for it on scope 'main.js'!!!
+VAR:avghash, line:683, type:'HashrateUtils.sharesToMegaHashrate()', scope:'row', meta:{}
+incBlock: depth:4, line:683, currentScope:'processRow'
+VAR:avg, line:684, type:'parseFloat()', scope:'processRow', meta:{}
+decBlock: depth:4, line:685, leavingScope:'processRow'
+decBlock: depth:3, line:686, leavingScope:'processRow'
+incBlock: depth:3, line:687, currentScope:'(anonymous 30)'
+VAR:i, line:688, type:'int', scope:'(anonymous 30)', meta:{}
+incBlock: depth:4, line:688, currentScope:'(anonymous 30)'
+decBlock: depth:4, line:690, leavingScope:'(anonymous 30)'
+decBlock: depth:3, line:691, leavingScope:'(anonymous 30)'
+addAnonymousFunction: (anonymous 31)(['scryptMinerStats'])
+VAR:scryptMinerStats, line:694, type:'', scope:'(anonymous 31)', meta:None
+incBlock: depth:3, line:694, currentScope:'(anonymous 31)'
+addAnonymousFunction: (anonymous 32)(['shaMinerStats'])
+VAR:shaMinerStats, line:696, type:'', scope:'(anonymous 32)', meta:None
+incBlock: depth:4, line:696, currentScope:'(anonymous 32)'
+incBlock: depth:5, line:698, currentScope:None
+VAR:layout, line:698, type:'string', scope:None, meta:None
+VAR:news, line:698, type:'configvars.NEWS', scope:None, meta:None
+VAR:totalhashrate, line:699, type:"scryptStats['hashRate']", scope:None, meta:None
+VAR:totalminers, line:700, type:"scryptStats['miners']", scope:None, meta:None
+VAR:totalshares, line:701, type:"scryptStats['totalShares']", scope:None, meta:None
+VAR:shatotalhashrate, line:704, type:"shaStats['hashRate']", scope:None, meta:None
+VAR:shatotalminers, line:705, type:"shaStats['miners']", scope:None, meta:None
+VAR:shatotalshares, line:706, type:"shaStats['totalShares']", scope:None, meta:None
+VAR:workerhashrate, line:708, type:"scryptMinerStats['workerhashrate']", scope:None, meta:None
+VAR:shaworkerhashrate, line:709, type:"shaMinerStats['workerhashrate']", scope:None, meta:None
+VAR:minername, line:710, type:'id', scope:None, meta:None
+VAR:workershares, line:712, type:"data['currentShares']", scope:None, meta:None
+VAR:workershashares, line:713, type:"data['currentShaShares']", scope:None, meta:None
+VAR:minerStats, line:714, type:'minerStats', scope:None, meta:None
+VAR:minerShaStats, line:715, type:'shaMinerStats', scope:None, meta:None
+VAR:version, line:719, type:'configvars.VERSION', scope:None, meta:None
+VAR:nodeversion, line:720, type:'nodeVersion.node', scope:None, meta:None
+decBlock: depth:5, line:721, leavingScope:None
+decBlock: depth:4, line:723, leavingScope:'(anonymous 32)'
+decBlock: depth:3, line:724, leavingScope:'(anonymous 31)'
+decBlock: depth:2, line:726, leavingScope:'(anonymous 30)'
+CLASSMBR: 'latestPayout', in class 'renderMinerJade'
+decBlock: depth:1, line:727, leavingScope:'renderMinerJade'
+addAnonymousFunction: (anonymous 33)(['req', 'res'])
+VAR:req, line:731, type:'', scope:'(anonymous 33)', meta:None
+VAR:res, line:731, type:'', scope:'(anonymous 33)', meta:None
+incBlock: depth:1, line:731, currentScope:'(anonymous 33)'
+VAR:stats, line:732, type:'Object', scope:'(anonymous 33)', meta:None
+incBlock: depth:2, line:732, currentScope:'stats'
+VAR:hashRate, line:733, type:'mhashPerSecond', scope:'stats', meta:None
+addClassOrVariableMember: main.js:734 Trying to add ['latestShaPayout'] as a local member variable??
+addClassOrVariableMember: main.js:735 Trying to add ['totalShares'] as a local member variable??
+decBlock: depth:2, line:737, leavingScope:'stats'
+CLASSMBR: 'miners', in function '(anonymous 33)'
+decBlock: depth:1, line:739, leavingScope:'(anonymous 33)'
+addAnonymousFunction: (anonymous 34)(['req', 'res'])
+VAR:req, line:746, type:'', scope:'(anonymous 34)', meta:None
+VAR:res, line:746, type:'', scope:'(anonymous 34)', meta:None
+incBlock: depth:1, line:746, currentScope:'(anonymous 34)'
+VAR:wmhashPerSecond, line:747, type:'string', scope:'(anonymous 34)', meta:{}
+incBlock: depth:2, line:752, currentScope:'(anonymous 34)'
+decBlock: depth:2, line:754, leavingScope:'(anonymous 34)'
+decBlock: depth:1, line:755, leavingScope:'(anonymous 34)'
+incBlock: depth:1, line:759, currentScope:'main.js'
+decBlock: depth:1, line:759, leavingScope:'main.js'
+addAnonymousFunction: (anonymous 35)(['time', 'callback', 'time_period'])
+VAR:time, line:786, type:'', scope:'(anonymous 35)', meta:None
+VAR:callback, line:786, type:'', scope:'(anonymous 35)', meta:None
+VAR:time_period, line:786, type:'', scope:'(anonymous 35)', meta:None
+incBlock: depth:1, line:786, currentScope:'(anonymous 35)'
+incBlock: depth:2, line:793, currentScope:'(anonymous 35)'
+decBlock: depth:2, line:795, leavingScope:'(anonymous 35)'
+addAnonymousFunction: (anonymous 36)(['data', 'response'])
+VAR:data, line:799, type:'', scope:'(anonymous 36)', meta:None
+VAR:response, line:799, type:'', scope:'(anonymous 36)', meta:None
+incBlock: depth:2, line:799, currentScope:'(anonymous 36)'
+addAnonymousFunction: (anonymous 37)(['date'])
+VAR:date, line:802, type:'', scope:'(anonymous 37)', meta:None
+incBlock: depth:3, line:802, currentScope:'(anonymous 37)'
+incBlock: depth:4, line:804, currentScope:'(anonymous 37)'
+decBlock: depth:4, line:806, leavingScope:'(anonymous 37)'
+decBlock: depth:3, line:807, leavingScope:'(anonymous 37)'
+decBlock: depth:2, line:809, leavingScope:'(anonymous 36)'
+decBlock: depth:1, line:810, leavingScope:'(anonymous 35)'
+FUNC: updateAveragePayoutMintpal([]) isLocal:False adding to file 'main.js'
+incBlock: depth:1, line:813, currentScope:'updateAveragePayoutMintpal'
+addAnonymousFunction: (anonymous 38)(['stats'])
+VAR:stats, line:816, type:'', scope:'(anonymous 38)', meta:None
+incBlock: depth:2, line:816, currentScope:'(anonymous 38)'
+VAR:latestPayout, line:817, type:'stats[0]', scope:'(anonymous 38)', meta:{}
+VAR:latestPayoutDate, line:818, type:'latestPayout.payout_date', scope:'(anonymous 38)', meta:{}
+addAnonymousFunction: (anonymous 39)(['price'])
+VAR:price, line:822, type:'', scope:'(anonymous 39)', meta:None
+incBlock: depth:3, line:822, currentScope:'(anonymous 39)'
+VAR:shares, line:824, type:"latestPayout['shares']", scope:'(anonymous 39)', meta:{}
+VAR:amountBC, line:825, type:"latestPayout['amount']", scope:'(anonymous 39)', meta:{}
+VAR:amountBTC, line:826, type:'amountBC', scope:'(anonymous 39)', meta:{}
+VAR:elapsed, line:827, type:"latestPayout['elapsed_seconds']", scope:'(anonymous 39)', meta:{}
+VAR:megaHashrate, line:832, type:'hashrate', scope:'(anonymous 39)', meta:{}
+VAR:BTCPerMegaHashrate, line:833, type:'amountBTC', scope:'(anonymous 39)', meta:{}
+VAR:averagePayout, line:835, type:'Object', scope:'(anonymous 39)', meta:None
+incBlock: depth:4, line:835, currentScope:'averagePayout'
+VAR:payoutRate, line:836, type:'BTCPerMegaHashrate', scope:'averagePayout', meta:None
+decBlock: depth:4, line:838, leavingScope:'averagePayout'
+decBlock: depth:3, line:840, leavingScope:'(anonymous 39)'
+VAR:hashrate, line:840, type:'HashrateUtils.sharesToHashrate()', scope:'(anonymous 38)', meta:{}
+decBlock: depth:2, line:841, leavingScope:'(anonymous 38)'
+CLASSMBR: 'date', in class 'updateAveragePayoutMintpal'
+decBlock: depth:1, line:842, leavingScope:'updateAveragePayoutMintpal'
+FUNC: mintpalAverageBCPrice(['callback', 'time_period']) isLocal:False adding to file 'main.js'
+VAR:callback, line:872, type:'', scope:'mintpalAverageBCPrice', meta:None
+VAR:time_period, line:872, type:'', scope:'mintpalAverageBCPrice', meta:None
+incBlock: depth:1, line:872, currentScope:'mintpalAverageBCPrice'
+incBlock: depth:2, line:874, currentScope:'mintpalAverageBCPrice'
+decBlock: depth:2, line:876, leavingScope:'mintpalAverageBCPrice'
+addAnonymousFunction: (anonymous 40)(['data', 'response'])
+VAR:data, line:880, type:'', scope:'(anonymous 40)', meta:None
+VAR:response, line:880, type:'', scope:'(anonymous 40)', meta:None
+incBlock: depth:2, line:880, currentScope:'(anonymous 40)'
+addAnonymousFunction: (anonymous 41)(['accum', 'next'])
+VAR:accum, line:884, type:'', scope:'(anonymous 41)', meta:None
+VAR:next, line:884, type:'', scope:'(anonymous 41)', meta:None
+incBlock: depth:3, line:884, currentScope:'(anonymous 41)'
+incBlock: depth:4, line:888, currentScope:'(anonymous 41)'
+decBlock: depth:4, line:890, leavingScope:'(anonymous 41)'
+VAR:means, line:892, type:'data.reduce()', scope:'(anonymous 41)', meta:{}
+incBlock: depth:4, line:892, currentScope:'(anonymous 41)'
+decBlock: depth:4, line:894, leavingScope:'(anonymous 41)'
+VAR:date, line:895, type:'Date', scope:'(anonymous 41)', meta:{}
+decBlock: depth:3, line:896, leavingScope:'(anonymous 41)'
+incBlock: depth:3, line:897, currentScope:'(anonymous 40)'
+decBlock: depth:3, line:897, leavingScope:'(anonymous 40)'
+VAR:mean, line:897, type:'', scope:'(anonymous 40)', meta:{}
+addAnonymousFunction: (anonymous 42)(['date'])
+VAR:date, line:900, type:'', scope:'(anonymous 42)', meta:None
+incBlock: depth:3, line:900, currentScope:'(anonymous 42)'
+addAnonymousFunction: (anonymous 43)(['a', 'b'])
+VAR:a, line:901, type:'', scope:'(anonymous 43)', meta:None
+VAR:b, line:901, type:'', scope:'(anonymous 43)', meta:None
+incBlock: depth:4, line:901, currentScope:'(anonymous 43)'
+decBlock: depth:4, line:901, leavingScope:'(anonymous 43)'
+decBlock: depth:3, line:902, leavingScope:'(anonymous 42)'
+decBlock: depth:2, line:904, leavingScope:'(anonymous 40)'
+decBlock: depth:1, line:905, leavingScope:'mintpalAverageBCPrice'
+addAnonymousFunction: (anonymous 44)(['req', 'res'])
+VAR:req, line:907, type:'', scope:'(anonymous 44)', meta:None
+VAR:res, line:907, type:'', scope:'(anonymous 44)', meta:None
+incBlock: depth:1, line:907, currentScope:'(anonymous 44)'
+decBlock: depth:1, line:909, leavingScope:'(anonymous 44)'
+addAnonymousFunction: (anonymous 45)([])
+incBlock: depth:1, line:913, currentScope:'(anonymous 45)'
+decBlock: depth:1, line:915, leavingScope:'(anonymous 45)'
+****************************************
+Finished scanning, updating all scope names
+Updating all class constructor names
+Doing CodeIntel for 'JavaScript' (hold on)...
+Done 'JavaScript' CodeIntel! Full CodeIntel took 142ms
+Updating indexes for 'JavaScript'... The first time this can take a while.
+scan_purelang: path: '/Users/eboney/Code/Clients/BlackCoin/blackcoinpool/main.js' lang: JavaScript
+VAR: stratum on line 29, type:'' (class <class 'lang_javascript.JSVariable'>)
+VAR: sharesThisInterval on line 29, type:'' (class <class 'lang_javascript.JSVariable'>)
+VAR: mhashPerSecond on line 29, type:'string' (class <class 'lang_javascript.JSVariable'>)
+VAR: activeWorkers on line 29, type:'Object' (class <class 'lang_javascript.JSVariable'>)
+incBlock: depth:1, line:29, currentScope:'activeWorkers'
+decBlock: depth:1, line:29, leavingScope:'activeWorkers'
+VAR: totalShares on line 30, type:'int' (class <class 'lang_javascript.JSVariable'>)
+VAR: coinprofit on line 31, type:'Array' (class <class 'lang_javascript.JSVariable'>)
+VAR: currentcoinindex on line 32, type:'int' (class <class 'lang_javascript.JSVariable'>)
+VAR: coinValues on line 33, type:'Object' (class <class 'lang_javascript.JSVariable'>)
+incBlock: depth:1, line:33, currentScope:'coinValues'
+decBlock: depth:1, line:33, leavingScope:'coinValues'
+VAR: workerSharesThisInterval on line 34, type:'Object' (class <class 'lang_javascript.JSVariable'>)
+incBlock: depth:1, line:34, currentScope:'workerSharesThisInterval'
+decBlock: depth:1, line:34, leavingScope:'workerSharesThisInterval'
+VAR: workerShares on line 35, type:'Object' (class <class 'lang_javascript.JSVariable'>)
+incBlock: depth:1, line:35, currentScope:'workerShares'
+decBlock: depth:1, line:35, leavingScope:'workerShares'
+VAR: workerHashrateThisInterval on line 36, type:'Object' (class <class 'lang_javascript.JSVariable'>)
+incBlock: depth:1, line:36, currentScope:'workerHashrateThisInterval'
+decBlock: depth:1, line:36, leavingScope:'workerHashrateThisInterval'
+VAR: timeoutCountSite on line 44, type:'int' (class <class 'lang_javascript.JSVariable'>)
+VAR: timeoutCountMiner on line 44, type:'int' (class <class 'lang_javascript.JSVariable'>)
+VAR: ignoreSiteAPI on line 44, type:'boolean' (class <class 'lang_javascript.JSVariable'>)
+VAR: ignoreMinerAPI on line 44, type:'boolean' (class <class 'lang_javascript.JSVariable'>)
+addAnonymousFunction: (anonymous 1)([])
+incBlock: depth:1, line:47, currentScope:'(anonymous 1)'
+decBlock: depth:1, line:50, leavingScope:'(anonymous 1)'
+addAnonymousFunction: (anonymous 2)([])
+incBlock: depth:1, line:53, currentScope:'(anonymous 2)'
+decBlock: depth:1, line:56, leavingScope:'(anonymous 2)'
+incBlock: depth:1, line:75, currentScope:'main.js'
+decBlock: depth:1, line:75, leavingScope:'main.js'
+incBlock: depth:1, line:81, currentScope:'main.js'
+incBlock: depth:2, line:82, currentScope:'main.js'
+decBlock: depth:2, line:82, leavingScope:'main.js'
+incBlock: depth:2, line:83, currentScope:'main.js'
+decBlock: depth:2, line:83, leavingScope:'main.js'
+incBlock: depth:2, line:84, currentScope:'main.js'
+decBlock: depth:2, line:84, leavingScope:'main.js'
+incBlock: depth:2, line:85, currentScope:'main.js'
+decBlock: depth:2, line:85, leavingScope:'main.js'
+decBlock: depth:1, line:86, leavingScope:'main.js'
+incBlock: depth:1, line:111, currentScope:'main.js'
+decBlock: depth:1, line:114, leavingScope:'main.js'
+incBlock: depth:1, line:115, currentScope:'main.js'
+VAR: algo on line 116, type:'string' (class <class 'lang_javascript.JSVariable'>)
+VAR: port on line 117, type:'configvars.HTTP_PORT_SCRYPT' (class <class 'lang_javascript.JSAlias'>)
+decBlock: depth:1, line:118, leavingScope:'main.js'
+incBlock: depth:1, line:119, currentScope:'main.js'
+decBlock: depth:1, line:121, leavingScope:'main.js'
+addAnonymousFunction: (anonymous 3)([])
+incBlock: depth:1, line:127, currentScope:'(anonymous 3)'
+decBlock: depth:1, line:132, leavingScope:'(anonymous 3)'
+VAR: readline on line 134, type:'require()' (class <class 'lang_javascript.JSAlias'>)
+incBlock: depth:1, line:135, currentScope:'main.js'
+decBlock: depth:1, line:139, leavingScope:'main.js'
+addAnonymousFunction: (anonymous 4)([])
+incBlock: depth:1, line:146, currentScope:'(anonymous 4)'
+incBlock: depth:2, line:147, currentScope:'(anonymous 4)'
+decBlock: depth:2, line:149, leavingScope:'(anonymous 4)'
+incBlock: depth:2, line:150, currentScope:'(anonymous 4)'
+decBlock: depth:2, line:152, leavingScope:'(anonymous 4)'
+decBlock: depth:1, line:153, leavingScope:'(anonymous 4)'
+addAnonymousFunction: (anonymous 5)(['d'])
+VAR:d, line:155, type:'', scope:'(anonymous 5)', meta:None
+incBlock: depth:1, line:155, currentScope:'(anonymous 5)'
+incBlock: depth:2, line:158, currentScope:'(anonymous 5)'
+VAR:args, line:159, type:'Array', scope:'(anonymous 5)', meta:{}
+incBlock: depth:3, line:160, currentScope:'(anonymous 5)'
+decBlock: depth:3, line:164, leavingScope:'(anonymous 5)'
+incBlock: depth:3, line:166, currentScope:'(anonymous 5)'
+incBlock: depth:4, line:174, currentScope:'(anonymous 5)'
+VAR:coins, line:176, type:'args.slice()', scope:'(anonymous 5)', meta:{}
+decBlock: depth:4, line:177, leavingScope:'(anonymous 5)'
+incBlock: depth:4, line:178, currentScope:'(anonymous 5)'
+decBlock: depth:4, line:180, leavingScope:'(anonymous 5)'
+incBlock: depth:4, line:184, currentScope:'(anonymous 5)'
+decBlock: depth:4, line:187, leavingScope:'(anonymous 5)'
+incBlock: depth:4, line:189, currentScope:'(anonymous 5)'
+decBlock: depth:4, line:192, leavingScope:'(anonymous 5)'
+incBlock: depth:4, line:193, currentScope:'(anonymous 5)'
+decBlock: depth:4, line:195, leavingScope:'(anonymous 5)'
+decBlock: depth:3, line:210, leavingScope:'(anonymous 5)'
+decBlock: depth:2, line:212, leavingScope:'(anonymous 5)'
+incBlock: depth:2, line:212, currentScope:'(anonymous 5)'
+VAR: configvars on line 213, type:'Object' (class <class 'lang_javascript.JSVariable'>)
+Could not find 'configvars' in scope: '(anonymous 5)', creating variable (type=Object) for it on scope 'main.js'!!!
+VAR:NEWS, line:213, type:'args.join()', scope:'configvars', meta:{}
+decBlock: depth:2, line:216, leavingScope:'(anonymous 5)'
+decBlock: depth:1, line:217, leavingScope:'(anonymous 5)'
+FUNC: optionallyStartStratum([]) isLocal:False adding to file 'main.js'
+incBlock: depth:1, line:220, currentScope:'optionallyStartStratum'
+incBlock: depth:2, line:222, currentScope:'optionallyStartStratum'
+decBlock: depth:2, line:224, leavingScope:'optionallyStartStratum'
+incBlock: depth:2, line:226, currentScope:'optionallyStartStratum'
+decBlock: depth:2, line:229, leavingScope:'optionallyStartStratum'
+incBlock: depth:2, line:231, currentScope:'optionallyStartStratum'
+decBlock: depth:2, line:233, leavingScope:'optionallyStartStratum'
+decBlock: depth:1, line:234, leavingScope:'optionallyStartStratum'
+incBlock: depth:1, line:237, currentScope:'main.js'
+incBlock: depth:2, line:240, currentScope:'main.js'
+decBlock: depth:2, line:242, leavingScope:'main.js'
+decBlock: depth:1, line:243, leavingScope:'main.js'
+addAnonymousFunction: (anonymous 6)(['e'])
+VAR:e, line:245, type:'', scope:'(anonymous 6)', meta:None
+incBlock: depth:1, line:245, currentScope:'(anonymous 6)'
+incBlock: depth:2, line:250, currentScope:'(anonymous 6)'
+incBlock: depth:3, line:251, currentScope:'(anonymous 6)'
+decBlock: depth:3, line:254, leavingScope:'(anonymous 6)'
+incBlock: depth:3, line:254, currentScope:'(anonymous 6)'
+decBlock: depth:3, line:256, leavingScope:'(anonymous 6)'
+decBlock: depth:2, line:257, leavingScope:'(anonymous 6)'
+incBlock: depth:2, line:261, currentScope:'(anonymous 6)'
+incBlock: depth:3, line:263, currentScope:'(anonymous 6)'
+decBlock: depth:3, line:265, leavingScope:'(anonymous 6)'
+decBlock: depth:2, line:266, leavingScope:'(anonymous 6)'
+incBlock: depth:2, line:270, currentScope:'(anonymous 6)'
+VAR:intervalShares, line:271, type:'workerSharesThisInterval[key]', scope:'(anonymous 6)', meta:{}
+incBlock: depth:3, line:273, currentScope:'(anonymous 6)'
+decBlock: depth:3, line:275, leavingScope:'(anonymous 6)'
+incBlock: depth:3, line:277, currentScope:'(anonymous 6)'
+incBlock: depth:4, line:280, currentScope:'(anonymous 6)'
+decBlock: depth:4, line:282, leavingScope:'(anonymous 6)'
+decBlock: depth:3, line:283, leavingScope:'(anonymous 6)'
+decBlock: depth:2, line:284, leavingScope:'(anonymous 6)'
+incBlock: depth:2, line:288, currentScope:'(anonymous 6)'
+decBlock: depth:2, line:293, leavingScope:'(anonymous 6)'
+VAR:workerSharesThisInterval, line:296, type:'Object', scope:'(anonymous 6)', meta:None
+incBlock: depth:2, line:296, currentScope:'workerSharesThisInterval'
+decBlock: depth:2, line:296, leavingScope:'workerSharesThisInterval'
+addAnonymousFunction: (anonymous 7)(['total'])
+VAR:total, line:318, type:'', scope:'(anonymous 7)', meta:None
+incBlock: depth:2, line:318, currentScope:'(anonymous 7)'
+decBlock: depth:2, line:320, leavingScope:'(anonymous 7)'
+decBlock: depth:1, line:322, leavingScope:'(anonymous 6)'
+FUNC: getCoinProfit(['theAlgo', 'coinChoices', 'callback']) isLocal:False adding to file 'main.js'
+VAR:theAlgo, line:328, type:'', scope:'getCoinProfit', meta:None
+VAR:coinChoices, line:328, type:'', scope:'getCoinProfit', meta:None
+VAR:callback, line:328, type:'', scope:'getCoinProfit', meta:None
+incBlock: depth:1, line:328, currentScope:'getCoinProfit'
+VAR:coinwarztemp, line:329, type:'', scope:'getCoinProfit', meta:{}
+VAR:options, line:330, type:'Object', scope:'getCoinProfit', meta:None
+incBlock: depth:2, line:330, currentScope:'options'
+VAR:host, line:331, type:'string', scope:'options', meta:None
+VAR:port, line:332, type:'int', scope:'options', meta:None
+VAR:path, line:333, type:'string', scope:'options', meta:None
+VAR:method, line:334, type:'string', scope:'options', meta:None
+decBlock: depth:2, line:335, leavingScope:'options'
+addAnonymousFunction: (anonymous 8)(['res'])
+VAR:res, line:337, type:'', scope:'(anonymous 8)', meta:None
+incBlock: depth:2, line:337, currentScope:'(anonymous 8)'
+addAnonymousFunction: (anonymous 9)(['chunk'])
+VAR:chunk, line:340, type:'', scope:'(anonymous 9)', meta:None
+incBlock: depth:3, line:340, currentScope:'(anonymous 9)'
+decBlock: depth:3, line:342, leavingScope:'(anonymous 9)'
+addAnonymousFunction: (anonymous 10)([])
+incBlock: depth:3, line:343, currentScope:'(anonymous 10)'
+VAR:mostProfitable, line:345, type:'', scope:'(anonymous 10)', meta:{}
+incBlock: depth:4, line:347, currentScope:'(anonymous 10)'
+incBlock: depth:5, line:349, currentScope:'(anonymous 10)'
+incBlock: depth:6, line:352, currentScope:'(anonymous 10)'
+decBlock: depth:6, line:354, leavingScope:'(anonymous 10)'
+decBlock: depth:5, line:355, leavingScope:'(anonymous 10)'
+incBlock: depth:5, line:357, currentScope:'(anonymous 10)'
+decBlock: depth:5, line:359, leavingScope:'(anonymous 10)'
+decBlock: depth:4, line:360, leavingScope:'(anonymous 10)'
+incBlock: depth:4, line:362, currentScope:'(anonymous 10)'
+decBlock: depth:4, line:369, leavingScope:'(anonymous 10)'
+decBlock: depth:3, line:370, leavingScope:'(anonymous 10)'
+decBlock: depth:2, line:371, leavingScope:'(anonymous 8)'
+addAnonymousFunction: (anonymous 11)(['e'])
+VAR:e, line:372, type:'', scope:'(anonymous 11)', meta:None
+incBlock: depth:2, line:372, currentScope:'(anonymous 11)'
+decBlock: depth:2, line:374, leavingScope:'(anonymous 11)'
+decBlock: depth:1, line:378, leavingScope:'getCoinProfit'
+FUNC: logNowMining(['coinname']) isLocal:False adding to file 'main.js'
+VAR:coinname, line:381, type:'', scope:'logNowMining', meta:None
+incBlock: depth:1, line:381, currentScope:'logNowMining'
+decBlock: depth:1, line:383, leavingScope:'logNowMining'
+incBlock: depth:1, line:388, currentScope:'main.js'
+VAR: idx on line 389, type:'' (class <class 'lang_javascript.JSVariable'>)
+incBlock: depth:2, line:389, currentScope:'main.js'
+decBlock: depth:2, line:391, leavingScope:'main.js'
+addAnonymousFunction: (anonymous 12)([])
+incBlock: depth:2, line:399, currentScope:'(anonymous 12)'
+decBlock: depth:2, line:401, leavingScope:'(anonymous 12)'
+VAR: autoTimeout on line 401, type:'setTimeout()' (class <class 'lang_javascript.JSAlias'>)
+decBlock: depth:1, line:402, leavingScope:'main.js'
+incBlock: depth:1, line:409, currentScope:'main.js'
+VAR: theAlgo on line 411, type:'isScryptServer' (class <class 'lang_javascript.JSAlias'>)
+addAnonymousFunction: (anonymous 13)(['coinTag'])
+VAR:coinTag, line:413, type:'', scope:'(anonymous 13)', meta:None
+incBlock: depth:2, line:413, currentScope:'(anonymous 13)'
+incBlock: depth:3, line:416, currentScope:'(anonymous 13)'
+decBlock: depth:3, line:420, leavingScope:'(anonymous 13)'
+addAnonymousFunction: (anonymous 14)([])
+incBlock: depth:3, line:423, currentScope:'(anonymous 14)'
+VAR: interval on line 424, type:'' (class <class 'lang_javascript.JSVariable'>)
+decBlock: depth:3, line:425, leavingScope:'(anonymous 14)'
+decBlock: depth:2, line:427, leavingScope:'(anonymous 13)'
+decBlock: depth:1, line:428, leavingScope:'main.js'
+FUNC: setupStratum(['coinname']) isLocal:False adding to file 'main.js'
+VAR:coinname, line:430, type:'', scope:'setupStratum', meta:None
+incBlock: depth:1, line:430, currentScope:'setupStratum'
+incBlock: depth:2, line:431, currentScope:'setupStratum'
+decBlock: depth:2, line:434, leavingScope:'setupStratum'
+incBlock: depth:2, line:436, currentScope:'setupStratum'
+incBlock: depth:3, line:437, currentScope:'setupStratum'
+decBlock: depth:3, line:440, leavingScope:'setupStratum'
+decBlock: depth:2, line:441, leavingScope:'setupStratum'
+addAnonymousFunction: (anonymous 15)(['err', 'data'])
+VAR:err, line:443, type:'', scope:'(anonymous 15)', meta:None
+VAR:data, line:443, type:'', scope:'(anonymous 15)', meta:None
+incBlock: depth:2, line:443, currentScope:'(anonymous 15)'
+incBlock: depth:3, line:445, currentScope:'(anonymous 15)'
+decBlock: depth:3, line:448, leavingScope:'(anonymous 15)'
+incBlock: depth:3, line:452, currentScope:'(anonymous 15)'
+decBlock: depth:3, line:452, leavingScope:'(anonymous 15)'
+incBlock: depth:3, line:456, currentScope:'(anonymous 15)'
+incBlock: depth:4, line:460, currentScope:'(anonymous 15)'
+decBlock: depth:4, line:465, leavingScope:'(anonymous 15)'
+addAnonymousFunction: (anonymous 16)(['close'])
+VAR:close, line:466, type:'', scope:'(anonymous 16)', meta:None
+incBlock: depth:4, line:466, currentScope:'(anonymous 16)'
+decBlock: depth:4, line:468, leavingScope:'(anonymous 16)'
+decBlock: depth:3, line:471, leavingScope:'(anonymous 15)'
+addAnonymousFunction: (anonymous 17)(['ip', 'workerName', 'password', 'callback'])
+VAR:ip, line:474, type:'', scope:'(anonymous 17)', meta:None
+VAR:workerName, line:474, type:'', scope:'(anonymous 17)', meta:None
+VAR:password, line:474, type:'', scope:'(anonymous 17)', meta:None
+VAR:callback, line:474, type:'', scope:'(anonymous 17)', meta:None
+incBlock: depth:3, line:474, currentScope:'(anonymous 17)'
+incBlock: depth:4, line:482, currentScope:'(anonymous 17)'
+incBlock: depth:5, line:483, currentScope:None
+VAR:error, line:484, type:'string', scope:None, meta:None
+VAR:authorized, line:485, type:'boolean', scope:None, meta:None
+VAR:disconnect, line:486, type:'boolean', scope:None, meta:None
+decBlock: depth:5, line:487, leavingScope:None
+decBlock: depth:4, line:488, leavingScope:'(anonymous 17)'
+incBlock: depth:4, line:494, currentScope:'(anonymous 17)'
+decBlock: depth:4, line:498, leavingScope:'(anonymous 17)'
+decBlock: depth:3, line:500, leavingScope:'(anonymous 17)'
+addAnonymousFunction: (anonymous 18)(['isValidShare', 'isValidBlock', 'data'])
+VAR:isValidShare, line:502, type:'', scope:'(anonymous 18)', meta:None
+VAR:isValidBlock, line:502, type:'', scope:'(anonymous 18)', meta:None
+VAR:data, line:502, type:'', scope:'(anonymous 18)', meta:None
+incBlock: depth:3, line:502, currentScope:'(anonymous 18)'
+incBlock: depth:4, line:513, currentScope:'(anonymous 18)'
+decBlock: depth:4, line:515, leavingScope:'(anonymous 18)'
+incBlock: depth:4, line:517, currentScope:'(anonymous 18)'
+decBlock: depth:4, line:519, leavingScope:'(anonymous 18)'
+decBlock: depth:3, line:523, leavingScope:'(anonymous 18)'
+addAnonymousFunction: (anonymous 19)(['severity', 'logKey', 'logText'])
+VAR:severity, line:525, type:'', scope:'(anonymous 19)', meta:None
+VAR:logKey, line:525, type:'', scope:'(anonymous 19)', meta:None
+VAR:logText, line:525, type:'', scope:'(anonymous 19)', meta:None
+incBlock: depth:3, line:525, currentScope:'(anonymous 19)'
+decBlock: depth:3, line:527, leavingScope:'(anonymous 19)'
+decBlock: depth:2, line:532, leavingScope:'(anonymous 15)'
+decBlock: depth:1, line:533, leavingScope:'setupStratum'
+FUNC: getCurrentProfitability([]) isLocal:False adding to file 'main.js'
+incBlock: depth:1, line:536, currentScope:'getCurrentProfitability'
+incBlock: depth:2, line:537, currentScope:'getCurrentProfitability'
+decBlock: depth:2, line:539, leavingScope:'getCurrentProfitability'
+incBlock: depth:2, line:539, currentScope:'getCurrentProfitability'
+decBlock: depth:2, line:541, leavingScope:'getCurrentProfitability'
+decBlock: depth:1, line:542, leavingScope:'getCurrentProfitability'
+FUNC: handleTimeout(['site']) isLocal:False adding to file 'main.js'
+VAR:site, line:544, type:'', scope:'handleTimeout', meta:None
+incBlock: depth:1, line:544, currentScope:'handleTimeout'
+incBlock: depth:2, line:545, currentScope:'handleTimeout'
+incBlock: depth:3, line:547, currentScope:'handleTimeout'
+decBlock: depth:3, line:549, leavingScope:'handleTimeout'
+decBlock: depth:2, line:550, leavingScope:'handleTimeout'
+incBlock: depth:2, line:551, currentScope:'handleTimeout'
+incBlock: depth:3, line:553, currentScope:'handleTimeout'
+decBlock: depth:3, line:555, leavingScope:'handleTimeout'
+decBlock: depth:2, line:556, leavingScope:'handleTimeout'
+decBlock: depth:1, line:557, leavingScope:'handleTimeout'
+FUNC: getStats(['port', 'callback']) isLocal:False adding to file 'main.js'
+VAR:port, line:560, type:'', scope:'getStats', meta:None
+VAR:callback, line:560, type:'', scope:'getStats', meta:None
+incBlock: depth:1, line:560, currentScope:'getStats'
+incBlock: depth:2, line:561, currentScope:'getStats'
+incBlock: depth:3, line:563, currentScope:'getStats'
+decBlock: depth:3, line:567, leavingScope:'getStats'
+decBlock: depth:2, line:569, leavingScope:'getStats'
+incBlock: depth:2, line:571, currentScope:None
+VAR:timeout, line:571, type:'int', scope:None, meta:None
+decBlock: depth:2, line:571, leavingScope:None
+addAnonymousFunction: (anonymous 20)(['ms'])
+VAR:ms, line:571, type:'', scope:'(anonymous 20)', meta:None
+incBlock: depth:2, line:571, currentScope:'(anonymous 20)'
+incBlock: depth:3, line:574, currentScope:'(anonymous 20)'
+decBlock: depth:3, line:578, leavingScope:'(anonymous 20)'
+decBlock: depth:2, line:579, leavingScope:'(anonymous 20)'
+addAnonymousFunction: (anonymous 21)(['data', 'response'])
+VAR:data, line:579, type:'', scope:'(anonymous 21)', meta:None
+VAR:response, line:579, type:'', scope:'(anonymous 21)', meta:None
+incBlock: depth:2, line:579, currentScope:'(anonymous 21)'
+decBlock: depth:2, line:581, leavingScope:'(anonymous 21)'
+decBlock: depth:1, line:582, leavingScope:'getStats'
+FUNC: getMinerStats(['id', 'port', 'callback']) isLocal:False adding to file 'main.js'
+VAR:id, line:585, type:'', scope:'getMinerStats', meta:None
+VAR:port, line:585, type:'', scope:'getMinerStats', meta:None
+VAR:callback, line:585, type:'', scope:'getMinerStats', meta:None
+incBlock: depth:1, line:585, currentScope:'getMinerStats'
+incBlock: depth:2, line:586, currentScope:'getMinerStats'
+incBlock: depth:3, line:588, currentScope:'getMinerStats'
+decBlock: depth:3, line:592, leavingScope:'getMinerStats'
+decBlock: depth:2, line:594, leavingScope:'getMinerStats'
+incBlock: depth:2, line:596, currentScope:None
+VAR:timeout, line:596, type:'int', scope:None, meta:None
+decBlock: depth:2, line:596, leavingScope:None
+addAnonymousFunction: (anonymous 22)(['ms'])
+VAR:ms, line:596, type:'', scope:'(anonymous 22)', meta:None
+incBlock: depth:2, line:596, currentScope:'(anonymous 22)'
+incBlock: depth:3, line:599, currentScope:'(anonymous 22)'
+decBlock: depth:3, line:603, leavingScope:'(anonymous 22)'
+decBlock: depth:2, line:604, leavingScope:'(anonymous 22)'
+addAnonymousFunction: (anonymous 23)(['data', 'response'])
+VAR:data, line:604, type:'', scope:'(anonymous 23)', meta:None
+VAR:response, line:604, type:'', scope:'(anonymous 23)', meta:None
+incBlock: depth:2, line:604, currentScope:'(anonymous 23)'
+decBlock: depth:2, line:606, leavingScope:'(anonymous 23)'
+decBlock: depth:1, line:607, leavingScope:'getMinerStats'
+addAnonymousFunction: (anonymous 24)(['req', 'res'])
+VAR:req, line:611, type:'', scope:'(anonymous 24)', meta:None
+VAR:res, line:611, type:'', scope:'(anonymous 24)', meta:None
+incBlock: depth:1, line:611, currentScope:'(anonymous 24)'
+addAnonymousFunction: (anonymous 25)(['scryptStats'])
+VAR:scryptStats, line:614, type:'', scope:'(anonymous 25)', meta:None
+incBlock: depth:2, line:614, currentScope:'(anonymous 25)'
+addAnonymousFunction: (anonymous 26)(['shaStats'])
+VAR:shaStats, line:616, type:'', scope:'(anonymous 26)', meta:None
+incBlock: depth:3, line:616, currentScope:'(anonymous 26)'
+incBlock: depth:4, line:618, currentScope:'(anonymous 26)'
+VAR:id, line:619, type:'req.query.miner', scope:'(anonymous 26)', meta:{}
+incBlock: depth:5, line:621, currentScope:'(anonymous 26)'
+decBlock: depth:5, line:624, leavingScope:'(anonymous 26)'
+decBlock: depth:4, line:625, leavingScope:'(anonymous 26)'
+incBlock: depth:4, line:627, currentScope:None
+VAR:layout, line:628, type:'string', scope:None, meta:None
+VAR:news, line:628, type:'configvars.NEWS', scope:None, meta:None
+VAR:totalhashrate, line:629, type:"scryptStats['hashRate']", scope:None, meta:None
+VAR:totalminers, line:630, type:"scryptStats['miners']", scope:None, meta:None
+VAR:totalshares, line:631, type:"scryptStats['totalShares']", scope:None, meta:None
+VAR:shatotalhashrate, line:633, type:"shaStats['hashRate']", scope:None, meta:None
+VAR:shatotalminers, line:634, type:"shaStats['miners']", scope:None, meta:None
+VAR:shatotalshares, line:635, type:"shaStats['totalShares']", scope:None, meta:None
+VAR:version, line:636, type:'configvars.VERSION', scope:None, meta:None
+VAR:nodeversion, line:637, type:'nodeVersion.node', scope:None, meta:None
+decBlock: depth:4, line:637, leavingScope:None
+decBlock: depth:3, line:638, leavingScope:'(anonymous 26)'
+decBlock: depth:2, line:639, leavingScope:'(anonymous 25)'
+decBlock: depth:1, line:640, leavingScope:'(anonymous 24)'
+VAR: currmining on line 640, type:'getCurrentProfitability()' (class <class 'lang_javascript.JSAlias'>)
+addAnonymousFunction: (anonymous 27)(['req', 'res'])
+VAR:req, line:642, type:'', scope:'(anonymous 27)', meta:None
+VAR:res, line:642, type:'', scope:'(anonymous 27)', meta:None
+incBlock: depth:1, line:642, currentScope:'(anonymous 27)'
+addAnonymousFunction: (anonymous 28)(['scryptStats'])
+VAR:scryptStats, line:644, type:'', scope:'(anonymous 28)', meta:None
+incBlock: depth:2, line:644, currentScope:'(anonymous 28)'
+addAnonymousFunction: (anonymous 29)(['shaStats'])
+VAR:shaStats, line:646, type:'', scope:'(anonymous 29)', meta:None
+incBlock: depth:3, line:646, currentScope:'(anonymous 29)'
+incBlock: depth:4, line:647, currentScope:None
+VAR:layout, line:648, type:'string', scope:None, meta:None
+VAR:news, line:648, type:'configvars.NEWS', scope:None, meta:None
+VAR:totalhashrate, line:649, type:"scryptStats['hashRate']", scope:None, meta:None
+VAR:totalminers, line:650, type:"scryptStats['miners']", scope:None, meta:None
+VAR:totalshares, line:651, type:"scryptStats['totalShares']", scope:None, meta:None
+VAR:shatotalhashrate, line:653, type:"shaStats['hashRate']", scope:None, meta:None
+VAR:shatotalminers, line:654, type:"shaStats['miners']", scope:None, meta:None
+VAR:shatotalshares, line:655, type:"shaStats['totalShares']", scope:None, meta:None
+VAR:version, line:656, type:'configvars.VERSION', scope:None, meta:None
+VAR:nodeversion, line:657, type:'nodeVersion.node', scope:None, meta:None
+decBlock: depth:4, line:657, leavingScope:None
+decBlock: depth:3, line:658, leavingScope:'(anonymous 29)'
+decBlock: depth:2, line:659, leavingScope:'(anonymous 28)'
+decBlock: depth:1, line:660, leavingScope:'(anonymous 27)'
+FUNC: renderMinerJade(['id', 'scryptStats', 'shaStats', 'res']) isLocal:False adding to file 'main.js'
+VAR:id, line:662, type:'', scope:'renderMinerJade', meta:None
+VAR:scryptStats, line:662, type:'', scope:'renderMinerJade', meta:None
+VAR:shaStats, line:662, type:'', scope:'renderMinerJade', meta:None
+VAR:res, line:662, type:'', scope:'renderMinerJade', meta:None
+incBlock: depth:1, line:662, currentScope:'renderMinerJade'
+VAR:wmhashPerSecond, line:663, type:'string', scope:'renderMinerJade', meta:{}
+addAnonymousFunction: (anonymous 30)(['data'])
+VAR:data, line:667, type:'', scope:'(anonymous 30)', meta:None
+incBlock: depth:2, line:667, currentScope:'(anonymous 30)'
+VAR:minerStats, line:670, type:"data['minerStats']", scope:'(anonymous 30)', meta:{}
+VAR:minerShaStats, line:670, type:"data['minerShaStats']", scope:'(anonymous 30)', meta:{}
+incBlock: depth:3, line:672, currentScope:'(anonymous 30)'
+decBlock: depth:3, line:679, leavingScope:'(anonymous 30)'
+FUNC: processRow([]) isLocal:True adding to function '(anonymous 30)'
+incBlock: depth:3, line:682, currentScope:'processRow'
+VAR: row on line 683, type:'Object' (class <class 'lang_javascript.JSVariable'>)
+Could not find 'row' in scope: 'processRow', creating variable (type=Object) for it on scope 'main.js'!!!
+VAR:avghash, line:683, type:'HashrateUtils.sharesToMegaHashrate()', scope:'row', meta:{}
+incBlock: depth:4, line:683, currentScope:'processRow'
+VAR:avg, line:684, type:'parseFloat()', scope:'processRow', meta:{}
+decBlock: depth:4, line:685, leavingScope:'processRow'
+decBlock: depth:3, line:686, leavingScope:'processRow'
+incBlock: depth:3, line:687, currentScope:'(anonymous 30)'
+VAR:i, line:688, type:'int', scope:'(anonymous 30)', meta:{}
+incBlock: depth:4, line:688, currentScope:'(anonymous 30)'
+decBlock: depth:4, line:690, leavingScope:'(anonymous 30)'
+decBlock: depth:3, line:691, leavingScope:'(anonymous 30)'
+addAnonymousFunction: (anonymous 31)(['scryptMinerStats'])
+VAR:scryptMinerStats, line:694, type:'', scope:'(anonymous 31)', meta:None
+incBlock: depth:3, line:694, currentScope:'(anonymous 31)'
+addAnonymousFunction: (anonymous 32)(['shaMinerStats'])
+VAR:shaMinerStats, line:696, type:'', scope:'(anonymous 32)', meta:None
+incBlock: depth:4, line:696, currentScope:'(anonymous 32)'
+incBlock: depth:5, line:698, currentScope:None
+VAR:layout, line:698, type:'string', scope:None, meta:None
+VAR:news, line:698, type:'configvars.NEWS', scope:None, meta:None
+VAR:totalhashrate, line:699, type:"scryptStats['hashRate']", scope:None, meta:None
+VAR:totalminers, line:700, type:"scryptStats['miners']", scope:None, meta:None
+VAR:totalshares, line:701, type:"scryptStats['totalShares']", scope:None, meta:None
+VAR:shatotalhashrate, line:704, type:"shaStats['hashRate']", scope:None, meta:None
+VAR:shatotalminers, line:705, type:"shaStats['miners']", scope:None, meta:None
+VAR:shatotalshares, line:706, type:"shaStats['totalShares']", scope:None, meta:None
+VAR:workerhashrate, line:708, type:"scryptMinerStats['workerhashrate']", scope:None, meta:None
+VAR:shaworkerhashrate, line:709, type:"shaMinerStats['workerhashrate']", scope:None, meta:None
+VAR:minername, line:710, type:'id', scope:None, meta:None
+VAR:workershares, line:712, type:"data['currentShares']", scope:None, meta:None
+VAR:workershashares, line:713, type:"data['currentShaShares']", scope:None, meta:None
+VAR:minerStats, line:714, type:'minerStats', scope:None, meta:None
+VAR:minerShaStats, line:715, type:'shaMinerStats', scope:None, meta:None
+VAR:version, line:719, type:'configvars.VERSION', scope:None, meta:None
+VAR:nodeversion, line:720, type:'nodeVersion.node', scope:None, meta:None
+decBlock: depth:5, line:721, leavingScope:None
+decBlock: depth:4, line:723, leavingScope:'(anonymous 32)'
+decBlock: depth:3, line:724, leavingScope:'(anonymous 31)'
+decBlock: depth:2, line:726, leavingScope:'(anonymous 30)'
+CLASSMBR: 'latestPayout', in class 'renderMinerJade'
+decBlock: depth:1, line:727, leavingScope:'renderMinerJade'
+addAnonymousFunction: (anonymous 33)(['req', 'res'])
+VAR:req, line:731, type:'', scope:'(anonymous 33)', meta:None
+VAR:res, line:731, type:'', scope:'(anonymous 33)', meta:None
+incBlock: depth:1, line:731, currentScope:'(anonymous 33)'
+VAR:stats, line:732, type:'Object', scope:'(anonymous 33)', meta:None
+incBlock: depth:2, line:732, currentScope:'stats'
+VAR:hashRate, line:733, type:'mhashPerSecond', scope:'stats', meta:None
+addClassOrVariableMember: main.js:734 Trying to add ['latestShaPayout'] as a local member variable??
+addClassOrVariableMember: main.js:735 Trying to add ['totalShares'] as a local member variable??
+decBlock: depth:2, line:737, leavingScope:'stats'
+CLASSMBR: 'miners', in function '(anonymous 33)'
+decBlock: depth:1, line:739, leavingScope:'(anonymous 33)'
+addAnonymousFunction: (anonymous 34)(['req', 'res'])
+VAR:req, line:746, type:'', scope:'(anonymous 34)', meta:None
+VAR:res, line:746, type:'', scope:'(anonymous 34)', meta:None
+incBlock: depth:1, line:746, currentScope:'(anonymous 34)'
+VAR:wmhashPerSecond, line:747, type:'string', scope:'(anonymous 34)', meta:{}
+incBlock: depth:2, line:752, currentScope:'(anonymous 34)'
+decBlock: depth:2, line:754, leavingScope:'(anonymous 34)'
+decBlock: depth:1, line:755, leavingScope:'(anonymous 34)'
+incBlock: depth:1, line:759, currentScope:'main.js'
+decBlock: depth:1, line:759, leavingScope:'main.js'
+addAnonymousFunction: (anonymous 35)(['time', 'callback', 'time_period'])
+VAR:time, line:786, type:'', scope:'(anonymous 35)', meta:None
+VAR:callback, line:786, type:'', scope:'(anonymous 35)', meta:None
+VAR:time_period, line:786, type:'', scope:'(anonymous 35)', meta:None
+incBlock: depth:1, line:786, currentScope:'(anonymous 35)'
+incBlock: depth:2, line:793, currentScope:'(anonymous 35)'
+decBlock: depth:2, line:795, leavingScope:'(anonymous 35)'
+addAnonymousFunction: (anonymous 36)(['data', 'response'])
+VAR:data, line:799, type:'', scope:'(anonymous 36)', meta:None
+VAR:response, line:799, type:'', scope:'(anonymous 36)', meta:None
+incBlock: depth:2, line:799, currentScope:'(anonymous 36)'
+addAnonymousFunction: (anonymous 37)(['date'])
+VAR:date, line:802, type:'', scope:'(anonymous 37)', meta:None
+incBlock: depth:3, line:802, currentScope:'(anonymous 37)'
+incBlock: depth:4, line:804, currentScope:'(anonymous 37)'
+decBlock: depth:4, line:806, leavingScope:'(anonymous 37)'
+decBlock: depth:3, line:807, leavingScope:'(anonymous 37)'
+decBlock: depth:2, line:809, leavingScope:'(anonymous 36)'
+decBlock: depth:1, line:810, leavingScope:'(anonymous 35)'
+FUNC: updateAveragePayoutMintpal([]) isLocal:False adding to file 'main.js'
+incBlock: depth:1, line:813, currentScope:'updateAveragePayoutMintpal'
+addAnonymousFunction: (anonymous 38)(['stats'])
+VAR:stats, line:816, type:'', scope:'(anonymous 38)', meta:None
+incBlock: depth:2, line:816, currentScope:'(anonymous 38)'
+VAR:latestPayout, line:817, type:'stats[0]', scope:'(anonymous 38)', meta:{}
+VAR:latestPayoutDate, line:818, type:'latestPayout.payout_date', scope:'(anonymous 38)', meta:{}
+addAnonymousFunction: (anonymous 39)(['price'])
+VAR:price, line:822, type:'', scope:'(anonymous 39)', meta:None
+incBlock: depth:3, line:822, currentScope:'(anonymous 39)'
+VAR:shares, line:824, type:"latestPayout['shares']", scope:'(anonymous 39)', meta:{}
+VAR:amountBC, line:825, type:"latestPayout['amount']", scope:'(anonymous 39)', meta:{}
+VAR:amountBTC, line:826, type:'amountBC', scope:'(anonymous 39)', meta:{}
+VAR:elapsed, line:827, type:"latestPayout['elapsed_seconds']", scope:'(anonymous 39)', meta:{}
+VAR:megaHashrate, line:832, type:'hashrate', scope:'(anonymous 39)', meta:{}
+VAR:BTCPerMegaHashrate, line:833, type:'amountBTC', scope:'(anonymous 39)', meta:{}
+VAR:averagePayout, line:835, type:'Object', scope:'(anonymous 39)', meta:None
+incBlock: depth:4, line:835, currentScope:'averagePayout'
+VAR:payoutRate, line:836, type:'BTCPerMegaHashrate', scope:'averagePayout', meta:None
+decBlock: depth:4, line:838, leavingScope:'averagePayout'
+decBlock: depth:3, line:840, leavingScope:'(anonymous 39)'
+VAR:hashrate, line:840, type:'HashrateUtils.sharesToHashrate()', scope:'(anonymous 38)', meta:{}
+decBlock: depth:2, line:841, leavingScope:'(anonymous 38)'
+CLASSMBR: 'date', in class 'updateAveragePayoutMintpal'
+decBlock: depth:1, line:842, leavingScope:'updateAveragePayoutMintpal'
+FUNC: mintpalAverageBCPrice(['callback', 'time_period']) isLocal:False adding to file 'main.js'
+VAR:callback, line:872, type:'', scope:'mintpalAverageBCPrice', meta:None
+VAR:time_period, line:872, type:'', scope:'mintpalAverageBCPrice', meta:None
+incBlock: depth:1, line:872, currentScope:'mintpalAverageBCPrice'
+incBlock: depth:2, line:874, currentScope:'mintpalAverageBCPrice'
+decBlock: depth:2, line:876, leavingScope:'mintpalAverageBCPrice'
+addAnonymousFunction: (anonymous 40)(['data', 'response'])
+VAR:data, line:880, type:'', scope:'(anonymous 40)', meta:None
+VAR:response, line:880, type:'', scope:'(anonymous 40)', meta:None
+incBlock: depth:2, line:880, currentScope:'(anonymous 40)'
+addAnonymousFunction: (anonymous 41)(['accum', 'next'])
+VAR:accum, line:884, type:'', scope:'(anonymous 41)', meta:None
+VAR:next, line:884, type:'', scope:'(anonymous 41)', meta:None
+incBlock: depth:3, line:884, currentScope:'(anonymous 41)'
+incBlock: depth:4, line:888, currentScope:'(anonymous 41)'
+decBlock: depth:4, line:890, leavingScope:'(anonymous 41)'
+VAR:means, line:892, type:'data.reduce()', scope:'(anonymous 41)', meta:{}
+incBlock: depth:4, line:892, currentScope:'(anonymous 41)'
+decBlock: depth:4, line:894, leavingScope:'(anonymous 41)'
+VAR:date, line:895, type:'Date', scope:'(anonymous 41)', meta:{}
+decBlock: depth:3, line:896, leavingScope:'(anonymous 41)'
+incBlock: depth:3, line:897, currentScope:'(anonymous 40)'
+decBlock: depth:3, line:897, leavingScope:'(anonymous 40)'
+VAR:mean, line:897, type:'', scope:'(anonymous 40)', meta:{}
+addAnonymousFunction: (anonymous 42)(['date'])
+VAR:date, line:900, type:'', scope:'(anonymous 42)', meta:None
+incBlock: depth:3, line:900, currentScope:'(anonymous 42)'
+addAnonymousFunction: (anonymous 43)(['a', 'b'])
+VAR:a, line:901, type:'', scope:'(anonymous 43)', meta:None
+VAR:b, line:901, type:'', scope:'(anonymous 43)', meta:None
+incBlock: depth:4, line:901, currentScope:'(anonymous 43)'
+decBlock: depth:4, line:901, leavingScope:'(anonymous 43)'
+decBlock: depth:3, line:902, leavingScope:'(anonymous 42)'
+decBlock: depth:2, line:904, leavingScope:'(anonymous 40)'
+decBlock: depth:1, line:905, leavingScope:'mintpalAverageBCPrice'
+addAnonymousFunction: (anonymous 44)(['req', 'res'])
+VAR:req, line:907, type:'', scope:'(anonymous 44)', meta:None
+VAR:res, line:907, type:'', scope:'(anonymous 44)', meta:None
+incBlock: depth:1, line:907, currentScope:'(anonymous 44)'
+decBlock: depth:1, line:909, leavingScope:'(anonymous 44)'
+addAnonymousFunction: (anonymous 45)([])
+incBlock: depth:1, line:913, currentScope:'(anonymous 45)'
+decBlock: depth:1, line:915, leavingScope:'(anonymous 45)'
+****************************************
+Finished scanning, updating all scope names
+Updating all class constructor names
+Doing CodeIntel for 'JavaScript' (hold on)...
+Done 'JavaScript' CodeIntel! Full CodeIntel took 134ms
++ Debug: Invalid language: Plain text. Available: TemplateToolkit, PHP, Node.js, CSS, Sass, JavaScript, XSLT, RHTML, SCSS, XML, Smarty, Perl, HTML, Django, Ruby, Twig, Python3, XUL, Tcl, Python, HTML5, Less, Mason, XBL
++ Debug: Invalid language: Plain text. Available: TemplateToolkit, PHP, Node.js, CSS, Sass, JavaScript, XSLT, RHTML, SCSS, XML, Smarty, Perl, HTML, Django, Ruby, Twig, Python3, XUL, Tcl, Python, HTML5, Less, Mason, XBL
++ Debug: Invalid language: Plain text. Available: TemplateToolkit, PHP, Node.js, CSS, Sass, JavaScript, XSLT, RHTML, SCSS, XML, Smarty, Perl, HTML, Django, Ruby, Twig, Python3, XUL, Tcl, Python, HTML5, Less, Mason, XBL
++ Info: processing `XML': please wait...
+Doing CodeIntel for 'XML' (hold on)...
+Done 'XML' CodeIntel! Full CodeIntel took 18ms
+Doing CodeIntel for 'XML' (hold on)...
+Done 'XML' CodeIntel! Full CodeIntel took 2ms
+Doing CodeIntel for 'XML' (hold on)...
+Done 'XML' CodeIntel! Full CodeIntel took 1ms
++ Debug: Invalid language: Plain text. Available: TemplateToolkit, PHP, Node.js, CSS, Sass, JavaScript, XSLT, RHTML, SCSS, XML, Smarty, Perl, HTML, Django, Ruby, Twig, Python3, XUL, Tcl, Python, HTML5, Less, Mason, XBL
