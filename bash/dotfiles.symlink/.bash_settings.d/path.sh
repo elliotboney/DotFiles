@@ -4,6 +4,9 @@ PATH=""
 if [ -e "/usr/local/Cellar/php55" ] || [ -d "/usr/local/Cellar/php55" ]; then
    PATH=$PATH:"/usr/local/Cellar/php55/$(/bin/ls /usr/local/Cellar/php55)/bin"
 fi
+if [ -e "/Developer/NVIDIA/CUDA-5.5/bin" ] || [ -d "/Developer/NVIDIA/CUDA-5.5/bin" ]; then
+   PATH=$PATH:"/Developer/NVIDIA/CUDA-5.5/bin"
+fi
 # add all the paths we want to array
 paths=("$HOME/bin" "/usr/local/opt/coreutils/libexec/gnubin" "/usr/local/bin" "/usr/local/sbin"
     "/usr/local/share/npm/bin" "/usr/local/Cellar/php55/5.5.10/bin"
@@ -40,6 +43,12 @@ done
 
 
 export PATH
+
+export HOMEBREW_GITHUB_API_TOKEN="224fed8d55ae34918c145636b0bf498a3698c907"
+
+if [ -d /Developer/NVIDIA/CUDA-5.5/lib ]; then
+    export DYLD_LIBRARY_PATH="/Developer/NVIDIA/CUDA-5.5/lib"
+fi
 
 if [ -d ~/bin/FDK/Tools/osx ]; then
     export FDK_EXE="~/bin/FDK/Tools/osx"
