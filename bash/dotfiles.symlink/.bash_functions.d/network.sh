@@ -5,7 +5,7 @@ function tunnel () {
 
 function ripsite()
 {
-    httrack "$@" -v -N1004 -s0
+    httrack "$@" -v -N1004 -s0 -Q --get-files -I0 
 }
 
 function servedir ()
