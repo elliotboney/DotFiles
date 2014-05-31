@@ -19,3 +19,12 @@ function pngfixall ()
         mv $f.new $f
     done
 }
+
+function jpgresizeall () {
+    for f in *.jpg
+    do
+        convert $f -resize "$1" $f.new
+        mv -i $f $f.bak
+        mv -i $f.new $f
+    done
+}
