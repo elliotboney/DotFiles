@@ -9,6 +9,10 @@ function o {
   open ${@:-'.'}
 }
 
+function cdla {
+  cd $@
+  la
+}
 
 # Go to last directory
 cl() {

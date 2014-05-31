@@ -84,3 +84,5 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 # zstyle ':completion:*:warnings' format "%B$fg[red]%}---- no match for: $fg[white]%d%b"
 # zstyle ':completion:*' group-name ''
 
+source ~/.nvm/nvm.sh
+ln -sf $NVM_BIN/node /usr/local/bin/node

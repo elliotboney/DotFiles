@@ -1,3 +1,6 @@
+#folder sizes
+alias lssize='du -h --max-depth=1 . | sort -hr'
+
 # for bypassing safety prompt
 alias rmf='rm -f'
 alias rmrf='rm -rf'

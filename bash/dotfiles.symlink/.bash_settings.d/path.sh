@@ -46,9 +46,9 @@ export PATH
 
 export HOMEBREW_GITHUB_API_TOKEN="224fed8d55ae34918c145636b0bf498a3698c907"
 
-if [ -d /Developer/NVIDIA/CUDA-5.5/lib ]; then
-    export DYLD_LIBRARY_PATH="/Developer/NVIDIA/CUDA-5.5/lib"
-fi
+# if [ -d /Developer/NVIDIA/CUDA-5.5/lib ]; then
+#     export DYLD_LIBRARY_PATH="/Developer/NVIDIA/CUDA-5.5/lib"
+# fi
 
 if [ -d ~/bin/FDK/Tools/osx ]; then
     export FDK_EXE="~/bin/FDK/Tools/osx"
