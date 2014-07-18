@@ -1,75 +1,77 @@
 " Information: {{{
+"
 "  {{{2
 "  Author: Elliot Boney
 " }}} }}}
 
 set nocompatible
-
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " Let Vundle Manage Vundle: {{{
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 " }}}
 
 " Javascript And Coffee Script: {{{
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'helino/vim-json'
-"Bundle 'maksimr/vim-jsbeautify'
-Bundle 'einars/js-beautify'
-Bundle 'marijnh/tern_for_vim'
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'JavaScript-Indent'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'helino/vim-json'
+"Plugin 'maksimr/vim-jsbeautify'
+Plugin 'einars/js-beautify'
+Plugin 'marijnh/tern_for_vim'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'JavaScript-Indent'
 " }}}
 
 " General Utils: {{{
-Bundle 'scrooloose/syntastic'
-Bundle 'gregsexton/MatchTag'
-Bundle 'Tagbar'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'itchyny/lightline.vim'
-Bundle 'xterm-color-table.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
-"Bundle 'vim-scripts/LustyJuggler'
-Bundle 'tpope/vim-markdown'
+Plugin 'scrooloose/syntastic'
+Plugin 'gregsexton/MatchTag'
+Plugin 'Tagbar'
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'itchyny/lightline.vim'
+Plugin 'xterm-color-table.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+"Plugin 'vim-scripts/LustyJuggler'
+Plugin 'tpope/vim-markdown'
 " }}}
 
 " Panels Windows: {{{
-Bundle 'tacahiroy/ctrlp-funky'
-Bundle 'kien/ctrlp.vim'
+Plugin 'tacahiroy/ctrlp-funky'
+Plugin 'kien/ctrlp.vim'
 
 " }}}
 
 " Other Language Stuff: {{{
-Bundle 'othree/html5.vim'
+Plugin 'othree/html5.vim'
 " }}}
 
 " My Own Custom Shit:
-Bundle 'elliotboney/eVimBundle'
+Plugin 'elliotboney/eVimPlugin'
+Plugin 'mgutz/vim-colors'
+Plugin 'vim-scripts/BusyBee'
 
 " Gist: {{{
-Bundle 'vim-scripts/Gist.vim'
-Bundle 'mattn/webapi-vim'
+Plugin 'vim-scripts/Gist.vim'
+Plugin 'mattn/webapi-vim'
 " }}}
 
-filetype on
-filetype indent on
 
 
 " Unused {{{2
-"Bundle 'Css-Pretty'
-"Bundle 'Syntastic'
-"Bundle 'xterm-color-table.vim'
-Bundle 'Align'
-"Bundle 'editorconfig-vim'
-"Bundle 'maksimr/vim-jsbeautify'
-"Bundle 'jshint.vim'
-"Bundle 'terryma/vim-multiple-cursors'
-"Bundle 'XmlPretty'
-"Bundle 'indenthtml.vim'
-"Bundle 'tidy'
+"Plugin 'Css-Pretty'
+"Plugin 'Syntastic'
+"Plugin 'xterm-color-table.vim'
+Plugin 'Align'
+"Plugin 'editorconfig-vim'
+"Plugin 'maksimr/vim-jsbeautify'
+"Plugin 'jshint.vim'
+"Plugin 'terryma/vim-multiple-cursors'
+"Plugin 'XmlPretty'
+"Plugin 'indenthtml.vim'
+"Plugin 'tidy'
 " }}}
 
-
+call vundle#end()            " required
+filetype plugin indent on    " required

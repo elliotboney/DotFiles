@@ -37,4 +37,5 @@ fi
 
 alias boxee='telnet 192.168.1.101 2323'
 
+alias updatefonts='sudo fc-cache -f -v'
 # command_exists brew ] && echo "true"
