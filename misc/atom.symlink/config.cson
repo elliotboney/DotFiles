@@ -1,0 +1,15 @@
+'editor':
+  'fontSize': 16
+  'fontFamily': 'Source Code Pro'
+'core':
+  'themes': [
+    'atom-dark-ui'
+    'atom-dark-syntax'
+  ]
+  'useReactEditor': true
+'exception-reporting':
+  'userId': '17f0acd5-4042-79ad-0b2a-1adf347830f5'
+'welcome':
+  'showOnStartup': false
+'metrics':
+  'userId': '7b1b09b29610b6ae118986b03bceb5556b4620e3'

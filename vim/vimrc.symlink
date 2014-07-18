@@ -26,14 +26,12 @@ endif
    let mapleader = ","
    let g:mapleader=","
    "}}}
-   syntax enable           " Turn on syntax  highlighting
-   filetype plugin indent on     " Turn on Filetype detection, plugins, and
 
    "_. Autosource Vimrc Edits And Snippets: {{{2
    augroup vimfiles " {
       au! BufWritePost .vimrc nested source %
       au! BufWritePost .vimrc.bundles source %
-      au! BufWritePost *.vim colorscheme chance-of-storm
+      au! BufWritePost *.vim colorscheme BusyBee
    augroup END " }
       "}}}
    " Persistent Undo: {{{2"{{{
@@ -160,7 +158,7 @@ endif
 " Set Statements: {{{
    " Color Scheme: {{{2
       set background=dark
-      colorscheme chance-of-storm
+      colorscheme BusyBee
       "}}}
    " Search Stuff: {{{2
       set hlsearch
@@ -420,6 +418,7 @@ nmap <silent> <leader>A <esc>VAA
 
 "nerd tree and tag list
 nmap <silent> <leader>T :TagbarToggle<CR>
+let NERDTreeShowHidden=1
 
 " FF will use grep to find word under cursor and open quickfix window
 " " automatically
@@ -465,3 +464,6 @@ let g:used_javascript_libs='underscore,backbone,jquery'
 
 " let syntastic clobber location list
 let g:syntastic_always_populate_loc_list=1
+
+" turn off wrap
+set nowrap
