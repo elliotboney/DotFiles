@@ -94,6 +94,6 @@ then
 fi
 
 # Node Version Manager
-# source ~/.nvm/nvm.sh
+source ~/.nvm/nvm.sh
 
-# export PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
+export PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting

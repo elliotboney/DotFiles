@@ -1,3 +1,6 @@
+# URL-encode strings
+alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
+
 # Network Tricks
 alias ports='netstat -tulan -p tcp'
 alias download='curl -O'

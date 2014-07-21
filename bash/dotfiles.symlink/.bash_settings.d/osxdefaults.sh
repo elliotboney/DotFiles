@@ -1,4 +1,4 @@
-# return;
+return;
 if shell_is_osx; then   
 
     # Menu bar: hide the useless Time Machine and Volume icons
@@ -46,7 +46,7 @@ if shell_is_osx; then
     defaults write com.apple.Finder AppleShowAllFiles -bool true
 
     # Finder: show all filename extensions
-    #defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+    defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # Avoid creating .DS_Store files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true

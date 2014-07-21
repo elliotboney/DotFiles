@@ -1,6 +1,7 @@
 'editor':
-  'fontSize': 16
+  'fontSize': 12
   'fontFamily': 'Source Code Pro'
+  'lineHeight': 1.2
 'core':
   'themes': [
     'atom-dark-ui'
