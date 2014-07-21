@@ -1,0 +1,32 @@
+{
+  "name": "cut-line",
+  "main": "./lib/cut-line",
+  "version": "0.9.0",
+  "private": true,
+  "description": "Overrides Cmd-X and Cmd-C with no selection to cut (or copy) the entire line.",
+  "activationEvents": [
+    "cut-line:cut-line",
+    "cut-line:copy-line",
+    "cut-line:paste-line"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tekkub/cut-line"
+  },
+  "license": "None",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {},
+  "readme": "# cut-line package\n\nOverride the default cut action (cmd-x) when no text is selected.  Instead of cutting the char after the cursor, the entire line is cut.\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/tekkub/cut-line/issues"
+  },
+  "homepage": "https://github.com/tekkub/cut-line",
+  "_id": "cut-line@0.9.0",
+  "dist": {
+    "shasum": "ac81361213d0ee451e85ca297833819e7a6c8d51"
+  },
+  "_from": "/Users/eboney/.atom/.node-gyp/.atom/.apm/cut-line/0.9.0/package.tgz"
+}
