@@ -19,6 +19,7 @@ function servedir ()
         # open Chrome first since http-server waits for manual sigterm
         open -a Google\ Chrome http://localhost:$1
         http-server ${CURRENT_DIR} -p $1
+        unset CURRENT_DIR
     fi
 }
 
@@ -33,6 +34,7 @@ function servedirphp ()
         # open Chrome first since http-server waits for manual sigterm
         open -a Google\ Chrome http://localhost:$1
         php -S localhost:$1
+        unset CURRENT_DIR
     fi
 }
 

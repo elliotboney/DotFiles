@@ -18,7 +18,7 @@ export UPDATE_ZSH_DAYS=7
 COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(apache2-macports atom brew brew-cask bundler colored-man composer copydir cp elliotzsh git github gnu-utils node npm nvm nvm osx rvm sublime sudo) # rbenv vi-mode autoenv)
+plugins=(apache2-macports atom brew brew-cask bundler colored-man composer copydir cp elliotzsh github gnu-utils node npm nvm nvm osx rvm sublime sudo) # rbenv vi-mode autoenv)
 
 # Load oh my zsh
 source $ZSH/oh-my-zsh.sh
