@@ -21,3 +21,13 @@ function killallshit {
 function killallshittest {
   killall -ms ".*$@.*"
 }
+
+# Pretty print JSON
+cjson () {
+  local url=$(echo $1)
+  if [[ "http" == $url[0,4] ]] ; then
+    curl --silent $url | python -mjson.tool | pygmentize -O style=monokai -f console256 -g
+  else
+    cat $url | python -mjson.tool | pygmentize -O style=monokai -f console256 -g
+  fi
+}

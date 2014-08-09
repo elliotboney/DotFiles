@@ -1,0 +1,82 @@
+#!/usr/bin/env bash
+
+function _eachdir() {
+
+if [[ "$1" == "-h" || "$1" == "--help" || ! "$1" ]]; 
+  then
+    echo -e "   "
+    echo -e "   ${BCyan}Usage: ${BGreen}eachdir${NC} ${Yellow}[dirs --] ${Purple}commands${NC}"
+    echo -e "   Run one or more commands in one or more dirs."
+    echo -e "   "
+    echo -e "   By default, all subdirs of the current dir will be iterated over, but if --"
+    echo -e "   is specified as an arg, the dirs list will be made up of all args specified"
+    echo -e "   before it. All remaining args are the command(s) to be executed for each dir."
+    echo -e "   "
+    echo -e "   Multiple commands must be specified as a single string argument."
+    echo -e "   "
+    echo -e "   Both of these print the working directory of every subdir of the current dir:"
+    echo -e "     ${BGreen}eachdir ${Purple}pwd${NC}"
+    echo -e "     ${BGreen}eachdir ${Yellow}* -- ${Purple}pwd${NC}"
+    echo -e "   "
+    echo -e "   ${Gray}Perform a \"git pull\" inside all subdirs starting with repo-:"
+    echo -e "     ${BGreen}eachdir${Yellow} repo-* -- ${Purple}git pull${NC}"
+    echo -e "   "
+    echo -e "   ${LightGray}Perform a few git-related commands inside all subdirs starting with repo-:"
+    echo -e "     ${BGreen}eachdir ${Yellow}repo-* -- ${Purple}'git fetch && git merge'${NC}"
+    echo -e "   "
+return; fi
+
+# if [ ! "$1" ]; then
+  # echo 'You must specify one or more commands to run.'
+  # return 1
+# fi
+
+# For underlining headers.
+local h1="$(tput smul)"
+local h2="$(tput rmul)"
+
+# Store any dirs passed before -- in an array.
+local dashes d
+local dirs=()
+for d in "$@"; do
+  if [[ "$d" == "--" ]]; then
+    dashes=1
+    shift $(( ${#dirs[@]} + 1 ))
+    break
+  fi
+  dirs=("${dirs[@]}" "$d")
+done
+
+# If -- wasn't specified, default to all subdirs of the current dir.
+[[ "$dashes" ]] || dirs=(*/)
+
+local nops=()
+# Do stuff for each specified dir, in each dir. Non-dirs are ignored.
+for d in "${dirs[@]}"; do
+  # Skip non-dirs.
+  [[ ! -d "$d" ]] && continue
+  # If the dir isn't /, strip the trailing /.
+  [[ "$d" != "/" ]] && d="${d%/}"
+  # Execute the command, grabbing all stdout and stderr.
+  output="$( (cd "$d"; eval "$@") 2>&1 )"
+  if [[ "$output" ]]; then
+    # If the command had output, display a header and that output.
+    echo -e "${h1}${d}${h2}\n$output\n"
+  else
+    # Otherwise push it onto an array for later display.
+    nops=("${nops[@]}" "$d")
+  fi
+done
+
+# List any dirs that had no output.
+if [[ ${#nops[@]} > 0 ]]; then
+  echo "${h1}no output from${h2}"
+  for d in "${nops[@]}"; do echo "$d"; done
+fi
+
+}
+
+# By putting the above code inside a function, if this file is sourced (which
+# is required for external aliases/functions to be used as commands), vars
+# can be local and return can be used to exit.
+_eachdir "$@"

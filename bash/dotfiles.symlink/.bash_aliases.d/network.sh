@@ -33,3 +33,11 @@ if shell_is_elliot; then
 
     # alias profittunnel='ssh -L 3306:profittunnel.cin9lenenfmf.us-east-1.rds.amazonaws.com:3306 profit'
 fi
+
+if shell_is_osx; then
+alias edithosts='s /etc/hosts'
+else
+alias edithosts='vim /etc/hosts'
+fi
+
+
