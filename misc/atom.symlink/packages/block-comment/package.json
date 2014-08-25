@@ -1,0 +1,30 @@
+{
+  "name": "block-comment",
+  "main": "./lib/block-comment",
+  "version": "0.4.0",
+  "description": "Block comment",
+  "activationEvents": [
+    "block-comment:toggle"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RayKwon/atom-block-comment"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {},
+  "readme": "# block-comment package\n\nBlock comment/uncomment\n\nCtrl + Alt + Cmd + /\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/RayKwon/atom-block-comment/issues"
+  },
+  "homepage": "https://github.com/RayKwon/atom-block-comment",
+  "_id": "block-comment@0.4.0",
+  "dist": {
+    "shasum": "53b090d639e459c99db7ae2f5752ee1a426542d7"
+  },
+  "_resolved": "/var/folders/80/5b_9h1w972n6p3cr6vqbpfsm0000gn/T/d-114725-21251-188e4yf/package.tgz",
+  "_from": "/var/folders/80/5b_9h1w972n6p3cr6vqbpfsm0000gn/T/d-114725-21251-188e4yf/package.tgz"
+}

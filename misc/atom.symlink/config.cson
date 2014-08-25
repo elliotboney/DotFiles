@@ -2,12 +2,23 @@
   'fontSize': 12
   'fontFamily': 'Source Code Pro'
   'lineHeight': 1.2
+  'preferredLineLength': 100
+  'invisibles':
+    'eol': ' '
+  'showIndentGuide': true
 'core':
   'themes': [
-    'atom-dark-ui'
-    'atom-dark-syntax'
+    'seti-ui'
+    'seti-syntax'
   ]
   'useReactEditor': true
+  'audioBeep': false
+  'ignoredNames': [
+    '.git'
+    '.DS_Store'
+    '.idea'
+  ]
+  'projectHome': '/Users/eboney/Code'
 'exception-reporting':
   'userId': '17f0acd5-4042-79ad-0b2a-1adf347830f5'
 'welcome':

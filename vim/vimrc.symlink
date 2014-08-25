@@ -1,4 +1,4 @@
-" Notes {{{2
+" Notes: {
 "
 "  Name: Elliot's Vim RC
 "  Author: Elliot Boney <elliotboney@gmail.com>
@@ -9,403 +9,253 @@
 " ---------------------------------------------------------------------
 " This is a baller ass vimrc for vim73+
 "
-"
-" }}}
-"python import sys; sys.path.append("/usr/local/lib/python2.7/site-packages/")
+" }
+
+
+" Environment: {
+" Set YCM Python Right Off The Bat: {
 let g:ycm_path_to_python_interpreter = '/usr/local/bin/python3'
-if has("gui")
-      set gfn=Inconsolata-DZ\ for\ Powerline:h11
+"}
+" Use Bundles Config: {
+if filereadable(expand("~/.vimrc.bundles"))
+   source ~/.vimrc.bundles
 endif
-
-" Bundle Sheeeet: {{{1
-      source ~/.vimrc.bundles
-   " }}}
-
-" Environment: {{{1
-   "_. Leader: {{{2
-   let mapleader = ","
-   let g:mapleader=","
-   "}}}
-
-   "_. Autosource Vimrc Edits And Snippets: {{{2
-   augroup vimfiles " {
-      au! BufWritePost .vimrc nested source %
-      au! BufWritePost .vimrc.bundles source %
-      au! BufWritePost *.vim colorscheme BusyBee
-   augroup END " }
-      "}}}
-   " Persistent Undo: {{{2"{{{
-      silent !mkdir ~/.backups > /dev/null 2>&1
-      "}}}"}}}
-
-" KeyBindings: {{{1
-   " Clipboard: {{{2
-      set pastetoggle=<F10>
-      "if has("mac") " On OSX
-         " Get Clipboard to work with system
-         vmap <C-c> y:call system("pbcopy", getreg("\""))<CR>
-         nmap <C-v> :call setreg("\"",system("pbpaste"))<CR>py
-     " elseif has("unix")
-         "vmap <C-c> y:call system("xclip -i", getreg("\""))<CR>
-         "nmap <C-v> :call setreg("\"",system("xclip -selection clipboard -o"))<CR>py
-      "endif
-      "}}}
-   " Control Key Bindings: {{{2
-      " When you press <leader>r you can search and replace the selected text
-      vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
-      " ==== Control S for Saving ====
-      "noremap  <C-S> :update<CR>
-      "vnoremap <C-S> <C-C>:update<CR>
-      "inoremap <C-S> <C-O>:update<CR>
-      "inoremap <c-s> <Esc>:update<CR>
-
-      " Keys Just Like In Bash:
-"      cnoremap <C-A>      <Home>
-      "cnoremap <C-E>      <End>
-      "cnoremap <C-K>      <C-U>
-      "cnoremap <C-P> <Up>
-      "cnoremap <C-N> <Down>
-      vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
-
-      noremap <C-t> !tidy --replace-color y --indent 'auto' --indent-attributes y --indent-cdata y --indent-spaces '2' --wrap '90100' --clean y -html -mi %<CR>
-
-      " Select ALL:
-      map <C-A> ggVG
-      " }}}
-   " Folding: {{{2
-      " Space to toggle folds.
-      nnoremap <space> za
-      vnoremap <space> za
-      "}}}
-   " Navigation: {{{2
-      " more natural movement with wrap on
-      nnoremap j gj
-      nnoremap k gk
-      vnoremap j gj
-      vnoremap k gk
-      " Faster viewport scrolling (3 lines at a time)
-      nnoremap <C-e> 3<C-e>
-      nnoremap <C-y> 3<C-y>
-      vnoremap <C-e> 3<C-e>
-      vnoremap <C-y> 3<C-y>
-      "}}}
-   " Remind Me Not To Use Arrows: {{{2
-     " nnoremap <Left> :echoe "Use h"<CR>
-      "nnoremap <Right> :echoe "Use l"<CR>
-      "nnoremap <Up> :echoe "Use k"<CR>
-      "nnoremap <Down> :echoe "Use j"<CR>
-      "}}}
-   " Leader Key Commands: {{{2
-      " fast edits
-      nmap <silent> <leader>v :e ~/.vimrc<CR>
-      nmap <silent> <leader>vv :e ~/.vimrc.bundles<CR>
-      nmap <silent> <leader>b :e ~/.bashrc<CR>
-      "nmap <silent> <leader>r :source ~/.vimrc<CR>
-      " Tidy HTML:
-      nmap <silent> <leader>x :%!tidy -q -i --show-errors 0 -w 100<CR>
-      " Toggle search highlighting
-      nmap <silent> <leader>/ :noh<CR>
-
-      " Code Folding Options: {{{3
-         nmap <leader>f0 :set foldlevel=0<CR>
-         nmap <leader>f1 :set foldlevel=1<CR>
-         nmap <leader>f2 :set foldlevel=2<CR>
-         nmap <leader>f3 :set foldlevel=3<CR>
-         nmap <leader>f4 :set foldlevel=4<CR>
-         nmap <leader>f5 :set foldlevel=5<CR>
-         nmap <leader>f6 :set foldlevel=6<CR>
-         nmap <leader>f7 :set foldlevel=7<CR>
-         nmap <leader>f8 :set foldlevel=8<CR>
-         nmap <leader>f9 :set foldlevel=9<CR>
-         "}}}
-
-      " fix windows endlines
-      nmap <silent> <leader>fw :%s/\r/<CR>
-
-      " Switch between the last two files
-      nnoremap <leader><leader> <c-^>
-      " Source current line
-      vnoremap <leader>L y:execute @@<cr>
-      " Source visual selection
-      nnoremap <leader>L ^vg_y:execute @@<cr>
-      " Easy buffer navigation
-      noremap <leader>bp :bprevious<cr>
-      noremap <leader>bn :bnext<cr>
-
-      "}}}
-   " Other Random Bindings: {{{2
-      " Fix Stupid Caps Mistakes I Always Make:
-         cmap W w
-         cmap Q q
-
-      " Change Indent Continuously:
-         vmap < <gv
-         vmap > >gv
-         nmap \ ,
-
-      " Elevated Write PostOpen:
-         cmap w!! w !sudo tee % >/dev/null
-
-      " Access To NERDTree:
-         nmap ,e :NERDTreeToggle<CR>
-
-      " Add New Line Without Entering Insert Mode:
-         noremap <CR> o<Esc>
-      " Highlight Search Word Under Cursor Without Jumping To Next:
-         nnoremap <leader>h *<C-O>
-         "}}} }}}
-
-" Set Statements: {{{
-   " Color Scheme: {{{2
-      set background=dark
-      colorscheme BusyBee
-      "}}}
-   " Search Stuff: {{{2
-      set hlsearch
-      set incsearch
-      set ignorecase    " Ignore case when searching
-      set smartcase     " Ignore case unless capital
-"      if has("unix")
-         set undodir=~/.vim/backups
-         set undofile
-      "endif
-      set viewoptions=folds,options,cursor,unix,slash " Better Unix / Windows compat
-      set virtualedit=onemore " Allow for cursor beyond last character
-      set foldcolumn=3
-      "}}}
-   " Display: {{{2
-      set t_Co=256            " Enable full-color support
-      "set title               " Set the title of the window in the terminal to the file
-      set laststatus=2        " Always show the status line
-      if has("unix")
-         set listchars=tab:▸\    " ┐
-         set listchars+=trail:·  " │ Use custom symbols to
-         set listchars+=nbsp:_   " ┘ represent invisible characters
-      endif
-      set scrolloff=5         " When the page starts to scroll, keep the cursor 5 lines
-      set autoread
-      set cursorline          " highlight the line the cursor is on
-      set showcmd             " Show the command as it's being typed in the lower right
-      set linespace=0
-      set formatoptions-=o    "dont continue comments when pushing o/O
-      "}}}
-   " Folding: {{{2
-      set foldenable
-      set foldlevel=1
-      set foldmethod=marker
-      set foldlevelstart=-1
-      "}}}
-   " Indentation: {{{2
-      set tabstop=3
-      set shiftwidth=3
-      set sts=3
-      set softtabstop=3
-      set expandtab
-      set autoindent
-      set smartindent
-      set copyindent
-      set shiftround
-      "}}}
-   " Turn Off Swap Files: {{{2
-      set noswapfile
-      "}}}
-   " The Mouse: {{{2
-      set mouse=a
-      set mousehide
-      "}}}
-   " Navigation:  {{{2
-      set nostartofline       " When moving around kept the cursor on the same
-                              " column if possible
-      "}}}
-   " Misc Sheet: {{{2
-      set wildmenu       " Enable command-line completion in an enhanced
-                         " mode (by hitting <TAB> in command mode, it will
-                         " show the possible matches just above the command
-                         " line with the first match highlighted)
-
-      "set wildmode=list:longest,full " Command <Tab> completion
-      "if has ("wildignore")
-            "set wildignore+=*.a,*.pyc,*.o,*.orig
-            "set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.jpeg,*.png
-            "set wildignore+=.DS_Store,.git,.hg,.svn
-            "set wildignore+=*~,*.sw?,*.tmp
-         "endif
-      set number
-      set numberwidth=6
-      set shortmess=aAItW " Avoid all the hit-enter prompts
-      set ttyfast         " Enable fast terminal connection (more characters
-                          " will be send to the screen for redrawing)
-      set noerrorbells    " Disable error bells
-      set showmatch
-      set backspace=2
-      set hi=4000         " command history length
-      if has("unix")
-         set clipboard+=unnamed
-      endif
-      set fileformats=unix
-      set iskeyword+=\$,-   " Add extra characters that are valid parts of variables^
-      "}}} }}}
-
-"  Filetype Statements: {{{
-     " Autocmd Statements: {{{2
-      autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-      autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-      autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-      autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-      autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-      "}}}
-" }}}
-
-" Settings For Bundles: [WHAT] {{{1
-   " NerdTree: {{{2
-   if(!exists('vimrc_already_sourced'))
-      command Nt NERDTree
-      command Nc NERDTreeClose
+" }
+" Leader: {
+let mapleader = ","
+let g:mapleader=","
+" }
+" Identify platform {
+silent function! OSX()
+return has('macunix')
+endfunction
+silent function! LINUX()
+return has('unix') && !has('macunix') && !has('win32unix')
+endfunction
+silent function! WINDOWS()
+return  (has('win16') || has('win32') || has('win64'))
+endfunction
+" }
+" Setup Clipboard: {
+if has('clipboard')
+   if has('unnamedplus')  " When possible use + register for copy-paste
+      set clipboard=unnamed,unnamedplus
+   else         " On mac and Windows, use * register for copy-paste
+      set clipboard=unnamed
    endif
-      "}}}
-   " Markdown Plugin ---- {{{2
-   autocmd BufNewFile,BufRead *.markdown,*.md,*.mdown,*.mkd,*.mkdn
-         \ if &ft =~# '^\%(conf\|modula2\)$' |
-         \   set ft=markdown |
-         \ else |
-         \   setf markdown |
-         \ endif
-      "}}}
-   " JsBeautify {{{2
-   map <c-j> :call JsBeautify()<cr>
-      "}}}
-   " Powerline {{{2
-      "set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-      set noshowmode     " Don't show the mode since Powerline shows it
-      "}}} }}}
+endif
+"}
+" Autosource Vimrc Edits And Snippets: {
+augroup vimfiles
+   au! BufWritePost .vimrc nested source %
+   au! BufWritePost .vimrc.bundles source %
+   au! BufWritePost *.vim colorscheme BusyBee
+augroup END
+" }
+" Persistent Undo: {
+set backup                  " Backups are nice ...
+if has('persistent_undo')
+   set undofile                " So is persistent undo ...
+   set undolevels=1000         " Maximum number of changes that can be undone
+   set undoreload=10000        " Maximum number lines to save for undo on a buffer reload
+endif
+" }
+" }
 
-" GLOBALS: {{{1
-   "let g:ctrlp_show_hidden = 1
-   "let g:syntastic_check_on_open=1
-   " }}}
+" KeyBindings: {
+" Clipboard: {
+set pastetoggle=<F10>
+vmap <C-c> y:call system("pbcopy", getreg("\""))<CR>
+nmap <C-v> :call setreg("\"",system("pbpaste"))<CR>py
+map <F7> mzgg=G`z<CR>
+" }
+" Control Key Bindings: {
+" When you press <leader>r you can search and replace the selected text
+vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
+" ==== Control S for Saving ====
+"noremap  <C-S> :update<CR>
+"vnoremap <C-S> <C-C>:update<CR>
+"inoremap <C-S> <C-O>:update<CR>
+"inoremap <c-s> <Esc>:update<CR>
 
-"_. Folding Settings: {{{1
-   if has("unix")
-   set fcs=vert:\↕,fold:⋱
-   endif
-   " Custom Foldtext Function: {{{2
-   if(!exists('vimrc_already_sourced'))
-      function MyFoldText()
-         let line = getline(v:foldstart)
-         let sub = substitute(line, '/\*\|\*/\|{{{\d\=', '', 'g')
-         "}}}
-         return v:folddashes . sub
-      endfunction
-   endif
-   set foldtext=MyFoldText()
-   "}}} }}}
+" Keys Just Like In Bash:
+cnoremap <C-A>      <Home>
+noremap <C-E>      <End>
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
+noremap <C-t> !tidy --replace-color y --indent 'auto' --indent-attributes y --indent-cdata y --indent-spaces '2' --wrap '90100' --clean y -html -mi %<CR>
 
-let vimrc_already_sourced = 1
-"let g:Powerline_symbols = 'fancy'
+" Select ALL:
+map <C-A> ggVG
+" }
+" Folding: {
+" Space to toggle folds.
+nnoremap <space> za
+vnoremap <space> za
+" }
+" Navigation: {
+" more natural movement with wrap on
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
+" Faster viewport scrolling (3 lines at a time)
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
+vnoremap <C-e> 3<C-e>
+vnoremap <C-y> 3<C-y>
+"}
+" Leader Key Commands: {
 
-" XML Formatter: {{{2
-   function! DoFormatXML() range
-      " Save the file type
-      let l:origft = &ft
+" Fast Edits:"{
+nmap <silent> <leader>v :e ~/.vimrc<CR>
+nmap <silent> <leader>vv :e ~/.vimrc.bundles<CR>
+"}
+" Tidy HTML:"{
+nmap <silent> <leader>x :%!tidy -q -i --show-errors 0 -w 100<CR>
+"}
+" Toggle Search Highlighting:"{
+nmap <silent> <leader>/ :noh<CR>
+"}
+" Code Folding:"{
+nmap <leader>f0 :set foldlevel=0<CR>
+nmap <leader>f1 :set foldlevel=1<CR>
+nmap <leader>f2 :set foldlevel=2<CR>
+nmap <leader>f3 :set foldlevel=3<CR>
+nmap <leader>f4 :set foldlevel=4<CR>
+nmap <leader>f5 :set foldlevel=5<CR>
+nmap <leader>f6 :set foldlevel=6<CR>
+nmap <leader>f7 :set foldlevel=7<CR>
+nmap <leader>f8 :set foldlevel=8<CR>
+nmap <leader>f9 :set foldlevel=9<CR>
+"}
 
-      " Clean the file type
-      set ft=
+" Fix Windows Endlines:"{
+nmap <silent> <leader>fw :%s/\r/<CR>
+"}
+" Remove Trailing Whitespaces:"{
+nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+"}
+" Switch Between The Last Two Files:"{
+nnoremap <leader><leader> <c-^>
+"}
+" Source Visual Selection:"{
+nnoremap <leader>L ^vg_y:execute @@<cr>
+"}
+" Easy Buffer Navigation:"{
+noremap <leader>bp :bprevious<cr>
+noremap <leader>bn :bnext<cr>
+"}
+" }
+" Other Random Bindings: {
+" Fix Stupid Caps Mistakes I Always Make:
+cmap W w
+cmap Q q
 
-      " Add fake initial tag (so we can process multiple top-level elements)
-      exe ":let l:beforeFirstLine=" . a:firstline . "-1"
-      if l:beforeFirstLine < 0
-         let l:beforeFirstLine=0
-      endif
-      exe a:lastline . "put ='</PrettyXML>'"
-      exe l:beforeFirstLine . "put ='<PrettyXML>'"
-      exe ":let l:newLastLine=" . a:lastline . "+2"
-      if l:newLastLine > line('$')
-         let l:newLastLine=line('$')
-      endif
+" Change Indent Continuously:
+vmap < <gv
+vmap > >gv
+nmap \ ,
 
-      " Remove XML header
-      exe ":" . a:firstline . "," . a:lastline . "s/<\?xml\\_.*\?>\\_s*//e"
+" Elevated Write PostOpen:
+cmap w!! w !sudo tee % >/dev/null
 
-      " Recalculate last line of the edited code
-      let l:newLastLine=search('</PrettyXML>')
+" Access To NERDTree:
+nmap ,e :NERDTreeToggle<CR>
 
-      " Execute external formatter
-      exe ":silent " . a:firstline . "," . l:newLastLine . "!xmllint --noblanks --format --recover -"
+" Add New Line Without Entering Insert Mode:
+noremap <CR> o<Esc>
+" Highlight Search Word Under Cursor Without Jumping To Next:
+nnoremap <leader>h *<C-O>
+" }
+" }
 
-      " Recalculate first and last lines of the edited code
-      let l:newFirstLine=search('<PrettyXML>')
-      let l:newLastLine=search('</PrettyXML>')
+" Set Statements: {
+" Color Scheme: {
+set background=dark
+colorscheme BusyBee "}
+" Search Stuff: {
+set hlsearch
+set incsearch
+set ignorecase    " Ignore case when searching
+set smartcase     " Ignore case unless capital
+" }
+" Display: {
+if has("gui")
+   set gfn=Inconsolata-DZ\ for\ Powerline:h11
+endif
+set nowrap              " turn off wrap
+set viewoptions=folds,options,cursor,unix,slash " Better Unix / Windows compat
+set virtualedit=onemore " Allow for cursor beyond last character
+"set foldcolumn=3
+set t_Co=256            " Enable full-color support
+set title               " Set the title of the window in the terminal to the file
+set laststatus=2        " Always show the status line
+if has("unix")
+   set listchars=tab:▸\    " ┐
+   set listchars+=trail:·  " │ Use custom symbols to
+   set listchars+=nbsp:_   " ┘ represent invisible characters
+endif
+set scrolloff=5         " When the page starts to scroll, keep the cursor 5 lines
+set autoread
+set cursorline          " highlight the line the cursor is on
+set showcmd             " Show the command as it's being typed in the lower right
+set linespace=0
+set formatoptions-=o    "dont continue comments when pushing o/O
+"}
+" Folding:"{
+set foldmarker={,}
+set foldmethod=marker
+"set foldtext=substitute(getline(v:foldstart),'{.*','{...}',) "}
+set foldcolumn=4
+set foldlevelstart=1
+"}
+" Indentation:"{
+set tabstop=3
+set shiftwidth=3
+set sts=3
+set softtabstop=3
+set expandtab
+set autoindent
+set smartindent
+set copyindent
+set shiftround
+"}
+" The Mouse:"{
+set mouse=a
+set mousehide
+"}
+" Navigation:"{
+set nostartofline       " When moving around kept the cursor on the same
+" column if possible
+"}
+" Misc Sheet: {
+set noswapfile " Turn Off Swap Files:
+set wildmenu       " Enable command-line completion in an enhanced
+" mode (by hitting <TAB> in command mode, it will
+" show the possible matches just above the command
+" line with the first match highlighted)
 
-      " Get inner range
-      let l:innerFirstLine=l:newFirstLine+1
-      let l:innerLastLine=l:newLastLine-1
-
-      " Remove extra unnecessary indentation
-      exe ":silent " . l:innerFirstLine . "," . l:innerLastLine "s/^  //e"
-
-      " Remove fake tag
-      exe l:newLastLine . "d"
-      exe l:newFirstLine . "d"
-
-      " Put the cursor at the first line of the edited code
-      exe ":" . l:newFirstLine
-
-      " Restore the file type
-      exe "set ft=" . l:origft
-   endfunction
-   command! -range=% FormatXML <line1>,<line2>call DoFormatXML()
-
-   nmap <silent> <leader>x :%FormatXML<CR>
-   vmap <silent> <leader>x :FormatXML<CR>
-"}}}
-
+"set wildmode=list:longest,full " Command <Tab> completion
+if has ("wildignore")
+   set wildignore+=*.a,*.pyc,*.o,*.orig
+   set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.jpeg,*.png
+   set wildignore+=.DS_Store,.git,.hg,.svn
+   set wildignore+=*~,*.sw?,*.tmp
+endif
+set number
+set numberwidth=6
+set shortmess+=filmnrxoOtT  " Abbrev. of messages (avoids 'hit enter')
+set ttyfast                 " Enable fast terminal connection (more characters
+" will be send to the screen for redrawing)
+set noerrorbells            " Disable error bells
+set showmatch
+set backspace=2
+set hi=4000         " command history length
+set fileformats=unix
+set iskeyword+=\$,-   " Add extra characters that are valid parts of variables^
 " Necessary for multiple encodings
 set encoding=utf-8
-
-" NFO Files: {{{2
-   " Common code for encodings
-   function! SetFileEncodings(encodings)
-   let b:myfileencodingsbak=&fileencodings
-   let &fileencodings=a:encodings
-   endfunction
-   function! RestoreFileEncodings()
-   let &fileencodings=b:myfileencodingsbak
-   unlet b:myfileencodingsbak
-   endfunction
-
-   " .NFO specific
-   au BufReadPre *.nfo call SetFileEncodings('cp437')|set ambiwidth=single
-   au BufReadPost *.nfo call RestoreFileEncodings()
-"}}}
-
-" Helper Function: {{{2
-function! VisualSelection(direction) range
-    let l:saved_reg = @"
-    execute "normal! vgvy"
-
-    let l:pattern = escape(@", '\\/.*$^~[]')
-    let l:pattern = substitute(l:pattern, "\n$", "", "")
-
-    if a:direction == 'b'
-        execute "normal ?" . l:pattern . "^M"
-    elseif a:direction == 'gv'
-        call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
-    elseif a:direction == 'replace'
-        call CmdLine("%s" . '/'. l:pattern . '/')
-    elseif a:direction == 'f'
-        execute "normal /" . l:pattern . "^M"
-    endif
-
-    let @/ = l:pattern
-    let @" = l:saved_reg
-endfunction
-function! CmdLine(str)
-    exe "menu Foo.Bar :" . a:str
-    emenu Foo.Bar
-    unmenu Foo
-endfunction
-"}}}
 set mat=2
 set acd
 
@@ -413,57 +263,163 @@ set acd
 set backupdir=~/.backups
 set directory=~/.backups
 
-" align on equals
-nmap <silent> <leader>A <esc>VAA
+" }
+" }
 
-"nerd tree and tag list
-nmap <silent> <leader>T :TagbarToggle<CR>
-let NERDTreeShowHidden=1
-
-" FF will use grep to find word under cursor and open quickfix window
-" " automatically
-nmap FF :execute " grep -srnw --binary-files=without-match --exclude-dir=.git . -e " . expand("<cword>") . " " <bar> cwindow<CR>
-" nuts sytnax
+" File Settings: {
+" Autocmd Statements:"{
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+"}
+" Nuts Sytnax: {
 au FileType javascript setl conceallevel=2 concealcursor=nc
 let g:syntax_js=['function', 'return']
+"}
+" Js Syntax Stuff: {
+let g:used_javascript_libs='underscore,backbone,jquery'
+" }
+"}
 
-" ctrlp
+" Settings For Bundles: "{
+" NerdTree: {
+if(!exists('vimrc_already_sourced'))
+   command Nt NERDTree
+   command Nc NERDTreeClose
+   "nerd tree and tag list
+   nmap <silent> <leader>T :TagbarToggle<CR>
+   let NERDTreeShowHidden=1
+endif
+"}
+" Markdown Plugin: {
+autocmd BufNewFile,BufRead *.markdown,*.md,*.mdown,*.mkd,*.mkdn
+         \ if &ft =~# '^\%(conf\|modula2\)$' |
+         \   set ft=markdown |
+         \ else |
+         \   setf markdown |
+         \ endif
+"}
+" JsBeautify: {
+map <c-j> :call JsBeautify()<cr>
+"}
+" Powerline: {
+"set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+set noshowmode     " Don't show the mode since Powerline shows it
+"}
+" Folding Settings: {
+if has("unix")
+   set fcs=vert:\↕,fold:⋱
+endif
+" Custom Foldtext Function: {
+set foldtext=MyFoldText()
+if(!exists('vimrc_already_sourced'))
+   function! MyFoldText()
+      let line = getline(v:foldstart)
+      if match( line, '^[ \t]*\(\/\*\|\/\/\)[*/\\]*[ \t]*$' ) == 0
+         let initial = substitute( line, '^\([ \t]\)*\(\/\*\|\/\/\)\(.*\)', '\1\2', '' )
+         let linenum = v:foldstart + 1
+         while linenum < v:foldend
+            let line = getline( linenum )
+            let comment_content = substitute( line, '^\([ \t\/\*]*\)\(.*\)$', '\2', 'g' )
+            if comment_content != ''
+               break
+            endif
+            let linenum = linenum + 1
+         endwhile
+         let sub = initial . ' ' . comment_content
+      else
+         let sub = line " {
+         let startbrace = substitute( line, '^.*{[ \t]*$', '{', 'g')
+         if startbrace == '{'
+            let line = getline(v:foldend)
+            let endbrace = substitute( line, '^[ \t]*}\(.*\)$', '}', 'g')
+            if endbrace == '}'
+               let sub = sub.substitute( line, '^[ \t]*}\(.*\)$', '...}\1', 'g')
+            endif
+         endif
+      endif
+      let n = v:foldend - v:foldstart + 1
+      let info = " " . n . " lines"
+      let sub = sub . "                                                                                                                  "
+      let num_w = getwinvar( 0, '&number' ) * getwinvar( 0, '&numberwidth' )
+      let fold_w = getwinvar( 0, '&foldcolumn' )
+      let sub = strpart( sub, 0, winwidth(0) - strlen( info ) - num_w - fold_w - 1 )
+      return sub . info
+   endfunction
+endif
+" }
+" Align: {
+" align on equals
+nmap <silent> <leader>A <esc>VAA
+" }
+" Ctrlp: {
 let g:ctrlp_extensions=['funky']
 let g:ctrlp_follow_symlinks=1
 let g:ctrlp_working_path_mode=0
 let g:ctrlp_custom_ignore={
-  \ 'dir':  '\.git$\|node_modules\|bin\|dist\|bower_components',
-  \ 'file': '\.exe$\|\.so$\|\.dat$'
-  \ }
-
-" funky hiles
+         \ 'dir':  '\.git$\|node_modules\|bin\|dist\|bower_components',
+         \ 'file': '\.exe$\|\.so$\|\.dat$'
+         \ }
+" }
+" Funky Files: {
 let g:ctrlp_funky_syntax_highlight=1
-
-" ycm completion
+"}
+" YCM Completion: {
 let g:ycm_add_preview_to_completeopt=0
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_autoclose_preview_window_after_insertion=1
 let g:ycm_cache_omnifunc=1
-
-" tern
+"}
+" Tern: {
 let g:tern_show_signature_in_pum=1
 let g:tern_is_show_argument_hints_enabled=1
 " dont pop up preview window, ycm is enough
 set completeopt-=preview
-
-" funky action
+"}
+" Funky Action: {
 nnoremap <Leader>f :CtrlPFunky<Cr>
 nnoremap <Leader>F :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
-
-" Tern stuff
+" }
+" Tern Stuff: {
 nmap <silent> <F12> :TernDef<CR>
 nmap <silent> <c-s> :TernType<CR>
-
-" js syntax stuff
-let g:used_javascript_libs='underscore,backbone,jquery'
-
-" let syntastic clobber location list
+" }
+" Syntastic: {
 let g:syntastic_always_populate_loc_list=1
+"}
 
-" turn off wrap
-set nowrap
+" Helper Functions: "{
+" Visual
+function! VisualSelection(direction) range
+   let l:saved_reg = @"
+   execute "normal! vgvy"
+
+   let l:pattern = escape(@", '\\/.*$^~[]')
+   let l:pattern = substitute(l:pattern, "\n$", "", "")
+
+   if a:direction == 'b'
+      execute "normal ?" . l:pattern . "^M"
+   elseif a:direction == 'gv'
+      call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
+   elseif a:direction == 'replace'
+      call CmdLine("%s" . '/'. l:pattern . '/')
+   elseif a:direction == 'f'
+      execute "normal /" . l:pattern . "^M"
+   endif
+
+   let @/ = l:pattern
+   let @" = l:saved_reg
+endfunction
+function! CmdLine(str)
+   exe "menu Foo.Bar :" . a:str
+   emenu Foo.Bar
+   unmenu Foo
+endfunction
+"}
+
+let vimrc_already_sourced = 1
+
+highlight clear SignColumn      " SignColumn should match background
+highlight clear LineNr          " Current line number row will have same background color in relative mode
