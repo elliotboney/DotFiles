@@ -1,0 +1,27 @@
+{
+  "name": "editor-grammar-scope",
+  "main": "./lib/editor-grammar-scope",
+  "version": "0.1.0",
+  "description": "Add a class to the editor representing the currently selected grammar.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/siannopollo/atom-editor-grammar-scope"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {},
+  "readme": "# editor-grammar-scope package\n\nThemes in Atom assume that there will be one background color for all files, no matter the selected grammar. Some people don't mind that, but I do.\n\nThis package adds a class to the editor view element to allow for better styling of themes.\n\n### Example\n\nWithout this package, the editor will generally have an HTML class attribute equal to `\"editor editor-colors\"`.\n\nWith this package enabled, selecting the grammar \"Ruby\" will cause the editor to have `\"editor editor-colors source-ruby\"`.\n\n### Class names\n\nThe class name added to the editor view is the `Grammar#scopeName` with all periods replaced with `-`.\n\nSo, the Ruby grammar object has a `scopeName` of \"source.ruby\", which is added as \"source-ruby\" to the editor-view class attribute.\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/siannopollo/atom-editor-grammar-scope/issues"
+  },
+  "homepage": "https://github.com/siannopollo/atom-editor-grammar-scope",
+  "_id": "editor-grammar-scope@0.1.0",
+  "dist": {
+    "shasum": "aef4f0cc2cc94240f0bcd13b5fc2c2595fdd1b33"
+  },
+  "_resolved": "/var/folders/80/5b_9h1w972n6p3cr6vqbpfsm0000gn/T/d-114719-6872-1x9mvww/package.tgz",
+  "_from": "/var/folders/80/5b_9h1w972n6p3cr6vqbpfsm0000gn/T/d-114719-6872-1x9mvww/package.tgz"
+}
