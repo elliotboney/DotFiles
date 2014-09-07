@@ -8,8 +8,8 @@
   'showIndentGuide': true
 'core':
   'themes': [
-    'seti-ui'
-    'seti-syntax'
+    'spacegray-dark-ui'
+    'spacegray-dark-syntax'
   ]
   'useReactEditor': true
   'audioBeep': false
@@ -19,9 +19,19 @@
     '.idea'
   ]
   'projectHome': '/Users/eboney/Code'
+  'disabledPackages': [
+    'autocomplete-snippets'
+  ]
 'exception-reporting':
   'userId': '17f0acd5-4042-79ad-0b2a-1adf347830f5'
 'welcome':
   'showOnStartup': false
 'metrics':
   'userId': '7b1b09b29610b6ae118986b03bceb5556b4620e3'
+'atom-beautify':
+  'analytics': false
+'remember-session':
+  'path': '/Users/eboney/Downloads/00 Completed/AUTODESK_MAYA_LT_V2015_EXT1_MACOSX-XFORCE'
+  'x': 21
+  'y': 22
+  'tabs': '/Users/eboney/Downloads/00 Completed/AUTODESK_MAYA_LT_V2015_EXT1_MACOSX-XFORCE/install.txt&&/Users/eboney/Downloads/autodesk2015-product-keys.txt'

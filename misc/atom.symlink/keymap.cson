@@ -16,3 +16,8 @@
 #   'ctrl-P': 'core:move-up'
 #   'ctrl-p': 'core:move-down'
 #
+'.editor':
+  'alt-cmd-/': 'block-comment:toggle'
+
+'.platform-darwin .editor':
+  'cmd-b': 'script:run'

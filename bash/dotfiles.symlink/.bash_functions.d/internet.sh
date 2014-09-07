@@ -1,5 +1,5 @@
 function downloaddir() {
-wget -r -l 1 -nd --no-parent -b "$@" 
+wget -nc -q -r -l 1 -nd --no-parent --reject-regex '\?' -R html,txt -b "$@" 
 }
 
 function sync () {

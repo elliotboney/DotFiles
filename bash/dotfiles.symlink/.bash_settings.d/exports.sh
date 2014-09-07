@@ -1,3 +1,6 @@
+#export for Atom Editor
+export ATOM_REPOS_HOME=~/Code/Atom
+
 # Link Homebrew casks in `/Applications` rather than `~/Applications`
 export HOMEBREW_CASK_OPTS="--appdir=/Applications";
 
