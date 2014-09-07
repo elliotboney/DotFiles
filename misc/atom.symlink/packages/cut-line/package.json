@@ -1,7 +1,7 @@
 {
   "name": "cut-line",
   "main": "./lib/cut-line",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "private": true,
   "description": "Overrides Cmd-X and Cmd-C with no selection to cut (or copy) the entire line.",
   "activationEvents": [
@@ -24,9 +24,10 @@
     "url": "https://github.com/tekkub/cut-line/issues"
   },
   "homepage": "https://github.com/tekkub/cut-line",
-  "_id": "cut-line@0.9.0",
+  "_id": "cut-line@0.10.0",
   "dist": {
-    "shasum": "ac81361213d0ee451e85ca297833819e7a6c8d51"
+    "shasum": "56bf0fb3e525cb2e17f4bddf64b1a67bfa9e59e3"
   },
-  "_from": "/Users/eboney/.atom/.node-gyp/.atom/.apm/cut-line/0.9.0/package.tgz"
+  "_from": "/var/folders/80/5b_9h1w972n6p3cr6vqbpfsm0000gn/T/d-11483-169-11n1hfg/package.tgz",
+  "_resolved": "/var/folders/80/5b_9h1w972n6p3cr6vqbpfsm0000gn/T/d-11483-169-11n1hfg/package.tgz"
 }

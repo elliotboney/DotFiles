@@ -1,4 +1,41 @@
-# v0.5.13
+# v0.5.18
+
+### Bug Fixes
+* Compatibility with [git-diff][gitdiff] (See [#121][121], [#202][202])
+
+[121]: https://github.com/AtomLinter/Linter/issues/121
+[202]: https://github.com/AtomLinter/Linter/issues/202
+[gitdiff]: https://atom.io/packages/git-diff
+
+# v0.5.17
+
+### Bug Fixes
+* Fix regression for multiple linters in one file (See [#193][193],
+  [#194][194])
+
+[193]: https://github.com/AtomLinter/Linter/issues/193
+[194]: https://github.com/AtomLinter/Linter/pull/194
+
+# v0.5.16
+
+### Bug Fixes
+* Better compatibility with `rubocop` and `GHC-mod` (See [#192][192],
+  [AtomLinter/rubocop#2][rubocop2])
+
+[192]: https://github.com/AtomLinter/Linter/issues/192
+[rubocop2]: https://github.com/AtomLinter/linter-rubocop/issues/2
+
+# v0.5.15
+
+### New Features
+* Allow `executablePath` to be a path to an actual executable. Fixes some
+  `spawn ENOTDIR` errors (See [#190][190], [#102][102], [#95][95])
+
+[95]: https://github.com/AtomLinter/Linter/issues/95#issuecomment-50035054
+[102]: https://github.com/AtomLinter/Linter/issues/102#issuecomment-47029312
+[190]: https://github.com/AtomLinter/Linter/issues/190
+
+# v0.5.14
 
 ### Bug Fixes
 * Fix `spawn ENOENT` errors in projects that have `package.json` files (See [#119](https://github.com/AtomLinter/Linter/issues/119), [#179](https://github.com/AtomLinter/Linter/pull/179))

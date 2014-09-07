@@ -15,4 +15,8 @@ if shell_is_osx; then
     alias map="xargs -n1"
 
     
+   #delete stuff to trash
+   # alias rm='rmtrash';
+   alias rmf='rmtrash'; 
+
 fi
