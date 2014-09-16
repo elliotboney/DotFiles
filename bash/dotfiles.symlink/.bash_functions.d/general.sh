@@ -31,3 +31,13 @@ cjson () {
     cat $url | python -mjson.tool | pygmentize -O style=monokai -f console256 -g
   fi
 }
+
+# `a` with no arguments opens the current directory in Atom Editor, otherwise
+# opens the given location
+function a() {
+  if [ $# -eq 0 ]; then
+    atom .;
+  else
+    atom "$@";
+  fi;
+}

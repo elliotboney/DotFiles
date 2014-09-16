@@ -37,13 +37,13 @@
   'js_keep_function_indentation': true
   'js_unescape_strings': true
 'remember-session':
-  'path': '/Users/eboney/.js'
-  'x': 0
-  'y': 22
-  'tabs': '/Users/eboney/.js/fontsquirrel.com.js&&/Users/eboney/.js/mightytext.net.js'
+  'path': '/Users/eboney/Library/Application Support/Google/Chrome/Default/User StyleSheets'
+  'x': 448
+  'y': 299
+  'tabs': ''
   'selectedTab': ''
-  'width': 1438
-  'height': 820
+  'width': 990
+  'height': 543
   'treeWidth': 200
 'linter-jsxhint':
   'jsxhintExecutablePath': '/Users/eboney/.nvm/v0.10.29/bin/jsxhint'
