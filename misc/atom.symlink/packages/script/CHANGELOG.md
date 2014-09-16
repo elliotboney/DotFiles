@@ -1,3 +1,12 @@
+## 2.10.0
+* Fix Swift against Xcode Beta 5
+
+## 2.9.0
+* Add LilyPond support 
+* Add "Ruby on Rails" support
+* Add Makefile support
+* Now handling shebangs!
+
 ## 2.8.0
 * Add Swift support
 * Add PowerShell support
@@ -6,7 +15,6 @@
 * The escape key will now close the script output pane
 * More tests, because this project definitely needs more tests
 * Support for MoonScript
-
 
 ## 2.6.0
 * Added line based support

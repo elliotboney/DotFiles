@@ -1,0 +1,60 @@
+{
+  "name": "SFTP-deployment",
+  "description": "A package which allow you to upload and download files with FTP/SFTP protocol",
+  "version": "0.5.0",
+  "author": {
+    "name": "Ellipsis Team",
+    "email": "axel.moussard@gmail.com"
+  },
+  "homepage": "https://github.com/amoussard/sftp-deployment",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/amoussard/sftp-deployment.git"
+  },
+  "bugs": {
+    "url": "https://github.com/amoussard/sftp-deployment/issues"
+  },
+  "main": "./lib/sftp-deployment.js",
+  "activationEvents": [
+    "sftp-deployment:mapToRemote",
+    "sftp-deployment:uploadCurrentFile",
+    "sftp-deployment:uploadOpenFiles",
+    "sftp-deployment:downloadCurrentFile",
+    "sftp-deployment:uploadSelection",
+    "sftp-deployment:downloadSelection"
+  ],
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "dependencies": {
+    "ssh2": "^0.2.23",
+    "ftp": "*",
+    "MD5": "^1.2.1",
+    "util": "*",
+    "node-dir": "*"
+  },
+  "devDependencies": {
+    "should": "latest",
+    "coveralls": "2.3.0"
+  },
+  "keywords": [
+    "atom",
+    "package",
+    "sftp",
+    "ftp",
+    "remote",
+    "deployment"
+  ],
+  "license": "MIT",
+  "readme": "[![Build Status](https://travis-ci.org/amoussard/sftp-deployment.svg?branch=evol%2F3-upload-selection)](https://travis-ci.org/amoussard/sftp-deployment)\n[![Coverage Status](https://img.shields.io/coveralls/amoussard/sftp-deployment.svg)](https://coveralls.io/r/amoussard/sftp-deployment)\n\n#SFTP-Deployment for Atom.io\n\nSpend less time managing file transfers and more time coding. FTP and SFTP support for Atom.io to send and receive files directly in your server.\n\nSFTP-Deployment is a package for Atom.io using [SSH2 client](https://github.com/mscdex/ssh2) and [Node FTP](https://github.com/mscdex/node-ftp) modules written in pure Javascript for [node.js](http://nodejs.org/).\n\n![SFTP-deployment](https://atom.io/assets/packages-d6c259ff67b995961012620be1e26678.gif \"SFTP-deployment\")\n\n##Features\n\n###Workflows\n* Working off of a server\n  * Create, edit, rename and delete files\n  * Create, rename and delete folders\n* Upload/Download files\n* Upload/Download folders\n\n###Compatibility\n* Supports FTP and SFTP servers\n* Password SSH support\n* Works on Windows, OS X and Linux\n\n###Integration\n* Menu entries and command palette control\n* File-based configuration (JSON)\n* Colorized output panel with options for automatic hiding\n\n## Installation\n\n1. Search `sftp` or `ftp` in the atom package manager\n2. Since the installation is successful, you can generate the configuration file with the command\n  * `cmd-shift-p` and search `mapToRemote`\n  * Packages menu -> FTP/SFTP -> Map to Remote...\n  * Create your own\n3. Set your ftp/sftp configuration in this file\n4. Use it!\n\n####Example of configuration file:\n\nFor SFTP protocol :\n```\n{\n  \"type\": \"sftp\",\n  \"host\": \"example.com\",\n  \"user\": \"username\",\n  \"password\": \"password\",\n  \"port\": \"22\",\n  \"remote_path\": \"/example/path\",\n}\n```\n\nFor FTP protocol :\n```\n{\n  \"type\": \"ftp\",\n  \"host\": \"example.com\",\n  \"user\": \"username\",\n  \"password\": \"password\",\n  \"port\": \"21\",\n  \"remote_path\": \"/example/path\"\n}\n```\n\n##Next Versions\n\n###Workflows\n* Upload just the changes since your last commit\n* See upload/download progress\n\n###Compatibility\n* Supports FTPS servers\n* Supports both implicit (port 990) and explicit SSL for FTPS connections\n* SSH key auth with SSH agent support\n* Detects and informs about SSH host key changes\n* Can detect changes via Git, Mercurial and SVN\n\n###Integration\n* Keyboard shortcuts\n* Secure password and passphrase entry\n\n##Version\n* `0.4.0`\n  * Upload/Download of folders\n  * Refactoring of code\n* `0.3.0`\n  * Refactoring of the code\n  * Notifications/message system\n  * FTP support\n  * ST3 package syntax support\n  * bugfix\n* `0.1.0` Build the first atom package\n",
+  "readmeFilename": "README.md",
+  "_id": "SFTP-deployment@0.5.0",
+  "dist": {
+    "shasum": "1e714ce8d6a4275a290eb83cb4345ed2c9221bcd"
+  },
+  "_resolved": "/var/folders/80/5b_9h1w972n6p3cr6vqbpfsm0000gn/T/d-11489-11971-h0jd0q/package.tgz",
+  "_from": "/var/folders/80/5b_9h1w972n6p3cr6vqbpfsm0000gn/T/d-11489-11971-h0jd0q/package.tgz"
+}

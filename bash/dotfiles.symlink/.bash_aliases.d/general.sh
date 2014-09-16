@@ -13,6 +13,9 @@ if shell_is_osx; then
     command_exists npm && UCMD=${UCMD}"; npm update -g"
     command_exists gem && UCMD=${UCMD}"; gem update"
     command_exists pear && UCMD=${UCMD}"; pear upgrade"
+    command_exists phpbrew && UCMD=${UCMD}"; phpbrew self-update; "
+    command_exists composer && UCMD=${UCMD}"; composer selfupdate"
+
 else 
     UCMD=${UCMD}'sudo aptitude update; sudo aptitude dist-upgrade'
     command_exists npm && UCMD=${UCMD}"; npm update -g"
