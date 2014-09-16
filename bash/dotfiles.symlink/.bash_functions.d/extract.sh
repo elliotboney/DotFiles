@@ -14,7 +14,7 @@ extract () {
       *.tar)      tar -xvf $1                         ;;
       *.tbz2)     tar -jxvf $1                        ;;
       *.tgz)      tar -zxvf $1                        ;;
-      *.zip)      unzip $1                            ;;
+      *.zip)      unzip $1 && rmf $1                           ;;
       *.ZIP)      unzip $1                            ;;
       *.pax)      cat $1 | pax -r                     ;;
       *.pax.Z)    uncompress $1 --stdout | pax -r     ;;

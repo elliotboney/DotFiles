@@ -1,8 +1,9 @@
-# Run code in Atom!
+# Script [![Build Status](http://img.shields.io/travis/rgbkrk/atom-script.svg?style=flat)](https://travis-ci.org/rgbkrk/atom-script)
+**Run code in Atom!**
+
+Run scripts based on file name, a selection of code, or line number.
 
 ![](https://cloud.githubusercontent.com/assets/1694055/3226201/c458acbc-f067-11e3-84a0-da27fe334f5e.gif)
-
-Run selections of code, code based on line number, or the whole file!
 
 Currently supported grammars are:
 
@@ -20,8 +21,10 @@ Currently supported grammars are:
   * Haskell
   * Javascript
   * Julia
+  * LilyPond
   * LiveScript
   * Lua
+  * Makefile
   * MoonScript
   * newLISP
   * Perl
@@ -29,8 +32,10 @@ Currently supported grammars are:
   * Python
   * RSpec
   * Ruby
+  * Ruby on Rails
   * Scala
   * Swift
+  * Makefile
 
 **NOTE**: Some grammars may require you to install [a custom language package](https://atom.io/search?utf8=✓&q=language).
 
@@ -68,7 +73,7 @@ Make sure to run `atom` from the command line to get full access to your environ
 
 **Script: Run at Line** to run using the specified line number. **Note** that if you select an entire line this number could be off by one due to the way Atom detects numbers while text is selected.
 
-**Script: Run Options** should be used to configure command options and program arguments for a "File Based" or "Selection Based" run.
+**Script: Run Options** should be used to configure command options, program arguments, and environment variables overrides. Environment variables may be input into the options view in the form `VARIABLE_NAME_ONE=value;VARIABLE_NAME_TWO="other value";VARIABLE_NAME_3='test'`
 
 **Script: Kill Process** will kill the process but leaves the pane open.
 

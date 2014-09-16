@@ -23,8 +23,8 @@ function lm () {
         echo -e "\n\t${White}Useage: ${BCyan}lm ${LightGray}<file> ${NC}\n"
   else
       # cd ${DOTPATH} && git add -A . && git commit -m "$1" && git push && cd -
-      mv "$1" ~/Git/DotFiles/misc/${MVFILE}.symlink
-      ln -s ~/Git/DotFiles/misc/${MVFILE}.symlink ~/.${MVFILE}
+      mv "$1" ${DOTPATH}/misc/${MVFILE}.symlink
+      ln -s ${DOTPATH}/misc/${MVFILE}.symlink ~/.${MVFILE}
     echo -e "\n\t${White}Moved and created a symlink for: ${BCyan}.${MVFILE}${NC}\n"
 
   fi

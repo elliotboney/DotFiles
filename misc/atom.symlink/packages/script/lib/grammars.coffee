@@ -105,6 +105,11 @@ module.exports =
       command: "julia"
       args: (context) -> [context.filepath]
 
+  LilyPond:
+    "File Based":
+      command: "lilypond"
+      args: (context) -> [context.filepath]
+
   LiveScript:
     "Selection Based":
       command: "livescript"
@@ -120,7 +125,7 @@ module.exports =
     "File Based":
       command: "lua"
       args: (context) -> [context.filepath]
-      
+
   MoonScript:
     "Selection Based":
       command: "moon"
@@ -128,7 +133,7 @@ module.exports =
     "File Based":
       command: "moon"
       args: (context) -> [context.filepath]
-      
+
   newLISP:
     "Selection Based":
       command: "newlisp"
@@ -190,6 +195,14 @@ module.exports =
       command: "ruby"
       args: (context) -> [context.filepath]
 
+  'Ruby on Rails':
+    "Selection Based":
+      command: "rails"
+      args: (context)  -> ['runner', context.getCode()]
+    "File Based":
+      command: "rails"
+      args: (context) -> ['runner', context.filepath]
+
   'Shell Script (Bash)':
     "Selection Based":
       command: "bash"
@@ -197,6 +210,14 @@ module.exports =
     "File Based":
       command: "bash"
       args: (context) -> [context.filepath]
+
+  Makefile:
+    "Selection Based":
+      command: "bash"
+      args: (context) -> ['-c', context.getCode()]
+    "File Based":
+      command: "make"
+      args: (context) -> ['-f', context.filepath]
 
   Scala:
     "Selection Based":
@@ -217,4 +238,4 @@ module.exports =
   Swift:
     "File Based":
       command: "xcrun"
-      args: (context) -> ['swift', '-i', context.filepath]
+      args: (context) -> ['swift', context.filepath]

@@ -21,6 +21,7 @@
   'projectHome': '/Users/eboney/Code'
   'disabledPackages': [
     'autocomplete-snippets'
+    'script'
   ]
 'exception-reporting':
   'userId': '17f0acd5-4042-79ad-0b2a-1adf347830f5'
@@ -30,8 +31,19 @@
   'userId': '7b1b09b29610b6ae118986b03bceb5556b4620e3'
 'atom-beautify':
   'analytics': false
+  'js_eval_code': true
+  'js_jslint_happy': true
+  'js_keep_array_indentation': true
+  'js_keep_function_indentation': true
+  'js_unescape_strings': true
 'remember-session':
-  'path': '/Users/eboney/Downloads/00 Completed/AUTODESK_MAYA_LT_V2015_EXT1_MACOSX-XFORCE'
-  'x': 21
+  'path': '/Users/eboney/.js'
+  'x': 0
   'y': 22
-  'tabs': '/Users/eboney/Downloads/00 Completed/AUTODESK_MAYA_LT_V2015_EXT1_MACOSX-XFORCE/install.txt&&/Users/eboney/Downloads/autodesk2015-product-keys.txt'
+  'tabs': '/Users/eboney/.js/fontsquirrel.com.js&&/Users/eboney/.js/mightytext.net.js'
+  'selectedTab': ''
+  'width': 1438
+  'height': 820
+  'treeWidth': 200
+'linter-jsxhint':
+  'jsxhintExecutablePath': '/Users/eboney/.nvm/v0.10.29/bin/jsxhint'

@@ -9,7 +9,7 @@ paths=("$HOME/bin" "$HOME/.bin" "/usr/local/opt/coreutils/libexec/gnubin" "/usr/
     "/usr/local/share/npm/bin" "/usr/local/Cellar/php55/5.5.10/bin"
     "/usr/local/lib/python2.7/site-packages" "/usr/local/lib/python3.3/site-packages"
     "${GOROOT}/bin" "/bin" "/sbin"  "/usr/bin" "/usr/sbin"
-    "$HOME/Android/sdk/tools" )
+    "$HOME/Code/Android/sdk/tools" "$HOME/Code/Android/sdk/platform-tools" )
 
 #"/usr/local/share/python"
 #"/opt/local/bin" "/opt/local/sbin"

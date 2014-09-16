@@ -1,3 +1,7 @@
+function gi() { 
+curl -s https://www.gitignore.io/api/${(j:,:)@} ;
+}
+
 function lazyclone {
   url=$1;
   reponame=$(echo $url | awk -F/ '{print $NF}' | sed -e 's/.git$//');
@@ -26,8 +30,8 @@ function pullall {
   }
 
 # Install Grunt plugins and add them as `devDependencies` to `package.json`
-# Usage: `gi contrib-watch contrib-uglify zopfli`
-function gi() {
+# Usage: `gruntinstall contrib-watch contrib-uglify zopfli`
+function gruntinstall() {
   if [[ -z "$1" ]]; then
     echo -e "\n\t${BCyan} Useage: ${White}gi ${Yellow}contrib-watch contrib-uglify zopfli${NC}\n"
   else
