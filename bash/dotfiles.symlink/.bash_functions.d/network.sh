@@ -1,5 +1,5 @@
 function tunnel () {
-    ssh -f user@personal-server.com -L 2000:personal-server.com:25 -N
+    ssh -f eboney@digitalgrove.org -L 2000:google.com:80 -N
 }
 
 

@@ -1,0 +1,35 @@
+{
+  "name": "Tern",
+  "main": "./lib/tern",
+  "version": "0.8.0",
+  "private": true,
+  "description": "Smart javascript code intelligence for Atom.io",
+  "activationEvents": [
+    "tern:completion",
+    "tern:start-server"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/artoale/atom-tern"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.108.0"
+  },
+  "dependencies": {
+    "underscore-plus": "*",
+    "tern": ">=0.5.0"
+  },
+  "readme": "# Tern\n\nSmart javascript code intelligence for Atom.io\n\n##Installation\n`apm install tern` or search for `tern` in the package manager\n\n##Usage\n* `Cmd+shift+p`, search for `Tern: start server`\n* Start writing awesome JS!\n* Default keybinding: `Cmd+space`\n* the suggestion popup is open automatically when a `.` is typed (to be improved)\n\n##Issues\nThis plugin is experimental and is likely to be buggy. Please, help me improve it by reporting any bug, suggesting improvements and, if you feel like it, by sending PR\n\n##TO-DO\n* Support other `tern` feature\n    * Refactoring\n    * Go-to definition\n    * etc..\n* Improve automatic completion pop-up\n    * Insert text when no match is found\n    * Heuristic to decide when to open suggestion list\n* Performance\n    * Send diff instead of whole file (supported by `tern`)\n* Tests\n\n##Authors\nTern plugin for atom is written by [Alessandro Artoni](https://artoale.com) and it's made possible thanks to the awesome [tern project](http://ternjs.net/) by [Marijn Haverbeke](https://github.com/marijnh).\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/artoale/atom-tern/issues"
+  },
+  "homepage": "https://github.com/artoale/atom-tern",
+  "_id": "Tern@0.8.0",
+  "dist": {
+    "shasum": "49a80f5a78ce783cdb1a195278db1bb31c549cbf"
+  },
+  "_resolved": "/private/var/folders/80/5b_9h1w972n6p3cr6vqbpfsm0000gn/T/d-114829-23381-ptn8jz/package.tgz",
+  "_from": "/private/var/folders/80/5b_9h1w972n6p3cr6vqbpfsm0000gn/T/d-114829-23381-ptn8jz/package.tgz"
+}

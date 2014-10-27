@@ -1,3 +1,89 @@
+3.3.3 / 2014-10-13
+==================
+
+* fix invalid engine version since config changes
+
+3.3.2 / 2014-10-10
+==================
+
+* fix minimap height not filling the whole editor height at startup
+
+3.3.1 / 2014-10-10
+==================
+
+* fix duplication of minimap when dragging tabs between panes
+
+3.3.0 / 2014-10-03
+==================
+
+* add option to set a max width to minimap when soft wrap is enabled
+
+3.2.1 / 2014-10-02
+==================
+
+* fix invalid decoration change range registered when head and tail of a marker are inversed
+
+3.2.0 / 2014-10-01
+==================
+
+* use new config schema
+* fix bug with line decoration and retina display
+
+3.1.4 / 2014-09-30
+==================
+
+* fix broken update on editor settings changes
+
+
+3.1.3 / 2014-09-30
+==================
+
+* fix broken access to editor in getLinesCount when changing an editor setting
+
+3.1.2 / 2014-09-29
+==================
+
+* fix render on retina display
+
+3.1.1 / 2014-09-24
+==================
+
+* add config observers for editor settings that affect the minimap display
+* fix various leak with config observers
+* fix missing render view event dispatch on settings change
+
+3.1.0 / 2014-09-22
+==================
+
+* add command to generate a plugin package
+* fix remaining deprecated calls
+* update documentation with old wiki pages
+* set autoToggle true by default
+* replace lineHeight by interline in settings
+
+3.0.3 / 2014-09-19
+==================
+
+* fix issue with renamed event in Atom nightly
+
+3.0.2 / 2014-09-19
+==================
+
+* fix the case where the minimap is positioned incorrectly when a user style alters the tab bar height
+
+3.0.1 / 2014-09-19
+==================
+
+* fix bug with text drawing when charWidth != 1
+
+3.0.0 / 2014-09-19
+==================
+
+* :racehorse: improved performances by switching to a canvas-based rendering
+* :sparkles: add decoration API using the same interface than the Atom one
+* implements a new event model based on the Atom one. Previous events re now deprecated.
+* add new API documentation availaible at http://fangduncai.com/atom-minimap/
+
 2.3.3 / 2014-08-27
 ==================
 
@@ -120,8 +206,8 @@
 * minimap views are now created for each editor and not for each pane
 * add a `eachMinimapView` subscription method in `Minimap` class
 * add a view aware minimap rendering, it speeds up rendering and updates for large files
-* add delegation of `MinimapEditorView` methods in `MinimapView`, allowing to manipulate most of its API directory from a minimap view
-* add a lines API on `MinimapEditorView` allowing to decorates lines with classes even when they are not rendered yet
+* add delegation of `MinimapRenderView` methods in `MinimapView`, allowing to manipulate most of its API directory from a minimap view
+* add a lines API on `MinimapRenderView` allowing to decorates lines with classes even when they are not rendered yet
 
 
 0.10.0 / 2014-05-11

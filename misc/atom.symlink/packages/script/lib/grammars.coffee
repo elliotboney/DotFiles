@@ -14,9 +14,14 @@ module.exports =
     "File Based":
       command: "behat"
       args: (context) -> ['--ansi', context.filepath]
-    "Line Based":
+    "Line Number Based":
       command: "behat"
       args: (context) -> ['--ansi', context.fileColonLine()]
+
+  Batch:
+    "File Based":
+      command: ""
+      args: (context) -> [context.filepath]
 
   CoffeeScript:
     "Selection Based":
@@ -56,7 +61,7 @@ module.exports =
     "File Based":
       command: "cucumber"
       args: (context) -> ['--color', context.filepath]
-    "Line Based":
+    "Line Number Based":
       command: "cucumber"
       args: (context) -> ['--color', context.fileColonLine()]
 
@@ -113,10 +118,10 @@ module.exports =
   LiveScript:
     "Selection Based":
       command: "livescript"
-      args: (code)  -> ['-e', code]
+      args: (context)  -> ['-e', context.getCode()]
     "File Based":
       command: "livescript"
-      args: (filename) -> [filename]
+      args: (context) -> [context.filepath]
 
   Lua:
     "Selection Based":
@@ -183,7 +188,7 @@ module.exports =
     "File Based":
       command: "rspec"
       args: (context) -> ['--tty', '--color', context.filepath]
-    "Line Based":
+    "Line Number Based":
       command: "rspec"
       args: (context) -> ['--tty', '--color', context.fileColonLine()]
 

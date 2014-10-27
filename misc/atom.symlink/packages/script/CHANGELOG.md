@@ -1,8 +1,17 @@
+## 2.12.0
+* Rename "Line Based runs" to "Line Number Based runs"
+
+## 2.11.0
+* Add Batch support
+
+## 2.10.1
+* Update LiveScript to use newer grammar mapping
+
 ## 2.10.0
 * Fix Swift against Xcode Beta 5
 
 ## 2.9.0
-* Add LilyPond support 
+* Add LilyPond support
 * Add "Ruby on Rails" support
 * Add Makefile support
 * Now handling shebangs!
@@ -82,17 +91,17 @@
 * Added Groovy support
 * Added Scala support
 
-##2.0.4
+## 2.0.4
 * Added file based Haskell support
 
-##2.0.3
+## 2.0.3
 * Escaped ANSI to HTML
 * Added contributors to package.json
 
-##2.0.1-2.0.2
+## 2.0.1-2.0.2
 * Documentation patches
 
-##2.0.0
+## 2.0.0
 - Completely new UI
 - Status indicators / icons for script run, stop, kill, complete
 - Updated commands to kill process and dismiss script view

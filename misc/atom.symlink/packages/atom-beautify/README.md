@@ -1,6 +1,8 @@
 # [atom-beautify](https://github.com/donaldpipowitch/atom-beautify)
 
 [![Gitter chat](https://badges.gitter.im/Glavin001/atom-beautify.png)](https://gitter.im/Glavin001/atom-beautify)
+[![Issue Stats](http://issuestats.com/github/glavin001/atom-beautify/badge/pr?style=flat)](http://issuestats.com/github/glavin001/atom-beautify)
+[![Issue Stats](http://issuestats.com/github/glavin001/atom-beautify/badge/issue?style=flat)](http://issuestats.com/github/glavin001/atom-beautify)
 
 > [Beautify](https://github.com/einars/js-beautify)
 HTML (including [Handlebars](http://handlebarsjs.com/)),
@@ -29,6 +31,8 @@ Or Settings/Preferences ➔ Packages ➔ Search for `atom-beautify`
   - [LESS](http://lesscss.org/)
 - [x] [SQL](https://github.com/Glavin001/atom-beautify/pull/67)
   - Requires [python-sqlparse](https://github.com/andialbrecht/sqlparse)
+- [x] [Markdown](https://github.com/Glavin001/atom-beautify/issues/93#issuecomment-55642483)
+  - Requires [Pandoc](http://johnmacfarlane.net/pandoc/) to be already installed
 - [x] [PHP](https://github.com/donaldpipowitch/atom-beautify/issues/26)  
   - Requires [PHP_Beautifier](http://pear.php.net/package/PHP_Beautifier) to be already installed.
 - [x] [Python](https://github.com/donaldpipowitch/atom-beautify/issues/24)
@@ -53,12 +57,12 @@ Or Settings/Preferences ➔ Packages ➔ Search for `atom-beautify`
   - Requires [Uncrustify](http://sourceforge.net/projects/uncrustify/)
 - [x] [Vala](https://github.com/Glavin001/atom-beautify/issues/57)
   - Requires [Uncrustify](http://sourceforge.net/projects/uncrustify/)
+- [x] [TypeScript](https://github.com/Glavin001/atom-beautify/issues/49)
 
 ### Road Map
 
 #### Language support
 
-- [ ] [TypeScript](https://github.com/Glavin001/atom-beautify/issues/49)
 - [ ] [Perl](https://github.com/Glavin001/atom-beautify/issues/33)
 
 
@@ -85,10 +89,23 @@ For example:
 
 ### Package Options
 
-- `beautifyOnSave`  
+- `beautifyOnSave`  (Default *false*)
 You can also choose to beautify on every file save.
 
-- `analytics`  
+- `beautifyEntireFileOnSave` (Default *true*)
+Beautification will normally only beautify your selected text.
+However, when beautification occurs on save then it will
+be forced to beautify the entire file's contents,
+not just selected text.
+
+- `muteUnsupportedLanguageErrors` (Default *false*)
+Mute only *unsupported language* errors.
+
+- `muteAllErrors` (Default *false*)
+Do not show the *Atom Beautify Error Messages* panel
+for any of the errors occurring while beautifying.
+
+- `analytics`  (Default *true*)
 There is [Segment.io](https://segment.io/),
 which forwards the data to [Google Analytics](http://www.google.com/analytics/),
 to track what languages
@@ -112,6 +129,8 @@ Edit your `.jsbeautifyrc` file in any of the following locations:
 **Note**: *Comments are supported in `.jsbeautifyrc` thanks to [strip-json-comments](https://github.com/sindresorhus/strip-json-comments).*
 
 See examples of both way inside [`examples/`](https://github.com/donaldpipowitch/atom-beautify/tree/master/examples)
+
+Option table is available at the [js-beautify repo](https://github.com/beautify-web/js-beautify#options).
 
 ### Simple
 
@@ -188,6 +207,11 @@ and that you set the `Python autopep8 path` in the package settings.
 #### Retrieve the path on Mac & Linux
 
 Run `which autopep8` in your Terminal.
+
+### Markdown
+
+To use with Markdown we require [pandoc](http://johnmacfarlane.net/pandoc/)
+and you set the `Markdown Pandoc path` in the package settings.
 
 
 ## Contributing

@@ -1,0 +1,35 @@
+{
+  "name": "cdnjs",
+  "main": "./lib/cdnjs",
+  "version": "1.4.0",
+  "description": "Easily embed scripts from cdnjs",
+  "activationEvents": [
+    "cdnjs:GetUrl",
+    "cdnjs:DownloadFile"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cdnjs/atom-extension"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {
+    "superagent": "^0.18.0",
+    "underscore-plus": "^1.2.1",
+    "wget": "0.0.1"
+  },
+  "readme": "# cdnjs atom extension\n\nQuickly embed url's from the large collection of client side libraries at cdnjs.com\n\nSimply bring up the command window and type cdnjs to run the GetUrl method\n\n### Insert cdnjs urls from inside the editor\n\n![screenshot](https://cdn.rawgit.com/cdnjs/atom-extension/master/screenshots/geturl.gif)\n\n### Download files straight into your project\n![screenshot](https://cdn.rawgit.com/cdnjs/atom-extension/master/screenshots/downloadfile.gif)\n\n## Features\n\n* Insert any url into your current file\n* Right click in your tree, to download any file from cdnjs into your project\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/cdnjs/atom-extension/issues"
+  },
+  "homepage": "https://github.com/cdnjs/atom-extension",
+  "_id": "cdnjs@1.4.0",
+  "dist": {
+    "shasum": "8656fd45a3c9c0f2f376ebc65369299306c03234"
+  },
+  "_resolved": "/private/var/folders/80/5b_9h1w972n6p3cr6vqbpfsm0000gn/T/d-114830-31785-1r7aujc/package.tgz",
+  "_from": "/private/var/folders/80/5b_9h1w972n6p3cr6vqbpfsm0000gn/T/d-114830-31785-1r7aujc/package.tgz"
+}

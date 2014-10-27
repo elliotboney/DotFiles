@@ -1,7 +1,7 @@
 {
   "name": "block-comment",
   "main": "./lib/block-comment",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Block comment",
   "activationEvents": [
     "block-comment:toggle"
@@ -21,10 +21,15 @@
     "url": "https://github.com/RayKwon/atom-block-comment/issues"
   },
   "homepage": "https://github.com/RayKwon/atom-block-comment",
-  "_id": "block-comment@0.4.0",
+  "_id": "block-comment@0.4.1",
   "dist": {
-    "shasum": "53b090d639e459c99db7ae2f5752ee1a426542d7"
+    "shasum": "2ce19ce19753ecbce54ba5b7c6b365e8eca2191d"
   },
-  "_resolved": "/var/folders/80/5b_9h1w972n6p3cr6vqbpfsm0000gn/T/d-114725-21251-188e4yf/package.tgz",
-  "_from": "/var/folders/80/5b_9h1w972n6p3cr6vqbpfsm0000gn/T/d-114725-21251-188e4yf/package.tgz"
+  "_resolved": "/private/var/folders/80/5b_9h1w972n6p3cr6vqbpfsm0000gn/T/d-114919-73150-bir8rn/package.tgz",
+  "_from": "/private/var/folders/80/5b_9h1w972n6p3cr6vqbpfsm0000gn/T/d-114919-73150-bir8rn/package.tgz",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "folders": []
+  }
 }
