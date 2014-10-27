@@ -1,11 +1,11 @@
-function gi() { 
-curl -s https://www.gitignore.io/api/${(j:,:)@} ;
-}
+# function gi() {
+#   curl -s https://www.gitignore.io/api/${(j:,:)@} ;
+# }
 
 function lazyclone {
   url=$1;
   reponame=$(echo $url | awk -F/ '{print $NF}' | sed -e 's/.git$//');
-  git clone $url $reponame;
+  git clone --depth=7 $url $reponame;
   cd $reponame;
 }
 

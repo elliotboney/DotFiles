@@ -120,7 +120,7 @@ getConfigOptionsFromSettings = (langs) ->
       opt = k.replace(new RegExp("^" + lang + "_"), "")
       options[lang] = options[lang] or {}
       options[lang][opt] = config[k]
-    # console.log(lang, opt);
+      # console.log(lang, opt);
     true
   # console.log(options);
   options
@@ -136,13 +136,14 @@ beautify = ->
   forceEntireFile = atom.config.get("atom-beautify.beautifyEntireFileOnSave")
   # Show error
   showError = (e) =>
-      # console.log(e)
       @loadingView.hide()
-      @messagePanel.attach()
-      @messagePanel.add(new PlainMessageView({
-        message: e.message,
-        className: 'text-error'
-      }))
+      if not atom.config.get("atom-beautify.muteAllErrors")
+        # console.log(e)
+        @messagePanel.attach()
+        @messagePanel.add(new PlainMessageView({
+          message: e.message,
+          className: 'text-error'
+        }))
   # Look for .jsbeautifierrc in file and home path, check env variables
   getConfig = (startPath, upwards=true) ->
     # Verify that startPath is a string
@@ -185,7 +186,9 @@ beautify = ->
   # Asynchronously and callback-style
   beautifyCompleted = (text) =>
     # console.log 'beautifyCompleted'
-    if text instanceof Error
+    if not text?
+      # Do nothing, is undefined
+    else if text instanceof Error
       showError(text)
     else if oldText isnt text
       # console.log "Replacing current editor's text with new text"
@@ -253,7 +256,7 @@ beautify = ->
       editorConfigOptions.indent_char = "\t"
       editorConfigOptions.indent_with_tabs = true
       if (editorConfigOptions.tab_width)
-          editorConfigOptions.indent_size = config.tab_width
+          editorConfigOptions.indent_size = editorConfigOptions.tab_width
 
     # Get all options in configuration files from this directory upwards to root
     projectOptions = []
@@ -313,6 +316,8 @@ plugin.configDefaults = _.merge(
   analytics: true
   beautifyOnSave: false
   beautifyEntireFileOnSave: true
+  muteUnsupportedLanguageErrors: false
+  muteAllErrors: false
 , defaultLanguageOptions)
 plugin.activate = ->
   handleSaveEvent()

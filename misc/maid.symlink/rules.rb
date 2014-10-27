@@ -70,17 +70,21 @@ Maid.rules do
     puts "--------------------------------------------\n\033[32mMove Movies\033[0m"
     dir(['~/Downloads/00 Completed/**/*.mp4', '~/Downloads/00 Completed/**/*.avi', '~/Downloads/00 Completed/**/*.mkv']).each do |path|
       if !path.match(/\/00 Movies/)
-        if (size_of(path) < 100000000)
-          remove(path)
-        else
-          if path.match(/[sS][0-9][0-9][eE][0-9][0-9]/)
-            move(path, '~/Downloads/00 Completed/00 Movies/00 TV')
+        begin
+          if (size_of(path) < 100000000)
+            remove(path)
           else
-            move(path, '~/Downloads/00 Completed/00 Movies')
-            if (File.dirname(path) != '/Users/eboney/Downloads/00 Completed')
-              trash(File.dirname(path))
+            if path.match(/[sS][0-9][0-9][eE][0-9][0-9]/)
+              move(path, '~/Downloads/00 Completed/00 Movies/00 TV')
+            else
+              move(path, '~/Downloads/00 Completed/00 Movies')
+              if (File.dirname(path) != '/Users/eboney/Downloads/00 Completed')
+                trash(File.dirname(path))
+              end
             end
           end
+        rescue
+          puts "Error getting path size of: #{path}\n"
         end
       end
     end
@@ -101,14 +105,19 @@ Maid.rules do
   #
   rule 'Fonts in Downloads' do
     puts "--------------------------------------------\n\033[32mFonts in Downloads\033[0m"
-    dir(%w(~/Downloads/**/*.ttf ~/Downloads/**/*.otf)).each do |path|
+    dir(%w(~/Downloads/*.ttf ~/Downloads/*.otf ~/Downloads/**/*.ttf ~/Downloads/**/*.otf ~/Downloads/**/*.TTF ~/Downloads/**/*.OTF)).each do |path|
       begin
         if !File.dirname(path).match(/Downloads$/) && !File.dirname(path).match(/01 Design$/) && !path.match(/\.app/)
+          # Let's clean bs files in there
+          dir([File.dirname(path)+"/*.txt", File.dirname(path)+"/*.pdf", File.dirname(path)+"/*.jpg",File.dirname(path)+"/*.png"]).each do |rdmepath|
+            trash rdmepath
+          end
+          # Now move the dir to Fonts dir
           move(File.dirname(path), '~/Dropbox/Fonts')
         end
-        if File.dirname(path).match(/Downloads$/) || File.dirname(path).match(/01 Design$/)
-          move(path, '~/Dropbox/Fonts')
-        end
+        # if File.dirname(path).match(/Downloads$/) || File.dirname(path).match(/01 Design$/)
+        #   move(path, '~/Dropbox/Fonts')
+        # end
       rescue
         puts "Skipping #{path} since we've already moved its parent dir"
       end
@@ -116,9 +125,8 @@ Maid.rules do
   end
 
   rule 'Get Mime Type' do
-    dir('~/Downloads/**/*.mp4').each do |path|
-      # mimetype = content_types(path)
-      # mimetype = File.content_type(path)
+    dir('~/Downloads/**/*.psd').each do |path|
+      mimetype = content_types(path)
       # puts "--->#{mimetype}"
     end
   end
@@ -128,11 +136,13 @@ Maid.rules do
   #
   DOWNLOAD_TYPES = {
     '02 Apps' => %w(com.apple.application com.apple.installer-package-archive),
-    '05 Docs' => %w(com.adobe.pdf public.rtf application/vnd.openxmlformats-officedocument.wordprocessingml.template),
+    '06 Docs' => %w(com.adobe.pdf public.rtf application/vnd.openxmlformats-officedocument.wordprocessingml.template public.log com.apple.iwork.pages.pages),
     '03 Archives' => %w(public.archive application/rar-compressed),
-    '01 Design' => %w(com.adobe.illustrator.ai-image com.adobe.encapsulated-postscript com.adobe.indesign.indd-document),
+    '01 Design' => %w(com.adobe.photoshop-image com.adobe.illustrator.ai-image com.adobe.encapsulated-postscript com.adobe.indesign.indd-document),
     '04 Images' => 'public.image',
-    '05 Scripts' => %w(public.source-code public.script public.html)
+    '05 Scripts' => %w(public.source-code public.script public.html text/css),
+    '09 Books' => %w(application/epub+zip),
+    '08 Data' => %w(text/comma-separated-values com.microsoft.excel.xls)
   }
   DOWNLOAD_TYPES.each do |sub_dir, types|
     rule "Move downloaded #{sub_dir.downcase}" do

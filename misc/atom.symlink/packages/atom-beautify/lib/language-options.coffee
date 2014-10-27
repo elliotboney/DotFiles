@@ -17,9 +17,14 @@ beautifyLESS = null
 beautifyCoffeeScript = null
 uncrustifyBeautifier = null
 beautifyHTMLERB = null
+beautifyMarkdown = null
+beautifyTypeScript = null
+Analytics = null
 
 # Misc
-Analytics = require("analytics-node")
+{allowUnsafeEval} = require 'loophole'
+allowUnsafeEval ->
+  Analytics = require("analytics-node")
 pkg = require("../package.json")
 
 # Analytics
@@ -40,11 +45,13 @@ module.exports =
     "c"
     "cpp"
     "cs"
+    "markdown"
     "objectivec"
     "java"
     "d"
     "pawn"
     "vala"
+    "typescript"
   ]
 
   # Default options per language
@@ -87,6 +94,9 @@ module.exports =
     sql_identifiers: "lower"
     sql_sqlformat_path: ""
 
+    # Markdown
+    markdown_pandoc_path: ""
+
     # PHP
     php_beautifier_path: ""
 
@@ -100,29 +110,36 @@ module.exports =
     ruby_rbeautify_path: ""
 
     # C
+    c_uncrustifyPath: ""
     c_configPath: ""
 
     # C++
+    cpp_uncrustifyPath: ""
     cpp_configPath: ""
 
     # Objective-C
+    objectivec_uncrustifyPath: ""
     objectivec_configPath: ""
 
     # C#
+    cs_uncrustifyPath: ""
     cs_configPath: ""
 
-    # Objective-C
+    # D
+    d_uncrustifyPath: ""
     d_configPath: ""
 
     # Java
+    java_uncrustifyPath: ""
     java_configPath: ""
 
     # Pawn
+    pawn_uncrustifyPath: ""
     pawn_configPath: ""
 
     # VALA
+    vala_uncrustifyPath: ""
     vala_configPath: ""
-
 
   # jshint ignore: end
 
@@ -145,7 +162,10 @@ module.exports =
       when "Handlebars"
         # jshint ignore: start
         allOptions.push indent_handlebars: true # Force jsbeautify to indent_handlebars
-      # jshint ignore: end
+        # jshint ignore: end
+        beautifyHTML ?= require("js-beautify").html
+        text = beautifyHTML(text, self.getOptions("html", allOptions))
+        beautifyCompleted text
       when "HTML (Liquid)", "HTML", "XML"
         beautifyHTML ?= require("js-beautify").html
         text = beautifyHTML(text, self.getOptions("html", allOptions))
@@ -172,6 +192,9 @@ module.exports =
       when "Ruby"
         beautifyRuby ?= require("./langs/ruby-beautify")
         beautifyRuby text, self.getOptions("ruby", allOptions), beautifyCompleted
+      when "GitHub Markdown"
+        beautifyMarkdown ?= require("./langs/markdown-beautify")
+        beautifyMarkdown text, self.getOptions("markdown", allOptions), beautifyCompleted
       when "C"
         options = self.getOptions("c", allOptions)
         options.languageOverride = "C"
@@ -212,6 +235,9 @@ module.exports =
         options.languageOverride = "JAVA"
         uncrustifyBeautifier ?= require("./langs/uncrustify/")
         uncrustifyBeautifier text, options, beautifyCompleted
+      when "TypeScript"
+        beautifyTypeScript ?= require("./langs/typescript-beautify")
+        beautifyTypeScript text, self.getOptions("js", allOptions), beautifyCompleted
       else
         unsupportedGrammar = true
 
@@ -237,7 +263,10 @@ module.exports =
           category: version
     #
     if unsupportedGrammar
-      throw new Error("Unsupported language for grammar '#{grammar}'.")
+      if atom.config.get("atom-beautify.muteUnsupportedLanguageErrors")
+        return beautifyCompleted(null)
+      else
+        throw new Error("Unsupported language for grammar '#{grammar}'.")
     return
 
   getOptions: (selection, allOptions) ->
@@ -266,7 +295,7 @@ module.exports =
         # console.log(selection, currOptions[selection]);
         _.merge collectedConfig, currOptions[selection]
       extend result, collectedConfig
-    , {})
+    , {} )
     # TODO: Clean.
     # There is a bug in nopt
     # See https://github.com/npm/nopt/issues/38#issuecomment-45971505

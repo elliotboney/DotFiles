@@ -16,7 +16,7 @@ if shell_is_osx; then
     command_exists phpbrew && UCMD=${UCMD}"; phpbrew self-update; "
     command_exists composer && UCMD=${UCMD}"; composer selfupdate"
 
-else 
+else
     UCMD=${UCMD}'sudo aptitude update; sudo aptitude dist-upgrade'
     command_exists npm && UCMD=${UCMD}"; npm update -g"
     command_exists gem && UCMD=${UCMD}"; gem update"
@@ -27,7 +27,7 @@ UCMD='echo -n "\033]0;Updating Your Shiat\007"; '${UCMD}
 alias update=$UCMD
 
 # if shell_is_elliot; then
-alias createdocs='phpdoc -d . -t docs --template new-black'
+alias createdocs='/usr/local/Cellar/php56/5.6.1/bin/phpdoc -d . -t docs --template clean'
 alias mountmainpc='sshfs eboney@mainpc:/ /Users/eboney/mainpc/ -ocache=no -onolocalcaches -ovolname=mainpc'
 # fi
 
@@ -37,3 +37,7 @@ fi
 
 alias updatefonts='sudo fc-cache -f -v'
 # command_exists brew ] && echo "true"
+
+
+alias jpgnames='jhead -n%Y%m%d-%H%M%S *.jpg'
+alias makethumbs='mogrify -resize 480x480 -format jpg -quality 65 -path thumbnails *.jpg'

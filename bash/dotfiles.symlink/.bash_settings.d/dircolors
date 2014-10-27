@@ -3,7 +3,7 @@
 # @author  {@link http://www.elliotboney.com Elliot Boney}
 # @license http://sam.zoy.org/wtfpl/  Do What The Fuck You Want To Public License (WTFPL)
 
-# TODO see if we need all this shit down 
+# TODO see if we need all this shit down
 # Terminal {{{2
 TERM Eterm
 TERM ansi
@@ -62,16 +62,16 @@ TERM xterm-termite
 # NOTE: string consists of one or more of the following numeric codes:
 # Attribute codes:
 #                   00 =none 01=bold 04=underscore 05=blink 07=reverse 08=concealed
-# 
+#
 # Text color codes:
 #                   30 =black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
-# 
+#
 # Background color codes:
 # 40                   =black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
 #
 # Text 256 color coding:
 # 38;5;COLOR_NUMBER
-# 
+#
 # Background 256 color coding:
 #                   48;5;COLOR_NUMBER
 
@@ -125,6 +125,11 @@ EXEC                00;38;5;83
 .tmLanguage         00;38;5;176
 .sublime-build      00;38;5;37
 
+#fonts
+.otf      00;38;5;37
+.ttf      00;38;5;37
+
+
 
 
 
@@ -151,13 +156,13 @@ EXEC                00;38;5;83
 .deb                00;38;5;61
 .rpm                00;38;5;61
 .jar                00;38;5;61
-.rar                00;38;5;61
 .7z                 00;38;5;61
 .rz                 00;38;5;61
 .apk                00;38;5;61
 .gem                00;38;5;61
 .sublime-package    00;38;5;61
 
+.rar                00;38;5;60
 
 # Image formats (yellow)
 .jpg                00;38;5;214
@@ -173,9 +178,16 @@ EXEC                00;38;5;83
 .eps                00;38;5;214
 .ico                00;38;5;214
 
+.psd                00;38;5;216
+.ai                00;38;5;216
+
+
+.icns                00;38;5;215
+
 # Files of special interest (base1 + bold)
 .vim                00;38;5;205
 .xml                00;38;5;205
+.json               00;38;5;205
 *Makefile           00;38;5;205
 *Rakefile           00;38;5;205
 *build.xml          00;38;5;205
@@ -199,6 +211,7 @@ EXEC                00;38;5;83
 # "unimportant" files as logs and backups (base01)
 .log                00;38;5;240
 .txt                00;38;5;240
+.rtf                00;38;5;240
 .bak                00;38;5;240
 .aux                00;38;5;240
 .bbl                00;38;5;240
@@ -250,6 +263,11 @@ EXEC                00;38;5;83
 .zprofile           00;38;5;236
 .zcompdump          00;38;5;236
 .zshrc              00;38;5;236
+.zshrc              00;38;5;236
+*LICENSE              00;38;5;236
+*license              00;38;5;236
+*changelog              00;38;5;236
+*desktop.ini              00;38;5;236
 
 .lessht             00;38;5;174
 
