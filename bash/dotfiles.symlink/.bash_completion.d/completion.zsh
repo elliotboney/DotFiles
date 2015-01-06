@@ -144,43 +144,57 @@ if (( CURRENT >= 2 )); then
 }
 compdef _lm lm
 
-_wp() {
-  compadd cache add decr delete flush get incr replace set type
-  # compadd cap add list remove
-  # compadd cli cmd-dump completions info param-dump version
-  # compadd comment approve count create delete exists get list spam status trash unapprove unspam untrash update url
-  # compadd comment-meta add delete get update
-  # compadd core config download install is-installed multisite-convert multisite-install update update-db version
-  # compadd db cli create drop export import optimize query repair reset
-  # compadd eval
-  # compadd eval-file
-  # compadd export
-  # compadd help
-  # compadd import
-  # compadd media import regenerate
-  # compadd network-meta add delete get update
-  # compadd option add delete get update
-  # compadd plugin activate deactivate delete get install is-installed list path search status toggle uninstall update
-  # compadd post create delete edit generate get list update url
-  # compadd post-meta add delete get update
-  # compadd rewrite flush list structure
-  # compadd role create delete exists list
-  # compadd scaffold _s child-theme plugin plugin-tests post-type taxonomy
-  # compadd search-replace
-  # compadd shell
-  # compadd site create delete empty list url
-  # compadd term create delete generate get list update
-  # compadd theme activate delete disable enable get install is-installed list path search status update
-  # compadd transient delete get set type
-  # compadd user add-cap add-role create delete generate get import-csv list list-caps remove-cap remove-role set-role update
-  # compadd user-meta add delete get update
-}
-compdef _wp wp
+# _wp() {
+#  local -a commands
+#   commands=(
+#       'cache:Manage the object cache.'
+#       'cap:Manage user capabilities.'
+#       'cli:Get information about WP-CLI itself.'
+#       'comment:Manage comments.'
+#       'core:Download, install, update and otherwise manage WordPress proper.'
+#       'cron:Manage WP-Cron events and schedules.'
+#       'db:Perform basic database operations.'
+#       'developer:Developer Plugin commands for WP-CLI.'
+#       'eval:Execute arbitrary PHP code after loading WordPress.'
+#       'eval-file:Load and execute a PHP file after loading WordPress.'
+#       'export:Export content to a WXR file.'
+#       'help:Get help on a certain command.'
+#       'import:Import content from a WXR file.'
+#       'media:Manage attachments.'
+#       'menu:List, create, assign, and delete menus'
+#       'network:Unknown'
+#       'option:Manage options.'
+#       'plugin:Manage plugins.'
+#       'post:Manage posts.'
+#       'rewrite:Manage rewrite rules.'
+#       'role:Manage user roles.'
+#       'scaffold:Generate code for post types, taxonomies, etc.'
+#       'search-replace:Search/replace strings in the database.'
+#       'shell:Interactive PHP console.'
+#       'sidebar:Manage sidebars.'
+#       'site:Perform site-wide operations.'
+#       'super-admin:List, add, and remove super admins from a network.'
+#       'term:Manage terms.'
+#       'theme:Manage themes.'
+#       'transient:Manage transients.'
+#       'user:Manage users.'
+#       'widget:Manage sidebar widgets.'
+#   )
+
+#   if (( CURRENT == 2 )); then
+#     _describe -t commands 'commands' commands
+#   fi
+
+#   return 0
+# }
+# compdef _wp wp
 # # echo "test"
 # echo ${BASH_SOURCE:-$0}
 # autoload bashcompinit
 # bashcompinit
-# source wp-completion.bash
+# source DotFiles/bash/wp-completion.bash
 
-autoload -Uz compinit && compinit
+
+
+autoload -Uz compinit && compinit -D
 

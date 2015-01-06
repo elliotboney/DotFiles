@@ -1,3 +1,52 @@
+# v0.9.0
+
+### New features
+* Upgraded inline view ([#274][274])
+* More subtle error highlighting ([#275][275])
+
+[274]: https://github.com/AtomLinter/Linter/pull/274
+[275]: https://github.com/AtomLinter/Linter/pull/275
+
+### Bug fixes
+* Fix TextEditor destroyed error ([#279][279])
+* More deprecation fixes
+
+[279]: https://github.com/AtomLinter/Linter/issues/279
+
+
+# v0.8
+
+### New features
+* Easier to understand config screen ([#266][266])
+
+### New linters
+* flow, bootlint
+
+[266]: https://github.com/AtomLinter/Linter/pull/266
+
+### Bug fixes
+* Fix line undefined error ([#257][257])
+* Shadow DOM compatibility
+
+[257]: https://github.com/AtomLinter/Linter/issues/257
+
+
+# v0.7.4
+
+### Bug fixes
+* Escape linter messages ([#231][231])
+* Fix error when closing tab ([#253][253])
+* Get rid of some uses of deprecated Atom APIs
+
+
+### New features
+* Provide file as errorStream (See [#255][255])
+
+[231]: https://github.com/AtomLinter/Linter/pull/231
+[253]: https://github.com/AtomLinter/Linter/pull/253
+[255]: https://github.com/AtomLinter/Linter/issues/255
+
+
 # v0.7.3
 
 ### Bug fixes
@@ -111,7 +160,7 @@
 # v0.5.8
 
 ### Bug Fixes
-* Fix for multiple linters on the same file (#139)
+* Fix for multiple linters on the same file ([#139](https://github.com/AtomLinter/Linter/issues/139))
 
 ### New Linters
 * [linter-clojure](https://atom.io/packages/linter-clojure), for Clojure, using clojure.
@@ -120,13 +169,13 @@
 
 ### Bug Fixes
 * Fix linters not working on Windows ([#148](https://github.com/AtomLinter/linter/pull/148), [#112](https://github.com/AtomLinter/linter/issue/112))
-* Also fix [#157](https://github.com/AtomLinter/linter/issues/157])
+* Also fix [#157](https://github.com/AtomLinter/linter/issues/157)
 
 
 # v0.5.6
 
 ### Bug Fixes
-* Resolve too many linter warnings cover screen bug ([##132](https://github.com/AtomLinter/Linter/issues/132]))
+* Resolve too many linter warnings cover screen bug ([#132](https://github.com/AtomLinter/Linter/issues/132))
 
 # v0.5.3
 
@@ -148,12 +197,12 @@
 
 ### Bug Fixes
 * Fix when line is deleted before it can be [hightlig…](https://github.com/AtomLinter/Linter/commit/01786d4ec4cc6a946bf09e4024e22b0dfad858c6)
-* fix typo [(showHightlighting -> showHighlighting)](https://github.com/AtomLinter/Linter/commit/e06ad53bca201b108d5743b7966f8fad5050c74b)
+* fix typo ([showHightlighting -> showHighlighting](https://github.com/AtomLinter/Linter/commit/e06ad53bca201b108d5743b7966f8fad5050c74b))
 
 ### New Features
 * Add `@formatMessage` to help any linter to customize message. ([#120](https://github.com/AtomLinter/Linter/pull/120))
 * Use decorations API to display gutter markers ([#147](https://github.com/AtomLinter/Linter/pull/147))
-* Better way to assemble path ([#142]https://github.com/AtomLinter/Linter/pull/142)
+* Better way to assemble path ([#142](https://github.com/AtomLinter/Linter/pull/142))
 
 # v0.4.11
 

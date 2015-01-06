@@ -1,7 +1,7 @@
 {
   "name": "seti-ui",
   "theme": "ui",
-  "version": "0.3.6",
+  "version": "0.5.1",
   "description": "A dark colored UI theme for Atom with custom file icons.",
   "license": "MIT",
   "repository": {
@@ -11,16 +11,26 @@
   "engines": {
     "atom": ">0.99.0"
   },
-  "readme": "# Seti UI\n\nA dark colored UI theme for Atom with custom file icons. [Seti Syntax](https://atom.io/themes/seti-syntax) also available.\n\n![Screenshot](https://github.com/jesseweed/seti-ui/raw/master/screenshot.png)\n\n\n### Custom App Icons\n[ ![Screenshot](https://github.com/jesseweed/seti-syntax/raw/master/_icons/circular/circular-128x128.png) ](https://github.com/jesseweed/seti-syntax/tree/master/_icons/circular)\n[ ![Screenshot](https://github.com/jesseweed/seti-syntax/raw/master/_icons/rounded/rounded-128x128.png) ](https://github.com/jesseweed/seti-syntax/tree/master/_icons/rounded/)\n[ ![Screenshot](https://github.com/jesseweed/seti-syntax/raw/master/_icons/squared/squared-128x128.png) ](https://github.com/jesseweed/seti-syntax/tree/master/_icons/squared/)\n",
+  "readme": "# Seti UI\n\nA dark colored UI theme for Atom with custom file icons. [Seti Syntax](https://atom.io/themes/seti-syntax) also available.\n\n![Screenshot](https://github.com/jesseweed/seti-ui/raw/master/screenshot.png)\n\n\n### Custom App Icons\n[ ![Screenshot](https://github.com/jesseweed/seti-syntax/raw/master/_icons/circular/circular-128x128.png) ](https://github.com/jesseweed/seti-syntax/tree/master/_icons/circular)\n[ ![Screenshot](https://github.com/jesseweed/seti-syntax/raw/master/_icons/rounded/rounded-128x128.png) ](https://github.com/jesseweed/seti-syntax/tree/master/_icons/rounded/)\n[ ![Screenshot](https://github.com/jesseweed/seti-syntax/raw/master/_icons/squared/squared-128x128.png) ](https://github.com/jesseweed/seti-syntax/tree/master/_icons/squared/)\n\n### Installation\n\n```\ncd ~/.atom/packages\ngit clone https://github.com/jesseweed/seti-ui --depth=1\n```\n\n\n### Currently Supported File Icons\n* Bower\n* Coffescript\n* CSS\n* EJS\n* Favicon\n* Grunt\n* Gulp\n* Handlebars\n* HTML\n* Image\n* Jade\n* Javascript\n* JSON\n* Julia\n* Less\n* LICENSE\n* Markdown\n* Mustache\n* PHP\n* Procfile\n* Python\n* React\n* Ruby\n* Sass\n* Stache\n* Stylus\n* Text\n* Typescript\n* XML\n* YML\n",
   "readmeFilename": "README.md",
   "bugs": {
     "url": "https://github.com/jesseweed/seti-ui/issues"
   },
   "homepage": "https://github.com/jesseweed/seti-ui",
-  "_id": "seti-ui@0.3.6",
+  "_id": "seti-ui@0.5.1",
   "dist": {
-    "shasum": "e4562e4744eea870bad15be58da8e27ad52500b0"
+    "shasum": "15445f6486a60653aa91cac8dd9e1fbe86cb1ab1"
   },
-  "_resolved": "/private/var/folders/80/5b_9h1w972n6p3cr6vqbpfsm0000gn/T/d-11494-6526-1yyytgi/package.tgz",
-  "_from": "/private/var/folders/80/5b_9h1w972n6p3cr6vqbpfsm0000gn/T/d-11494-6526-1yyytgi/package.tgz"
+  "_resolved": "/private/var/folders/80/5b_9h1w972n6p3cr6vqbpfsm0000gn/T/d-1141111-79721-1yxwn3d/package.tgz",
+  "_from": "/private/var/folders/80/5b_9h1w972n6p3cr6vqbpfsm0000gn/T/d-1141111-79721-1yxwn3d/package.tgz",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
 }

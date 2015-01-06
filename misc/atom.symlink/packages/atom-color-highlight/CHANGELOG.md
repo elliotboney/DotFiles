@@ -1,3 +1,115 @@
+<a name="v3.0.2"></a>
+# v3.0.2 (2015-01-05)
+
+## :bug: Bug Fixes
+
+- Fix colors marker not rendered when editor is not active when opened ([5f291f66](https://github.com/abe33/atom-color-highlight/commit/5f291f6620273ad120cbcb265f6d9d8698b7a930))
+
+<a name="v3.0.1"></a>
+# v3.0.1 (2015-01-03)
+
+- Add missing CHANGELOG entries for v3.0.0.
+
+<a name="v3.0.0"></a>
+# v3.0.0 (2015-01-03)
+
+- The major changes in v3.0.0 concerns the view appended to the DOM. Now views are handled through custom elements instead of `space-pen` views.
+
+<a name="v2.0.16"></a>
+# v2.0.16 (2014-12-31)
+
+## :bug: Bug Fixes
+
+- Fix marker display issue when scrolling ([01aba50e](https://github.com/abe33/atom-color-highlight/commit/01aba50e0fd89262275895c4274f74115db27242))
+
+<a name="v2.0.15"></a>
+# v2.0.15 (2014-12-30)
+
+## :bug: Bug Fixes
+
+- Fix broken update check method ([f1f9c992](https://github.com/abe33/atom-color-highlight/commit/f1f9c992197a081cb7489fdef93293d4a8fc8df8))
+- Fix remaining deprecations ([c186b932](https://github.com/abe33/atom-color-highlight/commit/c186b93207d5a516cd7d425e8abbf306385e3135))
+
+<a name="v2.0.14"></a>
+# v2.0.14 (2014-12-02)
+
+## :bug: Bug Fixes
+
+- Fix palette event deprecation ([7e905df5](https://github.com/abe33/atom-color-highlight/commit/7e905df5947a3278d9ad19e3f4b768d9f237f869))
+
+<a name="v2.0.13"></a>
+# v2.0.13 (2014-11-30)
+
+## :bug: Bug Fixes
+
+- Fix error raised on view destruction ([58ab0830](https://github.com/abe33/atom-color-highlight/commit/58ab0830f71f18d0c7946868eb8da2a1b5b82d4c), [#60](https://github.com/abe33/atom-color-highlight/issues/60))
+
+<a name="v2.0.12"></a>
+# v2.0.12 (2014-11-28)
+
+## :bug: Bug Fixes
+
+- Fix error raised when closing the last editor of a pane ([8ee359eb](https://github.com/abe33/atom-color-highlight/commit/8ee359ebb17b96cfae8dc2174d22f2d2c102198d))
+
+
+<a name="v2.0.11"></a>
+# v2.0.11 (2014-11-27)
+
+## :bug: Bug Fixes
+
+- Remove remaining logs ([73544811](https://github.com/abe33/atom-color-highlight/commit/73544811e7a4669d24ebafc359e9d7558936b4ab), [#58](https://github.com/abe33/atom-color-highlight/issues/58))
+
+
+<a name="v2.0.10"></a>
+# v2.0.10 (2014-11-26)
+
+## :package: Dependencies
+
+- Upgrade to pigments v3.0.4.
+
+<a name="v2.0.9"></a>
+# v2.0.9 (2014-11-26)
+
+## :bug: Bug Fixes
+
+- Prevent errors when accessing finder ([a0eba38d](https://github.com/abe33/atom-color-highlight/commit/a0eba38dd4592e35e5b63950c096ab9fb3ea1f67), [#57](https://github.com/abe33/atom-color-highlight/issues/57))
+
+<a name="v2.0.8"></a>
+# v2.0.8 (2014-11-25)
+
+## :bug: Bug Fixes
+
+- Change how finder package is required in models ([147647a2](https://github.com/abe33/atom-color-highlight/commit/147647a250a9aed6a39a04813af210dc73142199))
+
+<a name="v2.0.7"></a>
+# v2.0.7 (2014-11-25)
+
+## :package: Dependencies
+
+- Upgrade to pigments v3.0.3.
+
+<a name="v2.0.6"></a>
+# v2.0.6 (2014-11-17)
+
+## :memo: Documentation
+
+- Add a more detailed description of the `excludedGrammars` setting.
+
+<a name="v2.0.5"></a>
+# v2.0.5 (2014-11-14)
+
+## :bug: Bug Fixes
+
+- Rebuild markers on editor config changes ([845b8d65](https://github.com/abe33/atom-color-highlight/commit/845b8d6537538fc9036eb7141bcfa19b3e4d6e9a), [#32](https://github.com/abe33/atom-color-highlight/issues/32))
+- Fix region styles when shadow DOM is enabled ([06c0f4e2](https://github.com/abe33/atom-color-highlight/commit/06c0f4e2aac3f466cecc56bc47ffa5929015568b))
+
+<a name="v2.0.4"></a>
+# v2.0.4 (2014-10-22)
+
+## :bug: Bug Fixes
+
+- Fix broken access to scope in latest Atom ([ffb4468d](https://github.com/abe33/atom-color-highlight/commit/ffb4468d196b93edf11cd0bcea21b26158aad1d0))
+
 <a name="v2.0.3"></a>
 # v2.0.3 (2014-10-15)
 

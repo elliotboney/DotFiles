@@ -1,5 +1,6 @@
 Mixin = require 'mixto'
 path = require 'path'
+{Emitter} = require 'event-kit'
 Decoration = require path.join(atom.config.resourcePath, 'src', 'decoration')
 
 # Public: The mixin that provides the decorations API to the minimap editor
@@ -10,12 +11,25 @@ class DecorationManagement extends Mixin
 
   # Initializes the decorations related properties.
   initializeDecorations: ->
+    @emitter ?= new Emitter
     @decorationsById = {}
     @decorationsByMarkerId = {}
     @decorationMarkerChangedSubscriptions = {}
     @decorationMarkerDestroyedSubscriptions = {}
     @decorationUpdatedSubscriptions = {}
     @decorationDestroyedSubscriptions = {}
+
+  onDidAddDecoration: (callback) ->
+    @emitter.on 'did-add-decoration', callback
+
+  onDidRemoveDecoration: (callback) ->
+    @emitter.on 'did-remove-decoration', callback
+
+  onDidChangeDecoration: (callback) ->
+    @emitter.on 'did-change-decoration', callback
+
+  onDidUpdateDecoration: (callback) ->
+    @emitter.on 'did-update-decoration', callback
 
   # Returns the decoration with the passed-in id.
   #
@@ -91,7 +105,9 @@ class DecorationManagement extends Mixin
   #
   # Returns a `Decoration` object.
   decorateMarker: (marker, decorationParams) ->
+    return unless marker?
     marker = @getMarker(marker.id)
+    return unless marker?
 
     if !decorationParams.scope? and decorationParams.class?
       cls = decorationParams.class.split(' ').join('.')
@@ -107,7 +123,7 @@ class DecorationManagement extends Mixin
       # in the change handler. Bookmarks does this.
       if decorations?
         for decoration in decorations
-          @trigger 'minimap:decoration-changed', marker, decoration, event
+          @emitter.emit 'did-change-decoration', {marker, decoration, event}
 
       start = event.oldTailScreenPosition
       end = event.oldHeadScreenPosition
@@ -128,7 +144,7 @@ class DecorationManagement extends Mixin
       @removeDecoration(decoration)
 
     @stackDecorationChanges(decoration)
-    @trigger 'minimap:decoration-added', marker, decoration
+    @emitter.emit 'did-add-decoration', {marker, decoration}
     decoration
 
   # Internal: Registers a change in the {MinimapRenderView} pending changes
@@ -136,6 +152,7 @@ class DecorationManagement extends Mixin
   #
   # decoration - The `Decoration` to register changes for.
   stackDecorationChanges: (decoration) ->
+    return if decoration.marker.displayBuffer.isDestroyed()
     range = decoration.marker.getScreenRange()
     return unless range?
 
@@ -162,6 +179,7 @@ class DecorationManagement extends Mixin
   #
   # decoration - The `Decoration` to remove.
   removeDecoration: (decoration) ->
+    return unless decoration?
     {marker} = decoration
     return unless decorations = @decorationsByMarkerId[marker.id]
 
@@ -178,16 +196,18 @@ class DecorationManagement extends Mixin
     if index > -1
       decorations.splice(index, 1)
       delete @decorationsById[decoration.id]
-      @trigger 'minimap:decoration-removed', marker, decoration
+      @emitter.emit 'did-remove-decoration', {marker, decoration}
       @removedAllMarkerDecorations(marker) if decorations.length is 0
 
   # Removes all the decorations registered for the passed-in marker.
   #
   # marker - The `marker` for which removing decorations.
   removeAllDecorationsForMarker: (marker) ->
-    decorations = @decorationsByMarkerId[marker.id].slice()
+    return unless marker?
+    decorations = @decorationsByMarkerId[marker.id]?.slice()
+    return unless decorations
     for decoration in decorations
-      @trigger 'minimap:decoration-removed', marker, decoration
+      @emitter.emit 'did-remove-decoration', {marker, decoration}
       @stackDecorationChanges(decoration)
 
     @removedAllMarkerDecorations(marker)
@@ -196,6 +216,7 @@ class DecorationManagement extends Mixin
   #
   # marker - The `marker` for which removing decorations.
   removedAllMarkerDecorations: (marker) ->
+    return unless marker?
     @decorationMarkerChangedSubscriptions[marker.id].dispose()
     @decorationMarkerDestroyedSubscriptions[marker.id].dispose()
 
@@ -208,4 +229,4 @@ class DecorationManagement extends Mixin
   #
   # decoration - The updated `Decoration`.
   decorationUpdated: (decoration) ->
-    @trigger 'minimap:decoration-updated', decoration
+    @emitter.emit 'did-update-decoration', decoration

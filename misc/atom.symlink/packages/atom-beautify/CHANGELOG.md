@@ -1,3 +1,62 @@
+# v0.21.0 (2015-01-03)
+- [Closes #172, #146. Update to new Atom Config API.](https://github.com/Glavin001/atom-beautify/commit/eb1471d23b1c2b704b8b3afa17462b4e73bc20f9)
+
+>What's new:
+- Add settings descriptions
+- Update options for js-beautify (JS, CSS, HTML)
+- Update Spec to support new changes
+
+# v0.20.2 (2015-01-02)
+- [Fixes #171. Fix typo for CSS indent_char](https://github.com/Glavin001/atom-beautify/commit/c4c847948d5f88eb44b672d3471ceb92b126b5e3)
+
+# v0.20.1 (2015-01-02)
+- [Fixes #169. Remove JS-Yaml and use YAML-Front-Matter, resolving conflict](https://github.com/Glavin001/atom-beautify/commit/f280469e77a8e6d1014e18c2c0ba717e9b15743e)
+
+# v0.20.0 (2015-01-02)
+- [Closes #169. Add YAML Front Matter support to Markdown beautification](https://github.com/Glavin001/atom-beautify/commit/e7a980045d769897011606aaa40e44db8de5ba6c)
+
+# v0.19.0 (2015-01-01)
+- [Closes #36. Add right-click beautification of directory (sub-files)](https://github.com/Glavin001/atom-beautify/commit/bd278968b4b54ee9586682252de6b320d302bcce)
+
+# v0.18.0 (2015-01-01)
+- [Add Specs (Unit Tests) and Travis CI automated testing](https://github.com/Glavin001/atom-beautify/issues/18)
+- [Fixes #149. Update prettydiff to fix interpolated text vars in SCSS](https://github.com/Glavin001/atom-beautify/commit/dc1e720e908cbd60ae93316975c39628be105901)
+- [Closes #159, #149. Update prettydiff to fix LESS and SCSS.](https://github.com/Glavin001/atom-beautify/commit/3550280502fbfda4bf9b4467172f423cd94694ea)
+- [Fixes #168. Update Coffee-Formatter to fix broken CoffeeScript beautifier](https://github.com/Glavin001/atom-beautify/commit/259bb7083d367cabba10312e2bed40f3265fa6dc)
+- [See #36. Add right-click Beautification of single files in Tree view](https://github.com/Glavin001/atom-beautify/commit/e678fdf759a338f74c9111c993474b06f6f29644)
+- [Fix feature, disabling language beautification, where `disabledLanguages = null`](https://github.com/Glavin001/atom-beautify/commit/264821c30a34f3edd365e8f9e9fee4b68afd1a07)
+- [Improve handling options in Python beautifier.](https://github.com/Glavin001/atom-beautify/commit/974897b6f87023f954724e2c4c70e0ec4b49e7ed)
+- [Improve SQL Beautifier to support missing config options.](https://github.com/Glavin001/atom-beautify/commit/b7a34b6178f06030604479590b2e226da85b5912)
+- [Throw error if trying to beautify Perl without setting Perl Tidy path](https://github.com/Glavin001/atom-beautify/commit/77f58bbfc778730de4055e050fd40d2ce46d0439)
+- [Improve CLI Beautify class to handle more error catching](https://github.com/Glavin001/atom-beautify/commit/60f6a9bd075b6b18653e99724d3b8b47e7197d95)
+
+# v0.17.3 (2014-12-27)
+- [Fixes #148. Fix PHP for when filters are not set.](https://github.com/Glavin001/atom-beautify/commit/9b38dc3badb062ba8212c126b13d6965a8ce9276)
+- [Get Atom User settings instead of only default settings](https://github.com/Glavin001/atom-beautify/commit/3499c111200cb2e7f6374622f7bb86c91c7820c1)
+
+# v0.17.2 (2014-12-14)
+- [Fixes #135. Switch from Git to npm Coffee-Formatter dependency.](https://github.com/Glavin001/atom-beautify/commit/ff4a5a3a716a642b9c426a3b41f76094a372132e)
+
+# v0.17.1 (2014-11-19)
+- [Closes #107. Add PHP options for filters and directory_filters](https://github.com/Glavin001/atom-beautify/commit/c6c6d95a3e62e7453d732f2bab7619464bc5b875)
+
+# v0.17.0 (2014-11-16)
+- [Add support for HTML (Rails) and Ruby on Rails grammar](https://github.com/Glavin001/atom-beautify/commit/ba7d9ce799b4284a77dd22fc4139d01fdee08b18)
+- [disable beautification of specific languages](https://github.com/Glavin001/atom-beautify/commit/f0ed7ac5ad5e54d8f653fd8aba23aaf53ed42fc6)
+
+# v0.16.0 (2014-11-16)
+- [Fixes #140. Update js-beautify dependency to 1.5.4.](https://github.com/Glavin001/atom-beautify/commit/428ebe44f9d542f5082807b2fbdabf7282160ec7)
+- [Perl support (using perltidy) (see Glavin001/atom-beautify#33)](https://github.com/Glavin001/atom-beautify/commit/f64d2bae2012e004f7e3b5bb6bc6ffdc1d59fded)
+
+# v0.15.1 (2014-10-26)
+- [Fixes #103. BeautifyEntireFileOnSave only applies when saving](https://github.com/Glavin001/atom-beautify/commit/dda313fbfe47f9d273e06e8e380f2e4c311c1b84)
+
+# v0.15.0 (2014-10-26)
+- [Closes #123. Add Mustache support.](https://github.com/Glavin001/atom-beautify/commit/ecbbbaec2942ed95461e2c103d23bd3665edab2e)
+
+# v0.14.1 (2014-10-21)
+- [Closes #127. Increase startup time by using ActivationEvents](https://github.com/Glavin001/atom-beautify/commit/c0ee2bed96499ac71ea1266ccb227e9b3581c935)
+
 # v0.14.0 (2014-10-16)
 - [Closes #49. Add TypeScript support](https://github.com/Glavin001/atom-beautify/commit/dcc9e2d3b58767578006ffacaca198da69fa3832)
 

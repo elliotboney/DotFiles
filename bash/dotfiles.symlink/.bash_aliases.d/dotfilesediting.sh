@@ -10,3 +10,5 @@ alias reloadenv='src > /dev/null 2>&1'
 
 # Reload the shell (i.e. invoke as a login shell)
 # alias reload="exec $SHELL -l"
+
+alias editmaid='a ~/.maid/rules.rb'

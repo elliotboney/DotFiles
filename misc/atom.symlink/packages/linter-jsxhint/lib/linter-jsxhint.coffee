@@ -24,15 +24,19 @@ class LinterJsxhint extends Linter
     super(editor)
 
     atom.config.observe 'linter-jsxhint.jsxhintExecutablePath', @formatShellCmd
+    atom.config.observe 'linter-jsxhint.use_6to5_transform', @formatShellCmd
+
 
     @formatShellCmd()
 
   formatShellCmd: =>
     jsxhintExecutablePath = atom.config.get 'linter-jsxhint.jsxhintExecutablePath'
+    use_6to5_transform = atom.config.get 'linter-jsxhint.use_6to5_transform'
+
     @cmd = ['jsxhint', '--verbose', '--extract=auto']
+    @cmd = @cmd.concat ['--6to5'] if use_6to5_transform
     config = findFile @cwd, ['.jshintrc']
-    if config
-      @cmd = @cmd.concat ['-c', config]
+    @cmd = @cmd.concat ['-c', config] if config
     @executablePath = "#{jsxhintExecutablePath}"
 
   formatMessage: (match) ->

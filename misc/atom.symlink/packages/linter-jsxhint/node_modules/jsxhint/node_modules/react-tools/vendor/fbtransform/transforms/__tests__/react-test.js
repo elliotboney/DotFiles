@@ -1,20 +1,16 @@
 /**
- * Copyright 2013-2014 Facebook, Inc.
+ * Copyright 2013-2014, Facebook, Inc.
+ * All rights reserved.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
  *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- * @emails jeffmo@fb.com
+ * @emails react-core
  */
+
+/*jshint evil:true, unused:false*/
+
 "use strict";
 
 require('mock-modules').autoMockOff();
@@ -42,49 +38,35 @@ describe('react jsx', function() {
   var y = 789012;
   var z = 345678;
 
-  var HEADER =
-    '/**\n' +
-    ' * @jsx React.DOM\n' +
-    ' */\n';
-
   var expectObjectAssign = function(code) {
     var Component = jest.genMockFunction();
     var Child = jest.genMockFunction();
     var objectAssignMock = jest.genMockFunction();
-    Object.assign = objectAssignMock;
-    eval(transform(HEADER + code).code);
+    React.__spread = objectAssignMock;
+    eval(transform(code).code);
     return expect(objectAssignMock);
   }
 
+  var React = {
+    createElement: jest.genMockFunction()
+  };
+
   it('should convert simple tags', function() {
-    var code = [
-      '/**@jsx React.DOM*/',
-      'var x = <div></div>;'
-    ].join('\n');
-    var result = [
-      '/**@jsx React.DOM*/',
-      'var x = React.DOM.div(null);'
-    ].join('\n');
+    var code = 'var x = <div></div>;';
+    var result = 'var x = React.createElement("div", null);';
 
     expect(transform(code).code).toEqual(result);
   });
 
   it('should convert simple text', function() {
-    var code = [
-      '/**@jsx React.DOM*/\n' +
-      'var x = <div>text</div>;'
-    ].join('\n');
-    var result = [
-      '/**@jsx React.DOM*/',
-      'var x = React.DOM.div(null, "text");'
-    ].join('\n');
+    var code = 'var x = <div>text</div>;';
+    var result = 'var x = React.createElement("div", null, "text");';
 
     expect(transform(code).code).toEqual(result);
   });
 
   it('should have correct comma in nested children', function() {
     var code = [
-      '/**@jsx React.DOM*/',
       'var x = <div>',
       '  <div><br /></div>',
       '  <Component>{foo}<br />{bar}</Component>',
@@ -92,11 +74,12 @@ describe('react jsx', function() {
       '</div>;'
     ].join('\n');
     var result = [
-      '/**@jsx React.DOM*/',
-      'var x = React.DOM.div(null, ',
-      '  React.DOM.div(null, React.DOM.br(null)), ',
-      '  Component(null, foo, React.DOM.br(null), bar), ',
-      '  React.DOM.br(null)',
+      'var x = React.createElement("div", null, ',
+      '  React.createElement("div", null, ' +
+        'React.createElement("br", null)), ',
+      '  React.createElement(Component, null, foo, ' +
+        'React.createElement("br", null), bar), ',
+      '  React.createElement("br", null)',
       ');'
     ].join('\n');
 
@@ -106,15 +89,13 @@ describe('react jsx', function() {
   it('should avoid wrapping in extra parens if not needed', function() {
     // Try with a single composite child, wrapped in a div.
     var code = [
-      '/**@jsx React.DOM*/',
       'var x = <div>',
       '  <Component />',
       '</div>;'
     ].join('\n');
     var result = [
-      '/**@jsx React.DOM*/',
-      'var x = React.DOM.div(null, ',
-      '  Component(null)',
+      'var x = React.createElement("div", null, ',
+      '  React.createElement(Component, null)',
       ');'
     ].join('\n');
 
@@ -122,14 +103,12 @@ describe('react jsx', function() {
 
     // Try with a single interpolated child, wrapped in a div.
     code = [
-      '/**@jsx React.DOM*/',
       'var x = <div>',
       '  {this.props.children}',
       '</div>;'
     ].join('\n');
     result = [
-      '/**@jsx React.DOM*/',
-      'var x = React.DOM.div(null, ',
+      'var x = React.createElement("div", null, ',
       '  this.props.children',
       ');'
     ].join('\n');
@@ -137,14 +116,12 @@ describe('react jsx', function() {
 
     // Try with a single interpolated child, wrapped in a composite.
     code = [
-      '/**@jsx React.DOM*/',
       'var x = <Composite>',
       '  {this.props.children}',
       '</Composite>;'
     ].join('\n');
     result = [
-      '/**@jsx React.DOM*/',
-      'var x = Composite(null, ',
+      'var x = React.createElement(Composite, null, ',
       '  this.props.children',
       ');'
     ].join('\n');
@@ -152,15 +129,13 @@ describe('react jsx', function() {
 
     // Try with a single composite child, wrapped in a composite.
     code = [
-      '/**@jsx React.DOM*/',
       'var x = <Composite>',
       '  <Composite2 />',
       '</Composite>;'
     ].join('\n');
     result = [
-      '/**@jsx React.DOM*/',
-      'var x = Composite(null, ',
-      '  Composite2(null)',
+      'var x = React.createElement(Composite, null, ',
+      '  React.createElement(Composite2, null)',
       ');'
     ].join('\n');
     expect(transform(code).code).toEqual(result);
@@ -168,7 +143,6 @@ describe('react jsx', function() {
 
   it('should insert commas after expressions before whitespace', function() {
     var code = [
-      '/**@jsx React.DOM*/',
       'var x =',
       '  <div',
       '    attr1={',
@@ -188,9 +162,8 @@ describe('react jsx', function() {
       '  </div>;'
     ].join('\n');
     var result = [
-      '/**@jsx React.DOM*/',
       'var x =',
-      '  React.DOM.div({',
+      '  React.createElement("div", {',
       '    attr1: ',
       '      "foo" + "bar", ',
       '    ',
@@ -213,9 +186,6 @@ describe('react jsx', function() {
 
   it('should properly handle comments adjacent to children', function() {
     var code = [
-      '/**',
-      ' * @jsx React.DOM',
-      ' */',
       'var x = (',
       '  <div>',
       '    {/* A comment at the beginning */}',
@@ -231,18 +201,15 @@ describe('react jsx', function() {
       ');'
     ].join('\n');
     var result = [
-      '/**',
-      ' * @jsx React.DOM',
-      ' */',
       'var x = (',
-      '  React.DOM.div(null, ',
+      '  React.createElement("div", null, ',
       '    /* A comment at the beginning */',
       '    /* A second comment at the beginning */',
-      '    React.DOM.span(null',
+      '    React.createElement("span", null',
       '      /* A nested comment */',
       '    ), ',
       '    /* A sandwiched comment */',
-      '    React.DOM.br(null)',
+      '    React.createElement("br", null)',
       '    /* A comment at the end */',
       '    /* A second comment at the end */',
       '  )',
@@ -254,9 +221,6 @@ describe('react jsx', function() {
 
   it('should properly handle comments between props', function() {
     var code = [
-      '/**',
-      ' * @jsx React.DOM',
-      ' */',
       'var x = (',
       '  <div',
       '    /* a multi-line',
@@ -269,15 +233,12 @@ describe('react jsx', function() {
       ');'
     ].join('\n');
     var result = [
-      '/**',
-      ' * @jsx React.DOM',
-      ' */',
       'var x = (',
-      '  React.DOM.div({',
+      '  React.createElement("div", {',
       '    /* a multi-line',
       '       comment */',
       '    attr1: "foo"}, ',
-      '    React.DOM.span({// a double-slash comment',
+      '    React.createElement("span", {// a double-slash comment',
       '      attr2: "bar"}',
       '    )',
       '  )',
@@ -289,16 +250,10 @@ describe('react jsx', function() {
 
   it('should not strip tags with a single child of &nbsp;', function() {
     var code = [
-      '/**',
-      ' * @jsx React.DOM',
-      ' */',
       '<div>&nbsp;</div>;'
     ].join('\n');
     var result = [
-      '/**',
-      ' * @jsx React.DOM',
-      ' */',
-      'React.DOM.div(null, "\u00A0");'
+      'React.createElement("div", null, "\u00A0");'
     ].join('\n');
 
     expect(transform(code).code).toBe(result);
@@ -306,139 +261,93 @@ describe('react jsx', function() {
 
   it('should not strip &nbsp; even coupled with other whitespace', function() {
     var code = [
-      '/**',
-      ' * @jsx React.DOM',
-      ' */',
       '<div>&nbsp; </div>;'
     ].join('\n');
     var result = [
-      '/**',
-      ' * @jsx React.DOM',
-      ' */',
-      'React.DOM.div(null, "\u00A0 ");'
+      'React.createElement("div", null, "\u00A0 ");'
     ].join('\n');
 
     expect(transform(code).code).toBe(result);
   });
 
   it('should handle hasOwnProperty correctly', function() {
-    var code = [
-      '/**',
-      ' * @jsx React.DOM',
-      ' */',
-      '<hasOwnProperty>testing</hasOwnProperty>;'
-    ].join('\n');
-    var result = [
-      '/**',
-      ' * @jsx React.DOM',
-      ' */',
-      'hasOwnProperty(null, "testing");'
-    ].join('\n');
+    var code = '<hasOwnProperty>testing</hasOwnProperty>;';
+    // var result = 'React.createElement("hasOwnProperty", null, "testing");';
 
-    expect(transform(code).code).toBe(result);
+    // expect(transform(code).code).toBe(result);
+
+    // This is currently not supported, and will generate a string tag in
+    // a follow up.
+    expect(() => transform(code)).toThrow();
   });
 
   it('should allow constructor as prop', function() {
-    var code = [
-      '/**',
-      ' * @jsx React.DOM',
-      ' */',
-      '<Component constructor="foo" />;'
-    ].join('\n');
-    var result = [
-      '/**',
-      ' * @jsx React.DOM',
-      ' */',
-      'Component({constructor: "foo"});'
-    ].join('\n');
+    var code = '<Component constructor="foo" />;';
+    var result = 'React.createElement(Component, {constructor: "foo"});';
 
     expect(transform(code).code).toBe(result);
   });
 
   it('should allow JS namespacing', function() {
-    var code = [
-      '/**',
-      ' * @jsx React.DOM',
-      ' */',
-      '<Namespace.Component />;'
-    ].join('\n');
-    var result = [
-      '/**',
-      ' * @jsx React.DOM',
-      ' */',
-      'Namespace.Component(null);'
-    ].join('\n');
+    var code = '<Namespace.Component />;';
+    var result = 'React.createElement(Namespace.Component, null);';
 
     expect(transform(code).code).toBe(result);
   });
 
   it('should allow deeper JS namespacing', function() {
-    var code = [
-      '/**',
-      ' * @jsx React.DOM',
-      ' */',
-      '<Namespace.DeepNamespace.Component />;'
-    ].join('\n');
-    var result = [
-      '/**',
-      ' * @jsx React.DOM',
-      ' */',
-      'Namespace.DeepNamespace.Component(null);'
-    ].join('\n');
+    var code = '<Namespace.DeepNamespace.Component />;';
+    var result =
+      'React.createElement(Namespace.DeepNamespace.Component, null);';
 
     expect(transform(code).code).toBe(result);
   });
 
   it('should disallow XML namespacing', function() {
-    var code = [
-      '/**',
-      ' * @jsx React.DOM',
-      ' */',
-      '<Namespace:Component />;'
-    ].join('\n');
+    var code = '<Namespace:Component />;';
 
     expect(() => transform(code)).toThrow();
   });
 
-  it('wraps props in Object.assign for spread attributes', function() {
-    var code = HEADER +
-      '<Component { ... x } y\n={2 } z />';
-    var result = HEADER +
-      'Component(Object.assign({},   x , {y: \n2, z: true}))';
+  it('wraps props in React.__spread for spread attributes', function() {
+    var code =
+      '<Component { ... x } y\n' +
+      '={2 } z />';
+    var result =
+      'React.createElement(Component, React.__spread({},    x , {y: \n' +
+      '2, z: true}))';
+
+    expect(transform(code).code).toBe(result);
+  });
+
+  it('adds appropriate newlines when using spread attribute', function() {
+    var code =
+      '<Component\n' +
+      '  {...this.props}\n' +
+      '  sound="moo" />';
+    var result =
+      'React.createElement(Component, React.__spread({}, \n' +
+      '  this.props, \n' +
+      '  {sound: "moo"}))';
 
     expect(transform(code).code).toBe(result);
   });
 
   it('should transform known hyphenated tags', function() {
-    var code = [
-      '/**',
-      ' * @jsx React.DOM',
-      ' */',
-      '<font-face />;'
-    ].join('\n');
-    var result = [
-      '/**',
-      ' * @jsx React.DOM',
-      ' */',
-      'React.DOM[\'font-face\'](null);'
-    ].join('\n');
+    var code = '<font-face />;';
+    var result = 'React.createElement("font-face", null);';
 
     expect(transform(code).code).toBe(result);
   });
 
-  it('does not call Object.assign when there are no spreads', function() {
+  it('does not call React.__spread when there are no spreads', function() {
     expectObjectAssign(
       '<Component x={y} />'
     ).not.toBeCalled();
   });
 
   it('should throw for unknown hyphenated tags', function() {
-    var code = [
-      '/**',
-      ' * @jsx React.DOM',
-      ' */',
-      '<x-component />;'
-    ].join('\n');
+    var code = '<x-component />;';
 
     expect(() => transform(code)).toThrow();
   });
@@ -467,13 +376,13 @@ describe('react jsx', function() {
     ).toBeCalledWith({x: 1}, y);
   });
 
-  it('passes the same value multiple times to Object.assign', function() {
+  it('passes the same value multiple times to React.__spread', function() {
     expectObjectAssign(
       '<Component x={1} y="2" {...z} {...z}><Child /></Component>'
     ).toBeCalledWith({x: 1, y: "2"}, z, z);
   });
 
-  it('evaluates sequences before passing them to Object.assign', function() {
+  it('evaluates sequences before passing them to React.__spread', function() {
     expectObjectAssign(
       '<Component x="1" {...(z = { y: 2 }, z)} z={3}>Text</Component>'
     ).toBeCalledWith({x: "1"}, { y: 2 }, {z: 3});

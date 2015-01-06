@@ -174,12 +174,14 @@ class ScriptView extends View
       buildArgsArray = grammarMap[codeContext.lang][codeContext.argType].args
 
     catch error
+      urlSafeArgType = "#{codeContext.argType}".replace(' ', '')
+      urlSafeLang = "#{codeContext.lang}".replace(' ', '')
       err = $$ ->
         @p class: 'block', "#{codeContext.argType} runner not available for #{codeContext.lang}."
         @p class: 'block', =>
           @text 'If it should exist, add an '
           @a href: "https://github.com/rgbkrk/atom-script/issues/\
-            new?title=Add%20support%20for%20#{codeContext.lang}", 'issue on GitHub'
+            new?title=Add%20#{urlSafeArgType}%20support%20for%20#{urlSafeLang}", 'issue on GitHub'
           @text ', or send your own pull request.'
 
       @handleError err
@@ -191,8 +193,11 @@ class ScriptView extends View
     else
       @headerView.title.text "#{codeContext.lang} - #{codeContext.filename}"
 
-    commandContext.args = buildArgsArray codeContext
-
+    try
+      commandContext.args = buildArgsArray codeContext
+    catch errorSendByArgs
+      @handleError errorSendByArgs
+      return false
 
     # Return setup information
     return commandContext
@@ -206,6 +211,7 @@ class ScriptView extends View
 
   run: (command, extraArgs, codeContext) ->
     atom.emit 'achievement:unlock', msg: 'Homestar Runner'
+    startTime = new Date()
 
     # Default to where the user opened atom
     options =
@@ -218,6 +224,12 @@ class ScriptView extends View
     stdout = (output) => @display 'stdout', output
     stderr = (output) => @display 'stderr', output
     exit = (returnCode) =>
+      @bufferedProcess = null
+
+      if (atom.config.get 'script.enableExecTime') is true
+        executionTime = (new Date().getTime() - startTime.getTime()) / 1000
+        @display 'stdout', '[Finished in '+executionTime.toString()+'s]'
+
       if returnCode is 0
         @headerView.setStatus 'stop'
       else
@@ -230,6 +242,7 @@ class ScriptView extends View
     })
 
     @bufferedProcess.process.on 'error', (nodeError) =>
+      @bufferedProcess = null
       @output.append $$ ->
         @h1 'Unable to run'
         @pre _.escape command
@@ -244,13 +257,16 @@ class ScriptView extends View
 
   stop: ->
     # Kill existing process if available
-    if @bufferedProcess? and @bufferedProcess.process?
+    if @bufferedProcess?
       @display 'stdout', '^C'
       @headerView.setStatus 'kill'
       @bufferedProcess.kill()
+      @bufferedProcess = null
 
   display: (css, line) ->
-    line = _.escape(line)
+    if atom.config.get('script.escapeConsoleOutput')
+      line = _.escape(line)
+
     line = @ansiFilter.toHtml(line)
 
     @output.append $$ ->

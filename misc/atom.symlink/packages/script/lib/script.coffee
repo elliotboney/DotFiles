@@ -1,8 +1,19 @@
 ScriptView = require './script-view'
 ScriptOptionsView = require './script-options-view'
 ScriptOptions = require './script-options'
+GrammarUtils = require './grammar-utils'
 
 module.exports =
+  config:
+    enableExecTime:
+      title: 'Output the time it took to execute the script'
+      type: 'boolean'
+      default: true
+    escapeConsoleOutput:
+      title: 'HTML escape console output'
+      type: 'boolean'
+      default: true
+
   scriptView: null
   scriptOptionsView: null
   scriptOptions: null
@@ -17,6 +28,7 @@ module.exports =
       @scriptOptionsView?.close()
 
   deactivate: ->
+    GrammarUtils.deleteTempFiles()
     @scriptView.close()
     @scriptOptionsView.close()
 

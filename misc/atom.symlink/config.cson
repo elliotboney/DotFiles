@@ -23,6 +23,7 @@
       'autocomplete-snippets'
       'script'
       'atom-jsfmt'
+      'background-tips'
     ]
   'exception-reporting':
     'userId': '17f0acd5-4042-79ad-0b2a-1adf347830f5'
@@ -38,13 +39,21 @@
     'js_keep_function_indentation': true
     'js_unescape_strings': true
   'remember-session':
-    'path': '/Users/eboney'
+    'path': '/var/www/reni/content/themes/probusiness/assets/css/plugins'
     'x': 0
     'y': 23
     'tabs': ''
     'selectedTab': ''
-    'width': 1335
-    'height': 827
+    'width': 1440
+    'height': 829
     'treeWidth': 200
   'linter-jsxhint':
     'jsxhintExecutablePath': '/Users/eboney/.nvm/v0.10.29/bin/jsxhint'
+  'jsformat':
+    'space_before_conditional': false
+    'end_with_newline': false
+    'space_after_anon_function': true
+    'e4x': true
+  'atom-compile-less':
+    'mainLessFile': '/flatland.less'
+  'linter': {}

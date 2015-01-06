@@ -1,5 +1,6 @@
 # [atom-beautify](https://github.com/donaldpipowitch/atom-beautify)
 
+[![Build Status](https://travis-ci.org/Glavin001/atom-beautify.svg?branch=master)](https://travis-ci.org/Glavin001/atom-beautify)
 [![Gitter chat](https://badges.gitter.im/Glavin001/atom-beautify.png)](https://gitter.im/Glavin001/atom-beautify)
 [![Issue Stats](http://issuestats.com/github/glavin001/atom-beautify/badge/pr?style=flat)](http://issuestats.com/github/glavin001/atom-beautify)
 [![Issue Stats](http://issuestats.com/github/glavin001/atom-beautify/badge/issue?style=flat)](http://issuestats.com/github/glavin001/atom-beautify)
@@ -23,6 +24,7 @@ Or Settings/Preferences ➔ Packages ➔ Search for `atom-beautify`
 - [x] JavaScript and JSON
 - [x] HTML, including
   - [x] [Handlebars](http://handlebarsjs.com/)
+  - [x] [Mustache](http://mustache.github.io)
   - [x] [Embedded Ruby (ERB)](https://github.com/Glavin001/atom-beautify/issues/80)
     - Requires [htmlbeautifier](https://github.com/threedaymonk/htmlbeautifier)
   - [x] XML
@@ -33,13 +35,14 @@ Or Settings/Preferences ➔ Packages ➔ Search for `atom-beautify`
   - Requires [python-sqlparse](https://github.com/andialbrecht/sqlparse)
 - [x] [Markdown](https://github.com/Glavin001/atom-beautify/issues/93#issuecomment-55642483)
   - Requires [Pandoc](http://johnmacfarlane.net/pandoc/) to be already installed
+- [X] [Perl](https://github.com/Glavin001/atom-beautify/issues/33)
 - [x] [PHP](https://github.com/donaldpipowitch/atom-beautify/issues/26)  
   - Requires [PHP_Beautifier](http://pear.php.net/package/PHP_Beautifier) to be already installed.
 - [x] [Python](https://github.com/donaldpipowitch/atom-beautify/issues/24)
   - Requires [autopep8](https://github.com/hhatto/autopep8) to be already installed.
   - Beautifies to [PEP 8](http://legacy.python.org/dev/peps/pep-0008/).
 - [x] [Ruby](https://github.com/donaldpipowitch/atom-beautify/issues/25)
-  - Requires [RBeautify](https://github.com/erniebrodeur/ruby-beautify)
+  - Requires [Ruby Beautify](https://github.com/erniebrodeur/ruby-beautify)
 - [x] [CoffeeScript](https://github.com/donaldpipowitch/atom-beautify/issues/31)
 - [x] [Java](https://github.com/Glavin001/atom-beautify/issues/45)
   - Requires [Uncrustify](http://sourceforge.net/projects/uncrustify/)
@@ -59,13 +62,6 @@ Or Settings/Preferences ➔ Packages ➔ Search for `atom-beautify`
   - Requires [Uncrustify](http://sourceforge.net/projects/uncrustify/)
 - [x] [TypeScript](https://github.com/Glavin001/atom-beautify/issues/49)
 
-### Road Map
-
-#### Language support
-
-- [ ] [Perl](https://github.com/Glavin001/atom-beautify/issues/33)
-
-
 ## Usage
 
 Open the [Command Palette](https://github.com/atom/command-palette), and type `Beautify`.
@@ -83,8 +79,8 @@ See [Keymaps In-Depth](https://atom.io/docs/latest/advanced/keymaps) for more de
 For example:
 
 ```coffeescript
-'.editor': # Available from Editor only
-  'ctrl-alt-b': 'beautify'
+'.editor':
+  'ctrl-alt-b': 'beautify:beautify-editor'
 ```
 
 ### Package Options
@@ -97,6 +93,11 @@ Beautification will normally only beautify your selected text.
 However, when beautification occurs on save then it will
 be forced to beautify the entire file's contents,
 not just selected text.
+
+- `disabledLanguages` (Default *empty array*)
+An array of Grammar names to disable beautification for.
+Note: If using the Atom's Package Settings then an array is
+represented as comma-separated string.
 
 - `muteUnsupportedLanguageErrors` (Default *false*)
 Mute only *unsupported language* errors.
