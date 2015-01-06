@@ -1,14 +1,18 @@
 # See https://atom.io/docs/latest/creating-a-package#menus for more details
 'context-menu':
   '.workspace .editor:not(.mini)':
-    'Enable atom-beautify': 'beautify'
+    'Enable atom-beautify': 'beautify:beautify-editor'
+  '.tree-view .file > .name':
+    'Beautify File': 'beautify:beautify-file'
+  '.tree-view .directory > .header > .name':
+    'Beautify Directory': 'beautify:beautify-directory'
 
 'menu': [
   {
     'label': 'Packages'
     'submenu': [
       'label': 'Beautify'
-      'command': 'beautify'
+      'command': 'beautify:beautify-editor'
     ]
   }
 ]

@@ -1,3 +1,6 @@
+alias kextlist="kextstat -kl | awk '{printf \"%i %i %s %s\n\", \$4 / 1024, \$5 / 1024, \$6, \$7}' | sort -nr"
+
+
 alias service='sudo service'
 alias apachectl='sudo apachectl'
 alias a2endmod='sudo a2endmod'
@@ -11,8 +14,8 @@ if shell_is_osx; then
     UCMD=${UCMD}'sudo softwareupdate -i -a'
     command_exists brew && UCMD=${UCMD}"; brew update; brew upgrade; brew cleanup"
     command_exists npm && UCMD=${UCMD}"; npm update -g"
-    command_exists gem && UCMD=${UCMD}"; gem update"
-    command_exists pear && UCMD=${UCMD}"; pear upgrade"
+    command_exists gem && UCMD=${UCMD}"; sudo gem update"
+    command_exists pear && UCMD=${UCMD}"; sudo pear upgrade"
     command_exists phpbrew && UCMD=${UCMD}"; phpbrew self-update; "
     command_exists composer && UCMD=${UCMD}"; composer selfupdate"
 

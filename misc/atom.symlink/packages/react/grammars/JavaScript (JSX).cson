@@ -50,6 +50,25 @@
         'match': '\\\\(x\\h{2}|[0-2][0-7]{,2}|3[0-6][0-7]?|37[0-7]?|[4-7][0-7]?|.)'
       }
     ]
+  'string-quoted-template':
+    'name': 'string.quoted.template.js'
+    'begin': '`'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.string.begin.js'
+    'end': '`'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.string.end.js'
+    'patterns': [
+      {
+        'match': '\\\\(x\\h{2}|[0-2][0-7]{,2}|3[0-6][0-7]?|37[0-7]?|[4-7][0-7]?|.)'
+        'name': 'constant.character.escape.js'
+      }
+      {
+        'include': '#interpolated_js'
+      }
+    ]
   'string':
     'name': 'string.js'
     'patterns': [
@@ -698,7 +717,7 @@
       }
       {
         'name': 'storage.type.js'
-        'match': '\\b(boolean|byte|char|class|double|enum|float|function|int|interface|long|short|var|void)\\b'
+        'match': '\\b(boolean|byte|char|class|double|enum|float|function|int|interface|long|short|var|let|void)\\b'
       }
       {
         'name': 'storage.modifier.js'
@@ -821,6 +840,9 @@
         'include': '#string'
       }
       {
+        'include': '#string-quoted-template'
+      }
+      {
         'include': '#regexp'
       }
       {
@@ -828,5 +850,21 @@
       }
       {
         'include': '#misc-higlighting'
+      }
+    ]
+  'interpolated_js':
+    'patterns': [
+      {
+        'begin': '\\$\\{'
+        'captures':
+          '0':
+            'name': 'punctuation.section.embedded.js'
+        'end': '\\}'
+        'name': 'source.js.embedded.source'
+        'patterns': [
+          {
+            'include': '$self'
+          }
+        ]
       }
     ]

@@ -1,53 +1,46 @@
 require "../spec-helper"
-{$, EditorView, WorkspaceView} = require 'atom'
-AutocompleteView = require '../../lib/autocomplete-view'
-Autocomplete = require '../../lib/autocomplete'
 
 describe "Autocomplete", ->
-  [activationPromise, autocomplete, editorView, editor, completionDelay] = []
+  [editorView, editor, completionDelay] = []
 
   describe "Issue 65", ->
     beforeEach ->
-      # Create a fake workspace and open a sample file
-      atom.workspaceView = new WorkspaceView
-      atom.workspaceView.openSync "sample.js"
-      atom.workspaceView.simulateDomAttachment()
+      runs ->
+        # Set to live completion
+        atom.config.set "autocomplete-plus.enableAutoActivation", true
 
-      # Set to live completion
-      atom.config.set "autocomplete-plus.enableAutoActivation", true
+        # Set the completion delay
+        completionDelay = 100
+        atom.config.set "autocomplete-plus.autoActivationDelay", completionDelay
+        completionDelay += 100 # Rendering delay
 
-      # Set the completion delay
-      completionDelay = 100
-      atom.config.set "autocomplete-plus.autoActivationDelay", completionDelay
-      completionDelay += 100 # Rendering delay
+        workspaceElement = atom.views.getView(atom.workspace)
+        jasmine.attachToDOM(workspaceElement)
+
+      waitsForPromise -> atom.workspace.open("sample.js").then (e) ->
+        editor = e
 
       # Activate the package
-      activationPromise = atom.packages.activatePackage "autocomplete-plus"
+      waitsForPromise -> atom.packages.activatePackage("autocomplete-plus")
 
-      editorView = atom.workspaceView.getActiveView()
-      {editor} = editorView
-      autocomplete = new AutocompleteView editorView
+      runs ->
+        editorView = atom.views.getView(editor)
 
-    describe "when autocompletion triggers", ->
-      it "it hides the autocompletion when user keeps typing", ->
-
-        waitsForPromise ->
-          activationPromise
-
+    describe "when autocomplete is triggered", ->
+      it "it hides the suggestion list when the user keeps typing", ->
         runs ->
-          editorView.attachToDom()
-          expect(editorView.find(".autocomplete-plus")).not.toExist()
+          expect(editorView.querySelector(".autocomplete-plus")).not.toExist()
 
           # Trigger an autocompletion
-          editor.moveCursorToBottom()
+          editor.moveToBottom()
           editor.insertText "s"
 
           advanceClock completionDelay
 
-          expect(editorView.find(".autocomplete-plus")).toExist()
+          expect(editorView.querySelector(".autocomplete-plus")).toExist()
 
           editor.insertText "b"
 
           advanceClock completionDelay
 
-          expect(editorView.find(".autocomplete-plus")).not.toExist()
+          expect(editorView.querySelector(".autocomplete-plus")).not.toExist()

@@ -1,69 +1,79 @@
-{WorkspaceView, $} = require "atom"
+SnippetsLoader = require('../lib/snippets-loader')
+path = require('path')
 
 describe "AutocompleteSnippets", ->
-  [activationPromise, completionDelay] = []
+  [workspaceElement, completionDelay, editor, editorView, autocompleteSnippets, provider] = []
 
   beforeEach ->
-    # Enable live autocompletion
-    atom.config.set "autocomplete-plus.enableAutoActivation", true
-
-    # Set the completion delay
-    completionDelay = 100
-    atom.config.set "autocomplete-plus.autoActivationDelay", completionDelay
-    completionDelay += 100 # Rendering delay
-
-    atom.workspaceView = new WorkspaceView
-    atom.workspaceView.openSync "sample.js"
-    atom.workspaceView.simulateDomAttachment()
-
-    waitsForPromise ->
-      atom.packages.activatePackage('grammar-selector')
-
-    waitsForPromise ->
-      atom.packages.activatePackage('language-javascript')
-
-    waitsForPromise ->
-      activationPromise = $.Deferred()
-      atom.packages.activatePackage("autocomplete-snippets")
-        .then (pkg) => atom.packages.activatePackage("autocomplete-plus")
-        .then =>
-          atom.packages.on "autocomplete-snippets:loaded", =>
-            activationPromise.resolve()
-
-      return activationPromise.promise()
-
-  it "shows autocompletions when there are snippets available", ->
     runs ->
+      # Set to live completion
+      atom.config.set('autocomplete-plus.enableAutoActivation', true)
+      # Set the completion delay
+      completionDelay = 100
+      atom.config.set('autocomplete-plus.autoActivationDelay', completionDelay)
+      completionDelay += 100 # Rendering delay
 
-      editorView = atom.workspaceView.getActiveView()
-      editorView.attachToDom()
-      editor = editorView.getEditor()
+    fakeUserSnippetsPath = path.join(__dirname, './fixtures', 'user-snippets.cson')
+    spyOn(SnippetsLoader.prototype, 'getUserSnippetsPath').andReturn(fakeUserSnippetsPath)
 
-      expect(editorView.find(".autocomplete-plus")).not.toExist()
+    waitsForPromise ->
+      atom.workspace.open('sample.js').then (e) ->
+        editor = e
+        editorView = atom.views.getView(editor)
 
-      editor.moveCursorToBottom()
-      editor.insertText "d"
-      editor.insertText "o"
+    runs ->
+      workspaceElement = atom.views.getView(atom.workspace)
+      jasmine.attachToDOM(workspaceElement)
 
-      advanceClock completionDelay + 1000
+    waitsForPromise -> atom.packages.activatePackage('language-javascript')
 
-      expect(editorView.find(".autocomplete-plus")).toExist()
-      expect(editorView.find(".autocomplete-plus span.word:eq(0)")).toHaveText "do"
-      expect(editorView.find(".autocomplete-plus span.label:eq(0)")).toHaveText "do"
+    waitsForPromise -> atom.packages.activatePackage('autocomplete-plus')
 
-  # it "does not crash when typing an invalid folder", ->
-  #   waitsForPromise ->
-  #     activationPromise
+    waitsForPromise -> atom.packages.activatePackage("autocomplete-snippets").then (a) -> autocompleteSnippets = a.mainModule
 
-  #   runs ->
-  #     editorView = atom.workspaceView.getActiveView()
-  #     editorView.attachToDom()
-  #     editor = editorView.getEditor()
+    runs ->
+      provider = autocompleteSnippets.providers[0]
 
-  #     expect(editorView.find(".autocomplete-plus")).not.toExist()
+    waitsFor ->
+      provider.ready
 
-  #     editor.moveCursorToBottom()
-  #     editor.insertText "./sample.js"
-  #     editor.insertText "/"
+  describe "when autocomplete-plus is enabled", ->
+    it "shows autocompletions when there are snippets available", ->
+      runs ->
+        expect(editorView.querySelector('.autocomplete-plus')).not.toExist()
 
-  #     advanceClock completionDelay
+        editor.moveToBottom()
+        editor.insertText('d')
+        editor.insertText('o')
+
+        advanceClock(completionDelay + 1000)
+
+        expect(editorView.querySelector('.autocomplete-plus')).toExist()
+        expect(editorView.querySelector('.autocomplete-plus span.word')).toHaveText('do')
+        expect(editorView.querySelector('.autocomplete-plus span.label')).toHaveText('do')
+
+  it "loads matched snippets in user snippets", ->
+    runs ->
+      editor.moveToBottom()
+
+      expect(editorView.querySelector('.autocomplete-plus')).not.toExist()
+
+      editor.insertText('b')
+      editor.insertText('f')
+
+      advanceClock(completionDelay + 1000)
+
+      expect(editorView.querySelector('.autocomplete-plus')).toExist()
+      expect(editorView.querySelector('.autocomplete-plus span.word')).toHaveText('bf')
+      expect(editorView.querySelector('.autocomplete-plus span.label')).toHaveText('BarFoo')
+
+      editor.insertText(' ')
+      expect(editorView.querySelector('.autocomplete-plus')).not.toExist()
+
+      editor.moveToBottom()
+      editor.insertText('f')
+      editor.insertText('b')
+
+      advanceClock(completionDelay + 1000)
+
+      expect(editorView.querySelector('.autocomplete-plus')).not.toExist()

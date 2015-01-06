@@ -31,9 +31,6 @@ apm install minimap
 
 ### Key Bindings
 
-* `ctrl-k ctrl-m`: Toggles the minimap.
-* `ctrl-k ctrl-s`: Toggles the minimap plugins quick settings dropdown.
-
 Customizing Key Bindings:
 
 ```cson
@@ -47,7 +44,7 @@ If you want to hide the default editor scrollbar, edit your `style.less` (Open Y
 
 ```css
 // hide scrollbar
-.with-minimap .vertical-scrollbar {
+.with-minimap atom-text-editor::shadow .vertical-scrollbar {
   opacity: 0;
   width: 0;
 }
@@ -77,9 +74,9 @@ When the `displayPluginsControls` setting is toggled on, plugins activation can 
 
 ### Documentation
 
-* [Minimap API Documentation](http://fangduncai.com/atom-minimap/)
-* [How to create a minimap plugin?](http://fangduncai.com/atom-minimap/docs/Plugins.md.html)
-* [Minimap's Decorations API](http://fangduncai.com/atom-minimap/docs/Decorations.md.html)
+* [Minimap API Documentation](http://abe33.github.io/atom-minimap/)
+* [How to create a minimap plugin?](http://abe33.github.io/atom-minimap/docs/Plugins.md.html)
+* [Minimap's Decorations API](http://abe33.github.io/atom-minimap/docs/Decorations.md.html)
 
 ### License
 

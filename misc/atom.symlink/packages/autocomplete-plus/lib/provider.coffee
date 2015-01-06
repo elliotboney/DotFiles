@@ -1,3 +1,5 @@
+{deprecate} = require 'grim'
+
 # Public: A provider provides an interface to the autocomplete package. Third-party
 # packages can register providers which will then be used to generate the
 # suggestions list.
@@ -5,8 +7,11 @@ module.exports =
 class Provider
   wordRegex: /\b\w*[a-zA-Z_-]+\w*\b/g
 
-  constructor: (@editorView) ->
-    {@editor} = editorView
+  constructor: (@editor) ->
+    if @editor.constructor.name == "TextEditorView"
+      deprecate("Use of EditorView is deprecated, construct with a TextEditor model instead")
+      @editorView = @editor
+      @editor = @editorView.getModel()
     @initialize.apply this, arguments
 
   # Public: An initializer for subclasses
@@ -42,7 +47,7 @@ class Provider
   # Returns {String} with the prefix of the {Selection}
   prefixOfSelection: (selection) ->
     selectionRange = selection.getBufferRange()
-    lineRange = [[selectionRange.start.row, 0], [selectionRange.end.row, @editor.lineLengthForBufferRow(selectionRange.end.row)]]
+    lineRange = [[selectionRange.start.row, 0], [selectionRange.end.row, @editor.lineTextForBufferRow(selectionRange.end.row).length]]
     prefix = ""
     @editor.getBuffer().scanInRange @wordRegex, lineRange, ({match, range, stop}) ->
       stop() if range.start.isGreaterThan(selectionRange.end)

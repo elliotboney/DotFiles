@@ -107,7 +107,7 @@ Maid.rules do
     puts "--------------------------------------------\n\033[32mFonts in Downloads\033[0m"
     dir(%w(~/Downloads/*.ttf ~/Downloads/*.otf ~/Downloads/**/*.ttf ~/Downloads/**/*.otf ~/Downloads/**/*.TTF ~/Downloads/**/*.OTF)).each do |path|
       begin
-        if !File.dirname(path).match(/Downloads$/) && !File.dirname(path).match(/01 Design$/) && !path.match(/\.app/)
+        if !File.dirname(path).match(/Downloads$/) && !File.dirname(path).match(/01 Design$/) && !File.dirname(path).match(/10 Wordpress/) && !path.match(/\.app/) && !File.dirname(path).match(/11 Ripped Sites/)
           # Let's clean bs files in there
           dir([File.dirname(path)+"/*.txt", File.dirname(path)+"/*.pdf", File.dirname(path)+"/*.jpg",File.dirname(path)+"/*.png"]).each do |rdmepath|
             trash rdmepath
@@ -124,12 +124,12 @@ Maid.rules do
     end
   end
 
-  rule 'Get Mime Type' do
-    dir('~/Downloads/**/*.psd').each do |path|
-      mimetype = content_types(path)
-      # puts "--->#{mimetype}"
-    end
-  end
+  # rule 'Get Mime Type' do
+  #   dir('~/Downloads/**/*.psd').each do |path|
+  #     mimetype = content_types(path)
+  #     # puts "--->#{mimetype}"
+  #   end
+  # end
 
   #
   # Organize Downloads

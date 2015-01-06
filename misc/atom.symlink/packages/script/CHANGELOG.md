@@ -1,4 +1,38 @@
+## 2.16.0
+* Add D support
+* Add Rust support
+* Fix broken ANSI/HTML escaping [#238](https://github.com/rgbkrk/atom-script/issues/238)
+* Turn on colored diagnostics for the C language family
+
+## 2.15.1
+* Remove a unused import from script.less
+
+## 2.15.0
+* Add temporary file support
+* Enhance PHP selection based runner
+
+## 2.14.0
+* Add the ability to unescape HTML output (configuration option)
+* Add total execution time to output (configuration option)
+* Update Shell Script grammar name
+* Update PowerShell runner to support files with whitespace in the name
+
+## 2.13.0
+* Add Sass support
+* Add SCSS support
+
+## 2.12.1
+* Update the LiveScript command to `lsc` vs. `livescript`. Since [v1.1.0](http://livescript.net/blog/livescript-1.1.0.html) `lsc` was previously available as an alias and now the official command to run code.
+
 ## 2.12.0
+* Add SML support
+* Add the OperatingSystem grammar utils for platform specific run code
+* Add Mac OS X specific C, C++, Objective-C, and Objective-C++ file based runs
+
+## 2.11.2
+* Incidental release -- no new changes
+
+## 2.11.1
 * Rename "Line Based runs" to "Line Number Based runs"
 
 ## 2.11.0

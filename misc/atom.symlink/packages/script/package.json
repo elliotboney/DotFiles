@@ -1,7 +1,7 @@
 {
   "name": "script",
   "main": "./lib/script",
-  "version": "2.11.2",
+  "version": "2.16.0",
   "private": false,
   "description": "Run code in Atom!",
   "author": {
@@ -48,6 +48,10 @@
     {
       "name": "Ivan Storck",
       "email": "ivanoats@gmail.com"
+    },
+    {
+      "name": "Florian Lefèvre",
+      "email": "zedentox@gmail.com"
     },
     {
       "name": "Alexey Slaykovsky",
@@ -108,6 +112,34 @@
     {
       "name": "gerane",
       "email": "gerane@gmail.com"
+    },
+    {
+      "name": "Calvin Bottoms",
+      "email": "calvin.bottoms@gmail.com"
+    },
+    {
+      "name": "Marek Piechut",
+      "email": "marek.piechut@gmail.com"
+    },
+    {
+      "name": "Rodolfo Carvalho",
+      "email": "rhcarvalho@gmail.com"
+    },
+    {
+      "name": "cdingpeng",
+      "email": "cdingpeng@glitchsoft.com"
+    },
+    {
+      "name": "elclanrs",
+      "email": "cedric.ruiz@spacirdesigns.com"
+    },
+    {
+      "name": "Sergey Koshelev",
+      "email": "xih@yandex.ru"
+    },
+    {
+      "name": "Dustin Blackman",
+      "email": "dustinblackman@users.noreply.github.com"
     }
   ],
   "repository": {
@@ -151,21 +183,113 @@
   },
   "dependencies": {
     "ansi-to-html": ">0.1.0",
-    "underscore": "~1.5.2"
+    "underscore": "~1.5.2",
+    "node-uuid": "~1.4.0"
   },
   "devDependencies": {
     "grunt": "~0.4.5"
   },
-  "readme": "# Script [![Build Status](http://img.shields.io/travis/rgbkrk/atom-script.svg?style=flat)](https://travis-ci.org/rgbkrk/atom-script)\n**Run code in Atom!**\n\nRun scripts based on file name, a selection of code, or by line number.\n\n![](https://cloud.githubusercontent.com/assets/1694055/3226201/c458acbc-f067-11e3-84a0-da27fe334f5e.gif)\n\nCurrently supported grammars are:\n\n  * AppleScript\n  * Bash\n  * Behat Feature\n  * Coffeescript\n  * CoffeeScript (Literate) <sup>^</sup>\n  * Cucumber (Gherkin) <sup>*</sup>\n  * Elixir\n  * Erlang <sup>†</sup>\n  * F# <sup>*</sup>\n  * Go <sup>*</sup>\n  * Groovy\n  * Haskell\n  * Javascript\n  * Julia\n  * LilyPond\n  * LiveScript\n  * Lua\n  * Makefile\n  * MoonScript\n  * newLISP\n  * Perl\n  * PHP\n  * Python\n  * RSpec\n  * Ruby\n  * Ruby on Rails\n  * Scala\n  * Swift\n  * Makefile\n\n**NOTE**: Some grammars may require you to install [a custom language package](https://atom.io/search?utf8=✓&q=language).\n\nYou only have to add a few lines in a PR to support another.\n\n### Limitations\n\n<sup>^</sup> Running selections of code for CoffeeScript (Literate) only works when selecting just the code blocks\n\n<sup>†</sup> Erlang uses `erl` for limited selection based runs (see [#70](https://github.com/rgbkrk/atom-script/pull/70))\n\n<sup>\\*</sup> Cucumber (Gherkin), Go, F#, PowerShell, and Swift do not support selection based runs\n\n## Installation\n\n`apm install script`\n\nor\n\nSearch for `script` within package search in the Settings View.\n\n## Atom can't find node | ruby | python | my socks\n\nMake sure to launch Atom from the console/terminal. This gives atom all your useful environment variables.\n\nIf you *really* wish to open atom from a launcher/icon, see [this issue for a variety of workarounds that have been suggested](https://github.com/rgbkrk/atom-script/issues/61#issuecomment-37337827).\n\n## Usage\n\nMake sure to run `atom` from the command line to get full access to your environment variables. Running Atom from the icon will launch using launchctl's environment.\n\n**Script: Run** will perform a \"File Based\" run when no text is selected (default).\n\n**Script: Run** while text is selected will perform a \"Selection Based\" run executing just the highlighted code.\n\n**Script: Run by Line Number** to run using the specified line number. **Note** that if you select an entire line this number could be off by one due to the way Atom detects numbers while text is selected.\n\n**Script: Run Options** should be used to configure command options, program arguments, and environment variables overrides. Environment variables may be input into the options view in the form `VARIABLE_NAME_ONE=value;VARIABLE_NAME_TWO=\"other value\";VARIABLE_NAME_3='test'`\n\n**Script: Kill Process** will kill the process but leaves the pane open.\n\n**Script: Close View** closes the pane and kills the process.\n\nTo kill everything, click the close icon in the upper right and just go back to\ncoding.\n\n### Command and shortcut reference\n\n| Command                    | Mac OS X                            | Linux/Windows               | Notes                                                                         |\n|----------------------------|-------------------------------------|-----------------------------|-------------------------------------------------------------------------------|\n| Script: Run                | <kbd>cmd-i</kbd>                    | <kbd>ctrl-b</kbd>           | If text is selected a \"Selection Based\" is used instead of a \"File Based\" run |\n| Script: Run by Line Number | <kbd>shift-cmd-j</kbd>              | <kbd>shift-ctrl-j</kbd>     | If text is selected the line number will be the last                          |\n| Script: Run Options        | <kbd>shift-cmd-i</kbd>              | <kbd>shift-ctrl-alt-o</kbd> | Runs the selection or whole file with the given options                       |\n| Script: Close View         | <kbd>esc</kbd> or <kbd>ctrl-w</kbd> | <kbd>esc</kbd>              | Closes the script view window                                                 |\n| Script: Kill Process       | <kbd>ctrl-c</kbd>                   | <kbd>ctrl-q</kbd>           | Kills the current script process                                              |\n\n## Development\n\nUse the atom [contributing guidelines](https://atom.io/docs/latest/contributing).\nThey're pretty sane.\n\n#### Quick and dirty setup\n\n`apm develop script`\n\nThis will clone the `script` repository to `~/github` unless you set the\n`ATOM_REPOS_HOME` environment variable.\n\n#### I already cloned it!\n\nIf you cloned it somewhere else, you'll want to use `apm link --dev` within the\npackage directory, followed by `apm install` to get dependencies.\n\n### Workflow\n\nAfter pulling upstream changes, make sure to run `apm update`.\n\nTo start hacking, make sure to run `atom --dev` from the package directory.\nCut a branch while you're working then either submit a Pull Request when done\nor when you want some feedback!\n",
+  "readme": "# Script [![Build Status](http://img.shields.io/travis/rgbkrk/atom-script.svg?style=flat)](https://travis-ci.org/rgbkrk/atom-script)\n**Run code in Atom!**\n\nRun scripts based on file name, a selection of code, or by line number.\n\n![](https://cloud.githubusercontent.com/assets/1694055/3226201/c458acbc-f067-11e3-84a0-da27fe334f5e.gif)\n\nCurrently supported grammars are:\n\n  * AppleScript\n  * Bash\n  * Behat Feature\n  * C <sup>[*](#asterisk)</sup><sup>[‡](#double-dagger)</sup>\n  * C++ <sup>[*](#asterisk)</sup><sup>[‡](#double-dagger)</sup>\n  * Coffeescript\n  * CoffeeScript (Literate) <sup>[^](#caret)</sup>\n  * Cucumber (Gherkin) <sup>[*](#asterisk)</sup>\n  * D <sup>[*](#asterisk)</sup>\n  * Elixir\n  * Erlang <sup>[†](#dagger)</sup>\n  * F# <sup>[*](#asterisk)</sup>\n  * Go <sup>[*](#asterisk)</sup>\n  * Groovy\n  * Haskell\n  * Javascript\n  * Julia\n  * LilyPond\n  * Lisp (via SBCL) <sup>[⍵](#omega)</sup>\n  * LiveScript\n  * Lua\n  * Makefile\n  * MoonScript\n  * newLISP\n  * Objective-C <sup>[*](#asterisk)</sup><sup>[‡](#double-dagger)</sup>\n  * Objective-C++ <sup>[*](#asterisk)</sup><sup>[‡](#double-dagger)</sup>\n  * Perl\n  * PHP\n  * Python\n  * RSpec\n  * Ruby\n  * Ruby on Rails\n  * Rust\n  * Sass/SCSS <sup>[*](#asterisk)</sup>\n  * Scala\n  * Swift\n\n**NOTE**: Some grammars may require you to install [a custom language package](https://atom.io/search?utf8=✓&q=language).\n\nYou only have to add a few lines in a PR to support another.\n\n### Limitations\n\n<a name=\"caret\"></a><sup>^</sup> Running selections of code for CoffeeScript (Literate) only works when selecting just the code blocks\n\n<a name=\"dagger\"></a><sup>†</sup> Erlang uses `erl` for limited selection based runs (see [#70](https://github.com/rgbkrk/atom-script/pull/70))\n\n<a name=\"asterisk\"></a><sup>*</sup> Cucumber (Gherkin), Go, F#, PowerShell, Swift and D do not support selection based runs\n\n<a name=\"omega\"></a><sup>⍵</sup> Lisp selection based runs are limited to single line\n\n<a name=\"double-dagger\"></a><sup>‡</sup> C, C++, Objective-C, and Objective-C++ are currently only available for Mac OS X (where `process.platform is 'darwin'`). This is possible due to the commands `xcrun clang` and `xcrun clang++`. **NOTE**: Xcode and the Xcode command line tools are required to ensure `xcrun` and the correct compilers on your system.\n\n## Installation\n\n`apm install script`\n\nor\n\nSearch for `script` within package search in the Settings View.\n\n## Atom can't find node | ruby | python | my socks\n\nMake sure to launch Atom from the console/terminal. This gives atom all your useful environment variables.\n\nIf you *really* wish to open atom from a launcher/icon, see [this issue for a variety of workarounds that have been suggested](https://github.com/rgbkrk/atom-script/issues/61#issuecomment-37337827).\n\n## Usage\n\nMake sure to run `atom` from the command line to get full access to your environment variables. Running Atom from the icon will launch using launchctl's environment.\n\n**Script: Run** will perform a \"File Based\" run when no text is selected (default).\n\n**Script: Run** while text is selected will perform a \"Selection Based\" run executing just the highlighted code.\n\n**Script: Run by Line Number** to run using the specified line number. **Note** that if you select an entire line this number could be off by one due to the way Atom detects numbers while text is selected.\n\n**Script: Run Options** should be used to configure command options, program arguments, and environment variables overrides. Environment variables may be input into the options view in the form `VARIABLE_NAME_ONE=value;VARIABLE_NAME_TWO=\"other value\";VARIABLE_NAME_3='test'`\n\n**Script: Kill Process** will kill the process but leaves the pane open.\n\n**Script: Close View** closes the pane and kills the process.\n\nTo kill everything, click the close icon in the upper right and just go back to\ncoding.\n\n### Command and shortcut reference\n\n| Command                    | Mac OS X                            | Linux/Windows               | Notes                                                                         |\n|----------------------------|-------------------------------------|-----------------------------|-------------------------------------------------------------------------------|\n| Script: Run                | <kbd>cmd-i</kbd>                    | <kbd>ctrl-b</kbd>           | If text is selected a \"Selection Based\" is used instead of a \"File Based\" run |\n| Script: Run by Line Number | <kbd>shift-cmd-j</kbd>              | <kbd>shift-ctrl-j</kbd>     | If text is selected the line number will be the last                          |\n| Script: Run Options        | <kbd>shift-cmd-i</kbd>              | <kbd>shift-ctrl-alt-o</kbd> | Runs the selection or whole file with the given options                       |\n| Script: Close View         | <kbd>esc</kbd> or <kbd>ctrl-w</kbd> | <kbd>esc</kbd>              | Closes the script view window                                                 |\n| Script: Kill Process       | <kbd>ctrl-c</kbd>                   | <kbd>ctrl-q</kbd>           | Kills the current script process                                              |\n\n## Development\n\nUse the atom [contributing guidelines](https://atom.io/docs/latest/contributing).\nThey're pretty sane.\n\n#### Quick and dirty setup\n\n`apm develop script`\n\nThis will clone the `script` repository to `~/github` unless you set the\n`ATOM_REPOS_HOME` environment variable.\n\n#### I already cloned it!\n\nIf you cloned it somewhere else, you'll want to use `apm link --dev` within the\npackage directory, followed by `apm install` to get dependencies.\n\n### Workflow\n\nAfter pulling upstream changes, make sure to run `apm update`.\n\nTo start hacking, make sure to run `atom --dev` from the package directory.\nCut a branch while you're working then either submit a Pull Request when done\nor when you want some feedback!\n",
   "readmeFilename": "README.md",
   "bugs": {
     "url": "https://github.com/rgbkrk/atom-script/issues"
   },
   "homepage": "https://github.com/rgbkrk/atom-script",
-  "_id": "script@2.11.2",
+  "_id": "script@2.16.0",
   "dist": {
-    "shasum": "251f9c89ba9a4d6624cde5574bca023734a250c9"
+    "shasum": "0893a8341f9e71c0f814e795a44fe3bda50136b1"
   },
-  "_resolved": "/private/var/folders/80/5b_9h1w972n6p3cr6vqbpfsm0000gn/T/d-11496-75807-1kqatd7/package.tgz",
-  "_from": "/private/var/folders/80/5b_9h1w972n6p3cr6vqbpfsm0000gn/T/d-11496-75807-1kqatd7/package.tgz"
+  "_resolved": "/private/var/folders/80/5b_9h1w972n6p3cr6vqbpfsm0000gn/T/d-11504-93814-uvzb53/package.tgz",
+  "_from": "/private/var/folders/80/5b_9h1w972n6p3cr6vqbpfsm0000gn/T/d-11504-93814-uvzb53/package.tgz",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [
+      {
+        "name": "ansi-to-html",
+        "version": "0.3.0",
+        "path": "node_modules/ansi-to-html/lib/ansi_to_html.js"
+      },
+      {
+        "name": "entities",
+        "version": "1.1.1",
+        "path": "node_modules/ansi-to-html/node_modules/entities/index.js"
+      },
+      {
+        "name": "node-uuid",
+        "version": "1.4.2",
+        "path": "node_modules/node-uuid/uuid.js"
+      },
+      {
+        "name": "underscore",
+        "version": "1.5.2",
+        "path": "node_modules/underscore/underscore.js"
+      }
+    ],
+    "extensions": {
+      ".coffee": [
+        "lib/code-context.coffee",
+        "lib/grammar-utils/lisp.coffee",
+        "lib/grammar-utils/operating-system.coffee",
+        "lib/grammar-utils/php.coffee",
+        "lib/grammar-utils.coffee",
+        "lib/grammars.coffee",
+        "lib/header-view.coffee",
+        "lib/script-options-view.coffee",
+        "lib/script-options.coffee",
+        "lib/script-view.coffee",
+        "lib/script.coffee"
+      ],
+      ".js": [
+        "node_modules/ansi-to-html/gruntFile.js",
+        "node_modules/ansi-to-html/lib/ansi_to_html.js",
+        "node_modules/ansi-to-html/node_modules/entities/index.js",
+        "node_modules/ansi-to-html/node_modules/entities/lib/decode.js",
+        "node_modules/ansi-to-html/node_modules/entities/lib/decode_codepoint.js",
+        "node_modules/ansi-to-html/node_modules/entities/lib/encode.js",
+        "node_modules/node-uuid/benchmark/benchmark.js",
+        "node_modules/node-uuid/uuid.js",
+        "node_modules/underscore/underscore-min.js",
+        "node_modules/underscore/underscore.js"
+      ],
+      ".json": [
+        "node_modules/ansi-to-html/node_modules/entities/maps/decode.json",
+        "node_modules/ansi-to-html/node_modules/entities/maps/entities.json",
+        "node_modules/ansi-to-html/node_modules/entities/maps/legacy.json",
+        "node_modules/ansi-to-html/node_modules/entities/maps/xml.json",
+        "node_modules/ansi-to-html/node_modules/entities/package.json",
+        "node_modules/ansi-to-html/package.json",
+        "node_modules/node-uuid/component.json",
+        "node_modules/node-uuid/package.json",
+        "node_modules/underscore/package.json",
+        "package.json"
+      ]
+    },
+    "folders": [
+      {
+        "paths": [
+          "examples",
+          "lib",
+          "lib/grammar-utils",
+          "",
+          "spec",
+          "spec/grammar-utils"
+        ],
+        "dependencies": {
+          "ansi-to-html": ">0.1.0",
+          "underscore": "~1.5.2",
+          "node-uuid": "~1.4.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/ansi-to-html",
+          "node_modules/ansi-to-html/lib",
+          "node_modules/ansi-to-html/test"
+        ],
+        "dependencies": {
+          "entities": "^1.1.1"
+        }
+      }
+    ]
+  }
 }

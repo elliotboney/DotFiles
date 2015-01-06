@@ -1,0 +1,2 @@
+'.editor':
+  'ctrl-shift-d': 'jsdoc:block'

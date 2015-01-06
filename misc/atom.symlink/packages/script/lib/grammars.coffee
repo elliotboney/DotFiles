@@ -1,6 +1,9 @@
 # Maps Atom Grammar names to the command used by that language
 # As well as any special setup for arguments.
 
+_ = require 'underscore'
+GrammarUtils = require '../lib/grammar-utils'
+
 module.exports =
   AppleScript:
     'Selection Based':
@@ -22,6 +25,17 @@ module.exports =
     "File Based":
       command: ""
       args: (context) -> [context.filepath]
+  C:
+    if GrammarUtils.OperatingSystem.isDarwin()
+      "File Based":
+        command: "bash"
+        args: (context) -> ['-c', "xcrun clang -fcolor-diagnostics -Wall -include stdio.h " + context.filepath + " -o /tmp/c.out && /tmp/c.out"]
+
+  'C++':
+    if GrammarUtils.OperatingSystem.isDarwin()
+      "File Based":
+        command: "bash"
+        args: (context) -> ['-c', "xcrun clang++ -fcolor-diagnostics -Wc++11-extensions -Wall -include stdio.h -include iostream " + context.filepath + " -o /tmp/cpp.out && /tmp/cpp.out"]
 
   CoffeeScript:
     "Selection Based":
@@ -37,6 +51,11 @@ module.exports =
       args: (context)  -> ['-e', context.getCode()]
     "File Based":
       command: "coffee"
+      args: (context) -> [context.filepath]
+
+  D:
+    "File Based":
+      command: "rdmd"
       args: (context) -> [context.filepath]
 
   Elixir:
@@ -115,12 +134,23 @@ module.exports =
       command: "lilypond"
       args: (context) -> [context.filepath]
 
+  Lisp:
+    "Selection Based":
+      command: "sbcl"
+      args: (context) ->
+        statements = _.flatten(_.map(GrammarUtils.Lisp.splitStatements(context.getCode()), (statement) -> ['--eval', statement]))
+        args = _.union ['--noinform', '--disable-debugger', '--non-interactive', '--quit'], statements
+        return args
+    "File Based":
+      command: "sbcl"
+      args: (context) -> ['--noinform', '--script', context.filepath]
+
   LiveScript:
     "Selection Based":
-      command: "livescript"
+      command: "lsc"
       args: (context)  -> ['-e', context.getCode()]
     "File Based":
-      command: "livescript"
+      command: "lsc"
       args: (context) -> [context.filepath]
 
   Lua:
@@ -147,10 +177,25 @@ module.exports =
       command: "newlisp"
       args: (context) -> [context.filepath]
 
+  'Objective-C':
+    if GrammarUtils.OperatingSystem.isDarwin()
+      "File Based":
+        command: "bash"
+        args: (context) -> ['-c', "xcrun clang -fcolor-diagnostics -Wall -include stdio.h -framework Cocoa " + context.filepath + " -o /tmp/objc-c.out && /tmp/objc-c.out"]
+
+  'Objective-C++':
+    if GrammarUtils.OperatingSystem.isDarwin()
+      "File Based":
+        command: "bash"
+        args: (context) -> ['-c', "xcrun clang++ -fcolor-diagnostics -Wc++11-extensions -Wall -include stdio.h -include iostream -framework Cocoa " + context.filepath + " -o /tmp/objc-cpp.out && /tmp/objc-cpp.out"]
+
   PHP:
     "Selection Based":
       command: "php"
-      args: (context)  -> ['-r', context.getCode()]
+      args: (context) ->
+        code = context.getCode()
+        file = GrammarUtils.PHP.createTempFileWithCode(code)
+        [file]
     "File Based":
       command: "php"
       args: (context) -> [context.filepath]
@@ -166,7 +211,7 @@ module.exports =
   PowerShell:
     "File Based":
       command: "powershell"
-      args: (context) -> [context.filepath]
+      args: (context) -> [context.filepath.replace /\ /g, "` "]
 
   Python:
     "Selection Based":
@@ -208,13 +253,10 @@ module.exports =
       command: "rails"
       args: (context) -> ['runner', context.filepath]
 
-  'Shell Script (Bash)':
-    "Selection Based":
-      command: "bash"
-      args: (context)  -> ['-c', context.getCode()]
+  Rust:
     "File Based":
       command: "bash"
-      args: (context) -> [context.filepath]
+      args: (context) -> ['-c', "rustc " + context.filepath + " -o /tmp/rs.out && /tmp/rs.out"]
 
   Makefile:
     "Selection Based":
@@ -223,6 +265,11 @@ module.exports =
     "File Based":
       command: "make"
       args: (context) -> ['-f', context.filepath]
+
+  Sass:
+    "File Based":
+      command: "sass"
+      args: (context) -> [context.filepath]
 
   Scala:
     "Selection Based":
@@ -238,6 +285,32 @@ module.exports =
       args: (context)  -> ['-c', context.getCode()]
     "File Based":
       command: "guile"
+      args: (context) -> [context.filepath]
+
+  SCSS:
+    "File Based":
+      command: "sass"
+      args: (context) -> [context.filepath]
+
+  "Shell Script":
+    "Selection Based":
+      command: "bash"
+      args: (context)  -> ['-c', context.getCode()]
+    "File Based":
+      command: "bash"
+      args: (context) -> [context.filepath]
+
+  "Shell Script (Fish)":
+    "Selection Based":
+      command: "fish"
+      args: (context)  -> ['-c', context.getCode()]
+    "File Based":
+      command: "fish"
+      args: (context) -> [context.filepath]
+
+  "Standard ML":
+    "File Based":
+      command: "sml"
       args: (context) -> [context.filepath]
 
   Swift:
