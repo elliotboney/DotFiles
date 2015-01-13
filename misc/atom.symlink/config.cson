@@ -1,30 +1,29 @@
-'global':
+'*':
   'editor':
     'fontFamily': 'Source Code Pro'
-    'preferredLineLength': 100
+    'fontSize': 12
+    'showIndentGuide': true
+    'preferredLineLength': 120
     'invisibles':
       'eol': ' '
-    'showIndentGuide': true
-    'fontSize': 12
   'core':
-    'themes': [
-      'spacegray-dark-ui'
-      'spacegray-dark-syntax'
-    ]
-    'useReactEditor': true
-    'audioBeep': false
     'ignoredNames': [
       '.git'
       '.DS_Store'
       '.idea'
     ]
-    'projectHome': '/Users/eboney/Code'
     'disabledPackages': [
       'autocomplete-snippets'
       'script'
       'atom-jsfmt'
       'background-tips'
     ]
+    'themes': [
+      'spacegray-dark-ui'
+      'spacegray-dark-syntax'
+    ]
+    'projectHome': '/Users/eboney/Code'
+    'audioBeep': false
   'exception-reporting':
     'userId': '17f0acd5-4042-79ad-0b2a-1adf347830f5'
   'welcome':
@@ -33,26 +32,26 @@
     'userId': '7b1b09b29610b6ae118986b03bceb5556b4620e3'
   'atom-beautify':
     'analytics': false
-    'js_eval_code': true
     'js_jslint_happy': true
     'js_keep_array_indentation': true
     'js_keep_function_indentation': true
+    'js_eval_code': true
     'js_unescape_strings': true
   'remember-session':
-    'path': '/var/www/reni/content/themes/probusiness/assets/css/plugins'
-    'x': 0
-    'y': 23
-    'tabs': ''
+    'path': ''
+    'x': 45
+    'y': 82
+    'tabs': '/Users/eboney/Downloads/devmd.md'
     'selectedTab': ''
-    'width': 1440
-    'height': 829
+    'width': 1393
+    'height': 770
     'treeWidth': 200
   'linter-jsxhint':
     'jsxhintExecutablePath': '/Users/eboney/.nvm/v0.10.29/bin/jsxhint'
   'jsformat':
-    'space_before_conditional': false
     'end_with_newline': false
     'space_after_anon_function': true
+    'space_before_conditional': false
     'e4x': true
   'atom-compile-less':
     'mainLessFile': '/flatland.less'

@@ -1,3 +1,0 @@
-'context-menu':
-  '.tree-view':
-    'Download file from cdnjs': 'cdnjs:DownloadFile'
