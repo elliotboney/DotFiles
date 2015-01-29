@@ -40,7 +40,9 @@ fpath=(~/.zsh-completions $fpath)
 
 # setopt menu_complete
 
-source /Users/eboney/.phpbrew/bashrc
+if [ -f ~/.phpbrew/bashrc ]
+  source ~/.phpbrew/bashrc
+fi
 
 # sweet renaming shit
 autoload -U zmv
