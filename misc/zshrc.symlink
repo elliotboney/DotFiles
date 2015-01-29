@@ -40,7 +40,7 @@ fpath=(~/.zsh-completions $fpath)
 
 # setopt menu_complete
 
-if [ -f ~/.phpbrew/bashrc ]
+if [ -f ~/.phpbrew/bashrc ]; then
   source ~/.phpbrew/bashrc
 fi
 
