@@ -97,7 +97,7 @@ if [ -f "~/.nvm/nvm.sh" ]
   source ~/.nvm/nvm.sh
 fi
 
-if shell_is_osx
+if shell_is_osx; then
   if [ -f "`brew --prefix`/etc/grc.bashrc" ]
     then
     source "`brew --prefix`/etc/grc.bashrc"
