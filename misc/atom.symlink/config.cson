@@ -1,58 +1,69 @@
-'*':
-  'editor':
-    'fontFamily': 'Source Code Pro'
-    'fontSize': 12
-    'showIndentGuide': true
-    'preferredLineLength': 120
-    'invisibles':
-      'eol': ' '
-  'core':
-    'ignoredNames': [
-      '.git'
-      '.DS_Store'
-      '.idea'
+"*":
+  editor:
+    fontFamily: "Source Code Pro"
+    fontSize: 12
+    showIndentGuide: true
+    preferredLineLength: 120
+    invisibles:
+      eol: " "
+  core:
+    ignoredNames: [
+      ".git"
+      ".DS_Store"
+      ".idea"
     ]
-    'disabledPackages': [
-      'autocomplete-snippets'
-      'script'
-      'atom-jsfmt'
-      'background-tips'
+    disabledPackages: [
+      "autocomplete-snippets"
+      "script"
+      "atom-jsfmt"
+      "background-tips"
+      "atom-color-highlight"
     ]
-    'themes': [
-      'spacegray-dark-ui'
-      'spacegray-dark-syntax'
+    themes: [
+      "spacegray-dark-ui"
+      "spacegray-dark-syntax"
     ]
-    'projectHome': '/Users/eboney/Code'
-    'audioBeep': false
-  'exception-reporting':
-    'userId': '17f0acd5-4042-79ad-0b2a-1adf347830f5'
-  'welcome':
-    'showOnStartup': false
-  'metrics':
-    'userId': '7b1b09b29610b6ae118986b03bceb5556b4620e3'
-  'atom-beautify':
-    'analytics': false
-    'js_jslint_happy': true
-    'js_keep_array_indentation': true
-    'js_keep_function_indentation': true
-    'js_eval_code': true
-    'js_unescape_strings': true
-  'remember-session':
-    'path': ''
-    'x': 45
-    'y': 82
-    'tabs': '/Users/eboney/Downloads/devmd.md'
-    'selectedTab': ''
-    'width': 1393
-    'height': 770
-    'treeWidth': 200
-  'linter-jsxhint':
-    'jsxhintExecutablePath': '/Users/eboney/.nvm/v0.10.29/bin/jsxhint'
-  'jsformat':
-    'end_with_newline': false
-    'space_after_anon_function': true
-    'space_before_conditional': false
-    'e4x': true
-  'atom-compile-less':
-    'mainLessFile': '/flatland.less'
-  'linter': {}
+    projectHome: "/Users/eboney/Code"
+    audioBeep: false
+  "exception-reporting":
+    userId: "17f0acd5-4042-79ad-0b2a-1adf347830f5"
+  welcome:
+    showOnStartup: false
+  metrics:
+    userId: "7b1b09b29610b6ae118986b03bceb5556b4620e3"
+  "atom-beautify":
+    analytics: false
+    js_jslint_happy: true
+    js_keep_array_indentation: true
+    js_keep_function_indentation: true
+    js_eval_code: true
+    js_unescape_strings: true
+  "remember-session":
+    path: ""
+    x: 0
+    y: 23
+    tabs: "/Users/eboney/Downloads/devmd.md"
+    selectedTab: ""
+    width: 1440
+    height: 827
+  "linter-jsxhint":
+    jsxhintExecutablePath: "/Users/eboney/.nvm/v0.10.29/bin/jsxhint"
+  jsformat:
+    end_with_newline: false
+    space_after_anon_function: true
+    space_before_conditional: false
+    e4x: true
+  "atom-compile-less":
+    mainLessFile: "/flatland.less"
+  linter: {}
+  wakatime:
+    ignore: [
+      "^/var/"
+      "^/tmp/"
+      "^/private/"
+    ]
+    apikey: "23f6ba21-d238-4b45-baf9-81f3e6a88e79"
+  react:
+    jsxTagStartPattern: "(?x)((^|=|return)\\s*<([^!/?](?!.+?(</.+?>))))"
+    jsxComplexAttributePattern: "(?x)\\{ [^}\"']* $|\\( [^)\"']* $"
+    decreaseIndentForNextLinePattern: "/>\\s*,?\\s*$"

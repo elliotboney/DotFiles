@@ -144,6 +144,15 @@ if (( CURRENT >= 2 )); then
 }
 compdef _lm lm
 
+# zstyle ':completion:*:*:jp:*:*files' ignored-patterns '*.o'
+zstyle ':completion::*:jp:*:*' file-patterns '*.json'
+
+# Match uppercase from lowercase
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# vi: advanced completion (e.g. tex and rc files first)
+zstyle ':completion::*:s:*:*' file-patterns 'Makefile|*(rc|log)|*.(php|tex|bib|sql|zsh|ini|sh|vim|rb|sh|js|tpl|csv|rdf|txt|phtml|tex|py|n3):vi-files:vim\ likes\ these\ files *~(Makefile|*(rc|log)|*.(log|rc|php|tex|bib|sql|zsh|ini|sh|vim|rb|sh|js|tpl|csv|rdf|txt|phtml|tex|py|n3)):all-files:other\ files'
+
 # _wp() {
 #  local -a commands
 #   commands=(

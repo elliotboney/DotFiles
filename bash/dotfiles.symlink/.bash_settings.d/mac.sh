@@ -1,3 +1,20 @@
+# Mac keyboard specific keybindings
+
+# The host is using OSX terminal, as set in
+# 89-ssh-enhancements
+if [[ "$LC_TERM_PROGRAM" == "iTerm.app" ]] ; then
+
+       bindkey "\e\e[D" backward-word # alt + <-
+       bindkey "\e\e[C" forward-word # alt + ->
+
+       bindkey '^[[H' beginning-of-line
+       bindkey '^[[F' end-of-line
+
+fi
+
+return;
+
+
 if shell_is_osx; then
     # if SublimeText exists but there is no link to bin, make one
     # [ -f '/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' ] && [ ! \( -e '/usr/local/bin/subl' \) ] && ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl

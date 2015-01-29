@@ -34,7 +34,7 @@ if [ -f ~/.dotfiles/custom.zsh-theme ]
 fi
 
 # Customize to your needs...
-fpath=(/usr/local/share/zsh-completions $fpath)
+fpath=(~/.zsh-completions $fpath)
 
 # source ~/.nvm/nvm.sh
 
@@ -44,5 +44,9 @@ source /Users/eboney/.phpbrew/bashrc
 
 # sweet renaming shit
 autoload -U zmv
+
+
+
+
 
 export PATH="`rvm gemdir 2>/dev/null`/bin:$PATH" # Add RVM to PATH for scripting

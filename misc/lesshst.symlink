@@ -8,4 +8,5 @@
 "directory
 "github.com/jpastuszek/iis-access-log-parser.git
 "application.xml
+"case
 .shell
