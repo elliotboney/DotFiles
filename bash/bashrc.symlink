@@ -12,7 +12,6 @@ BASHRC_DISPATCH_PID=$$
 
 HOST_NAME=`uname -n`
 
-
 # Setup the main shell variables and functions
 SHELL_PLATFORM='OTHER'
 case "$OSTYPE" in
@@ -54,7 +53,7 @@ $fn_cmd SHELL_PLATFORM
 # $fn_cmd -f shell_is_elliot
 $fn_cmd HOST_NAME
 
-# NEW PART: {{{1 
+# NEW PART: {{{1
    #export PATH=$PATH:$HOME/bin
 # if shell_is_interactive; then
 
@@ -96,9 +95,11 @@ fi
 # Node Version Manager
 source ~/.nvm/nvm.sh
 
-if [ -f "`brew --prefix`/etc/grc.bashrc" ]
-  then
-  source "`brew --prefix`/etc/grc.bashrc"
+if shell_is_osx; then
+  if [ -f "`brew --prefix`/etc/grc.bashrc" ]
+    then
+    source "`brew --prefix`/etc/grc.bashrc"
+  fi
 fi
 
-export PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
+# export PATH="`rvm gemdir 2>/dev/null`/bin:$PATH" # Add RVM to PATH for scripting
