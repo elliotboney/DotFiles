@@ -81,23 +81,22 @@ unset EXPORT_FUNCTIONS
 unset BASHRC_DISPATCH_PID
 
 # Execute local stuff if it exists
-if [ -f ~/.bashrc.local ]
-  then
+if [ -f ~/.bashrc.local ] ; then
   source ~/.bashrc.local
 fi
 
 # Execute local stuff if it exists
-if [ -f ~/.dotfilelocation ]
-  then
+if [ -f ~/.dotfilelocation ];  then
   source ~/.dotfilelocation
 fi
 
 # Node Version Manager
-source ~/.nvm/nvm.sh
+if [ -f "~/.nvm/nvm.sh" ]; then
+  source ~/.nvm/nvm.sh
+fi
 
 if shell_is_osx; then
-  if [ -f "`brew --prefix`/etc/grc.bashrc" ]
-    then
+  if [ -f "`brew --prefix`/etc/grc.bashrc" ]; then
     source "`brew --prefix`/etc/grc.bashrc"
   fi
 fi
