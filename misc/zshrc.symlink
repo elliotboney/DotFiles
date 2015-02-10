@@ -5,10 +5,6 @@ ZSH_CUSTOM=$HOME/DotFiles/zshcustom
 # Set name of the theme to load.
 ZSH_THEME="../../.elliot"
 
-# Example aliases
-alias zshconfig="subl ~/.zshrc"
-alias ohmyzsh="subl ~/.oh-my-zsh"
-
 # Set to this to use case-sensitive completion
 CASE_SENSITIVE="false"
 
@@ -28,8 +24,7 @@ source $ZSH/oh-my-zsh.sh
 source ~/.bashrc
 
 # Load a custom theme if it exists
-if [ -f ~/.dotfiles/custom.zsh-theme ]
-    then
+if [ -f ~/.dotfiles/custom.zsh-theme ]; then
     source ~/.dotfiles/custom.zsh-theme
 fi
 
