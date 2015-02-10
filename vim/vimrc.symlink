@@ -263,8 +263,8 @@ set mat=2
 set acd
 
 "Directories for swp files
-set backupdir=~/.backups
-set directory=~/.backups
+"set backupdir=~/.backups
+"set directory=~/.backups
 
 " }
 " }
