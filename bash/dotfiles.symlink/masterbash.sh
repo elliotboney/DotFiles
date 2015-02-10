@@ -93,7 +93,7 @@ if [ -f ~/.dotfilelocation ]
 fi
 
 # Node Version Manager
-if [ -f "~/.nvm/nvm.sh" ]
+if [ -f "~/.nvm/nvm.sh" ]; then
   source ~/.nvm/nvm.sh
 fi
 
