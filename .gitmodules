@@ -1,3 +1,36 @@
+[submodule "vim/vim.symlink/bundle/YouCompleteMe"]
+    path = vim/vim.symlink/bundle/YouCompleteMe
+    url = git@github.com:Valloric/YouCompleteMe.git
+
+[submodule "vim/vim.symlink/bundle/Vundle.vim"]
+    path = vim/vim.symlink/bundle/Vundle.vim
+    url = git@github.com:gmarik/Vundle.vim.git
+
+[submodule "vim/vim.symlink/bundle/ctrlp-funky"]
+    path = vim/vim.symlink/bundle/ctrlp-funky
+    url = git@github.com:tacahiroy/ctrlp-funky.git
+
+[submodule "vim/vim.symlink/bundle/eVimBundle"]
+    path = vim/vim.symlink/bundle/eVimBundle
+    url = git@github.com:elliotboney/eVimBundle.git
+
+[submodule "vim/vim.symlink/bundle/syntastic"]
+    path = vim/vim.symlink/bundle/syntastic
+    url = git@github.com:scrooloose/syntastic.git
+
+[submodule "vim/vim.symlink/bundle/vim-colors"]
+    path = vim/vim.symlink/bundle/vim-colors
+    url = git@github.com:spf13/vim-colors.git
+
+
+[submodule "vim/vim.symlink/bundle/MatchTag"]
+    path = vim/vim.symlink/bundle/MatchTag
+    url = git@github.com:gregsexton/MatchTag.git
+
+[submodule "vim/vim.symlink/bundle/BusyBee"]
+    path = vim/vim.symlink/bundle/BusyBee
+    url = git@github.com:vim-scripts/BusyBee.git
+
 [submodule "vim/vim.symlink/bundle/powerline"]
     path = vim/vim.symlink/bundle/powerline
     url = git@github.com:Lokaltog/powerline.git
