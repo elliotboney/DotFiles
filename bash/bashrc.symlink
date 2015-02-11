@@ -101,4 +101,5 @@ if shell_is_osx; then
   fi
 fi
 
+export PATH="$HOME/bin:$PATH"
 # export PATH="`rvm gemdir 2>/dev/null`/bin:$PATH" # Add RVM to PATH for scripting
