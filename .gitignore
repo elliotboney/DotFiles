@@ -13,3 +13,5 @@ ruby
 
 
 misc/atom.symlink/packages/*
+vim/vim.symlink/bundle/*
+private/*
