@@ -7,6 +7,9 @@ ruby
 # Thumbnails
 ._*
 
+#vim
+.un~
+
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes
@@ -27,3 +30,13 @@ vim/vim.symlink/undo
 private/*
 ..bfg-report
 nuhabitat.sh
+# Created by https://www.gitignore.io
+
+### Vim ###
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
+
