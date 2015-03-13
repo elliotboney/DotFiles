@@ -1,0 +1,28 @@
+bf4998a393276dcc68d13452eda53897991e70a9	not-for-merge	branch '1.0' of git://github.com/ariya/esprima
+ea2b698932ca98dd7b9653db3ae15fc395a8da47	not-for-merge	branch '1.1' of git://github.com/ariya/esprima
+1e91147a297be06fab564e45378a015b32ec3f12	not-for-merge	branch '1.2' of git://github.com/ariya/esprima
+7ce371c844b4d14899f1b2f0e3d16b3ebf1ce821	not-for-merge	branch '1.x' of git://github.com/ariya/esprima
+852014036c7e46ad06c9f165f9ed69da4c1dddee	not-for-merge	branch '2.0' of git://github.com/ariya/esprima
+f709db0aaf0c203de8d7080d221f1e35465ab654	not-for-merge	branch 'gh-pages' of git://github.com/ariya/esprima
+a41a40b49046747b3af57341cda048bbd3d9df79	not-for-merge	branch 'harmony' of git://github.com/ariya/esprima
+d1a8fec37e04dcd05dd15de08eb7f7cba13080d6	not-for-merge	branch 'invalid-forin' of git://github.com/ariya/esprima
+cbc05861b1e0eef5c9f351ed4072ff2c6eb9817e	not-for-merge	branch 'master' of git://github.com/ariya/esprima
+fe1a4bce2841d373bf5e1b73db2a85a3331313f8	not-for-merge	branch 'nodejs-stable' of git://github.com/ariya/esprima
+ff104534fdfa02770192294bf6999b5a551302ab	not-for-merge	branch 'release-2.1' of git://github.com/ariya/esprima
+011d8831b37b55343e6231ca9f91c8f6967eadb3	not-for-merge	branch 'scan-punctuator' of git://github.com/ariya/esprima
+66c66ef5ab8a6bcf2b592b3f090f415d70e3fccc	not-for-merge	branch 'trystatement-handler' of git://github.com/ariya/esprima
+28efd4a002a93e6122514397cd53ad893a34edc4	not-for-merge	'refs/pull/1/head' of git://github.com/ariya/esprima
+981531bf9184fd69ac3d2cc2b68fa0d89c01ed5b	not-for-merge	'refs/pull/1/merge' of git://github.com/ariya/esprima
+139ff6dd79ccdf90f63ef3e843aba09bb0940183	not-for-merge	tag '1.0.0' of git://github.com/ariya/esprima
+00de3e872bdc34893e7c88e625635fae5342fdfa	not-for-merge	tag '1.0.1' of git://github.com/ariya/esprima
+661b58998bbca0efc3e36b9f8a7ed3b2041e839d	not-for-merge	tag '1.0.2' of git://github.com/ariya/esprima
+dcf3d129e86a9e7cd8006e9ee8105991367fa905	not-for-merge	tag '1.0.3' of git://github.com/ariya/esprima
+092c44c696f78479f82388602f051189ff9cdec8	not-for-merge	tag '1.0.4' of git://github.com/ariya/esprima
+828b0ea2993b98e7c92eaafc94f0d79ddb1ae100	not-for-merge	tag '1.1.0' of git://github.com/ariya/esprima
+beb8994681200ecb69ad8112609e2295f08d6763	not-for-merge	tag '1.1.1' of git://github.com/ariya/esprima
+bcc58454fbc21d25b535a540e6b05c39ba175129	not-for-merge	tag '1.2.0' of git://github.com/ariya/esprima
+b99f42932803580e1b16311812021d117782fa2d	not-for-merge	tag '1.2.1' of git://github.com/ariya/esprima
+d6c1463f0cacb6429af86dc86bd17398c0f11795	not-for-merge	tag '1.2.2' of git://github.com/ariya/esprima
+489b1ef67981f6240b553f45612f13dfd264b119	not-for-merge	tag '1.2.3' of git://github.com/ariya/esprima
+3ea01046e03b07beb90b20e17ba36dff4449f186	not-for-merge	tag '1.2.4' of git://github.com/ariya/esprima
+10511f7585033aa8b0d328ac347b0ebb12edecbf	not-for-merge	tag '2.0.0' of git://github.com/ariya/esprima

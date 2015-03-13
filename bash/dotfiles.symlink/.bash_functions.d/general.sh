@@ -1,11 +1,11 @@
-# ---------- Replace SpotlightDB with 
+# ---------- Replace SpotlightDB with
 function elocate {
-  mdfind "kMDItemDisplayName == '$@'wc"; 
+  mdfind "kMDItemDisplayName == '$@'wc";
 }
 
 function crx() {
   cd /Users/eboney/Code/Javascript/mintpal
-  php -f update.php 
+  php -f update.php
   push updates.xml /var/www/WordPress/mintpal digitalgrove.org
   cd ..
   # ruby -e "require 'rubygems'; require 'json'; puts JSON[STDIN.read]['version']"
@@ -40,4 +40,10 @@ function a() {
   else
     atom "$@";
   fi;
+}
+
+function changetitle()
+{
+    TITLE=$*;
+    echo -ne "\033]0;${TITLE}\007";
 }

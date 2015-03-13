@@ -34,6 +34,8 @@ On_White='\x1b[47m'           # White
 NC="\x1b[m"                   # Color Reset
 
 export Black;
+export LightGray;
+export DarkGray;
 export Red;
 export Green;
 export Yellow;

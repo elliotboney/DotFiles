@@ -1,0 +1,366 @@
+f2229c2f3db2332aab5c4dba029c17f8bc3f99f2	not-for-merge	branch 'master' of git://github.com/Polymer/polymer-expressions
+f40cc5df5b6c120371706323291252f74e803cab	not-for-merge	branch 'sky' of git://github.com/Polymer/polymer-expressions
+197c3a0150e7a13374cfcc72e7066113723a623d	not-for-merge	branch 'upstream_v0_5' of git://github.com/Polymer/polymer-expressions
+20f0ba65837ceb4e6d0d8c336d8ab051bcc55472	not-for-merge	'refs/pull/2/head' of git://github.com/Polymer/polymer-expressions
+7d42a61bf5acf69cdc4b7b4f04a5049081c27c6b	not-for-merge	'refs/pull/2/merge' of git://github.com/Polymer/polymer-expressions
+520eb7c3af18e0d317107702dbb8a2f96e0db527	not-for-merge	'refs/pull/23/head' of git://github.com/Polymer/polymer-expressions
+67afa7aad3116cfc366cb08fffb2ccbdf03cd7ed	not-for-merge	'refs/pull/23/merge' of git://github.com/Polymer/polymer-expressions
+1483676a35d71bf1efcb422511ffc9a3226dee61	not-for-merge	'refs/pull/25/head' of git://github.com/Polymer/polymer-expressions
+3978609509b8b2399c0561ba899eb9807c6cb465	not-for-merge	'refs/pull/26/head' of git://github.com/Polymer/polymer-expressions
+99229bbe7bedfb6632cdd79c398c589975b36b71	not-for-merge	'refs/pull/27/head' of git://github.com/Polymer/polymer-expressions
+18cffd1de69a924a79d4fd73769003954c6e2ea9	not-for-merge	'refs/pull/3/head' of git://github.com/Polymer/polymer-expressions
+b843f65f0d337ba13b0569a90b403471f7e51081	not-for-merge	'refs/pull/3/merge' of git://github.com/Polymer/polymer-expressions
+b9ec66ca8af2bb826e8d584982a3cf6bba7ab003	not-for-merge	'refs/pull/30/head' of git://github.com/Polymer/polymer-expressions
+fec486c8ed2e174d97396848471ee3b93db83fff	not-for-merge	'refs/pull/37/head' of git://github.com/Polymer/polymer-expressions
+d3a45c6d26e3abfed07d68e73e6ac06a5cdc2de2	not-for-merge	'refs/pull/41/head' of git://github.com/Polymer/polymer-expressions
+739825dc99cc64517ab82b49accaee9c59f2b933	not-for-merge	'refs/pull/45/head' of git://github.com/Polymer/polymer-expressions
+534f442f829b9fd83517c31499a357553adcf5a8	not-for-merge	'refs/pull/5/head' of git://github.com/Polymer/polymer-expressions
+0d0ebc564848c79414887ae0e686a2bb2e1c4251	not-for-merge	'refs/pull/53/head' of git://github.com/Polymer/polymer-expressions
+6a1fc600ae7976be420d12155ada56fc6924b8e6	not-for-merge	'refs/pull/53/merge' of git://github.com/Polymer/polymer-expressions
+f9c0547402a5291848261e99e69ede1e9633875b	not-for-merge	'refs/pull/56/head' of git://github.com/Polymer/polymer-expressions
+a91d76e795c20c69f01c14edb5650fd886969126	not-for-merge	'refs/pull/56/merge' of git://github.com/Polymer/polymer-expressions
+748a2cd97133923147bf41be1817d5b67a8c82c6	not-for-merge	'refs/pull/58/head' of git://github.com/Polymer/polymer-expressions
+d89f8eefcdf18b0f84c3f6ede21f30fa15b48ecd	not-for-merge	'refs/pull/60/head' of git://github.com/Polymer/polymer-expressions
+b204b9ae1a3159e3e3e27aeb034af9b833d884f2	not-for-merge	'refs/pull/7/head' of git://github.com/Polymer/polymer-expressions
+a2e569587aad8e55c139e3ed7a407792b432cc8c	not-for-merge	tag '0.1.0' of git://github.com/Polymer/polymer-expressions
+b6eac9a4fa07acbef1fbdfbaa590258bcba9cc78	not-for-merge	tag '0.1.1' of git://github.com/Polymer/polymer-expressions
+6c568e3153a403a349c4a49f99654d9b9822ab94	not-for-merge	tag '0.1.2' of git://github.com/Polymer/polymer-expressions
+eb2f6adcd4d61306857c4954658f8f7896879777	not-for-merge	tag '0.1.3' of git://github.com/Polymer/polymer-expressions
+e09a7c03c46e05fcc592443cbee2fbff17bbde1e	not-for-merge	tag '0.1.4' of git://github.com/Polymer/polymer-expressions
+91587624820fd86db695d830d4f79f6ce42f3695	not-for-merge	tag '0.2.0' of git://github.com/Polymer/polymer-expressions
+4162776b8f550f48c3ad941316da0551701f1596	not-for-merge	tag '0.2.1' of git://github.com/Polymer/polymer-expressions
+f9d2d2dc89b1eb155f5f712ee00f7bf3f39bd4ca	not-for-merge	tag '0.2.2' of git://github.com/Polymer/polymer-expressions
+fc0306ac75ed4324914fcaabb655853cdb643e66	not-for-merge	tag '0.2.3' of git://github.com/Polymer/polymer-expressions
+46a6c29a174d551c41876dd113e8fce80e889dce	not-for-merge	tag '0.2.4' of git://github.com/Polymer/polymer-expressions
+7103d33044d19a1f1781d80dbba827b56781bbd1	not-for-merge	tag '0.3.0' of git://github.com/Polymer/polymer-expressions
+0b271b946e7e29c982c6b09aa192ce132bb8e7e9	not-for-merge	tag '0.3.1' of git://github.com/Polymer/polymer-expressions
+dfc5e7ac255c2f465d9ea4c3735b72cdc19891b4	not-for-merge	tag '0.3.2' of git://github.com/Polymer/polymer-expressions
+6898428de83141fd8a99e22bd7e36b4b6acbbd75	not-for-merge	tag '0.3.3' of git://github.com/Polymer/polymer-expressions
+20247f68f0bc401cbca852fb3cfbdf12ec95a135	not-for-merge	tag '0.3.4' of git://github.com/Polymer/polymer-expressions
+92f860ef9ff871e4b51fc5da38b2b76ba13ebdbe	not-for-merge	tag '0.3.5' of git://github.com/Polymer/polymer-expressions
+bf58b8f6f46c461d1f6085dc35779bd61969559a	not-for-merge	tag '0.3.6' of git://github.com/Polymer/polymer-expressions
+30afaf9fffe647bbe53e67f4ac12596acaca77ca	not-for-merge	tag '0.4.0' of git://github.com/Polymer/polymer-expressions
+64d6aea8ec8d9ce65767bfd7cdc2d2bc9b60af26	not-for-merge	tag '0.4.1' of git://github.com/Polymer/polymer-expressions
+9f1748ec7b34b445c29941920962ea3eac8e9b80	not-for-merge	tag '0.4.2' of git://github.com/Polymer/polymer-expressions
+421a9a7527794ea794f7c3a3d39019ae08c31407	not-for-merge	tag '0.5.0' of git://github.com/Polymer/polymer-expressions
+712b9b6a5194a0fa289d58afd693bd04469a3b60	not-for-merge	tag '0.5.1' of git://github.com/Polymer/polymer-expressions
+37358e5c91bcd39c5f3cd863598a4ddb86f407d2	not-for-merge	tag '0.5.2' of git://github.com/Polymer/polymer-expressions
+4b796ed3fb7bbb4990e05f71b143f6fdc6ec8945	not-for-merge	tag '0.5.3' of git://github.com/Polymer/polymer-expressions
+528362bf11121ad89d068588aa386b9b60e3182f	not-for-merge	tag '0.5.3-rc' of git://github.com/Polymer/polymer-expressions
+29776530d9bb9a1f561a7ab0d94d20b8d7817a6c	not-for-merge	tag '0.5.3-rc2' of git://github.com/Polymer/polymer-expressions
+bbe5e753aa4aec7653145d403abb5c4c152b565c	not-for-merge	tag '0.5.4' of git://github.com/Polymer/polymer-expressions
+6936e10fbbc359cad8c38b3f4f2ae1346d7e7e0b	not-for-merge	tag '0.5.5' of git://github.com/Polymer/polymer-expressions
+3e895b19eb86e46772b047f4d74255558cf3258c	not-for-merge	tag '0.5.5-rc1' of git://github.com/Polymer/polymer-expressions
+3741c09c245e29db1d697a8bf40014c59800c76f	not-for-merge	tag 'v0.0.20130816' of git://github.com/Polymer/polymer-expressions
+da3a26c4226f8fabc741ce379c0ed7d9b2ef66df	not-for-merge	tag 'v0.0.20130829' of git://github.com/Polymer/polymer-expressions
+1ec937cc23880bd1947bb441741ad2180a8ec739	not-for-merge	tag 'v0.0.20130905' of git://github.com/Polymer/polymer-expressions
+bf9723f74656040b09c5851599ed180459f640d5	not-for-merge	tag 'v0.0.20130912' of git://github.com/Polymer/polymer-expressions
+5159c4e877fe0fa46cd712a908fd8ff4b3fe926b	not-for-merge	tag 'v0.0.20131003' of git://github.com/Polymer/polymer-expressions
+75858bdb99e1796eb80c91a4a7e080de4734127b	not-for-merge	tag 'v0.0.20131010' of git://github.com/Polymer/polymer-expressions
+e208882eba15e65291ae1779295e48b24a6e2d9a	not-for-merge	tag 'v0.0.20131025' of git://github.com/Polymer/polymer-expressions
+b2f3581b25610495297790dc539aadcc3765cd13	not-for-merge	tag 'v0.0.20131107' of git://github.com/Polymer/polymer-expressions
+f2229c2f3db2332aab5c4dba029c17f8bc3f99f2	not-for-merge	branch 'master' of git://github.com/Polymer/polymer-expressions
+f40cc5df5b6c120371706323291252f74e803cab	not-for-merge	branch 'sky' of git://github.com/Polymer/polymer-expressions
+197c3a0150e7a13374cfcc72e7066113723a623d	not-for-merge	branch 'upstream_v0_5' of git://github.com/Polymer/polymer-expressions
+20f0ba65837ceb4e6d0d8c336d8ab051bcc55472	not-for-merge	'refs/pull/2/head' of git://github.com/Polymer/polymer-expressions
+7d42a61bf5acf69cdc4b7b4f04a5049081c27c6b	not-for-merge	'refs/pull/2/merge' of git://github.com/Polymer/polymer-expressions
+520eb7c3af18e0d317107702dbb8a2f96e0db527	not-for-merge	'refs/pull/23/head' of git://github.com/Polymer/polymer-expressions
+67afa7aad3116cfc366cb08fffb2ccbdf03cd7ed	not-for-merge	'refs/pull/23/merge' of git://github.com/Polymer/polymer-expressions
+1483676a35d71bf1efcb422511ffc9a3226dee61	not-for-merge	'refs/pull/25/head' of git://github.com/Polymer/polymer-expressions
+3978609509b8b2399c0561ba899eb9807c6cb465	not-for-merge	'refs/pull/26/head' of git://github.com/Polymer/polymer-expressions
+99229bbe7bedfb6632cdd79c398c589975b36b71	not-for-merge	'refs/pull/27/head' of git://github.com/Polymer/polymer-expressions
+18cffd1de69a924a79d4fd73769003954c6e2ea9	not-for-merge	'refs/pull/3/head' of git://github.com/Polymer/polymer-expressions
+b843f65f0d337ba13b0569a90b403471f7e51081	not-for-merge	'refs/pull/3/merge' of git://github.com/Polymer/polymer-expressions
+b9ec66ca8af2bb826e8d584982a3cf6bba7ab003	not-for-merge	'refs/pull/30/head' of git://github.com/Polymer/polymer-expressions
+fec486c8ed2e174d97396848471ee3b93db83fff	not-for-merge	'refs/pull/37/head' of git://github.com/Polymer/polymer-expressions
+d3a45c6d26e3abfed07d68e73e6ac06a5cdc2de2	not-for-merge	'refs/pull/41/head' of git://github.com/Polymer/polymer-expressions
+739825dc99cc64517ab82b49accaee9c59f2b933	not-for-merge	'refs/pull/45/head' of git://github.com/Polymer/polymer-expressions
+534f442f829b9fd83517c31499a357553adcf5a8	not-for-merge	'refs/pull/5/head' of git://github.com/Polymer/polymer-expressions
+0d0ebc564848c79414887ae0e686a2bb2e1c4251	not-for-merge	'refs/pull/53/head' of git://github.com/Polymer/polymer-expressions
+6a1fc600ae7976be420d12155ada56fc6924b8e6	not-for-merge	'refs/pull/53/merge' of git://github.com/Polymer/polymer-expressions
+f9c0547402a5291848261e99e69ede1e9633875b	not-for-merge	'refs/pull/56/head' of git://github.com/Polymer/polymer-expressions
+a91d76e795c20c69f01c14edb5650fd886969126	not-for-merge	'refs/pull/56/merge' of git://github.com/Polymer/polymer-expressions
+748a2cd97133923147bf41be1817d5b67a8c82c6	not-for-merge	'refs/pull/58/head' of git://github.com/Polymer/polymer-expressions
+d89f8eefcdf18b0f84c3f6ede21f30fa15b48ecd	not-for-merge	'refs/pull/60/head' of git://github.com/Polymer/polymer-expressions
+b204b9ae1a3159e3e3e27aeb034af9b833d884f2	not-for-merge	'refs/pull/7/head' of git://github.com/Polymer/polymer-expressions
+a2e569587aad8e55c139e3ed7a407792b432cc8c	not-for-merge	tag '0.1.0' of git://github.com/Polymer/polymer-expressions
+b6eac9a4fa07acbef1fbdfbaa590258bcba9cc78	not-for-merge	tag '0.1.1' of git://github.com/Polymer/polymer-expressions
+6c568e3153a403a349c4a49f99654d9b9822ab94	not-for-merge	tag '0.1.2' of git://github.com/Polymer/polymer-expressions
+eb2f6adcd4d61306857c4954658f8f7896879777	not-for-merge	tag '0.1.3' of git://github.com/Polymer/polymer-expressions
+e09a7c03c46e05fcc592443cbee2fbff17bbde1e	not-for-merge	tag '0.1.4' of git://github.com/Polymer/polymer-expressions
+91587624820fd86db695d830d4f79f6ce42f3695	not-for-merge	tag '0.2.0' of git://github.com/Polymer/polymer-expressions
+4162776b8f550f48c3ad941316da0551701f1596	not-for-merge	tag '0.2.1' of git://github.com/Polymer/polymer-expressions
+f9d2d2dc89b1eb155f5f712ee00f7bf3f39bd4ca	not-for-merge	tag '0.2.2' of git://github.com/Polymer/polymer-expressions
+fc0306ac75ed4324914fcaabb655853cdb643e66	not-for-merge	tag '0.2.3' of git://github.com/Polymer/polymer-expressions
+46a6c29a174d551c41876dd113e8fce80e889dce	not-for-merge	tag '0.2.4' of git://github.com/Polymer/polymer-expressions
+7103d33044d19a1f1781d80dbba827b56781bbd1	not-for-merge	tag '0.3.0' of git://github.com/Polymer/polymer-expressions
+0b271b946e7e29c982c6b09aa192ce132bb8e7e9	not-for-merge	tag '0.3.1' of git://github.com/Polymer/polymer-expressions
+dfc5e7ac255c2f465d9ea4c3735b72cdc19891b4	not-for-merge	tag '0.3.2' of git://github.com/Polymer/polymer-expressions
+6898428de83141fd8a99e22bd7e36b4b6acbbd75	not-for-merge	tag '0.3.3' of git://github.com/Polymer/polymer-expressions
+20247f68f0bc401cbca852fb3cfbdf12ec95a135	not-for-merge	tag '0.3.4' of git://github.com/Polymer/polymer-expressions
+92f860ef9ff871e4b51fc5da38b2b76ba13ebdbe	not-for-merge	tag '0.3.5' of git://github.com/Polymer/polymer-expressions
+bf58b8f6f46c461d1f6085dc35779bd61969559a	not-for-merge	tag '0.3.6' of git://github.com/Polymer/polymer-expressions
+30afaf9fffe647bbe53e67f4ac12596acaca77ca	not-for-merge	tag '0.4.0' of git://github.com/Polymer/polymer-expressions
+64d6aea8ec8d9ce65767bfd7cdc2d2bc9b60af26	not-for-merge	tag '0.4.1' of git://github.com/Polymer/polymer-expressions
+9f1748ec7b34b445c29941920962ea3eac8e9b80	not-for-merge	tag '0.4.2' of git://github.com/Polymer/polymer-expressions
+421a9a7527794ea794f7c3a3d39019ae08c31407	not-for-merge	tag '0.5.0' of git://github.com/Polymer/polymer-expressions
+712b9b6a5194a0fa289d58afd693bd04469a3b60	not-for-merge	tag '0.5.1' of git://github.com/Polymer/polymer-expressions
+37358e5c91bcd39c5f3cd863598a4ddb86f407d2	not-for-merge	tag '0.5.2' of git://github.com/Polymer/polymer-expressions
+4b796ed3fb7bbb4990e05f71b143f6fdc6ec8945	not-for-merge	tag '0.5.3' of git://github.com/Polymer/polymer-expressions
+528362bf11121ad89d068588aa386b9b60e3182f	not-for-merge	tag '0.5.3-rc' of git://github.com/Polymer/polymer-expressions
+29776530d9bb9a1f561a7ab0d94d20b8d7817a6c	not-for-merge	tag '0.5.3-rc2' of git://github.com/Polymer/polymer-expressions
+bbe5e753aa4aec7653145d403abb5c4c152b565c	not-for-merge	tag '0.5.4' of git://github.com/Polymer/polymer-expressions
+6936e10fbbc359cad8c38b3f4f2ae1346d7e7e0b	not-for-merge	tag '0.5.5' of git://github.com/Polymer/polymer-expressions
+3e895b19eb86e46772b047f4d74255558cf3258c	not-for-merge	tag '0.5.5-rc1' of git://github.com/Polymer/polymer-expressions
+3741c09c245e29db1d697a8bf40014c59800c76f	not-for-merge	tag 'v0.0.20130816' of git://github.com/Polymer/polymer-expressions
+da3a26c4226f8fabc741ce379c0ed7d9b2ef66df	not-for-merge	tag 'v0.0.20130829' of git://github.com/Polymer/polymer-expressions
+1ec937cc23880bd1947bb441741ad2180a8ec739	not-for-merge	tag 'v0.0.20130905' of git://github.com/Polymer/polymer-expressions
+bf9723f74656040b09c5851599ed180459f640d5	not-for-merge	tag 'v0.0.20130912' of git://github.com/Polymer/polymer-expressions
+5159c4e877fe0fa46cd712a908fd8ff4b3fe926b	not-for-merge	tag 'v0.0.20131003' of git://github.com/Polymer/polymer-expressions
+75858bdb99e1796eb80c91a4a7e080de4734127b	not-for-merge	tag 'v0.0.20131010' of git://github.com/Polymer/polymer-expressions
+e208882eba15e65291ae1779295e48b24a6e2d9a	not-for-merge	tag 'v0.0.20131025' of git://github.com/Polymer/polymer-expressions
+b2f3581b25610495297790dc539aadcc3765cd13	not-for-merge	tag 'v0.0.20131107' of git://github.com/Polymer/polymer-expressions
+f2229c2f3db2332aab5c4dba029c17f8bc3f99f2	not-for-merge	branch 'master' of git://github.com/Polymer/polymer-expressions
+f40cc5df5b6c120371706323291252f74e803cab	not-for-merge	branch 'sky' of git://github.com/Polymer/polymer-expressions
+197c3a0150e7a13374cfcc72e7066113723a623d	not-for-merge	branch 'upstream_v0_5' of git://github.com/Polymer/polymer-expressions
+20f0ba65837ceb4e6d0d8c336d8ab051bcc55472	not-for-merge	'refs/pull/2/head' of git://github.com/Polymer/polymer-expressions
+7d42a61bf5acf69cdc4b7b4f04a5049081c27c6b	not-for-merge	'refs/pull/2/merge' of git://github.com/Polymer/polymer-expressions
+520eb7c3af18e0d317107702dbb8a2f96e0db527	not-for-merge	'refs/pull/23/head' of git://github.com/Polymer/polymer-expressions
+67afa7aad3116cfc366cb08fffb2ccbdf03cd7ed	not-for-merge	'refs/pull/23/merge' of git://github.com/Polymer/polymer-expressions
+1483676a35d71bf1efcb422511ffc9a3226dee61	not-for-merge	'refs/pull/25/head' of git://github.com/Polymer/polymer-expressions
+3978609509b8b2399c0561ba899eb9807c6cb465	not-for-merge	'refs/pull/26/head' of git://github.com/Polymer/polymer-expressions
+99229bbe7bedfb6632cdd79c398c589975b36b71	not-for-merge	'refs/pull/27/head' of git://github.com/Polymer/polymer-expressions
+18cffd1de69a924a79d4fd73769003954c6e2ea9	not-for-merge	'refs/pull/3/head' of git://github.com/Polymer/polymer-expressions
+b843f65f0d337ba13b0569a90b403471f7e51081	not-for-merge	'refs/pull/3/merge' of git://github.com/Polymer/polymer-expressions
+b9ec66ca8af2bb826e8d584982a3cf6bba7ab003	not-for-merge	'refs/pull/30/head' of git://github.com/Polymer/polymer-expressions
+fec486c8ed2e174d97396848471ee3b93db83fff	not-for-merge	'refs/pull/37/head' of git://github.com/Polymer/polymer-expressions
+d3a45c6d26e3abfed07d68e73e6ac06a5cdc2de2	not-for-merge	'refs/pull/41/head' of git://github.com/Polymer/polymer-expressions
+739825dc99cc64517ab82b49accaee9c59f2b933	not-for-merge	'refs/pull/45/head' of git://github.com/Polymer/polymer-expressions
+534f442f829b9fd83517c31499a357553adcf5a8	not-for-merge	'refs/pull/5/head' of git://github.com/Polymer/polymer-expressions
+0d0ebc564848c79414887ae0e686a2bb2e1c4251	not-for-merge	'refs/pull/53/head' of git://github.com/Polymer/polymer-expressions
+6a1fc600ae7976be420d12155ada56fc6924b8e6	not-for-merge	'refs/pull/53/merge' of git://github.com/Polymer/polymer-expressions
+f9c0547402a5291848261e99e69ede1e9633875b	not-for-merge	'refs/pull/56/head' of git://github.com/Polymer/polymer-expressions
+a91d76e795c20c69f01c14edb5650fd886969126	not-for-merge	'refs/pull/56/merge' of git://github.com/Polymer/polymer-expressions
+748a2cd97133923147bf41be1817d5b67a8c82c6	not-for-merge	'refs/pull/58/head' of git://github.com/Polymer/polymer-expressions
+d89f8eefcdf18b0f84c3f6ede21f30fa15b48ecd	not-for-merge	'refs/pull/60/head' of git://github.com/Polymer/polymer-expressions
+b204b9ae1a3159e3e3e27aeb034af9b833d884f2	not-for-merge	'refs/pull/7/head' of git://github.com/Polymer/polymer-expressions
+a2e569587aad8e55c139e3ed7a407792b432cc8c	not-for-merge	tag '0.1.0' of git://github.com/Polymer/polymer-expressions
+b6eac9a4fa07acbef1fbdfbaa590258bcba9cc78	not-for-merge	tag '0.1.1' of git://github.com/Polymer/polymer-expressions
+6c568e3153a403a349c4a49f99654d9b9822ab94	not-for-merge	tag '0.1.2' of git://github.com/Polymer/polymer-expressions
+eb2f6adcd4d61306857c4954658f8f7896879777	not-for-merge	tag '0.1.3' of git://github.com/Polymer/polymer-expressions
+e09a7c03c46e05fcc592443cbee2fbff17bbde1e	not-for-merge	tag '0.1.4' of git://github.com/Polymer/polymer-expressions
+91587624820fd86db695d830d4f79f6ce42f3695	not-for-merge	tag '0.2.0' of git://github.com/Polymer/polymer-expressions
+4162776b8f550f48c3ad941316da0551701f1596	not-for-merge	tag '0.2.1' of git://github.com/Polymer/polymer-expressions
+f9d2d2dc89b1eb155f5f712ee00f7bf3f39bd4ca	not-for-merge	tag '0.2.2' of git://github.com/Polymer/polymer-expressions
+fc0306ac75ed4324914fcaabb655853cdb643e66	not-for-merge	tag '0.2.3' of git://github.com/Polymer/polymer-expressions
+46a6c29a174d551c41876dd113e8fce80e889dce	not-for-merge	tag '0.2.4' of git://github.com/Polymer/polymer-expressions
+7103d33044d19a1f1781d80dbba827b56781bbd1	not-for-merge	tag '0.3.0' of git://github.com/Polymer/polymer-expressions
+0b271b946e7e29c982c6b09aa192ce132bb8e7e9	not-for-merge	tag '0.3.1' of git://github.com/Polymer/polymer-expressions
+dfc5e7ac255c2f465d9ea4c3735b72cdc19891b4	not-for-merge	tag '0.3.2' of git://github.com/Polymer/polymer-expressions
+6898428de83141fd8a99e22bd7e36b4b6acbbd75	not-for-merge	tag '0.3.3' of git://github.com/Polymer/polymer-expressions
+20247f68f0bc401cbca852fb3cfbdf12ec95a135	not-for-merge	tag '0.3.4' of git://github.com/Polymer/polymer-expressions
+92f860ef9ff871e4b51fc5da38b2b76ba13ebdbe	not-for-merge	tag '0.3.5' of git://github.com/Polymer/polymer-expressions
+bf58b8f6f46c461d1f6085dc35779bd61969559a	not-for-merge	tag '0.3.6' of git://github.com/Polymer/polymer-expressions
+30afaf9fffe647bbe53e67f4ac12596acaca77ca	not-for-merge	tag '0.4.0' of git://github.com/Polymer/polymer-expressions
+64d6aea8ec8d9ce65767bfd7cdc2d2bc9b60af26	not-for-merge	tag '0.4.1' of git://github.com/Polymer/polymer-expressions
+9f1748ec7b34b445c29941920962ea3eac8e9b80	not-for-merge	tag '0.4.2' of git://github.com/Polymer/polymer-expressions
+421a9a7527794ea794f7c3a3d39019ae08c31407	not-for-merge	tag '0.5.0' of git://github.com/Polymer/polymer-expressions
+712b9b6a5194a0fa289d58afd693bd04469a3b60	not-for-merge	tag '0.5.1' of git://github.com/Polymer/polymer-expressions
+37358e5c91bcd39c5f3cd863598a4ddb86f407d2	not-for-merge	tag '0.5.2' of git://github.com/Polymer/polymer-expressions
+4b796ed3fb7bbb4990e05f71b143f6fdc6ec8945	not-for-merge	tag '0.5.3' of git://github.com/Polymer/polymer-expressions
+528362bf11121ad89d068588aa386b9b60e3182f	not-for-merge	tag '0.5.3-rc' of git://github.com/Polymer/polymer-expressions
+29776530d9bb9a1f561a7ab0d94d20b8d7817a6c	not-for-merge	tag '0.5.3-rc2' of git://github.com/Polymer/polymer-expressions
+bbe5e753aa4aec7653145d403abb5c4c152b565c	not-for-merge	tag '0.5.4' of git://github.com/Polymer/polymer-expressions
+6936e10fbbc359cad8c38b3f4f2ae1346d7e7e0b	not-for-merge	tag '0.5.5' of git://github.com/Polymer/polymer-expressions
+3e895b19eb86e46772b047f4d74255558cf3258c	not-for-merge	tag '0.5.5-rc1' of git://github.com/Polymer/polymer-expressions
+3741c09c245e29db1d697a8bf40014c59800c76f	not-for-merge	tag 'v0.0.20130816' of git://github.com/Polymer/polymer-expressions
+da3a26c4226f8fabc741ce379c0ed7d9b2ef66df	not-for-merge	tag 'v0.0.20130829' of git://github.com/Polymer/polymer-expressions
+1ec937cc23880bd1947bb441741ad2180a8ec739	not-for-merge	tag 'v0.0.20130905' of git://github.com/Polymer/polymer-expressions
+bf9723f74656040b09c5851599ed180459f640d5	not-for-merge	tag 'v0.0.20130912' of git://github.com/Polymer/polymer-expressions
+5159c4e877fe0fa46cd712a908fd8ff4b3fe926b	not-for-merge	tag 'v0.0.20131003' of git://github.com/Polymer/polymer-expressions
+75858bdb99e1796eb80c91a4a7e080de4734127b	not-for-merge	tag 'v0.0.20131010' of git://github.com/Polymer/polymer-expressions
+e208882eba15e65291ae1779295e48b24a6e2d9a	not-for-merge	tag 'v0.0.20131025' of git://github.com/Polymer/polymer-expressions
+b2f3581b25610495297790dc539aadcc3765cd13	not-for-merge	tag 'v0.0.20131107' of git://github.com/Polymer/polymer-expressions
+f2229c2f3db2332aab5c4dba029c17f8bc3f99f2	not-for-merge	branch 'master' of git://github.com/Polymer/polymer-expressions
+f40cc5df5b6c120371706323291252f74e803cab	not-for-merge	branch 'sky' of git://github.com/Polymer/polymer-expressions
+197c3a0150e7a13374cfcc72e7066113723a623d	not-for-merge	branch 'upstream_v0_5' of git://github.com/Polymer/polymer-expressions
+20f0ba65837ceb4e6d0d8c336d8ab051bcc55472	not-for-merge	'refs/pull/2/head' of git://github.com/Polymer/polymer-expressions
+7d42a61bf5acf69cdc4b7b4f04a5049081c27c6b	not-for-merge	'refs/pull/2/merge' of git://github.com/Polymer/polymer-expressions
+520eb7c3af18e0d317107702dbb8a2f96e0db527	not-for-merge	'refs/pull/23/head' of git://github.com/Polymer/polymer-expressions
+67afa7aad3116cfc366cb08fffb2ccbdf03cd7ed	not-for-merge	'refs/pull/23/merge' of git://github.com/Polymer/polymer-expressions
+1483676a35d71bf1efcb422511ffc9a3226dee61	not-for-merge	'refs/pull/25/head' of git://github.com/Polymer/polymer-expressions
+3978609509b8b2399c0561ba899eb9807c6cb465	not-for-merge	'refs/pull/26/head' of git://github.com/Polymer/polymer-expressions
+99229bbe7bedfb6632cdd79c398c589975b36b71	not-for-merge	'refs/pull/27/head' of git://github.com/Polymer/polymer-expressions
+18cffd1de69a924a79d4fd73769003954c6e2ea9	not-for-merge	'refs/pull/3/head' of git://github.com/Polymer/polymer-expressions
+b843f65f0d337ba13b0569a90b403471f7e51081	not-for-merge	'refs/pull/3/merge' of git://github.com/Polymer/polymer-expressions
+b9ec66ca8af2bb826e8d584982a3cf6bba7ab003	not-for-merge	'refs/pull/30/head' of git://github.com/Polymer/polymer-expressions
+fec486c8ed2e174d97396848471ee3b93db83fff	not-for-merge	'refs/pull/37/head' of git://github.com/Polymer/polymer-expressions
+d3a45c6d26e3abfed07d68e73e6ac06a5cdc2de2	not-for-merge	'refs/pull/41/head' of git://github.com/Polymer/polymer-expressions
+739825dc99cc64517ab82b49accaee9c59f2b933	not-for-merge	'refs/pull/45/head' of git://github.com/Polymer/polymer-expressions
+534f442f829b9fd83517c31499a357553adcf5a8	not-for-merge	'refs/pull/5/head' of git://github.com/Polymer/polymer-expressions
+0d0ebc564848c79414887ae0e686a2bb2e1c4251	not-for-merge	'refs/pull/53/head' of git://github.com/Polymer/polymer-expressions
+8060cad541262b488f7b574f8f224e1d72d70aaa	not-for-merge	'refs/pull/53/merge' of git://github.com/Polymer/polymer-expressions
+f9c0547402a5291848261e99e69ede1e9633875b	not-for-merge	'refs/pull/56/head' of git://github.com/Polymer/polymer-expressions
+a6b912724a616c6b7bc87d14e131b59bb25cb765	not-for-merge	'refs/pull/56/merge' of git://github.com/Polymer/polymer-expressions
+748a2cd97133923147bf41be1817d5b67a8c82c6	not-for-merge	'refs/pull/58/head' of git://github.com/Polymer/polymer-expressions
+d89f8eefcdf18b0f84c3f6ede21f30fa15b48ecd	not-for-merge	'refs/pull/60/head' of git://github.com/Polymer/polymer-expressions
+b204b9ae1a3159e3e3e27aeb034af9b833d884f2	not-for-merge	'refs/pull/7/head' of git://github.com/Polymer/polymer-expressions
+a2e569587aad8e55c139e3ed7a407792b432cc8c	not-for-merge	tag '0.1.0' of git://github.com/Polymer/polymer-expressions
+b6eac9a4fa07acbef1fbdfbaa590258bcba9cc78	not-for-merge	tag '0.1.1' of git://github.com/Polymer/polymer-expressions
+6c568e3153a403a349c4a49f99654d9b9822ab94	not-for-merge	tag '0.1.2' of git://github.com/Polymer/polymer-expressions
+eb2f6adcd4d61306857c4954658f8f7896879777	not-for-merge	tag '0.1.3' of git://github.com/Polymer/polymer-expressions
+e09a7c03c46e05fcc592443cbee2fbff17bbde1e	not-for-merge	tag '0.1.4' of git://github.com/Polymer/polymer-expressions
+91587624820fd86db695d830d4f79f6ce42f3695	not-for-merge	tag '0.2.0' of git://github.com/Polymer/polymer-expressions
+4162776b8f550f48c3ad941316da0551701f1596	not-for-merge	tag '0.2.1' of git://github.com/Polymer/polymer-expressions
+f9d2d2dc89b1eb155f5f712ee00f7bf3f39bd4ca	not-for-merge	tag '0.2.2' of git://github.com/Polymer/polymer-expressions
+fc0306ac75ed4324914fcaabb655853cdb643e66	not-for-merge	tag '0.2.3' of git://github.com/Polymer/polymer-expressions
+46a6c29a174d551c41876dd113e8fce80e889dce	not-for-merge	tag '0.2.4' of git://github.com/Polymer/polymer-expressions
+7103d33044d19a1f1781d80dbba827b56781bbd1	not-for-merge	tag '0.3.0' of git://github.com/Polymer/polymer-expressions
+0b271b946e7e29c982c6b09aa192ce132bb8e7e9	not-for-merge	tag '0.3.1' of git://github.com/Polymer/polymer-expressions
+dfc5e7ac255c2f465d9ea4c3735b72cdc19891b4	not-for-merge	tag '0.3.2' of git://github.com/Polymer/polymer-expressions
+6898428de83141fd8a99e22bd7e36b4b6acbbd75	not-for-merge	tag '0.3.3' of git://github.com/Polymer/polymer-expressions
+20247f68f0bc401cbca852fb3cfbdf12ec95a135	not-for-merge	tag '0.3.4' of git://github.com/Polymer/polymer-expressions
+92f860ef9ff871e4b51fc5da38b2b76ba13ebdbe	not-for-merge	tag '0.3.5' of git://github.com/Polymer/polymer-expressions
+bf58b8f6f46c461d1f6085dc35779bd61969559a	not-for-merge	tag '0.3.6' of git://github.com/Polymer/polymer-expressions
+30afaf9fffe647bbe53e67f4ac12596acaca77ca	not-for-merge	tag '0.4.0' of git://github.com/Polymer/polymer-expressions
+64d6aea8ec8d9ce65767bfd7cdc2d2bc9b60af26	not-for-merge	tag '0.4.1' of git://github.com/Polymer/polymer-expressions
+9f1748ec7b34b445c29941920962ea3eac8e9b80	not-for-merge	tag '0.4.2' of git://github.com/Polymer/polymer-expressions
+421a9a7527794ea794f7c3a3d39019ae08c31407	not-for-merge	tag '0.5.0' of git://github.com/Polymer/polymer-expressions
+712b9b6a5194a0fa289d58afd693bd04469a3b60	not-for-merge	tag '0.5.1' of git://github.com/Polymer/polymer-expressions
+37358e5c91bcd39c5f3cd863598a4ddb86f407d2	not-for-merge	tag '0.5.2' of git://github.com/Polymer/polymer-expressions
+4b796ed3fb7bbb4990e05f71b143f6fdc6ec8945	not-for-merge	tag '0.5.3' of git://github.com/Polymer/polymer-expressions
+528362bf11121ad89d068588aa386b9b60e3182f	not-for-merge	tag '0.5.3-rc' of git://github.com/Polymer/polymer-expressions
+29776530d9bb9a1f561a7ab0d94d20b8d7817a6c	not-for-merge	tag '0.5.3-rc2' of git://github.com/Polymer/polymer-expressions
+bbe5e753aa4aec7653145d403abb5c4c152b565c	not-for-merge	tag '0.5.4' of git://github.com/Polymer/polymer-expressions
+6936e10fbbc359cad8c38b3f4f2ae1346d7e7e0b	not-for-merge	tag '0.5.5' of git://github.com/Polymer/polymer-expressions
+3e895b19eb86e46772b047f4d74255558cf3258c	not-for-merge	tag '0.5.5-rc1' of git://github.com/Polymer/polymer-expressions
+3741c09c245e29db1d697a8bf40014c59800c76f	not-for-merge	tag 'v0.0.20130816' of git://github.com/Polymer/polymer-expressions
+da3a26c4226f8fabc741ce379c0ed7d9b2ef66df	not-for-merge	tag 'v0.0.20130829' of git://github.com/Polymer/polymer-expressions
+1ec937cc23880bd1947bb441741ad2180a8ec739	not-for-merge	tag 'v0.0.20130905' of git://github.com/Polymer/polymer-expressions
+bf9723f74656040b09c5851599ed180459f640d5	not-for-merge	tag 'v0.0.20130912' of git://github.com/Polymer/polymer-expressions
+5159c4e877fe0fa46cd712a908fd8ff4b3fe926b	not-for-merge	tag 'v0.0.20131003' of git://github.com/Polymer/polymer-expressions
+75858bdb99e1796eb80c91a4a7e080de4734127b	not-for-merge	tag 'v0.0.20131010' of git://github.com/Polymer/polymer-expressions
+e208882eba15e65291ae1779295e48b24a6e2d9a	not-for-merge	tag 'v0.0.20131025' of git://github.com/Polymer/polymer-expressions
+b2f3581b25610495297790dc539aadcc3765cd13	not-for-merge	tag 'v0.0.20131107' of git://github.com/Polymer/polymer-expressions
+f2229c2f3db2332aab5c4dba029c17f8bc3f99f2	not-for-merge	branch 'master' of git://github.com/Polymer/polymer-expressions
+f40cc5df5b6c120371706323291252f74e803cab	not-for-merge	branch 'sky' of git://github.com/Polymer/polymer-expressions
+197c3a0150e7a13374cfcc72e7066113723a623d	not-for-merge	branch 'upstream_v0_5' of git://github.com/Polymer/polymer-expressions
+20f0ba65837ceb4e6d0d8c336d8ab051bcc55472	not-for-merge	'refs/pull/2/head' of git://github.com/Polymer/polymer-expressions
+7d42a61bf5acf69cdc4b7b4f04a5049081c27c6b	not-for-merge	'refs/pull/2/merge' of git://github.com/Polymer/polymer-expressions
+520eb7c3af18e0d317107702dbb8a2f96e0db527	not-for-merge	'refs/pull/23/head' of git://github.com/Polymer/polymer-expressions
+67afa7aad3116cfc366cb08fffb2ccbdf03cd7ed	not-for-merge	'refs/pull/23/merge' of git://github.com/Polymer/polymer-expressions
+1483676a35d71bf1efcb422511ffc9a3226dee61	not-for-merge	'refs/pull/25/head' of git://github.com/Polymer/polymer-expressions
+3978609509b8b2399c0561ba899eb9807c6cb465	not-for-merge	'refs/pull/26/head' of git://github.com/Polymer/polymer-expressions
+99229bbe7bedfb6632cdd79c398c589975b36b71	not-for-merge	'refs/pull/27/head' of git://github.com/Polymer/polymer-expressions
+18cffd1de69a924a79d4fd73769003954c6e2ea9	not-for-merge	'refs/pull/3/head' of git://github.com/Polymer/polymer-expressions
+b843f65f0d337ba13b0569a90b403471f7e51081	not-for-merge	'refs/pull/3/merge' of git://github.com/Polymer/polymer-expressions
+b9ec66ca8af2bb826e8d584982a3cf6bba7ab003	not-for-merge	'refs/pull/30/head' of git://github.com/Polymer/polymer-expressions
+fec486c8ed2e174d97396848471ee3b93db83fff	not-for-merge	'refs/pull/37/head' of git://github.com/Polymer/polymer-expressions
+d3a45c6d26e3abfed07d68e73e6ac06a5cdc2de2	not-for-merge	'refs/pull/41/head' of git://github.com/Polymer/polymer-expressions
+739825dc99cc64517ab82b49accaee9c59f2b933	not-for-merge	'refs/pull/45/head' of git://github.com/Polymer/polymer-expressions
+534f442f829b9fd83517c31499a357553adcf5a8	not-for-merge	'refs/pull/5/head' of git://github.com/Polymer/polymer-expressions
+0d0ebc564848c79414887ae0e686a2bb2e1c4251	not-for-merge	'refs/pull/53/head' of git://github.com/Polymer/polymer-expressions
+8060cad541262b488f7b574f8f224e1d72d70aaa	not-for-merge	'refs/pull/53/merge' of git://github.com/Polymer/polymer-expressions
+f9c0547402a5291848261e99e69ede1e9633875b	not-for-merge	'refs/pull/56/head' of git://github.com/Polymer/polymer-expressions
+a6b912724a616c6b7bc87d14e131b59bb25cb765	not-for-merge	'refs/pull/56/merge' of git://github.com/Polymer/polymer-expressions
+748a2cd97133923147bf41be1817d5b67a8c82c6	not-for-merge	'refs/pull/58/head' of git://github.com/Polymer/polymer-expressions
+d89f8eefcdf18b0f84c3f6ede21f30fa15b48ecd	not-for-merge	'refs/pull/60/head' of git://github.com/Polymer/polymer-expressions
+b204b9ae1a3159e3e3e27aeb034af9b833d884f2	not-for-merge	'refs/pull/7/head' of git://github.com/Polymer/polymer-expressions
+a2e569587aad8e55c139e3ed7a407792b432cc8c	not-for-merge	tag '0.1.0' of git://github.com/Polymer/polymer-expressions
+b6eac9a4fa07acbef1fbdfbaa590258bcba9cc78	not-for-merge	tag '0.1.1' of git://github.com/Polymer/polymer-expressions
+6c568e3153a403a349c4a49f99654d9b9822ab94	not-for-merge	tag '0.1.2' of git://github.com/Polymer/polymer-expressions
+eb2f6adcd4d61306857c4954658f8f7896879777	not-for-merge	tag '0.1.3' of git://github.com/Polymer/polymer-expressions
+e09a7c03c46e05fcc592443cbee2fbff17bbde1e	not-for-merge	tag '0.1.4' of git://github.com/Polymer/polymer-expressions
+91587624820fd86db695d830d4f79f6ce42f3695	not-for-merge	tag '0.2.0' of git://github.com/Polymer/polymer-expressions
+4162776b8f550f48c3ad941316da0551701f1596	not-for-merge	tag '0.2.1' of git://github.com/Polymer/polymer-expressions
+f9d2d2dc89b1eb155f5f712ee00f7bf3f39bd4ca	not-for-merge	tag '0.2.2' of git://github.com/Polymer/polymer-expressions
+fc0306ac75ed4324914fcaabb655853cdb643e66	not-for-merge	tag '0.2.3' of git://github.com/Polymer/polymer-expressions
+46a6c29a174d551c41876dd113e8fce80e889dce	not-for-merge	tag '0.2.4' of git://github.com/Polymer/polymer-expressions
+7103d33044d19a1f1781d80dbba827b56781bbd1	not-for-merge	tag '0.3.0' of git://github.com/Polymer/polymer-expressions
+0b271b946e7e29c982c6b09aa192ce132bb8e7e9	not-for-merge	tag '0.3.1' of git://github.com/Polymer/polymer-expressions
+dfc5e7ac255c2f465d9ea4c3735b72cdc19891b4	not-for-merge	tag '0.3.2' of git://github.com/Polymer/polymer-expressions
+6898428de83141fd8a99e22bd7e36b4b6acbbd75	not-for-merge	tag '0.3.3' of git://github.com/Polymer/polymer-expressions
+20247f68f0bc401cbca852fb3cfbdf12ec95a135	not-for-merge	tag '0.3.4' of git://github.com/Polymer/polymer-expressions
+92f860ef9ff871e4b51fc5da38b2b76ba13ebdbe	not-for-merge	tag '0.3.5' of git://github.com/Polymer/polymer-expressions
+bf58b8f6f46c461d1f6085dc35779bd61969559a	not-for-merge	tag '0.3.6' of git://github.com/Polymer/polymer-expressions
+30afaf9fffe647bbe53e67f4ac12596acaca77ca	not-for-merge	tag '0.4.0' of git://github.com/Polymer/polymer-expressions
+64d6aea8ec8d9ce65767bfd7cdc2d2bc9b60af26	not-for-merge	tag '0.4.1' of git://github.com/Polymer/polymer-expressions
+9f1748ec7b34b445c29941920962ea3eac8e9b80	not-for-merge	tag '0.4.2' of git://github.com/Polymer/polymer-expressions
+421a9a7527794ea794f7c3a3d39019ae08c31407	not-for-merge	tag '0.5.0' of git://github.com/Polymer/polymer-expressions
+712b9b6a5194a0fa289d58afd693bd04469a3b60	not-for-merge	tag '0.5.1' of git://github.com/Polymer/polymer-expressions
+37358e5c91bcd39c5f3cd863598a4ddb86f407d2	not-for-merge	tag '0.5.2' of git://github.com/Polymer/polymer-expressions
+4b796ed3fb7bbb4990e05f71b143f6fdc6ec8945	not-for-merge	tag '0.5.3' of git://github.com/Polymer/polymer-expressions
+528362bf11121ad89d068588aa386b9b60e3182f	not-for-merge	tag '0.5.3-rc' of git://github.com/Polymer/polymer-expressions
+29776530d9bb9a1f561a7ab0d94d20b8d7817a6c	not-for-merge	tag '0.5.3-rc2' of git://github.com/Polymer/polymer-expressions
+bbe5e753aa4aec7653145d403abb5c4c152b565c	not-for-merge	tag '0.5.4' of git://github.com/Polymer/polymer-expressions
+6936e10fbbc359cad8c38b3f4f2ae1346d7e7e0b	not-for-merge	tag '0.5.5' of git://github.com/Polymer/polymer-expressions
+3e895b19eb86e46772b047f4d74255558cf3258c	not-for-merge	tag '0.5.5-rc1' of git://github.com/Polymer/polymer-expressions
+3741c09c245e29db1d697a8bf40014c59800c76f	not-for-merge	tag 'v0.0.20130816' of git://github.com/Polymer/polymer-expressions
+da3a26c4226f8fabc741ce379c0ed7d9b2ef66df	not-for-merge	tag 'v0.0.20130829' of git://github.com/Polymer/polymer-expressions
+1ec937cc23880bd1947bb441741ad2180a8ec739	not-for-merge	tag 'v0.0.20130905' of git://github.com/Polymer/polymer-expressions
+bf9723f74656040b09c5851599ed180459f640d5	not-for-merge	tag 'v0.0.20130912' of git://github.com/Polymer/polymer-expressions
+5159c4e877fe0fa46cd712a908fd8ff4b3fe926b	not-for-merge	tag 'v0.0.20131003' of git://github.com/Polymer/polymer-expressions
+75858bdb99e1796eb80c91a4a7e080de4734127b	not-for-merge	tag 'v0.0.20131010' of git://github.com/Polymer/polymer-expressions
+e208882eba15e65291ae1779295e48b24a6e2d9a	not-for-merge	tag 'v0.0.20131025' of git://github.com/Polymer/polymer-expressions
+b2f3581b25610495297790dc539aadcc3765cd13	not-for-merge	tag 'v0.0.20131107' of git://github.com/Polymer/polymer-expressions
+f2229c2f3db2332aab5c4dba029c17f8bc3f99f2	not-for-merge	branch 'master' of git://github.com/Polymer/polymer-expressions
+f40cc5df5b6c120371706323291252f74e803cab	not-for-merge	branch 'sky' of git://github.com/Polymer/polymer-expressions
+197c3a0150e7a13374cfcc72e7066113723a623d	not-for-merge	branch 'upstream_v0_5' of git://github.com/Polymer/polymer-expressions
+20f0ba65837ceb4e6d0d8c336d8ab051bcc55472	not-for-merge	'refs/pull/2/head' of git://github.com/Polymer/polymer-expressions
+7d42a61bf5acf69cdc4b7b4f04a5049081c27c6b	not-for-merge	'refs/pull/2/merge' of git://github.com/Polymer/polymer-expressions
+520eb7c3af18e0d317107702dbb8a2f96e0db527	not-for-merge	'refs/pull/23/head' of git://github.com/Polymer/polymer-expressions
+67afa7aad3116cfc366cb08fffb2ccbdf03cd7ed	not-for-merge	'refs/pull/23/merge' of git://github.com/Polymer/polymer-expressions
+1483676a35d71bf1efcb422511ffc9a3226dee61	not-for-merge	'refs/pull/25/head' of git://github.com/Polymer/polymer-expressions
+3978609509b8b2399c0561ba899eb9807c6cb465	not-for-merge	'refs/pull/26/head' of git://github.com/Polymer/polymer-expressions
+99229bbe7bedfb6632cdd79c398c589975b36b71	not-for-merge	'refs/pull/27/head' of git://github.com/Polymer/polymer-expressions
+18cffd1de69a924a79d4fd73769003954c6e2ea9	not-for-merge	'refs/pull/3/head' of git://github.com/Polymer/polymer-expressions
+b843f65f0d337ba13b0569a90b403471f7e51081	not-for-merge	'refs/pull/3/merge' of git://github.com/Polymer/polymer-expressions
+b9ec66ca8af2bb826e8d584982a3cf6bba7ab003	not-for-merge	'refs/pull/30/head' of git://github.com/Polymer/polymer-expressions
+fec486c8ed2e174d97396848471ee3b93db83fff	not-for-merge	'refs/pull/37/head' of git://github.com/Polymer/polymer-expressions
+d3a45c6d26e3abfed07d68e73e6ac06a5cdc2de2	not-for-merge	'refs/pull/41/head' of git://github.com/Polymer/polymer-expressions
+739825dc99cc64517ab82b49accaee9c59f2b933	not-for-merge	'refs/pull/45/head' of git://github.com/Polymer/polymer-expressions
+534f442f829b9fd83517c31499a357553adcf5a8	not-for-merge	'refs/pull/5/head' of git://github.com/Polymer/polymer-expressions
+0d0ebc564848c79414887ae0e686a2bb2e1c4251	not-for-merge	'refs/pull/53/head' of git://github.com/Polymer/polymer-expressions
+8060cad541262b488f7b574f8f224e1d72d70aaa	not-for-merge	'refs/pull/53/merge' of git://github.com/Polymer/polymer-expressions
+f9c0547402a5291848261e99e69ede1e9633875b	not-for-merge	'refs/pull/56/head' of git://github.com/Polymer/polymer-expressions
+a6b912724a616c6b7bc87d14e131b59bb25cb765	not-for-merge	'refs/pull/56/merge' of git://github.com/Polymer/polymer-expressions
+748a2cd97133923147bf41be1817d5b67a8c82c6	not-for-merge	'refs/pull/58/head' of git://github.com/Polymer/polymer-expressions
+d89f8eefcdf18b0f84c3f6ede21f30fa15b48ecd	not-for-merge	'refs/pull/60/head' of git://github.com/Polymer/polymer-expressions
+b204b9ae1a3159e3e3e27aeb034af9b833d884f2	not-for-merge	'refs/pull/7/head' of git://github.com/Polymer/polymer-expressions
+a2e569587aad8e55c139e3ed7a407792b432cc8c	not-for-merge	tag '0.1.0' of git://github.com/Polymer/polymer-expressions
+b6eac9a4fa07acbef1fbdfbaa590258bcba9cc78	not-for-merge	tag '0.1.1' of git://github.com/Polymer/polymer-expressions
+6c568e3153a403a349c4a49f99654d9b9822ab94	not-for-merge	tag '0.1.2' of git://github.com/Polymer/polymer-expressions
+eb2f6adcd4d61306857c4954658f8f7896879777	not-for-merge	tag '0.1.3' of git://github.com/Polymer/polymer-expressions
+e09a7c03c46e05fcc592443cbee2fbff17bbde1e	not-for-merge	tag '0.1.4' of git://github.com/Polymer/polymer-expressions
+91587624820fd86db695d830d4f79f6ce42f3695	not-for-merge	tag '0.2.0' of git://github.com/Polymer/polymer-expressions
+4162776b8f550f48c3ad941316da0551701f1596	not-for-merge	tag '0.2.1' of git://github.com/Polymer/polymer-expressions
+f9d2d2dc89b1eb155f5f712ee00f7bf3f39bd4ca	not-for-merge	tag '0.2.2' of git://github.com/Polymer/polymer-expressions
+fc0306ac75ed4324914fcaabb655853cdb643e66	not-for-merge	tag '0.2.3' of git://github.com/Polymer/polymer-expressions
+46a6c29a174d551c41876dd113e8fce80e889dce	not-for-merge	tag '0.2.4' of git://github.com/Polymer/polymer-expressions
+7103d33044d19a1f1781d80dbba827b56781bbd1	not-for-merge	tag '0.3.0' of git://github.com/Polymer/polymer-expressions
+0b271b946e7e29c982c6b09aa192ce132bb8e7e9	not-for-merge	tag '0.3.1' of git://github.com/Polymer/polymer-expressions
+dfc5e7ac255c2f465d9ea4c3735b72cdc19891b4	not-for-merge	tag '0.3.2' of git://github.com/Polymer/polymer-expressions
+6898428de83141fd8a99e22bd7e36b4b6acbbd75	not-for-merge	tag '0.3.3' of git://github.com/Polymer/polymer-expressions
+20247f68f0bc401cbca852fb3cfbdf12ec95a135	not-for-merge	tag '0.3.4' of git://github.com/Polymer/polymer-expressions
+92f860ef9ff871e4b51fc5da38b2b76ba13ebdbe	not-for-merge	tag '0.3.5' of git://github.com/Polymer/polymer-expressions
+bf58b8f6f46c461d1f6085dc35779bd61969559a	not-for-merge	tag '0.3.6' of git://github.com/Polymer/polymer-expressions
+30afaf9fffe647bbe53e67f4ac12596acaca77ca	not-for-merge	tag '0.4.0' of git://github.com/Polymer/polymer-expressions
+64d6aea8ec8d9ce65767bfd7cdc2d2bc9b60af26	not-for-merge	tag '0.4.1' of git://github.com/Polymer/polymer-expressions
+9f1748ec7b34b445c29941920962ea3eac8e9b80	not-for-merge	tag '0.4.2' of git://github.com/Polymer/polymer-expressions
+421a9a7527794ea794f7c3a3d39019ae08c31407	not-for-merge	tag '0.5.0' of git://github.com/Polymer/polymer-expressions
+712b9b6a5194a0fa289d58afd693bd04469a3b60	not-for-merge	tag '0.5.1' of git://github.com/Polymer/polymer-expressions
+37358e5c91bcd39c5f3cd863598a4ddb86f407d2	not-for-merge	tag '0.5.2' of git://github.com/Polymer/polymer-expressions
+4b796ed3fb7bbb4990e05f71b143f6fdc6ec8945	not-for-merge	tag '0.5.3' of git://github.com/Polymer/polymer-expressions
+528362bf11121ad89d068588aa386b9b60e3182f	not-for-merge	tag '0.5.3-rc' of git://github.com/Polymer/polymer-expressions
+29776530d9bb9a1f561a7ab0d94d20b8d7817a6c	not-for-merge	tag '0.5.3-rc2' of git://github.com/Polymer/polymer-expressions
+bbe5e753aa4aec7653145d403abb5c4c152b565c	not-for-merge	tag '0.5.4' of git://github.com/Polymer/polymer-expressions
+6936e10fbbc359cad8c38b3f4f2ae1346d7e7e0b	not-for-merge	tag '0.5.5' of git://github.com/Polymer/polymer-expressions
+3e895b19eb86e46772b047f4d74255558cf3258c	not-for-merge	tag '0.5.5-rc1' of git://github.com/Polymer/polymer-expressions
+3741c09c245e29db1d697a8bf40014c59800c76f	not-for-merge	tag 'v0.0.20130816' of git://github.com/Polymer/polymer-expressions
+da3a26c4226f8fabc741ce379c0ed7d9b2ef66df	not-for-merge	tag 'v0.0.20130829' of git://github.com/Polymer/polymer-expressions
+1ec937cc23880bd1947bb441741ad2180a8ec739	not-for-merge	tag 'v0.0.20130905' of git://github.com/Polymer/polymer-expressions
+bf9723f74656040b09c5851599ed180459f640d5	not-for-merge	tag 'v0.0.20130912' of git://github.com/Polymer/polymer-expressions
+5159c4e877fe0fa46cd712a908fd8ff4b3fe926b	not-for-merge	tag 'v0.0.20131003' of git://github.com/Polymer/polymer-expressions
+75858bdb99e1796eb80c91a4a7e080de4734127b	not-for-merge	tag 'v0.0.20131010' of git://github.com/Polymer/polymer-expressions
+e208882eba15e65291ae1779295e48b24a6e2d9a	not-for-merge	tag 'v0.0.20131025' of git://github.com/Polymer/polymer-expressions
+b2f3581b25610495297790dc539aadcc3765cd13	not-for-merge	tag 'v0.0.20131107' of git://github.com/Polymer/polymer-expressions

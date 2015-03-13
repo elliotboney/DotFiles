@@ -21,6 +21,7 @@
       "react"
       "Tern"
       "deprecation-cop"
+      "linter-csslint"
     ]
     themes: [
       "spacegray-dark-ui"
@@ -45,9 +46,9 @@
     path: ""
     x: 0
     y: 23
-    tabs: "/Users/eboney/Downloads/devmd.md"
+    tabs: ""
     selectedTab: ""
-    width: 1219
+    width: 1440
     height: 824
     treeWidth: 200
   "linter-jsxhint":
@@ -71,3 +72,4 @@
     jsxTagStartPattern: "(?x)((^|=|return)\\s*<([^!/?](?!.+?(</.+?>))))"
     jsxComplexAttributePattern: "(?x)\\{ [^}\"']* $|\\( [^)\"']* $"
     decreaseIndentForNextLinePattern: "(?x) />\\s*(,|;)?\\s*$ | ^\\s*\\S+.*</[-_\\.A-Za-z0-9]+>$"
+  "autocomplete-plus": {}

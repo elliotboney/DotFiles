@@ -4,6 +4,7 @@ export ATOM_REPOS_HOME=~/Code/Atom
 # Link Homebrew casks in `/Applications` rather than `~/Applications`
 export HOMEBREW_CASK_OPTS="--appdir=/Applications";
 
+
 export ANDROID_HOME=~/Android/sdk
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
@@ -32,7 +33,7 @@ export LANG="en_US"
 export LC_ALL="en_US.UTF-8"
 
 # Make vim the default editor
-export EDITOR="/usr/local/bin/subl"
+export EDITOR="/usr/local/bin/subl -w"
 
 # Make some commands not show up in history
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"

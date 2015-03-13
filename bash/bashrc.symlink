@@ -81,18 +81,18 @@ unset EXPORT_FUNCTIONS
 unset BASHRC_DISPATCH_PID
 
 # Execute local stuff if it exists
-if [ -f ~/.bashrc.local ] ; then
-  source ~/.bashrc.local
+if [ -f $HOME/.bashrc.local ] ; then
+  source $HOME/.bashrc.local
 fi
 
 # Execute local stuff if it exists
-if [ -f ~/.dotfilelocation ];  then
-  source ~/.dotfilelocation
+if [ -f $HOME/.dotfilelocation ];  then
+  source $HOME/.dotfilelocation
 fi
 
 # Node Version Manager
-if [ -f "~/.nvm/nvm.sh" ]; then
-  source ~/.nvm/nvm.sh
+if [ -f "$HOME/.nvm/nvm.sh" ]; then
+  source $HOME/.nvm/nvm.sh
 fi
 
 if shell_is_osx; then

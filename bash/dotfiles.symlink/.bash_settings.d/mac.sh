@@ -10,9 +10,9 @@ if [[ "$LC_TERM_PROGRAM" == "iTerm.app" ]] ; then
        bindkey '^[[H' beginning-of-line
        bindkey '^[[F' end-of-line
 
-fi
+     fi
 
-return;
+ return;
 
 
 if shell_is_osx; then
@@ -28,8 +28,20 @@ if shell_is_osx; then
   # Enable subpixel font rendering on non-Apple LCDs
   defaults write NSGlobalDomain AppleFontSmoothing -int 2
 
+  # Enable tap to click (Trackpad) for this user and for the login screen
+  defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+  defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+  defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+
+  # Use current directory as default search scope in Finder
+  defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
+
+  # Disable auto-correct
+  defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+
   # Show all filename extensions in Finder
-  defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+  # defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
   # Disable the warning when changing a file extension
   defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
@@ -37,20 +49,17 @@ if shell_is_osx; then
   # Hide the Spotlight Menu Icon
   sudo chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
 
-# Disable disk image verification
-defaults write com.apple.frameworks.diskimages skip-verify -bool true
-defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true
-defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
+  # Disable disk image verification
+  defaults write com.apple.frameworks.diskimages skip-verify -bool true
+  defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true
+  defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
 
+  # Avoid creating .DS_Store files on network volumes
+  defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
+  # Disable the warning when changing a file extension
+  defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
-
-# Avoid creating .DS_Store files on network volumes
-defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
-
-# Disable the warning when changing a file extension
-defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
-
-# Disable the warning before emptying the Trash
-defaults write com.apple.finder WarnOnEmptyTrash -bool false
+  # Disable the warning before emptying the Trash
+  defaults write com.apple.finder WarnOnEmptyTrash -bool false
 fi

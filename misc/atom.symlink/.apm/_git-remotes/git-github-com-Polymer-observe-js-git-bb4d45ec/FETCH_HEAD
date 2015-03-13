@@ -1,0 +1,528 @@
+46626efffa968d6e1a657cdf80b76b12a77ed0e2	not-for-merge	branch 'array.observe' of git://github.com/Polymer/observe-js
+a7f639a64b211f8a35d4fe87b7cc8774757d232f	not-for-merge	branch 'array_observe' of git://github.com/Polymer/observe-js
+7b40df5e9759986b00ab139e09f9129eccc2b5a4	not-for-merge	branch 'bind' of git://github.com/Polymer/observe-js
+ae7b3d2c99c9e5dbe40036e9aec91854c30efe13	not-for-merge	branch 'gen2' of git://github.com/Polymer/observe-js
+3cf0621767815310f65015b6f6095dc6827e3ce4	not-for-merge	branch 'master' of git://github.com/Polymer/observe-js
+8c32ce2d526d0bda28059cc579b37278de8d42b5	not-for-merge	branch 'one-write-barrier' of git://github.com/Polymer/observe-js
+3e0ea0d076d72fe679c788596f0765ea2f4f0a3b	not-for-merge	branch 'polymer-dev-101' of git://github.com/Polymer/observe-js
+da7a14d23bcd3dffa063d8c720a925d8c84f9a8c	not-for-merge	branch 'promise-based-benchmark' of git://github.com/Polymer/observe-js
+693bc4d2f9ac6cbbef0025df3d6102c3eca12303	not-for-merge	branch 'sky' of git://github.com/Polymer/observe-js
+061f240589fda4d357a8e2ac23ebcf398915378b	not-for-merge	branch 'upstream_v0_5' of git://github.com/Polymer/observe-js
+e2a477baa0780416b8dda5f8486bfa4a2b66ded6	not-for-merge	branch 'v2' of git://github.com/Polymer/observe-js
+1286f62ef6998ead9db74bef071fb601fc590ba3	not-for-merge	branch 'v3' of git://github.com/Polymer/observe-js
+b531ed7014824140e3ae94b9c28d2f706264ad6c	not-for-merge	branch 'v4' of git://github.com/Polymer/observe-js
+26f8a664fb1b96ffc0f8486380852bff3b47897f	not-for-merge	'refs/pull/1/head' of git://github.com/Polymer/observe-js
+3b46b8ad8c7742a3e5a35d40fb1939b8e8dc2097	not-for-merge	'refs/pull/1/merge' of git://github.com/Polymer/observe-js
+28f2a3cfbbe0a5075c15eead101153a03d01c592	not-for-merge	'refs/pull/17/head' of git://github.com/Polymer/observe-js
+194aaa10bc162c40a13b85c5eb63434caf89a6bd	not-for-merge	'refs/pull/17/merge' of git://github.com/Polymer/observe-js
+07ea1e7fc59a004ab821ec609efb8af910635b79	not-for-merge	'refs/pull/19/head' of git://github.com/Polymer/observe-js
+b0eacb8b93a7d68def1a349aa51cde94d542176d	not-for-merge	'refs/pull/19/merge' of git://github.com/Polymer/observe-js
+d6c06f955a654ebb0bf945ef4797d3c9f7c80d05	not-for-merge	'refs/pull/2/head' of git://github.com/Polymer/observe-js
+4e17ee4a3231839ee6e544e78a6ae6ce3cafc087	not-for-merge	'refs/pull/2/merge' of git://github.com/Polymer/observe-js
+e543ab081ff93692b5bcd7c599122f85c8672ab1	not-for-merge	'refs/pull/22/head' of git://github.com/Polymer/observe-js
+b82e32dbba374653b73b14143112071582317872	not-for-merge	'refs/pull/22/merge' of git://github.com/Polymer/observe-js
+5c34a75bb0974de4552f00a45d440535ed1157e4	not-for-merge	'refs/pull/24/head' of git://github.com/Polymer/observe-js
+bf59584e4edb69ce9b0a8044636aa70934c2bcf0	not-for-merge	'refs/pull/24/merge' of git://github.com/Polymer/observe-js
+18308da020ea91d95160bb0de8c340b57bb954f3	not-for-merge	'refs/pull/26/head' of git://github.com/Polymer/observe-js
+a51af79dba6385acfffa283dc48393b16302ffd1	not-for-merge	'refs/pull/26/merge' of git://github.com/Polymer/observe-js
+693cb70b7be50ddd76c58777018e5bda320012ec	not-for-merge	'refs/pull/30/head' of git://github.com/Polymer/observe-js
+68a77a7d22bb35a26c8df78a032d7c20baeb9823	not-for-merge	'refs/pull/30/merge' of git://github.com/Polymer/observe-js
+03769c1f0c654fc392d050b3c3941f9b24bfdb1f	not-for-merge	'refs/pull/39/head' of git://github.com/Polymer/observe-js
+e88596bfcd10cb5367566d595eba321fbef5a321	not-for-merge	'refs/pull/4/head' of git://github.com/Polymer/observe-js
+aab892518f5e0f4bad754ed7f81fd6a428e8c5b0	not-for-merge	'refs/pull/4/merge' of git://github.com/Polymer/observe-js
+9ac422a456bcbaf5cf61b966d29c55088ff57e9e	not-for-merge	'refs/pull/43/head' of git://github.com/Polymer/observe-js
+485055783772637fe5ace2bbd2085f20e1d0441b	not-for-merge	'refs/pull/47/head' of git://github.com/Polymer/observe-js
+fcab1ba86d86ef50d0da42de474a32e9e8cf7ac9	not-for-merge	'refs/pull/47/merge' of git://github.com/Polymer/observe-js
+3103f667008f9f59101a853d76afff4652cfc3a0	not-for-merge	'refs/pull/48/head' of git://github.com/Polymer/observe-js
+b7acefda494723f4d50af6bd207bc846fdd47cff	not-for-merge	'refs/pull/51/head' of git://github.com/Polymer/observe-js
+5a97e05416ee18484a72db6aabf6a0011976312f	not-for-merge	'refs/pull/54/head' of git://github.com/Polymer/observe-js
+9f12554e4deb059b678ced1494585faf159fcad4	not-for-merge	'refs/pull/62/head' of git://github.com/Polymer/observe-js
+588ecc6c8e526e83f20a5a245918c07f3ce85f0c	not-for-merge	'refs/pull/63/head' of git://github.com/Polymer/observe-js
+ffdfb18c783acf98b721907d6e73ce43a92b163b	not-for-merge	'refs/pull/67/head' of git://github.com/Polymer/observe-js
+50d3df543642c0c17522317ebc8bb8e7ef126904	not-for-merge	'refs/pull/71/head' of git://github.com/Polymer/observe-js
+dae793d3c6934973a582a7f39a50b36cbd1fd574	not-for-merge	'refs/pull/73/head' of git://github.com/Polymer/observe-js
+3e0ea0d076d72fe679c788596f0765ea2f4f0a3b	not-for-merge	'refs/pull/74/head' of git://github.com/Polymer/observe-js
+76b929d3a1d656969e8c7ba40971758a60fff0f0	not-for-merge	'refs/pull/74/merge' of git://github.com/Polymer/observe-js
+ac69758f594cf7a02c7a156716cfe94e44b33f95	not-for-merge	'refs/pull/75/head' of git://github.com/Polymer/observe-js
+73b3f3815366183a05c8ee1232f0c6f95f625be2	not-for-merge	'refs/pull/75/merge' of git://github.com/Polymer/observe-js
+a81dcaae79944d2132abe07e39a7426e7c45f9d8	not-for-merge	'refs/pull/82/head' of git://github.com/Polymer/observe-js
+8259a19ca52b23f90d59a8f5650052e315028308	not-for-merge	'refs/pull/83/head' of git://github.com/Polymer/observe-js
+327d6d6c699e4f9b61508a861bf7d0b68a2692c9	not-for-merge	'refs/pull/83/merge' of git://github.com/Polymer/observe-js
+fbe86b90cc8439fe6adfd6acbcbad61225b08535	not-for-merge	tag '0.1.0' of git://github.com/Polymer/observe-js
+3a0683eca8f7ff43973f291af5f87b974966b9a1	not-for-merge	tag '0.1.1' of git://github.com/Polymer/observe-js
+19c49064df5c6207ae56435793e95a434d22a0fb	not-for-merge	tag '0.1.2' of git://github.com/Polymer/observe-js
+380778ac4e4c4e642a1c0b41064ca0d124b61a58	not-for-merge	tag '0.1.3' of git://github.com/Polymer/observe-js
+bbd172a7d951a88cdb22d010ccb917446a51267b	not-for-merge	tag '0.1.4' of git://github.com/Polymer/observe-js
+5805cbe3e022c8a3027c0d8a61ee96dc222b733c	not-for-merge	tag '0.2.0' of git://github.com/Polymer/observe-js
+0eceb58a33c5cf099ab513c7f3b5e797afd648bd	not-for-merge	tag '0.2.1' of git://github.com/Polymer/observe-js
+4625f0f0cbf69003cf27e9685edbeb95781ebadd	not-for-merge	tag '0.2.2' of git://github.com/Polymer/observe-js
+71fb8605f454771a1a7ca1bd42e7b17e54648a0d	not-for-merge	tag '0.2.3' of git://github.com/Polymer/observe-js
+594229bdf8bc9b2979287593b06c97b36d19e544	not-for-merge	tag '0.2.4' of git://github.com/Polymer/observe-js
+626f8485e150ae4ac13cb005bc8cfdeabee0d809	not-for-merge	tag '0.3.0' of git://github.com/Polymer/observe-js
+58544a82330ed93b372dbf19627a9b9de407ecc9	not-for-merge	tag '0.3.1' of git://github.com/Polymer/observe-js
+03564abdc21b3fe9ebe59406b88bc376de698084	not-for-merge	tag '0.3.2' of git://github.com/Polymer/observe-js
+3ca8d40ec802aaf3c277bf6302c64e2c9f190f36	not-for-merge	tag '0.3.3' of git://github.com/Polymer/observe-js
+e212e7473962067c099a3d1859595c2f8baa36d7	not-for-merge	tag '0.3.4' of git://github.com/Polymer/observe-js
+a4311dac037633577989b00a292be8236e30f622	not-for-merge	tag '0.3.5' of git://github.com/Polymer/observe-js
+a4311dac037633577989b00a292be8236e30f622	not-for-merge	tag '0.3.6' of git://github.com/Polymer/observe-js
+20253f5f8a54d7977011de577e7651d4931e026e	not-for-merge	tag '0.4.0' of git://github.com/Polymer/observe-js
+6abe71307b12cf1d45e14d6aa0f82a71a1ed74e8	not-for-merge	tag '0.4.1' of git://github.com/Polymer/observe-js
+fa70c37099026225876f7c7a26bdee7c48129f1c	not-for-merge	tag '0.4.2' of git://github.com/Polymer/observe-js
+2ab8218d77a06e0b11c0a82084075ea729f5aacf	not-for-merge	tag '0.5.0' of git://github.com/Polymer/observe-js
+d530515b4afe7d0a6b61c06f1a6c64f07bcbbf57	not-for-merge	tag '0.5.1' of git://github.com/Polymer/observe-js
+542ba18eb3a2d73360b541c534f2b766bfc2d71d	not-for-merge	tag '0.5.2' of git://github.com/Polymer/observe-js
+7134fd9866e06b957d3f55c3867cc3df8f421c97	not-for-merge	tag '0.5.3' of git://github.com/Polymer/observe-js
+b37d076a2d953ef788f4ccb536cbdf3e2c10cd08	not-for-merge	tag '0.5.3-rc' of git://github.com/Polymer/observe-js
+2e870fc037db335b37221712e30c54d9d94e35d4	not-for-merge	tag '0.5.3-rc2' of git://github.com/Polymer/observe-js
+c1b11340abdea6796eb44ec2ffb9f3c5bd2e7d4a	not-for-merge	tag '0.5.4' of git://github.com/Polymer/observe-js
+4fcd67e1842d4e9be993d3fccaaae9793904e0d8	not-for-merge	tag '0.5.5' of git://github.com/Polymer/observe-js
+df3a6f7ac60cc488a6fb39822c87f8bb228ed23a	not-for-merge	tag '0.5.5-rc1' of git://github.com/Polymer/observe-js
+5c34a75bb0974de4552f00a45d440535ed1157e4	not-for-merge	tag 'v0.0.20130816' of git://github.com/Polymer/observe-js
+2dd6f8a3ce60c1eb3bb4f5ffa3dd88cb3a8ba659	not-for-merge	tag 'v0.0.20130829' of git://github.com/Polymer/observe-js
+4d3bf2327e497893a50fecf663b3472c9b9518b6	not-for-merge	tag 'v0.0.20130905' of git://github.com/Polymer/observe-js
+d678a066edd13d5fe43bebe986eebe9c33990bd7	not-for-merge	tag 'v0.0.20130912' of git://github.com/Polymer/observe-js
+16f8b7c97039b89b7ba233c721163e157ae571fb	not-for-merge	tag 'v0.0.20131003' of git://github.com/Polymer/observe-js
+5c09032be6209ff015542754b86a61d49f303734	not-for-merge	tag 'v0.0.20131010' of git://github.com/Polymer/observe-js
+32c9df28eed8193c3e82adbff84467ecf52605cc	not-for-merge	tag 'v0.0.20131025' of git://github.com/Polymer/observe-js
+2313af6b02a4149b84a3dfdec1ccfcc28a22a9c5	not-for-merge	tag 'v0.0.20131107' of git://github.com/Polymer/observe-js
+46626efffa968d6e1a657cdf80b76b12a77ed0e2	not-for-merge	branch 'array.observe' of git://github.com/Polymer/observe-js
+a7f639a64b211f8a35d4fe87b7cc8774757d232f	not-for-merge	branch 'array_observe' of git://github.com/Polymer/observe-js
+7b40df5e9759986b00ab139e09f9129eccc2b5a4	not-for-merge	branch 'bind' of git://github.com/Polymer/observe-js
+ae7b3d2c99c9e5dbe40036e9aec91854c30efe13	not-for-merge	branch 'gen2' of git://github.com/Polymer/observe-js
+3cf0621767815310f65015b6f6095dc6827e3ce4	not-for-merge	branch 'master' of git://github.com/Polymer/observe-js
+8c32ce2d526d0bda28059cc579b37278de8d42b5	not-for-merge	branch 'one-write-barrier' of git://github.com/Polymer/observe-js
+3e0ea0d076d72fe679c788596f0765ea2f4f0a3b	not-for-merge	branch 'polymer-dev-101' of git://github.com/Polymer/observe-js
+da7a14d23bcd3dffa063d8c720a925d8c84f9a8c	not-for-merge	branch 'promise-based-benchmark' of git://github.com/Polymer/observe-js
+693bc4d2f9ac6cbbef0025df3d6102c3eca12303	not-for-merge	branch 'sky' of git://github.com/Polymer/observe-js
+061f240589fda4d357a8e2ac23ebcf398915378b	not-for-merge	branch 'upstream_v0_5' of git://github.com/Polymer/observe-js
+e2a477baa0780416b8dda5f8486bfa4a2b66ded6	not-for-merge	branch 'v2' of git://github.com/Polymer/observe-js
+1286f62ef6998ead9db74bef071fb601fc590ba3	not-for-merge	branch 'v3' of git://github.com/Polymer/observe-js
+b531ed7014824140e3ae94b9c28d2f706264ad6c	not-for-merge	branch 'v4' of git://github.com/Polymer/observe-js
+26f8a664fb1b96ffc0f8486380852bff3b47897f	not-for-merge	'refs/pull/1/head' of git://github.com/Polymer/observe-js
+3b46b8ad8c7742a3e5a35d40fb1939b8e8dc2097	not-for-merge	'refs/pull/1/merge' of git://github.com/Polymer/observe-js
+28f2a3cfbbe0a5075c15eead101153a03d01c592	not-for-merge	'refs/pull/17/head' of git://github.com/Polymer/observe-js
+194aaa10bc162c40a13b85c5eb63434caf89a6bd	not-for-merge	'refs/pull/17/merge' of git://github.com/Polymer/observe-js
+07ea1e7fc59a004ab821ec609efb8af910635b79	not-for-merge	'refs/pull/19/head' of git://github.com/Polymer/observe-js
+b0eacb8b93a7d68def1a349aa51cde94d542176d	not-for-merge	'refs/pull/19/merge' of git://github.com/Polymer/observe-js
+d6c06f955a654ebb0bf945ef4797d3c9f7c80d05	not-for-merge	'refs/pull/2/head' of git://github.com/Polymer/observe-js
+4e17ee4a3231839ee6e544e78a6ae6ce3cafc087	not-for-merge	'refs/pull/2/merge' of git://github.com/Polymer/observe-js
+e543ab081ff93692b5bcd7c599122f85c8672ab1	not-for-merge	'refs/pull/22/head' of git://github.com/Polymer/observe-js
+b82e32dbba374653b73b14143112071582317872	not-for-merge	'refs/pull/22/merge' of git://github.com/Polymer/observe-js
+5c34a75bb0974de4552f00a45d440535ed1157e4	not-for-merge	'refs/pull/24/head' of git://github.com/Polymer/observe-js
+bf59584e4edb69ce9b0a8044636aa70934c2bcf0	not-for-merge	'refs/pull/24/merge' of git://github.com/Polymer/observe-js
+18308da020ea91d95160bb0de8c340b57bb954f3	not-for-merge	'refs/pull/26/head' of git://github.com/Polymer/observe-js
+a51af79dba6385acfffa283dc48393b16302ffd1	not-for-merge	'refs/pull/26/merge' of git://github.com/Polymer/observe-js
+693cb70b7be50ddd76c58777018e5bda320012ec	not-for-merge	'refs/pull/30/head' of git://github.com/Polymer/observe-js
+68a77a7d22bb35a26c8df78a032d7c20baeb9823	not-for-merge	'refs/pull/30/merge' of git://github.com/Polymer/observe-js
+03769c1f0c654fc392d050b3c3941f9b24bfdb1f	not-for-merge	'refs/pull/39/head' of git://github.com/Polymer/observe-js
+e88596bfcd10cb5367566d595eba321fbef5a321	not-for-merge	'refs/pull/4/head' of git://github.com/Polymer/observe-js
+aab892518f5e0f4bad754ed7f81fd6a428e8c5b0	not-for-merge	'refs/pull/4/merge' of git://github.com/Polymer/observe-js
+9ac422a456bcbaf5cf61b966d29c55088ff57e9e	not-for-merge	'refs/pull/43/head' of git://github.com/Polymer/observe-js
+485055783772637fe5ace2bbd2085f20e1d0441b	not-for-merge	'refs/pull/47/head' of git://github.com/Polymer/observe-js
+fcab1ba86d86ef50d0da42de474a32e9e8cf7ac9	not-for-merge	'refs/pull/47/merge' of git://github.com/Polymer/observe-js
+3103f667008f9f59101a853d76afff4652cfc3a0	not-for-merge	'refs/pull/48/head' of git://github.com/Polymer/observe-js
+b7acefda494723f4d50af6bd207bc846fdd47cff	not-for-merge	'refs/pull/51/head' of git://github.com/Polymer/observe-js
+5a97e05416ee18484a72db6aabf6a0011976312f	not-for-merge	'refs/pull/54/head' of git://github.com/Polymer/observe-js
+9f12554e4deb059b678ced1494585faf159fcad4	not-for-merge	'refs/pull/62/head' of git://github.com/Polymer/observe-js
+588ecc6c8e526e83f20a5a245918c07f3ce85f0c	not-for-merge	'refs/pull/63/head' of git://github.com/Polymer/observe-js
+ffdfb18c783acf98b721907d6e73ce43a92b163b	not-for-merge	'refs/pull/67/head' of git://github.com/Polymer/observe-js
+50d3df543642c0c17522317ebc8bb8e7ef126904	not-for-merge	'refs/pull/71/head' of git://github.com/Polymer/observe-js
+dae793d3c6934973a582a7f39a50b36cbd1fd574	not-for-merge	'refs/pull/73/head' of git://github.com/Polymer/observe-js
+3e0ea0d076d72fe679c788596f0765ea2f4f0a3b	not-for-merge	'refs/pull/74/head' of git://github.com/Polymer/observe-js
+76b929d3a1d656969e8c7ba40971758a60fff0f0	not-for-merge	'refs/pull/74/merge' of git://github.com/Polymer/observe-js
+ac69758f594cf7a02c7a156716cfe94e44b33f95	not-for-merge	'refs/pull/75/head' of git://github.com/Polymer/observe-js
+73b3f3815366183a05c8ee1232f0c6f95f625be2	not-for-merge	'refs/pull/75/merge' of git://github.com/Polymer/observe-js
+a81dcaae79944d2132abe07e39a7426e7c45f9d8	not-for-merge	'refs/pull/82/head' of git://github.com/Polymer/observe-js
+8259a19ca52b23f90d59a8f5650052e315028308	not-for-merge	'refs/pull/83/head' of git://github.com/Polymer/observe-js
+327d6d6c699e4f9b61508a861bf7d0b68a2692c9	not-for-merge	'refs/pull/83/merge' of git://github.com/Polymer/observe-js
+fbe86b90cc8439fe6adfd6acbcbad61225b08535	not-for-merge	tag '0.1.0' of git://github.com/Polymer/observe-js
+3a0683eca8f7ff43973f291af5f87b974966b9a1	not-for-merge	tag '0.1.1' of git://github.com/Polymer/observe-js
+19c49064df5c6207ae56435793e95a434d22a0fb	not-for-merge	tag '0.1.2' of git://github.com/Polymer/observe-js
+380778ac4e4c4e642a1c0b41064ca0d124b61a58	not-for-merge	tag '0.1.3' of git://github.com/Polymer/observe-js
+bbd172a7d951a88cdb22d010ccb917446a51267b	not-for-merge	tag '0.1.4' of git://github.com/Polymer/observe-js
+5805cbe3e022c8a3027c0d8a61ee96dc222b733c	not-for-merge	tag '0.2.0' of git://github.com/Polymer/observe-js
+0eceb58a33c5cf099ab513c7f3b5e797afd648bd	not-for-merge	tag '0.2.1' of git://github.com/Polymer/observe-js
+4625f0f0cbf69003cf27e9685edbeb95781ebadd	not-for-merge	tag '0.2.2' of git://github.com/Polymer/observe-js
+71fb8605f454771a1a7ca1bd42e7b17e54648a0d	not-for-merge	tag '0.2.3' of git://github.com/Polymer/observe-js
+594229bdf8bc9b2979287593b06c97b36d19e544	not-for-merge	tag '0.2.4' of git://github.com/Polymer/observe-js
+626f8485e150ae4ac13cb005bc8cfdeabee0d809	not-for-merge	tag '0.3.0' of git://github.com/Polymer/observe-js
+58544a82330ed93b372dbf19627a9b9de407ecc9	not-for-merge	tag '0.3.1' of git://github.com/Polymer/observe-js
+03564abdc21b3fe9ebe59406b88bc376de698084	not-for-merge	tag '0.3.2' of git://github.com/Polymer/observe-js
+3ca8d40ec802aaf3c277bf6302c64e2c9f190f36	not-for-merge	tag '0.3.3' of git://github.com/Polymer/observe-js
+e212e7473962067c099a3d1859595c2f8baa36d7	not-for-merge	tag '0.3.4' of git://github.com/Polymer/observe-js
+a4311dac037633577989b00a292be8236e30f622	not-for-merge	tag '0.3.5' of git://github.com/Polymer/observe-js
+a4311dac037633577989b00a292be8236e30f622	not-for-merge	tag '0.3.6' of git://github.com/Polymer/observe-js
+20253f5f8a54d7977011de577e7651d4931e026e	not-for-merge	tag '0.4.0' of git://github.com/Polymer/observe-js
+6abe71307b12cf1d45e14d6aa0f82a71a1ed74e8	not-for-merge	tag '0.4.1' of git://github.com/Polymer/observe-js
+fa70c37099026225876f7c7a26bdee7c48129f1c	not-for-merge	tag '0.4.2' of git://github.com/Polymer/observe-js
+2ab8218d77a06e0b11c0a82084075ea729f5aacf	not-for-merge	tag '0.5.0' of git://github.com/Polymer/observe-js
+d530515b4afe7d0a6b61c06f1a6c64f07bcbbf57	not-for-merge	tag '0.5.1' of git://github.com/Polymer/observe-js
+542ba18eb3a2d73360b541c534f2b766bfc2d71d	not-for-merge	tag '0.5.2' of git://github.com/Polymer/observe-js
+7134fd9866e06b957d3f55c3867cc3df8f421c97	not-for-merge	tag '0.5.3' of git://github.com/Polymer/observe-js
+b37d076a2d953ef788f4ccb536cbdf3e2c10cd08	not-for-merge	tag '0.5.3-rc' of git://github.com/Polymer/observe-js
+2e870fc037db335b37221712e30c54d9d94e35d4	not-for-merge	tag '0.5.3-rc2' of git://github.com/Polymer/observe-js
+c1b11340abdea6796eb44ec2ffb9f3c5bd2e7d4a	not-for-merge	tag '0.5.4' of git://github.com/Polymer/observe-js
+4fcd67e1842d4e9be993d3fccaaae9793904e0d8	not-for-merge	tag '0.5.5' of git://github.com/Polymer/observe-js
+df3a6f7ac60cc488a6fb39822c87f8bb228ed23a	not-for-merge	tag '0.5.5-rc1' of git://github.com/Polymer/observe-js
+5c34a75bb0974de4552f00a45d440535ed1157e4	not-for-merge	tag 'v0.0.20130816' of git://github.com/Polymer/observe-js
+2dd6f8a3ce60c1eb3bb4f5ffa3dd88cb3a8ba659	not-for-merge	tag 'v0.0.20130829' of git://github.com/Polymer/observe-js
+4d3bf2327e497893a50fecf663b3472c9b9518b6	not-for-merge	tag 'v0.0.20130905' of git://github.com/Polymer/observe-js
+d678a066edd13d5fe43bebe986eebe9c33990bd7	not-for-merge	tag 'v0.0.20130912' of git://github.com/Polymer/observe-js
+16f8b7c97039b89b7ba233c721163e157ae571fb	not-for-merge	tag 'v0.0.20131003' of git://github.com/Polymer/observe-js
+5c09032be6209ff015542754b86a61d49f303734	not-for-merge	tag 'v0.0.20131010' of git://github.com/Polymer/observe-js
+32c9df28eed8193c3e82adbff84467ecf52605cc	not-for-merge	tag 'v0.0.20131025' of git://github.com/Polymer/observe-js
+2313af6b02a4149b84a3dfdec1ccfcc28a22a9c5	not-for-merge	tag 'v0.0.20131107' of git://github.com/Polymer/observe-js
+46626efffa968d6e1a657cdf80b76b12a77ed0e2	not-for-merge	branch 'array.observe' of git://github.com/Polymer/observe-js
+a7f639a64b211f8a35d4fe87b7cc8774757d232f	not-for-merge	branch 'array_observe' of git://github.com/Polymer/observe-js
+7b40df5e9759986b00ab139e09f9129eccc2b5a4	not-for-merge	branch 'bind' of git://github.com/Polymer/observe-js
+ae7b3d2c99c9e5dbe40036e9aec91854c30efe13	not-for-merge	branch 'gen2' of git://github.com/Polymer/observe-js
+3cf0621767815310f65015b6f6095dc6827e3ce4	not-for-merge	branch 'master' of git://github.com/Polymer/observe-js
+8c32ce2d526d0bda28059cc579b37278de8d42b5	not-for-merge	branch 'one-write-barrier' of git://github.com/Polymer/observe-js
+3e0ea0d076d72fe679c788596f0765ea2f4f0a3b	not-for-merge	branch 'polymer-dev-101' of git://github.com/Polymer/observe-js
+da7a14d23bcd3dffa063d8c720a925d8c84f9a8c	not-for-merge	branch 'promise-based-benchmark' of git://github.com/Polymer/observe-js
+693bc4d2f9ac6cbbef0025df3d6102c3eca12303	not-for-merge	branch 'sky' of git://github.com/Polymer/observe-js
+061f240589fda4d357a8e2ac23ebcf398915378b	not-for-merge	branch 'upstream_v0_5' of git://github.com/Polymer/observe-js
+e2a477baa0780416b8dda5f8486bfa4a2b66ded6	not-for-merge	branch 'v2' of git://github.com/Polymer/observe-js
+1286f62ef6998ead9db74bef071fb601fc590ba3	not-for-merge	branch 'v3' of git://github.com/Polymer/observe-js
+b531ed7014824140e3ae94b9c28d2f706264ad6c	not-for-merge	branch 'v4' of git://github.com/Polymer/observe-js
+26f8a664fb1b96ffc0f8486380852bff3b47897f	not-for-merge	'refs/pull/1/head' of git://github.com/Polymer/observe-js
+3b46b8ad8c7742a3e5a35d40fb1939b8e8dc2097	not-for-merge	'refs/pull/1/merge' of git://github.com/Polymer/observe-js
+28f2a3cfbbe0a5075c15eead101153a03d01c592	not-for-merge	'refs/pull/17/head' of git://github.com/Polymer/observe-js
+194aaa10bc162c40a13b85c5eb63434caf89a6bd	not-for-merge	'refs/pull/17/merge' of git://github.com/Polymer/observe-js
+07ea1e7fc59a004ab821ec609efb8af910635b79	not-for-merge	'refs/pull/19/head' of git://github.com/Polymer/observe-js
+b0eacb8b93a7d68def1a349aa51cde94d542176d	not-for-merge	'refs/pull/19/merge' of git://github.com/Polymer/observe-js
+d6c06f955a654ebb0bf945ef4797d3c9f7c80d05	not-for-merge	'refs/pull/2/head' of git://github.com/Polymer/observe-js
+4e17ee4a3231839ee6e544e78a6ae6ce3cafc087	not-for-merge	'refs/pull/2/merge' of git://github.com/Polymer/observe-js
+e543ab081ff93692b5bcd7c599122f85c8672ab1	not-for-merge	'refs/pull/22/head' of git://github.com/Polymer/observe-js
+b82e32dbba374653b73b14143112071582317872	not-for-merge	'refs/pull/22/merge' of git://github.com/Polymer/observe-js
+5c34a75bb0974de4552f00a45d440535ed1157e4	not-for-merge	'refs/pull/24/head' of git://github.com/Polymer/observe-js
+bf59584e4edb69ce9b0a8044636aa70934c2bcf0	not-for-merge	'refs/pull/24/merge' of git://github.com/Polymer/observe-js
+18308da020ea91d95160bb0de8c340b57bb954f3	not-for-merge	'refs/pull/26/head' of git://github.com/Polymer/observe-js
+a51af79dba6385acfffa283dc48393b16302ffd1	not-for-merge	'refs/pull/26/merge' of git://github.com/Polymer/observe-js
+693cb70b7be50ddd76c58777018e5bda320012ec	not-for-merge	'refs/pull/30/head' of git://github.com/Polymer/observe-js
+68a77a7d22bb35a26c8df78a032d7c20baeb9823	not-for-merge	'refs/pull/30/merge' of git://github.com/Polymer/observe-js
+03769c1f0c654fc392d050b3c3941f9b24bfdb1f	not-for-merge	'refs/pull/39/head' of git://github.com/Polymer/observe-js
+e88596bfcd10cb5367566d595eba321fbef5a321	not-for-merge	'refs/pull/4/head' of git://github.com/Polymer/observe-js
+aab892518f5e0f4bad754ed7f81fd6a428e8c5b0	not-for-merge	'refs/pull/4/merge' of git://github.com/Polymer/observe-js
+9ac422a456bcbaf5cf61b966d29c55088ff57e9e	not-for-merge	'refs/pull/43/head' of git://github.com/Polymer/observe-js
+485055783772637fe5ace2bbd2085f20e1d0441b	not-for-merge	'refs/pull/47/head' of git://github.com/Polymer/observe-js
+fcab1ba86d86ef50d0da42de474a32e9e8cf7ac9	not-for-merge	'refs/pull/47/merge' of git://github.com/Polymer/observe-js
+3103f667008f9f59101a853d76afff4652cfc3a0	not-for-merge	'refs/pull/48/head' of git://github.com/Polymer/observe-js
+b7acefda494723f4d50af6bd207bc846fdd47cff	not-for-merge	'refs/pull/51/head' of git://github.com/Polymer/observe-js
+5a97e05416ee18484a72db6aabf6a0011976312f	not-for-merge	'refs/pull/54/head' of git://github.com/Polymer/observe-js
+9f12554e4deb059b678ced1494585faf159fcad4	not-for-merge	'refs/pull/62/head' of git://github.com/Polymer/observe-js
+588ecc6c8e526e83f20a5a245918c07f3ce85f0c	not-for-merge	'refs/pull/63/head' of git://github.com/Polymer/observe-js
+ffdfb18c783acf98b721907d6e73ce43a92b163b	not-for-merge	'refs/pull/67/head' of git://github.com/Polymer/observe-js
+50d3df543642c0c17522317ebc8bb8e7ef126904	not-for-merge	'refs/pull/71/head' of git://github.com/Polymer/observe-js
+dae793d3c6934973a582a7f39a50b36cbd1fd574	not-for-merge	'refs/pull/73/head' of git://github.com/Polymer/observe-js
+3e0ea0d076d72fe679c788596f0765ea2f4f0a3b	not-for-merge	'refs/pull/74/head' of git://github.com/Polymer/observe-js
+76b929d3a1d656969e8c7ba40971758a60fff0f0	not-for-merge	'refs/pull/74/merge' of git://github.com/Polymer/observe-js
+ac69758f594cf7a02c7a156716cfe94e44b33f95	not-for-merge	'refs/pull/75/head' of git://github.com/Polymer/observe-js
+73b3f3815366183a05c8ee1232f0c6f95f625be2	not-for-merge	'refs/pull/75/merge' of git://github.com/Polymer/observe-js
+a81dcaae79944d2132abe07e39a7426e7c45f9d8	not-for-merge	'refs/pull/82/head' of git://github.com/Polymer/observe-js
+8259a19ca52b23f90d59a8f5650052e315028308	not-for-merge	'refs/pull/83/head' of git://github.com/Polymer/observe-js
+327d6d6c699e4f9b61508a861bf7d0b68a2692c9	not-for-merge	'refs/pull/83/merge' of git://github.com/Polymer/observe-js
+fbe86b90cc8439fe6adfd6acbcbad61225b08535	not-for-merge	tag '0.1.0' of git://github.com/Polymer/observe-js
+3a0683eca8f7ff43973f291af5f87b974966b9a1	not-for-merge	tag '0.1.1' of git://github.com/Polymer/observe-js
+19c49064df5c6207ae56435793e95a434d22a0fb	not-for-merge	tag '0.1.2' of git://github.com/Polymer/observe-js
+380778ac4e4c4e642a1c0b41064ca0d124b61a58	not-for-merge	tag '0.1.3' of git://github.com/Polymer/observe-js
+bbd172a7d951a88cdb22d010ccb917446a51267b	not-for-merge	tag '0.1.4' of git://github.com/Polymer/observe-js
+5805cbe3e022c8a3027c0d8a61ee96dc222b733c	not-for-merge	tag '0.2.0' of git://github.com/Polymer/observe-js
+0eceb58a33c5cf099ab513c7f3b5e797afd648bd	not-for-merge	tag '0.2.1' of git://github.com/Polymer/observe-js
+4625f0f0cbf69003cf27e9685edbeb95781ebadd	not-for-merge	tag '0.2.2' of git://github.com/Polymer/observe-js
+71fb8605f454771a1a7ca1bd42e7b17e54648a0d	not-for-merge	tag '0.2.3' of git://github.com/Polymer/observe-js
+594229bdf8bc9b2979287593b06c97b36d19e544	not-for-merge	tag '0.2.4' of git://github.com/Polymer/observe-js
+626f8485e150ae4ac13cb005bc8cfdeabee0d809	not-for-merge	tag '0.3.0' of git://github.com/Polymer/observe-js
+58544a82330ed93b372dbf19627a9b9de407ecc9	not-for-merge	tag '0.3.1' of git://github.com/Polymer/observe-js
+03564abdc21b3fe9ebe59406b88bc376de698084	not-for-merge	tag '0.3.2' of git://github.com/Polymer/observe-js
+3ca8d40ec802aaf3c277bf6302c64e2c9f190f36	not-for-merge	tag '0.3.3' of git://github.com/Polymer/observe-js
+e212e7473962067c099a3d1859595c2f8baa36d7	not-for-merge	tag '0.3.4' of git://github.com/Polymer/observe-js
+a4311dac037633577989b00a292be8236e30f622	not-for-merge	tag '0.3.5' of git://github.com/Polymer/observe-js
+a4311dac037633577989b00a292be8236e30f622	not-for-merge	tag '0.3.6' of git://github.com/Polymer/observe-js
+20253f5f8a54d7977011de577e7651d4931e026e	not-for-merge	tag '0.4.0' of git://github.com/Polymer/observe-js
+6abe71307b12cf1d45e14d6aa0f82a71a1ed74e8	not-for-merge	tag '0.4.1' of git://github.com/Polymer/observe-js
+fa70c37099026225876f7c7a26bdee7c48129f1c	not-for-merge	tag '0.4.2' of git://github.com/Polymer/observe-js
+2ab8218d77a06e0b11c0a82084075ea729f5aacf	not-for-merge	tag '0.5.0' of git://github.com/Polymer/observe-js
+d530515b4afe7d0a6b61c06f1a6c64f07bcbbf57	not-for-merge	tag '0.5.1' of git://github.com/Polymer/observe-js
+542ba18eb3a2d73360b541c534f2b766bfc2d71d	not-for-merge	tag '0.5.2' of git://github.com/Polymer/observe-js
+7134fd9866e06b957d3f55c3867cc3df8f421c97	not-for-merge	tag '0.5.3' of git://github.com/Polymer/observe-js
+b37d076a2d953ef788f4ccb536cbdf3e2c10cd08	not-for-merge	tag '0.5.3-rc' of git://github.com/Polymer/observe-js
+2e870fc037db335b37221712e30c54d9d94e35d4	not-for-merge	tag '0.5.3-rc2' of git://github.com/Polymer/observe-js
+c1b11340abdea6796eb44ec2ffb9f3c5bd2e7d4a	not-for-merge	tag '0.5.4' of git://github.com/Polymer/observe-js
+4fcd67e1842d4e9be993d3fccaaae9793904e0d8	not-for-merge	tag '0.5.5' of git://github.com/Polymer/observe-js
+df3a6f7ac60cc488a6fb39822c87f8bb228ed23a	not-for-merge	tag '0.5.5-rc1' of git://github.com/Polymer/observe-js
+5c34a75bb0974de4552f00a45d440535ed1157e4	not-for-merge	tag 'v0.0.20130816' of git://github.com/Polymer/observe-js
+2dd6f8a3ce60c1eb3bb4f5ffa3dd88cb3a8ba659	not-for-merge	tag 'v0.0.20130829' of git://github.com/Polymer/observe-js
+4d3bf2327e497893a50fecf663b3472c9b9518b6	not-for-merge	tag 'v0.0.20130905' of git://github.com/Polymer/observe-js
+d678a066edd13d5fe43bebe986eebe9c33990bd7	not-for-merge	tag 'v0.0.20130912' of git://github.com/Polymer/observe-js
+16f8b7c97039b89b7ba233c721163e157ae571fb	not-for-merge	tag 'v0.0.20131003' of git://github.com/Polymer/observe-js
+5c09032be6209ff015542754b86a61d49f303734	not-for-merge	tag 'v0.0.20131010' of git://github.com/Polymer/observe-js
+32c9df28eed8193c3e82adbff84467ecf52605cc	not-for-merge	tag 'v0.0.20131025' of git://github.com/Polymer/observe-js
+2313af6b02a4149b84a3dfdec1ccfcc28a22a9c5	not-for-merge	tag 'v0.0.20131107' of git://github.com/Polymer/observe-js
+46626efffa968d6e1a657cdf80b76b12a77ed0e2	not-for-merge	branch 'array.observe' of git://github.com/Polymer/observe-js
+a7f639a64b211f8a35d4fe87b7cc8774757d232f	not-for-merge	branch 'array_observe' of git://github.com/Polymer/observe-js
+7b40df5e9759986b00ab139e09f9129eccc2b5a4	not-for-merge	branch 'bind' of git://github.com/Polymer/observe-js
+ae7b3d2c99c9e5dbe40036e9aec91854c30efe13	not-for-merge	branch 'gen2' of git://github.com/Polymer/observe-js
+3cf0621767815310f65015b6f6095dc6827e3ce4	not-for-merge	branch 'master' of git://github.com/Polymer/observe-js
+8c32ce2d526d0bda28059cc579b37278de8d42b5	not-for-merge	branch 'one-write-barrier' of git://github.com/Polymer/observe-js
+3e0ea0d076d72fe679c788596f0765ea2f4f0a3b	not-for-merge	branch 'polymer-dev-101' of git://github.com/Polymer/observe-js
+da7a14d23bcd3dffa063d8c720a925d8c84f9a8c	not-for-merge	branch 'promise-based-benchmark' of git://github.com/Polymer/observe-js
+693bc4d2f9ac6cbbef0025df3d6102c3eca12303	not-for-merge	branch 'sky' of git://github.com/Polymer/observe-js
+061f240589fda4d357a8e2ac23ebcf398915378b	not-for-merge	branch 'upstream_v0_5' of git://github.com/Polymer/observe-js
+e2a477baa0780416b8dda5f8486bfa4a2b66ded6	not-for-merge	branch 'v2' of git://github.com/Polymer/observe-js
+1286f62ef6998ead9db74bef071fb601fc590ba3	not-for-merge	branch 'v3' of git://github.com/Polymer/observe-js
+b531ed7014824140e3ae94b9c28d2f706264ad6c	not-for-merge	branch 'v4' of git://github.com/Polymer/observe-js
+26f8a664fb1b96ffc0f8486380852bff3b47897f	not-for-merge	'refs/pull/1/head' of git://github.com/Polymer/observe-js
+3b46b8ad8c7742a3e5a35d40fb1939b8e8dc2097	not-for-merge	'refs/pull/1/merge' of git://github.com/Polymer/observe-js
+28f2a3cfbbe0a5075c15eead101153a03d01c592	not-for-merge	'refs/pull/17/head' of git://github.com/Polymer/observe-js
+194aaa10bc162c40a13b85c5eb63434caf89a6bd	not-for-merge	'refs/pull/17/merge' of git://github.com/Polymer/observe-js
+07ea1e7fc59a004ab821ec609efb8af910635b79	not-for-merge	'refs/pull/19/head' of git://github.com/Polymer/observe-js
+b0eacb8b93a7d68def1a349aa51cde94d542176d	not-for-merge	'refs/pull/19/merge' of git://github.com/Polymer/observe-js
+d6c06f955a654ebb0bf945ef4797d3c9f7c80d05	not-for-merge	'refs/pull/2/head' of git://github.com/Polymer/observe-js
+4e17ee4a3231839ee6e544e78a6ae6ce3cafc087	not-for-merge	'refs/pull/2/merge' of git://github.com/Polymer/observe-js
+e543ab081ff93692b5bcd7c599122f85c8672ab1	not-for-merge	'refs/pull/22/head' of git://github.com/Polymer/observe-js
+b82e32dbba374653b73b14143112071582317872	not-for-merge	'refs/pull/22/merge' of git://github.com/Polymer/observe-js
+5c34a75bb0974de4552f00a45d440535ed1157e4	not-for-merge	'refs/pull/24/head' of git://github.com/Polymer/observe-js
+bf59584e4edb69ce9b0a8044636aa70934c2bcf0	not-for-merge	'refs/pull/24/merge' of git://github.com/Polymer/observe-js
+18308da020ea91d95160bb0de8c340b57bb954f3	not-for-merge	'refs/pull/26/head' of git://github.com/Polymer/observe-js
+a51af79dba6385acfffa283dc48393b16302ffd1	not-for-merge	'refs/pull/26/merge' of git://github.com/Polymer/observe-js
+693cb70b7be50ddd76c58777018e5bda320012ec	not-for-merge	'refs/pull/30/head' of git://github.com/Polymer/observe-js
+68a77a7d22bb35a26c8df78a032d7c20baeb9823	not-for-merge	'refs/pull/30/merge' of git://github.com/Polymer/observe-js
+03769c1f0c654fc392d050b3c3941f9b24bfdb1f	not-for-merge	'refs/pull/39/head' of git://github.com/Polymer/observe-js
+e88596bfcd10cb5367566d595eba321fbef5a321	not-for-merge	'refs/pull/4/head' of git://github.com/Polymer/observe-js
+aab892518f5e0f4bad754ed7f81fd6a428e8c5b0	not-for-merge	'refs/pull/4/merge' of git://github.com/Polymer/observe-js
+9ac422a456bcbaf5cf61b966d29c55088ff57e9e	not-for-merge	'refs/pull/43/head' of git://github.com/Polymer/observe-js
+485055783772637fe5ace2bbd2085f20e1d0441b	not-for-merge	'refs/pull/47/head' of git://github.com/Polymer/observe-js
+fcab1ba86d86ef50d0da42de474a32e9e8cf7ac9	not-for-merge	'refs/pull/47/merge' of git://github.com/Polymer/observe-js
+3103f667008f9f59101a853d76afff4652cfc3a0	not-for-merge	'refs/pull/48/head' of git://github.com/Polymer/observe-js
+b7acefda494723f4d50af6bd207bc846fdd47cff	not-for-merge	'refs/pull/51/head' of git://github.com/Polymer/observe-js
+5a97e05416ee18484a72db6aabf6a0011976312f	not-for-merge	'refs/pull/54/head' of git://github.com/Polymer/observe-js
+9f12554e4deb059b678ced1494585faf159fcad4	not-for-merge	'refs/pull/62/head' of git://github.com/Polymer/observe-js
+588ecc6c8e526e83f20a5a245918c07f3ce85f0c	not-for-merge	'refs/pull/63/head' of git://github.com/Polymer/observe-js
+ffdfb18c783acf98b721907d6e73ce43a92b163b	not-for-merge	'refs/pull/67/head' of git://github.com/Polymer/observe-js
+50d3df543642c0c17522317ebc8bb8e7ef126904	not-for-merge	'refs/pull/71/head' of git://github.com/Polymer/observe-js
+dae793d3c6934973a582a7f39a50b36cbd1fd574	not-for-merge	'refs/pull/73/head' of git://github.com/Polymer/observe-js
+3e0ea0d076d72fe679c788596f0765ea2f4f0a3b	not-for-merge	'refs/pull/74/head' of git://github.com/Polymer/observe-js
+76b929d3a1d656969e8c7ba40971758a60fff0f0	not-for-merge	'refs/pull/74/merge' of git://github.com/Polymer/observe-js
+ac69758f594cf7a02c7a156716cfe94e44b33f95	not-for-merge	'refs/pull/75/head' of git://github.com/Polymer/observe-js
+73b3f3815366183a05c8ee1232f0c6f95f625be2	not-for-merge	'refs/pull/75/merge' of git://github.com/Polymer/observe-js
+a81dcaae79944d2132abe07e39a7426e7c45f9d8	not-for-merge	'refs/pull/82/head' of git://github.com/Polymer/observe-js
+8259a19ca52b23f90d59a8f5650052e315028308	not-for-merge	'refs/pull/83/head' of git://github.com/Polymer/observe-js
+327d6d6c699e4f9b61508a861bf7d0b68a2692c9	not-for-merge	'refs/pull/83/merge' of git://github.com/Polymer/observe-js
+7fb5c4bfc036c06345afc3490f3928b20abe2cd2	not-for-merge	'refs/pull/84/head' of git://github.com/Polymer/observe-js
+8d4120b57ed7b8db1f765254e64c3176b2ce94d4	not-for-merge	'refs/pull/84/merge' of git://github.com/Polymer/observe-js
+fbe86b90cc8439fe6adfd6acbcbad61225b08535	not-for-merge	tag '0.1.0' of git://github.com/Polymer/observe-js
+3a0683eca8f7ff43973f291af5f87b974966b9a1	not-for-merge	tag '0.1.1' of git://github.com/Polymer/observe-js
+19c49064df5c6207ae56435793e95a434d22a0fb	not-for-merge	tag '0.1.2' of git://github.com/Polymer/observe-js
+380778ac4e4c4e642a1c0b41064ca0d124b61a58	not-for-merge	tag '0.1.3' of git://github.com/Polymer/observe-js
+bbd172a7d951a88cdb22d010ccb917446a51267b	not-for-merge	tag '0.1.4' of git://github.com/Polymer/observe-js
+5805cbe3e022c8a3027c0d8a61ee96dc222b733c	not-for-merge	tag '0.2.0' of git://github.com/Polymer/observe-js
+0eceb58a33c5cf099ab513c7f3b5e797afd648bd	not-for-merge	tag '0.2.1' of git://github.com/Polymer/observe-js
+4625f0f0cbf69003cf27e9685edbeb95781ebadd	not-for-merge	tag '0.2.2' of git://github.com/Polymer/observe-js
+71fb8605f454771a1a7ca1bd42e7b17e54648a0d	not-for-merge	tag '0.2.3' of git://github.com/Polymer/observe-js
+594229bdf8bc9b2979287593b06c97b36d19e544	not-for-merge	tag '0.2.4' of git://github.com/Polymer/observe-js
+626f8485e150ae4ac13cb005bc8cfdeabee0d809	not-for-merge	tag '0.3.0' of git://github.com/Polymer/observe-js
+58544a82330ed93b372dbf19627a9b9de407ecc9	not-for-merge	tag '0.3.1' of git://github.com/Polymer/observe-js
+03564abdc21b3fe9ebe59406b88bc376de698084	not-for-merge	tag '0.3.2' of git://github.com/Polymer/observe-js
+3ca8d40ec802aaf3c277bf6302c64e2c9f190f36	not-for-merge	tag '0.3.3' of git://github.com/Polymer/observe-js
+e212e7473962067c099a3d1859595c2f8baa36d7	not-for-merge	tag '0.3.4' of git://github.com/Polymer/observe-js
+a4311dac037633577989b00a292be8236e30f622	not-for-merge	tag '0.3.5' of git://github.com/Polymer/observe-js
+a4311dac037633577989b00a292be8236e30f622	not-for-merge	tag '0.3.6' of git://github.com/Polymer/observe-js
+20253f5f8a54d7977011de577e7651d4931e026e	not-for-merge	tag '0.4.0' of git://github.com/Polymer/observe-js
+6abe71307b12cf1d45e14d6aa0f82a71a1ed74e8	not-for-merge	tag '0.4.1' of git://github.com/Polymer/observe-js
+fa70c37099026225876f7c7a26bdee7c48129f1c	not-for-merge	tag '0.4.2' of git://github.com/Polymer/observe-js
+2ab8218d77a06e0b11c0a82084075ea729f5aacf	not-for-merge	tag '0.5.0' of git://github.com/Polymer/observe-js
+d530515b4afe7d0a6b61c06f1a6c64f07bcbbf57	not-for-merge	tag '0.5.1' of git://github.com/Polymer/observe-js
+542ba18eb3a2d73360b541c534f2b766bfc2d71d	not-for-merge	tag '0.5.2' of git://github.com/Polymer/observe-js
+7134fd9866e06b957d3f55c3867cc3df8f421c97	not-for-merge	tag '0.5.3' of git://github.com/Polymer/observe-js
+b37d076a2d953ef788f4ccb536cbdf3e2c10cd08	not-for-merge	tag '0.5.3-rc' of git://github.com/Polymer/observe-js
+2e870fc037db335b37221712e30c54d9d94e35d4	not-for-merge	tag '0.5.3-rc2' of git://github.com/Polymer/observe-js
+c1b11340abdea6796eb44ec2ffb9f3c5bd2e7d4a	not-for-merge	tag '0.5.4' of git://github.com/Polymer/observe-js
+4fcd67e1842d4e9be993d3fccaaae9793904e0d8	not-for-merge	tag '0.5.5' of git://github.com/Polymer/observe-js
+df3a6f7ac60cc488a6fb39822c87f8bb228ed23a	not-for-merge	tag '0.5.5-rc1' of git://github.com/Polymer/observe-js
+5c34a75bb0974de4552f00a45d440535ed1157e4	not-for-merge	tag 'v0.0.20130816' of git://github.com/Polymer/observe-js
+2dd6f8a3ce60c1eb3bb4f5ffa3dd88cb3a8ba659	not-for-merge	tag 'v0.0.20130829' of git://github.com/Polymer/observe-js
+4d3bf2327e497893a50fecf663b3472c9b9518b6	not-for-merge	tag 'v0.0.20130905' of git://github.com/Polymer/observe-js
+d678a066edd13d5fe43bebe986eebe9c33990bd7	not-for-merge	tag 'v0.0.20130912' of git://github.com/Polymer/observe-js
+16f8b7c97039b89b7ba233c721163e157ae571fb	not-for-merge	tag 'v0.0.20131003' of git://github.com/Polymer/observe-js
+5c09032be6209ff015542754b86a61d49f303734	not-for-merge	tag 'v0.0.20131010' of git://github.com/Polymer/observe-js
+32c9df28eed8193c3e82adbff84467ecf52605cc	not-for-merge	tag 'v0.0.20131025' of git://github.com/Polymer/observe-js
+2313af6b02a4149b84a3dfdec1ccfcc28a22a9c5	not-for-merge	tag 'v0.0.20131107' of git://github.com/Polymer/observe-js
+46626efffa968d6e1a657cdf80b76b12a77ed0e2	not-for-merge	branch 'array.observe' of git://github.com/Polymer/observe-js
+a7f639a64b211f8a35d4fe87b7cc8774757d232f	not-for-merge	branch 'array_observe' of git://github.com/Polymer/observe-js
+7b40df5e9759986b00ab139e09f9129eccc2b5a4	not-for-merge	branch 'bind' of git://github.com/Polymer/observe-js
+ae7b3d2c99c9e5dbe40036e9aec91854c30efe13	not-for-merge	branch 'gen2' of git://github.com/Polymer/observe-js
+3cf0621767815310f65015b6f6095dc6827e3ce4	not-for-merge	branch 'master' of git://github.com/Polymer/observe-js
+8c32ce2d526d0bda28059cc579b37278de8d42b5	not-for-merge	branch 'one-write-barrier' of git://github.com/Polymer/observe-js
+3e0ea0d076d72fe679c788596f0765ea2f4f0a3b	not-for-merge	branch 'polymer-dev-101' of git://github.com/Polymer/observe-js
+da7a14d23bcd3dffa063d8c720a925d8c84f9a8c	not-for-merge	branch 'promise-based-benchmark' of git://github.com/Polymer/observe-js
+693bc4d2f9ac6cbbef0025df3d6102c3eca12303	not-for-merge	branch 'sky' of git://github.com/Polymer/observe-js
+061f240589fda4d357a8e2ac23ebcf398915378b	not-for-merge	branch 'upstream_v0_5' of git://github.com/Polymer/observe-js
+e2a477baa0780416b8dda5f8486bfa4a2b66ded6	not-for-merge	branch 'v2' of git://github.com/Polymer/observe-js
+1286f62ef6998ead9db74bef071fb601fc590ba3	not-for-merge	branch 'v3' of git://github.com/Polymer/observe-js
+b531ed7014824140e3ae94b9c28d2f706264ad6c	not-for-merge	branch 'v4' of git://github.com/Polymer/observe-js
+26f8a664fb1b96ffc0f8486380852bff3b47897f	not-for-merge	'refs/pull/1/head' of git://github.com/Polymer/observe-js
+3b46b8ad8c7742a3e5a35d40fb1939b8e8dc2097	not-for-merge	'refs/pull/1/merge' of git://github.com/Polymer/observe-js
+28f2a3cfbbe0a5075c15eead101153a03d01c592	not-for-merge	'refs/pull/17/head' of git://github.com/Polymer/observe-js
+194aaa10bc162c40a13b85c5eb63434caf89a6bd	not-for-merge	'refs/pull/17/merge' of git://github.com/Polymer/observe-js
+07ea1e7fc59a004ab821ec609efb8af910635b79	not-for-merge	'refs/pull/19/head' of git://github.com/Polymer/observe-js
+b0eacb8b93a7d68def1a349aa51cde94d542176d	not-for-merge	'refs/pull/19/merge' of git://github.com/Polymer/observe-js
+d6c06f955a654ebb0bf945ef4797d3c9f7c80d05	not-for-merge	'refs/pull/2/head' of git://github.com/Polymer/observe-js
+4e17ee4a3231839ee6e544e78a6ae6ce3cafc087	not-for-merge	'refs/pull/2/merge' of git://github.com/Polymer/observe-js
+e543ab081ff93692b5bcd7c599122f85c8672ab1	not-for-merge	'refs/pull/22/head' of git://github.com/Polymer/observe-js
+b82e32dbba374653b73b14143112071582317872	not-for-merge	'refs/pull/22/merge' of git://github.com/Polymer/observe-js
+5c34a75bb0974de4552f00a45d440535ed1157e4	not-for-merge	'refs/pull/24/head' of git://github.com/Polymer/observe-js
+bf59584e4edb69ce9b0a8044636aa70934c2bcf0	not-for-merge	'refs/pull/24/merge' of git://github.com/Polymer/observe-js
+18308da020ea91d95160bb0de8c340b57bb954f3	not-for-merge	'refs/pull/26/head' of git://github.com/Polymer/observe-js
+a51af79dba6385acfffa283dc48393b16302ffd1	not-for-merge	'refs/pull/26/merge' of git://github.com/Polymer/observe-js
+693cb70b7be50ddd76c58777018e5bda320012ec	not-for-merge	'refs/pull/30/head' of git://github.com/Polymer/observe-js
+68a77a7d22bb35a26c8df78a032d7c20baeb9823	not-for-merge	'refs/pull/30/merge' of git://github.com/Polymer/observe-js
+03769c1f0c654fc392d050b3c3941f9b24bfdb1f	not-for-merge	'refs/pull/39/head' of git://github.com/Polymer/observe-js
+e88596bfcd10cb5367566d595eba321fbef5a321	not-for-merge	'refs/pull/4/head' of git://github.com/Polymer/observe-js
+aab892518f5e0f4bad754ed7f81fd6a428e8c5b0	not-for-merge	'refs/pull/4/merge' of git://github.com/Polymer/observe-js
+9ac422a456bcbaf5cf61b966d29c55088ff57e9e	not-for-merge	'refs/pull/43/head' of git://github.com/Polymer/observe-js
+485055783772637fe5ace2bbd2085f20e1d0441b	not-for-merge	'refs/pull/47/head' of git://github.com/Polymer/observe-js
+fcab1ba86d86ef50d0da42de474a32e9e8cf7ac9	not-for-merge	'refs/pull/47/merge' of git://github.com/Polymer/observe-js
+3103f667008f9f59101a853d76afff4652cfc3a0	not-for-merge	'refs/pull/48/head' of git://github.com/Polymer/observe-js
+b7acefda494723f4d50af6bd207bc846fdd47cff	not-for-merge	'refs/pull/51/head' of git://github.com/Polymer/observe-js
+5a97e05416ee18484a72db6aabf6a0011976312f	not-for-merge	'refs/pull/54/head' of git://github.com/Polymer/observe-js
+9f12554e4deb059b678ced1494585faf159fcad4	not-for-merge	'refs/pull/62/head' of git://github.com/Polymer/observe-js
+588ecc6c8e526e83f20a5a245918c07f3ce85f0c	not-for-merge	'refs/pull/63/head' of git://github.com/Polymer/observe-js
+ffdfb18c783acf98b721907d6e73ce43a92b163b	not-for-merge	'refs/pull/67/head' of git://github.com/Polymer/observe-js
+50d3df543642c0c17522317ebc8bb8e7ef126904	not-for-merge	'refs/pull/71/head' of git://github.com/Polymer/observe-js
+dae793d3c6934973a582a7f39a50b36cbd1fd574	not-for-merge	'refs/pull/73/head' of git://github.com/Polymer/observe-js
+3e0ea0d076d72fe679c788596f0765ea2f4f0a3b	not-for-merge	'refs/pull/74/head' of git://github.com/Polymer/observe-js
+76b929d3a1d656969e8c7ba40971758a60fff0f0	not-for-merge	'refs/pull/74/merge' of git://github.com/Polymer/observe-js
+ac69758f594cf7a02c7a156716cfe94e44b33f95	not-for-merge	'refs/pull/75/head' of git://github.com/Polymer/observe-js
+73b3f3815366183a05c8ee1232f0c6f95f625be2	not-for-merge	'refs/pull/75/merge' of git://github.com/Polymer/observe-js
+a81dcaae79944d2132abe07e39a7426e7c45f9d8	not-for-merge	'refs/pull/82/head' of git://github.com/Polymer/observe-js
+8259a19ca52b23f90d59a8f5650052e315028308	not-for-merge	'refs/pull/83/head' of git://github.com/Polymer/observe-js
+327d6d6c699e4f9b61508a861bf7d0b68a2692c9	not-for-merge	'refs/pull/83/merge' of git://github.com/Polymer/observe-js
+7fb5c4bfc036c06345afc3490f3928b20abe2cd2	not-for-merge	'refs/pull/84/head' of git://github.com/Polymer/observe-js
+8d4120b57ed7b8db1f765254e64c3176b2ce94d4	not-for-merge	'refs/pull/84/merge' of git://github.com/Polymer/observe-js
+fbe86b90cc8439fe6adfd6acbcbad61225b08535	not-for-merge	tag '0.1.0' of git://github.com/Polymer/observe-js
+3a0683eca8f7ff43973f291af5f87b974966b9a1	not-for-merge	tag '0.1.1' of git://github.com/Polymer/observe-js
+19c49064df5c6207ae56435793e95a434d22a0fb	not-for-merge	tag '0.1.2' of git://github.com/Polymer/observe-js
+380778ac4e4c4e642a1c0b41064ca0d124b61a58	not-for-merge	tag '0.1.3' of git://github.com/Polymer/observe-js
+bbd172a7d951a88cdb22d010ccb917446a51267b	not-for-merge	tag '0.1.4' of git://github.com/Polymer/observe-js
+5805cbe3e022c8a3027c0d8a61ee96dc222b733c	not-for-merge	tag '0.2.0' of git://github.com/Polymer/observe-js
+0eceb58a33c5cf099ab513c7f3b5e797afd648bd	not-for-merge	tag '0.2.1' of git://github.com/Polymer/observe-js
+4625f0f0cbf69003cf27e9685edbeb95781ebadd	not-for-merge	tag '0.2.2' of git://github.com/Polymer/observe-js
+71fb8605f454771a1a7ca1bd42e7b17e54648a0d	not-for-merge	tag '0.2.3' of git://github.com/Polymer/observe-js
+594229bdf8bc9b2979287593b06c97b36d19e544	not-for-merge	tag '0.2.4' of git://github.com/Polymer/observe-js
+626f8485e150ae4ac13cb005bc8cfdeabee0d809	not-for-merge	tag '0.3.0' of git://github.com/Polymer/observe-js
+58544a82330ed93b372dbf19627a9b9de407ecc9	not-for-merge	tag '0.3.1' of git://github.com/Polymer/observe-js
+03564abdc21b3fe9ebe59406b88bc376de698084	not-for-merge	tag '0.3.2' of git://github.com/Polymer/observe-js
+3ca8d40ec802aaf3c277bf6302c64e2c9f190f36	not-for-merge	tag '0.3.3' of git://github.com/Polymer/observe-js
+e212e7473962067c099a3d1859595c2f8baa36d7	not-for-merge	tag '0.3.4' of git://github.com/Polymer/observe-js
+a4311dac037633577989b00a292be8236e30f622	not-for-merge	tag '0.3.5' of git://github.com/Polymer/observe-js
+a4311dac037633577989b00a292be8236e30f622	not-for-merge	tag '0.3.6' of git://github.com/Polymer/observe-js
+20253f5f8a54d7977011de577e7651d4931e026e	not-for-merge	tag '0.4.0' of git://github.com/Polymer/observe-js
+6abe71307b12cf1d45e14d6aa0f82a71a1ed74e8	not-for-merge	tag '0.4.1' of git://github.com/Polymer/observe-js
+fa70c37099026225876f7c7a26bdee7c48129f1c	not-for-merge	tag '0.4.2' of git://github.com/Polymer/observe-js
+2ab8218d77a06e0b11c0a82084075ea729f5aacf	not-for-merge	tag '0.5.0' of git://github.com/Polymer/observe-js
+d530515b4afe7d0a6b61c06f1a6c64f07bcbbf57	not-for-merge	tag '0.5.1' of git://github.com/Polymer/observe-js
+542ba18eb3a2d73360b541c534f2b766bfc2d71d	not-for-merge	tag '0.5.2' of git://github.com/Polymer/observe-js
+7134fd9866e06b957d3f55c3867cc3df8f421c97	not-for-merge	tag '0.5.3' of git://github.com/Polymer/observe-js
+b37d076a2d953ef788f4ccb536cbdf3e2c10cd08	not-for-merge	tag '0.5.3-rc' of git://github.com/Polymer/observe-js
+2e870fc037db335b37221712e30c54d9d94e35d4	not-for-merge	tag '0.5.3-rc2' of git://github.com/Polymer/observe-js
+c1b11340abdea6796eb44ec2ffb9f3c5bd2e7d4a	not-for-merge	tag '0.5.4' of git://github.com/Polymer/observe-js
+4fcd67e1842d4e9be993d3fccaaae9793904e0d8	not-for-merge	tag '0.5.5' of git://github.com/Polymer/observe-js
+df3a6f7ac60cc488a6fb39822c87f8bb228ed23a	not-for-merge	tag '0.5.5-rc1' of git://github.com/Polymer/observe-js
+5c34a75bb0974de4552f00a45d440535ed1157e4	not-for-merge	tag 'v0.0.20130816' of git://github.com/Polymer/observe-js
+2dd6f8a3ce60c1eb3bb4f5ffa3dd88cb3a8ba659	not-for-merge	tag 'v0.0.20130829' of git://github.com/Polymer/observe-js
+4d3bf2327e497893a50fecf663b3472c9b9518b6	not-for-merge	tag 'v0.0.20130905' of git://github.com/Polymer/observe-js
+d678a066edd13d5fe43bebe986eebe9c33990bd7	not-for-merge	tag 'v0.0.20130912' of git://github.com/Polymer/observe-js
+16f8b7c97039b89b7ba233c721163e157ae571fb	not-for-merge	tag 'v0.0.20131003' of git://github.com/Polymer/observe-js
+5c09032be6209ff015542754b86a61d49f303734	not-for-merge	tag 'v0.0.20131010' of git://github.com/Polymer/observe-js
+32c9df28eed8193c3e82adbff84467ecf52605cc	not-for-merge	tag 'v0.0.20131025' of git://github.com/Polymer/observe-js
+2313af6b02a4149b84a3dfdec1ccfcc28a22a9c5	not-for-merge	tag 'v0.0.20131107' of git://github.com/Polymer/observe-js
+46626efffa968d6e1a657cdf80b76b12a77ed0e2	not-for-merge	branch 'array.observe' of git://github.com/Polymer/observe-js
+a7f639a64b211f8a35d4fe87b7cc8774757d232f	not-for-merge	branch 'array_observe' of git://github.com/Polymer/observe-js
+7b40df5e9759986b00ab139e09f9129eccc2b5a4	not-for-merge	branch 'bind' of git://github.com/Polymer/observe-js
+ae7b3d2c99c9e5dbe40036e9aec91854c30efe13	not-for-merge	branch 'gen2' of git://github.com/Polymer/observe-js
+3cf0621767815310f65015b6f6095dc6827e3ce4	not-for-merge	branch 'master' of git://github.com/Polymer/observe-js
+8c32ce2d526d0bda28059cc579b37278de8d42b5	not-for-merge	branch 'one-write-barrier' of git://github.com/Polymer/observe-js
+3e0ea0d076d72fe679c788596f0765ea2f4f0a3b	not-for-merge	branch 'polymer-dev-101' of git://github.com/Polymer/observe-js
+da7a14d23bcd3dffa063d8c720a925d8c84f9a8c	not-for-merge	branch 'promise-based-benchmark' of git://github.com/Polymer/observe-js
+693bc4d2f9ac6cbbef0025df3d6102c3eca12303	not-for-merge	branch 'sky' of git://github.com/Polymer/observe-js
+061f240589fda4d357a8e2ac23ebcf398915378b	not-for-merge	branch 'upstream_v0_5' of git://github.com/Polymer/observe-js
+e2a477baa0780416b8dda5f8486bfa4a2b66ded6	not-for-merge	branch 'v2' of git://github.com/Polymer/observe-js
+1286f62ef6998ead9db74bef071fb601fc590ba3	not-for-merge	branch 'v3' of git://github.com/Polymer/observe-js
+b531ed7014824140e3ae94b9c28d2f706264ad6c	not-for-merge	branch 'v4' of git://github.com/Polymer/observe-js
+26f8a664fb1b96ffc0f8486380852bff3b47897f	not-for-merge	'refs/pull/1/head' of git://github.com/Polymer/observe-js
+3b46b8ad8c7742a3e5a35d40fb1939b8e8dc2097	not-for-merge	'refs/pull/1/merge' of git://github.com/Polymer/observe-js
+28f2a3cfbbe0a5075c15eead101153a03d01c592	not-for-merge	'refs/pull/17/head' of git://github.com/Polymer/observe-js
+194aaa10bc162c40a13b85c5eb63434caf89a6bd	not-for-merge	'refs/pull/17/merge' of git://github.com/Polymer/observe-js
+07ea1e7fc59a004ab821ec609efb8af910635b79	not-for-merge	'refs/pull/19/head' of git://github.com/Polymer/observe-js
+b0eacb8b93a7d68def1a349aa51cde94d542176d	not-for-merge	'refs/pull/19/merge' of git://github.com/Polymer/observe-js
+d6c06f955a654ebb0bf945ef4797d3c9f7c80d05	not-for-merge	'refs/pull/2/head' of git://github.com/Polymer/observe-js
+4e17ee4a3231839ee6e544e78a6ae6ce3cafc087	not-for-merge	'refs/pull/2/merge' of git://github.com/Polymer/observe-js
+e543ab081ff93692b5bcd7c599122f85c8672ab1	not-for-merge	'refs/pull/22/head' of git://github.com/Polymer/observe-js
+b82e32dbba374653b73b14143112071582317872	not-for-merge	'refs/pull/22/merge' of git://github.com/Polymer/observe-js
+5c34a75bb0974de4552f00a45d440535ed1157e4	not-for-merge	'refs/pull/24/head' of git://github.com/Polymer/observe-js
+bf59584e4edb69ce9b0a8044636aa70934c2bcf0	not-for-merge	'refs/pull/24/merge' of git://github.com/Polymer/observe-js
+18308da020ea91d95160bb0de8c340b57bb954f3	not-for-merge	'refs/pull/26/head' of git://github.com/Polymer/observe-js
+a51af79dba6385acfffa283dc48393b16302ffd1	not-for-merge	'refs/pull/26/merge' of git://github.com/Polymer/observe-js
+693cb70b7be50ddd76c58777018e5bda320012ec	not-for-merge	'refs/pull/30/head' of git://github.com/Polymer/observe-js
+68a77a7d22bb35a26c8df78a032d7c20baeb9823	not-for-merge	'refs/pull/30/merge' of git://github.com/Polymer/observe-js
+03769c1f0c654fc392d050b3c3941f9b24bfdb1f	not-for-merge	'refs/pull/39/head' of git://github.com/Polymer/observe-js
+e88596bfcd10cb5367566d595eba321fbef5a321	not-for-merge	'refs/pull/4/head' of git://github.com/Polymer/observe-js
+aab892518f5e0f4bad754ed7f81fd6a428e8c5b0	not-for-merge	'refs/pull/4/merge' of git://github.com/Polymer/observe-js
+9ac422a456bcbaf5cf61b966d29c55088ff57e9e	not-for-merge	'refs/pull/43/head' of git://github.com/Polymer/observe-js
+485055783772637fe5ace2bbd2085f20e1d0441b	not-for-merge	'refs/pull/47/head' of git://github.com/Polymer/observe-js
+fcab1ba86d86ef50d0da42de474a32e9e8cf7ac9	not-for-merge	'refs/pull/47/merge' of git://github.com/Polymer/observe-js
+3103f667008f9f59101a853d76afff4652cfc3a0	not-for-merge	'refs/pull/48/head' of git://github.com/Polymer/observe-js
+b7acefda494723f4d50af6bd207bc846fdd47cff	not-for-merge	'refs/pull/51/head' of git://github.com/Polymer/observe-js
+5a97e05416ee18484a72db6aabf6a0011976312f	not-for-merge	'refs/pull/54/head' of git://github.com/Polymer/observe-js
+9f12554e4deb059b678ced1494585faf159fcad4	not-for-merge	'refs/pull/62/head' of git://github.com/Polymer/observe-js
+588ecc6c8e526e83f20a5a245918c07f3ce85f0c	not-for-merge	'refs/pull/63/head' of git://github.com/Polymer/observe-js
+ffdfb18c783acf98b721907d6e73ce43a92b163b	not-for-merge	'refs/pull/67/head' of git://github.com/Polymer/observe-js
+50d3df543642c0c17522317ebc8bb8e7ef126904	not-for-merge	'refs/pull/71/head' of git://github.com/Polymer/observe-js
+dae793d3c6934973a582a7f39a50b36cbd1fd574	not-for-merge	'refs/pull/73/head' of git://github.com/Polymer/observe-js
+3e0ea0d076d72fe679c788596f0765ea2f4f0a3b	not-for-merge	'refs/pull/74/head' of git://github.com/Polymer/observe-js
+76b929d3a1d656969e8c7ba40971758a60fff0f0	not-for-merge	'refs/pull/74/merge' of git://github.com/Polymer/observe-js
+ac69758f594cf7a02c7a156716cfe94e44b33f95	not-for-merge	'refs/pull/75/head' of git://github.com/Polymer/observe-js
+73b3f3815366183a05c8ee1232f0c6f95f625be2	not-for-merge	'refs/pull/75/merge' of git://github.com/Polymer/observe-js
+a81dcaae79944d2132abe07e39a7426e7c45f9d8	not-for-merge	'refs/pull/82/head' of git://github.com/Polymer/observe-js
+8259a19ca52b23f90d59a8f5650052e315028308	not-for-merge	'refs/pull/83/head' of git://github.com/Polymer/observe-js
+327d6d6c699e4f9b61508a861bf7d0b68a2692c9	not-for-merge	'refs/pull/83/merge' of git://github.com/Polymer/observe-js
+7fb5c4bfc036c06345afc3490f3928b20abe2cd2	not-for-merge	'refs/pull/84/head' of git://github.com/Polymer/observe-js
+8d4120b57ed7b8db1f765254e64c3176b2ce94d4	not-for-merge	'refs/pull/84/merge' of git://github.com/Polymer/observe-js
+fbe86b90cc8439fe6adfd6acbcbad61225b08535	not-for-merge	tag '0.1.0' of git://github.com/Polymer/observe-js
+3a0683eca8f7ff43973f291af5f87b974966b9a1	not-for-merge	tag '0.1.1' of git://github.com/Polymer/observe-js
+19c49064df5c6207ae56435793e95a434d22a0fb	not-for-merge	tag '0.1.2' of git://github.com/Polymer/observe-js
+380778ac4e4c4e642a1c0b41064ca0d124b61a58	not-for-merge	tag '0.1.3' of git://github.com/Polymer/observe-js
+bbd172a7d951a88cdb22d010ccb917446a51267b	not-for-merge	tag '0.1.4' of git://github.com/Polymer/observe-js
+5805cbe3e022c8a3027c0d8a61ee96dc222b733c	not-for-merge	tag '0.2.0' of git://github.com/Polymer/observe-js
+0eceb58a33c5cf099ab513c7f3b5e797afd648bd	not-for-merge	tag '0.2.1' of git://github.com/Polymer/observe-js
+4625f0f0cbf69003cf27e9685edbeb95781ebadd	not-for-merge	tag '0.2.2' of git://github.com/Polymer/observe-js
+71fb8605f454771a1a7ca1bd42e7b17e54648a0d	not-for-merge	tag '0.2.3' of git://github.com/Polymer/observe-js
+594229bdf8bc9b2979287593b06c97b36d19e544	not-for-merge	tag '0.2.4' of git://github.com/Polymer/observe-js
+626f8485e150ae4ac13cb005bc8cfdeabee0d809	not-for-merge	tag '0.3.0' of git://github.com/Polymer/observe-js
+58544a82330ed93b372dbf19627a9b9de407ecc9	not-for-merge	tag '0.3.1' of git://github.com/Polymer/observe-js
+03564abdc21b3fe9ebe59406b88bc376de698084	not-for-merge	tag '0.3.2' of git://github.com/Polymer/observe-js
+3ca8d40ec802aaf3c277bf6302c64e2c9f190f36	not-for-merge	tag '0.3.3' of git://github.com/Polymer/observe-js
+e212e7473962067c099a3d1859595c2f8baa36d7	not-for-merge	tag '0.3.4' of git://github.com/Polymer/observe-js
+a4311dac037633577989b00a292be8236e30f622	not-for-merge	tag '0.3.5' of git://github.com/Polymer/observe-js
+a4311dac037633577989b00a292be8236e30f622	not-for-merge	tag '0.3.6' of git://github.com/Polymer/observe-js
+20253f5f8a54d7977011de577e7651d4931e026e	not-for-merge	tag '0.4.0' of git://github.com/Polymer/observe-js
+6abe71307b12cf1d45e14d6aa0f82a71a1ed74e8	not-for-merge	tag '0.4.1' of git://github.com/Polymer/observe-js
+fa70c37099026225876f7c7a26bdee7c48129f1c	not-for-merge	tag '0.4.2' of git://github.com/Polymer/observe-js
+2ab8218d77a06e0b11c0a82084075ea729f5aacf	not-for-merge	tag '0.5.0' of git://github.com/Polymer/observe-js
+d530515b4afe7d0a6b61c06f1a6c64f07bcbbf57	not-for-merge	tag '0.5.1' of git://github.com/Polymer/observe-js
+542ba18eb3a2d73360b541c534f2b766bfc2d71d	not-for-merge	tag '0.5.2' of git://github.com/Polymer/observe-js
+7134fd9866e06b957d3f55c3867cc3df8f421c97	not-for-merge	tag '0.5.3' of git://github.com/Polymer/observe-js
+b37d076a2d953ef788f4ccb536cbdf3e2c10cd08	not-for-merge	tag '0.5.3-rc' of git://github.com/Polymer/observe-js
+2e870fc037db335b37221712e30c54d9d94e35d4	not-for-merge	tag '0.5.3-rc2' of git://github.com/Polymer/observe-js
+c1b11340abdea6796eb44ec2ffb9f3c5bd2e7d4a	not-for-merge	tag '0.5.4' of git://github.com/Polymer/observe-js
+4fcd67e1842d4e9be993d3fccaaae9793904e0d8	not-for-merge	tag '0.5.5' of git://github.com/Polymer/observe-js
+df3a6f7ac60cc488a6fb39822c87f8bb228ed23a	not-for-merge	tag '0.5.5-rc1' of git://github.com/Polymer/observe-js
+5c34a75bb0974de4552f00a45d440535ed1157e4	not-for-merge	tag 'v0.0.20130816' of git://github.com/Polymer/observe-js
+2dd6f8a3ce60c1eb3bb4f5ffa3dd88cb3a8ba659	not-for-merge	tag 'v0.0.20130829' of git://github.com/Polymer/observe-js
+4d3bf2327e497893a50fecf663b3472c9b9518b6	not-for-merge	tag 'v0.0.20130905' of git://github.com/Polymer/observe-js
+d678a066edd13d5fe43bebe986eebe9c33990bd7	not-for-merge	tag 'v0.0.20130912' of git://github.com/Polymer/observe-js
+16f8b7c97039b89b7ba233c721163e157ae571fb	not-for-merge	tag 'v0.0.20131003' of git://github.com/Polymer/observe-js
+5c09032be6209ff015542754b86a61d49f303734	not-for-merge	tag 'v0.0.20131010' of git://github.com/Polymer/observe-js
+32c9df28eed8193c3e82adbff84467ecf52605cc	not-for-merge	tag 'v0.0.20131025' of git://github.com/Polymer/observe-js
+2313af6b02a4149b84a3dfdec1ccfcc28a22a9c5	not-for-merge	tag 'v0.0.20131107' of git://github.com/Polymer/observe-js
