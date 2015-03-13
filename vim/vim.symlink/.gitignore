@@ -1,1 +1,8 @@
 backups
+!backups/.gitkeep
+
+swap
+!swap/.gitkeep
+
+undo
+!undo/.gitkeep
