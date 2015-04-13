@@ -71,6 +71,7 @@ set pastetoggle=<F10>
 vmap <C-c> y:call system("pbcopy", getreg("\""))<CR>
 nmap <C-v> :call setreg("\"",system("pbpaste"))<CR>py
 map <F7> mzgg=G`z<CR>
+map <F6> <Plug>HexManager
 " }
 " Control Key Bindings: {
 " When you press <leader>r you can search and replace the selected text

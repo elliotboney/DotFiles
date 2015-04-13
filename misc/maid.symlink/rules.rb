@@ -26,7 +26,7 @@ Maid.rules do
   #
   rule 'Move Cracked Apps' do
     puts "--------------------------------------------\n\033[32mMove Cracked Apps\033[0m"
-    dir(%w(~/Downloads/**/*CORE* ~/Downloads/**/*XFORCE* ~/Downloads/**/*keygen* ~/Downloads/**/*KEYGEN* ~/Downloads/**/*crack* ~/Downloads/**/*serial*)).each do |path|
+    dir(%w(~/Downloads/00 Completed/**/*CORE* ~/Downloads/00 Completed/**/*XFORCE* ~/Downloads/00 Completed/**/*keygen* ~/Downloads/00 Completed/**/*KEYGEN* ~/Downloads/00 Completed/**/*crack* ~/Downloads/00 Completed/**/*serial*)).each do |path|
       if !path.match(/\/01 Apps/)
         if File.directory?(path)
           # If we are a subdirectory of an app, move the app itself

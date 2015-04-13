@@ -32,7 +32,7 @@ UCMD='echo -n "\033]0;Updating Your Shiat\007"; '${UCMD}
 alias update=$UCMD
 
 # if shell_is_elliot; then
-alias createdocs='/usr/local/Cellar/php56/5.6.1/bin/phpdoc -d . -t docs --template clean'
+alias createdocs='phpdoc -d ./library/ZFDebug -t docs --template clean'
 # alias mountmainpc='sshfs eboney@mainpc:/ /Users/eboney/mainpc/ -ocache=no -onolocalcaches -ovolname=mainpc'
 # fi
 

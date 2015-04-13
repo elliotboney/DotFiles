@@ -15,7 +15,7 @@ Plugin 'gmarik/vundle'
 " }}}
 
 " Javascript And Coffee Script: {{{
-Plugin 'kchmck/vim-coffee-script'
+"Plugin 'kchmck/vim-coffee-script'
 Plugin 'helino/vim-json'
 "Plugin 'maksimr/vim-jsbeautify'
 Plugin 'einars/js-beautify'
@@ -45,6 +45,7 @@ Plugin 'kien/ctrlp.vim'
 
 " Other Language Stuff: {{{
 Plugin 'othree/html5.vim'
+Plugin 'vim-scripts/hexman.vim'
 " }}}
 
 " My Own Custom Shit:

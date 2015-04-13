@@ -1,9 +1,9 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
-ZSH_CUSTOM=$HOME/DotFiles/zshcustom
+ZSH_CUSTOM=$HOME/Git/DotFiles/zshcustom
 
 # Set name of the theme to load.
-ZSH_THEME="../../.elliot"
+# ZSH_THEME="../../.elliot"
 
 # Set to this to use case-sensitive completion
 CASE_SENSITIVE="false"
@@ -41,9 +41,5 @@ fi
 
 # sweet renaming shit
 autoload -U zmv
-
-
-
-
 
 export PATH="`rvm gemdir 2>/dev/null`/bin:$PATH" # Add RVM to PATH for scripting
