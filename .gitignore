@@ -16,19 +16,9 @@ ruby
 
 
 misc/atom.symlink/packages/*
-vim/vim.symlink/bundle/*
-vim/vim.symlink/backups/*
-!vim/vim.symlink/backups/.gitkeep
-
-vim/vim.symlink/swap
-!vim/vim.symlink/swap/.gitkeep
-
-vim/vim.symlink/undo
-!vim/vim.symlink/undo/.gitkeep
-
 
 private/*
-..bfg-report
+*bfg-report
 nuhabitat.sh
 # Created by https://www.gitignore.io
 

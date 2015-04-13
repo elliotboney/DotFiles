@@ -1,8 +1,8 @@
-backups
-!backups/.gitkeep
+backup/*
+!backup/.gitkeep
 
-swap
+swap/*
 !swap/.gitkeep
 
-undo
+undo/*
 !undo/.gitkeep
