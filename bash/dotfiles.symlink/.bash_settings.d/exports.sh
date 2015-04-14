@@ -36,8 +36,12 @@ export GREP_OPTIONS="--color=auto"
 export LANG="en_US"
 export LC_ALL="en_US.UTF-8"
 
-# Make vim the default editor
-export EDITOR="/usr/local/bin/subl -w"
+# Make sublime the default editor unless it's not avail
+if [ ! -x "$(which subl)" ]; then
+  export EDITOR="vim"
+else
+  export EDITOR="/usr/local/bin/subl -w"
+fi
 
 # Make some commands not show up in history
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
