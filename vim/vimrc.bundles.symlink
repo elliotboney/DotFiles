@@ -7,6 +7,17 @@
 set nocompatible
 filetype off
 
+" Based on http://erikzaadi.com/2012/03/19/auto-installing-vundle-from-your-vimrc/
+let need_to_install_plugins=0
+if empty(system("grep lazy_load ~/.vim/bundle/vundle/autoload/vundle.vim"))
+    echo "Installing Vundle..."
+    echo ""
+    silent !mkdir -p ~/.vim/bundle
+    silent !rm -rf ~/.vim/bundle/vundle
+    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+    let need_to_install_plugins=1
+endif
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -77,3 +88,12 @@ Plugin 'Align'
 call vundle#end()            " required
 filetype plugin indent on    " required
 syntax on
+
+
+if need_to_install_plugins == 1
+  echo "Installing plugins via Vundle. Please ignore warnings afterwards."
+  echo "This is a one-time operation that will take about a minute..."
+  silent! PluginInstall
+  echo "Done installing Vundle plugins!"
+  q
+endif
