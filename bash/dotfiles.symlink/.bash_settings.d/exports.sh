@@ -1,6 +1,8 @@
 # for use in my grunt stuff, etc
 export ENVIRONMENT="elliot"
 
+# for nvm
+export NVM_SYMLINK_CURRENT=true
 
 #export for Atom Editor
 export ATOM_REPOS_HOME=~/Code/Atom

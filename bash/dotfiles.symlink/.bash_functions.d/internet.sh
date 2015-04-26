@@ -1,3 +1,11 @@
+function s3put() {
+  if [ -z "${1}" ]; then
+    echo "Usage: \`s3put filename.txt\`"
+    return 1
+  fi
+  s3cmd put ${1} s3://elliotboney/${1}
+}
+
 function downloaddir() {
   wget -q -r -nd -l 3 --no-parent --reject-regex '\?' -R html,txt -b "$@"
 }

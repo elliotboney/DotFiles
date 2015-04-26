@@ -33,9 +33,24 @@ fi
 # Customize to your needs...
 fpath=(~/.zsh-completions $fpath)
 
-# source ~/.nvm/nvm.sh
+# awesome cd movements from zshkit
+setopt autocd autopushd pushdminus pushdsilent pushdtohome cdablevars
+DIRSTACKSIZE=5
+
+# Enable extended globbing
+setopt extendedglob
 
 # setopt menu_complete
+
+# handy keybindings
+bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
+
+# makes color constants available
+autoload -U colors
+colors
+
+# enable colored output from ls, etc
+export CLICOLOR=1
 
 # sweet renaming shit
 autoload -U zmv
