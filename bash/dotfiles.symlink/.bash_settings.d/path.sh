@@ -2,7 +2,7 @@
 # Path Section
 PATH=""
 if [ -e "/usr/local/Cellar/php56" ] || [ -d "/usr/local/Cellar/php56" ]; then
-   PATH=$PATH:"/usr/local/Cellar/php56/$(/bin/ls /usr/local/Cellar/php56)/bin"
+   PATH=$PATH:"/usr/local/Cellar/php56/$(/bin/ls /usr/local/Cellar/php56 | /usr/bin/awk 'NR==0; END{print}')/bin"
 fi
 # add all the paths we want to array
 paths=("$HOME/bin" "$HOME/.bin" "/usr/local/opt/coreutils/libexec/gnubin" "/usr/local/bin" "/usr/local/sbin"

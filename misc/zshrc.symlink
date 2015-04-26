@@ -30,6 +30,10 @@ if [ -f ~/.phpbrew/bashrc ]; then
     source ~/.phpbrew/bashrc
 fi
 
+if [ -f ~/.nvm/nvm.sh ]; then
+    source ~/.nvm/nvm.sh
+fi
+
 # Customize to your needs...
 fpath=(~/.zsh-completions $fpath)
 
