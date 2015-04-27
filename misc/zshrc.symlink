@@ -46,9 +46,6 @@ setopt extendedglob
 
 # setopt menu_complete
 
-# handy keybindings
-bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
-
 # makes color constants available
 autoload -U colors
 colors

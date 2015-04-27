@@ -15,11 +15,12 @@ function crx() {
 }
 
 function killallshit {
-  killall -m ".*$@.*"
-}
-
-function killallshittest {
-  killall -ms ".*$@.*"
+   if [[ -z "$1" ]]; then
+    # echo a help message if no port is specified
+    echo -e "\n\t${White}Useage: ${BCyan}killallshit ${LightGray}<programmatchpattern> ${NC}\n"
+  else
+    killall -m ".*$@.*"
+  fi
 }
 
 # Pretty print JSON

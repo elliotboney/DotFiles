@@ -29,6 +29,7 @@ fi
 
 # Navigation
 alias ..="cd .."
+alias ,,="cd .."
 alias ....="cd .. && cd .."
 
 # XXX My own mispellings

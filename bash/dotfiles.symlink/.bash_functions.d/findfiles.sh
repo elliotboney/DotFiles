@@ -1,4 +1,11 @@
-findinfiles() 
+# Functions
+#
+# (f)ind by (n)ame
+# usage: fn foo
+# to find all files containing 'foo' in the name
+function fn() { ls **/*$1* }
+
+findinfiles()
 {
     if [[ -z "$1" ]]; then
         echo -e "\n\t${BCyan} Useage: findinfiles <text to find>\n"
@@ -8,16 +15,16 @@ findinfiles()
 
 }
 
-findfiles() 
+findfiles()
 {
     if [[ -z "$1" ]]; then
         echo -e "\n\t${BCyan} Useage: ${White}findfiles ${Yellow}<${LightGray}text to find${Yellow}>\n"
     else
-        find . -iname "*$@*" -ls 
+        find . -iname "*$@*" -ls
     fi
 }
 
-findfilesexec() 
+findfilesexec()
 {
     if [[ -z "$1" ]]; then
         echo -e "\n\t${BCyan} Useage: ${White}findfilesexec ${Yellow}<${LightGray}text to find${Yellow}> ${Yellow}<${Red}command using '{}' as found file${Yellow}>\n"

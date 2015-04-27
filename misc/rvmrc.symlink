@@ -90,3 +90,4 @@ export rvm_install_on_use_flag=1
 #
 
 #
+rvm_autoupdate_flag=0

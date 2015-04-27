@@ -1,8 +1,4 @@
-# @author     Sebastian Tramp <mail@sebastian.tramp.name>
-# @license    http://opensource.org/licenses/gpl-license.php
-#
 # tab completion configuration
-#
 
 # add an autoload function path, if directory exists
 # http://www.zsh.org/mla/users/2002/msg00232.html
@@ -86,13 +82,8 @@ zstyle ':completion:*:ssh:*' group-order hosts-domain hosts-host users hosts-ipa
 zstyle ':completion::*:kill:*:*' command 'ps xf -U $USER -o pid,%cpu,cmd'
 zstyle ':completion::*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;32'
 
-# rm: advanced completion (e.g. bak files first)
-# zstyle ':completion::*:rm:*:*' file-patterns '*.o:object-files:object\ file *(~|.(old|bak|BAK)):backup-files:backup\ files *~*(~|.(o|old|bak|BAK)):all-files:all\ files'
-
 # vi: advanced completion (e.g. tex and rc files first)
 zstyle ':completion::*:s:*:*' file-patterns 'Makefile|*(rc|log)|*.(php|tex|bib|sql|zsh|ini|sh|vim|rb|sh|js|tpl|csv|rdf|txt|phtml|tex|py|n3):vi-files:vim\ likes\ these\ files *~(Makefile|*(rc|log)|*.(log|rc|php|tex|bib|sql|zsh|ini|sh|vim|rb|sh|js|tpl|csv|rdf|txt|phtml|tex|py|n3)):all-files:other\ files'
-
-# zstyle ':completion::*:lm:*:*' file-patterns '.*:all-files:other\ files'
 
 
 zstyle :compinstall filename '~/.zshrc'
@@ -139,71 +130,20 @@ compdef _brew brew
 
 _lm() {
 if (( CURRENT >= 2 )); then
-    compadd $(ls -1a --color=none | grep '^\.' | grep -v '@' | grep -v '/')
+    compadd $(/usr/local/bin/gls -A1F | grep "^\." | grep -v '@' | grep -v '/' | grep -v 'zcompdump' | grep -v '\.DS_Store' | grep -v '\.dotfilelocation' | grep -v '\.Xauthority' | grep -v '_history' | grep -v '\.local')
   fi
 }
 compdef _lm lm
 
 # zstyle ':completion:*:*:jp:*:*files' ignored-patterns '*.o'
-zstyle ':completion::*:jp:*:*' file-patterns '*.json'
+zstyle ':completion::*:pj:*:*' file-patterns '*.json'
 
 # Match uppercase from lowercase
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
-# vi: advanced completion (e.g. tex and rc files first)
+# sublimetext & vi advanced completion (e.g. tex and rc files first)
 zstyle ':completion::*:s:*:*' file-patterns 'Makefile|*(rc|log)|*.(php|tex|bib|sql|zsh|ini|sh|vim|rb|sh|js|tpl|csv|rdf|txt|phtml|tex|py|n3):vi-files:vim\ likes\ these\ files *~(Makefile|*(rc|log)|*.(log|rc|php|tex|bib|sql|zsh|ini|sh|vim|rb|sh|js|tpl|csv|rdf|txt|phtml|tex|py|n3)):all-files:other\ files'
-
-# _wp() {
-#  local -a commands
-#   commands=(
-#       'cache:Manage the object cache.'
-#       'cap:Manage user capabilities.'
-#       'cli:Get information about WP-CLI itself.'
-#       'comment:Manage comments.'
-#       'core:Download, install, update and otherwise manage WordPress proper.'
-#       'cron:Manage WP-Cron events and schedules.'
-#       'db:Perform basic database operations.'
-#       'developer:Developer Plugin commands for WP-CLI.'
-#       'eval:Execute arbitrary PHP code after loading WordPress.'
-#       'eval-file:Load and execute a PHP file after loading WordPress.'
-#       'export:Export content to a WXR file.'
-#       'help:Get help on a certain command.'
-#       'import:Import content from a WXR file.'
-#       'media:Manage attachments.'
-#       'menu:List, create, assign, and delete menus'
-#       'network:Unknown'
-#       'option:Manage options.'
-#       'plugin:Manage plugins.'
-#       'post:Manage posts.'
-#       'rewrite:Manage rewrite rules.'
-#       'role:Manage user roles.'
-#       'scaffold:Generate code for post types, taxonomies, etc.'
-#       'search-replace:Search/replace strings in the database.'
-#       'shell:Interactive PHP console.'
-#       'sidebar:Manage sidebars.'
-#       'site:Perform site-wide operations.'
-#       'super-admin:List, add, and remove super admins from a network.'
-#       'term:Manage terms.'
-#       'theme:Manage themes.'
-#       'transient:Manage transients.'
-#       'user:Manage users.'
-#       'widget:Manage sidebar widgets.'
-#   )
-
-#   if (( CURRENT == 2 )); then
-#     _describe -t commands 'commands' commands
-#   fi
-
-#   return 0
-# }
-# compdef _wp wp
-# # echo "test"
-# echo ${BASH_SOURCE:-$0}
-# autoload bashcompinit
-# bashcompinit
-# source DotFiles/bash/wp-completion.bash
-
+zstyle ':completion::*:vimx:*:*' file-patterns 'Makefile|*(rc|log)|*.(php|tex|bib|sql|zsh|ini|sh|vim|rb|sh|js|tpl|csv|rdf|txt|phtml|tex|py|n3):vi-files:vim\ likes\ these\ files *~(Makefile|*(rc|log)|*.(log|rc|php|tex|bib|sql|zsh|ini|sh|vim|rb|sh|js|tpl|csv|rdf|txt|phtml|tex|py|n3)):all-files:other\ files'
 
 
 autoload -Uz compinit && compinit -D
-

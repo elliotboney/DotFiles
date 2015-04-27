@@ -1,5 +1,4 @@
 # Shortcuts
-alias staging="s /var/www/wordpress.staging/"
 alias d="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"

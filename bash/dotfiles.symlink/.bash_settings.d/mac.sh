@@ -2,17 +2,17 @@
 
 # The host is using OSX terminal, as set in
 # 89-ssh-enhancements
-if [[ "$LC_TERM_PROGRAM" == "iTerm.app" ]] ; then
+if [[ "$LC_TERM_PROGRAM" == "iTerm.app" ]]; then
 
-       bindkey "\e\e[D" backward-word # alt + <-
-       bindkey "\e\e[C" forward-word # alt + ->
+bindkey "\e\e[D" backward-word # alt + <-
+bindkey "\e\e[C" forward-word # alt + ->
 
-       bindkey '^[[H' beginning-of-line
-       bindkey '^[[F' end-of-line
+bindkey '^[[H' beginning-of-line
+bindkey '^[[F' end-of-line
 
-     fi
+fi
 
- return;
+return;
 
 
 if shell_is_osx; then
@@ -62,4 +62,13 @@ if shell_is_osx; then
 
   # Disable the warning before emptying the Trash
   defaults write com.apple.finder WarnOnEmptyTrash -bool false
+
+  ###############################################################################
+  # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
+  ###############################################################################
+
+  # Trackpad: enable tap to click for this user and for the login screen
+  defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+  defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+  defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 fi

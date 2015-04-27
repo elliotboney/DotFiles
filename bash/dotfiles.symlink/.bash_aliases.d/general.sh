@@ -1,3 +1,12 @@
+alias fuck='eval $(thefuck $(fc -ln -1))'
+# You can use whatever you want as an alias, like for Mondays:
+alias FUCK='fuck'
+
+alias brewu='brew update && brew upgrade && brew cleanup && brew prune && brew doctor'
+# Colored up cat!
+# You must install Pygments first - "sudo easy_install Pygments"
+alias c='pygmentize -O style=vim -f console256 -g'
+
 alias kextlist="kextstat -kl | awk '{printf \"%i %i %s %s\n\", \$4 / 1024, \$5 / 1024, \$6, \$7}' | sort -nr"
 
 alias pj='prettyjson'

@@ -1,10 +1,8 @@
 NC="\x1b[m"               # Color Reset
 LIGHTGREEN="\x1b[1;32m"
 
+function cdf () { cd *$1*/ }
 
-function fle {
-  find . -type f -iname $@ -printf \ \ \ \ %p"\n" -exec perl -pi -e 's/\r/\n/g' {} \;
-}
 
 # OS X only:
 # "o file.txt" = open file in default app.
