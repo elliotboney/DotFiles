@@ -1,3 +1,18 @@
+Table of Contents
+=================
+  * [General](#general)
+    * [My inspirations](#my-inspirations)
+  * [Installation](#installation)
+    * [zsh](#zsh)
+      * [OSX](#osx)
+      * [Linux](#linux)
+      * [Change the shell](#change-the-shell)
+    * [oh-my-zsh](#oh-my-zsh)
+      * [via curl](#via-curl)
+      * [via wget](#via-wget)
+    * [Dotfiles](#dotfiles)
+  * [TODO](#todo)
+
 # General #
 What are [dotFiles](http://linux.about.com/cs/linux101/g/dot_file.htm "dotFiles")
 
