@@ -17,8 +17,8 @@ export UPDATE_ZSH_DAYS=14
 COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(wpclitwo blackbox apache2-macports atom bower brew brew-cask bundler colorize colored-man composer cp elliotzsh extract gem github git-extras gitignore git-prompt gnu-utils grunt node npm nvm osx rvm rsync screen sublime sudo zsh_reload zsh-syntax-highlighting zsh-256color) # rbenv vi-mode autoenv)
-
+plugins=(wpclitwo blackbox apache2-macports atom bower brew brew-cask bundler colorize colored-man composer cp elliotzsh extract gem github gnu-utils grunt node npm nvm osx rvm rsync sublime sudo zsh_reload zsh-syntax-highlighting zsh-256color) # rbenv vi-mode autoenv)
+# git-extras gitignore git-prompt
 # Add addition zsh completions
 fpath=(~/.zsh-completions $fpath)
 
