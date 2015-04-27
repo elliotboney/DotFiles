@@ -87,15 +87,15 @@ if [ -f ~/.bashrc.local ]
 fi
 
 # Execute local stuff if it exists
-if [ -f ~/.dotfilelocation ]
-  then
-  source ~/.dotfilelocation
-fi
+# if [ -f ~/.dotfilelocation ]
+#   then
+#   source ~/.dotfilelocation
+# fi
 
 # Node Version Manager
-if [ -f "~/.nvm/nvm.sh" ]; then
-  source ~/.nvm/nvm.sh
-fi
+# if [ -f "~/.nvm/nvm.sh" ]; then
+#   source ~/.nvm/nvm.sh
+# fi
 
 if shell_is_osx; then
   if [ -f "`brew --prefix`/etc/grc.bashrc" ]

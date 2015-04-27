@@ -1,10 +1,14 @@
+# we need DOTPATH
+if [ -f "${HOME}/.dotfilelocation" ];then
+    source "$HOME/.dotfilelocation"
+fi
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 ZSH_CUSTOM=$DOTPATH/zshcustom
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
 
 # Set to this to use case-sensitive completion
-CASE_SENSITIVE="false"
+export CASE_SENSITIVE="false"
 
 # Uncomment to change how often before auto-updates occur? (in days)
 export UPDATE_ZSH_DAYS=14
@@ -13,34 +17,30 @@ export UPDATE_ZSH_DAYS=14
 COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(zsh-syntax-highlighting wpclitwo alias-tips blackbox apache2-macports atom bower brew brew-cask bundler colorize colored-man composer cp elliotzsh extract gem github git-extras gitignore git-prompt gnu-utils grunt node npm nvm osx rvm rsync screen sublime sudo zsh_reload) # rbenv vi-mode autoenv)
+plugins=(wpclitwo alias-tips blackbox apache2-macports atom bower brew brew-cask bundler colorize colored-man composer cp elliotzsh extract gem github git-extras gitignore git-prompt gnu-utils grunt node npm nvm osx rvm rsync screen sublime sudo zsh_reload zsh-syntax-highlighting zsh-256color) # rbenv vi-mode autoenv)
+
+# Add addition zsh completions
+fpath=(~/.zsh-completions $fpath)
 
 # Load oh my zsh
 source $ZSH/oh-my-zsh.sh
 
 # Source our bashrc file
-source ~/.bashrc
+source $HOME/.bashrc
 
 # Load a custom theme if it exists
-if [ -f ~/.dotfiles/custom.zsh-theme ]; then
-    source ~/.dotfiles/custom.zsh-theme
+if [ -f "$HOME/.dotfiles/custom.zsh-theme" ]; then
+    source $HOME/.dotfiles/custom.zsh-theme
 fi
 
 # Load phpbrew if it exists
-if [ -f ~/.phpbrew/bashrc ]; then
-    source ~/.phpbrew/bashrc
+if [ -f "$HOME/.phpbrew/bashrc" ]; then
+    source $HOME/.phpbrew/bashrc
 fi
 
-if [ -f ~/.nvm/nvm.sh ]; then
-    source ~/.nvm/nvm.sh
+if [ -f "$HOME/.nvm/nvm.sh" ]; then
+    source $HOME/.nvm/nvm.sh
 fi
-
-# Customize to your needs...
-fpath=(~/.zsh-completions $fpath)
-
-# awesome cd movements from zshkit
-setopt autocd autopushd pushdminus pushdsilent pushdtohome cdablevars
-DIRSTACKSIZE=5
 
 # Enable extended globbing
 setopt extendedglob
@@ -52,9 +52,10 @@ autoload -U colors
 colors
 
 # enable colored output from ls, etc
-export CLICOLOR=1
+# export CLICOLOR=1
 
 # sweet renaming shit
-autoload -U zmv
+# autoload -U zmv
 
-export PATH="`rvm gemdir 2>/dev/null`/bin:$PATH" # Add RVM to PATH for scripting
+export PATH="`${HOME}/.rvm/bin/rvm gemdir 2>/dev/null`/bin:${HOME}/.rvm/bin/:$PATH" # Add RVM to PATH for scripting
+

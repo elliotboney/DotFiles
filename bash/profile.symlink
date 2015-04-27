@@ -57,7 +57,7 @@
 # # $fn_cmd -f shell_is_elliot
 # $fn_cmd HOST_NAME
 
-# # NEW PART: {{{1 
+# # NEW PART: {{{1
 #    #export PATH=$PATH:$HOME/bin
 # # if shell_is_interactive; then
 
@@ -98,4 +98,4 @@
 
 
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+# export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
