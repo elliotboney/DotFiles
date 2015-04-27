@@ -27,6 +27,14 @@ if $(gls &>/dev/null)
    alias find='gfind'
 fi
 
+# find shit
+alias fd='find . -type d -name'
+alias ff='find . -type f -name'
+
+# History
+alias h='history'
+alias hgrep="fc -El 0 | grep"
+
 # Navigation
 alias ..="cd .."
 alias ,,="cd .."
@@ -35,18 +43,14 @@ alias ....="cd .. && cd .."
 # XXX My own mispellings
 alias cd..='cd ..'
 
-# Protection {{2
-# Parenting changing perms on / #
+# Protection
 alias chgrp='chgrp --preserve-root'
-# alias rm='rm -i'
-# alias cp='cp -i'
-# alias mv='mv -i'
 alias mkdir='mkdir -p'
-# }}
 
 # List the permissions
 alias lsperm="/bin/ls -al|awk '{k=0;s=0;for(i=0;i<=8;i++){;k+=((substr(\$1,i+2,1)~/[rwxst]/)*2^(8-i));};j=4;for(i=4;i<=10;i+=3){;s+=((substr(\$1,i,1)~/[stST]/)*j);j/=2;};if(k){;printf(\"%0o%0o \",s,k);};print;}'"
 
+# Clean directories
 alias cleanemptydir='find . -type d -empty -exec rmdir {} \;'
 
 # list out directories in the path

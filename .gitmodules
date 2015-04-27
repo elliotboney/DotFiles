@@ -139,3 +139,12 @@
     url = git@github.com:elliotboney/eScrit.git
 
 
+[submodule "bin/bin.symlink/blackbox"]
+	path = bin/bin.symlink/blackbox
+	url = git@github.com:StackExchange/blackbox.git
+[submodule "zshcustom/plugins/alias-tips"]
+	path = zshcustom/plugins/alias-tips
+	url = https://github.com/djui/alias-tips.git
+[submodule "zshcustom/plugins/zsh-syntax-highlighting"]
+	path = zshcustom/plugins/zsh-syntax-highlighting
+	url = git://github.com/zsh-users/zsh-syntax-highlighting.git
