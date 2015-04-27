@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+Red='\x1b[0;31m'
+Green='\x1b[0;32m'
+Yellow='\x1b[0;33m'
+Blue='\x1b[0;34m'
+Purple='\x1b[0;35m'
+Cyan='\x1b[0;36m'
+White='\x1b[0;37m'
+BRed='\x1b[1;31m'
+BYellow='\x1b[1;33m'
+BWhite='\x1b[1;37m'
+NC='\x1b[m'
+
+export Red;
+export Green;
+export Yellow;
+export Blue;
+export Purple;
+export Cyan;
+export White;
+export BRed;
+export BYellow;
+export BWhite;
+export NC;
+
+# if [[ -z "$1" ]]; then
+#   echo -e "\n\t${White}Useage: ${BYellow}syncelliot ${Cyan}<full/lite>${NC}"
+#   echo -e "\t${Cyan}full\t${White}Pulls latest branch of develop to nuhabitat and then pulls for glr1"
+#   echo -e "\t${Cyan}lite\t${White}Just pulls for glr\n"
+# else
+#   if [ "$1" == "lite" ]; then
+#     echo -e "${White}----------------------------------------------"
+#     echo -e "${White}|            Just pulling for glr1           |"
+#     echo -e "${White}----------------------------------------------"
+#     ssh -t tenant01.nuhabitat.com '~/bin/glr1_pull'
+#   elif [ "$1" == "full" ]; then
+    echo -e "${White}----------------------------------------------"
+    echo -e "${White}|      Resetting hard, then fetch/merge      |"
+    echo -e "${White}----------------------------------------------"
+    ssh -t elliot.nuhabitat.com 'cd www/sandbox && git reset --hard HEAD && git fetch && git merge origin/develop'
+  # else
+  #   echo -e "\t${BRed}$1${Red} is not a valid option, valid options are:"
+  #   echo -e "\t${Cyan}full\t${White}Pulls latest branch of develop to nuhabitat and then pulls for glr1"
+  #   echo -e "\t${Cyan}lite\t${White}Just pulls for glr1"
+  #   exit 0
+  # fi
+    echo -e "${White}----------------------------------------------"
+    echo -e "${White}|                  All done!                 |"
+    echo -e "${White}----------------------------------------------"
+# fi
+
+# ssh -t tenant01.nuhabitat.com '~/bin/glr1_pull'
