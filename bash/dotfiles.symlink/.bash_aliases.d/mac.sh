@@ -3,7 +3,7 @@ if shell_is_osx; then
   #clean up the output of quicklook manage
   alias qlf='qlmanage -p "$@" >& /dev/null'
 
-  alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
+  alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; mkdir ~/.Trash"
   # Kill all the tabs in Chrome to free up memory
 
   # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
@@ -14,9 +14,8 @@ if shell_is_osx; then
     # find . -name .gitattributes | map dirname
     alias map="xargs -n1"
 
-    
    #delete stuff to trash
    # alias rm='rmtrash';
-   alias rmf='rmtrash'; 
+   alias rmf='rmtrash -u eboney';
 
 fi

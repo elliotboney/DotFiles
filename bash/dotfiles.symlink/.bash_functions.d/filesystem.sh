@@ -1,7 +1,17 @@
-NC="\x1b[m"               # Color Reset
-LIGHTGREEN="\x1b[1;32m"
-
 function cdf () { cd *$1*/ }
+
+function path() {
+  echo $PATH | tr ":" "\n" | \
+    awk "{ sub(\"/usr\",   \"${Green}/usr${NC}\"); \
+           sub(\"/bin\",   \"${Blue}/bin${NC}\"); \
+           sub(\"/.bin\",  \"${Blue}/.bin${NC}\"); \
+           sub(\"/sbin\",  \"${Blue}/sbin${NC}\"); \
+           sub(\"/opt\",   \"${Cyan}/opt${NC}\"); \
+           sub(\"/local\", \"${Yellow}/local${NC}\"); \
+           sub(\"/Users\", \"${Purple}/Users${NC}\"); \
+           sub(\"/home\",  \"${Purple}/home${NC}\"); \
+           print }"
+}
 
 
 # OS X only:
@@ -39,22 +49,22 @@ function mkd() {
 function cleanfiles() {
   for var in "$@"
   do
-    echo -e "\n${LIGHTGREEN}Deleting f'in $var files...${NC}"
+    echo -e "\n${BGreen}Deleting f'in $var files...${NC}"
     sudo find . -type f -name "$var" -printf \ \ \ \ %p"\n" -exec rm -rf {} \;
   done
 }
 
 # Mac cleanup
 function cleanup() {
-  echo -e "\n${LIGHTGREEN}Deleting f'in .DS_Store files...${BRed}"
+  echo -e "\n${BGreen}Deleting f'in .DS_Store files...${BRed}"
   sudo gfind . -type f -name '*.DS_Store' -printf \ \ \ \ %p"\n" -exec rm -rf {} \;
-  echo -e "\n${LIGHTGREEN}Deleting f'in ._ files...${BRed}"
+  echo -e "\n${BGreen}Deleting f'in ._ files...${BRed}"
   sudo gfind . -type f -name '._*' -printf \ \ \ \ %p"\n" -exec rm -rf {} \;
-  echo -e "\n${LIGHTGREEN}Deleting f'in Thumbnail db files...${BRed}"
+  echo -e "\n${BGreen}Deleting f'in Thumbnail db files...${BRed}"
   sudo gfind . -type f -name 'Thumbs.db' -printf \ \ \ \ %p"\n" -exec rm -rf {} \;
-  echo -e "\n${LIGHTGREEN}Deleting f'in __MACOSX files...${BRed}"
+  echo -e "\n${BGreen}Deleting f'in __MACOSX files...${BRed}"
   sudo gfind . -type d -name '__MAC*' -printf \ \ \ \ %p"\n" -exec rm -rf {} \;
-  echo -e "\n${LIGHTGREEN}Deleting f'in desktopini files...${BRed}"
+  echo -e "\n${BGreen}Deleting f'in desktopini files...${BRed}"
   sudo gfind . -type d -name 'desktop.ini' -printf \ \ \ \ %p"\n" -exec rm -rf {} \;
 }
 

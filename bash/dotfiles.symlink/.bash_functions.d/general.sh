@@ -1,3 +1,8 @@
+
+# Colored up cat!
+# You must install Pygments first - "sudo easy_install Pygments"
+
+
 # ---------- Replace SpotlightDB with
 function elocate {
   mdfind "kMDItemDisplayName == '$@'wc";
@@ -15,7 +20,7 @@ function crx() {
 }
 
 function killallshit {
-   if [[ -z "$1" ]]; then
+ if [[ -z "$1" ]]; then
     # echo a help message if no port is specified
     echo -e "\n\t${White}Useage: ${BCyan}killallshit ${LightGray}<programmatchpattern> ${NC}\n"
   else
@@ -45,6 +50,6 @@ function a() {
 
 function changetitle()
 {
-    TITLE=$*;
-    echo -ne "\033]0;${TITLE}\007";
+  TITLE=$*;
+  echo -ne "\033]0;${TITLE}\007";
 }

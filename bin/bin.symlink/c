@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+file=$1;
+ext=${file##*.};
+
+# if it’s a dotfile, treat it as shell script
+if [[ $file == .* ]]; then
+  pygmentize -O style=vim,linenos=1 -l shell ${file}
+else
+  pygmentize -O style=vim,linenos=1 -g ${file}
+fi

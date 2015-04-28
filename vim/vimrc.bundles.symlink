@@ -7,28 +7,15 @@
 set nocompatible
 filetype off
 
-" Based on http://erikzaadi.com/2012/03/19/auto-installing-vundle-from-your-vimrc/
-let need_to_install_plugins=0
-if empty(system("grep lazy_load ~/.vim/bundle/vundle/autoload/vundle.vim"))
-    echo "Installing Vundle..."
-    echo ""
-    silent !mkdir -p ~/.vim/bundle
-    silent !rm -rf ~/.vim/bundle/vundle
-    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
-    let need_to_install_plugins=1
-endif
-
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Let Vundle Manage Vundle: {{{
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 " }}}
 
 " Javascript And Coffee Script: {{{
-"Plugin 'kchmck/vim-coffee-script'
 Plugin 'helino/vim-json'
-"Plugin 'maksimr/vim-jsbeautify'
 Plugin 'einars/js-beautify'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'jelera/vim-javascript-syntax'
@@ -56,11 +43,10 @@ Plugin 'kien/ctrlp.vim'
 
 " Other Language Stuff: {{{
 Plugin 'othree/html5.vim'
-Plugin 'vim-scripts/hexman.vim'
 " }}}
 
 " My Own Custom Shit:
-Plugin 'elliotboney/eVimPlugin'
+Plugin 'elliotboney/eVimBundle'
 Plugin 'mgutz/vim-colors'
 Plugin 'vim-scripts/BusyBee'
 
@@ -88,12 +74,3 @@ Plugin 'Align'
 call vundle#end()            " required
 filetype plugin indent on    " required
 syntax on
-
-
-if need_to_install_plugins == 1
-  echo "Installing plugins via Vundle. Please ignore warnings afterwards."
-  echo "This is a one-time operation that will take about a minute..."
-  silent! PluginInstall
-  echo "Done installing Vundle plugins!"
-  q
-endif

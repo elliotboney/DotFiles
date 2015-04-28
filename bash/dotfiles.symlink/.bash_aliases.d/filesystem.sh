@@ -54,4 +54,4 @@ alias lsperm="/bin/ls -al|awk '{k=0;s=0;for(i=0;i<=8;i++){;k+=((substr(\$1,i+2,1
 alias cleanemptydir='find . -type d -empty -exec rmdir {} \;'
 
 # list out directories in the path
-alias path='echo $PATH | tr -s ":" "\n"'
+# alias path='echo $PATH | tr -s ":" "\n"'
