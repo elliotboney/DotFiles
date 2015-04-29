@@ -212,7 +212,7 @@ set foldmarker={,}
 set foldmethod=marker
 "set foldtext=substitute(getline(v:foldstart),'{.*','{...}',) "}
 set foldcolumn=4
-set foldlevelstart=1
+set foldlevelstart=0
 "}
 " Indentation:"{
 set tabstop=3

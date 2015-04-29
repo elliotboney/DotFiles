@@ -4,6 +4,13 @@ export ENVIRONMENT="elliot"
 # for nvm
 export NVM_SYMLINK_CURRENT=true
 
+if [ -x "$(which vimpager)" ]; then
+  export PAGER=/usr/local/bin/vimpager
+  export VIMPAGER_RC=${HOME}/.vimpagerrc
+  alias less="$PAGER -c \"set number\""
+  alias zless=$PAGER
+fi
+
 #export for Atom Editor
 export ATOM_REPOS_HOME=~/Code/Atom
 

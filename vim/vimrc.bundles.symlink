@@ -17,7 +17,7 @@ Plugin 'gmarik/Vundle.vim'
 " Javascript And Coffee Script: {{{
 Plugin 'helino/vim-json'
 Plugin 'einars/js-beautify'
-Plugin 'marijnh/tern_for_vim'
+"Plugin 'marijnh/tern_for_vim'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'JavaScript-Indent'
 " }}}
