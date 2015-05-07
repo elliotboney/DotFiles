@@ -39,7 +39,7 @@ export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 export XML_CATALOG_FILES="/usr/local/etc/xml/catalog"
 
 # Always enable colored `grep` output
-export GREP_OPTIONS="--color=auto"
+# export GREP_OPTIONS="--color=auto"
 
 # Prefer US English and use UTF-8
 export LANG="en_US"

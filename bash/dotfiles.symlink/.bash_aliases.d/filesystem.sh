@@ -25,6 +25,9 @@ if $(gls &>/dev/null)
    alias mv='gmv'
    alias cp='/usr/local/bin/gcp'
    alias find='gfind'
+   alias grep='ggrep'
+else
+   alias grep='grep'
 fi
 
 # find shit

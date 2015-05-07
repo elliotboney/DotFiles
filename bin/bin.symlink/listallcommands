@@ -1,0 +1,17 @@
+#!/bin/bash
+z=1
+echo $PATH  | tr : '\n' |
+while read e; do
+  for i in $e/*; do
+    if [[ -x "$i" && -f "$i" ]]; then
+      if [[ ${#i} < 16 ]]; then
+        printf "%12s" ${i##*/}
+        if [[ $z = 8 ]]; then
+          echo -e ""
+          z=0
+        fi
+        z=$((z+1))
+      fi
+    fi
+  done
+done

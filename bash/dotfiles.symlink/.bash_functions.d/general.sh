@@ -1,7 +1,8 @@
-
-# Colored up cat!
-# You must install Pygments first - "sudo easy_install Pygments"
-
+# grep processes without showing grep
+function psg() {
+  # ps aux | grep -P "(?!.*ggrep.*)$@"
+  ps aux | grep --color=always -i "$@" | grep --color=always -v  grep
+}
 
 # ---------- Replace SpotlightDB with
 function elocate {

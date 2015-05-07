@@ -25,7 +25,7 @@ function dataurl() {
 # Create a git.io short URL
 function gitio() {
   if [ -z "${1}" -o -z "${2}" ]; then
-    echo "Usage: \`gitio slug url\`"
+    echo "\n\t${White}Usage: ${Cyan}\`gitio slug url\`\n"
     return 1
   fi
   curl -i http://git.io/ -F "url=${2}" -F "code=${1}"
@@ -34,6 +34,17 @@ function gitio() {
 # All the dig info
 function digga() {
   dig +nocmd "$1" any +multiline +noall +answer
+}
+
+
+# Needs `brew pip install python-googl`
+function googl() {
+  # if [[ 1 == $(python -c 'import pkgutil; print(1 if pkgutil.find_loader("python-googl") else 0)') ]]; then
+    python -c 'import googl; print googl.Googl("AIzaSyBmhMHHABhFQH2xz7dvY_3PlQzSOhYCaRI").shorten("'$1'")[u"id"]' | pbcopy
+    # echo -e "${BGreen}Copied to clipboard: ${NC}`pbpaste`"
+  # else
+    # echo -e "\n\t${Red}You need to run ${White}\`brew pip install python-googl\`\n"
+  # fi
 }
 
 
