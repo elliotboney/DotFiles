@@ -10,6 +10,9 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" make vundle use git protocol
+let g:vundle_default_git_proto = 'git'
+
 " Let Vundle Manage Vundle: {{{
 Plugin 'gmarik/Vundle.vim'
 " }}}
