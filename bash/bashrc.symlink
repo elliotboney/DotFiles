@@ -15,14 +15,16 @@ HOST_NAME=`uname -n`
 # Setup the main shell variables and functions
 SHELL_PLATFORM='OTHER'
 case "$OSTYPE" in
+  *'gnueabi'* ) SHELL_PLATFORM='ROUTER' ;;
   *'linux'*   ) SHELL_PLATFORM='LINUX' ;;
-*'darwin'*  ) SHELL_PLATFORM='OSX' ;;
-*'freebsd'* ) SHELL_PLATFORM='BSD' ;;
+  *'darwin'*  ) SHELL_PLATFORM='OSX' ;;
+  *'freebsd'* ) SHELL_PLATFORM='BSD' ;;
 esac
 
 #if ! type -p shell_is_login ; then
 shell_is_linux       () { [[ "$OSTYPE" == *'linux'* ]] ; }
 shell_is_osx         () { [[ "$OSTYPE" == *'darwin'* ]] ; }
+shell_is_router      () { [[ "$OSTYPE" == *'gnueabi'* ]] ; }
 shell_is_elliot      () { [[ "$HOST_NAME" == *'bigscrit'* ]] ; } #|| "$HOST_NAME" == *'mainpc'* ]] ; }
 shell_is_iscrit      () { [[ "$HOST_NAME" == *'bigscrit'* ]] ; }
 shell_is_login       () { shopt -q login_shell ; }
@@ -46,7 +48,7 @@ fi
 
 $fn_cmd SHELL_PLATFORM
 # $fn_cmd -f shell_is_linux
-# $fn_cmd -f shell_is_osx
+$fn_cmd -f shell_is_osx
 # $fn_cmd -f shell_is_login
 # $fn_cmd -f shell_is_interactive
 # $fn_cmd -f shell_is_script
@@ -78,11 +80,6 @@ unset BASHRC_DISPATCH_PID
 if [ -f $HOME/.bashrc.local ] ; then
   source $HOME/.bashrc.local
 fi
-
-# Node Version Manager
-# if [ -f "$HOME/.nvm/nvm.sh" ]; then
-#   source $HOME/.nvm/nvm.sh
-# fi
 
 if shell_is_osx; then
   if [ -f "`brew --prefix`/etc/grc.bashrc" ]; then

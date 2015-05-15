@@ -9,3 +9,5 @@ alias s="subl"
 alias st3="cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/"
 
 alias www="cd /var/www"
+
+alias dotjs='cd ~/Code/js/DotJS/ && s ~/Code/js/DotJS/'

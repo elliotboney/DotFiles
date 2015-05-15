@@ -1,3 +1,10 @@
+# capitalize a file
+function capitalize() {
+  tmp=$(echo "${1}" | sed -e "s/\([^ ]\+\) /\u\1\ /g" -e "s/^\( \)/\u\1/")
+  mv "${1}" "${tmp}.tmp"
+  mv "${tmp}.tmp" "${tmp}"
+}
+
 function cdf () { cd *$1*/ }
 
 function path() {

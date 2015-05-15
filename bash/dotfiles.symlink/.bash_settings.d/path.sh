@@ -2,17 +2,28 @@
 # Path Section
 PATH=""
 if [ -e "/usr/local/Cellar/php56" ] || [ -d "/usr/local/Cellar/php56" ]; then
-   PATH=$PATH:"/usr/local/Cellar/php56/$(/bin/ls /usr/local/Cellar/php56 | /usr/bin/awk 'NR==0; END{print}')/bin"
+ PATH=$PATH:"/usr/local/Cellar/php56/$(/bin/ls /usr/local/Cellar/php56 | /usr/bin/awk 'NR==0; END{print}')/bin"
 fi
 # add all the paths we want to array
-paths=("$HOME/bin" "$HOME/.bin" "/usr/local/opt/coreutils/libexec/gnubin" "/usr/local/bin" "/usr/local/sbin"
-    "/usr/local/share/npm/bin" "/usr/local/Cellar/php56/5.6.7/bin"
-    "/usr/local/lib/python2.7/site-packages" "/usr/local/lib/python3.3/site-packages"
-    "${GOROOT}/bin" "/bin" "/sbin"  "/usr/bin" "/usr/sbin"
-    "$HOME/Code/Android/sdk/tools" "$HOME/Code/Android/sdk/platform-tools" )
-
-#"/usr/local/share/python"
-#"/opt/local/bin" "/opt/local/sbin"
+paths=(
+    "${HOME}/.nvm/current/bin"
+    "$HOME/bin"
+    "$HOME/.bin"
+    "/usr/local/opt/coreutils/libexec/gnubin"
+    "/usr/local/bin"
+    "/usr/local/sbin"
+    "/usr/local/share/npm/bin"
+    "/usr/local/Cellar/php56/5.6.7/bin"
+    "/usr/local/lib/python2.7/site-packages"
+    "/usr/local/lib/python3.3/site-packages"
+    "${GOROOT}/bin"
+    "/bin"
+    "/sbin"
+    "/usr/bin"
+    "/usr/sbin"
+    "$HOME/Code/Android/sdk/tools"
+    "$HOME/Code/Android/sdk/platform-tools"
+    )
 
 # iterate through array
 for p in "${paths[@]}";
@@ -22,16 +33,10 @@ do
         #if it does, add to path
         PATH=$PATH:$p
         # echo $p
-     else
+    else
         # echo "[X]" $p
     fi
 done
-
-# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-# PATH="$HOME/.gem/bin":$PATH
-
-
 
 # End of Path Section comment block
 # ---------------------------------
@@ -42,10 +47,6 @@ done
 export PATH
 
 export HOMEBREW_GITHUB_API_TOKEN="224fed8d55ae34918c145636b0bf498a3698c907"
-
-# if [ -d /Developer/NVIDIA/CUDA-5.5/lib ]; then
-#     export DYLD_LIBRARY_PATH="/Developer/NVIDIA/CUDA-5.5/lib"
-# fi
 
 if [ -d ~/bin/FDK/Tools/osx ]; then
     export FDK_EXE="~/bin/FDK/Tools/osx"
@@ -72,13 +73,3 @@ fi
 if [ -d /usr/local/lib/python2.7/site-packages ]; then
     export PYTHONPATH="/usr/local/lib/python2.7/site-packages"
 fi
-
-if [ -d ~/.gem ]; then
-    # This was unset due to upgrade notes from rvm
-    # export GEM_HOME="$HOME/.gem"
-fi
-
-if [ -f ~/perl5/perlbrew/etc/bashrc ]; then
-    # source ~/perl5/perlbrew/etc/bashrc
-fi
-

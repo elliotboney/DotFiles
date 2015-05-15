@@ -19,6 +19,14 @@ function updateallgit()
 
 }
 
+function gi() {
+  if [[ -z "$1" ]]; then
+    curl -L -s "https://www.gitignore.io/api/list" | tr "," "\n" | less
+  else
+    curl -L -s "https://www.gitignore.io/api/${@}"
+  fi
+}
+
 function pullall {
   for dir in */
   do

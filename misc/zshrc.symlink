@@ -58,4 +58,3 @@ colors
 # autoload -U zmv
 
 export PATH="`${HOME}/.rvm/bin/rvm gemdir 2>/dev/null`/bin:${HOME}/.rvm/bin/:$PATH" # Add RVM to PATH for scripting
-

@@ -55,4 +55,3 @@ alias updatefonts='sudo fc-cache -f -v'
 
 alias jpgnames='jhead -n%Y%m%d-%H%M%S *.jpg'
 alias makethumbs='mogrify -resize 480x480 -format jpg -quality 65 -path thumbnails *.jpg'
-alias dotjs='s ~/Code/js/DotJS/'
