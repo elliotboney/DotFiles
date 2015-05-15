@@ -136,4 +136,4 @@ zstyle ':completion::*:s:*:*' file-patterns 'Makefile|*(rc|log)|*.(php|tex|bib|s
 zstyle ':completion::*:vimx:*:*' file-patterns 'Makefile|*(rc|log)|*.(php|tex|bib|sql|zsh|ini|sh|vim|rb|sh|js|tpl|csv|rdf|txt|phtml|tex|py|n3):vi-files:vim\ likes\ these\ files *~(Makefile|*(rc|log)|*.(log|rc|php|tex|bib|sql|zsh|ini|sh|vim|rb|sh|js|tpl|csv|rdf|txt|phtml|tex|py|n3)):all-files:other\ files'
 
 
-autoload -Uz compinit && compinit -Du
+autoload -Uz compinit && compinit -u
