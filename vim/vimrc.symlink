@@ -20,6 +20,7 @@ let g:ycm_path_to_python_interpreter = '/usr/local/bin/python3'
 if filereadable(expand("~/.vimrc.bundles"))
    source ~/.vimrc.bundles
 endif
+
 " }
 " Leader: {
 let mapleader = ","
@@ -261,7 +262,6 @@ set iskeyword+=\$,-   " Add extra characters that are valid parts of variables^
 " Necessary for multiple encodings
 set encoding=utf-8
 set mat=2
-set acd
 
 "Directories for swp files
 "set backupdir=~/.backups
@@ -427,3 +427,7 @@ let vimrc_already_sourced = 1
 
 highlight clear SignColumn      " SignColumn should match background
 highlight clear LineNr          " Current line number row will have same background color in relative mode
+
+if filereadable(expand("~/.vimrc.local"))
+   source ~/.vimrc.local
+endif
