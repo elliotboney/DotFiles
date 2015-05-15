@@ -17,6 +17,7 @@ paths=(
     "/usr/local/lib/python2.7/site-packages"
     "/usr/local/lib/python3.3/site-packages"
     "${GOROOT}/bin"
+    "/opt/bin"
     "/bin"
     "/sbin"
     "/usr/bin"
