@@ -135,7 +135,7 @@ EXEC                  00;38;5;83
 .iso                  48;5;235;38;5;66
 
 ## Archives or compressed (violet + bold for compression)
-.tar                  00;38;5;61
+.tar                  00;38;5;61 #7375bd
 .tgz                  00;38;5;61
 .tlz                  00;38;5;61
 .txz                  00;38;5;61
@@ -190,11 +190,11 @@ EXEC                  00;38;5;83
 *build.xml            00;38;5;205
 .nfo                  00;38;5;205
 *README               01;38;5;245
-*README.md            01;38;5;245
 *README.txt           01;38;5;245
 *readme.txt           01;38;5;245
 .md                   01;38;5;166
 *README.markdown      01;38;5;245
+*README.md            01;38;5;245
 .yml                  00;38;5;245
 .cfg                  00;38;5;245
 .c                    01;38;5;245
@@ -253,7 +253,6 @@ EXEC                  00;38;5;83
 .bash_history         00;38;5;236
 .hushlogin            00;38;5;236
 .hush_login           00;38;5;236
-.gitignore            00;38;5;236
 .CFUserTextEncoding   00;38;5;236
 .Trash/               00;38;5;236
 .Xauthority           00;38;5;236
@@ -265,9 +264,9 @@ EXEC                  00;38;5;83
 *license              00;38;5;236
 *changelog            00;38;5;236
 *desktop.ini          00;38;5;236
-
+*.lock                00;38;5;236
+*.git/                00;38;5;236
 .lessht               00;38;5;174
-
 
 
 # my version of config files
@@ -298,8 +297,8 @@ EXEC                  00;38;5;83
 .bashrc.local         00;38;5;174
 .dotfilelocation      00;38;5;174
 .vimrc                00;38;5;174
-.zlogin                00;38;5;174
-.wgetrc                00;38;5;174
+.zlogin               00;38;5;174
+.wgetrc               00;38;5;174
 
 
 .torrent              00;38;5;245

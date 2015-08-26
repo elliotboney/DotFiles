@@ -1,3 +1,7 @@
+# sweet moving shit
+# @see http://www.mfasold.net/blog/2008/11/moving-or-renaming-multiple-files/
+alias mmv='noglob zmv -W'
+
 #folder sizes
 alias lssize='du -h --max-depth=1 . | sort -hr'
 
@@ -27,6 +31,8 @@ if $(gls &>/dev/null); then
    alias cp='/usr/local/bin/gcp'
    alias find='gfind'
    alias grep='ggrep'
+   alias du='gdu'
+   alias sort='gsort'
 else
    alias grep='grep'
 fi

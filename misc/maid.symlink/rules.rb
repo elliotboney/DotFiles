@@ -21,8 +21,12 @@ Maid.rules do
     trash found
   end
 
-  #
-  # Move Cracked apps
+  #   .d8b.  d8888b. d8888b. .d8888.
+  #  d8' `8b 88  `8D 88  `8D 88'  YP
+  #  88ooo88 88oodD' 88oodD' `8bo.
+  #  88~~~88 88~~~   88~~~     `Y8b.
+  #  88   88 88      88      db   8D
+  #  YP   YP 88      88      `8888Y'
   #
   rule 'Move Cracked Apps' do
     puts "--------------------------------------------\n\033[32mMove Cracked Apps\033[0m"
@@ -47,7 +51,7 @@ Maid.rules do
   end
 
   #
-  # Clean the name of Cracked Apps
+  # Clean App Names
   #
   rule 'Clean Cracked Apps Names' do
     dir('~/Downloads/00 Completed/01 Apps/*').each do |path|
@@ -63,8 +67,12 @@ Maid.rules do
     end
   end
 
-  #
-  # Move just the movie file and kill the rest
+  #  .88b  d88.  .d88b.  db    db d888888b d88888b .d8888.
+  #  88'YbdP`88 .8P  Y8. 88    88   `88'   88'     88'  YP
+  #  88  88  88 88    88 Y8    8P    88    88ooooo `8bo.
+  #  88  88  88 88    88 `8b  d8'    88    88~~~~~   `Y8b.
+  #  88  88  88 `8b  d8'  `8bd8'    .88.   88.     db   8D
+  #  YP  YP  YP  `Y88P'     YP    Y888888P Y88888P `8888Y'
   #
   rule 'Move Movies' do
     puts "--------------------------------------------\n\033[32mMove Movies\033[0m"
@@ -89,25 +97,19 @@ Maid.rules do
       end
     end
   end
-  # rule "\033[32mMac OS X applications in zip files\033[0m" do
-  #   puts "--------------------------------------------"
-  #   found = dir('~/Downloads/*.zip').select { |path|
-  #     zipfile_contents(path).any? { |c| c.match(/\.app$/) }
-  #   }
-  #   trash(found)
-  #   puts "\n--------------------------------------------"
-  #
-  # end
-  #
 
-  #
-  # Cleanup Fonts in Downloads
+  #  d88888b  .d88b.  d8b   db d888888b .d8888.
+  #  88'     .8P  Y8. 888o  88 `~~88~~' 88'  YP
+  #  88ooo   88    88 88V8o 88    88    `8bo.
+  #  88~~~   88    88 88 V8o88    88      `Y8b.
+  #  88      `8b  d8' 88  V888    88    db   8D
+  #  YP       `Y88P'  VP   V8P    YP    `8888Y'
   #
   rule 'Fonts in Downloads' do
     puts "--------------------------------------------\n\033[32mFonts in Downloads\033[0m"
     dir(%w(~/Downloads/*.ttf ~/Downloads/*.otf ~/Downloads/**/*.ttf ~/Downloads/**/*.otf ~/Downloads/**/*.TTF ~/Downloads/**/*.OTF)).each do |path|
       begin
-        if !File.dirname(path).match(/Downloads$/) && !File.dirname(path).match(/01 Design$/) && !File.dirname(path).match(/10 Wordpress/) && !path.match(/\.app/) && !File.dirname(path).match(/11 Ripped Sites/)
+        if !File.dirname(path).match(/Downloads$/) && !File.dirname(path).match(/01 Design/) && !File.dirname(path).match(/10 Wordpress/) && !path.match(/\.app/) && !File.dirname(path).match(/11 Ripped Sites/)
           # Let's clean bs files in there
           dir([File.dirname(path)+"/*.txt", File.dirname(path)+"/*.pdf", File.dirname(path)+"/*.jpg",File.dirname(path)+"/*.png"]).each do |rdmepath|
             trash rdmepath
@@ -131,8 +133,12 @@ Maid.rules do
   #   end
   # end
 
-  #
-  # Organize Downloads
+  #  d8888b.  .d88b.  db   d8b   db d8b   db db       .d88b.   .d8b.  d8888b. .d8888.
+  #  88  `8D .8P  Y8. 88   I8I   88 888o  88 88      .8P  Y8. d8' `8b 88  `8D 88'  YP
+  #  88   88 88    88 88   I8I   88 88V8o 88 88      88    88 88ooo88 88   88 `8bo.
+  #  88   88 88    88 Y8   I8I   88 88 V8o88 88      88    88 88~~~88 88   88   `Y8b.
+  #  88  .8D `8b  d8' `8b d8'8b d8' 88  V888 88booo. `8b  d8' 88   88 88  .8D db   8D
+  #  Y8888D'  `Y88P'   `8b8' `8d8'  VP   V8P Y88888P  `Y88P'  YP   YP Y8888D' `8888Y'
   #
   DOWNLOAD_TYPES = {
     '02 Apps' => %w(com.apple.application com.apple.installer-package-archive),
@@ -151,47 +157,53 @@ Maid.rules do
     end
   end
 
+  #   .o88b. db      d88888b  .d8b.  d8b   db db    db d8888b.
+  #  d8P  Y8 88      88'     d8' `8b 888o  88 88    88 88  `8D
+  #  8P      88      88ooooo 88ooo88 88V8o 88 88    88 88oodD'
+  #  8b      88      88~~~~~ 88~~~88 88 V8o88 88    88 88~~~
+  #  Y8b  d8 88booo. 88.     88   88 88  V888 88b  d88 88
+  #   `Y88P' Y88888P Y88888P YP   YP VP   V8P ~Y8888P' 88
+
   #
   # Clean Up Homebrew
   #
-  rule 'Clean /Library/Caches/Homebrew/' do
-    puts "--------------------------------------------\n\033[33mClean /Library/Caches/Homebrew/\033[0m"
-    dir('/Library/Caches/Homebrew/*.tar.*').each do |path|
-      trash path if File.mtime(path) < 90.days.ago
-    end
-    dir('/Library/Caches/Homebrew/*.tgz').each do |path|
-      trash path if File.mtime(path) < 90.days.ago
-    end
-    dir('/Library/Caches/Homebrew/*.tbz').each do |path|
-      trash path if File.mtime(path) < 90.days.ago
-    end
-  end
+  # rule 'Clean /Library/Caches/Homebrew/' do
+  #   puts "--------------------------------------------\n\033[33mClean /Library/Caches/Homebrew/\033[0m"
+  #   dir('/Library/Caches/Homebrew/*.tar.*').each do |path|
+  #     trash path if File.mtime(path) < 90.days.ago
+  #   end
+  #   dir('/Library/Caches/Homebrew/*.tgz').each do |path|
+  #     trash path if File.mtime(path) < 90.days.ago
+  #   end
+  #   dir('/Library/Caches/Homebrew/*.tbz').each do |path|
+  #     trash path if File.mtime(path) < 90.days.ago
+  #   end
+  # end
 
 
   # Cleaning up after Maid
   # ----------------------
-
   # This one should be after all the other 'Downloads' and 'Outbox' rules
-  rule 'Remove empty directories && Kill Stupid .DS_Store files' do
-    puts "--------------------------------------------\n\033[33mRemove empty directories && Kill Stupid .DS_Store files\033[0m"
-    dir(%w(~/Downloads/**/.DS_Store ~/Dropbox/**/.DS_Store ~/Git/**/.DS_Store ~/Code/**/.DS_Store)).each do |path|
-      File.delete(path)
-    end
-    dir(%w(~/Downloads/**/* ~/Dropbox/**/*)).each do |path|
-      if File.directory?(path) && (Dir.entries(path) - %w{ . .. }).empty? && !path.match(/\.app/)
-        trash path
-      end
-    end
-  end
+  # rule 'Remove empty directories && Kill Stupid .DS_Store files' do
+  #   puts "--------------------------------------------\n\033[33mRemove empty directories && Kill Stupid .DS_Store files\033[0m"
+  #   dir(%w(~/Downloads/**/.DS_Store ~/Dropbox/**/.DS_Store ~/Git/**/.DS_Store ~/Code/**/.DS_Store)).each do |path|
+  #     File.delete(path)
+  #   end
+  #   dir(%w(~/Downloads/**/* ~/Dropbox/**/*)).each do |path|
+  #     if File.directory?(path) && (Dir.entries(path) - %w{ . .. }).empty? && !path.match(/\.app/)
+  #       trash path
+  #     end
+  #   end
+  # end
 
   # Trash
-  rule 'Take out the Trash' do
-    puts "--------------------------------------------\n\033[31mTake out the Trash\033[0m"
-    dir('~/.Trash/*').each do |p|
-      remove(p) if accessed_at(p) > 14.days.ago
-    end
-    puts '--------------------------------------------'
-  end
+  # rule 'Take out the Trash' do
+  #   puts "--------------------------------------------\n\033[31mTake out the Trash\033[0m"
+  #   dir('~/.Trash/*').each do |p|
+  #     remove(p) if accessed_at(p) > 14.days.ago
+  #   end
+  #   puts '--------------------------------------------'
+  # end
 
 
 end

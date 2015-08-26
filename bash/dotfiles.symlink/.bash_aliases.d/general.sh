@@ -9,7 +9,6 @@ alias brewu='brew update && brew upgrade && brew cleanup && brew prune && brew d
 
 alias kextlist="kextstat -kl | awk '{printf \"%i %i %s %s\n\", \$4 / 1024, \$5 / 1024, \$6, \$7}' | sort -nr"
 
-alias pj='prettyjson'
 alias service='sudo service'
 alias apachectl='sudo apachectl'
 alias a2endmod='sudo a2endmod'

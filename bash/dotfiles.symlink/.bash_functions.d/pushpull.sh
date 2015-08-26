@@ -18,6 +18,35 @@ function pull () {
   fi
 }
 
+function syncdirpush () {
+  LOCALDIR=$1
+  REMOTEDIR=$2
+  USERHOST=$3
+  EXCLUDE=$4
+  BASE=`basename $1`
+
+  if [[ -z "$1" ]]; then
+    echo -e "\n\t${BWhite}Useage: syncdir <localdir> <remotedir> <user@sshhost> ${Gray}[optionalfilter]${NC}"
+    echo -e "\texample: syncdir /var/www/site/ /var/www/ user@myhost.com\n"
+  elif [[ -z "$2" ]]; then
+    echo -e "\n\t${BRed}Error: Missing Remote Directory & user@host${NC}"
+    echo -e "\n\t${BWhite}Useage: syncdir <localdir> <remotedir> <user@sshhost> ${NC}"
+    echo -e "\texample: syncdir /var/www/site/ /var/www/ user@myhost.com \n"
+  elif [[ -z "$3" ]]; then
+    echo -e "\n\t${BRed}Error: Missing user@host ${NC}"
+    echo -e "\n\t${BWhite}Useage: syncdir <localdir> <remotedir> <user@sshhost> ${NC}"
+    echo -e "\texample: syncdir /var/www/site/ /var/www/ user@myhost.com \n"
+  elif [[ -z "$4" ]]; then
+    # we are missing the exclude
+    rsync -zrhP "${LOCALDIR}" "${USERHOST}:${REMOTEDIR}" --super
+    ssh "${USERHOST}" "sudo chown -R eboney:www-data ${REMOTEDIR}/${BASE}"
+  else
+    rsync -zrhP -g "www-data" "${LOCALDIR}" "${USERHOST}:${REMOTEDIR}" --super --delete --exclude="${EXCLUDE}"
+  fi
+}
+
+#--exclude=
+
 # function syncstaging() {
 #   if [[ -z "$1" ]]; then
 #     rsync --exclude .git --exclude languages --exclude .DS_Store -e "ssh" -vz --modify-window=1 --super /private/var/www/wordpress.staging/content/themes/dgbootstrap/ eboney@digitalgrove.org:/var/www/wordpress.staging/content/themes/dgbootstrap/ --dry-run

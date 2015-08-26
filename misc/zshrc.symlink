@@ -1,3 +1,28 @@
+#
+# Set to true if you want to output some debug info
+#
+DEBUG=true
+
+export N=`gdate +%N`
+
+function dtime() {
+  echo "$(((`gdate +%N`-${N})/1000000))ms"
+  export N=`gdate +%N`
+
+}
+
+
+# Echo out if we have debug set to true
+function decho() {
+  if [ "$DEBUG" = true ]; then
+    echo -e "\x1b[0;32m[$(((`gdate +%N`-${N})/1000000))ms]\x1b[m $@"
+    export N=`gdate +%N`
+  fi
+}
+
+decho "Processing .zshrc"
+setopt extended_glob
+
 # we need DOTPATH
 if [ -f "${HOME}/.dotfilelocation" ];then
     source "$HOME/.dotfilelocation"
@@ -24,21 +49,24 @@ fpath=(~/.zsh-completions $fpath)
 
 # Load oh my zsh
 source $ZSH/oh-my-zsh.sh
+decho "$ZSH/oh-my-zsh.sh"
+
+# Load phpbrew if it exists
+if [ -f "$HOME/.phpbrew/bashrc" ]; then
+    # source $HOME/.phpbrew/bashrc
+fi
 
 # Source our bashrc file
 source $HOME/.bashrc
 
 # Load a custom theme if it exists
 if [ -f "$HOME/.dotfiles/custom.zsh-theme" ]; then
+    decho "$HOME/.dotfiles/custom.zsh-theme"
     source $HOME/.dotfiles/custom.zsh-theme
 fi
 
-# Load phpbrew if it exists
-if [ -f "$HOME/.phpbrew/bashrc" ]; then
-    source $HOME/.phpbrew/bashrc
-fi
-
 if [ -f "$HOME/.nvm/nvm.sh" ]; then
+    decho "$HOME/.nvm/nvm.sh"
     source $HOME/.nvm/nvm.sh
 fi
 
@@ -51,10 +79,15 @@ setopt extendedglob
 autoload -U colors
 colors
 
+# enable sick move tool
+autoload -U zmv
 # enable colored output from ls, etc
 # export CLICOLOR=1
 
 # sweet renaming shit
 # autoload -U zmv
+decho "$HOME/.rvm/scripts/rvm"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+export PATH="`${HOME}/.rvm/bin/rvm gemdir 2>/dev/null`/bin:${HOME}/.rvm/bin:${PATH}" # Add RVM to PATH for scripting
 
-export PATH="`${HOME}/.rvm/bin/rvm gemdir 2>/dev/null`/bin:${HOME}/.rvm/bin/:$PATH" # Add RVM to PATH for scripting
+decho "Done with .zshrc"

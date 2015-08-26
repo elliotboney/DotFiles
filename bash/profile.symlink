@@ -1,3 +1,5 @@
+echo -e "Processing .profile"
+
 # # Configuration
 # # -------------
 # # EXPORT_FUNCTIONS: export SHELL_PLATFORM and shell_is_* functions for use

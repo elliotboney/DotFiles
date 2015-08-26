@@ -1,6 +1,6 @@
 # For editing/reloading dotfiles
 alias editenv='vim ~/.dotfiles/'
-alias seditenv="subl ~/Dotfiles && subl ~/.zshrc"
+alias seditenv="subl ~/Dotfiles && subl ~/.zshrc && subl ~/.bashrc"
 alias aeditenv="atom ~/.dotfiles"
 
 

@@ -1,6 +1,6 @@
-alias nh='cd ~/Code/Clients/NuHabitat/'
-alias exp='cd ~/Code/Clients/NuHabitat/experience.nH'
-alias site='cd /var/www/Site'
-alias prod='changetitle production.agentvow.com && ssh prod'
-alias ell='changetitle elliot.agentvow.com && ssh elliot'
-alias media='changetitle media.agentvow.com && ssh media'
+alias ell='changetitle elliotboney.com && ssh elliotboney.com'
+alias pa='cd ~/Code/Clients/Paperless'
+alias pasite='cd /var/www/paperlessagent/wp-content/themes/pa-elliot/'
+alias padash='cd /Users/eboney/Code/Clients/Paperless/PHP\ Sdk/'
+alias pafb='cd /var/www/facebook.thepaperlessagent.com/'
+

@@ -270,6 +270,11 @@ set mat=2
 " }
 " }
 
+" File specific syntax settings: {
+au BufNewFile,BufRead *dircolors set filetype=dircolors
+
+" }
+
 " File Settings: {
 " Autocmd Statements:"{
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS

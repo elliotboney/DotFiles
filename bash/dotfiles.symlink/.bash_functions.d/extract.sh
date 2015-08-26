@@ -54,5 +54,5 @@ function installfont() {
     do
       mv $F ~/Library/Fonts/ 2>/dev/null
   done
-  # rm -rf $(basename "$1" .zip)*
+  rmf $(basename "$1" .zip)*
 }

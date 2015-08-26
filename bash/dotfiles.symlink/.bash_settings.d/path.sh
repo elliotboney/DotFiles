@@ -1,29 +1,28 @@
 # ---------------------------------
 # Path Section
-PATH=""
+PATH=$PATH:""
 if [ -e "/usr/local/Cellar/php56" ] || [ -d "/usr/local/Cellar/php56" ]; then
  PATH=$PATH:"/usr/local/Cellar/php56/$(/bin/ls /usr/local/Cellar/php56 | /usr/bin/awk 'NR==0; END{print}')/bin"
 fi
 # add all the paths we want to array
 paths=(
     "${HOME}/.nvm/current/bin"
-    "$HOME/bin"
-    "$HOME/.bin"
+    "${HOME}/.bin"
     "/usr/local/opt/coreutils/libexec/gnubin"
     "/usr/local/bin"
     "/usr/local/sbin"
-    "/usr/local/share/npm/bin"
-    "/usr/local/Cellar/php56/5.6.7/bin"
+    # "/usr/local/share/npm/bin"
     "/usr/local/lib/python2.7/site-packages"
-    "/usr/local/lib/python3.3/site-packages"
+    "/usr/local/lib/python3.4/site-packages"
     "${GOROOT}/bin"
     "/opt/bin"
+    "/opt/sbin"
     "/bin"
     "/sbin"
     "/usr/bin"
     "/usr/sbin"
-    "$HOME/Code/Android/sdk/tools"
-    "$HOME/Code/Android/sdk/platform-tools"
+    "${HOME}/Code/Android/sdk/tools"
+    "${HOME}/Code/Android/sdk/platform-tools"
     )
 
 # iterate through array
@@ -32,7 +31,7 @@ do
     #check if dir exists first
     if [ -e $p ] || [ -d $p ]; then
         #if it does, add to path
-        PATH=$PATH:$p
+        PATH=${PATH}:$p
         # echo $p
     else
         # echo "[X]" $p

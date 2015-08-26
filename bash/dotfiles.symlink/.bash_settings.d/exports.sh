@@ -48,6 +48,7 @@ export LC_ALL="en_US.UTF-8"
 # Make sublime the default editor unless it's not avail
 if [ ! -x "$(which subl)" ]; then
   export EDITOR="vim"
+  alias s="vim"
 else
   export EDITOR="/usr/local/bin/subl -w"
 fi
