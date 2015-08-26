@@ -3,11 +3,17 @@
 #
 DEBUG=true
 
-export N=`gdate +%N`
+if $(type gdate >/dev/null); then
+DATECOMMAND='gdate'
+else
+DATECOMMAND='date'
+fi
+
+export N=`$DATECOMMAND +%N`
 
 function dtime() {
-  echo "$(((`gdate +%N`-${N})/1000000))ms"
-  export N=`gdate +%N`
+  echo "$(((`$DATECOMMAND +%N`-${N})/1000000))ms"
+  export N=`$DATECOMMAND +%N`
 
 }
 
@@ -15,8 +21,8 @@ function dtime() {
 # Echo out if we have debug set to true
 function decho() {
   if [ "$DEBUG" = true ]; then
-    echo -e "\x1b[0;32m[$(((`gdate +%N`-${N})/1000000))ms]\x1b[m $@"
-    export N=`gdate +%N`
+    echo -e "\x1b[0;32m[$(((`$DATECOMMAND +%N`-${N})/1000000))ms]\x1b[m $@"
+    export N=`$DATECOMMAND +%N`
   fi
 }
 
