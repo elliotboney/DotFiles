@@ -46,11 +46,11 @@ export LANG="en_US"
 export LC_ALL="en_US.UTF-8"
 
 # Make sublime the default editor unless it's not avail
-if [ ! -x "$(which subl)" ]; then
+if $(type /usr/local/bin/subl >/dev/null); then
+  export EDITOR="/usr/local/bin/subl -w"
+else
   export EDITOR="vim"
   alias s="vim"
-else
-  export EDITOR="/usr/local/bin/subl -w"
 fi
 
 # Make some commands not show up in history

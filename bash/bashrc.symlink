@@ -1,4 +1,5 @@
-decho "Processing .bashrc"
+setindent "    "
+decho "\x1b[0;36mProcessing .bashrc\x1b[m"
 
 # Configuration
 # EXPORT_FUNCTIONS: export SHELL_PLATFORM and shell_is_* functions for use
@@ -59,9 +60,10 @@ $fn_cmd HOST_NAME
 function include_d {
   dir=$1
   if [ -d $HOME/.dotfiles/.$dir.d -a -r $HOME/.dotfiles/.$dir.d -a -x $HOME/.dotfiles/.$dir.d ]; then
+    decho "    \x1b[0;33mProcessing ${1}/ directory...\x1b[m"
    for i in $HOME/.dotfiles/.$dir.d/*sh; do
      source "${i}"
-     decho "\t$i"
+     decho "    \x1b[38;5;242m$i\x1b[m"
    done
  fi
 }
@@ -79,14 +81,15 @@ unset BASHRC_DISPATCH_PID
 
 # Execute local stuff if it exists
 if [ -f $HOME/.bashrc.local ] ; then
-  decho "\t$HOME/.bashrc.local"
+  decho "    \x1b[38;5;242m$HOME/.bashrc.local"
   source $HOME/.bashrc.local
 fi
 
 if shell_is_osx; then
   if [ -f "`brew --prefix`/etc/grc.bashrc" ]; then
-    decho "\t`brew --prefix`/etc/grc.bashrc"
+    decho "    \x1b[38;5;242m`brew --prefix`/etc/grc.bashrc"
     source "`brew --prefix`/etc/grc.bashrc"
   fi
 fi
-decho "Done with .bashrc"
+decho "\x1b[0;36mDone with .bashrc\x1b[m"
+setindent ""

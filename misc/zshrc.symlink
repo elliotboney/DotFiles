@@ -1,7 +1,7 @@
 #
 # Set to true if you want to output some debug info
 #
-DEBUG=true
+DEBUG=false
 
 if $(type gdate >/dev/null); then
 DATECOMMAND='gdate'
@@ -10,28 +10,28 @@ DATECOMMAND='date'
 fi
 
 export N=`$DATECOMMAND +%N`
-
-function dtime() {
-  echo "$(((`$DATECOMMAND +%N`-${N})/1000000))ms"
-  export N=`$DATECOMMAND +%N`
-
-}
-
+export N_ORIG=`$DATECOMMAND +%N`
+export N_SPACE=""
 
 # Echo out if we have debug set to true
 function decho() {
   if [ "$DEBUG" = true ]; then
-    echo -e "\x1b[0;32m[$(((`$DATECOMMAND +%N`-${N})/1000000))ms]\x1b[m $@"
+    echo "${N_SPACE}\x1b[0;32m[$(((`$DATECOMMAND +%N`-${N})/1000000))ms]\x1b[m $@"
     export N=`$DATECOMMAND +%N`
   fi
 }
 
-decho "Processing .zshrc"
+function setindent() {
+  export N_SPACE="$@"
+}
+
+decho "\x1b[1;36mProcessing .zshrc\x1b[m"
 setopt extended_glob
 
 # we need DOTPATH
 if [ -f "${HOME}/.dotfilelocation" ];then
     source "$HOME/.dotfilelocation"
+    decho "$HOME/.dotfilelocation"
 fi
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
@@ -57,29 +57,24 @@ fpath=(~/.zsh-completions $fpath)
 source $ZSH/oh-my-zsh.sh
 decho "$ZSH/oh-my-zsh.sh"
 
-# Load phpbrew if it exists
-if [ -f "$HOME/.phpbrew/bashrc" ]; then
-    # source $HOME/.phpbrew/bashrc
-fi
-
 # Source our bashrc file
-source $HOME/.bashrc
+source "${HOME}/.bashrc"
 
 # Load a custom theme if it exists
 if [ -f "$HOME/.dotfiles/custom.zsh-theme" ]; then
-    decho "$HOME/.dotfiles/custom.zsh-theme"
     source $HOME/.dotfiles/custom.zsh-theme
+    decho "$HOME/.dotfiles/custom.zsh-theme"
 fi
 
 if [ -f "$HOME/.nvm/nvm.sh" ]; then
-    decho "$HOME/.nvm/nvm.sh"
     source $HOME/.nvm/nvm.sh
+    decho "$HOME/.nvm/nvm.sh"
 fi
 
 # Enable extended globbing
 setopt extendedglob
 
-# setopt menu_complete
+setopt menu_complete
 
 # makes color constants available
 autoload -U colors
@@ -92,8 +87,14 @@ autoload -U zmv
 
 # sweet renaming shit
 # autoload -U zmv
-decho "$HOME/.rvm/scripts/rvm"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+decho "$HOME/.rvm/scripts/rvm"
 export PATH="`${HOME}/.rvm/bin/rvm gemdir 2>/dev/null`/bin:${HOME}/.rvm/bin:${PATH}" # Add RVM to PATH for scripting
 
-decho "Done with .zshrc"
+decho "\x1b[1;36mDone with .zshrc\x1b[m"
+
+if [ "$DEBUG" = true ]; then
+  echo -e "------------------------------------------------------------------------------------"
+  echo -e "\x1b[1;34m Total Time: \x1b[1;32m[$(((`$DATECOMMAND +%N`-${N_ORIG})/1000000))ms]\x1b[m                       "
+  echo -e "------------------------------------------------------------------------------------"
+fi
