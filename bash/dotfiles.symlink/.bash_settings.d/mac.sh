@@ -15,7 +15,7 @@ if shell_is_osx; then
   #  Menu  Stuff  #
   #################
   # Hide the Spotlight Menu Icon
-  sudo chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
+  # sudo chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
   for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
     defaults write "${domain}" dontAutoLoad -array \
     "/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
