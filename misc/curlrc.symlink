@@ -11,6 +11,10 @@ max-time = 300
 # When following a redirect, automatically set the previous URL as referer
 referer = ";auto"
 
+progress-bar
+# verbose
+remote-time
+ipv4
 # Show error messages
 show-error
 

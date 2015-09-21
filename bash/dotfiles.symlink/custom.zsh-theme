@@ -16,10 +16,9 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%} ✭"
 #     PROMPT='%{$fg[magenta]%}%n%{$reset_color%}%{$fg[cyan]%}@%{$reset_color%}%{$fg[red]%}%m%{$reset_color%}%{$fg[red]%}:%{$reset_color%}%{$fg[cyan]%}%0~%{$reset_color%}%{$fg[red]%}|%{$reset_color%}$(git_prompt_info)%{$fg[cyan]%}⇒%{$reset_color%}  '
 # fi
 HOST=`hostname -s`
-if [[ `hostname -s` == *"lliot"*  ]]; then
+if [[ `hostname -s` == *"Elliot"*  ]]; then
   local user='%{$fg[cyan]%}%n%{$fg[white]%}@%{$fg[magenta]%}%m%{$reset_color%}%{$fg[yellow]%}:'
   local pwd='%{$fg[green]%}%~%{$reset_color%}'
-
 else
   local user='%{$fg[magenta]%}%n%{$fg[cyan]%}@%{$fg[green]%}%m%{$reset_color%}%{$fg[yellow]%}:'
   local pwd='%{$fg[magenta]%}%~%{$reset_color%}'
