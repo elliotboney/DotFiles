@@ -79,16 +79,24 @@ Maid.rules do
     dir(['~/Downloads/00 Completed/**/*.mp4', '~/Downloads/00 Completed/**/*.avi', '~/Downloads/00 Completed/**/*.mkv']).each do |path|
       if !path.match(/\/00 Movies/)
         begin
-          if (size_of(path) < 100000000)
-            remove(path)
-          else
-            if path.match(/[sS][0-9][0-9][eE][0-9][0-9]/)
-              move(path, '~/Downloads/00 Completed/00 Movies/00 TV')
+          dir(File.dirname(path)+"/**").each do |file|
+            # puts "File exists as #{file}\n"
+            if (size_of(file) < 100000000)
+              puts "Killing sample or garbage file #{file}\n"
+              remove(file)
             else
-              move(path, '~/Downloads/00 Completed/00 Movies')
+              if file.match(/[sS][0-9][0-9][eE][0-9][0-9]/)
+                move(file, '~/Downloads/00 Completed/00 Movies/00 TV')
+              else
+                move(file, '~/Downloads/00 Completed/00 Movies')
+              end
+            end
+            begin
               if (File.dirname(path) != '/Users/eboney/Downloads/00 Completed')
                 trash(File.dirname(path))
               end
+            rescue
+              puts "Error removing #{File.dirname(path)}"
             end
           end
         rescue
@@ -127,10 +135,10 @@ Maid.rules do
   end
 
   # rule 'Get Mime Type' do
-  #   dir('~/Downloads/**/*.psd').each do |path|
-  #     mimetype = content_types(path)
-  #     # puts "--->#{mimetype}"
-  #   end
+    # dir('~/Downloads/**/*.json').each do |path|
+      # mimetype = content_types(path)
+      # puts "--->#{mimetype}"
+    # end
   # end
 
   #  d8888b.  .d88b.  db   d8b   db d8b   db db       .d88b.   .d8b.  d8888b. .d8888.
@@ -141,19 +149,23 @@ Maid.rules do
   #  Y8888D'  `Y88P'   `8b8' `8d8'  VP   V8P Y88888P  `Y88P'  YP   YP Y8888D' `8888Y'
   #
   DOWNLOAD_TYPES = {
-    '02 Apps' => %w(com.apple.application com.apple.installer-package-archive),
-    '06 Docs' => %w(com.adobe.pdf public.rtf application/vnd.openxmlformats-officedocument.wordprocessingml.template public.log com.apple.iwork.pages.pages),
+    '02 Apps' => %w(com.apple.application com.apple.installer-package-archive public.executable),
+    '06 Docs' => %w(com.microsoft.word.doc com.adobe.pdf public.rtf application/vnd.openxmlformats-officedocument.wordprocessingml.template public.log com.apple.iwork.pages.pages com.apple.iwork.keynote.sffkey),
     '03 Archives' => %w(public.archive application/rar-compressed),
     '01 Design' => %w(com.adobe.photoshop-image com.adobe.illustrator.ai-image com.adobe.encapsulated-postscript com.adobe.indesign.indd-document),
     '04 Images' => 'public.image',
-    '05 Scripts' => %w(public.source-code public.script public.html text/css),
+    '05 Scripts' => %w(public.source-code public.script public.html text/css dyn.ah62d4rv4ge8024psse),
     '09 Books' => %w(application/epub+zip),
-    '08 Data' => %w(text/comma-separated-values com.microsoft.excel.xls)
+    '08 Data' => %w(text/comma-separated-values com.microsoft.excel.xls public.json)
   }
   DOWNLOAD_TYPES.each do |sub_dir, types|
     rule "Move downloaded #{sub_dir.downcase}" do
       puts "--------------------------------------------\n\033[36mMove downloaded #{sub_dir.downcase}\033[0m"
-      move where_content_type(dir('~/Downloads/*.*'), types), mkdir("~/Downloads/#{sub_dir}")
+      if !File.directory?("/Users/eboney/Downloads/#{sub_dir}")
+        puts "~/Downloads/#{sub_dir} is not a directory"
+        mkdir("~/Downloads/#{sub_dir}")
+      end
+      move where_content_type(dir('~/Downloads/*.*'), types), "~/Downloads/#{sub_dir}"
     end
   end
 
@@ -184,17 +196,17 @@ Maid.rules do
   # Cleaning up after Maid
   # ----------------------
   # This one should be after all the other 'Downloads' and 'Outbox' rules
-  # rule 'Remove empty directories && Kill Stupid .DS_Store files' do
-  #   puts "--------------------------------------------\n\033[33mRemove empty directories && Kill Stupid .DS_Store files\033[0m"
-  #   dir(%w(~/Downloads/**/.DS_Store ~/Dropbox/**/.DS_Store ~/Git/**/.DS_Store ~/Code/**/.DS_Store)).each do |path|
-  #     File.delete(path)
-  #   end
-  #   dir(%w(~/Downloads/**/* ~/Dropbox/**/*)).each do |path|
-  #     if File.directory?(path) && (Dir.entries(path) - %w{ . .. }).empty? && !path.match(/\.app/)
-  #       trash path
-  #     end
-  #   end
-  # end
+  rule 'Remove empty directories && Kill Stupid .DS_Store files' do
+    # puts "--------------------------------------------\n\033[33mRemove empty directories && Kill Stupid .DS_Store files\033[0m"
+    # dir(%w(~/Downloads/**/.DS_Store ~/Dropbox/**/.DS_Store ~/Git/**/.DS_Store ~/Code/**/.DS_Store)).each do |path|
+      # File.delete(path)
+    # end
+    dir(%w(~/Downloads/**/* ~/Dropbox/**/*)).each do |path|
+      if File.directory?(path) && (Dir.entries(path) - %w{ . .. }).empty? && !path.match(/\.app/)
+        trash path
+      end
+    end
+  end
 
   # Trash
   # rule 'Take out the Trash' do

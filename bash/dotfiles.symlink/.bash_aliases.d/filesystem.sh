@@ -9,6 +9,7 @@ alias lssize='du -h --max-depth=1 . | sort -hr'
 alias rmf='rm -f'
 alias rmrf='rm -rf'
 
+
 # Find top 5 big files
 alias findbig="find . -type f -exec ls -s {} \; | sort -n -r | head -5"
 

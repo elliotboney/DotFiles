@@ -1,3 +1,9 @@
+# Remove Empty Directories
+function cleanempty() {
+  echo -e "\t${BGreen}Deleting f'in empty files...${BRed}"
+  find . -empty -type d -delete -print
+}
+
 # capitalize a file
 function capitalize() {
   tmp=$(echo "${1}" | sed -e "s/\([^ ]\+\) /\u\1\ /g" -e "s/^\( \)/\u\1/")

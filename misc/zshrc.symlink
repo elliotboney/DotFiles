@@ -74,7 +74,8 @@ fi
 # Enable extended globbing
 setopt extendedglob
 
-setopt menu_complete
+# Tab selects first item
+# setopt menu_complete
 
 # makes color constants available
 autoload -U colors

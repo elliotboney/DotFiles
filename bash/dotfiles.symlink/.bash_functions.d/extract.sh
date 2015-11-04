@@ -31,6 +31,11 @@
 # fi
 # }
 
+function ex() {
+  extract $1
+  rmf $1
+}
+
 #Creates an archive (*.tar.gz) from given directory.
 function maketar() { tar cvzf "${1%%/}.tar.gz"  "${1%%/}/"; }
 
