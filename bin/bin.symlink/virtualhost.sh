@@ -11,7 +11,7 @@ email='webmaster@localhost'
 sitesEnable='/etc/apache2/sites-enabled/'
 sitesAvailable='/etc/apache2/sites-available/'
 userDir='/var/www/'
-sitesAvailabledomain=$sitesAvailable$domain.conf
+sitesAvailabledomain=$sitesAvailable$domain
 
 ### don't modify from here unless you know what you are doing ####
 
@@ -33,7 +33,8 @@ do
 done
 
 if [ "$rootDir" == "" ]; then
-	rootDir=${domain//./}
+	# rootDir=${domain//./}
+	rootDir=${domain/}
 fi
 
 ### if root dir starts with '/', don't use /var/www as default starting point
@@ -75,12 +76,14 @@ if [ "$action" == 'create' ]
 			ServerAlias $domain
 			DocumentRoot $rootDir
 			<Directory />
+				Options FollowSymLinks
 				AllowOverride All
 			</Directory>
 			<Directory $rootDir>
 				Options Indexes FollowSymLinks MultiViews
-				AllowOverride all
-				Require all granted
+				AllowOverride All
+        Order allow,deny
+        allow from all
 			</Directory>
 			ErrorLog /var/log/apache2/$domain-error.log
 			LogLevel error
@@ -109,10 +112,10 @@ if [ "$action" == 'create' ]
 		fi
 
 		### enable website
-		a2ensite $domain
+		sudo a2ensite $domain
 
 		### restart Apache
-		/etc/init.d/apache2 reload
+		service apache2 reload
 
 		### show the finished message
 		echo -e $"Complete! \nYou now have a new Virtual Host \nYour new host is: http://$domain \nAnd its located at $rootDir"
