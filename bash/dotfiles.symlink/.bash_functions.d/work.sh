@@ -1,7 +1,7 @@
 function hubot() {
     case "$1" in
       start)
-        ssh -t elliotboney.com 'screen -S hubot -rd "/home/eboney/hubot/bin/hubot" || screen -S hubot "/home/eboney/hubot/bin/hubot"'
+        ssh -t elliotboney.com 'screen -S remote/ -X stuff "/var/www/hubot/hubotd start"'
       ;;
 
       stop)

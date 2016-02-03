@@ -50,14 +50,36 @@ tg() {
 }
 
 function installfont() {
-  unzip -ju $1 -d $(basename "$1" .zip)
-  for F in $(basename "$1" .zip)/*.ttf
-    do
-      mv $F ~/Library/Fonts/ 2>/dev/null
-  done
-  for F in $(basename "$1" .zip)/*.otf
-    do
-      mv $F ~/Library/Fonts/ 2>/dev/null
-  done
-  rmf $(basename "$1" .zip)*
+  FONTFILE=$1
+  # unzip -ju $1 -d $(basename "${1}" .zip)
+  extract $1 > /dev/null 2>&1
+  MYBASENAME=$(basename "${FONTFILE}" .zip)
+  # echo ${MYBASENAME}
+  cp "${MYBASENAME}"/**/*.otf ~/Library/Fonts/
+  if [ $? -eq 0 ]; then
+    echo -e "\t${BGreen}Installed OTF!${NC}"
+    rmf "${FONTFILE}"
+    rm -rf "${MYBASENAME}/"
+  else
+    echo -e "${BRed}OTF not found.${NC}"
+    cp "${MYBASENAME}"/**/*.ttf ~/Library/Fonts/
+    if [ $? -eq 0 ]; then
+      echo -e "\t${BGreen}Installed TTF!${NC}"
+      rmf "${FONTFILE}"
+      rm -rf "${MYBASENAME}/"
+    else
+      echo -e "\t${BRed}TTF not found either!${NC}"
+    fi
+  fi
+  # for F in "${MYBASENAME}"/**/*.ttf
+    # do
+      # echo $F
+      # mv $F ~/Library/Fonts/ 2>/dev/null
+  # done
+  # for F in "${MYBASENAME}"/**/*.otf
+    # do
+      # echo $F
+      # mv $F ~/Library/Fonts/ 2>/dev/null
+  # done
+  # rmf $(basename "$1" .zip)*
 }

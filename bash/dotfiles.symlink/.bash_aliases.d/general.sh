@@ -1,4 +1,12 @@
+# Chromecast stuff
+alias castoffice='castnow --device "DaOffice"'
+alias castlivingroom='castnow --device "Dobbie"'
+
+
 unalias c
+
+alias adl='/Applications/Adobe\ Flash\ CC\ 2015/AIR17.0/bin/adl'
+alias adt='/Applications/Adobe\ Flash\ CC\ 2015/AIR17.0/bin/adt'
 
 alias fuck='eval $(thefuck $(fc -ln -1))'
 # You can use whatever you want as an alias, like for Mondays:

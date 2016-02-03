@@ -13,7 +13,7 @@ paths=(
     "/usr/local/sbin"
     # "/usr/local/share/npm/bin"
     "/usr/local/lib/python2.7/site-packages"
-    "/usr/local/lib/python3.4/site-packages"
+    # "/usr/local/lib/python3.4/site-packages"
     "${GOROOT}/bin"
     "/opt/bin"
     "/opt/sbin"

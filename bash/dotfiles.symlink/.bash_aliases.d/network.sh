@@ -14,7 +14,7 @@ alias localip="ifconfig | grep \"inet \" | grep -v \"127.0\" | cut -d' ' -f 2"
 
 # View HTTP traffic
 alias sniff="sudo ngrep -d 'en0' -t '^(GET|POST) ' 'tcp and port 80'"
-alias httpdump="sudo tcpdump -i en0 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+alias httpdump="sudo tcpdump -i en0 -n -s 0 -w - | grep -a -o -E \"Host\: .*|(GET|POST) \/.*\""
 
 
 # One of @janmoesen’s ProTip™s
