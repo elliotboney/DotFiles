@@ -49,23 +49,23 @@ Maid.rules do
             move(File.dirname(path), '~/Downloads/00 Completed/02 Apps')
           else
             if !File.dirname(path).match(/Downloads$/)
-              move(path, '~/Downloads/00 Completed/02 Apps')
+              move(path, '~/Downloads/02 Apps')
             end
           end
         else
           # If it's a file we found, move the parent directory
-          move(File.dirname(path), '~/Downloads/00 Completed/02 Apps')
+          move(File.dirname(path), '~/Downloads/02 Apps')
         end
       end
     end
-    move(dir('~/Downloads/00 Completed/*.dmg'), '~/Downloads/00 Completed/02 Apps')
+    move(dir('~/Downloads/00 Completed/*.dmg'), '~/Downloads/02 Apps')
   end
 
   #
   # Clean App Names
   #
   rule 'Clean Cracked Apps Names' do
-    dir('~/Downloads/00 Completed/01 Apps/*').each do |path|
+    dir('~/Downloads/01 Apps/*').each do |path|
       if File.directory?(path)
         if result = path.match(/(.*)Multil/) || result = path.match(/(.*)[\._][Mm][Aa][Cc][oO][sS][xX]/)
           begin
@@ -91,7 +91,7 @@ Maid.rules do
       # if !path.match(/00 Movies/)
         # puts "Path match"
       # end
-      if !path.match(/00 Movies/) && !path.match(/01 TV/)
+      if !path.match(/00 Movies/) && !path.match(/00 TV/)
         # Iterate through all the files
         dir(File.dirname(path)+"*/*[avi|mkv|mp4]").each do |file|
           # Files/Directories to ignore
@@ -100,10 +100,10 @@ Maid.rules do
             next
           end
           if File.directory?(file)
-            g.add_notification "Duplicate", nil, MAID_ICONS::DUPLICATE
-            g.notify "Duplicate", "Rule: Remove duplicate files", "Remove duplicate file #{File.basename(file)}"
-            puts say_hello("balls")
-              # puts "File exists as #{file}\n".blue
+            # g.add_notification "Duplicate", nil, MAID_ICONS::DUPLICATE
+            # g.notify "Duplicate", "Rule: Remove duplicate files", "Remove duplicate file #{File.basename(file)}"
+            # puts say_hello("balls")
+            puts "File exists as #{file}\n".blue
             next
           end
 
@@ -129,7 +129,7 @@ Maid.rules do
 
           # Check for TV
           if file.match(/[sS][0-9][0-9][eE][0-9][0-9]/)
-            move(file, '~/Downloads/00 Completed/01 TV')
+            move(file, '~/Downloads/00 TV')
           else
             move(file, '~/Downloads/00 Completed/00 Movies')
           end
@@ -192,8 +192,8 @@ Maid.rules do
     '08 Data' => %w(text/comma-separated-values com.microsoft.excel.xls public.json)
   }
   DOWNLOAD_TYPES.each do |sub_dir, types|
-    rule "Move downloaded #{sub_dir.downcase}" do
-      puts "--------------------------------------------\n\033[36mMove downloaded #{sub_dir.downcase}\033[0m"
+    rule "Move downloaded #{sub_dir}" do
+      puts "--------------------------------------------\n\033[36mMove downloaded #{sub_dir}\033[0m"
       if !File.directory?("/Users/eboney/Downloads/#{sub_dir}")
         puts "~/Downloads/#{sub_dir} is not a directory"
         mkdir("~/Downloads/#{sub_dir}")

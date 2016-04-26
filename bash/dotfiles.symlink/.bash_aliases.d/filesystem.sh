@@ -14,28 +14,27 @@ alias rmrf='rm -rf'
 alias findbig="find . -type f -exec ls -s {} \; | sort -n -r | head -5"
 
 
-if shell_is_router; then
+# unzip all the files
+alias extractall='unzip -o "*.zip" | rmf *.zip'
 
-else
-   alias ls="ls --color=always -hF --group-directories-first"
-fi
 # grc overides for ls
 #   `brew install coreutils`
 if $(gls &>/dev/null); then
-   alias ls="gls -hF --color=always --group-directories-first"
-   alias la='gls -lahF --color=always --group-directories-first'
-   alias chmod='sudo gchmod'
-   alias chown='sudo gchown'
-   alias dircolors='gdircolors'
+   alias ls="gls -hF --group-directories-first --color=always --quoting-style={shell-always,c-maybe}"
+   alias la="gls -lahF --group-directories-first --color=always --quoting-style={shell-always,c-maybe}"
+   alias chmod="sudo gchmod"
+   alias chown="sudo gchown"
+   alias dircolors="gdircolors"
    alias ln="gln"
-   alias mv='gmv'
-   alias cp='/usr/local/bin/gcp'
-   alias find='gfind'
-   alias grep='ggrep'
-   alias du='gdu'
-   alias sort='gsort'
+   alias mv="gmv"
+   alias cp="/usr/local/bin/gcp"
+   alias find="gfind"
+   alias grep="ggrep"
+   alias du="gdu"
+   alias sort="gsort"
 else
-   alias grep='grep'
+   alias grep="grep"
+   alias ls="ls --color=always -hF --group-directories-first"
 fi
 
 # find shit

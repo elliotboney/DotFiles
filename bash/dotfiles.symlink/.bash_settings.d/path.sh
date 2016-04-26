@@ -8,6 +8,7 @@ fi
 paths=(
     "${HOME}/.nvm/current/bin"
     "${HOME}/.bin"
+    "${HOME}/Downloads/sejda-console-2.0.0.M6/bin"
     "/usr/local/opt/coreutils/libexec/gnubin"
     "/usr/local/bin"
     "/usr/local/sbin"

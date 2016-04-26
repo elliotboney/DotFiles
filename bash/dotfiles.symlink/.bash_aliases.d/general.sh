@@ -2,6 +2,7 @@
 alias castoffice='castnow --device "DaOffice"'
 alias castlivingroom='castnow --device "Dobbie"'
 
+alias -g TOPNG='| convert label:@-.png'
 
 unalias c
 
@@ -13,7 +14,6 @@ alias fuck='eval $(thefuck $(fc -ln -1))'
 alias FUCK='fuck'
 
 alias brewu='brew update && brew upgrade && brew cleanup && brew prune && brew doctor'
-
 
 alias kextlist="kextstat -kl | awk '{printf \"%i %i %s %s\n\", \$4 / 1024, \$5 / 1024, \$6, \$7}' | sort -nr"
 

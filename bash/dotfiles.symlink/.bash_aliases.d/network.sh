@@ -1,3 +1,6 @@
+# Show apps that use internet connection at the moment.
+alias listinternetapps='lsof -P -i -n'
+
 # return;
 # URL-encode strings
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
