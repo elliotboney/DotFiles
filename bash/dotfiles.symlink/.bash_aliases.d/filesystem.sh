@@ -2,12 +2,9 @@
 # @see http://www.mfasold.net/blog/2008/11/moving-or-renaming-multiple-files/
 alias mmv='noglob zmv -W'
 
-#folder sizes
+# List Folder Sizes
 alias lssize='du -h --max-depth=1 . | sort -hr'
 
-# for bypassing safety prompt
-alias rmf='rm -f'
-alias rmrf='rm -rf'
 
 
 # Find top 5 big files

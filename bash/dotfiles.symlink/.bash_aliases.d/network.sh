@@ -1,47 +1,30 @@
 # Show apps that use internet connection at the moment.
 alias listinternetapps='lsof -P -i -n'
 
-# return;
 # URL-encode strings
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
 
-# Network Tricks
+# Show Used Ports
 alias ports='netstat -tulan -p tcp'
+
+# Download a file
 alias download='curl -O'
 
-# IP addresses
+## IP addresses
+# Get Public IP address
 alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
+# Get Local IP address
 alias localip="ifconfig | grep \"inet \" | grep -v \"127.0\" | cut -d' ' -f 2"
-
-
 
 # View HTTP traffic
 alias sniff="sudo ngrep -d 'en0' -t '^(GET|POST) ' 'tcp and port 80'"
+# Dump HTTP traffic
 alias httpdump="sudo tcpdump -i en0 -n -s 0 -w - | grep -a -o -E \"Host\: .*|(GET|POST) \/.*\""
-
-
-# One of @janmoesen’s ProTip™s
-# for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
-#    alias "$method"="lwp-request -m '$method'"
-# done
 
 # Stop after sending count ECHO_REQUEST packets #
 alias ping='ping -c 5'
 
-if shell_is_elliot; then
-    # Connection for work
-    #alias onramp='sudo vpnc ~/Dropbox/myvpn.conf --debug 99 --natt-mode cisco-udp'
-
-    # Connect to boxeebox
-    alias boxee='telnet 192.168.1.101 2323'
-
-    # alias profittunnel='ssh -L 3306:profittunnel.cin9lenenfmf.us-east-1.rds.amazonaws.com:3306 profit'
-fi
-
-if shell_is_osx; then
-alias edithosts='s /etc/hosts'
-else
-alias edithosts='vim /etc/hosts'
-fi
+# Edit Hosts
+alias hosts='sudo $EDITOR /etc/hosts'
 
 

@@ -1,3 +1,4 @@
+# Useage: push <local> <remotepath> <sshhost>
 function push () {
   if [[ -z "$1" ]]; then
     echo -e "\n\t${BWhite}Useage: push <local> <remotepath> <sshhost>${NC}"

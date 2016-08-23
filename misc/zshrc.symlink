@@ -99,3 +99,4 @@ if [ "$DEBUG" = true ]; then
   echo -e "\x1b[1;34m Total Time: \x1b[1;32m[$(((`$DATECOMMAND +%N`-${N_ORIG})/1000000))ms]\x1b[m                       "
   echo -e "------------------------------------------------------------------------------------"
 fi
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

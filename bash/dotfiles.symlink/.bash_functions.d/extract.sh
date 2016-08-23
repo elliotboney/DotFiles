@@ -55,14 +55,14 @@ function installfont() {
   extract $1 > /dev/null 2>&1
   MYBASENAME=$(basename "${FONTFILE}" .zip)
   # echo ${MYBASENAME}
-  cp "${MYBASENAME}"/**/*.otf ~/Library/Fonts/
+  cp "${MYBASENAME}"/**/*.[oO][tT][fF] ~/Library/Fonts/ 2>/dev/null
   if [ $? -eq 0 ]; then
     echo -e "\t${BGreen}Installed OTF!${NC}"
     rmf "${FONTFILE}"
     rm -rf "${MYBASENAME}/"
   else
-    echo -e "${BRed}OTF not found.${NC}"
-    cp "${MYBASENAME}"/**/*.ttf ~/Library/Fonts/
+    echo -e "\t${BRed}OTF not found.${NC}"
+    cp "${MYBASENAME}"/**/*.[tT][tT][fF] ~/Library/Fonts/ 2>/dev/null
     if [ $? -eq 0 ]; then
       echo -e "\t${BGreen}Installed TTF!${NC}"
       rmf "${FONTFILE}"

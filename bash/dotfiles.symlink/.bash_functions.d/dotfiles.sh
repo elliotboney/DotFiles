@@ -1,5 +1,5 @@
-function pushdots()   # Get current host related info.
-{
+# Commits any changes to dotfiles and pushes to the repo
+function pushdots() {
     now=$(date +"%m_%d_%Y")
     if [[ -z "$1" ]]; then
         cd ${DOTPATH} && git add -A . && git commit -m "Auto dotfiles push -- $now" && git push && cd -
@@ -9,6 +9,7 @@ function pushdots()   # Get current host related info.
 
 }
 
+# Resets local copy of dotfiles and pulls fresh copy
 function updatedotfiles() {
     cd ${DOTPATH} && git reset --hard origin/master && git pull && cd - && source $HOME/.zshrc
 }
@@ -16,10 +17,7 @@ function updatedotfiles() {
 function lm () {
   MVFILE=$1
   MVFILE=${MVFILE:1:${#MVFILE}}
-  # return
-   # ${DIR:1:${#DIR}}
  if [[ -z "$1" ]]; then
-        # echo a help message if no port is specified
         echo -e "\n\t${White}Useage: ${BCyan}lm ${LightGray}<file> ${NC}\n"
   else
       # cd ${DOTPATH} && git add -A . && git commit -m "$1" && git push && cd -

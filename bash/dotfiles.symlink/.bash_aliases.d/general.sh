@@ -13,7 +13,7 @@ alias fuck='eval $(thefuck $(fc -ln -1))'
 # You can use whatever you want as an alias, like for Mondays:
 alias FUCK='fuck'
 
-alias brewu='brew update && brew upgrade && brew cleanup && brew prune && brew doctor'
+
 
 alias kextlist="kextstat -kl | awk '{printf \"%i %i %s %s\n\", \$4 / 1024, \$5 / 1024, \$6, \$7}' | sort -nr"
 
@@ -30,8 +30,9 @@ alias colortest='for x in 0 1 4 5 7 8; do for i in `seq 30 37`; do for a in `seq
 UCMD=""
 if shell_is_osx; then
     UCMD=${UCMD}'sudo softwareupdate -i -a'
-    command_exists brew && UCMD=${UCMD}"; brew update; brew upgrade; brew cleanup"
+    command_exists brew && UCMD=${UCMD}"; brew update; brew upgrade --all; brew cleanup"
     command_exists npm && UCMD=${UCMD}"; npm update -g"
+    command_exists gem && UCMD=${UCMD}"; sudo gem update --system"
     command_exists gem && UCMD=${UCMD}"; sudo gem update"
     command_exists pear && UCMD=${UCMD}"; sudo pear upgrade"
     command_exists phpbrew && UCMD=${UCMD}"; phpbrew self-update; "

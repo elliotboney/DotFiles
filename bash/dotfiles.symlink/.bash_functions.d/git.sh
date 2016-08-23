@@ -1,16 +1,17 @@
-# function gi() {
-#   curl -s https://www.gitignore.io/api/${(j:,:)@} ;
-# }
-
+# Clones a repo and then CD's into it
 function lazyclone {
-  url=$1;
-  reponame=$(echo $url | awk -F/ '{print $NF}' | sed -e 's/.git$//');
-  git clone --depth=7 $url $reponame;
-  cd $reponame;
+  if [[ -z "$1" ]]; then
+    echo -e "\n\t${BCyan} Useage: ${White}updateallgit ${Yellow}<${LightGray}directory${Yellow}>\n"
+  else
+    url=$1;
+    reponame=$(echo $url | awk -F/ '{print $NF}' | sed -e 's/.git$//');
+    git clone --depth=7 $url $reponame;
+    cd $reponame;
+  fi
 }
 
-function updateallgit()
-{
+# Updates all git include subdirectories
+function updateallgit() {
   if [[ -z "$1" ]]; then
     echo -e "\n\t${BCyan} Useage: ${White}updateallgit ${Yellow}<${LightGray}directory${Yellow}>\n"
   else
@@ -19,6 +20,7 @@ function updateallgit()
 
 }
 
+# Gitignore magic
 function gi() {
   if [[ -z "$1" ]]; then
     curl -L -s "https://www.gitignore.io/api/list" | tr "," "\n" | less
@@ -27,22 +29,12 @@ function gi() {
   fi
 }
 
+# Pulls all in a directory
 function pullall {
-  for dir in */
-  do
-      cd ${dir}
-      echo "Entering and git pulling: ${dir}"
-      git pull 2> /dev/null | grep -v 'Already'
-      cd ..
-    done
-  }
-
-# Install Grunt plugins and add them as `devDependencies` to `package.json`
-# Usage: `gruntinstall contrib-watch contrib-uglify zopfli`
-function gruntinstall() {
-  if [[ -z "$1" ]]; then
-    echo -e "\n\t${BCyan} Useage: ${White}gruntinstall ${Yellow}contrib-watch contrib-uglify zopfli${NC}\n"
-  else
-    npm install --save-dev ${*/#/grunt-}
-  fi
+  for dir in */;  do
+    cd ${dir}
+    echo "Entering and git pulling: ${dir}"
+    git pull 2> /dev/null | grep -v 'Already'
+    cd ..
+  done
 }

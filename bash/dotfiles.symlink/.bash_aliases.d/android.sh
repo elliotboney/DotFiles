@@ -1,4 +1,5 @@
-# For my phone
+# Reboot Connected Android Phone
 alias rebootdroid='adb shell su -c reboot'
-# alias droidrw='adb shell mount -o rw,remount /system'
+
+# Mount Connected Android Phone's /system as rw
 alias droidrw='adb shell su -c mount -o rw,remount /system'
