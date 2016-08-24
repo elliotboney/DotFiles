@@ -24,7 +24,6 @@ function json() {
 
 # grep processes without showing grep
 function psg() {
-  # ps aux | grep -P "(?!.*ggrep.*)$@"
   ps aux | grep --color=always -i "$@" | grep --color=always -v  grep
 }
 
@@ -63,11 +62,12 @@ function cjson () {
   fi
 }
 
+# Pretty print JSON
 function pj() {
   if $(type prettyjson >/dev/null); then
     prettyjson $@
   else
-    npm install -g prettyjson
+    npm install -g prettyjson && prettyjson $@
   fi
 }
 
@@ -82,10 +82,6 @@ function a() {
   fi;
 }
 
-function changetitle() {
-  TITLE=$*;
-  echo -ne "\033]0;${TITLE}\007";
-}
 
 # Change working directory to the top-most Finder window location
 function cdf() { # short for `cdfinder`

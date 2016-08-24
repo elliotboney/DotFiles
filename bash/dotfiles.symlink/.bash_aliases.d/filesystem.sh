@@ -19,8 +19,8 @@ alias extractall='unzip -o "*.zip" | rmf *.zip'
 if $(gls &>/dev/null); then
    alias ls="gls -hF --group-directories-first --color=always --quoting-style={shell-always,c-maybe}"
    alias la="gls -lahF --group-directories-first --color=always --quoting-style={shell-always,c-maybe}"
-   alias chmod="sudo gchmod"
-   alias chown="sudo gchown"
+   alias chmod="gchmod"
+   alias chown="gchown"
    alias dircolors="gdircolors"
    alias ln="gln"
    alias mv="gmv"
@@ -59,6 +59,3 @@ alias lsperm="/bin/ls -al|awk '{k=0;s=0;for(i=0;i<=8;i++){;k+=((substr(\$1,i+2,1
 
 # Clean directories
 alias cleanemptydir='find . -type d -empty -exec rmdir {} \;'
-
-# list out directories in the path
-# alias path='echo $PATH | tr -s ":" "\n"'

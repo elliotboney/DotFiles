@@ -22,13 +22,35 @@ _contains() {
 }
 
 
+
+
 ###############################################################################
 #  iTerm 2 Stuff
 ###############################################################################
 
+# Change title of tab
+function changetitle() {
+  TITLE=$*;
+  echo -ne "\033]0;${TITLE}\007";
+}
+
+
 # Send growl alert in iterm
-function growl() {
-  echo -en $'\e]9;'${1}'\007'
+function igrowl() {
+  growlnotify -t "Shell Message" -m "${@}"
+}
+
+# another growl notify
+function gn {
+    /usr/local/bin/growlnotify Finished -m "$@"
+}
+
+# Send a growl notification when a long task is done
+function long {
+  shopt -s expand_aliases
+  source ~/.bashrc
+  $@
+  /usr/local/bin/growlnotify Finished -m 'Done'
 }
 
 # Change tab colors

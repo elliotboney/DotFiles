@@ -1,7 +1,7 @@
 # A safer rm
 function rmf() {
   if command_exists rmtrash; then
-    rmtrash $@
+    rmtrash -u eboney $@
   elif command_exists trash; then
     trash $@
   else

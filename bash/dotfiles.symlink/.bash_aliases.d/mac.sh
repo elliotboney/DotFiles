@@ -14,12 +14,12 @@ if shell_is_osx; then
   alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
 
   # Intuitive map function
-    # For example, to list all directories that contain a certain file:
-    # find . -name .gitattributes | map dirname
-    alias map="xargs -n1"
+  # For example, to list all directories that contain a certain file:
+  # find . -name .gitattributes | map dirname
+  alias map="xargs -n1"
 
-   #delete stuff to trash
-   # alias rm='rmtrash';
-   alias rmf='rmtrash -u eboney';
+  #delete stuff to trash
+  # alias rm='rmtrash';
+  # alias rmf='rmtrash -u eboney';
 
 fi

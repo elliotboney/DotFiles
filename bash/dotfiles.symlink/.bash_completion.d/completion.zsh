@@ -120,7 +120,7 @@ compdef _brew brew
 
 _lm() {
 if (( CURRENT >= 2 )); then
-    compadd $(/usr/local/bin/gls -A1F | grep "^\." | grep -v '@' | grep -v '/' | grep -v 'zcompdump' | grep -v '\.DS_Store' | grep -v '\.dotfilelocation' | grep -v '\.Xauthority' | grep -v '_history' | grep -v '\.local')
+    compadd $(/usr/local/bin/gls -A1F | grep "^\." | grep -v '@' | grep -v 'zcompdump' | grep -v '\.DS_Store' | grep -v '\.dotfilelocation' | grep -v '\.Xauthority' | grep -v '_history' | grep -v '\.local')
   fi
 }
 compdef _lm lm
