@@ -1,6 +1,10 @@
 # decho "Bash Profile"
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
 
+if [ -z "$ZSHRCRUN" ] ; then
+  exec zsh
+fi
+
 # source "$(brew --prefix grc)/etc/grc.bashrc"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

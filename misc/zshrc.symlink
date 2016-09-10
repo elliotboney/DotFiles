@@ -2,6 +2,7 @@
 # Set to true if you want to output some debug info
 #
 DEBUG=false
+export ZSHRCRUN=true
 
 if [ "${DEBUG}" = true ]; then
 
