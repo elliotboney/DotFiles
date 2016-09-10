@@ -32,3 +32,10 @@ fixrotation() {
         jhead -autorot "$1"
     done
 }
+
+movtogpro() {
+    INPUTBASE=${1//+(*\/|\.*)}
+    echo -e "${Green}Converting ${BCyan}${1} ${Green}to GoPro file ${BPurple}${INPUTBASE}.mp4${NC}"
+    ffmpeg -i "${1}" -c copy "${INPUTBASE}.mkv"
+    # ffmpeg -i "${1}" -vcodec h264 -acodec aac -strict -2 "${INPUTBASE}.mp4"
+}

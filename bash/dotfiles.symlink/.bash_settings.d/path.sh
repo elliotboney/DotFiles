@@ -8,13 +8,10 @@ fi
 paths=(
     "${HOME}/.nvm/current/bin"
     "${HOME}/.bin"
-    "${HOME}/Downloads/sejda-console-2.0.0.M6/bin"
     "/usr/local/opt/coreutils/libexec/gnubin"
     "/usr/local/bin"
     "/usr/local/sbin"
-    # "/usr/local/share/npm/bin"
     "/usr/local/lib/python2.7/site-packages"
-    # "/usr/local/lib/python3.4/site-packages"
     "${GOROOT}/bin"
     "/opt/bin"
     "/opt/sbin"
@@ -49,7 +46,7 @@ export PATH
 
 export HOMEBREW_GITHUB_API_TOKEN="224fed8d55ae34918c145636b0bf498a3698c907"
 
-if [ -d ~/bin/FDK/Tools/osx ]; then
+if [ -d ${HOME}/bin/FDK/Tools/osx ]; then
     export FDK_EXE="~/bin/FDK/Tools/osx"
 fi
 
@@ -72,5 +69,5 @@ if [ -d /usr/libexec/java_home ]; then
 fi
 
 if [ -d /usr/local/lib/python2.7/site-packages ]; then
-    export PYTHONPATH="/usr/local/lib/python2.7/site-packages"
+    # export PYTHONPATH="/usr/local/lib/python2.7/site-packages"
 fi

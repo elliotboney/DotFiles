@@ -17,9 +17,4 @@ if shell_is_osx; then
   # For example, to list all directories that contain a certain file:
   # find . -name .gitattributes | map dirname
   alias map="xargs -n1"
-
-  #delete stuff to trash
-  # alias rm='rmtrash';
-  # alias rmf='rmtrash -u eboney';
-
 fi

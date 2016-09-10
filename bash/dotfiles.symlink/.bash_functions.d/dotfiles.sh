@@ -21,16 +21,16 @@ function lm () {
   if [[ -d "${MVFILE}" ]]; then
     MVFILE=$(echo $MVFILE | perl -pe 's|[.\/]+||ig')
     DEST="${DOTPATH}/misc/${MVFILE}.symlink"
-    # mv "${1}" "${DEST}"
-    # ln -s "${DEST}" "~/${1}"
-    echo -e "mv \"${1}\" \"${DEST}\""
-    echo -e "ln -s \"${DEST}\" \"${HOME}/${1}\""
+    mv "${1}" "${DEST}"
+    ln -s "${DEST}" "${HOME}/${1}"
+    # echo -e "mv \"${1}\" \"${DEST}\""
+    # echo -e "ln -s \"${DEST}\" \"${HOME}/${1}\""
     echo -e "\n\t${White}Moved and created a symlink for: ${BCyan}.${MVFILE}${NC}\n"
-
   elif [[ -f "${MVFILE}" ]]; then
     MVFILE=${MVFILE:1:${#MVFILE}}
     mv "$1" "${DOTPATH}/misc/${MVFILE}.symlink"
     ln -s "${DOTPATH}/misc/${MVFILE}.symlink" "${HOME}/.${MVFILE}"
+    echo -e "\n\t${White}Moved and created a symlink for: ${BCyan}.${1}${NC}\n"
   else
     echo -e "\n\t${White}Useage: ${BCyan}lm ${LightGray}<file> ${NC}\n"
   fi

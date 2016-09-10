@@ -7,7 +7,7 @@ alias castlivingroom='castnow --device "Dobbie"'
 
 alias -g TOPNG='| convert label:@-.png'
 
-unalias c
+# unalias c
 
 alias adl='/Applications/Adobe\ Flash\ CC\ 2015/AIR17.0/bin/adl'
 alias adt='/Applications/Adobe\ Flash\ CC\ 2015/AIR17.0/bin/adt'
@@ -29,7 +29,7 @@ alias a2ensite='sudo a2ensite'
 alias a2dissite='sudo a2dissite'
 
 # Outputs shell colors
-alias colortest='for x in 0 1 4 5 7 8; do for i in `seq 30 37`; do for a in `seq 40 47`; do echo -ne "\e[$x;$i;$a""m\\\e[$x;$i;$a""m\e[0;37;40m "; done; echo; done; done; echo "";'
+alias colortest='for x in 0 1 4 5 7 8; do for i in `seq 30 37`; do for a in `seq 40 47`; do echo -ne "\e[$x;$i;$a""m\\\x1b[$x;$i;$a""m\e[0;37;40m "; done; echo; done; done; echo "";'
 
 # if shell_is_elliot; then
 alias createdocs='phpdoc -d ./library/ZFDebug -t docs --template clean'

@@ -29,14 +29,14 @@ _contains() {
 ###############################################################################
 
 # Change title of tab
-function changetitle() {
+function _changetitle() {
   TITLE=$*;
   echo -ne "\033]0;${TITLE}\007";
 }
 
 
 # Send growl alert in iterm
-function igrowl() {
+function _igrowl() {
   growlnotify -t "Shell Message" -m "${@}"
 }
 

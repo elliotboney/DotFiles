@@ -10,6 +10,13 @@ function rmf() {
 }
 
 
+function hex() {
+  if [[ -f "/Applications/Hex Fiend.app/Contents/MacOS/Hex Fiend" ]]; then
+    /Applications/Hex\ Fiend.app/Contents/MacOS/Hex\ Fiend $1 &
+  else
+    echo -e "${BRed}Hex Fiend Not Found"
+  fi
+}
 
 # Remove Empty Directories
 function cleanempty() {

@@ -16,27 +16,34 @@ alias extractall='unzip -o "*.zip" | rmf *.zip'
 
 # grc overides for ls
 #   `brew install coreutils`
-if $(gls &>/dev/null); then
+if command_exists gls; then
    alias ls="gls -hF --group-directories-first --color=always --quoting-style={shell-always,c-maybe}"
-   alias la="gls -lahF --group-directories-first --color=always --quoting-style={shell-always,c-maybe}"
+   alias la="gls -lAhF --group-directories-first --color=always --quoting-style={shell-always,c-maybe}"
    alias chmod="gchmod"
    alias chown="gchown"
    alias dircolors="gdircolors"
-   alias ln="gln"
-   alias mv="gmv"
-   alias cp="/usr/local/bin/gcp"
+   alias ln="gln -i"
+   alias mv="gmv -i"
+   alias cp="gcp -i"
    alias find="gfind"
-   alias grep="ggrep"
+   alias grep="ggrep --color=auto"
    alias du="gdu"
    alias sort="gsort"
 else
-   alias grep="grep"
+   alias grep="grep --color=auto"
    alias ls="ls --color=always -hF --group-directories-first"
+   alias mv="mv -i"
+   alias cp="cp -i"
 fi
+
+# List only directories
+alias lsd="ls -lF | grep --color=never '^d'"
 
 # find shit
 alias fd='find . -type d -name'
 alias ff='find . -type f -name'
+
+
 
 # History
 alias h='history'

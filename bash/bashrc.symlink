@@ -12,7 +12,7 @@ EXPORT_FUNCTIONS=true
 [ -n "$BASHRC_DISPATCH_PID" ] && [ $$ -eq "$BASHRC_DISPATCH_PID" ] && exit
 BASHRC_DISPATCH_PID=$$
 
-HOST_NAME=`uname -n`
+HOST_NAME=$(uname -n)
 
 # Setup the main shell variables and functions
 SHELL_PLATFORM='OTHER'
@@ -27,8 +27,7 @@ esac
 shell_is_linux       () { [[ "$OSTYPE" == *'linux'* ]] ; }
 shell_is_osx         () { [[ "$OSTYPE" == *'darwin'* ]] ; }
 shell_is_router      () { [[ "$OSTYPE" == *'gnueabi'* ]] ; }
-shell_is_elliot      () { [[ "$HOST_NAME" == *'bigscrit'* ]] ; } #|| "$HOST_NAME" == *'mainpc'* ]] ; }
-shell_is_iscrit      () { [[ "$HOST_NAME" == *'bigscrit'* ]] ; }
+shell_is_elliot      () { [[ "$HOST_NAME" == *'Elliots'* ]] ; } #|| "$HOST_NAME" == *'mainpc'* ]] ; }
 shell_is_login       () { shopt -q login_shell ; }
 shell_is_interactive () { test -n "$PS1" ; }
 shell_is_script      () { ! shell_is_interactive ; }
@@ -59,9 +58,9 @@ $fn_cmd HOST_NAME
 
 function include_d {
   dir=$1
-  if [ -d $HOME/.dotfiles/.$dir.d -a -r $HOME/.dotfiles/.$dir.d -a -x $HOME/.dotfiles/.$dir.d ]; then
+  if [ -d ${HOME}/.dotfiles/.${dir}.d -a -r ${HOME}/.dotfiles/.${dir}.d -a -x $HOME/.dotfiles/.${dir}.d ]; then
     decho "    \x1b[0;33mProcessing ${1}/ directory...\x1b[m"
-   for i in $HOME/.dotfiles/.$dir.d/*sh; do
+   for i in ${HOME}/.dotfiles/.${dir}.d/*sh; do
      source "${i}"
      decho "    \x1b[38;5;242m$i\x1b[m"
    done
@@ -86,9 +85,9 @@ if [ -f $HOME/.bashrc.local ] ; then
 fi
 
 if shell_is_osx; then
-  if [ -f "`brew --prefix`/etc/grc.bashrc" ]; then
+  if [ -f "/usr/local/etc/grc.bashrc" ]; then
     decho "    \x1b[38;5;242m`brew --prefix`/etc/grc.bashrc"
-    source "`brew --prefix`/etc/grc.bashrc"
+    source "/usr/local/etc/grc.bashrc"
   fi
 fi
 decho "\x1b[0;36mDone with .bashrc\x1b[m"

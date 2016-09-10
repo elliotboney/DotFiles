@@ -1,28 +1,35 @@
+
 # for use in my grunt stuff, etc
 export ENVIRONMENT="elliot"
+
+# pyenv stuff
+export PYENV_ROOT=/usr/local/var/pyenv
+if command_exists pyenv; then eval "$(pyenv init -)"; fi
 
 # for nvm
 export NVM_SYMLINK_CURRENT=true
 
-if [ -x "$(which vimpager)" ]; then
-  export PAGER=/usr/local/bin/vimpager
-  export VIMPAGER_RC=${HOME}/.vimpagerrc
-  alias less="$PAGER -c \"set number\""
-  alias zless=$PAGER
-fi
+# if command_exists vimpager; then
+#   export PAGER=/usr/local/bin/vimpager
+#   export VIMPAGER_RC=${HOME}/.vimpagerrc
+#   alias less="$PAGER -c \"set number\""
+#   alias zless=$PAGER
+# fi
+
+export NVM_DIR="${HOME}/.nvm"
 
 #export for Atom Editor
-export ATOM_REPOS_HOME=~/Code/Atom
+export ATOM_REPOS_HOME=${HOME}/Code/Atom
 
-# Link Homebrew casks in `/Applications` rather than `~/Applications`
+# Link Homebrew casks in `/Applications` rather than `${HOME}/Applications`
 export HOMEBREW_CASK_OPTS="--appdir=/Applications";
 
 
-export ANDROID_HOME=~/Android/sdk
-export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+export ANDROID_HOME="${HOME}/Android/sdk"
+export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 
 # For brew autocompletion
-export HOMEBREW_SEARCH_CACHE_PATH=~/.homebrew-search-cache
+export HOMEBREW_SEARCH_CACHE_PATH=${HOME}/.homebrew-search-cache
 
 export TERM=xterm-256color
 
@@ -30,11 +37,10 @@ export TERM=xterm-256color
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
 export LESS_TERMCAP_md=$'\E[01;38;5;74m'  # begin bold
 export LESS_TERMCAP_me=$'\E[0m'           # end mode
-export LESS_TERMCAP_se=$'\E[0m'           # end standout-mode
 export LESS_TERMCAP_so=$'\E[38;5;246m'    # begin standout-mode - info box
-export LESS_TERMCAP_ue=$'\E[0m'           # end underline
+export LESS_TERMCAP_se=$'\E[0m'           # end standout-mode
 export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
-
+export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 
 export XML_CATALOG_FILES="/usr/local/etc/xml/catalog"
 
@@ -44,14 +50,6 @@ export XML_CATALOG_FILES="/usr/local/etc/xml/catalog"
 # Prefer US English and use UTF-8
 export LANG="en_US"
 export LC_ALL="en_US.UTF-8"
-
-# Make sublime the default editor unless it's not avail
-if $(type /usr/local/bin/subl >/dev/null); then
-  export EDITOR="/usr/local/bin/subl"
-else
-  export EDITOR="vim"
-  alias s="vim"
-fi
 
 # Make some commands not show up in history
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
@@ -63,7 +61,7 @@ GREP_COLORS=${GREP_COLORS}:"cx=38;5;238:"
 GREP_COLORS=${GREP_COLORS}:"fn=31:"
 GREP_COLORS=${GREP_COLORS}:"ln=32:"
 GREP_COLORS=${GREP_COLORS}:"bn=38;5;238:"
-GREP_COLORS=${GREP_COLORS}:"se=38;5;238:"
+export GREP_COLORS=${GREP_COLORS}:"se=38;5;238:"
 
 
 

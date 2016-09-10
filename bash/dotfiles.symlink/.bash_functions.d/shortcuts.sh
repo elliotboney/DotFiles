@@ -1,3 +1,4 @@
+# Open up custom DotJS stuff for a specific site
 js () {
   if [[ -z "$1" ]]; then
     # echo -e "\n\t${BCyan} Useage: findinfiles <text to find>\n"

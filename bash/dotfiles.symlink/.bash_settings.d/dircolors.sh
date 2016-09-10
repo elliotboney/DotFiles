@@ -1,12 +1,9 @@
-  # do some stuff here
-
-
 # Execute dir colors
-if [ -f /usr/local/bin/gdircolors ] ; then
-    eval $(/usr/local/bin/gdircolors -b ~/.dotfiles/.bash_settings.d/dircolors)
+if  command_exists gdircolors; then
+    eval $(/usr/local/bin/gdircolors -b ${HOME}/.dotfiles/.bash_settings.d/dircolors)
 else
   if $(dircolors &>/dev/null); then
-    eval $(dircolors -b ~/.dotfiles/.bash_settings.d/dircolors)
+    eval $(dircolors -b ${HOME}/.dotfiles/.bash_settings.d/dircolors)
   fi
 fi
 

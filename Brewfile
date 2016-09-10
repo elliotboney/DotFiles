@@ -10,8 +10,10 @@ upgrade
 tap homebrew/versions
 tap josegonzalez/homebrew-php
 
+install webkit2png
 install android-platform-tools
 install autoconf
+install ack
 install automake
 install batik
 install berkeley-db4

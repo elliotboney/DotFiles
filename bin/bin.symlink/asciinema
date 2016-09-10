@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+pyenv global 3.5.0
+(cd ${HOME}/Git/asciinema/ && python3 -m asciinema $@)
+pyenv global 2.7.10

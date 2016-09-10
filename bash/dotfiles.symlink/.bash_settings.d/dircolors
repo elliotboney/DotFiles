@@ -61,19 +61,19 @@ TERM xterm-termite
 
 # NOTE: string consists of one or more of the following numeric codes:
 # Attribute codes:
-#                   00 =none 01=bold 04=underscore 05=blink 07=reverse 08=concealed
+#   00=none 01=bold 04=underscore 05=blink 07=reverse 08=concealed
 #
 # Text color codes:
-#                   30 =black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
+#   30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
 #
 # Background color codes:
-# 40                   =black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
+#   40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
 #
 # Text 256 color coding:
-# 38;5;COLOR_NUMBER
+#   38;5;COLOR_NUMBER
 #
 # Background 256 color coding:
-#                   48;5;COLOR_NUMBER
+#   48;5;COLOR_NUMBER
 
 #ENDCODE                \_\? # symlink to nonexistent file, or non-stat'able file
 
@@ -83,7 +83,7 @@ TERM xterm-termite
 NORMAL                00;38;5;240 # no color code at all
 NORM                  00;38;5;240 # no color code at all
 FILE                  00;38;5;245 # regular file: use no color at all
-DIR                   00;38;5;33 # directory 00;34
+DIR                   00;38;5;33 # directory
 LINK                  target   # symbolic link. (If you set this to 'target' instead of a
 RESET                 00 # reset to "normal" color
 MULTIHARDLINK         00;38;5;14 #00 # hard links
@@ -105,22 +105,30 @@ OTHER_WRITABLE        48;5;33;38;5;230 # dir with the sticky bit set (+t) and no
 # This is for files with execute permission:
 EXEC                  00;38;5;83
 
-
 #Or files that can be run
 .py                   00;38;5;46
 .sh                   00;38;5;42
-.js                   00;38;5;46
+.node                 00;38;5;42
+.pkg                  00;38;5;42
+
 
 # Docs
-.pdf                  00;38;5;156
-.epub                 00;38;5;156
-.docx                 00;38;5;156
-.tmTheme              00;38;5;156
+.pdf                  00;38;5;17
+.epub                 00;38;5;17
+.docx                 00;38;5;17
+.tmTheme              00;38;5;17
 
 #source Files
-.html                 00;38;5;137
 .php                  00;38;5;155
+.js                   00;38;5;155
+.rb                   00;38;5;155
+
+.html                 00;38;5;137
+.sql                  00;38;5;137
+
+
 .sublime-settings     00;38;5;137
+.sublime-snippet      00;38;5;137
 .sublime-keymap       00;38;5;174
 .sublime-commands     00;38;5;95
 .tmLanguage           00;38;5;176
@@ -135,11 +143,11 @@ EXEC                  00;38;5;83
 .iso                  48;5;235;38;5;66
 
 ## Archives or compressed (violet + bold for compression)
-.tar                  00;38;5;61 #7375bd
+.tar                  01;38;5;61
 .tgz                  00;38;5;61
 .tlz                  00;38;5;61
 .txz                  00;38;5;61
-.zip                  00;38;5;61
+.zip                  08;38;5;61
 .z                    00;38;5;61
 .dz                   00;38;5;61
 .gz                   00;38;5;61
@@ -158,26 +166,26 @@ EXEC                  00;38;5;83
 .apk                  00;38;5;61
 .gem                  00;38;5;61
 .sublime-package      00;38;5;61
-
 .rar                  00;38;5;60
 
 # Image formats (yellow)
-.jpg                  00;38;5;214
-.jpeg                 00;38;5;214
-.JPG                  00;38;5;214
-.JPEG                 00;38;5;214
-.gif                  00;38;5;214
-.bmp                  00;38;5;214
-.tif                  00;38;5;214
-.png                  00;38;5;214
-.svg                  00;38;5;214
-.pcx                  00;38;5;214
-.eps                  00;38;5;214
-.ico                  00;38;5;214
+.jpg                  00;38;5;172
+.jpeg                 00;38;5;172
+.JPG                  00;38;5;172
+.JPEG                 00;38;5;172
+.gif                  00;38;5;172
+.bmp                  00;38;5;172
+.tif                  00;38;5;173
+.tiff                  00;38;5;173
+.png                  00;38;5;172
+
+.pcx                  00;38;5;172
+.eps                  00;38;5;172
+.ico                  00;38;5;172
 
 .psd                  00;38;5;216
-.ai                   00;38;5;216
-
+.ai                   00;38;5;166
+.svg                  00;38;5;166
 
 .icns                 00;38;5;215
 
@@ -185,6 +193,7 @@ EXEC                  00;38;5;83
 .vim                  00;38;5;205
 .xml                  00;38;5;205
 .json                 00;38;5;205
+.yml                  00;38;5;205
 *Makefile             00;38;5;205
 *Rakefile             00;38;5;205
 *build.xml            00;38;5;205
@@ -195,8 +204,6 @@ EXEC                  00;38;5;83
 .md                   01;38;5;166
 *README.markdown      01;38;5;245
 *README.md            01;38;5;245
-.yml                  00;38;5;245
-.cfg                  00;38;5;245
 .c                    01;38;5;245
 .cpp                  01;38;5;245
 .cc                   01;38;5;245
@@ -204,6 +211,7 @@ EXEC                  00;38;5;83
 # Config files
 .conf                 00;38;5;245
 .ini                  00;38;5;245
+.cfg                  00;38;5;245
 
 # "unimportant" files as logs and backups (base01)
 .log                  00;38;5;240
@@ -299,9 +307,10 @@ EXEC                  00;38;5;83
 .vimrc                00;38;5;174
 .zlogin               00;38;5;174
 .wgetrc               00;38;5;174
+.conf                 00;38;5;6
 
-
-.torrent              00;38;5;245
+# Other Data File
+.csv                  00;38;5;17
 
 .symlink              00;38;5;25
 
