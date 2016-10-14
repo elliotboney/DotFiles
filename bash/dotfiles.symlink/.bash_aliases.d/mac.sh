@@ -17,4 +17,7 @@ if shell_is_osx; then
   # For example, to list all directories that contain a certain file:
   # find . -name .gitattributes | map dirname
   alias map="xargs -n1"
+
+  # Fix slow folder populating, see: http://osxdaily.com/2015/04/17/fix-slow-folder-populating-cloudkit-macosx/
+  alias fixfinder="rm ~/Library/Caches/CloudKit/CloudKitMetadata*;killall cloudd"
 fi

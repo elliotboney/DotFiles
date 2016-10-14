@@ -9,7 +9,7 @@ function rmf() {
   fi
 }
 
-
+# OSX: Hex edit a file in Hex Fiend
 function hex() {
   if [[ -f "/Applications/Hex Fiend.app/Contents/MacOS/Hex Fiend" ]]; then
     /Applications/Hex\ Fiend.app/Contents/MacOS/Hex\ Fiend $1 &

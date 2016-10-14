@@ -10,19 +10,21 @@ pngfix () {
     fi
 }
 
+# Fix all png files in a directory
 pngfixall () {
     for f in *.png; do
-        pngcrush -rem allb -brute -reduce $f $f.new
-        mv $f $f.bak
-        mv $f.new $f
+        pngcrush -rem allb -brute -reduce "${f}" "${f}.new"
+        mv "${f}" "${f}.bak"
+        mv "${f}.new" "${f}"
     done
 }
 
+# Fix all jpeg files in a directory
 jpgresizeall () {
     for f in *.jpg; do
-        convert $f -resize "$1" $f.new
-        mv -i $f $f.bak
-        mv -i $f.new $f
+        convert "${f}" -resize "$1" "${f}.new"
+        mv -i "${f}" "${f}.bak"
+        mv -i "${f}.new" "${f}"
     done
 }
 
@@ -33,6 +35,7 @@ fixrotation() {
     done
 }
 
+# Convert mov to a file that can be edited in GoPro studio
 movtogpro() {
     INPUTBASE=${1//+(*\/|\.*)}
     echo -e "${Green}Converting ${BCyan}${1} ${Green}to GoPro file ${BPurple}${INPUTBASE}.mp4${NC}"

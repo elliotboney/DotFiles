@@ -34,3 +34,17 @@ function servedirphp () {
         unset CURRENT_DIR
     fi
 }
+
+# Benchmark an HTTP server
+function benchmarksite() {
+    # for i in {1..5}; do
+        echo -e "\\\n
+        ${LightGray}Benchmark for: ${BGreen}${1}${NC}\\\n\\\n
+               Name Lookup:  ${Cyan}%{time_namelookup} \\\n${NC}
+           Time to Connect:  ${Cyan}%{time_connect}\\\n${NC}
+       Time to Pretransfer:  ${Cyan}%{time_pretransfer}\\\n${NC}
+    Time to Start Transfer:  ${Cyan}%{time_starttransfer}\\\n${NC}
+            ${DarkGray}----------------------${NC}\\\n
+                ${BWhite}TOTAL Time:  ${BCyan}%{time_total}\\\n\\\n" | curl -w "@-" -o /dev/null -s "${1}"
+    # done
+}

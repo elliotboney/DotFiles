@@ -1,10 +1,9 @@
-# Functions
-#
 # (f)ind by (n)ame
 # usage: fn foo
 # to find all files containing 'foo' in the name
 function fn() { ls **/*$1* }
 
+# Find text in files
 findinfiles()
 {
     if [[ -z "$1" ]]; then
@@ -15,6 +14,7 @@ findinfiles()
 
 }
 
+# find files named X
 findfiles()
 {
     if [[ -z "$1" ]]; then
@@ -24,6 +24,7 @@ findfiles()
     fi
 }
 
+# Find files and exec a command on them
 findfilesexec()
 {
     if [[ -z "$1" ]]; then

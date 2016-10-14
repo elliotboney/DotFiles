@@ -26,6 +26,12 @@ The really good bash/zsh aliases, functions, etc are found in bash/dotfiles.syml
 
 # Installation #
 
+## Requirements ##
+On a new debian server, this will install the requirements:
+```shell
+sudo aptitude update && sudo aptitude install git ruby zsh
+```
+
 ## zsh ##
 Zsh is a shell designed for interactive use, although it is also a powerful scripting language. Many of the useful features of bash, ksh, and tcsh were incorporated into zsh; many original features were added. [Read More](http://zsh.sourceforge.net/)
 
@@ -49,18 +55,18 @@ A community-driven framework for managing your zsh configuration. Includes 180+ 
 
 ##### via curl
 ```shell
-curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 ##### via wget
 ```shell
-wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
+sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 ```
 
 
 ## Dotfiles ##
 How to install the actual dotfiles.
 ```shell
-git clone git@github.com:elliotboney/DotFiles.git DotFiles
+git clone --recursive -j8 https://github.com/elliotboney/DotFiles.git DotFiles
 cd DotFiles
 rake
 ```

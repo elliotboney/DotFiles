@@ -1,6 +1,3 @@
-# pip list --outdated | sed 's/(.*//g' | xargs -n1 pip install -U
-#
-# # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 
 function _updgandt() {
   _changetitle "$@"
@@ -8,6 +5,7 @@ function _updgandt() {
 }
 
 
+# Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 function update() {
 
   if shell_is_osx; then
@@ -30,6 +28,19 @@ function update() {
   if command_exists npm; then
     _updgandt "Running npm Global Update"
     npm update -g
+  fi
+
+  if command_exists nvm; then
+    _updgandt "Running nvm update"
+    cd "${NVM_DIR}"
+    git fetch origin
+    git checkout $(git describe --abbrev=0 --tags --match "v[0-9]*" origin)
+    source "${NVM_DIR}/nvm.sh"
+  fi
+  if command_exists rvm; then
+    _updgandt "Running rvm update"
+    rvm get latest
+    rvm reload
   fi
 
   if command_exists gem; then

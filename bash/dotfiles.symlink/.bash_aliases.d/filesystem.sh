@@ -40,7 +40,9 @@ fi
 alias lsd="ls -lF | grep --color=never '^d'"
 
 # find shit
+# Find directories
 alias fd='find . -type d -name'
+# Find files
 alias ff='find . -type f -name'
 
 

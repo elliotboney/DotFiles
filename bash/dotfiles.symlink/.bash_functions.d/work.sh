@@ -1,3 +1,4 @@
+# Attempt to do stuff with our hubot
 function hubot() {
     case "$1" in
       start)

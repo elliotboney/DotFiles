@@ -2,7 +2,6 @@
 # Set to true if you want to output some debug info
 #
 DEBUG=false
-export ZSHRCRUN=true
 
 if [ "${DEBUG}" = true ]; then
 
@@ -19,9 +18,9 @@ fi
 # Echo out if we have debug set to true
 function decho() {
   if [ "${DEBUG}" = true ]; then
-    NOW=$($DATECOMMAND +%N)
+    NOW=$(${DATECOMMAND} +%N)
     echo "${N_SPACE}\x1b[0;32m[$(((${NOW}-${N})/1000000))ms]\x1b[m $@"
-    export N=`$DATECOMMAND +%N`
+    export N=$(${DATECOMMAND} +%N)
   fi
 }
 
@@ -100,7 +99,7 @@ decho "autoload -U colors and shit"
 decho "${HOME}/.rvm/scripts/rvm"
 # GEMDIR=$(${HOME}/.rvm/bin/rvm gemdir 2>/dev/null)
 # export PATH="${GEMDIR}/bin:${HOME}/.rvm/bin:${PATH}" # Add RVM to PATH for scripting
-export PATH="/Users/eboney/.rvm/bin:${PATH}"
+# export PATH="/Users/eboney/.rvm/gems/$(rvm current)/bin:${PATH}"
 decho "\x1b[1;36mDone with .zshrc\x1b[m"
 
 if [ "$DEBUG" = true ]; then
@@ -110,3 +109,4 @@ if [ "$DEBUG" = true ]; then
   echo -e "------------------------------------------------------------------------------------"
 fi
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+export ZSHRCRUN=true

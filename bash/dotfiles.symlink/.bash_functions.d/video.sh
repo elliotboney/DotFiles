@@ -1,3 +1,4 @@
+# Encode a file for optimal youtube format
 function youtubeencode {
   if [[ -z "$1" ]]; then
     echo -e "\n\t${White} Useage: ${BCyan}$(basename $0) ${Green}inputfile.mov ${Yellow}outputfile.mp4\n"
@@ -13,6 +14,7 @@ function youtubeencode {
   fi
 }
 
+# Fix out of sync video by X seconds
 function fixsync {
   if [[ -z "$1" ]]; then
     echo -e "\n\t${White} Useage: ${BCyan}$(basename $0) ${Green}[movie file] ${Yellow}[delay in seconds]\n"

@@ -86,7 +86,7 @@ fi
 
 if shell_is_osx; then
   if [ -f "/usr/local/etc/grc.bashrc" ]; then
-    decho "    \x1b[38;5;242m`brew --prefix`/etc/grc.bashrc"
+    decho "   \x1b[38;5;242m$(brew --prefix)/etc/grc.bashrc"
     source "/usr/local/etc/grc.bashrc"
   fi
 fi

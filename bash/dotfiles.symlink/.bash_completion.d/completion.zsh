@@ -1,3 +1,6 @@
+if [ ! -z "$ZSHRCRUN" ]; then
+  return
+fi
 # load completions system
 zmodload -i zsh/complist
 
@@ -141,7 +144,7 @@ zstyle ':completion::*:vim:*:*' file-patterns 'Makefile|*(rc|log)|*.(php|tex|bib
 
 # for all completions: color
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-zstyle -e ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 # for all completions: selected item
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} ma=0\;30\;44
