@@ -34,7 +34,7 @@ function pullall {
   for dir in */;  do
     cd ${dir}
     echo "Entering and git pulling: ${dir}"
-    git pull 2> /dev/null | grep -v 'Already'
+    git pull #2> /dev/null | grep -v 'Already'
     cd ..
   done
 }

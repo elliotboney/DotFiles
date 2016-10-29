@@ -2,6 +2,8 @@
 # @see http://www.mfasold.net/blog/2008/11/moving-or-renaming-multiple-files/
 alias mmv='noglob zmv -W'
 
+alias count='ls -1 | wc -l'
+
 # List Folder Sizes
 alias lssize='du -h --max-depth=1 . | sort -hr'
 

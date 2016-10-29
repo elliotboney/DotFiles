@@ -7,6 +7,7 @@ fi
 # add all the paths we want to array
 paths=(
     "${HOME}/.nvm/current/bin"
+    "${HOME}/.yarn/bin"
     "${HOME}/.bin"
     "/usr/local/opt/coreutils/libexec/gnubin"
     "/usr/local/bin"

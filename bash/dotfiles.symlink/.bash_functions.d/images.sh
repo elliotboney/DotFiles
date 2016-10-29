@@ -21,10 +21,21 @@ pngfixall () {
 
 # Fix all jpeg files in a directory
 jpgresizeall () {
+    if [[ -z "${1}" ]]; then
+        # echo a help message if no port is specified
+        echo -e "\n\t${White}Useage: ${BCyan}jpgresizeall ${BPurple}<max width> ${BGreen}<max height> ${NC}\n"
+    elif [[ -z "${2}" ]]; then
+        # echo a help message if no port is specified
+        echo -e "\n\t${White}Useage: ${BCyan}jpgresizeall ${BPurple}<max width> ${BGreen}<max height> ${NC}\n"
+    else
+        mogrify -resize "${1}x${2}>" *.jpg
+    fi
+}
+
+# Optimize all jpeg files in a directory
+jpgoptimizeall () {
     for f in *.jpg; do
-        convert "${f}" -resize "$1" "${f}.new"
-        mv -i "${f}" "${f}.bak"
-        mv -i "${f}.new" "${f}"
+        jpegoptim --max=90 --strip-com "${f}"
     done
 }
 

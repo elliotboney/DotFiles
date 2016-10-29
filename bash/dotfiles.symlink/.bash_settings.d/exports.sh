@@ -6,6 +6,10 @@ export ENVIRONMENT="elliot"
 export PYENV_ROOT=/usr/local/var/pyenv
 if command_exists pyenv; then eval "$(pyenv init -)"; fi
 
+# ignore annoying https warnings
+PYTHONWARNINGS="ignore:Unverified HTTPS request"
+
+
 # for nvm
 export NVM_SYMLINK_CURRENT=true
 
