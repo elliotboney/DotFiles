@@ -1,4 +1,8 @@
-local user='%{$fg[cyan]%}%n%{$fg[blue]%}@%{$fg[magenta]%}%m%{$reset_color%}'
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+  local user='%{$fg[gray]%}%n%{$fg[blue]%}@%{$fg[magenta]%}%m%{$reset_color%}'
+else
+  local user='%{$fg[purple]%}%n%{$fg[blue]%}@%{$fg[magenta]%}%m%{$reset_color%}'
+fi
 local pwd='%{$fg[blue]%}%~%{$reset_color%} '
 local rvm=''
 if which rvm-prompt &> /dev/null; then

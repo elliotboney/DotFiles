@@ -4,9 +4,9 @@
 # Usage: `brew bundle Brewfile`
 
 # Make sure we’re using the latest Homebrew
-update
+#update
 # Upgrade any already-installed formulae
-upgrade
+#upgrade
 tap "homebrew/versions"
 tap "homebrew/dupes"
 tap "homebrew/binary"
@@ -128,4 +128,4 @@ brew "homebrew/dupes/zlib"
 brew "zsh"
 
 # Remove outdated versions from the cellar
-cleanup
+#cleanup

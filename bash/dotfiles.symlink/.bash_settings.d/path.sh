@@ -45,7 +45,8 @@ done
 
 export PATH
 
-export HOMEBREW_GITHUB_API_TOKEN="224fed8d55ae34918c145636b0bf498a3698c907"
+# export HOMEBREW_GITHUB_API_TOKEN="224fed8d55ae34918c145636b0bf498a3698c907"
+export HOMEBREW_GITHUB_API_TOKEN="5a379c311fbd96ef7cd800e7980d135dd9d81797"
 
 if [ -d ${HOME}/bin/FDK/Tools/osx ]; then
     export FDK_EXE="~/bin/FDK/Tools/osx"

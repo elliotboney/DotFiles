@@ -3,8 +3,8 @@
     url = https://github.com/robbyrussell/oh-my-zsh.git
 
 [submodule "private"]
-    path = private
-    url = https://elliotboney@bitbucket.org/elliotboney/privatedotfiles.git
+	path = private
+	url = git@github.com:elliotboney/PrivateDotfiles.git
 
 [submodule "vim/vim.symlink/bundle/YouCompleteMe"]
     path = vim/vim.symlink/bundle/YouCompleteMe
