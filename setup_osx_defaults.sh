@@ -7,6 +7,9 @@ echo -e "Setting defaults..."
 # General Stuff                                                               #
 ###############################################################################
 
+# Remove annoying download quarantine
+defaults write com.apple.LaunchServices LSQuarantine -bool NO
+
 # Disable the crash reporter
 defaults write com.apple.CrashReporter DialogType -string "none"
 
@@ -99,7 +102,7 @@ defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 # Set a blazingly fast keyboard repeat rate
-defaults write NSGlobalDomain KeyRepeat -int 0
+defaults write NSGlobalDomain KeyRepeat -int 1.5
 
 # Enable subpixel font rendering on non-Apple LCDs
 defaults write NSGlobalDomain AppleFontSmoothing -int 2

@@ -1,3 +1,14 @@
+# Get dimensions of an image
+dimensions() {
+    # echo -e "${1}"
+    for file in ${@}; do
+        # echo -e ""
+        dimension=$(file "${file}" | grep -o "[0-9]\+x[0-9]\+" | sed -n '2p')
+        echo "${file}: ${Green}${dimension}${NC}"
+
+    done
+}
+
 # Fix a png file with pngcrush
 pngfix () {
     if [[ -z "$1" ]]; then
@@ -27,7 +38,28 @@ jpgresizeall () {
     elif [[ -z "${2}" ]]; then
         # echo a help message if no port is specified
         echo -e "\n\t${White}Useage: ${BCyan}jpgresizeall ${BPurple}<max width> ${BGreen}<max height> ${NC}\n"
+    elif [[ -z "${3}" ]]; then
+        zip -9 -q backup.zip *.jpg
+        mogrify -resize "${1}x${2}>" *.jpg
     else
+        zip -9 -q backup.zip *.jpg
+        mogrify -resize "${1}x${2}>" "${3}"
+    fi
+}
+
+# Fix all jpeg files in a directory
+jpgresize () {
+    if [[ -z "${1}" ]]; then
+        # echo a help message if no port is specified
+        echo -e "\n\t${White}Useage: ${BCyan}jpgresize ${BPurple}<max width> ${BGreen}<max height> ${BYellow}<file(s)>${NC}\n"
+    elif [[ -z "${2}" ]]; then
+        # echo a help message if no port is specified
+        echo -e "\n\t${White}Useage: ${BCyan}jpgresize ${BPurple}<max width> ${BGreen}<max height> ${BYellow}<file(s)>${NC}\n"
+    elif [[ -z "${3}" ]]; then
+        # echo a help message if no port is specified
+        echo -e "\n\t${White}Useage: ${BCyan}jpgresize ${BPurple}<max width> ${BGreen}<max height> ${BYellow}<file(s)>${NC}\n"
+    else
+        zip -9 -q backup.zip *.jpg
         mogrify -resize "${1}x${2}>" *.jpg
     fi
 }
@@ -46,10 +78,11 @@ fixrotation() {
     done
 }
 
-# Convert mov to a file that can be edited in GoPro studio
-movtogpro() {
-    INPUTBASE=${1//+(*\/|\.*)}
-    echo -e "${Green}Converting ${BCyan}${1} ${Green}to GoPro file ${BPurple}${INPUTBASE}.mp4${NC}"
-    ffmpeg -i "${1}" -c copy "${INPUTBASE}.mkv"
-    # ffmpeg -i "${1}" -vcodec h264 -acodec aac -strict -2 "${INPUTBASE}.mp4"
+
+# Fix all png files in a directory
+trimwhitespace () {
+    for f in *.jpg; do
+        INPUTBASE=${f//+(*\/|\.*)}
+        convert "${f}" -trim +repage "${f}"
+    done
 }

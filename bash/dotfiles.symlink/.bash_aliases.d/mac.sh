@@ -1,5 +1,10 @@
 # Empty the Trash on all mounted volumes and the main HDD
 if shell_is_osx; then
+
+ # Make a quarantine exception for a DMG
+ alias dmgquarantinefix='sudo xattr -r -d com.apple.quarantine'
+ alias quarantinefixdownloads='/usr/bin/find ~/Downloads -xattrname com.apple.quarantine -exec xattr -r -d com.apple.quarantine {} \;'
+
   #? clean up the output of quicklook manage
   alias qlf='qlmanage -p "$@" >& /dev/null'
 

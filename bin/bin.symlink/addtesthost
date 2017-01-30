@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [[ -z "$1" ]]; then
+  echo -e "\n\t${BCyan} Useage: ${White}addtesthost ${Yellow}domainyouwant.com${NC}\n"
+else
+  sudo sh -c 'echo "173.255.203.251\t'"${1}"'" >> /etc/hosts'
+fi

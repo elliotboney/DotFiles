@@ -1,14 +1,19 @@
+# Android Tools
+export ANDROID_HOME="${HOME}/Code/Android/sdk"
 # ---------------------------------
 # Path Section
-PATH=$PATH:""
+PATH=""
+# PATH=$PATH:""
 if [ -e "/usr/local/Cellar/php56" ] || [ -d "/usr/local/Cellar/php56" ]; then
  PATH=$PATH:"/usr/local/Cellar/php56/$(/bin/ls /usr/local/Cellar/php56 | /usr/bin/awk 'NR==0; END{print}')/bin"
 fi
 # add all the paths we want to array
 paths=(
     "${HOME}/.nvm/current/bin"
-    "${HOME}/.yarn/bin"
+    # "${HOME}/.yarn/bin"
     "${HOME}/.bin"
+    "${HOME}/.composer/vendor/bin"
+    "${HOME}/.config/composer/vendor/bin"
     "/usr/local/opt/coreutils/libexec/gnubin"
     "/usr/local/bin"
     "/usr/local/sbin"
@@ -20,8 +25,8 @@ paths=(
     "/sbin"
     "/usr/bin"
     "/usr/sbin"
-    "${HOME}/Code/Android/sdk/tools"
-    "${HOME}/Code/Android/sdk/platform-tools"
+    "${ANDROID_HOME}/tools"
+    "${ANDROID_HOME}/platform-tools"
     )
 
 # iterate through array
@@ -30,10 +35,10 @@ do
     #check if dir exists first
     if [ -e $p ] || [ -d $p ]; then
         #if it does, add to path
-        PATH=${PATH}:$p
-        # echo $p
+        PATH="${PATH}:${p}"
+        # echo -e "${BGreen}${p}"
     else
-        # echo "[X]" $p
+        # echo -e "${BRed}[X] ${p}"
     fi
 done
 

@@ -88,7 +88,7 @@ function cdf() { # short for `cdfinder`
 cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')";
 }
 
-function crackpdf() {
+function pdfremovepassword() {
   CRACKFILE=$1
   # unzip -ju $1 -d $(basename "${1}" .zip)
   MYBASENAME=$(basename "${CRACKFILE}" .pdf)

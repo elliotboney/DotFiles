@@ -45,6 +45,13 @@ digga() {
   dig +nocmd "$1" any +multiline +noall +answer
 }
 
-
-
+# Check cloudflare cache
+cf() {
+  curl -I "${1}" | grep ".*Cache.*HIT" &> /dev/null
+  if [ $? == 0 ]; then
+   echo -e "File is ${BGreen}Cached${NC}!"
+  else
+   echo -e "File is ${BRed}NOT${NC} Cached!"
+  fi
+}
 

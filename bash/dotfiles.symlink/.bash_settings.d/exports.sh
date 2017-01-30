@@ -1,3 +1,4 @@
+export COMPOSER_HOME="${HOME}/.composer"
 
 # for use in my grunt stuff, etc
 export ENVIRONMENT="elliot"
@@ -28,9 +29,6 @@ export ATOM_REPOS_HOME=${HOME}/Code/Atom
 # Link Homebrew casks in `/Applications` rather than `${HOME}/Applications`
 export HOMEBREW_CASK_OPTS="--appdir=/Applications";
 
-
-export ANDROID_HOME="${HOME}/Android/sdk"
-export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 
 # For brew autocompletion
 export HOMEBREW_SEARCH_CACHE_PATH=${HOME}/.homebrew-search-cache
