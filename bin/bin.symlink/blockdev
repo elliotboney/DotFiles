@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+if [[ -f "/sbin/blockdev" ]]; then
+  /sbin/blockdev $@
+elif [[ -z "$1" ]]; then
+  echo -e "\n\t${BCyan} Useage: ${White}blockdev ${Yellow}/dev/diskhere${NC}\n"
+else
+  diskutil information $1 | grep "Disk Size" | sed 's/[^(]*(\([^Bytes)]*\).*/\1/'
+fi

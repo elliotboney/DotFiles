@@ -1,5 +1,8 @@
 require 'colorize'
 require 'ruby-growl'
+require 'fileutils'
+require 'yaml'
+require 'pp'
 require_relative 'icon'
 
 g = Growl.new "localhost", "Maid Notifaction", "GNTP"
@@ -12,10 +15,8 @@ Maid.rules do
   end
 
   rule 'Trash temps from Downloads' do
-    puts "\n--------------------------------------------\n\033[32mMove temps from Downloads\033[0m"
+    puts "\n--------------------------------------------\n\033[32mRemove temps from Downloads\033[0m"
     trash dir('~/Downloads/*.torrent')
-    # move(dir('~/Downloads/**/*.[o|t]tf'),'~/Dropbox/Fonts/')
-    # puts "\n--------------------------------------------"
   end
 
   #
@@ -32,6 +33,21 @@ Maid.rules do
     trash found
   end
 
+  #
+  # Get rid of the zip file if we have a matching dir
+  #
+  # rule '3D Models: Remove unzipped file if zipped file exists' do
+  #   puts "--------------------------------------------\n\033[32m3D Models: Remove unzipped file if zipped file exists\033[0m"
+  #   found = dir('~/Dropbox/3D/models/**/*').select do |path|
+  #     result = path.match(/(.*)\.zip$/)
+  #     if result
+  #       File.exist?(result[1])
+  #     end
+  #   end
+  #   trash found
+  # end
+
+
   #   .d8b.  d8888b. d8888b. .d8888.
   #  d8' `8b 88  `8D 88  `8D 88'  YP
   #  88ooo88 88oodD' 88oodD' `8bo.
@@ -39,27 +55,27 @@ Maid.rules do
   #  88   88 88      88      db   8D
   #  YP   YP 88      88      `8888Y'
   #
-  rule 'Move Cracked Apps' do
-    puts "--------------------------------------------\n\033[32mMove Cracked Apps\033[0m"
-    dir(%w(~/Downloads/00 Completed/**/*CORE* ~/Downloads/00 Completed/**/*XFORCE* ~/Downloads/00 Completed/**/*keygen* ~/Downloads/00 Completed/**/*KEYGEN* ~/Downloads/00 Completed/**/*crack* ~/Downloads/00 Completed/**/*serial*)).each do |path|
-      if !path.match(/\/01 Apps/)
-        if File.directory?(path)
-          # If we are a subdirectory of an app, move the app itself
-          if !File.dirname(path).match(/00 Completed$/) && !File.dirname(path).match(/Downloads$/)
-            move(File.dirname(path), '~/Downloads/00 Completed/02 Apps')
-          else
-            if !File.dirname(path).match(/Downloads$/)
-              move(path, '~/Downloads/02 Apps')
-            end
-          end
-        else
-          # If it's a file we found, move the parent directory
-          move(File.dirname(path), '~/Downloads/02 Apps')
-        end
-      end
-    end
-    move(dir('~/Downloads/00 Completed/*.dmg'), '~/Downloads/02 Apps')
-  end
+  # rule 'Move Cracked Apps' do
+  #   puts "--------------------------------------------\n\033[32mMove Cracked Apps\033[0m"
+  #   dir(%w(~/Downloads/00 Completed/**/*CORE* ~/Downloads/00 Completed/**/*XFORCE* ~/Downloads/00 Completed/**/*keygen* ~/Downloads/00 Completed/**/*KEYGEN* ~/Downloads/00 Completed/**/*crack* ~/Downloads/00 Completed/**/*serial*)).each do |path|
+  #     if !path.match(/\/01 Apps/)
+  #       if File.directory?(path)
+  #         # If we are a subdirectory of an app, move the app itself
+  #         if !File.dirname(path).match(/00 Completed$/) && !File.dirname(path).match(/Downloads$/)
+  #           move(File.dirname(path), '~/Downloads/00 Completed/02 Apps')
+  #         else
+  #           if !File.dirname(path).match(/Downloads$/)
+  #             move(path, '~/Downloads/02 Apps')
+  #           end
+  #         end
+  #       else
+  #         # If it's a file we found, move the parent directory
+  #         move(File.dirname(path), '~/Downloads/02 Apps')
+  #       end
+  #     end
+  #   end
+  #   move(dir('~/Downloads/00 Completed/*.dmg'), '~/Downloads/02 Apps')
+  # end
 
   #
   # Clean App Names
@@ -85,59 +101,59 @@ Maid.rules do
   #  88  88  88 `8b  d8'  `8bd8'    .88.   88.     db   8D
   #  YP  YP  YP  `Y88P'     YP    Y888888P Y88888P `8888Y'
   #
-  rule 'Move Movies' do
-    puts "--------------------------------------------\n\033[32mMove Movies\033[0m"
-    dir(['~/Downloads/00 Completed/**/*.mp4', '~/Downloads/00 Completed/**/*.avi', '~/Downloads/00 Completed/**/*.mkv']).each do |path|
-      # if !path.match(/00 Movies/)
-        # puts "Path match"
-      # end
-      if !path.match(/00 Movies/) && !path.match(/00 TV/)
-        # Iterate through all the files
-        dir(File.dirname(path)+"*/*[avi|mkv|mp4]").each do |file|
-          # Files/Directories to ignore
-          if file == '/Users/eboney/Downloads/00 Completed'
-            puts "Ignoring #{file}\n".yellow
-            next
-          end
-          if File.directory?(file)
-            # g.add_notification "Duplicate", nil, MAID_ICONS::DUPLICATE
-            # g.notify "Duplicate", "Rule: Remove duplicate files", "Remove duplicate file #{File.basename(file)}"
-            # puts say_hello("balls")
-            puts "File exists as #{file}\n".blue
-            next
-          end
+  # rule 'Move Movies' do
+  #   puts "--------------------------------------------\n\033[32mMove Movies\033[0m"
+  #   dir(['~/Downloads/00 Completed/**/*.mp4', '~/Downloads/00 Completed/**/*.avi', '~/Downloads/00 Completed/**/*.mkv']).each do |path|
+  #     # if !path.match(/00 Movies/)
+  #       # puts "Path match"
+  #     # end
+  #     if !path.match(/00 Movies/) && !path.match(/00 TV/)
+  #       # Iterate through all the files
+  #       dir(File.dirname(path)+"*/*[avi|mkv|mp4]").each do |file|
+  #         # Files/Directories to ignore
+  #         if file == '/Users/eboney/Downloads/00 Completed'
+  #           puts "Ignoring #{file}\n".yellow
+  #           next
+  #         end
+  #         if File.directory?(file)
+  #           # g.add_notification "Duplicate", nil, MAID_ICONS::DUPLICATE
+  #           # g.notify "Duplicate", "Rule: Remove duplicate files", "Remove duplicate file #{File.basename(file)}"
+  #           # puts say_hello("balls")
+  #           puts "File exists as #{file}\n".blue
+  #           next
+  #         end
 
-          # Start the sizeof
-          begin
-            if (size_of(file) < 100000000 && !File.directory?(file))
-              puts "Killing sample or garbage file #{file}\n"
-              trash(file)
-              next
-            end
-          rescue
-            puts "\033[31mError getting path size of: #{path}\n\033[0m"
-          end
+  #         # Start the sizeof
+  #         begin
+  #           if (size_of(file) < 100000000 && !File.directory?(file))
+  #             puts "Killing sample or garbage file #{file}\n"
+  #             trash(file)
+  #             next
+  #           end
+  #         rescue
+  #           puts "\033[31mError getting path size of: #{path}\n\033[0m"
+  #         end
 
-          # Check if it's a directory
-          begin
-            if (Dir.entries(File.dirname(file)) - %w{ . .. }).empty?
-              trash(File.dirname(file))
-            end
-          rescue
-            puts "\033[31mError removing #{File.dirname(path)}\n\033[0m"
-          end
+  #         # Check if it's a directory
+  #         begin
+  #           if (Dir.entries(File.dirname(file)) - %w{ . .. }).empty?
+  #             trash(File.dirname(file))
+  #           end
+  #         rescue
+  #           puts "\033[31mError removing #{File.dirname(path)}\n\033[0m"
+  #         end
 
-          # Check for TV
-          if file.match(/[sS][0-9][0-9][eE][0-9][0-9]/)
-            move(file, '~/Downloads/00 TV')
-          else
-            move(file, '~/Downloads/00 Completed/00 Movies')
-          end
+  #         # Check for TV
+  #         if file.match(/[sS][0-9][0-9][eE][0-9][0-9]/)
+  #           move(file, '~/Downloads/00 TV')
+  #         else
+  #           move(file, '~/Downloads/00 Completed/00 Movies')
+  #         end
 
-        end
-      end
-    end
-  end
+  #       end
+  #     end
+  #   end
+  # end
 
   #  d88888b  .d88b.  d8b   db d888888b .d8888.
   #  88'     .8P  Y8. 888o  88 `~~88~~' 88'  YP
@@ -184,12 +200,12 @@ Maid.rules do
   DOWNLOAD_TYPES = {
     '02 Apps' => %w(com.apple.application com.apple.installer-package-archive public.executable),
     '06 Docs' => %w(com.microsoft.word.doc com.adobe.pdf public.rtf application/vnd.openxmlformats-officedocument.wordprocessingml.template public.log com.apple.iwork.pages.pages com.apple.iwork.keynote.sffkey),
-    '03 Archives' => %w(public.archive application/rar-compressed),
-    '01 Design' => %w(com.adobe.photoshop-image com.adobe.illustrator.ai-image com.adobe.encapsulated-postscript com.adobe.indesign.indd-document),
-    '04 Images' => 'public.image',
-    '05 Scripts' => %w(public.source-code public.script public.html text/css dyn.ah62d4rv4ge8024psse),
-    '09 Books' => %w(application/epub+zip),
-    '08 Data' => %w(text/comma-separated-values com.microsoft.excel.xls public.json)
+    '09 Archives' => %w(public.archive application/rar-compressed),
+    '03 Design' => %w(com.adobe.photoshop-image com.adobe.illustrator.ai-image com.adobe.encapsulated-postscript com.adobe.indesign.indd-document),
+    '06 Images' => 'public.image',
+    '07 Scripts' => %w(public.source-code public.script public.html text/css dyn.ah62d4rv4ge8024psse),
+    '08 Books' => %w(application/epub+zip),
+    '10 Data' => %w(text/comma-separated-values com.microsoft.excel.xls public.json)
   }
   DOWNLOAD_TYPES.each do |sub_dir, types|
     rule "Move downloaded #{sub_dir}" do

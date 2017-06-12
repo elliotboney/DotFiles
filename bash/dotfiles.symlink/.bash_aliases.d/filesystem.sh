@@ -31,6 +31,7 @@ if command_exists gls; then
    alias grep="ggrep --color=auto"
    alias du="gdu"
    alias sort="gsort"
+   alias xargs="gxargs"
 else
    alias grep="grep --color=auto"
    alias ls="ls --color=always -hF --group-directories-first"

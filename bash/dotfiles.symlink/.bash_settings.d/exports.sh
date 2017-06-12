@@ -3,6 +3,9 @@ export COMPOSER_HOME="${HOME}/.composer"
 # for use in my grunt stuff, etc
 export ENVIRONMENT="elliot"
 
+export DEVKITPRO="${HOME}/devkitPro"
+export DEVKITPPC="${DEVKITPRO}//devkitPPC"
+
 # pyenv stuff
 export PYENV_ROOT=/usr/local/var/pyenv
 if command_exists pyenv; then eval "$(pyenv init -)"; fi

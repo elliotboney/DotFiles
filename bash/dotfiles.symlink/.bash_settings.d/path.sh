@@ -12,6 +12,8 @@ paths=(
     "${HOME}/.nvm/current/bin"
     # "${HOME}/.yarn/bin"
     "${HOME}/.bin"
+    "${HOME}/Library/Haskell/bin"
+
     "${HOME}/.composer/vendor/bin"
     "${HOME}/.config/composer/vendor/bin"
     "/usr/local/opt/coreutils/libexec/gnubin"

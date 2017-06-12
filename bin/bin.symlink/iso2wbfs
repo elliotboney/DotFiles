@@ -1,0 +1,163 @@
+#!/bin/bash
+#===============================================================================
+#
+#          FILE:  iso2wbfs
+#
+#         USAGE:  ./iso2wbfs [option] FILE... [wbfs directory]
+#
+#   DESCRIPTION:  Uses wit to convert one or more  Wii ISO into a WBFS file
+#                 properly named for use on non-WBFS partitions.
+#
+#       OPTIONS:  ---
+#  REQUIREMENTS:  WIT ( http://wit.wiimm.de/wit/ )
+#          BUGS:  ---
+#         NOTES:  ---
+#        AUTHOR:  Timothy Caraballo, openback@gmail.com
+#       COMPANY:  Pixelpod International, Inc.
+#       VERSION:  1.04
+#       CREATED:  2010-08-10 08:31:01 AM EST
+#===============================================================================
+
+#===============================================================================
+# Script variables
+#===============================================================================
+# The regex to grab info from the iso
+REG="^([[:alnum:]]+)[[:space:]]+([[:digit:]]+)[[:space:]]+([[:alpha:]]{3,4})[[:space:]]+(.+)$"
+NOCLOBBER=1
+NAMINGSTYLE=3
+NAMINGSTYLESET=0
+# eval OUTPUTDIR=\$$#
+OUTPUTDIR="/Volumes/wii/wbfs"
+
+#===============================================================================
+# Prints usage info
+#===============================================================================
+function USAGE () {
+echo ""
+echo "USAGE: "
+echo "    iso2wbfs [option] FILE... [wbfs_directory]"
+echo ""
+echo "OPTIONS:"
+echo "    -f  Force overwrite of existing files"
+echo "    -v  Version information"
+echo "    -h  This usage information"
+echo "  NAMING STYLES:"
+echo "    -1  /GAMEID.wbfs"
+echo "    -2  /GAMEID_Game title.wbfs"
+echo "    -3  /Game title [GAMEID].wbfs     (default)"
+echo "    -4  /GAMEID/GAMEID.wbfs"
+echo "    -5  /GAMEID_Game title/GAMEID.wbfs"
+echo "    -6  /Game title [GAMEID]/GAMEID.wbfs"
+echo ""
+exit $E_OPTERROR    # Exit and explain usage, if no argument(s) given.
+}
+
+#===============================================================================
+# Main routine
+#===============================================================================
+
+# Set our option variables
+while getopts ":123456fhv?" opt
+do
+    case $opt in
+        [1-6])
+            if (( $NAMINGSTYLESET == 1 )); then
+                echo "Error: You may only specify one naming convention"
+                USAGE
+                exit 1
+            else
+                NAMINGSTYLESET=1
+                NAMINGSTYLE=$opt
+            fi
+            ;;
+        f)
+            NOCLOBBER=0
+            ;;
+        h)
+            USAGE
+            exit 0
+            ;;
+        v)
+            echo "`basename $0` 1.04 (2011-08-11)"
+            exit 0
+            ;;
+        ?)
+            echo ""
+            echo "Invalid option: -$OPTARG" >&2
+            USAGE
+            exit 1
+            ;;
+    esac
+done
+shift $(($OPTIND - 1))
+
+# Is the last argument a directory?
+if [[ -d "$OUTPUTDIR" ]]; then
+    HASDIR=1
+    echo -e "\n${Green}Outputting to ${OUTPUTDIR}..."
+else
+    # It isn't a directory, so let's make sure it's a file and not a mistake
+    if [[ -f "$OUTPUTDIR" ]]; then
+        OUTPUTDIR=.
+        HASDIR=0
+    else
+        echo "Error: $OUTPUTDIR was not found."
+        exit 1
+    fi
+fi
+
+
+# Do we have an iso to work with?
+(( $# )) || USAGE
+
+
+
+ISO=$1
+shift
+# Check if the ISO is a valid Wii disc
+if [[ `wit ll -H "$ISO"` =~ $REG ]]; then
+    # Grab the info from the output
+    WIITITLE=`echo ${BASH_REMATCH[4]}|tr -d '\n'|tr '[\:\*]' '_'`
+    GAMEID=${BASH_REMATCH[1]}
+    echo -e "\n${Green}Found ${Cyan}${WIITITLE}${NC}"
+
+    case $NAMINGSTYLE in
+        1)
+            WBFSFILE=$GAMEID.wbfs
+            ;;
+        2)
+            WBFSFILE=${GAMEID}_$WIITITLE.wbfs
+            ;;
+        3)
+            WBFSFILE=$WIITITLE\ \[$GAMEID\].wbfs
+            ;;
+        4)
+            WBFSFILE=$GAMEID/$GAMEID.wbfs
+            ;;
+        5)
+            WBFSFILE=${GAMEID}_$WIITITLE/$GAMEID.wbfs
+            ;;
+        6)
+            WBFSFILE=${WIITITLE}\ \[$GAMEID\]/$GAMEID.wbfs
+            ;;
+    esac
+
+    WBFSFILE=$OUTPUTDIR/$WBFSFILE
+
+    if [[ -f "$WBFSFILE" ]]; then
+        if (( $NOCLOBBER )); then
+            echo "Error: $WBFSFILE exists."
+        else
+            rm "$WBFSFILE" || exit 1
+        fi
+    fi
+
+    # Make the destination folder if it doesn't exist
+    mkdir -p "`dirname "$WBFSFILE"`" || exit 1
+
+    # Now just run the copy
+    wit -B --progress COPY "$ISO" "$WBFSFILE" --split
+else
+    echo "Error parsing $ISO"
+    exit 1
+fi

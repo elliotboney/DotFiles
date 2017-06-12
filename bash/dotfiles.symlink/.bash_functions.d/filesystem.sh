@@ -1,3 +1,23 @@
+# function cpstat() {
+#   if command_exists progress; then
+#     cp $1 $2 & progress -mp $!
+#   else
+#     echo "You need to install progress"
+#   fi
+# }
+
+# blockdev
+function blockdev() {
+  if [[ -f "/sbin/blockdev" ]]; then
+    /sbin/blockdev $@
+  elif [[ -z "$1" ]]; then
+    echo -e "\n\t${BCyan} Useage: ${White}blockdev ${Yellow}/dev/diskhere${NC}\n"
+  else
+    diskutil information $1 | grep "Disk Size" | sed 's/[^(]*(\([^Bytes)]*\).*/\1/'
+  fi
+}
+
+
 # A safer rm
 function rmf() {
   if command_exists rmtrash; then
@@ -34,15 +54,15 @@ function capitalize() {
 # Nicely outputs the $PATH variable content
 function path() {
   echo $PATH | tr ":" "\n" | \
-    awk "{ sub(\"/usr\",   \"${Green}/usr${NC}\"); \
-           sub(\"/bin\",   \"${Blue}/bin${NC}\"); \
-           sub(\"/.bin\",  \"${Blue}/.bin${NC}\"); \
-           sub(\"/sbin\",  \"${Blue}/sbin${NC}\"); \
-           sub(\"/opt\",   \"${Cyan}/opt${NC}\"); \
-           sub(\"/local\", \"${Yellow}/local${NC}\"); \
-           sub(\"/Users\", \"${Purple}/Users${NC}\"); \
-           sub(\"/home\",  \"${Purple}/home${NC}\"); \
-           print }"
+  awk "{ sub(\"/usr\",   \"${Green}/usr${NC}\"); \
+  sub(\"/bin\",   \"${Blue}/bin${NC}\"); \
+  sub(\"/.bin\",  \"${Blue}/.bin${NC}\"); \
+  sub(\"/sbin\",  \"${Blue}/sbin${NC}\"); \
+  sub(\"/opt\",   \"${Cyan}/opt${NC}\"); \
+  sub(\"/local\", \"${Yellow}/local${NC}\"); \
+  sub(\"/Users\", \"${Purple}/Users${NC}\"); \
+  sub(\"/home\",  \"${Purple}/home${NC}\"); \
+  print }"
 }
 
 
