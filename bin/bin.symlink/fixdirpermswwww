@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+sudo find . -type d -exec chown www-data:www-data {} +
