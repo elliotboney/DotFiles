@@ -13,6 +13,7 @@ paths=(
     # "${HOME}/.yarn/bin"
     "${HOME}/.bin"
     "${HOME}/Library/Haskell/bin"
+    "${HOME}/Dropbox/3D/Firmware/Marlin/buildroot/bin"
 
     "${HOME}/.composer/vendor/bin"
     "${HOME}/.config/composer/vendor/bin"

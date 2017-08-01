@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+fbname=$(basename "$1" .pyc)
+#echo -e ""
+echo -e "Decompiling ${BRed}${1}${NC} to ${BGreen}${fbname}.py${NC}..."
+uncompyle6 "${1}" > "${fbname}.py"
