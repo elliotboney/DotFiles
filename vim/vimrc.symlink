@@ -196,11 +196,6 @@ set virtualedit=onemore " Allow for cursor beyond last character
 set t_Co=256            " Enable full-color support
 set title               " Set the title of the window in the terminal to the file
 set laststatus=2        " Always show the status line
-if has("unix")
-   set listchars=tab:▸\    " ┐
-   set listchars+=trail:·  " │ Use custom symbols to
-   set listchars+=nbsp:_   " ┘ represent invisible characters
-endif
 set scrolloff=5         " When the page starts to scroll, keep the cursor 5 lines
 set autoread
 set cursorline          " highlight the line the cursor is on
