@@ -74,7 +74,7 @@ else
     echo -e "${LightGray}Skipping ${BRed}oh-my-zsh{NC}...";
   else
     echo -e "${BGreen}Installing oh-my-zsh...${NC}"
-    sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+    sh "_installohmyzsh.sh"
   fi
 fi
 
@@ -134,5 +134,7 @@ for dir in */; do
   done
   cd ..
 done
+
+
 
 
