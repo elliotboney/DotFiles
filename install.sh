@@ -120,14 +120,14 @@ for dir in */; do
         read answer
         if echo "$answer" | grep -iq "^n" ;then
           printf "\t${White}Backing ${Blue}${TARGET}${NC} up to ${Purple}${TARGET}.pre-oh-my-zsh${NC}\n";
-          # mv "${TARGET}" "${TARGET}.pre-oh-my-zsh${NC}"
+          mv "${TARGET}" "${TARGET}.pre-oh-my-zsh${NC}"
           printf "\t${Green}Linked! ${Blue}${toprocess}${NC} to ${Purple}${TARGET}${NC}...\n"
-          # ln -sr "${toprocess}" "${TARGET}" && printf "\t${Green}Linked! ${Blue}${toprocess}${NC} to ${Purple}${TARGET}${NC}..."
+          ln -sr "${toprocess}" "${TARGET}" && printf "\t${Green}Linked! ${Blue}${toprocess}${NC} to ${Purple}${TARGET}${NC}..."
         else
           printf "\t${LightGray}Skipping ${TARGET}...${NC}\n";
         fi
       else
-        # ln -sr "${toprocess}" "${TARGET}" &&
+        ln -sr "${toprocess}" "${TARGET}" &&
         printf "\t${Green}Linked! ${Blue}${toprocess}${NC} to ${Purple}${TARGET}${NC}...\n"
       fi
     fi
