@@ -92,9 +92,9 @@ else
     echo -e "${LightGray}Skipping ${BRed}Vim${NC}...";
   else
     echo -e "${Green}Installing ${BGreen}Vim${NC}..."
-    if (! APTGET_UPDATE); then
+    if (! $APTGET_UPDATE); then
       $INSTALLCMD update
-      APTGET_UPDATE = true
+      $APTGET_UPDATE = true
     fi
     $INSTALLCMD install vim
     echo -e "${Green}Installing ${BGreen}Vundle Package Manager${NC}...${NC}"
@@ -107,6 +107,9 @@ fi
 #################################################
 #                      Dotfiles                 #
 #################################################
+
+printf "DOTPATH='$PWD'\nexport DOTPATH;" > "${HOME}/.dotfilelocation"
+
 for dir in */; do
   echo -e "Processing ${BWhite}${dir}${NC}...";
   cd ${dir}
