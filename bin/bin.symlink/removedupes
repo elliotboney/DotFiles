@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# declare -A arr
+# shopt -s globstar
+
+fdupes --recurse --delete .

@@ -23,9 +23,9 @@ function updateallgit() {
 # Gitignore magic
 function gi() {
   if [[ -z "$1" ]]; then
-    curl -L -s "https://www.gitignore.io/api/list" | tr "," "\n" | less
+    curl -L -k -s "https://www.gitignore.io/api/list" | tr "," "\n" | less
   else
-    curl -L -s "https://www.gitignore.io/api/${@}"
+    curl -L -k -s "https://www.gitignore.io/api/${@}"
   fi
 }
 

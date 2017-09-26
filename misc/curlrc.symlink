@@ -11,17 +11,16 @@ max-time = 300
 # When following a redirect, automatically set the previous URL as referer
 referer = ";auto"
 
-progress-bar
+# progress-bar
 # verbose
-remote-time
+# remote-time
 ipv4
 # Show error messages
 show-error
 
 # Do not show the progress meter
-#silent
+silent
 
 # Send a fake UA string for the HTTP servers that sniff it
 user-agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.70 Safari/537.36"
-insecure
 insecure
