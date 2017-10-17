@@ -114,3 +114,9 @@ if [ "$DEBUG" = true ]; then
 fi
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 export ZSHRCRUN=true
+
+# Execute local stuff if it exists
+if [ -f $HOME/.zshrc.local ] ; then
+  decho "    \x1b[38;5;242m$HOME/.zshrc.local"
+  source $HOME/.zshrc.local
+fi
