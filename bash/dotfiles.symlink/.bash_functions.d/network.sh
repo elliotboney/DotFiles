@@ -1,3 +1,14 @@
+# Check Redirect
+function redirectcheck() {
+    if [[ -z "$1" ]]; then
+        # echo a help message if no port is specified
+        echo -e "\n\t${White}Useage: ${BCyan}redirectcheck ${LightGray}<site> ${NC}\n"
+    else
+        curl -I $1 | perl -n -e '/^Location: (.*)$/ && print "$1\n"'
+    fi
+}
+
+
 # Rip a site
 function ripsite() {
     httrack "$@" -v -N1004 -s0 -I0 --mirror -F "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.76 Safari/537.36" --clean
@@ -40,11 +51,11 @@ function benchmarksite() {
     # for i in {1..5}; do
         echo -e "\\\n
         ${LightGray}Benchmark for: ${BGreen}${1}${NC}\\\n\\\n
-               Name Lookup:  ${Cyan}%{time_namelookup} \\\n${NC}
-           Time to Connect:  ${Cyan}%{time_connect}\\\n${NC}
-       Time to Pretransfer:  ${Cyan}%{time_pretransfer}\\\n${NC}
-    Time to Start Transfer:  ${Cyan}%{time_starttransfer}\\\n${NC}
-            ${DarkGray}----------------------${NC}\\\n
-                ${BWhite}TOTAL Time:  ${BCyan}%{time_total}\\\n\\\n" | curl -w "@-" -o /dev/null -s "${1}"
-    # done
-}
+        Name Lookup:  ${Cyan}%{time_namelookup} \\\n${NC}
+        Time to Connect:  ${Cyan}%{time_connect}\\\n${NC}
+        Time to Pretransfer:  ${Cyan}%{time_pretransfer}\\\n${NC}
+        Time to Start Transfer:  ${Cyan}%{time_starttransfer}\\\n${NC}
+        ${DarkGray}----------------------${NC}\\\n
+        ${BWhite}TOTAL Time:  ${BCyan}%{time_total}\\\n\\\n" | curl -w "@-" -o /dev/null -s "${1}"
+        # done
+    }
