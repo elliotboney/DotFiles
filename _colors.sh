@@ -20,3 +20,5 @@ export BBlue='\x1b[1;34m'            # Blue
 export BPurple='\x1b[1;35m'          # Purple
 export BCyan='\x1b[1;36m'            # Cyan
 export BWhite='\x1b[1;37m'           # White
+
+export NC="\x1b[m"                   # Color Reset
