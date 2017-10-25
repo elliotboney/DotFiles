@@ -121,4 +121,4 @@ if [ -f $HOME/.zshrc.local ] ; then
   source $HOME/.zshrc.local
 fi
 
-export ZFUNC="$DOTPATH/bash/dotfiles.symlink/.bash_functions.d"
+export FPATH="$DOTPATH/bash/dotfiles.symlink/.bash_functions.d"
