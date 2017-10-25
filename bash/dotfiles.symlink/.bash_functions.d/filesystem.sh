@@ -1,5 +1,5 @@
 # Fix directory permissions
-function fixpermswww() {
+function fixperms() {
     sudo chgrp -R ${3:-www-data} "${1}"
     sudo chown ${2:-$(whoami)}:${3:-www-data} "${1}"
     sudo find "${1}" -type d -exec sudo chmod g+rx {} +
