@@ -120,3 +120,5 @@ if [ -f $HOME/.zshrc.local ] ; then
   decho "    \x1b[38;5;242m$HOME/.zshrc.local"
   source $HOME/.zshrc.local
 fi
+
+export ZFUNC="$DOTPATH/bash/dotfiles.symlink/.bash_functions.d"

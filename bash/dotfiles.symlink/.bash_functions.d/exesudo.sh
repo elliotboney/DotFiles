@@ -1,31 +1,3 @@
-# Wrap sudo to handle aliases and functions
-# Wout.Mertens@gmail.com
-#
-# Accepts -x as well as regular sudo options: this expands variables as you not root
-#
-# Comments and improvements welcome
-#
-# Installing: source this from your .bashrc and set alias sudo=sudowrap
-#  You can also wrap it in a script that changes your terminal color, like so:
-#  function setclr() {
-#   local t=0
-#   SetTerminalStyle $1
-#   shift
-#   "$@"
-#   t=$?
-#   SetTerminalStyle default
-#   return $t
-#  }
-#  alias sudo="setclr sudo sudowrap"
-#  If SetTerminalStyle is a program that interfaces with your terminal to set its
-#  color.
-
-# Note: This script only handles one layer of aliases/functions.
-
-# If you prefer to call this function sudo, uncomment the following
-# line which will make sure it can be called that
-#typeset -f sudo >/dev/null && unset sudo
-
 sudowrap ()
 {
     local c="" t="" parse=""
@@ -94,7 +66,6 @@ sudowrap ()
     fi
 }
 # Allow sudowrap to be used in subshells
-export -f sudowrap
 
 
 function exesudo ()
