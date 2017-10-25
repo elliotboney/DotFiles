@@ -1,14 +1,9 @@
+# Fix directory permissions
 function fixpermswww() {
-  if [[ -z "$1" ]]; then
-    echo -e "\n\t${White}Useage: ${BCyan}$(basename "${0}") ${Green}<directory> ${Blue}<user>${LightGray}[${2:-$(whoami)}] ${Cyan}<group>${LightGray}[${3:-www-data}] ${NC}\n"
-  else
-    # echo ${2:-$(whoami)}
-    # echo ${3:-www-data}
     sudo chgrp -R ${3:-www-data} "${1}"
     sudo chown ${2:-$(whoami)}:${3:-www-data} "${1}"
     sudo find "${1}" -type d -exec sudo chmod g+rx {} +
     sudo find "${1}" -type f -exec sudo chmod g+r {} +
-  fi
 }
 
 
