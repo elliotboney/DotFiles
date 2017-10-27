@@ -82,7 +82,7 @@
     "no-path-concat" : 1,
     "no-plusplus" : 0,
     "no-process-env" : 1,
-    "no-process-exit" : 2,
+    "no-process-exit" : 0,
     "no-proto" : 2,
     "no-redeclare" : 2,
     "no-regex-spaces" : 2,

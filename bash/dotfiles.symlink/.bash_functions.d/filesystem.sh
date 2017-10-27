@@ -5,8 +5,9 @@ function fixpermswww() {
   else
     sudo chgrp -R ${3:-www-data} "${1}"
     sudo chown ${2:-$(whoami)}:${3:-www-data} "${1}"
-    sudo find "${1}" -type d -exec sudo chmod g+rx {} +
-    sudo find "${1}" -type f -exec sudo chmod g+r {} +
+    sudo chmod -R g+rw "${1}"
+    sudo find "${1}" -type d -exec sudo chmod g+rwx {} +
+    sudo chmod g+s "${1}"
   fi
 }
 
