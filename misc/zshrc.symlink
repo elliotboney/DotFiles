@@ -55,7 +55,7 @@ COMPLETION_WAITING_DOTS="true"
 if [[ -f "${HOME}/.zshpackages" ]]; then
   source "${HOME}/.zshpackages"
 else
-  plugins=(wpclitwo zsh-completions blackbox apache2-macports atom bower brew brew-cask bundler colorize colored-man composer cp elliotzsh extract github gnu-utils grunt node osx rsync sublime sudo zsh_reload zsh-syntax-highlighting zsh-256color)
+  plugins=(wpclitwo zsh-autosuggestions history zsh-completions zsh-syntax-highlighting bower brew brew-cask bundler colorize colored-man composer cp elliotzsh extract github gnu-utils grunt node osx rsync sublime sudo zsh_reload zsh-syntax-highlighting zsh-256color)
 fi
 # slow as balls npm nvm
 

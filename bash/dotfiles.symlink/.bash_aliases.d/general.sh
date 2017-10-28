@@ -1,5 +1,4 @@
-alias cleanscreen="screen -ls | tail -n +2 | head -n -2 | awk '{print $1}'| xargs -I{} screen -S {} -X quit"
-
+alias cleanscreen="screen -ls | cut -d. -f1 | awk '{print $1}' | awk '{print $1}'| xargs -I{} screen -S {} -X quit"
 # Find running task, case insensitive search
 alias pg='ps aux | head -n1; ps aux | grep -i'
 
