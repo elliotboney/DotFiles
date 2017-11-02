@@ -6,4 +6,4 @@ alias aeditenv="atom ${DOTPATH}"
 # Reload shell after changing dotfiles
 alias reloadenv='src > /dev/null 2>&1'
 
-alias benchmarkzsh='/usr/bin/time /usr/local/bin/zsh -i -c exit'
+alias benchmarkzsh='/usr/bin/time /usr/local/bin/zsh -i -c exit && /usr/bin/time /usr/local/bin/zsh -i -c exit && /usr/bin/time /usr/local/bin/zsh -i -c exit && /usr/bin/time /usr/local/bin/zsh -i -c exit'

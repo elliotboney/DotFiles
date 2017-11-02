@@ -145,12 +145,22 @@
 [submodule "vim/vim.symlink/bundle/eScrit"]
     path = vim/vim.symlink/bundle/eScrit
     url = git@github.com:elliotboney/eScrit.git
+
 [submodule "zshcustom/plugins/alias-tips"]
 	path = zshcustom/plugins/alias-tips
 	url = https://github.com/djui/alias-tips.git
+
 [submodule "zshcustom/plugins/zsh-syntax-highlighting"]
 	path = zshcustom/plugins/zsh-syntax-highlighting
 	url = git://github.com/zsh-users/zsh-syntax-highlighting.git
+
 [submodule "zshcustom/plugins/zsh-256color"]
-	path = zshcustom/plugins/zsh-256color
-	url = git@github.com:chrissicool/zsh-256color.git
+    path = zshcustom/plugins/zsh-256color
+    url = git@github.com:chrissicool/zsh-256color.git
+
+[submodule "zshcustom/plugins/zsh-autosuggestions"]
+	path = zshcustom/plugins/zsh-autosuggestions
+	url = git@github.com:zsh-users/zsh-autosuggestions.git
+[submodule "zshcustom/plugins/zsh-completions"]
+	path = zshcustom/plugins/zsh-completions
+	url = git@github.com:zsh-users/zsh-completions.git
