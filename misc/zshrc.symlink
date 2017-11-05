@@ -56,6 +56,7 @@ if [[ -f "${HOME}/.zshpackages" ]]; then
   source "${HOME}/.zshpackages"
 else
   plugins=(
+    # alias-tips
     # bower
     brew
     brew-cask
@@ -67,7 +68,7 @@ else
     cp
     elliotzsh
     extract
-    git
+    # git
     git-extras
     github
     gnu-utils
@@ -77,13 +78,14 @@ else
     osx
     rsync
     screen
+    sublime
+    web-search
     wpclitwo
     zsh-256color
     zsh-autosuggestions
     zsh-completions
-    zsh-syntax-highlighting
-    zsh-syntax-highlighting
     zsh_reload
+    zsh-syntax-highlighting # this MUST BE LAST
     )
 fi
 # slow as balls npm nvm

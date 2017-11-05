@@ -30,7 +30,7 @@ function lm () {
     MVFILE=${MVFILE:1:${#MVFILE}}
     mv "$1" "${DOTPATH}/misc/${MVFILE}.symlink"
     ln -s "${DOTPATH}/misc/${MVFILE}.symlink" "${HOME}/.${MVFILE}"
-    echo -e "\n\t${White}Moved and created a symlink for: ${BCyan}.${1}${NC}\n"
+    echo -e "\n\t${White}Moved and created a symlink for: ${BCyan}.${MVFILE}${NC}\n"
   else
     echo -e "\n\t${White}Useage: ${BCyan}lm ${LightGray}<file> ${NC}\n"
   fi

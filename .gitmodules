@@ -14,7 +14,7 @@
     path = vim/vim.symlink/bundle/hex.vim
     url = git@github.com:vim-scripts/hex.vim.git
 
-    [submodule "vim/vim.symlink/bundle/hexman.vim"]
+[submodule "vim/vim.symlink/bundle/hexman.vim"]
     path = vim/vim.symlink/bundle/hexman.vim
     url = git@github.com:vim-scripts/hexman.vim.git
 
