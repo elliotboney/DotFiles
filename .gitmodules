@@ -90,10 +90,6 @@
     path = vim/vim.symlink/bundle/vim-coffee-script
     url = git@github.com:vim-scripts/vim-coffee-script.git
 
-[submodule "vim/vim.symlink/bundle/vim-json"]
-    path = vim/vim.symlink/bundle/vim-json
-    url = git@github.com:helino/vim-json.git
-
 [submodule "vim/vim.symlink/bundle/webapi-vim"]
     path = vim/vim.symlink/bundle/webapi-vim
     url = git@github.com:mattn/webapi-vim.git
@@ -157,6 +153,7 @@
 [submodule "zshcustom/plugins/zsh-autosuggestions"]
 	path = zshcustom/plugins/zsh-autosuggestions
 	url = git@github.com:zsh-users/zsh-autosuggestions.git
+
 [submodule "zshcustom/plugins/zsh-completions"]
 	path = zshcustom/plugins/zsh-completions
 	url = git@github.com:zsh-users/zsh-completions.git
