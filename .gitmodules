@@ -170,3 +170,6 @@
 [submodule "vim/vim.symlink/bundle/vim-startify"]
 	path = vim/vim.symlink/bundle/vim-startify
 	url = git@github.com:mhinz/vim-startify.git
+[submodule "vim/vim.symlink/bundle/php.vim"]
+	path = vim/vim.symlink/bundle/php.vim
+	url = https://github.com/stanangeloff/php.vim
