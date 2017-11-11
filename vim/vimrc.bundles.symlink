@@ -15,12 +15,19 @@ if dein#load_state('~/.vim/bundle/')
   call dein#begin('~/.vim/bundle/')
 
   call dein#add('~/.vim/bundle/dein.vim/')
+  call dein#add('mhinz/vim-startify')
 
   " Javascript And Coffee Script:
   call dein#add('einars/js-beautify', {'on_ft':['javascript']})
   call dein#add('jelera/vim-javascript-syntax', {'on_ft':['javascript']})
   call dein#add('vim-scripts/JavaScript-Indent', {'on_ft':['javascript']})
-  call dein#add('elzr/vim-json')
+  call dein#add('elzr/vim-json', {'on_ft':['json']})
+
+  " Other langs
+  call dein#add('cakebaker/scss-syntax.vim', {'on_ft':['scss']})
+  call dein#add('tpope/vim-markdown', {'on_ft':['markdown']})
+  call dein#add('othree/html5.vim', {'on_ft':['html']})
+
 
   " General Utils:
   call dein#add('scrooloose/syntastic')
@@ -30,15 +37,14 @@ if dein#load_state('~/.vim/bundle/')
   call dein#add('vim-scripts/xterm-color-table.vim')
   call dein#add('scrooloose/nerdtree')
   call dein#add('scrooloose/nerdcommenter')
-  call dein#add('tpope/vim-markdown')
+
+
+  " Auto set paste for me when pasting over ssh
   call dein#add('roxma/vim-paste-easy')
 
   " Panels Windows:
   call dein#add('tacahiroy/ctrlp-funky')
   call dein#add('kien/ctrlp.vim')
-
-  " Other Language Stuff:
-  call dein#add('othree/html5.vim')
 
   " My Own Custom Shit:
   call dein#add('elliotboney/eVimBundle')

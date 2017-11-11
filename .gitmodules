@@ -164,3 +164,9 @@
 [submodule "vim/vim.symlink/bundle/dein.vim"]
 	path = vim/vim.symlink/bundle/dein.vim
 	url = git@github.com:Shougo/dein.vim.git
+[submodule "vim/vim.symlink/bundle/scss-syntax"]
+	path = vim/vim.symlink/bundle/scss-syntax
+	url = git@github.com:cakebaker/scss-syntax.vim.git
+[submodule "vim/vim.symlink/bundle/vim-startify"]
+	path = vim/vim.symlink/bundle/vim-startify
+	url = git@github.com:mhinz/vim-startify.git

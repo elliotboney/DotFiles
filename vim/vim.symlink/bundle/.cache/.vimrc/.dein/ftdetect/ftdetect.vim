@@ -13,3 +13,5 @@ autocmd BufNewFile,BufRead * call s:DetectJS()
 autocmd BufNewFile,BufRead *.json setlocal filetype=json
 autocmd BufNewFile,BufRead *.jsonp setlocal filetype=json
 autocmd BufNewFile,BufRead *.geojson setlocal filetype=json
+au BufRead,BufNewFile *.scss setfiletype scss
+au BufEnter *.scss :syntax sync fromstart
