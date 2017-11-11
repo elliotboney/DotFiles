@@ -1,78 +1,57 @@
-" Information: {{{
-"
-"  {{{2
-"  Author: Elliot Boney
-" }}} }}}
+" Information:
+" Author: Elliot Boney
 
-set nocompatible
+
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" Required:
+set runtimepath+=~/.vim/bundle/dein.vim/
 
-" make vundle use git protocol
-let g:vundle_default_git_proto = 'git'
+if dein#load_state('~/.vim/bundle/')
+  call dein#begin('~/.vim/bundle/')
 
-" Let Vundle Manage Vundle: {{{
-Plugin 'gmarik/Vundle.vim'
-" }}}
+  call dein#add('~/.vim/bundle/dein.vim/')
 
-" Javascript And Coffee Script: {{{
-Plugin 'einars/js-beautify'
-"Plugin 'marijnh/tern_for_vim'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'JavaScript-Indent'
-" }}}
+  " Javascript And Coffee Script:
+  call dein#add('einars/js-beautify', {'on_ft':['javascript']})
+  call dein#add('jelera/vim-javascript-syntax', {'on_ft':['javascript']})
+  call dein#add('vim-scripts/JavaScript-Indent', {'on_ft':['javascript']})
+  call dein#add('elzr/vim-json')
 
-" General Utils: {{{
-Plugin 'scrooloose/syntastic'
-Plugin 'gregsexton/MatchTag'
-Plugin 'Tagbar'
-"Plugin 'Valloric/YouCompleteMe'
-Plugin 'itchyny/lightline.vim'
-Plugin 'xterm-color-table.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-"Plugin 'vim-scripts/LustyJuggler'
-Plugin 'tpope/vim-markdown'
-" }}}
+  " General Utils:
+  call dein#add('scrooloose/syntastic')
+  call dein#add('gregsexton/MatchTag')
+  call dein#add('vim-scripts/Tagbar')
+  call dein#add('itchyny/lightline.vim')
+  call dein#add('vim-scripts/xterm-color-table.vim')
+  call dein#add('scrooloose/nerdtree')
+  call dein#add('scrooloose/nerdcommenter')
+  call dein#add('tpope/vim-markdown')
 
-" Panels Windows: {{{
-Plugin 'tacahiroy/ctrlp-funky'
-Plugin 'kien/ctrlp.vim'
+  " Panels Windows:
+  call dein#add('tacahiroy/ctrlp-funky')
+  call dein#add('kien/ctrlp.vim')
 
-" }}}
+  " Other Language Stuff:
+  call dein#add('othree/html5.vim')
 
-" Other Language Stuff: {{{
-Plugin 'othree/html5.vim'
-" }}}
+  " My Own Custom Shit:
+  call dein#add('elliotboney/eVimBundle')
+  call dein#add('vim-scripts/BusyBee')
 
-" My Own Custom Shit:
-Plugin 'elliotboney/eVimBundle'
-Plugin 'mgutz/vim-colors'
-Plugin 'vim-scripts/BusyBee'
-
-" Gist: {{{
-Plugin 'vim-scripts/Gist.vim'
-Plugin 'mattn/webapi-vim'
-" }}}
+  " Gist:
+  call dein#add('vim-scripts/Gist.vim')
+  call dein#add('mattn/webapi-vim')
 
 
+  " End dein
+  call dein#end()
+  call dein#save_state()
+endif
 
-" Unused {{{2
-"Plugin 'Css-Pretty'
-"Plugin 'Syntastic'
-"Plugin 'xterm-color-table.vim'
-Plugin 'Align'
-"Plugin 'editorconfig-vim'
-"Plugin 'maksimr/vim-jsbeautify'
-"Plugin 'jshint.vim'
-"Plugin 'terryma/vim-multiple-cursors'
-"Plugin 'XmlPretty'
-"Plugin 'indenthtml.vim'
-"Plugin 'tidy'
-" }}}
-
-call vundle#end()            " required
 filetype plugin indent on    " required
 syntax on

@@ -153,3 +153,14 @@
 [submodule "zshcustom/plugins/zsh-completions"]
 	path = zshcustom/plugins/zsh-completions
 	url = git@github.com:zsh-users/zsh-completions.git
+
+[submodule "vim/vim.symlink/bundle/vim-json"]
+	path = vim/vim.symlink/bundle/vim-json
+	url = git@github.com:elzr/vim-json.git
+
+[submodule "vim/vim.symlink/bundle/vim-javascript-syntax"]
+	path = vim/vim.symlink/bundle/vim-javascript-syntax
+	url = https://github.com/jelera/vim-javascript-syntax.git
+[submodule "vim/vim.symlink/bundle/dein.vim"]
+	path = vim/vim.symlink/bundle/dein.vim
+	url = git@github.com:Shougo/dein.vim.git
