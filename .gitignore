@@ -1,6 +1,7 @@
 # vim stuff
 vim/vim.symlink/bundle/cache_vim
 vim/vim.symlink/bundle/state_vim.vim
+vim/vim.symlink/bundle/.cache
 
 .DS_Store
 .AppleDouble
