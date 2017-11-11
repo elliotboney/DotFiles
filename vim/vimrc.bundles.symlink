@@ -31,6 +31,7 @@ if dein#load_state('~/.vim/bundle/')
   call dein#add('scrooloose/nerdtree')
   call dein#add('scrooloose/nerdcommenter')
   call dein#add('tpope/vim-markdown')
+  call dein#add('roxma/vim-paste-easy')
 
   " Panels Windows:
   call dein#add('tacahiroy/ctrlp-funky')
