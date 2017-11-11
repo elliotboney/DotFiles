@@ -11,7 +11,7 @@ function pushdots() {
 
 # Resets local copy of dotfiles and pulls fresh copy
 function updatedotfiles() {
-  cd ${DOTPATH} && git fetch && git merge && cd - && source $HOME/.zshrc
+  cd ${DOTPATH} && git fetch && git merge && git submodule init && git submodule update && cd - && source $HOME/.zshrc
 }
 
 # Add a new file/directory to my Github Dotfiles Repo
