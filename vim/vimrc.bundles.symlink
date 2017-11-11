@@ -60,5 +60,7 @@ if dein#load_state('~/.vim/bundle/')
   call dein#save_state()
 endif
 
+call dein#check_install()
+
 filetype plugin indent on    " required
 syntax on
