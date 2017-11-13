@@ -20,6 +20,9 @@ Table of Contents
 # General #
 What are [dotFiles](http://linux.about.com/cs/linux101/g/dot_file.htm "dotFiles")
 
+My dotfiles to make my life way way easier
+![screenshot](https://image.ibb.co/jdYjiG/image.png)
+
 The really good bash/zsh aliases, functions, etc are found in bash/dotfiles.symlink/
 
 #### My inspirations ####
@@ -32,7 +35,20 @@ The really good bash/zsh aliases, functions, etc are found in bash/dotfiles.syml
 
 This WILL overwrite your existing dotfiles like .bashrc, .zshrc, etc but don't worry, it will make a copy of it as `.filename.pre-oh-my-zsh`
 
-## Shell Script (New & Preferred) ##
+## Remote Installation ##
+Alternatively, you can install this into ~/DotFiles remotely without Git using curl:
+
+```shell
+sh -c "`curl -fsSL https://raw.github.com/elliotboney/DotFiles/master/remote-setup.sh`"
+```
+Or, using wget:
+```shell
+sh -c "`wget -O - --no-check-certificate https://raw.githubusercontent.com/elliotboney/DotFiles/master/remote-setup.sh`"
+```
+
+
+## Local Installation ##
+### Shell Script (New & Preferred) ###
 ```shell
 git clone --recurse-submodules --depth 1 https://github.com/elliotboney/DotFiles.git DotFiles
 cd DotFiles
@@ -40,7 +56,7 @@ cd DotFiles
 ```
 
 
-## Ruby (Old and annoying cause you need ruby on fresh shells) ##
+### Ruby (Old and annoying cause you need ruby on fresh shells) ###
 How to install the actual dotfiles.
 ```shell
 # sudo apt-get install ruby # install ruby if you don't have it
@@ -61,7 +77,7 @@ screen session over ssh.
 
 `.zshpackages` overrides the default packages for [oh-my-zsh](http://ohmyz.sh/) setup in `.zshrc`
 
-## Requirements ##
+# Requirements #
 On a new debian server, this will install the requirements:
 ```shell
 sudo apt-get update && sudo apt-get install git zsh

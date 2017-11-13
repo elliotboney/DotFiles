@@ -2,34 +2,43 @@
 
 function _eachdir() {
 
-if [[ "$1" == "-h" || "$1" == "--help" || ! "$1" ]]; 
-  then
-    echo -e "   "
-    echo -e "   ${BCyan}Usage: ${BGreen}eachdir${NC} ${Yellow}[dirs --] ${Purple}commands${NC}"
-    echo -e "   Run one or more commands in one or more dirs."
-    echo -e "   "
-    echo -e "   By default, all subdirs of the current dir will be iterated over, but if --"
-    echo -e "   is specified as an arg, the dirs list will be made up of all args specified"
-    echo -e "   before it. All remaining args are the command(s) to be executed for each dir."
-    echo -e "   "
-    echo -e "   Multiple commands must be specified as a single string argument."
-    echo -e "   "
-    echo -e "   Both of these print the working directory of every subdir of the current dir:"
-    echo -e "     ${BGreen}eachdir ${Purple}pwd${NC}"
-    echo -e "     ${BGreen}eachdir ${Yellow}* -- ${Purple}pwd${NC}"
-    echo -e "   "
-    echo -e "   ${Gray}Perform a \"git pull\" inside all subdirs starting with repo-:"
-    echo -e "     ${BGreen}eachdir${Yellow} repo-* -- ${Purple}git pull${NC}"
-    echo -e "   "
-    echo -e "   ${LightGray}Perform a few git-related commands inside all subdirs starting with repo-:"
-    echo -e "     ${BGreen}eachdir ${Yellow}repo-* -- ${Purple}'git fetch && git merge'${NC}"
-    echo -e "   "
+if [[ "$1" == "-h" || "$1" == "--help" ]]; then cat <<HELP
+eachdir
+http://benalman.com/
+
+Usage: eachdir [dirs --] commands
+
+Run one or more commands in one or more dirs.
+
+By default, all subdirs of the current dir will be iterated over, but if --
+is specified as an arg, the dirs list will be made up of all args specified
+before it. All remaining args are the command(s) to be executed for each dir.
+
+Multiple commands must be specified as a single string argument.
+
+In bash, aliasing like this allows you to specify aliases/functions:
+  alias eachdir=". eachdir"
+
+Both of these print the working directory of every subdir of the current dir:
+  eachdir pwd
+  eachdir * -- pwd
+
+Perform a "git pull" inside all subdirs starting with repo-:
+  eachdir repo-* -- git pull
+
+Perform a few git-related commands inside all subdirs starting with repo-:
+  eachdir repo-* -- 'git fetch && git merge'
+
+Copyright (c) 2012 "Cowboy" Ben Alman
+Licensed under the MIT license.
+http://benalman.com/about/license/
+HELP
 return; fi
 
-# if [ ! "$1" ]; then
-  # echo 'You must specify one or more commands to run.'
-  # return 1
-# fi
+if [ ! "$1" ]; then
+  echo 'You must specify one or more commands to run.'
+  return 1
+fi
 
 # For underlining headers.
 local h1="$(tput smul)"
