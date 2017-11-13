@@ -1,0 +1,1 @@
+if [ -z "$STY" ]; then screen -R; else source .bashrc; fi

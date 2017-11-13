@@ -96,7 +96,7 @@ CHAR                  48;5;230;38;5;244;01 # character device driver
 ORPHAN                48;5;235;38;5;160 # symlink to nonexistent file, or non-stat'able file
 MISSING               48;5;235;38;5;160 # symlink to nonexistent file, or non-stat'able file
 SETUID                00;38;5;153 # file that is setuid (u+s)
-SETGID                48;5;214;38;5;229 # file that is setgid (g+s)
+#SETGID                48;5;214;38;5;229 # file that is setgid (g+s)
 CAPABILITY            30;41 # file with capability
 STICKY_OTHER_WRITABLE 48;5;235;38;5;39 # dir that is sticky and other-writable (+t,o+w)
 STICKY                38;5;8 # dir that is other-writable (o+w) and not sticky
@@ -122,8 +122,12 @@ EXEC                  00;38;5;83
 .php                  00;38;5;155
 .js                   00;38;5;155
 .rb                   00;38;5;155
+.lua                   00;38;5;155
 
 .html                 00;38;5;137
+.css                  00;38;5;137
+.scss                 00;38;5;137
+.less                 00;38;5;137
 .sql                  00;38;5;137
 
 
@@ -176,7 +180,7 @@ EXEC                  00;38;5;83
 .gif                  00;38;5;172
 .bmp                  00;38;5;172
 .tif                  00;38;5;173
-.tiff                  00;38;5;173
+.tiff                 00;38;5;173
 .png                  00;38;5;172
 
 .pcx                  00;38;5;172
@@ -215,6 +219,7 @@ EXEC                  00;38;5;83
 
 # "unimportant" files as logs and backups (base01)
 .log                  00;38;5;240
+.Log                  00;38;5;240
 .txt                  00;38;5;240
 .rtf                  00;38;5;240
 .bak                  00;38;5;240
@@ -231,7 +236,8 @@ EXEC                  00;38;5;83
 .o                    00;38;5;240
 .pyc                  00;38;5;240
 .class                00;38;5;240
-.cache                00;38;5;240
+
+
 
 # Audio formats (orange)
 .aac                  00;38;5;166
@@ -265,7 +271,7 @@ EXEC                  00;38;5;83
 .Trash/               00;38;5;236
 .Xauthority           00;38;5;236
 .zprofile             00;38;5;236
-.zcompdump            00;38;5;236
+*.zcompdump            00;38;5;236
 .zshrc                00;38;5;236
 .zshrc                00;38;5;236
 *LICENSE              00;38;5;236
@@ -275,7 +281,11 @@ EXEC                  00;38;5;83
 *.lock                00;38;5;236
 *.git/                00;38;5;236
 .lessht               00;38;5;174
-
+.cache                00;38;5;236
+.idea                 00;38;5;236
+.zsh_history          00;38;5;236
+.zshrc-e              00;38;5;236
+.zshrc.zwc            00;38;5;236
 
 # my version of config files
 *config               00;38;5;174
@@ -314,6 +324,14 @@ EXEC                  00;38;5;83
 
 .symlink              00;38;5;25
 
+# important files
+*id_rsa                30;41
+*id_rsa.pub            30;41
+
 # Project files
 .sublime-project      00;38;5;2
 .sublime-workspace    00;38;5;2
+
+
+
+
