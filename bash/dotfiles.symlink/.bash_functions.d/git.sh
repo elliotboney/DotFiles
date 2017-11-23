@@ -32,9 +32,15 @@ function gi() {
 # Pulls all in a directory
 function pullall {
   for dir in */;  do
-    cd ${dir}
-    echo "Entering and git pulling: ${dir}"
-    git pull #2> /dev/null | grep -v 'Already'
-    cd ..
+    pwd="$(pwd)"
+    # echo "$(ls -A ${pwd}/${dir}.git)"
+    if [ -n "$(ls -A ${pwd}/${dir}.git 2> /dev/null)" ]; then
+      cd ${dir}
+      echo "${Green}Entering and git pulling: ${BGreen}${dir}"
+      git pull #2> /dev/null | grep -v 'Already'
+      cd ..
+    else
+      echo -e "${BRed}${dir}${NC} ${Red}is not a git repo."
+    fi
   done
 }
