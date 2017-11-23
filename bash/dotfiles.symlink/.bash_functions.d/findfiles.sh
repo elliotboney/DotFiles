@@ -9,13 +9,8 @@ findinfiles()
     if [[ -z "$1" ]]; then
         echo -e "\n\t${BCyan} Useage: findinfiles <text to find>\n"
     else
-        if (command_exists ggrep); then
-            ggrep --max-count=1 -n -C 1 -r $1 .
-        else
-            grep --max-count=1 -n -C 1 -r $1 .
-        fi
+        grep --max-count=1 -n -C 1 -r $1 .
     fi
-
 }
 
 # find files named X
