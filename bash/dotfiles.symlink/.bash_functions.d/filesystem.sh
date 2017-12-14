@@ -8,6 +8,8 @@ function fixpermswww() {
     sudo chmod -R g+rw "${1}"
     if [[ -d "${1}/wp-content/uploads" ]]; then
       sudo chmod 777 "${1}/wp-content/uploads"
+    else
+      echo -e "${1}/wp-content/uploads does not exist"
     fi
     sudo find "${1}" -type d -exec sudo chmod g+rwx {} +
     sudo chmod g+s "${1}"
