@@ -4,8 +4,11 @@ function fixpermswww() {
     echo -e "\n\t${White}Useage: ${BCyan}$(basename "${0}") ${Green}<directory> ${Blue}<user>${LightGray}[${2:-$(whoami)}] ${Cyan}<group>${LightGray}[${3:-www-data}] ${NC}\n"
   else
     sudo chgrp -R ${3:-www-data} "${1}"
-    sudo chown ${2:-$(whoami)}:${3:-www-data} "${1}"
+    sudo chown -R ${2:-$(whoami)}:${3:-www-data} "${1}"
     sudo chmod -R g+rw "${1}"
+    if [[ -d "${1}/wp-content/uploads" ]]; then
+      sudo chmod 777 "${1}/wp-content/uploads"
+    fi
     sudo find "${1}" -type d -exec sudo chmod g+rwx {} +
     sudo chmod g+s "${1}"
   fi
