@@ -116,16 +116,16 @@ function cleanfiles() {
 
 # Mac cleanup
 function cleanup() {
-  echo -e "\n${BGreen}Deleting f'in .DS_Store files...${BRed}"
-  sudo gfind . -type f -name '*.DS_Store' -printf \ \ \ \ %p"\n" -exec rm -rf {} \;
-  echo -e "\n${BGreen}Deleting f'in ._ files...${BRed}"
-  sudo gfind . -type f -name '._*' -printf \ \ \ \ %p"\n" -exec rm -rf {} \;
-  echo -e "\n${BGreen}Deleting f'in Thumbnail db files...${BRed}"
-  sudo gfind . -type f -name 'Thumbs.db' -printf \ \ \ \ %p"\n" -exec rm -rf {} \;
-  echo -e "\n${BGreen}Deleting f'in __MACOSX files...${BRed}"
-  sudo gfind . -type d -name '__MAC*' -printf \ \ \ \ %p"\n" -exec rm -rf {} \;
-  echo -e "\n${BGreen}Deleting f'in desktopini files...${BRed}"
-  sudo gfind . -type d -name 'desktop.ini' -printf \ \ \ \ %p"\n" -exec rm -rf {} \;
+  echo -e "\n${Green}Deleting f'in .DS_Store files...${Red}"
+  sudo find . -type f -name '*.DS_Store' -printf \ \ \ \ %p"\n" -exec rm -rf {} \;
+  echo -e "\n${Green}Deleting f'in ._ files...${Red}"
+  sudo find . -type f -name '._*' -printf \ \ \ \ %p"\n" -exec rm -rf {} \;
+  echo -e "\n${Green}Deleting f'in Thumbnail db files...${Red}"
+  sudo find . -type f -name 'Thumbs.db' -printf \ \ \ \ %p"\n" -exec rm -rf {} \;
+  echo -e "\n${Green}Deleting f'in __MACOSX files...${Red}"
+  sudo find . -type d -name '__MAC*' -printf \ \ \ \ %p"\n" -exec rm -rf {} \;
+  echo -e "\n${Green}Deleting f'in desktopini files...${Red}"
+  sudo find . -type d -name 'desktop.ini' -printf \ \ \ \ %p"\n" -exec rm -rf {} \;
 }
 
 # Determine size of a file or total size of a directory

@@ -19,7 +19,7 @@ s3put() {
 
 # Download a directory
 downloaddir() {
-  wget -q -r -nd -l 3 --no-parent --reject-regex '\?' -R html,txt -b "$@"
+  wget -q -r -nd -l 3 --no-parent --reject-regex '\?' -R html,txt,html -b "$@"
 }
 
 # Turn a file into a data url

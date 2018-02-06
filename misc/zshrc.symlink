@@ -58,29 +58,28 @@ else
   plugins=(
     # alias-tips
     # bower
-    brew
-    brew-cask
+    # brew
+    # brew-cask
     # bundler
     colored-man
     colorize
-    composer
+    # composer
     compleat
     cp
     elliotzsh
-    extract
     # git
-    git-extras
-    github
-    gnu-utils
-    grunt
+    # git-extras
+    # github
+    # gnu-utils
+    # grunt
     history
-    npm
-    osx
+    # npm
+    # osx
     rsync
     screen
-    sublime
-    web-search
-    wpclitwo
+    # sublime
+    # web-search
+    # wpclitwo
     zsh-256color
     zsh-autosuggestions
     zsh-completions

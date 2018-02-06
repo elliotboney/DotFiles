@@ -14,7 +14,7 @@ paths=(
     "${HOME}/.bin"
     "${HOME}/Library/Haskell/bin"
     "${HOME}/Dropbox/3D/Firmware/Marlin/buildroot/bin"
-
+    "/Users/eboney/Library/Application Support/Steam/steamapps/common/Counter-Strike Source/bin"
     "${HOME}/.composer/vendor/bin"
     "${HOME}/.config/composer/vendor/bin"
     "/usr/local/opt/coreutils/libexec/gnubin"

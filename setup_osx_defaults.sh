@@ -1,20 +1,27 @@
+#!/usr/bin/env bash
 
-
-echo -e "Setting defaults..."
+echo -e "${BGreen}Setting defaults..."
 
 
 ###############################################################################
 # General Stuff                                                               #
 ###############################################################################
 
+
+# Remove horribly annoying dock lag when it's hidden to show again
+defaults write com.apple.Dock autohide-delay -float 0
+
+# Remove annoying press and hold
+defaults write -g ApplePressAndHoldEnabled -bool false
+
 # Remove annoying download quarantine
-defaults write com.apple.LaunchServices LSQuarantine -bool NO
+defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 # Disable the crash reporter
 defaults write com.apple.CrashReporter DialogType -string "none"
 
 #Disable the stupid dashboard
-defaults write com.apple.dashboard mcx-disabled -boolean YES
+defaults write com.apple.dashboard mcx-disabled -boolean true
 
 # Disable Notification Center and remove the menu bar icon
 launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist
@@ -112,8 +119,8 @@ defaults write NSGlobalDomain AppleFontSmoothing -int 2
 ###############################################################################
 
 # Allow installing user scripts via GitHub or Userscripts.org
-defaults write com.google.Chrome ExtensionInstallSources -array "https://*.github.com/*" "http://userscripts.org/*"
-defaults write com.google.Chrome.canary ExtensionInstallSources -array "https://*.github.com/*" "http://userscripts.org/*"
+# defaults write com.google.Chrome ExtensionInstallSources -array "https://*.github.com/*" "http://userscripts.org/*"
+# defaults write com.google.Chrome.canary ExtensionInstallSources -array "https://*.github.com/*" "http://userscripts.org/*"
 
 
 ###############################################################################

@@ -33,3 +33,6 @@ alias apt-get='sudo apt-get'
 
 alias updatefonts='sudo fc-cache -f -v'
 # command_exists brew ] && echo "true"
+
+alias autoexec='s ~/Library/Application\ Support/Steam/steamapps/common/Counter-Strike\ Source/cstrike/cfg/autoexec.cfg ~/Library/Application\ Support/Steam/steamapps/common/Counter-Strike\ Source/cstrike/cfg/'
+alias cs='cd ~/Library/Application\ Support/Steam/steamapps/common/Counter-Strike\ Source/'

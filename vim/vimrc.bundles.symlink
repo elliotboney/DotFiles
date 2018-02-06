@@ -9,7 +9,7 @@ endif
 filetype off
 
 " Required:
-set runtimepath+=~/.vim/bundle/dein.vim/
+set runtimepath+=~/.vim/bundle/repos/github.com/Shougo/dein.vim
 
 if dein#load_state('~/.vim/bundle/')
   call dein#begin('~/.vim/bundle/')
