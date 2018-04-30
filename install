@@ -68,6 +68,7 @@ printf "Checking for ${BWhite}oh-my-zsh${NC}..." && sleep .5
 if [ -d "${HOME}/.oh-my-zsh" ]; then
   echo -e "${Green}Success!${NC}"
 else
+  printf 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"'
   printf "oh-my-zsh not found, do you wish to install? ${NC}(${BGreen}Y${NC}/${Red}n${NC})"
   read answer
   if echo "$answer" | grep -iq "^n" ;then
@@ -116,7 +117,7 @@ for dir in */; do
   for toprocess in *symlink; do
     if [[ -d "${toprocess}" ]] || [[ -f "${toprocess}" ]]; then
       printf "\tProcessing ${Blue}${toprocess}${NC}..."
-      FSOURCE="${PWD}/${toprocess}"
+      FSOURCE="$(pwd)/${toprocess}"
 #	echo -e "\nFile Source: ${FSOURCE}"
       TARGET="${HOME}/.${toprocess//.symlink}"
       # echo -e "${TARGET}"
@@ -127,7 +128,7 @@ for dir in */; do
           printf "\t${White}Backing ${Blue}${TARGET}${NC} up to ${Purple}${TARGET}.pre-oh-my-zsh${NC}\n";
     #      mv "${TARGET}" "${TARGET}.pre-oh-my-zsh"
           printf "\t${Green}Linked! ${Blue}${toprocess}${NC} to ${Purple}${TARGET}${NC}...\n"
-          echo -e "${FSOURCE} -----> ${TARGET}" 
+          echo -e "${FSOURCE} -----> ${TARGET}"
           ln -sf "${FSOURCE}" "${TARGET}" && printf "\t${Green}Linked! ${Blue}${toprocess}${NC} to ${Purple}${TARGET}${NC}..."
         else
           printf "\t${LightGray}Skipping ${TARGET}...${NC}\n";

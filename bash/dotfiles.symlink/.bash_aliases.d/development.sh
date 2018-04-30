@@ -2,6 +2,7 @@
 #          SSH          #
 #########################
 alias prod="ssh eboney@173.255.203.251 -p 2222"
+alias prodsql="ssh eboney@173.255.197.75"
 alias ell='_changetitle elliotboney.com && ssh elliotboney.com'
 
 
