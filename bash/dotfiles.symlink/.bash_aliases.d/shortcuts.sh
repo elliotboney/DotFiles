@@ -11,5 +11,5 @@ alias csgo="cd ~/Library/Application\ Support/Steam/steamapps/common/Counter-Str
 
 alias www="cd /var/www"
 
-alias dotjs='cd ~/Code/js/DotJS/ && s ~/Code/js/DotJS/'
+alias dotjs='s ~/Code/dotjs/'
 
