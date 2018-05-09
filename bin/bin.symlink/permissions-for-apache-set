@@ -41,10 +41,10 @@ groupname="development"
 developmentuser="$(id -u -n)"
 webserveruser="www-data"
 
-echo -e "${LightGray}Checking if group ${BBlue}${groupname} ${LightGray}exists...${NC}"
+echo -e "${White}Checking if group ${BBlue}${groupname} ${White}exists...${NC}"
 
 if grep -q $groupname /etc/group; then
-  echo -e "${LightGray}Group ${BBlue}${groupname} ${LightGray}exists, skipping...${NC}"
+  echo -e "${White}Group ${BBlue}${groupname} ${White}exists, skipping...${NC}"
 else
   echo -e "${Yellow}Group ${BBlue}${groupname} ${Yellow}does not exist, creating...${NC}"
   # Create a runtime user group
@@ -52,17 +52,17 @@ else
 fi
 
 if groups $developmentuser | grep &>/dev/null "\b${groupname}\b"; then
-  echo -e "${BGreen}${developmentuser} ${LightGray}is already in ${BBlue}${groupname} ${LightGray}skipping...${NC}"
+  echo -e "${BGreen}${developmentuser} ${White}is already in ${BBlue}${groupname} ${White}skipping...${NC}"
 else
-  echo -e "${BGreen}${developmentuser} ${Yellow}is not in the group ${BBlue}${groupname} ${LightGray}adding...${NC}"
+  echo -e "${BGreen}${developmentuser} ${Yellow}is not in the group ${BBlue}${groupname} ${White}adding...${NC}"
   # Assign user to the new runtime user group
   sudo adduser $developmentuser $groupname
 fi
 
 if groups $webserveruser | grep &>/dev/null "\b${groupname}\b"; then
-  echo -e "${BGreen}${$webserveruser} ${LightGray}is already in ${BBlue}${groupname} ${LightGray}skipping...${NC}"
+  echo -e "${BGreen}${webserveruser} ${White}is already in ${BBlue}${groupname} ${White}skipping...${NC}"
 else
-  echo -e "${BGreen}${$webserveruser} ${Yellow}is not in the group ${BBlue}${groupname} ${LightGray}adding...${NC}"
+  echo -e "${BGreen}${$webserveruser} ${Yellow}is not in the group ${BBlue}${groupname} ${White}adding...${NC}"
   # Assign web user to the new runtime user group
   sudo adduser $$webserveruser $groupname
 fi
@@ -83,6 +83,6 @@ echo -e "${White}Assigning permissions on all files ${Cyan}(Owner: read and writ
 # Assign permissions on all files (Owner: read and write, Group: read and write, Others: read)
 sudo find "${wwwfolder}" -type f -exec chmod 664 {} \;
 
-echo -e "${White}Settomg the stick-bit to inherit the group ownership to new files and folders...${NC}"
+echo -e "${White}Setting the stick-bit to inherit the group ownership to new files and folders...${NC}"
 # # Set the stick-bit to inherit the group ownership to new files and folders
 sudo chmod g+s "${wwwfolder}"
