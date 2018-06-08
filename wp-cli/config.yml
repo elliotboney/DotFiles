@@ -1,0 +1,8 @@
+# Global parameter defaults
+path: wp-core
+url: http://example.com
+user: admin
+color: false
+disabled_commands:
+  - db drop
+  - plugin install

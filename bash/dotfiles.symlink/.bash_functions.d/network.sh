@@ -1,3 +1,13 @@
+# Ban IP
+function banip() {
+    if [[ -z "$1" ]]; then
+        # echo a help message if no ip is specified
+        echo -e "\n\t${White}Useage: ${BCyan}banip ${LightGray}<ip> ${NC}\n"
+    else
+        sudo iptables -A INPUT -s $1 -j DROP
+    fi
+}
+
 # Check Redirect
 function redirectcheck() {
     if [[ -z "$1" ]]; then

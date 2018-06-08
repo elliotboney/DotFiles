@@ -1,3 +1,5 @@
+export GEMNASIUM_TOKEN="0b9df7ca5f584d6293f516d24442d1fd"
+
 export COMPOSER_HOME="${HOME}/.composer"
 
 # for use in my grunt stuff, etc
