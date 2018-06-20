@@ -62,6 +62,7 @@ defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 defaults write -g NSNavPanelExpandedStateForSaveMode -boolean true
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
 
 # Finder: show path bar
 defaults write com.apple.finder ShowPathbar -bool true

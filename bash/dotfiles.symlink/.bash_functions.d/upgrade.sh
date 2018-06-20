@@ -22,7 +22,7 @@ function update() {
 
   if command_exists brew; then
     _updgandt "Running Brew Update"
-    brew update && brew upgrade --all && brew cleanup
+    brew update && brew upgrade && brew cleanup
   fi
 
   if command_exists npm; then
