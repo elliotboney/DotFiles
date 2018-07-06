@@ -1,3 +1,0 @@
-#!/bin/sh
-
-/Users/eboney/.nvm/versions/node/v0.12.7/bin/node --harmony "$@"

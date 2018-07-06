@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#
+# Sync from my laptop
 # "/var/www/beta.thepaperlessagent.com/" "/var/www/dashboard.thepaperlessagent.com/" "/var/www/paperlessagent/" "/var/www/red.marketing/" "/var/www/myagent.site/"
 webdirs=(  "/var/www/beta.thepaperlessagent.com/" "/var/www/dashboard.thepaperlessagent.com/" "/var/www/paperlessagent/" "/var/www/red.marketing/" "/var/www/myagent.site/")
 

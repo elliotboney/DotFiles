@@ -25,13 +25,13 @@ fi
 
 
 local return_code='%(?..%{$fg[red]%}%? ↵%{$reset_color%})'
-local git_branch='$(git_prompt_status) %{$reset_color%}$(git_prompt_info)%{$reset_color%}'
 local final='%{$fg[cyan]%}⇒%{$reset_color%} '
 
 local git_branch='$(git_prompt_status) %{$reset_color%}$(git_prompt_info)%{$reset_color%}'
+# local git_branch=''
 
 
 
 PROMPT="${user} ${pwd}${git_branch} ${final} "
-RPROMPT="${return_code}" #" ${git_branch}"
+RPROMPT="${return_code}"
 #" ${rvm}"

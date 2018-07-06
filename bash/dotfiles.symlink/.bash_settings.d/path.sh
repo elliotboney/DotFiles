@@ -17,6 +17,7 @@ paths=(
     "${HOME}/.composer/vendor/bin"
     "${HOME}/.config/composer/vendor/bin"
     "/usr/local/opt/coreutils/libexec/gnubin"
+    "/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin"
     "/usr/local/bin"
     "/usr/local/sbin"
     "/usr/local/lib/python2.7/site-packages"

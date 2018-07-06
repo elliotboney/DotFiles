@@ -3,6 +3,7 @@
 #
 DEBUG=false
 
+
 if [ "${DEBUG}" = true ]; then
 
   if $(type gdate >/dev/null); then
@@ -30,6 +31,13 @@ function setindent() {
 
 decho "\x1b[1;36mProcessing .zshrc\x1b[m"
 setopt extended_glob
+
+
+if [ -f "${HOME}/.private_exports" ];then
+  source "${HOME}/.private_exports"
+  decho "${HOME}/.private_exports"
+fi
+
 
 # we need DOTPATH
 if [ -f "${HOME}/.dotfilelocation" ];then
@@ -152,3 +160,9 @@ if [ -f $HOME/.zshrc.local ] ; then
 fi
 
 export FPATH="${DOTPATH}/bash/dotfiles.symlink/.bash_functions.d:${FPATH}" && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+function git_prompt_info() {
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+  echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$ZSH_THEME_GIT_PROMPT_SUFFIX"
+}

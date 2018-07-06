@@ -1,6 +1,0 @@
-#!/bin/bash
-command -v grip >/dev/null 2>&1 || { echo -e >&2 "\n ${Red}I require grip but it's not installed. \n ${White}Please run '${Cyan}pip install grip${White}'\n"; exit 1; }
-grip --gfm $1 2> /dev/null &
-open http://localhost:5000/
-sleep 2s
-@killall Python 2> /dev/null

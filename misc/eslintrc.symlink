@@ -164,7 +164,7 @@
     "padded-blocks" : 0,
     "quotes" : [ 0, "double" ],
     "radix" : 1,
-    "semi" : 2,
+    "semi" : 0,
     "sort-vars" : 1,
     "space-after-function-name" : [ 0, "never" ],
     "space-after-keywords" : [ 0, "always" ],

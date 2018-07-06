@@ -19,7 +19,7 @@ ME="$(basename "$(test -L "$0" && readlink "$0" || echo "$0")")"
 
 checkRequirements() {
     if ! hash webkit2png &> /dev/null; then
-        printf "%swebkit2png was not found.%s Please install to continue. http://www.paulhammond.org/webkit2png/\n" "$REDON" "$COLOROFF"
+        echo -e "${REDON}webkit2png was not found.${NC}\nPlease install to continue. http://www.paulhammond.org/webkit2png/\n"
         echo -e "Or \`brew install webkit2png\`"
         exit
     fi

@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Removes duplicate files in a direcctory using fdupes
 # declare -A arr
 # shopt -s globstar
 

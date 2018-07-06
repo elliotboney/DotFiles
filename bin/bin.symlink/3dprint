@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# 3d Print a File to my Octoprint setup
 BASEFILE=$(basename "${@}")
 LOGFILE=/tmp/simpl.log
 REALRUN=true
