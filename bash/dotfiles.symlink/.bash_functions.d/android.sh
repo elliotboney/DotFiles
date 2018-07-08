@@ -1,9 +1,11 @@
+#! Android Stuff
 # Run an android app from the shell
 androidrun(){
   adb shell am start -n $1/$1.MainActivity
 }
 
 # execute a shell command on android via ADB
+# $ adbs ls
 adbs(){
   adb shell $@
 }

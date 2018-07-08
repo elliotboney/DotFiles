@@ -1,7 +1,33 @@
+#! Finding Commands
+
+# Finds a command by searching title and help text
+# $ findcommand <kill>
+function findcommand {
+  if [[ -z "$1" ]]; then
+    # echo a help message if no port is specified
+    echo -e "\n\t${White}Useage: ${BCyan}$(basename "${0}") ${LightGray}<search> ${NC}\n"
+  else
+    listallcommands | grep -ie "$@"
+  fi
+}
+
+# Kills all processes matching a string.
+# $ killallmatching <chrome>
 function killallmatching {
   if [[ -z "$1" ]]; then
     # echo a help message if no port is specified
-    echo -e "\n\t${White}Useage: ${BCyan}killallshit ${LightGray}<programmatchpattern> ${NC}\n"
+    echo -e "\n\t${White}Useage: ${BCyan}$(basename "${0}") ${LightGray}<programmatchpattern> ${NC}\n"
+  else
+    ps aux | grep -ie "$@" | awk '{print $2}' | xargs kill -9
+  fi
+}
+
+# List all processes matching a string
+# $ listallmatching <chrome>
+function listallmatching {
+  if [[ -z "$1" ]]; then
+    # echo a help message if no port is specified
+    echo -e "\n\t${White}Useage: ${BCyan}$(basename "${0}") ${LightGray}<programmatchpattern> ${NC}\n"
   else
     ps aux | grep -ie "$@" | awk '{print $2}' | xargs kill -9
   fi
