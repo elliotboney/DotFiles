@@ -3,6 +3,7 @@
 #
 if [ -z ${ZSH_HIGHLIGHT_STYLES+x} ]; then
   # zsh highlight stuff isn't set
+  echo -e "You should run 'sudo aptititude install zsh-syntax-highlighting' to install ZSH highlighting"
   else
   export ZSH_HIGHLIGHT_STYLES[path]='fg=33,underline'
   export ZSH_HIGHLIGHT_STYLES[path_pathseperator]='fg=33,underline,bold'
