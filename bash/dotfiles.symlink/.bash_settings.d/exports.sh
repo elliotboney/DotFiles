@@ -1,7 +1,9 @@
 #
 # ZSH Custom Stuff
 #
-if [[ "$(declare -p ZSH_HIGHLIGHT_STYLES)" =~ "declare -a" ]]; then
+if [ -z ${ZSH_HIGHLIGHT_STYLES+x} ]; then
+  # zsh highlight stuff isn't set
+  else
   export ZSH_HIGHLIGHT_STYLES[path]='fg=33,underline'
   export ZSH_HIGHLIGHT_STYLES[path_pathseperator]='fg=33,underline,bold'
   # command separation tokens (;, &&)
