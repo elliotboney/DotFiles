@@ -1,3 +1,4 @@
+#! Work Stuff
 # Attempt to do stuff with our hubot
 function hubot() {
     case "$1" in
@@ -20,3 +21,4 @@ function hubot() {
 
     esac
 }
+

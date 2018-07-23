@@ -1,4 +1,28 @@
-#! Finding Commands
+alias lsusbosx='ioreg -p IOUSB -l -w 0'
+
+#% I never remember to sudo
+alias apachectl='sudo apachectl'
+#% I never remember to sudo
+alias a2endmod='sudo a2endmod'
+#% I never remember to sudo
+alias a2dismod='sudo a2dismod'
+#% I never remember to sudo
+alias a2ensite='sudo a2ensite'
+#% I never remember to sudo
+alias a2dissite='sudo a2dissite'
+#% I never remember to sudo
+alias apt='sudo apt'
+#% I never remember to sudo
+alias aptitude='sudo aptitude'
+#% I never remember to sudo
+alias apt-get='sudo apt-get'
+
+
+
+#! Finding Running Stuff &  Commands
+
+# Find running task, case insensitive search
+alias pg='ps aux | head -n1; ps aux | grep -i'
 
 # Finds a command by searching title and help text
 # $ findcommand <kill>
@@ -18,20 +42,39 @@ function killallmatching {
     # echo a help message if no port is specified
     echo -e "\n\t${White}Useage: ${BCyan}$(basename "${0}") ${LightGray}<programmatchpattern> ${NC}\n"
   else
-    ps aux | grep -ie "$@" | awk '{print $2}' | xargs kill -9
+    ps aux | grep -ie "$@" | grep -v grep | awk '{print $2}' | xargs kill -9
   fi
 }
 
 # List all processes matching a string
 # $ listallmatching <chrome>
-function listallmatching {
+function findallmatching {
   if [[ -z "$1" ]]; then
     # echo a help message if no port is specified
     echo -e "\n\t${White}Useage: ${BCyan}$(basename "${0}") ${LightGray}<programmatchpattern> ${NC}\n"
   else
-    ps aux | grep -ie "$@" | awk '{print $2}' | xargs kill -9
+    ps aux | grep -v grep --color=auto | grep -ie "$@" --color=auto
   fi
 }
+
+
+#! System Commands
+
+#% Enable aliases to be sudo’ed
+alias sudo='sudo '
+
+
+# Generic Colorizer
+if $(type grc >/dev/null); then
+  #% Colorize tail
+  alias tail="grc tail"
+fi
+
+
+# Clear the font cache
+alias updatefonts='sudo fc-cache -f -v'
+
+
 
 # Show how much RAM application uses.
 # $ ram safari

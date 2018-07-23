@@ -1,3 +1,4 @@
+#! Filesystem Stuff
 # Fix directory permissions
 function fixpermswww() {
   if [[ -z "$1" ]]; then
@@ -18,7 +19,7 @@ function fixpermswww() {
 
 
 
-# blockdev
+# Gets block size, start and end section, etc for a device
 function blockdev() {
   if [[ -f "/sbin/blockdev" ]]; then
     /sbin/blockdev $@
@@ -30,7 +31,7 @@ function blockdev() {
 }
 
 
-# A safer rm
+# A safer rm, moves to trash on osx
 function rmf() {
   if command_exists rmtrash; then
     rmtrash -u eboney $@
@@ -41,7 +42,7 @@ function rmf() {
   fi
 }
 
-# OSX: Hex edit a file in Hex Fiend
+# Hex edit a file in Hex Fiend
 function hex() {
   if [[ -f "/Applications/Hex Fiend.app/Contents/MacOS/Hex Fiend" ]]; then
     /Applications/Hex\ Fiend.app/Contents/MacOS/Hex\ Fiend $1 &
@@ -67,6 +68,7 @@ function capitalize() {
 function path() {
   echo $PATH | tr ":" "\n" | \
   awk "{ sub(\"/usr\",   \"${Green}/usr${NC}\"); \
+  sub(\"/eboney\",   \"${Orange}/eboney${NC}\"); \
   sub(\"/bin\",   \"${Blue}/bin${NC}\"); \
   sub(\"/.bin\",  \"${Blue}/.bin${NC}\"); \
   sub(\"/sbin\",  \"${Blue}/sbin${NC}\"); \
@@ -78,7 +80,7 @@ function path() {
 }
 
 
-# "o" = open pwd in Finder.
+# Open a file using finder
 function o {
   open ${@:-'.'}
 }
@@ -99,13 +101,16 @@ function cl {
 }
 
 # Make your directories and files access rights sane.
-function sanitize() { chmod -R u=rwX,g=rX,o= "$@" ;}
+function sanitize() {
+  chmod -R u=rwX,g=rX,o= "$@" ;
+}
 
 # Create a new directory and enter it
 function mkd() {
   mkdir -p "$@" && cd "$@"
 }
 
+# Clean all files named X in all subdirectories
 function cleanfiles() {
   for var in "$@"
   do
@@ -114,7 +119,7 @@ function cleanfiles() {
   done
 }
 
-# Mac cleanup
+# Mac cleanup, cleans like .DS_Store and other annoying files
 function cleanup() {
   echo -e "\n${Green}Deleting f'in .DS_Store files...${Red}"
   sudo find . -type f -name '*.DS_Store' -printf \ \ \ \ %p"\n" -exec rm -rf {} \;
@@ -142,10 +147,72 @@ function fs() {
   fi
 }
 
-# `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring
-# the `.git` directory, listing directories first. The output gets piped into
-# `less` with options to preserve color and line numbers, unless the output is
-# small enough for one screen.
+# A Badass version of tree
 function tre() {
   tree -aC -I '.git|node_modules|bower_components|.DS_Store|$RECYCLE.BIN' --dirsfirst "$@" | less -FRNX
 }
+
+# sweet moving shit
+# @see http://www.mfasold.net/blog/2008/11/moving-or-renaming-multiple-files/
+alias mmv='noglob zmv -W'
+
+# Count all the files
+alias count='ls -1 | wc -l'
+
+# List Folder Sizes
+alias lssize='du -h --max-depth=1 . | sort -hr'
+
+# Find top 5 big files
+alias findbig="find . -type f -exec ls -s {} \; | sort -n -r | head -5"
+
+
+# unzip all the files
+alias extractall='unzip -o "*.zip" | rmf *.zip'
+
+# grc overides for ls
+#   `brew install coreutils`
+if command_exists gls; then
+   alias ls="ls -hF --group-directories-first --color=always --quoting-style={shell-always,c-maybe}"
+   alias la="ls -lAhF --group-directories-first --color=always --quoting-style={shell-always,c-maybe}"
+else
+   alias ls="ls --color=always -hF --group-directories-first"
+
+fi
+
+alias grep="grep --color=auto"
+
+
+# Training wheels
+alias ln="ln -i"
+alias mv="mv -i"
+alias ln="ln -i"
+alias cp="cp -i"
+alias rm="rm -I"
+alias chgrp='chgrp --preserve-root'
+alias mkdir='mkdir -p'
+
+# List only directories
+alias lsd="ls -lF"
+
+# find shit
+# Find directories
+alias fd='find . -type d -name'
+# Find files
+alias ff='find . -type f -name'
+
+
+
+# History
+alias h='history'
+alias hgrep="fc -El 0 | grep"
+
+# Navigation
+alias ..="cd .."
+alias ,,="cd .."
+alias ....="cd .. && cd .."
+
+# List the permissions
+alias lsperm="/bin/ls -al|awk '{k=0;s=0;for(i=0;i<=8;i++){;k+=((substr(\$1,i+2,1)~/[rwxst]/)*2^(8-i));};j=4;for(i=4;i<=10;i+=3){;s+=((substr(\$1,i,1)~/[stST]/)*j);j/=2;};if(k){;printf(\"${Green}%0o%0o${LightGray} \",s,k);};print;}'"
+
+# Clean directories
+alias cleanemptydir='find . -type d -empty -exec rmdir {} \;'

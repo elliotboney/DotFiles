@@ -3,15 +3,19 @@ require 'ruby-growl'
 require 'fileutils'
 require 'yaml'
 require 'pp'
+require 'terminal-notifier-guard'
 require_relative 'icon'
 
 g = Growl.new "localhost", "Maid Notifaction", "GNTP"
 
-
+TerminalNotifier::Guard.notify('Hello World')
 Maid.rules do
 
-  def say_hello(name)
-    return "Hello, " + name
+  rule 'Get Mime Type' do
+    dir('~/Downloads/*').each do |path|
+      mimetype = content_types(path)
+      puts "\e[38;5;13m#{File.basename(path)}\e[38;5;45m#{File.extname(path)}\e[38;5;243m ---> #{mimetype}"
+    end
   end
 
   rule 'Trash temps from Downloads' do
@@ -55,28 +59,6 @@ Maid.rules do
   #  88   88 88      88      db   8D
   #  YP   YP 88      88      `8888Y'
   #
-  # rule 'Move Cracked Apps' do
-  #   puts "--------------------------------------------\n\033[32mMove Cracked Apps\033[0m"
-  #   dir(%w(~/Downloads/00 Completed/**/*CORE* ~/Downloads/00 Completed/**/*XFORCE* ~/Downloads/00 Completed/**/*keygen* ~/Downloads/00 Completed/**/*KEYGEN* ~/Downloads/00 Completed/**/*crack* ~/Downloads/00 Completed/**/*serial*)).each do |path|
-  #     if !path.match(/\/01 Apps/)
-  #       if File.directory?(path)
-  #         # If we are a subdirectory of an app, move the app itself
-  #         if !File.dirname(path).match(/00 Completed$/) && !File.dirname(path).match(/Downloads$/)
-  #           move(File.dirname(path), '~/Downloads/00 Completed/02 Apps')
-  #         else
-  #           if !File.dirname(path).match(/Downloads$/)
-  #             move(path, '~/Downloads/02 Apps')
-  #           end
-  #         end
-  #       else
-  #         # If it's a file we found, move the parent directory
-  #         move(File.dirname(path), '~/Downloads/02 Apps')
-  #       end
-  #     end
-  #   end
-  #   move(dir('~/Downloads/00 Completed/*.dmg'), '~/Downloads/02 Apps')
-  # end
-
   #
   # Clean App Names
   #
@@ -101,6 +83,22 @@ Maid.rules do
   #  88  88  88 `8b  d8'  `8bd8'    .88.   88.     db   8D
   #  YP  YP  YP  `Y88P'     YP    Y888888P Y88888P `8888Y'
   #
+  rule 'Clean Up Movies' do
+    dir('~/Downloads/02 Movies/*').each do |path|
+      if File.directory?(path)
+        # Start the sizeof
+        begin
+          if (size_of(file) < 100000000 && !File.directory?(file))
+            puts "Killing sample or garbage file #{file}\n"
+            trash(file)
+            next
+          end
+        rescue
+          puts "\033[31mError getting path size of: #{path}\n\033[0m"
+        end
+      end
+    end
+  end
   # rule 'Move Movies' do
   #   puts "--------------------------------------------\n\033[32mMove Movies\033[0m"
   #   dir(['~/Downloads/00 Completed/**/*.mp4', '~/Downloads/00 Completed/**/*.avi', '~/Downloads/00 Completed/**/*.mkv']).each do |path|
@@ -166,7 +164,7 @@ Maid.rules do
     puts "--------------------------------------------\n\033[32mFonts in Downloads\033[0m"
     dir(%w(~/Downloads/*.ttf ~/Downloads/*.otf ~/Downloads/**/*.ttf ~/Downloads/**/*.otf ~/Downloads/**/*.TTF ~/Downloads/**/*.OTF)).each do |path|
       begin
-        if !File.dirname(path).match(/Downloads$/) && !File.dirname(path).match(/01 Design/) && !File.dirname(path).match(/10 Wordpress/) && !path.match(/\.app/) && !File.dirname(path).match(/11 Ripped Sites/)
+        if !File.dirname(path).match(/Downloads$/) && !File.dirname(path).match(/04 Design/) && !File.dirname(path).match(/Wordpress/) && !path.match(/\.app/) && !File.dirname(path).match(/11 Ripped Sites/)
           # Let's clean bs files in there
           dir([File.dirname(path)+"/*.txt", File.dirname(path)+"/*.pdf", File.dirname(path)+"/*.jpg",File.dirname(path)+"/*.png"]).each do |rdmepath|
             trash rdmepath
@@ -178,17 +176,12 @@ Maid.rules do
         #   move(path, '~/Dropbox/Fonts')
         # end
       rescue
-        puts "Skipping #{path} since we've already moved its parent dir"
+        puts "\e[38;5;243mSkipping #{path} since we've already moved its parent dir"
       end
     end
   end
 
-  # rule 'Get Mime Type' do
-    # dir('~/Downloads/**/*.json').each do |path|
-      # mimetype = content_types(path)
-      # puts "--->#{mimetype}"
-    # end
-  # end
+
 
   #  d8888b.  .d88b.  db   d8b   db d8b   db db       .d88b.   .d8b.  d8888b. .d8888.
   #  88  `8D .8P  Y8. 88   I8I   88 888o  88 88      .8P  Y8. d8' `8b 88  `8D 88'  YP
@@ -198,13 +191,14 @@ Maid.rules do
   #  Y8888D'  `Y88P'   `8b8' `8d8'  VP   V8P Y88888P  `Y88P'  YP   YP Y8888D' `8888Y'
   #
   DOWNLOAD_TYPES = {
-    '02 Apps' => %w(com.apple.application com.apple.installer-package-archive public.executable),
+    '14 Windows' => %w(com.microsoft.windows-executable),
+    '03 Apps' => %w(com.apple.application com.apple.installer-package-archive public.executable com.apple.disk-image),
     '06 Docs' => %w(com.microsoft.word.doc com.adobe.pdf public.rtf application/vnd.openxmlformats-officedocument.wordprocessingml.template public.log com.apple.iwork.pages.pages com.apple.iwork.keynote.sffkey),
-    '09 Archives' => %w(public.archive application/rar-compressed),
-    '03 Design' => %w(com.adobe.photoshop-image com.adobe.illustrator.ai-image com.adobe.encapsulated-postscript com.adobe.indesign.indd-document),
-    '06 Images' => 'public.image',
-    '07 Scripts' => %w(public.source-code public.script public.html text/css dyn.ah62d4rv4ge8024psse),
-    '08 Books' => %w(application/epub+zip),
+    '05 Archives' => %w(public.archive application/rar-compressed),
+    '04 Design' => %w(com.adobe.photoshop-image com.adobe.illustrator.ai-image com.adobe.encapsulated-postscript com.adobe.indesign.indd-document),
+    '07 Images' => 'public.image',
+    '08 Scripts' => %w(public.source-code public.script public.html text/css dyn.ah62d4rv4ge8024psse),
+    '09 Books' => %w(application/epub+zip),
     '10 Data' => %w(text/comma-separated-values com.microsoft.excel.xls public.json)
   }
   DOWNLOAD_TYPES.each do |sub_dir, types|

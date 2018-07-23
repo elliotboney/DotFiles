@@ -115,7 +115,7 @@ if [ -f "${HOME}/.dotfiles/custom.zsh-theme" ]; then
 fi
 
 if [ -f "${HOME}/.nvm/nvm.sh" ]; then
-  source ${HOME}/.nvm/nvm.sh
+  source ${HOME}/.nvm/nvm.sh --no-use
   decho "${HOME}/.nvm/nvm.sh"
 fi
 

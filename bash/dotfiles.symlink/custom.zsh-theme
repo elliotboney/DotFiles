@@ -19,10 +19,10 @@ if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
   local user='%{$fg[magenta]%}%n%{$fg[cyan]%}@%{$fg[green]%}%m%{$reset_color%}%{$fg[yellow]%}:'
   local pwd='%{$fg[magenta]%}%~%{$reset_color%}'
 else
-  local user='%{$fg[cyan]%}%n%{$fg[white]%}@%{$fg[magenta]%}%m%{$reset_color%}%{$fg[yellow]%}:'
+  # local user='%{$fg[cyan]%}%n%{$fg[white]%}@%{$fg[magenta]%}%m%{$reset_color%}%{$fg[yellow]%}:'
+  local user='%F{39}%n%{$fg[white]%}@%F{199}%m%{$reset_color%}%{$fg[yellow]%}:'
   local pwd='%{$fg[green]%}%~%{$reset_color%}'
 fi
-
 
 local return_code='%(?..%{$fg[red]%}%? ↵%{$reset_color%})'
 local final='%{$fg[cyan]%}⇒%{$reset_color%} '

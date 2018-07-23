@@ -1,3 +1,4 @@
+#! My Favorites
 # Get free memory
 function freemem() {
     echo `top -l 1 | head -n 10 | grep PhysMem`

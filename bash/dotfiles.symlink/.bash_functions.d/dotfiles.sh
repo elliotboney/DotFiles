@@ -1,3 +1,5 @@
+#! Dotfiles Stuff
+
 # Commits any changes to dotfiles and pushes to the repo
 function pushdots() {
   now=$(date +"%m_%d_%Y")
@@ -36,3 +38,16 @@ function lm () {
   fi
 }
 
+# Edit Dotfiles in Default Editor
+alias editenv="${EDITOR} ${DOTPATH}"
+
+# Edit Dotfiles in SublimeText
+alias seditenv="${EDITOR} ${DOTPATH} ~/.zshrc ~/.bashrc"
+
+# Reload shell after changing dotfiles
+alias reloadenv='src > /dev/null 2>&1'
+
+# Benchmark ZSH Shell
+function benchmarkzsh() {
+  /usr/bin/time /usr/local/bin/zsh -i -c exit && /usr/bin/time /usr/local/bin/zsh -i -c exit && /usr/bin/time /usr/local/bin/zsh -i -c exit && /usr/bin/time /usr/local/bin/zsh -i -c exit
+}

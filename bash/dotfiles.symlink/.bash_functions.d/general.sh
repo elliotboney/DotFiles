@@ -1,18 +1,13 @@
+#! General Stuff
 
-
-# Updates homebrew stuff
-brewu() {
-  start_spinner "Updating Brew Sources..."
-  brew update
-  stop_spinner $?
-  start_spinner "Upgrading Brew Packages..."
-  brew upgrade --all > /dev/null 2>&1
-  stop_spinner $?
-  start_spinner "Cleaning Up After Brew"
-  brew cleanup > /dev/null 2>&1
-  brew prune > /dev/null 2>&1
-  stop_spinner $?
+function zshhighlightrules() {
+  for KEY in "${(@k)ZSH_HIGHLIGHT_STYLES}"; do
+    # Print the KEY value
+    echo -e "${DarkGray}export {Gray}\$ZSH_HIGHLIGHT_STYLES${Gray}[${Green}$KEY${Gray}]${DarkGray}=${White}'${ZSH_HIGHLIGHT_STYLES[$KEY]}'${NC}"
+  done
 }
+
+
 
 # Syntax-highlight JSON strings or files
 # Usage: `json '{"foo":42}'` or `echo '{"foo":42}' | json`
@@ -29,10 +24,6 @@ function psg() {
   ps aux | grep --color=always -i "$@" | grep --color=always -v  grep
 }
 
-# ---------- Replace SpotlightDB with
-function elocate {
-  mdfind "kMDItemDisplayName == '$@'wc";
-}
 
 
 # Pretty print JSON

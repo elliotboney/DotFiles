@@ -1,7 +1,9 @@
+#! Shortcuts
+
 # Open up custom DotJS stuff for a specific site
+# Example `js http://www.instructables.com/`
 js () {
   if [[ -z "$1" ]]; then
-    # echo -e "\n\t${BCyan} Useage: findinfiles <text to find>\n"
     s "~/.js/"
   else
     result=$(echo $1 | sed 's/https:\/\///g' | sed 's/http:\/\///g' | sed 's/\///g' | sed 's/www\.//g')
@@ -17,3 +19,24 @@ js () {
     subl $HOME/.js/ $cssfile $HOME/.js/$result.js
   fi
 }
+
+# Dropbox
+alias db="cd ~/Dropbox"
+# Downloads
+alias d="cd ~/Downloads"
+# Desktop
+alias dt="cd ~/Desktop"
+# Git Directory
+alias g="cd ~/Git"
+# Vim Shortcut
+alias v="vim"
+# Sublime Text
+alias s="subl"
+# Sublime Text Packages
+alias st3="cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/"
+
+# WWW Shortcuts
+alias www="cd /var/www"
+# Edit my Dotjs Code
+alias dotjs='s ~/Code/dotjs/'
+

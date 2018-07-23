@@ -1,3 +1,8 @@
+#! SSH Commands
+
+# Pipe my public key to my clipboard.
+alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
+
 
 # SSH to the given machine and add your id_rsa.pub or id_dsa.pub to authorized_keys.
 function sshkey() {
@@ -19,30 +24,4 @@ function privkey() {
   else
   cat ~/.ssh/id_rsa | ssh "${1}" "mkdir ~/.ssh; cat >> ~/.ssh/id_rsa && chmod 0600 ~/.ssh/id_rsa"
   fi
-
 }
-
-######################## For SSH Remote Copy #########################
-# export LC_SETUP_RC='command -v rclip >/dev/null 2>&1 || { echo "executing"; mkdir -p /usr/local/bin; if [ ! -f /usr/local/bin/rclip ];then wget https://raw.githubusercontent.com/justone/remotecopy/master/remotecopy -P /usr/local/bin/; ln -s /usr/local/bin/remotecopy /usr/local/bin/rclip; chmod +x /usr/local/bin/remotecopy; fi; if [[ \":\$PATH:\" == *\"/usr/local/bin:\"* ]]; then export PATH=/usr/local/bin:$PATH; fi } > /var/log/rclip.log 2>&1 || echo "Some error occured in setting up rclip. check /var/log/rclip.log"'
-
-# ssh_function() {
-#   count="`ps -eaf | grep remotecopyserver | grep -v grep | wc -l`";
-#   if [ "$count" -eq "0" ]; then
-#    mkdir -p $HOME/bin;
-#    if [ ! -f $HOME/bin/remotecopyserver ]; then
-#     wget https://raw.githubusercontent.com/justone/remotecopy/master/remotecopyserver -P $HOME/bin;
-#     chmod +x $HOME/bin/remotecopyserver;
-#   fi;
-#   nohup $HOME/bin/remotecopyserver &
-# fi;
-# ssh_cmd=`which ssh`
-# PARAMS=""
-# for PARAM in "$@"
-# do
-#   PARAMS="${PARAMS} \"${PARAM}\""
-# done
-# bash -c "ssh ${PARAMS} -R 12345:localhost:12345 -t 'echo \$LC_SETUP_RC | sudo bash; bash -l'"
-# }
-# alias ssho=`which ssh`
-# alias ssh=ssh_function
-# alias ssh2=ssh_function

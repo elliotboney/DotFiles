@@ -1,3 +1,4 @@
+#! Archive Extraction and Creation
 # Shortcut to extract and remove file afterwards
 function ex() {
   extract $1

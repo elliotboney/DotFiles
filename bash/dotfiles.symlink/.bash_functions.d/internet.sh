@@ -1,6 +1,7 @@
+#! Internet Functions
 
 # Scan a specified host/up for open ports
-portscan() {
+function portscan() {
   if command_exists nmap; then
     nmap -A -T4 -F "${1}"
   else
@@ -9,21 +10,21 @@ portscan() {
 }
 
 # Put a file on S3
-s3put() {
+function s3put() {
   if [ -z "${1}" ]; then
     echo "Usage: \`s3put filename.txt\`"
     return 1
   fi
-  s3cmd put ${1} s3://elliotboney/${1}
+  s356cmd put ${1} s3://s3.elliotboney.com/${1}
 }
 
 # Download a directory
-downloaddir() {
+function downloaddir() {
   wget -q -r -nd -l 3 --no-parent --reject-regex '\?' -R html,txt,html -b "$@"
 }
 
 # Turn a file into a data url
-dataurl() {
+function dataurl() {
   local mimeType=$(file -b --mime-type "$1")
   if [[ $mimeType == text/* ]]; then
     mimeType="${mimeType};charset=utf-8"
@@ -55,3 +56,17 @@ cf() {
   fi
 }
 
+
+# Benchmark an HTTP server
+function benchmarksite() {
+    # for i in {1..5}; do
+        echo -e "\\\n
+        ${LightGray}Benchmark for: ${BGreen}${1}${NC}\\\n\\\n
+        Name Lookup:  ${Cyan}%{time_namelookup} \\\n${NC}
+        Time to Connect:  ${Cyan}%{time_connect}\\\n${NC}
+        Time to Pretransfer:  ${Cyan}%{time_pretransfer}\\\n${NC}
+        Time to Start Transfer:  ${Cyan}%{time_starttransfer}\\\n${NC}
+        ${DarkGray}----------------------${NC}\\\n
+        ${BWhite}TOTAL Time:  ${BCyan}%{time_total}\\\n\\\n" | curl -w "@-" -o /dev/null -s "${1}"
+        # done
+    }

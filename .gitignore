@@ -2,6 +2,7 @@
 vim/vim.symlink/bundle/cache_vim
 vim/vim.symlink/bundle/state_vim.vim
 vim/vim.symlink/bundle/.cache
+vim/vim.symlink/undo/*
 
 .DS_Store
 .AppleDouble

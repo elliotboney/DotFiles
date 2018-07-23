@@ -1,3 +1,5 @@
+#! Pushing and Pulling Files
+
 # Useage: push <local> <remotepath> <sshhost>
 function push () {
   if [[ -z "$1" ]]; then

@@ -73,7 +73,8 @@ def find_shell_helpers_in_file(f):
                     documentation_name = f.replace(expanduser("~"), '~')
                 # This is for headings
                 elif line.lower().startswith("#!"):
-                    echo = "\n" + BRIGHTYELLOW + line[len("#!"):].rstrip()
+                    echo = "\n" + BRIGHTYELLOW + \
+                        line[len("#!"):].rstrip() + ENDCOLOR
                     printables.append(EchoDocumentation(echo))
                 # For adding stuff to the list, but just using comments
                 if line.lower().startswith("#?"):
@@ -111,8 +112,9 @@ def find_shell_helpers_in_file(f):
                 function_ready = len(comment_lines) > 0 and documentation_name
                 # Finalize your docs
                 if function_ready:
-                    printables.append(RunnableFunction(
-                        documentation_name, comment_lines))
+                    if not comment_lines[0].startswith("%"):
+                        printables.append(RunnableFunction(
+                            documentation_name, comment_lines))
                 if not line.startswith("#") or function_ready:
                     # Reset built object
                     comment_lines = list()
@@ -232,7 +234,7 @@ class RunnableFunction:
                 COMMENTCOLOR, '').replace(COMMANDTEXTCOLOR, '')) - 10
         padding = difference * " "  # + str(maxlength - len(trimmed_output))
         # print END + outputforlength
-        print row_start + trimmed_output + padding + row_end
+        print row_start + trimmed_output + padding + row_end + ENDCOLOR
 
 
 class EchoDocumentation:

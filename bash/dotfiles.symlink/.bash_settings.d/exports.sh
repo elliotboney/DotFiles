@@ -1,3 +1,19 @@
+#
+# ZSH Custom Stuff
+#
+export ZSH_HIGHLIGHT_STYLES[path]='fg=33,underline'
+export ZSH_HIGHLIGHT_STYLES[path_pathseperator]='fg=33,underline,bold'
+# command separation tokens (;, &&)
+export ZSH_HIGHLIGHT_STYLES[commandseparator]='fg=bold'
+export ZSH_HIGHLIGHT_STYLES[globbing]='fg=cyan'
+
+# rando
+export GIT_EXECUTABLE=$(which git)
+
+# Plotting Stuff
+export MPLBACKEND="module://itermplot"
+export ITERMPLOT=rv
+
 export COMPOSER_HOME="${HOME}/.composer"
 
 # for use in my grunt stuff, etc

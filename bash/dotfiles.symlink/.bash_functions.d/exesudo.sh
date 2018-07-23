@@ -1,5 +1,6 @@
-sudowrap ()
-{
+#! Sudo Stuff
+# Wrap a command in sudo
+sudowrap () {
     local c="" t="" parse=""
     local -a opt
     #parse sudo args
@@ -65,11 +66,9 @@ sudowrap ()
         command sudo "${opt[@]}"
     fi
 }
+
 # Allow sudowrap to be used in subshells
-
-
-function exesudo ()
-{
+function exesudo () {
     ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ##
     #
     # LOCAL VARIABLES:

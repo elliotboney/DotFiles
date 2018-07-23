@@ -1,11 +1,13 @@
-# (f)ind by (n)ame
-# usage: fn foo
-# to find all files containing 'foo' in the name
-function fn() { ls **/*$1* }
+#! Find Functions
+
+# Replace SpotlightDB with
+function elocate {
+  mdfind "kMDItemDisplayName == '$@'wc";
+}
+
 
 # Find text in files
-findinfiles()
-{
+findinfiles() {
     if [[ -z "$1" ]]; then
         echo -e "\n\t${BCyan} Useage: findinfiles <text to find>\n"
     else
@@ -14,8 +16,7 @@ findinfiles()
 }
 
 # find files named X
-findfiles()
-{
+findfiles() {
     if [[ -z "$1" ]]; then
         echo -e "\n\t${BCyan} Useage: ${White}findfiles ${Yellow}<${LightGray}text to find${Yellow}>\n"
     else

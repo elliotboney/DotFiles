@@ -2,7 +2,11 @@
 export ANDROID_HOME="${HOME}/Code/Android/sdk"
 # ---------------------------------
 # Path Section
-PATH=""
+PATH=$PATH:"/usr/local/bin/"
+if command_exists brew; then
+    PATH="$(brew --prefix homebrew/core/php@7.1)/bin"
+fi
+
 # PATH=$PATH:""
 if [ -e "/usr/local/Cellar/php56" ] || [ -d "/usr/local/Cellar/php56" ]; then
  PATH=$PATH:"/usr/local/Cellar/php56/$(/bin/ls /usr/local/Cellar/php56 | /usr/bin/awk 'NR==0; END{print}')/bin"
@@ -10,7 +14,7 @@ fi
 # add all the paths we want to array
 paths=(
     "${HOME}/.nvm/current/bin"
-    # "${HOME}/.yarn/bin"
+    "${HOME}/.yarn/bin"
     "${HOME}/.bin"
     "${HOME}/Library/Haskell/bin"
     "${HOME}/Dropbox/3D/Firmware/Marlin/buildroot/bin"
@@ -53,9 +57,6 @@ done
 
 export PATH
 
-# export HOMEBREW_GITHUB_API_TOKEN="224fed8d55ae34918c145636b0bf498a3698c907"
-# export HOMEBREW_GITHUB_API_TOKEN="5a379c311fbd96ef7cd800e7980d135dd9d81797"
-
 if [ -d ${HOME}/bin/FDK/Tools/osx ]; then
     export FDK_EXE="~/bin/FDK/Tools/osx"
 fi
@@ -68,11 +69,11 @@ if [ -d /usr/local/go/bin ]; then
     export GOPATH="/usr/local/go/bin"
 fi
 
-if [ -d /usr/local/Cellar/node ]; then
+# if [ -d /usr/local/Cellar/node ]; then
     # NODE="$(ls /usr/local/Cellar/node)"
     # which node
-    export NODE="/usr/local/Cellar/node/$(ls /usr/local/Cellar/node)bin/node"
-fi
+    # export NODE="/usr/local/Cellar/node/$(ls /usr/local/Cellar/node)bin/node"
+# fi
 
 if [ -d /usr/libexec/java_home ]; then
     export JAVA_HOME=$(/usr/libexec/java_home)
