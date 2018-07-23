@@ -1,12 +1,13 @@
 #
 # ZSH Custom Stuff
 #
-export ZSH_HIGHLIGHT_STYLES[path]='fg=33,underline'
-export ZSH_HIGHLIGHT_STYLES[path_pathseperator]='fg=33,underline,bold'
-# command separation tokens (;, &&)
-export ZSH_HIGHLIGHT_STYLES[commandseparator]='fg=bold'
-export ZSH_HIGHLIGHT_STYLES[globbing]='fg=cyan'
-
+if [[ "$(declare -p ZSH_HIGHLIGHT_STYLES)" =~ "declare -a" ]]; then
+  export ZSH_HIGHLIGHT_STYLES[path]='fg=33,underline'
+  export ZSH_HIGHLIGHT_STYLES[path_pathseperator]='fg=33,underline,bold'
+  # command separation tokens (;, &&)
+  export ZSH_HIGHLIGHT_STYLES[commandseparator]='fg=bold'
+  export ZSH_HIGHLIGHT_STYLES[globbing]='fg=cyan'
+fi
 # rando
 export GIT_EXECUTABLE=$(which git)
 
