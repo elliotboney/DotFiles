@@ -4,6 +4,7 @@
 if [ -z ${ZSH_HIGHLIGHT_STYLES+x} ]; then
   # zsh highlight stuff isn't set
   declare -a ZSH_HIGHLIGHT_STYLES
+  typeset -gA ZSH_HIGHLIGHT_STYLES
 fi
 export ZSH_HIGHLIGHT_STYLES[path]='fg=33,underline'
 export ZSH_HIGHLIGHT_STYLES[path_pathseperator]='fg=33,underline,bold'
