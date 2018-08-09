@@ -167,4 +167,7 @@ function git_prompt_info() {
   echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$ZSH_THEME_GIT_PROMPT_SUFFIX"
 }
 
-[[ -s "~/.grc.zsh" ]] && source ~/.grc.zsh
+if [ -f $HOME/.grc.zsh ] ; then
+  source $HOME/.grc.zsh
+fi
+
