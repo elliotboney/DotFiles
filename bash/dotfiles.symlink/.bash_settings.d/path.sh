@@ -8,8 +8,8 @@ if command_exists brew; then
 fi
 
 # PATH=$PATH:""
-if [ -e "/usr/local/Cellar/php56" ] || [ -d "/usr/local/Cellar/php56" ]; then
- PATH=$PATH:"/usr/local/Cellar/php56/$(/bin/ls /usr/local/Cellar/php56 | /usr/bin/awk 'NR==0; END{print}')/bin"
+if [ -e "/usr/local/Cellar/php" ] || [ -d "/usr/local/Cellar/php" ]; then
+ PATH=$PATH:"/usr/local/Cellar/php/$(/bin/ls /usr/local/Cellar/php/ | /usr/bin/awk 'NR==0; END{print}')/bin"
 fi
 # add all the paths we want to array
 paths=(
