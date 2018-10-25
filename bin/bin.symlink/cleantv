@@ -24,6 +24,8 @@ RLSGROUPS=(
   "NTb"
   "tbs"
   "rip"
+  "W4f"
+
   )
 # RLSGROUPS=( one two three )
 
@@ -59,6 +61,7 @@ for i in *; do
     new=$(echo $i | perl -pe 's|mkv\|mp4\|avi||ig') # Remove extentions
 
     new=$(echo $new | perl -pe 's|\[[a-zA-Z ]+\]||ig') # Random shit cleaning
+    new=$(echo $new | perl -pe 's|www\.Torrenting\.com||ig') # Random shit cleaning
     # echo ${new}
 
     #-------------------------------

@@ -1,3 +1,7 @@
+# Openscad #
+export OPENSCADPATH="${HOME}/Documents/OpenSCAD/libraries"
+
+
 #
 # ZSH Custom Stuff
 #

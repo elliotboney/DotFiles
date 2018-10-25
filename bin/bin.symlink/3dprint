@@ -21,8 +21,8 @@ echo -e "Starting print log for ${BGreen}$@${NC}"  >> ${LOGFILE}
 $RUNBYUSER || notify  "Processing ${BASEFILE}..."
 
 
-PRINTERCHECK=$(curl -X "GET" "http://octoprint/api/printer" -H "X-Api-Key: BF75359D6571474C8013E62D5DA95DA3" -d "{}" -Ss |  grep -c "not operational");
-PRINTERCHECKPRINTING=$(curl -X "GET" "http://octoprint/api/printer" -H "X-Api-Key: BF75359D6571474C8013E62D5DA95DA3" -d "{}" -Ss |  grep -c "Printing");
+PRINTERCHECK=$(curl -X "GET" "http://octoprint:88/api/printer" -H "X-Api-Key: BF75359D6571474C8013E62D5DA95DA3" -d "{}" -Ss |  grep -c "not operational");
+PRINTERCHECKPRINTING=$(curl -X "GET" "http://octoprint:88/api/printer" -H "X-Api-Key: BF75359D6571474C8013E62D5DA95DA3" -d "{}" -Ss |  grep -c "Printing");
 
 
 
@@ -31,7 +31,7 @@ if [ ${PRINTERCHECKPRINTING} = 1 ]; then
   $RUNBYUSER && echo -e "We are ${BRed}PRINTING${NC}, just uploading file ${Green}${BASEFILE}${NC}..."
   $RUNBYUSER || notify "We are PRINTING, just uploading file ${BASEFILE}..."
   echo -e "We are PRINTING, just uploading file ${BASEFILE}..." >> ${LOGFILE}
-  $REALRUN && curl -k -X "POST" "http://octopi.local/api/files/local" -H "X-Api-Key: BF75359D6571474C8013E62D5DA95DA3" -F "select=true" -F "print=true" -F "file=@$@"  >> ${LOGFILE}
+  $REALRUN && curl -k -X "POST" "http://octoprint:88/api/files/local" -H "X-Api-Key: BF75359D6571474C8013E62D5DA95DA3" -F "select=true" -F "print=true" -F "file=@$@"  >> ${LOGFILE}
 
 else
   echo -e "We are NOT Printing..."
@@ -48,21 +48,21 @@ else
     $RUNBYUSER && echo -e "Turning ${BGreen}ON${NC} printer"
     $RUNBYUSER || echo -e "Turning on printer"  >> ${LOGFILE}
     $RUNBYUSER || notify  "PSU Off, Turning on printer"
-    $REALRUN && curl -k -X "POST" "http://octoprint/api/plugin/psucontrol" -H "Content-Type: application/json" -H "X-Api-Key: BF75359D6571474C8013E62D5DA95DA3" -d "{\"command\":\"turnPSUOn\"}"  >> ${LOGFILE}
+    $REALRUN && curl -k -X "POST" "http://octoprint:88/api/plugin/psucontrol" -H "Content-Type: application/json" -H "X-Api-Key: BF75359D6571474C8013E62D5DA95DA3" -d "{\"command\":\"turnPSUOn\"}"  >> ${LOGFILE}
     $REALRUN && sleep 6
     $RUNBYUSER || echo -e "Connecting to printer..." >> ${LOGFILE}
     $RUNBYUSER || notify "Connecting to printer..."
-    $REALRUN && curl -k -X "POST" "http://octoprint/api/connection" -H "Content-Type: application/json" -H "X-Api-Key: BF75359D6571474C8013E62D5DA95DA3" -d "{\"command\":\"connect\",\"port\":\"/dev/ttyUSB0\",\"baudrate\":115200,\"save\":\"true\",\"autoconnect\":\"true\"}"  >> ${LOGFILE}
+    $REALRUN && curl -k -X "POST" "http://octoprint:88/api/connection" -H "Content-Type: application/json" -H "X-Api-Key: BF75359D6571474C8013E62D5DA95DA3" -d "{\"command\":\"connect\",\"port\":\"/dev/ttyUSB0\",\"baudrate\":115200,\"save\":\"true\",\"autoconnect\":\"true\"}"  >> ${LOGFILE}
     $REALRUN && sleep 6
   fi
 
   $RUNBYUSER && echo -e "Uploading file ${Green}${BASEFILE}${NC}..."
   $RUNBYUSER || notify "Uploading file ${BASEFILE}..."
   echo -e "Uploading file ${BASEFILE}..." >> ${LOGFILE}
-  $REALRUN && curl -k -X "POST" "http://octopi.local/api/files/local" -H "X-Api-Key: BF75359D6571474C8013E62D5DA95DA3" -F "select=true" -F "print=true" -F "file=@$@"  >> ${LOGFILE}
+  $REALRUN && curl -k -X "POST" "http://octoprint:88/api/files/local" -H "X-Api-Key: BF75359D6571474C8013E62D5DA95DA3" -F "select=true" -F "print=true" -F "file=@$@"  >> ${LOGFILE}
   # $REALRUN && sleep 2
-  # $RUNBYUSER && echo -e "Telling print to print file ${Green}${BASEFILE}${NC} via ${Purple}http://octoprint/api/files/local/${BASEFILE}${NC}"
-  # $RUNBYUSER || notify "Telling it to print file via http://octoprint/api/files/local/${BASEFILE}"
-  # $REALRUN && curl -k -X "POST" "http://octoprint/api/files/local/${BASEFILE}" -H 'Content-Type: application/json; charset=UTF-8' -H 'X-Api-Key: BF75359D6571474C8013E62D5DA95DA3' --data-binary '{"print":true,"command":"select"}'  >> ${LOGFILE}
+  # $RUNBYUSER && echo -e "Telling print to print file ${Green}${BASEFILE}${NC} via ${Purple}http://octoprint:88/api/files/local/${BASEFILE}${NC}"
+  # $RUNBYUSER || notify "Telling it to print file via http://octoprint:88/api/files/local/${BASEFILE}"
+  # $REALRUN && curl -k -X "POST" "http://octoprint:88/api/files/local/${BASEFILE}" -H 'Content-Type: application/json; charset=UTF-8' -H 'X-Api-Key: BF75359D6571474C8013E62D5DA95DA3' --data-binary '{"print":true,"command":"select"}'  >> ${LOGFILE}
 
 fi
