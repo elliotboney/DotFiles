@@ -44,10 +44,10 @@ function rmf() {
 
 # Hex edit a file in Hex Fiend
 function hex() {
-  if [[ -f "/Applications/Hex Fiend.app/Contents/MacOS/Hex Fiend" ]]; then
-    /Applications/Hex\ Fiend.app/Contents/MacOS/Hex\ Fiend $1 &
+  if [[ -f "/Applications/0xED.app/Contents/MacOS/0xED" ]]; then
+    /Applications/0xED.app/Contents/MacOS/0xED $1 &
   else
-    echo -e "${BRed}Hex Fiend Not Found"
+    echo -e "${BRed}0xED Not Found"
   fi
 }
 

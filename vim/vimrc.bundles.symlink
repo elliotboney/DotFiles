@@ -11,10 +11,10 @@ filetype off
 " Required:
 set runtimepath+=~/.vim/bundles/repos/github.com/Shougo/dein.vim
 
-if dein#load_state('~/.vim/bundle/')
-  call dein#begin('~/.vim/bundle/')
+if dein#load_state('~/.vim/bundles/')
+  call dein#begin('~/.vim/bundles/')
 
-  call dein#add('~/.vim/bundle/dein.vim/')
+  call dein#add('~/.vim/bundles/dein.vim/')
   call dein#add('mhinz/vim-startify')
 
   " Color scheme stuff:

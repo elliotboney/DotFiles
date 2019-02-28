@@ -4,7 +4,7 @@
 # source "${HOME}/.dotfiles/.bash_runfirst.d/colors.sh"
 
 REMOTEHOST="access.thepaperlessagent.com"
-REMOTEPATH="/var/www/staging/"
+REMOTEPATH="/var/www/html/"
 LOCALPATH="/var/www/access.thepaperlessagent.com/"
 
 if [[ -z "$1" ]]; then
