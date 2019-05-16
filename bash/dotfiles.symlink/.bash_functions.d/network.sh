@@ -34,7 +34,7 @@ function banip() {
         # echo a help message if no ip is specified
         echo -e "\n\t${White}Useage: ${BCyan}$(basename "${0}") ${LightGray}<ip> ${NC}\n"
     else
-        sudo iptables -A INPUT -s $1 -j DROP
+        sudo ufw deny from $1
     fi
 }
 
