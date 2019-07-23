@@ -10,6 +10,7 @@ function notify () {
 }
 
 if [ "`tty`" != "not a tty" ]; then
+  echo -e "Run by User"
   RUNBYUSER=true
   else
   RUNBYUSER=false
@@ -21,8 +22,8 @@ echo -e "Starting print log for ${BGreen}$@${NC}"  >> ${LOGFILE}
 $RUNBYUSER || notify  "Processing ${BASEFILE}..."
 
 
-PRINTERCHECK=$(curl -X "GET" "http://octoprint:88/api/printer" -H "X-Api-Key: BF75359D6571474C8013E62D5DA95DA3" -d "{}" -Ss |  grep -c "not operational");
-PRINTERCHECKPRINTING=$(curl -X "GET" "http://octoprint:88/api/printer" -H "X-Api-Key: BF75359D6571474C8013E62D5DA95DA3" -d "{}" -Ss |  grep -c "Printing");
+PRINTERCHECK=$(curl -X "GET" "http://octoprint:88/api/printer" -H "X-Api-Key: BF75359D6571474C8013E62D5DA95DA3" |  grep -c "not operational");
+PRINTERCHECKPRINTING=$(curl -X "GET" "http://octoprint:88/api/printer" -H "X-Api-Key: BF75359D6571474C8013E62D5DA95DA3"  |  grep -c "Printing");
 
 
 
