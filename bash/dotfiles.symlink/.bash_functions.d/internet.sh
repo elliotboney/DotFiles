@@ -20,7 +20,7 @@ function s3put() {
 
 # Download a directory
 function downloaddir() {
-  wget -q -r -nd -l 3 --no-parent --reject-regex '\?' -R html,txt,html -b "$@"
+  wget -q -r -nd -l 3 --no-parent --reject-regex '\?' --reject=html,txt,htm -b "$@"
 }
 
 # Turn a file into a data url
