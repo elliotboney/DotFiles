@@ -25,6 +25,7 @@ EXCLUDES=(
   "wp-content/uploads"
   "node_modules"
   "screenshots/*.png"
+  "uploads"
 )
 
 OPTIONS=(
