@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+sleep 5;
+for i in {1..100000}; do
+  echo -n "Clicking fortnite #$i ";
+  cliclick -m verbose c:400,798
+  sleep 6;
+  cliclick -m verbose c:1271,797
+  sleep 54;
+done
