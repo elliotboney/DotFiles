@@ -61,6 +61,7 @@ function usage() {
     echo -e ""
     echo -e "${BGreen}$(basename "$(test -L "$0" && readlink "$0" || echo "$0")")${NC}"
     echo -e "\t-h --help"
+    echo -e "\t--from Sync FROM the site"
     echo -e "\t-d --directory <specific directory>"
     echo -e "\t--db-path=$DB_PATH"
     echo -e "\t--<option name> Add an additional option$DB_PATH"

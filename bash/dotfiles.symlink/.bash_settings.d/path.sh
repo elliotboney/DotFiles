@@ -4,7 +4,7 @@ export ANDROID_HOME="${HOME}/Code/Android/sdk"
 # Path Section
 PATH=$PATH:"/usr/local/bin/"
 if command_exists brew; then
-    PATH="$(brew --prefix homebrew/core/php@7.1)/bin"
+    PATH="$(brew --prefix homebrew/core/php@7.4)/bin"
 fi
 
 # PATH=$PATH:""

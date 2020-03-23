@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-REMOTEHOST="myagent.site"
-REMOTEPATH="/var/www/staging.myagent.site/"
-LOCALPATH="/var/www/myagent.site/"
+REMOTEHOST="severus"
+REMOTEPATH="/var/www/staging.mvp/"
+LOCALPATH="/var/www/dashboard.thepaperlessagent.com/"
 SYNCFROM=false
 SPECIFICDIRECTORY=false
 
@@ -14,12 +14,7 @@ NC="\x1b[m"
 
 EXCLUDES=(
   "backup*"
-  "testing12345"
-  "tests*"
-  "testing"
-  "vendor*"
-  "predis"
-  "bandwidthd"
+  # "tests*"
   "docs"
   "cache*"
   ".idea"
@@ -27,27 +22,26 @@ EXCLUDES=(
   "*.zip"
   "tmp/*"
   ".git"
-  "content/uploads"
+  "wp-content/uploads"
   "node_modules"
   "screenshots/*.png"
+  "uploads"
 )
 
 OPTIONS=(
   "checksum"
-  "compress"
-  "delete"
-  "group"
-  "human-readable"
-  "links"
-  "owner"
-  "perms"
   "progress"
-  "recursive"
-  "recursive"
-  "safe-links"
-  "stats"
-  "times"
+  "human-readable"
+  "compress"
   "update"
+  "stats"
+  "recursive"
+  "links"
+  "recursive"
+  "perms"
+  "times"
+  "group"
+  "owner"
 )
 
 DOIT=false

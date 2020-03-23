@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-REMOTEHOST="myagent.site"
-REMOTEPATH="/var/www/staging.myagent.site/"
+REMOTEHOST="hedgewig"
+REMOTEPATH="/var/www/myagent.site/"
 LOCALPATH="/var/www/myagent.site/"
 SYNCFROM=false
 SPECIFICDIRECTORY=false
@@ -15,11 +15,6 @@ NC="\x1b[m"
 EXCLUDES=(
   "backup*"
   "testing12345"
-  "tests*"
-  "testing"
-  "vendor*"
-  "predis"
-  "bandwidthd"
   "docs"
   "cache*"
   ".idea"
@@ -34,20 +29,18 @@ EXCLUDES=(
 
 OPTIONS=(
   "checksum"
-  "compress"
-  "delete"
-  "group"
-  "human-readable"
-  "links"
-  "owner"
-  "perms"
   "progress"
-  "recursive"
-  "recursive"
-  "safe-links"
-  "stats"
-  "times"
+  "human-readable"
+  "compress"
   "update"
+  "stats"
+  "recursive"
+  "links"
+  "recursive"
+  "perms"
+  "times"
+  "group"
+  "owner"
 )
 
 DOIT=false
