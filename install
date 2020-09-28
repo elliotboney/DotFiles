@@ -75,7 +75,10 @@ else
     echo -e "${LightGray}Skipping ${BRed}oh-my-zsh{NC}...";
   else
     echo -e "${BGreen}Installing oh-my-zsh...${NC}"
-    installohmyzsh
+    echo -e "${BGreen}Install oh-my-zsh with the following command..${NC}"
+    printf 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"'
+    exit
+
   fi
 fi
 
@@ -135,7 +138,7 @@ for dir in */; do
         fi
       else
         ln -s "${toprocess}" "${TARGET}" &&
-        printf "\t${Green}Linked! ${Blue}${toprocess}${NC} to ${Purple}${TARGET}${NC}...\n"
+        ln -sf "${FSOURCE}" "${TARGET}" && printf "\t${Green}Linked! ${Blue}${toprocess}${NC} to ${Purple}${TARGET}${NC}..."
       fi
     fi
   done
