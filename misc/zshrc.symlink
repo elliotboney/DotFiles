@@ -54,6 +54,7 @@ antigen bundle ael-code/zsh-colored-man-pages
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle chrissicool/zsh-256color
 
 antigen apply
 
@@ -86,7 +87,7 @@ else
     # composer
     compleat
     cp
-    elliotzsh
+    # elliotzsh
     # git
     # git-extras
     # github
@@ -100,7 +101,7 @@ else
     # sublime
     # web-search
     # wpclitwo
-    zsh-256color
+    # zsh-256color
     # zsh-autosuggestions
     # zsh-completions
     # zsh_reload
