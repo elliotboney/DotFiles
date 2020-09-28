@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-REMOTEHOST="severus"
-REMOTEPATH="/var/www/staging.mvp/"
-LOCALPATH="/var/www/dashboard.thepaperlessagent.com/"
+REMOTEHOST="50.116.27.46"
+REMOTEPATH="/var/www/staging.red.marketing/"
+LOCALPATH="/var/www/staging.red.marketing/"
 SYNCFROM=false
 SPECIFICDIRECTORY=false
 
@@ -13,7 +13,6 @@ BYellow='\x1b[1;33m'
 NC="\x1b[m"
 
 EXCLUDES=(
-  "storage"
   "backup*"
   # "tests*"
   "docs"
@@ -26,7 +25,6 @@ EXCLUDES=(
   "wp-content/uploads"
   "node_modules"
   "screenshots/*.png"
-  "uploads"
 )
 
 OPTIONS=(
