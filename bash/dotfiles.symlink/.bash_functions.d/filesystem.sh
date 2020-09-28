@@ -122,15 +122,15 @@ function cleanfiles() {
 # Mac cleanup, cleans like .DS_Store and other annoying files
 function cleanup() {
   echo -e "\n${Green}Deleting f'in .DS_Store files...${Red}"
-  sudo find . -type f -name '*.DS_Store' -printf \ \ \ \ %p"\n" -exec rm -rf {} \;
+  find . -name ".DS_Store" -print -delete
   echo -e "\n${Green}Deleting f'in ._ files...${Red}"
-  sudo find . -type f -name '._*' -printf \ \ \ \ %p"\n" -exec rm -rf {} \;
+  find . -name "._*" -print -delete
   echo -e "\n${Green}Deleting f'in Thumbnail db files...${Red}"
-  sudo find . -type f -name 'Thumbs.db' -printf \ \ \ \ %p"\n" -exec rm -rf {} \;
+  find . -name "Thumbs.db" -print -delete
   echo -e "\n${Green}Deleting f'in __MACOSX files...${Red}"
-  sudo find . -type d -name '__MAC*' -printf \ \ \ \ %p"\n" -exec rm -rf {} \;
+  find . -name "__MAC*" -type d -print -delete
   echo -e "\n${Green}Deleting f'in desktopini files...${Red}"
-  sudo find . -type d -name 'desktop.ini' -printf \ \ \ \ %p"\n" -exec rm -rf {} \;
+  find . -name "desktop.ini" -print -delete
 }
 
 # Determine size of a file or total size of a directory
