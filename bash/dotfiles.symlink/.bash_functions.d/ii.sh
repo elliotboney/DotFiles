@@ -18,9 +18,9 @@ function ii()
     uptime | sed -e 's/^[[:space:]]*//'
     echo -e "${BRed}Memory stats :$NC " ; freemem
     echo -e "${BRed}Diskspace :$NC "
-    grc df / $HOME  #| uniq
+    grc df -BM ${HOME}  #| uniq
     echo -e "${BRed}Local IP Address :$NC"
     echo -e "$localip"
-    echo -e "${BRed}Public IP Address :$NC" ; dig +short myip.opendns.com @resolver1.opendns.com
+    echo -e "${BRed}Public IP Address :$NC" ; curl ipinfo.io/ip #dig +short myip.opendns.com @resolver1.opendns.com
     echo
 }

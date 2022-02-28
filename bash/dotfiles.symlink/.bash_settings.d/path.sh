@@ -5,11 +5,17 @@ export ANDROID_HOME="${HOME}/Code/Android/sdk"
 PATH=$PATH:"/usr/local/bin/"
 if command_exists brew; then
     PATH="$(brew --prefix homebrew/core/php@7.4)/bin"
+    # PATH="$(brew --prefix homebrew/core/php@8.0)/bin"
+fi
+
+if [ -f "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc" ]; then
+    source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 fi
 
 # PATH=$PATH:""
 if [ -e "/usr/local/Cellar/php" ] || [ -d "/usr/local/Cellar/php" ]; then
- PATH=$PATH:"/usr/local/Cellar/php/$(/bin/ls /usr/local/Cellar/php/ | /usr/bin/awk 'NR==0; END{print}')/bin"
+ # PATH=$PATH:"/usr/local/Cellar/php/$(/bin/ls /usr/local/Cellar/php/ | /usr/bin/awk 'NR==0; END{print}')/bin"
+ PATH=$PATH:"/usr/local/Cellar/php@7.4/7.4.24/bin"
 fi
 # add all the paths we want to array
 paths=(
@@ -23,9 +29,11 @@ paths=(
     "/Library/Frameworks/Mono.framework/Versions/Current/bin/"
     "/usr/local/opt/coreutils/libexec/gnubin"
     "/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin"
+    "/Users/eboney/Library/Python/3.9/bin"
     "/usr/local/bin"
+    "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin"
     "/usr/local/sbin"
-    "/usr/local/lib/python2.7/site-packages"
+    # "/usr/local/lib/python2.7/site-packages"
     "${GOROOT}/bin"
     "/opt/bin"
     "/opt/sbin"

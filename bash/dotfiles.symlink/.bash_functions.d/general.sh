@@ -1,5 +1,4 @@
 #! General Stuff
-
 function zshhighlightrules() {
   for KEY in "${(@k)ZSH_HIGHLIGHT_STYLES}"; do
     # Print the KEY value
@@ -14,9 +13,9 @@ function zshhighlightrules() {
 function json() {
   if [ -t 0 ]; then # argument
     python -mjson.tool <<< "$*" | pygmentize -l javascript;
-else # pipe
-  python -mjson.tool | pygmentize -l javascript;
-fi;
+  else # pipe
+    python -mjson.tool | pygmentize -l javascript;
+  fi;
 }
 
 # grep processes without showing grep

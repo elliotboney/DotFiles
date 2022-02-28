@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+curl -Ls -o /dev/null -w %{url_effective} $1 | sed 's/?inf_contact_key.*//g' | pbcopy

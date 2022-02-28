@@ -1,0 +1,8 @@
+#!/bin/bash
+# play a notifcation bell
+
+if $(type afplay >/dev/null); then
+   afplay /System/Library/Sounds/Glass.aiff -v 10
+else
+  tput bel
+fi;
