@@ -34,6 +34,29 @@ if shell_is_osx; then
 
   # Fix slow folder populating, see: http://osxdaily.com/2015/04/17/fix-slow-folder-populating-cloudkit-macosx/
   alias fixfinder="rm ~/Library/Caches/CloudKit/CloudKitMetadata*;killall cloudd"
+
+  # determine versions of PHP installed with HomeBrew
+    installedPhpVersions=($(brew ls --versions | ggrep -E 'php(@.*)?\s' | ggrep -oP '(?<=\s)\d\.\d' | uniq | sort))
+
+    # create alias for every version of PHP installed with HomeBrew
+    for phpVersion in ${installedPhpVersions[*]}; do
+        value="{"
+
+        for otherPhpVersion in ${installedPhpVersions[*]}; do
+            echo -e "${otherPhpVersion} -- ${phpVersion}"
+            if [[ "${otherPhpVersion}" == "${phpVersion}" ]]; then
+                continue
+            fi
+
+            # unlink other PHP version
+            value="${value} brew unlink php@${otherPhpVersion};"
+        done
+
+        # link desired PHP version
+        value="${value} brew link php@${phpVersion} --force --overwrite; } &> /dev/null && php -v"
+
+        alias "${phpVersion}"="${value}"
+    done
 fi
 
 # Updates homebrew stuff

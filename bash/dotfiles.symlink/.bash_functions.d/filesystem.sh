@@ -172,8 +172,10 @@ alias extractall='unzip -o "*.zip" | rmf *.zip'
 # grc overides for ls
 #   `brew install coreutils`
 if command_exists gls; then
-   alias ls="ls -hF --group-directories-first --color=always --quoting-style={shell-always,c-maybe}"
-   alias la="ls -lAhF --group-directories-first --color=always --quoting-style={shell-always,c-maybe}"
+   alias ls="gls -hF --group-directories-first --color=always --quoting-style={shell-always,c-maybe}"
+   alias la="gls -lAhF --group-directories-first --color=always --quoting-style={shell-always,c-maybe}"
+   alias du="grc gdu"
+   alias df="grc gdf"
 else
    alias ls="ls --color=always -hF --group-directories-first"
 

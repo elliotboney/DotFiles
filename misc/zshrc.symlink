@@ -1,7 +1,7 @@
 #
 # Set to true if you want to output some debug info
 #
-DEBUG=false
+DEBUG=true
 
 
 if [ "${DEBUG}" = true ]; then

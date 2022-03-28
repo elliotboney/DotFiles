@@ -1,5 +1,5 @@
 setindent "    "
-decho "\x1b[0;36mProcessing .bashrc\x1b[m"
+decho "\x1b[0;36mProcessing .bashrc $0\x1b[m"
 
 # Configuration
 # EXPORT_FUNCTIONS: export SHELL_PLATFORM and shell_is_* functions for use
@@ -84,13 +84,16 @@ if [ -f $HOME/.bashrc.local ] ; then
   source $HOME/.bashrc.local
 fi
 
-if shell_is_osx; then
-  if [ -f "/usr/local/etc/grc.bashrc" ]; then
-    decho "   \x1b[38;5;242m$(brew --prefix)/etc/grc.bashrc"
-    source "/usr/local/etc/grc.bashrc"
-  fi
-fi
-decho "\x1b[0;36mDone with .bashrc\x1b[m"
+# if shell_is_osx; then
+#   if [ -f "/usr/local/etc/grc.bashrc" ]; then
+#     decho "   \x1b[38;5;242m$(brew --prefix)/etc/grc.bashrc"
+#     source "/usr/local/etc/grc.bashrc"
+#   fi
+# else
+#     decho "   NOT OSX"
+# fi
+
+decho "\x1b[0;36mDone with .bashrccc\x1b[m"
 setindent ""
 source "${HOME}/.iterm2_shell_integration.zsh"
 # PATH=${PATH}:~/.bin/

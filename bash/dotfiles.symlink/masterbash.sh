@@ -97,11 +97,15 @@ fi
 #   source ~/.nvm/nvm.sh
 # fi
 
-if shell_is_osx; then
-  if [ -f "`brew --prefix`/etc/grc.bashrc" ]
-    then
-    source "`brew --prefix`/etc/grc.bashrc"
-  fi
-fi
+# if shell_is_osx; then
+#   if [ -f "`brew --prefix`/etc/grc.bashrc" ]
+#     then
+#     source "`brew --prefix`/etc/grc.bashrc"
+#     echo "sourced grc.bashrc"
+#   fi
+# else
+#   echo "shell is NOT osx"
+
+# fi
 
 # export PATH="`rvm gemdir 2>/dev/null`/bin:$PATH" # Add RVM to PATH for scripting

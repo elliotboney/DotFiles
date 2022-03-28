@@ -55,7 +55,7 @@ alias ga='git add -A'
 # Git Log
 alias gl='git log'
 # Git Remove
-alias grm='git rm'
+# alias grm='git rm'
 
 #% Make diff default colordiff
 alias diff='colordiff'
