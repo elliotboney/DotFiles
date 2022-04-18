@@ -1,6 +1,6 @@
 [submodule "zsh/oh-my-zsh.symlink"]
     path = zsh/oh-my-zsh.symlink
-    url = https://github.com/robbyrussell/oh-my-zsh.git
+    url = git@github.com:robbyrussell/oh-my-zsh.git
 
 [submodule "private"]
 	path = private
@@ -136,7 +136,7 @@
 
 [submodule "zshcustom/plugins/alias-tips"]
 	path = zshcustom/plugins/alias-tips
-	url = https://github.com/djui/alias-tips.git
+	url = git@github.com:djui/alias-tips.git
 
 [submodule "zshcustom/plugins/zsh-syntax-highlighting"]
 	path = zshcustom/plugins/zsh-syntax-highlighting
@@ -160,7 +160,7 @@
 
 [submodule "vim/vim.symlink/bundle/vim-javascript-syntax"]
 	path = vim/vim.symlink/bundle/vim-javascript-syntax
-	url = https://github.com/jelera/vim-javascript-syntax.git
+	url = git@github.com:jelera/vim-javascript-syntax.git
 [submodule "vim/vim.symlink/bundle/dein.vim"]
 	path = vim/vim.symlink/bundle/dein.vim
 	url = git@github.com:Shougo/dein.vim.git
@@ -172,4 +172,4 @@
 	url = git@github.com:mhinz/vim-startify.git
 [submodule "vim/vim.symlink/bundle/php.vim"]
 	path = vim/vim.symlink/bundle/php.vim
-	url = https://github.com/stanangeloff/php.vim
+	url = git@github.com:stanangeloff/php.vim
