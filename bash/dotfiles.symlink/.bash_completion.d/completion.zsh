@@ -84,36 +84,11 @@ function __filter_homebrew {
   fi
 }
 
-_brew() {
-  if (( CURRENT == 2 )); then
-    compadd list
-    compadd install uninstall
-    compadd link unlink
-    compadd missing prune cleanup
-    compadd upgrade update outdated
-    compadd info edit options deps uses
-    compadd home doctor update search
-  elif (( CURRENT >= 3 )); then
-    if (( CURRENT == 3 )); then
-      if [[ $words[2] == "options" || $words[2] == "info" || $words[2] == "edit" || $words[2] == "options" || $words[2] == "deps" || $words[2] == "uses" || $words[2] == "home" ]]; then
-        compadd $(__filter_homebrew ${words[3]})
-      fi
-    fi
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+fi
 
-    if [[ $words[2] == "install" ]]; then
-      compadd $(__filter_homebrew ${words[-1]})
-    elif [[ $words[2] == "uninstall" ]]; then
-      compadd $(brew list)
-    elif [[ $words[2] == "unlink" ]]; then
-      compadd $(brew list)
-    elif [[ $words[2] == "cleanup" ]]; then
-      compadd $(brew list --versions | grep ' .* ' | awk '{print $1}')
-    elif [[ $words[2] == "upgrade" ]]; then
-      compadd $(brew outdated | awk '{print $1}')
-    fi
-  fi
-}
-compdef _brew brew
 
 _lm() {
   if (( CURRENT >= 2 )); then
@@ -122,13 +97,13 @@ _lm() {
 }
 compdef _lm lm
 
-_rmf() {
-  if (( CURRENT >= 2 )); then
-    compadd $(/bin/ls -A1FG)
-  fi;
-}
-# compdef _rmf rmf
-compdef _files rmf
+# _rmf() {
+#   if (( CURRENT >= 2 )); then
+#     compadd $(/bin/ls -A1FG)
+#   fi;
+# }
+# # compdef _rmf rmf
+# compdef _files rmf
 
 # compdef _path_files rmf
 
@@ -152,7 +127,6 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} ma=0\;30\;44
 # new
 # zstyle ':completion:*' menu select=2 eval "$(dircolors -b)"
 # zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)(?)*==34=34}:${(s.:.)LS_COLORS}")';
-
 
 
 autoload -Uz compinit && compinit -u

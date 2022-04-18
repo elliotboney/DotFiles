@@ -43,7 +43,7 @@ if shell_is_osx; then
         value="{"
 
         for otherPhpVersion in ${installedPhpVersions[*]}; do
-            echo -e "${otherPhpVersion} -- ${phpVersion}"
+            # echo -e "${otherPhpVersion} -- ${phpVersion}"
             if [[ "${otherPhpVersion}" == "${phpVersion}" ]]; then
                 continue
             fi

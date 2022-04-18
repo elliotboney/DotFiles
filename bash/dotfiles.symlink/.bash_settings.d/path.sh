@@ -3,7 +3,8 @@ export ANDROID_HOME="${HOME}/Code/Android/sdk"
 # ---------------------------------
 # Path Section
 if command_exists brew; then
-    PATH=$PATH:"$(brew --prefix homebrew/core/php@7.4)/bin"
+    PATH="$(brew --prefix coreutils)/bin":$PATH
+    # PATH=$PATH:"$(brew --prefix homebrew/core/php@7.4)/bin"
     # PATH="$(brew --prefix homebrew/core/php@8.0)/bin"
 fi
 
@@ -18,7 +19,6 @@ if [ -e "/usr/local/Cellar/php" ] || [ -d "/usr/local/Cellar/php" ]; then
 fi
 # add all the paths we want to array
 paths=(
-    "$(brew --prefix coreutils)/bin"
     "${HOME}/.nvm/current/bin"
     "${HOME}/.yarn/bin"
     "${HOME}/.bin"
