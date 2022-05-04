@@ -21,6 +21,12 @@ alias createdocs='phpdoc -d ./library/ZFDebug -t docs --template clean'
 #         MISC          #
 #########################
 
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+  alias code="rcode"
+# many other tests omitted
+fi
+
+
 # Outputs shell colors
 function colortest() {
   for x in 0 1 4 5 7 8; do
