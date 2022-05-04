@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+. "$HOME/.fig/shell/zshrc.pre.zsh"
 #
 # Set to true if you want to output some debug info
 #
@@ -184,3 +186,5 @@ if [ -f $HOME/.grc.zsh ] ; then
   source $HOME/.grc.zsh
 fi
 
+# Fig post block. Keep at the bottom of this file.
+. "$HOME/.fig/shell/zshrc.post.zsh"
