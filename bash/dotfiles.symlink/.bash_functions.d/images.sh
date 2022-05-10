@@ -14,7 +14,7 @@ dimensions() {
 # Fix a png file with pngcrush
 pngfix () {
     if [[ -z "$1" ]]; then
-        # echo a help message if no port is specified
+        # echo a help message if no file is specified
         echo -e "\n\t${White}Useage: ${BCyan}pngfix ${LightGray}<filename> ${NC}\n"
     else
         pngcrush -rem allb -brute -reduce $1 $1.new

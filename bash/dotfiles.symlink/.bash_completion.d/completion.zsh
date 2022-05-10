@@ -64,6 +64,8 @@ zstyle ':completion:*:scp:*' group-order files all-files users hosts-domain host
 zstyle ':completion:*:ssh:*' tag-order 'hosts:-domain:domain'
 zstyle ':completion:*:ssh:*' group-order hosts-domain hosts-host users hosts-ipaddr
 
+# RM Stuff
+# zstyle ':completion:*:*:rmf:*' file-sort size
 
 # kill: advanced kill completion
 zstyle ':completion::*:kill:*:*' command 'ps xf -U $USER -o pid,%cpu,cmd'
@@ -74,6 +76,9 @@ zstyle ':completion::*:s:*:*' file-patterns 'Makefile|*(rc|log)|*.(php|tex|bib|s
 
 
 zstyle :compinstall filename '${HOME}/.zshrc'
+
+zstyle ':completion::*:kill:*:*' command 'ps xf -U $USER -o pid,%cpu,cmd'
+
 
 function __filter_homebrew {
   if [[ $1 == "" ]]; then
@@ -99,13 +104,11 @@ compdef _lm lm
 
 # _rmf() {
 #   if (( CURRENT >= 2 )); then
-#     compadd $(/bin/ls -A1FG)
+#     compadd $(ls -A1FG)
 #   fi;
 # }
 # # compdef _rmf rmf
-# compdef _files rmf
-
-# compdef _path_files rmf
+# compdef _rmf rmf
 
 # zstyle ':completion:*:*:jp:*:*files' ignored-patterns '*.o'
 zstyle ':completion::*:pj:*:*' file-patterns '*.json'

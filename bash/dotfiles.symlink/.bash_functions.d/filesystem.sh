@@ -32,15 +32,13 @@ function blockdev() {
 
 
 # A safer rm, moves to trash on osx
-function rmf() {
-  if command_exists rmtrash; then
-    rmtrash -u eboney $@
-  elif command_exists trash; then
-    trash $@
-  else
-    rm -rf $@
-  fi
-}
+if command_exists rmtrash; then
+  alias rmf='rmtrash -u eboney'
+elif command_exists trash; then
+  alias rmf='trash'
+else
+  alias rmf='rm -rf'
+fi
 
 # Hex edit a file in Hex Fiend
 function hex() {
@@ -183,13 +181,31 @@ fi
 
 alias grep="grep --color=auto"
 
+if command_exists grm; then
+  alias rm="grm -I"
+else
+  alias rm="rm -I"
+fi
+
+if command_exists gln; then
+  alias ln="gln -i"
+else
+  alias ln="ln -i"
+fi
+
+if command_exists gcp; then
+  alias cp="gcp -i"
+else
+  alias cp="cp -i"
+fi
+
+if command_exists gmv; then
+  alias mv="gmv -i"
+else
+  alias mv="mv -i"
+fi
 
 # Training wheels
-alias ln="ln -i"
-alias mv="mv -i"
-alias ln="ln -i"
-alias cp="cp -i"
-alias rm="rm -I"
 alias chgrp='chgrp --preserve-root'
 alias mkdir='mkdir -p'
 
