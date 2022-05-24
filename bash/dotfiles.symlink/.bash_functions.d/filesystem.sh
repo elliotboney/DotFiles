@@ -4,20 +4,46 @@ function fixpermswww() {
   if [[ -z "$1" ]]; then
     echo -e "\n\t${White}Useage: ${BCyan}$(basename "${0}") ${Green}<directory> ${Blue}<user>${LightGray}[${2:-$(whoami)}] ${Cyan}<group>${LightGray}[${3:-www-data}] ${NC}\n"
   else
-    sudo chgrp -R ${3:-www-data} "${1}"
-    sudo chown -R ${2:-$(whoami)}:${3:-www-data} "${1}"
-    sudo chmod -R g+rw "${1}"
-    if [[ -d "${1}/wp-content/uploads" ]]; then
-      sudo chmod 777 "${1}/wp-content/uploads"
-    else
-      echo -e "${1}/wp-content/uploads does not exist"
+    echo -n "\n\t${Cyan}${1}${LightGray} changing group to ${Magenta}${3:-www-data}${NC}${LightGray}..."
+    sudo chgrp -R ${3:-www-data} "${1}" > /dev/null 2>&1 && echo -n " ${BGreen}Done!${NC}\n"
+
+    echo -n "\n\t${Cyan}${1}${LightGray} changing owner to ${Magenta}${2:-$(whoami)}${NC}${LightGray}..."
+    sudo chown -R ${2:-$(whoami)}:${3:-www-data} "${1}" > /dev/null 2>&1 && echo -n " ${BGreen}Done!${NC}\n"
+
+    echo -n "\n\t${Cyan}${1}${LightGray} changing permissions to ${Magenta}g+rw${NC}${LightGray}..."
+    sudo chmod -R g+rw "${1}" > /dev/null 2>&1 && echo -n " ${BGreen}Done!${NC}\n"
+
+    echo -n "\n\t${Cyan}${1}${LightGray} changing sub-directories permissions to ${Magenta}g+rwx${NC}${LightGray}..."
+    sudo find "${1}" -type d -exec sudo chmod g+rwx {} +  > /dev/null 2>&1 && echo -n " ${BGreen}Done!${NC}\n"
+
+    echo -n "\n\t${Cyan}${1}${LightGray} changing sticky bit to ${Magenta}g+s${NC}${LightGray}..."
+    sudo chmod g+s "${1}" > /dev/null 2>&1 && echo -n " ${BGreen}Done!${NC}\n"
+
+     if [[ -d "${1}/wp-content/uploads" ]]; then
+      sudo chmod 777 "${1}/wp-content/uploads" && echo -e "\t${Green}${1}/wp-content/uploads${LightGray} permissions fixed"
     fi
-    sudo find "${1}" -type d -exec sudo chmod g+rwx {} +
-    sudo chmod g+s "${1}"
+    if [[ -d "${1}/content/uploads" ]]; then
+      sudo chmod 777 "${1}/content/uploads" && echo -e "\t${Green}${1}/content/uploads${LightGray} permissions fixed"
+    fi
+    if [[ -d "${1}/vendor/bin" ]]; then
+      sudo find "${1}/vendor/bin" -type f -exec sudo chmod +x {} +
+      echo -e "\t${Green}${1}/vendor/bin/*${LightGray} set to executable"
+    fi
   fi
+  echo -e "\n\t${LightGray}${1}${BGreen} All Permissions Have Been Fixed!${NC}\n"
 }
 
-
+# Remove window line endings
+function fixlineendings() {
+  if [[ -z "$1" ]]; then
+    echo -e "\n\t${White}Useage: ${BCyan}$(basename "${0}") ${Green}<directory>${NC}\n"
+  else
+    echo -n "\n\t${Cyan}${1}${LightGray} removing all windows line endings..."
+    # find "${1}" -not \( -name .svn -prune -o -name .git -prune \) -print -type f -exec perl -pi -e 's/\r\n|\n|\r/\n/g' {} \;
+    find "${1}" -not \( -name .svn -prune -o -name .git -prune \) -print -type f -exec grep -qIP '\r\n' {} ';' -exec perl -pi -e 's/\r\n/\n/g' {} '+'
+    echo -n " ${BGreen}Done!${NC}\n"
+  fi
+}
 
 # Gets block size, start and end section, etc for a device
 function blockdev() {
