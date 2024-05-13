@@ -12,6 +12,12 @@ if [ -f "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion
     source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 fi
 
+# PYENV
+
+if [ -f "/usr/local/var/pyenv/bin/pyenv" ]; then
+   PATH="/usr/local/var/pyenv/bin":$PATH
+fi
+
 # PATH=$PATH:""
 if [ -e "/usr/local/Cellar/php" ] || [ -d "/usr/local/Cellar/php" ]; then
  PATH=$PATH:"/usr/local/Cellar/php/$(/bin/ls /usr/local/Cellar/php/ | /usr/bin/awk 'NR==0; END{print}')/bin"

@@ -2,61 +2,8 @@
 #
 # @author  {@link http://www.elliotboney.com Elliot Boney}
 # @license http://sam.zoy.org/wtfpl/  Do What The Fuck You Want To Public License (WTFPL)
-
-# TODO see if we need all this shit down
-# Terminal {{{2
-# TERM Eterm
-# TERM ansi
-# TERM color-xterm
-# TERM con132x25
-# TERM con132x30
-# TERM con132x43
-# TERM con132x60
-# TERM con80x25
-# TERM con80x28
-# TERM con80x30
-# TERM con80x43
-# TERM con80x50
-# TERM con80x60
-# TERM cons25
-# TERM console
-# TERM cygwin
-# TERM dtterm
-# TERM eterm-color
-# TERM gnome
-# TERM gnome-256color
-# TERM jfbterm
-# TERM konsole
-# TERM kterm
-# TERM linux
-# TERM linux-c
-# TERM mach-color
-# TERM mlterm
-# TERM putty
-# TERM rxvt
-# TERM rxvt-256color
-# TERM rxvt-cygwin
-# TERM rxvt-cygwin-native
-# TERM rxvt-unicode
-# TERM rxvt-unicode256
-# TERM rxvt-unicode-256color
-# TERM screen
-# TERM screen-256color
-# TERM screen-256color-bce
-# TERM screen-256color-s
-# TERM screen-256color-bce-s
-# TERM screen-bce
-# TERM screen-w
-# TERM screen.linux
-# TERM vt100
-# TERM xterm
-# TERM xterm-16color
 TERM xterm-256color
-# TERM xterm-88color
-# TERM xterm-color
-# TERM xterm-debian
-# TERM xterm-termite
-# }}}
+
 
 
 # NOTE: string consists of one or more of the following numeric codes:
@@ -80,8 +27,8 @@ TERM xterm-256color
 
 ## Special files
 
-NORMAL                  00;38;5;240 # no color code at all
-NORM                    00;38;5;240 # no color code at all
+NORMAL                  00;38;5;244 # no color code at all
+NORM                    00;38;5;243 # no color code at all
 FILE                    00;38;5;245 # regular file: use no color at all
 DIR                     00;38;5;33  # directory
 LINK                    target   # symbolic link. (if set to target, colors like the target)
@@ -93,21 +40,27 @@ DOOR                    48;5;230;38;5;215;01 # door
 BLK                     48;5;230;38;5;244;01 # block device driver
 CHR                     48;5;230;38;5;244;01 # character device driver
 CHAR                    48;5;230;38;5;244;01 # character device driver
-ORPHAN                  48;5;235;38;5;160 # symlink to nonexistent file, or non-stat'able file
-MISSING                 48;5;235;38;5;160 # symlink to nonexistent file, or non-stat'able file
+ORPHAN                  48;5;160;38;5;255 # symlink to nonexistent file, or non-stat'able file
+MISSING                 48;5;160;38;5;255 # symlink to nonexistent file, or non-stat'able file
 SETUID                  00;38;5;153 # file that is setuid (u+s)
 SETGID                  48;5;45;38;5;0 # file that is setgid (g+s)
-CAPABILITY              30;41 # file with capability
-STICKY_OTHER_WRITABLE   48;5;235;38;5;39 # dir that is sticky and other-writable (+t,o+w)
+CAPABILITY              00;38;5;222 # file with capability
+STICKY_OTHER_WRITABLE   48;5;237;38;5;39 # dir that is sticky and other-writable (+t,o+w)
 STICKY                  38;5;8 # dir that is other-writable (o+w) and not sticky
-#OTHER_WRITABLE          48;5;33;38 ;5;230 # dir with the sticky bit set (+t) and not other-writable
+OTHER_WRITABLE          48;5;236;38;5;33 # dir with the sticky bit set (+t) and not other-writable
 
 # This is for files with execute permission:
-EXEC                    00;38;5;83
+EXEC                     00;38;5;83
+
+.py                      00;38;5;46
+.bat                     00;38;5;46
+.exe                     00;38;5;46
+.com                     00;38;5;46
+.sh                      00;38;5;46
+
 
 #Or files that can be run
-.py                     00;38;5;46
-.sh                     00;38;5;42
+#
 .node                   00;38;5;42
 .pkg                    00;38;5;42
 
@@ -263,33 +216,33 @@ EXEC                    00;38;5;83
 # Added by elliot
 
 # Hide Files
-.DS_Store               00;38;5;236
-.bash_history           00;38;5;236
-.hushlogin              00;38;5;236
-.hush_login             00;38;5;236
-.CFUserTextEncoding     00;38;5;236
-.Trash/                 00;38;5;236
-.Xauthority             00;38;5;236
-.zprofile               00;38;5;236
-*.zcompdump             00;38;5;236
-*LICENSE                00;38;5;236
-*license                00;38;5;236
-*changelog              00;38;5;236
-*desktop.ini            00;38;5;236
-*.lock                  00;38;5;236
-*.git/                  00;38;5;236
+.DS_Store               00;38;5;241
+.bash_history           00;38;5;241
+.hushlogin              00;38;5;241
+.hush_login             00;38;5;241
+.CFUserTextEncoding     00;38;5;241
+.Trash/                 00;38;5;241
+.Xauthority             00;38;5;241
+.zprofile               00;38;5;241
+*.zcompdump             00;38;5;241
+*LICENSE                00;38;5;241
+*license                00;38;5;241
+*changelog              00;38;5;241
+*desktop.ini            00;38;5;241
+*.lock                  00;38;5;241
+*.git/                  00;38;5;241
 .lessht                 00;38;5;174
-.cache                  00;38;5;236
-.idea                   00;38;5;236
-.zsh_history            00;38;5;236
-.zshrc-e                00;38;5;236
-.zshrc.zwc              00;38;5;236
-.idea                   00;38;5;236
-.idea                   00;38;5;236
-.idea                   00;38;5;236
-.idea                   00;38;5;236
-.idea                   00;38;5;236
-.idea                   00;38;5;236
+.cache                  00;38;5;241
+.idea                   00;38;5;241
+.zsh_history            00;38;5;241
+.zshrc-e                00;38;5;241
+.zshrc.zwc              00;38;5;241
+.idea                   00;38;5;241
+.idea                   00;38;5;241
+.idea                   00;38;5;241
+.idea                   00;38;5;241
+.idea                   00;38;5;241
+.idea                   00;38;5;241
 
 # my version of config files
 *config                 00;38;5;174
@@ -351,7 +304,7 @@ EXEC                    00;38;5;83
 
 
 # Other Data File
-.csv                    00;38;5;17
+.csv                    00;38;5;258
 
 .symlink                00;38;5;25
 
@@ -362,7 +315,6 @@ EXEC                    00;38;5;83
 # Project files
 .sublime-project        00;38;5;2
 .sublime-workspace      00;38;5;2
-STICKY_OTHER_WRITABLE   48;5;235;38;5;39 # dir that is sticky and other-writable (+t,o+w)
 
 
 

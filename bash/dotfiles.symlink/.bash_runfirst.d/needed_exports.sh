@@ -7,3 +7,8 @@ else
   export EDITOR="vim"
   alias s="vim"
 fi
+
+if [ -f "/usr/local/var/pyenv/bin/pyenv" ]; then
+   PATH="/usr/local/var/pyenv/bin":$PATH
+fi
+

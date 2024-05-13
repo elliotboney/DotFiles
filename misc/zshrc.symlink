@@ -1,7 +1,7 @@
 #
 # Set to true if you want to output some debug info
 #
-DEBUG=false
+DEBUG=true
 
 
 if [ "${DEBUG}" = true ]; then
@@ -51,10 +51,17 @@ source "${DOTPATH}/antigen.zsh"
 
 # antigent installation stuff
 antigen bundle ael-code/zsh-colored-man-pages
+antigen bundle unixorn/autoupdate-antigen.zshplugin
+antigen bundle command-not-found
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle chrissicool/zsh-256color
+
+antigen bundle desyncr/zsh-ctrlp@develop
+antigen bundle joshskidmore/zsh-fzf-history-search
+antigen bundle rsync
+
 
 antigen apply
 
@@ -101,11 +108,7 @@ else
     # sublime
     # web-search
     wpclitwo
-    # zsh-256color
-    # zsh-autosuggestions
-    # zsh-completions
     # zsh_reload
-    # zsh-syntax-highlighting # this MUST BE LAST
     )
 fi
 # slow as balls npm nvm
@@ -183,3 +186,4 @@ function git_prompt_info() {
 if [ -f $HOME/.grc.zsh ] ; then
   source $HOME/.grc.zsh
 fi
+

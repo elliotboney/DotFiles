@@ -101,3 +101,12 @@ export NVM_SYMLINK_CURRENT=true
   export ZSH_CONFIG="$XDG_CONFIG_HOME/zsh"
   export ZSH_CACHE="$XDG_CACHE_HOME/zsh"
   mkdir -p $ZSH_CACHE
+
+
+
+  ## zsh Search stuff
+  export ZSHSELECT_BOLD="1"                   # The interface will be drawn in bold font. Use "0" for no bold
+export ZSHSELECT_COLOR_PAIR="green/black"   # Draw in white foreground, black background. Try e.g.: "white/green"
+export ZSHSELECT_BORDER="1"                 # No border around interface, Use "1" for the border
+export ZSHSELECT_ACTIVE_TEXT="reverse"      # Mark current element with reversed text. Use "underline" for marking with underline
+export ZSHSELECT_START_IN_SEARCH_MODE="1"   # Starts Zsh-Select with searching active. "0" will not invoke searching at start.
