@@ -1,7 +1,7 @@
 #
 # Set to true if you want to output some debug info
 #
-DEBUG=true
+DEBUG=false
 
 
 if [ "${DEBUG}" = true ]; then
@@ -187,3 +187,14 @@ if [ -f $HOME/.grc.zsh ] ; then
   source $HOME/.grc.zsh
 fi
 
+export PATH="$PATH:$HOME/Library/Python/3.9/bin"
+
+. "$HOME/.local/bin/env"
+
+# pnpm
+export PNPM_HOME="/Users/eboney/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

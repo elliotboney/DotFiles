@@ -12,3 +12,6 @@ if [ -f "/usr/local/var/pyenv/bin/pyenv" ]; then
    PATH="/usr/local/var/pyenv/bin":$PATH
 fi
 
+if [ -d "/opt/homebrew/bin" ]; then
+   PATH="/opt/homebrew/bin":$PATH
+fi

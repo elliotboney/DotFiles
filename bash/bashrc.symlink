@@ -20,12 +20,13 @@ case "$OSTYPE" in
   *'gnueabi'* ) SHELL_PLATFORM='ROUTER' ;;
   *'linux'*   ) SHELL_PLATFORM='LINUX' ;;
   *'darwin'*  ) SHELL_PLATFORM='OSX' ;;
+  *'Mac'*  ) SHELL_PLATFORM='OSX' ;;
   *'freebsd'* ) SHELL_PLATFORM='BSD' ;;
 esac
 
 #if ! type -p shell_is_login ; then
 shell_is_linux       () { [[ "$OSTYPE" == *'linux'* ]] ; }
-shell_is_osx         () { [[ "$OSTYPE" == *'darwin'* ]] ; }
+shell_is_osx         () { [[ "$OSTYPE" == *'Mac'* ]] ; }
 shell_is_router      () { [[ "$OSTYPE" == *'gnueabi'* ]] ; }
 shell_is_elliot      () { [[ "$HOST_NAME" == *'Elliots'* ]] ; } #|| "$HOST_NAME" == *'mainpc'* ]] ; }
 shell_is_login       () { shopt -q login_shell ; }
@@ -97,3 +98,5 @@ decho "\x1b[0;36mDone with .bashrc\x1b[m"
 setindent ""
 source "${HOME}/.iterm2_shell_integration.zsh"
 # PATH=${PATH}:~/.bin/
+
+. "$HOME/.local/bin/env"

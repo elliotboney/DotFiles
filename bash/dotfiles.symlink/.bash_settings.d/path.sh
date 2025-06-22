@@ -14,9 +14,15 @@ fi
 
 # PYENV
 
+if [ -d "/opt/homebrew/opt/coreutils/libexec/gnubin" ]; then
+   PATH="/opt/homebrew/opt/coreutils/libexec/gnubin":$PATH
+fi
+
 if [ -f "/usr/local/var/pyenv/bin/pyenv" ]; then
    PATH="/usr/local/var/pyenv/bin":$PATH
 fi
+
+
 
 # PATH=$PATH:""
 if [ -e "/usr/local/Cellar/php" ] || [ -d "/usr/local/Cellar/php" ]; then
@@ -66,7 +72,10 @@ done
 
 # End of Path Section comment block
 # ---------------------------------
-
+if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
+   PATH="/opt/homebrew/opt/ruby/bin":$PATH
+   PATH="/opt/homebrew/lib/ruby/gems/3.4.0/bin":$PATH
+fi
 
 export PATH
 
