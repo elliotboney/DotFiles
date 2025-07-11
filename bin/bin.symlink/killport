@@ -1,0 +1,61 @@
+#!/bin/bash
+
+# killport - Find and kill processes using a specific port
+# Usage: killport <port_number>
+
+if [ $# -eq 0 ]; then
+    echo "Usage: killport <port_number>"
+    echo "Example: killport 3001"
+    exit 1
+fi
+
+PORT=$1
+
+# Validate that port is a number
+if ! [[ "$PORT" =~ ^[0-9]+$ ]]; then
+    echo "Error: Port must be a number"
+    exit 1
+fi
+
+# Validate port range
+if [ "$PORT" -lt 1 ] || [ "$PORT" -gt 65535 ]; then
+    echo "Error: Port must be between 1 and 65535"
+    exit 1
+fi
+
+echo "Searching for processes using port $PORT..."
+
+# Find processes using the port (both TCP and UDP)
+PIDS=$(lsof -ti :$PORT 2>/dev/null)
+
+if [ -z "$PIDS" ]; then
+    echo "Nothing found for port $PORT"
+    exit 0
+fi
+
+echo "Found processes using port $PORT:"
+
+# Show details of processes before killing
+for PID in $PIDS; do
+    PROCESS_INFO=$(ps -p $PID -o pid,ppid,cmd --no-headers 2>/dev/null)
+    if [ -n "$PROCESS_INFO" ]; then
+        echo "  PID $PID: $PROCESS_INFO"
+    fi
+done
+
+echo ""
+echo "Killing processes..."
+
+# Kill each process
+KILLED_COUNT=0
+for PID in $PIDS; do
+    if kill -9 $PID 2>/dev/null; then
+        echo "  ✓ Killed process $PID"
+        KILLED_COUNT=$((KILLED_COUNT + 1))
+    else
+        echo "  ✗ Failed to kill process $PID (may have already exited)"
+    fi
+done
+
+echo ""
+echo "Done. Killed $KILLED_COUNT process(es) using port $PORT"

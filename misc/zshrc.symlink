@@ -31,6 +31,7 @@ function setindent() {
 
 decho "\x1b[1;36mProcessing .zshrc\x1b[m"
 setopt extended_glob
+setopt glob_dots
 
 
 if [ -f "${HOME}/.private_exports" ];then
@@ -149,6 +150,11 @@ colors
 autoload -U zmv
 # enable colored output from ls, etc
 # export CLICOLOR=1
+
+# Enable automatic rehash for new commands in PATH
+# Force completion system to rebuild cache when new executables are found
+zstyle ':completion:*' rehash true
+
 decho "autoload -U colors and shit"
 
 # sweet renaming shit
@@ -198,3 +204,17 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+alias claude="/Users/eboney/.claude/local/claude"
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/eboney/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
+
+# bun completions
+[ -s "/Users/eboney/.bun/_bun" ] && source "/Users/eboney/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
