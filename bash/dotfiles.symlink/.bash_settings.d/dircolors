@@ -49,6 +49,11 @@ STICKY_OTHER_WRITABLE   48;5;237;38;5;39 # dir that is sticky and other-writable
 STICKY                  38;5;8 # dir that is other-writable (o+w) and not sticky
 OTHER_WRITABLE          48;5;236;38;5;33 # dir with the sticky bit set (+t) and not other-writable
 
+
+# Special EZA stuff
+
+
+
 # This is for files with execute permission:
 EXEC                     00;38;5;83
 
@@ -65,16 +70,23 @@ EXEC                     00;38;5;83
 .pkg                    00;38;5;42
 
 
+# misc special files
+.env                    0;38;5;202
+
+
 # Docs
 .pdf                    00;38;5;39
 .epub                   00;38;5;39
 .docx                   00;38;5;39
 .tmTheme                00;38;5;39
-
+.md                     00;38;5;39
+*README.md              01;38;5;39
 #source Files
 .php                    00;38;5;155
-.js                     00;38;5;155
 .rb                     00;38;5;155
+.js                     00;38;5;155
+.ts                     00;38;5;155
+.js                     00;38;5;155
 .lua                    00;38;5;155
 
 .html                   00;38;5;137
@@ -135,6 +147,7 @@ EXEC                     00;38;5;83
 .tif                    00;38;5;173
 .tiff                   00;38;5;173
 .png                    00;38;5;172
+.webp                   00;38;5;172
 
 .pcx                    00;38;5;172
 .eps                    00;38;5;172
@@ -149,8 +162,6 @@ EXEC                     00;38;5;83
 # Files of special interest (base1 + bold)
 .vim                    00;38;5;205
 .xml                    00;38;5;205
-.json                   00;38;5;205
-.yml                    00;38;5;205
 *Makefile               00;38;5;205
 *Rakefile               00;38;5;205
 *build.xml              00;38;5;205
@@ -158,9 +169,7 @@ EXEC                     00;38;5;83
 *README                 01;38;5;245
 *README.txt             01;38;5;245
 *readme.txt             01;38;5;245
-.md                     01;38;5;166
 *README.markdown        01;38;5;245
-*README.md              01;38;5;245
 .c                      01;38;5;245
 .cpp                    01;38;5;245
 .cc                     01;38;5;245
@@ -189,7 +198,8 @@ EXEC                     00;38;5;83
 .o                      00;38;5;240
 .pyc                    00;38;5;240
 .class                  00;38;5;240
-
+*.git                    00;38;5;240
+*node_modules 02;37
 
 
 # Audio formats (orange)
@@ -229,7 +239,6 @@ EXEC                     00;38;5;83
 *license                00;38;5;241
 *changelog              00;38;5;241
 *desktop.ini            00;38;5;241
-*.lock                  00;38;5;241
 *.git/                  00;38;5;241
 .lessht                 00;38;5;174
 .cache                  00;38;5;241
@@ -282,6 +291,7 @@ EXEC                     00;38;5;83
 .jshintrc               00;38;5;174
 .s3cfg                  00;38;5;174
 .yarnrc                 00;38;5;174
+.prettierrc             00;38;5;174
 .gitconfig.user         00;38;5;174
 .bowerrc                00;38;5;174
 .gitignore              00;38;5;174
@@ -300,8 +310,6 @@ EXEC                     00;38;5;83
 .babel.json             00;38;5;174
 .eslintrc.json          00;38;5;174
 .curlrc                 00;38;5;174
-.curlrc                 00;38;5;174
-
 
 # Other Data File
 .csv                    00;38;5;258

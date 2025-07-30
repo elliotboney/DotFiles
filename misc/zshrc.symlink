@@ -86,8 +86,11 @@ if [[ -f "${HOME}/.zshpackages" ]]; then
 else
   plugins=(
     # alias-tips
+    # aliases
+    # alias-finder
     # bower
-    # brew
+    brew
+    bun
     # brew-cask
     # bundler
     # colored-man
@@ -98,6 +101,8 @@ else
     # elliotzsh
     # git
     # git-extras
+    docker
+    docker-compose
     # github
     # gnu-utils
     # grunt
@@ -106,6 +111,8 @@ else
     # osx
     rsync
     screen
+    ssh
+    sudo
     # sublime
     # web-search
     wpclitwo
@@ -157,8 +164,18 @@ zstyle ':completion:*' rehash true
 
 decho "autoload -U colors and shit"
 
+
+# Stuff for alias-finder plugin
+zstyle ':omz:plugins:alias-finder' autoload yes # disabled by default
+zstyle ':omz:plugins:alias-finder' longer yes # disabled by default
+zstyle ':omz:plugins:alias-finder' exact yes # disabled by default
+zstyle ':omz:plugins:alias-finder' cheaper yes # disabled by default
+
 # sweet renaming shit
-# autoload -U zmv
+autoload -U zmv
+
+
+
 [[ -s "${HOME}/.rvm/scripts/rvm" ]] && source "${HOME}/.rvm/scripts/rvm"
 decho "${HOME}/.rvm/scripts/rvm"
 # GEMDIR=$(${HOME}/.rvm/bin/rvm gemdir 2>/dev/null)
@@ -192,29 +209,3 @@ function git_prompt_info() {
 if [ -f $HOME/.grc.zsh ] ; then
   source $HOME/.grc.zsh
 fi
-
-export PATH="$PATH:$HOME/Library/Python/3.9/bin"
-
-. "$HOME/.local/bin/env"
-
-# pnpm
-export PNPM_HOME="/Users/eboney/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
-alias claude="/Users/eboney/.claude/local/claude"
-# The following lines have been added by Docker Desktop to enable Docker CLI completions.
-fpath=(/Users/eboney/.docker/completions $fpath)
-autoload -Uz compinit
-compinit
-# End of Docker CLI completions
-
-# bun completions
-[ -s "/Users/eboney/.bun/_bun" ] && source "/Users/eboney/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"

@@ -2,7 +2,6 @@
 export OPENSCADPATH="${HOME}/Documents/OpenSCAD/libraries"
 
 export HOMEBREW_NO_ENV_HINTS=true
-
 export PNPM_HOME="${HOME}/.pnpm"
 
 #

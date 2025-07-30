@@ -1,0 +1,31 @@
+da             00;38;5;42
+
+# file size in MB
+sn             00;38;5;8   # the numbers of a file’s size (sets `nb`, `nk`, `nm`, `ng` and `nt`)
+sb             00;38;5;103  # the units of a file’s size (sets `ub`, `uk`, `um`, `ug` and `ut`)
+nk             00;38;5;103  #  the numbers of a file’s size if it is between 1 KB/KiB and 1 MB/MiB
+nm             00;38;5;110  #  the numbers of a file’s size if it is between 1 MB/MiB and 1 GB/GiB
+ng             00;38;5;38  #  the numbers of a file’s size if it is between 1 GB/GiB and 1 TB/TiB
+nt             00;38;5;51  #  the numbers of a file’s size if it is 1 TB/TiB or higher
+
+
+uu             00;38;5;8       # user is me
+un             00;38;5;32      # user is someone else
+uR             00;38;5;197      # user is root
+
+
+.ai*           00;38;5;51
+
+
+*.yml          00;38;5;104
+*.yaml         00;38;5;104
+*.yaml         00;38;5;104
+# *tsconfig.json 00;38;5;223
+*package.json  00;38;5;223
+*.config.js    00;38;5;223
+*.config.ts    00;38;5;223
+bu             00;38;5;223
+# *.json         00;38;5;104
+*pnpm-lock.yaml 00;38;5;241
+*.lock          00;38;5;241
+

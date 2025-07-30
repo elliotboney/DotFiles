@@ -195,14 +195,23 @@ alias extractall='unzip -o "*.zip" | rmf *.zip'
 
 # grc overides for ls
 #   `brew install coreutils`
-if command_exists gls; then
+if command_exists eza; then
+   alias la="eza -lAhF --git --time-style=long-iso --octal-permissions  --group-directories-first --no-permissions --color-scale=age" 
+  #  alias ls="eza -hF --group-directories-first --color=always --quoting-style={shell-always,c-maybe}"
+   alias lag="la --git-ignore"
+   alias lat="la -T"
+   alias latg="la -T --git-ignore"
+   alias latg2="la -T -L 2 --git-ignore"
+   alias latd="la -T -D"
+   alias latdg="la -T -D --git-ignore"
+   alias latdg2="la -T -D -L 2 --git-ignore"
+elif command_exists gls; then
    alias ls="gls -hF --group-directories-first --color=always --quoting-style={shell-always,c-maybe}"
    alias la="gls -lAhF --group-directories-first --color=always --quoting-style={shell-always,c-maybe}"
    alias du="grc gdu"
    alias df="grc gdf"
 else
    alias ls="ls --color=always -hF --group-directories-first"
-
 fi
 
 alias grep="grep --color=auto"
