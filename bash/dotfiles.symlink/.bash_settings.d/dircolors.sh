@@ -13,10 +13,14 @@ load_eza_colors() {
 # Execute dir colors
 if  command_exists eza; then
     load_eza_colors
-    eval $(dircolors -b ${HOME}/.dotfiles/.bash_settings.d/dircolors)
+    if command_exists gdircolors; then
+        eval $(gdircolors -b ${HOME}/.dotfiles/.bash_settings.d/dircolors)
+    else 
+        eval $(dircolors -b ${HOME}/.dotfiles/.bash_settings.d/dircolors)
+    fi
     export EZA_COLORS=${EZA_COLORS}:${LS_COLORS}
-elif  command_exists gdircolors; then
-    eval $(/opt/homebrew/bin/gdircolors -b ${HOME}/.dotfiles/.bash_settings.d/dircolors)
+# elif  command_exists gdircolors; then
+    # eval $(/opt/homebrew/bin/gdircolors -b ${HOME}/.dotfiles/.bash_settings.d/dircolors)
 else
   echo -e $PATH
   if $(dircolors &>/dev/null); then
