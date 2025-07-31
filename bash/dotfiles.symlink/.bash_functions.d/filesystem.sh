@@ -249,9 +249,9 @@ alias lsd="ls -lF"
 
 # find shit
 # Find directories
-alias fd='find . -type d -name'
+alias finddir='find . -type d -name'
 # Find files
-alias ff='find . -type f -name'
+alias findfile='find . -type f -name'
 
 
 

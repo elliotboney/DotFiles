@@ -1,17 +1,10 @@
 # decho "Bash Profile"
-[ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
 
-if [ -z "$ZSHRCRUN" ] ; then
-  exec zsh
-fi
+# if [ -z "$ZSHRCRUN" ] ; then
+#   exec zsh
+# fi
 
 # source "$(brew --prefix grc)/etc/grc.bashrc"
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-export PTOOLSPATH=/Users/eboney/Git/phalcon-devtools/
-export PATH=$PATH:/Users/eboney/Git/phalcon-devtools
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-
-. "$HOME/.local/bin/env"

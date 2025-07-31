@@ -95,10 +95,3 @@ fi
 # fi
 
 decho "\x1b[0;36mDone with .bashrc\x1b[m"
-setindent ""
-source "${HOME}/.iterm2_shell_integration.zsh"
-# PATH=${PATH}:~/.bin/
-
-. "$HOME/.local/bin/env"
-
-[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path bash)"
