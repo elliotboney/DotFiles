@@ -42,7 +42,7 @@ if (shell_is_osx); then
       echo -e "Skipping homebrew..."
     else
       echo -e "${BGreen}Installing Homebrew...${NC}"
-      /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     fi
   else
     echo -e "${Green}Success!${NC}"

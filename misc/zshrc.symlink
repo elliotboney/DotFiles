@@ -1,7 +1,7 @@
 #
 # Set to true if you want to output some debug info
 #
-DEBUG=false
+DEBUG=true
 
 
 if [ "${DEBUG}" = true ]; then
@@ -122,6 +122,7 @@ fi
 # slow as balls npm nvm
 
 
+
 # Add addition zsh completions
 fpath=(${HOME}/.zsh-completions $fpath)
 
@@ -130,7 +131,7 @@ source "${ZSH}/oh-my-zsh.sh"
 decho "${ZSH}/oh-my-zsh.sh"
 
 # Source our bashrc file
-source "${HOME}/.bashrc"
+# source "${HOME}/.bashrc"
 
 # Load a custom theme if it exists
 if [ -f "${HOME}/.dotfiles/custom.zsh-theme" ]; then
@@ -145,6 +146,73 @@ fi
 
 # Enable extended globbing
 setopt extendedglob
+
+
+#####
+# New Stuff from old bashrc
+#####
+
+EXPORT_FUNCTIONS=true
+HOST_NAME=$(uname -n)
+
+
+# Setup the main shell variables and functions
+SHELL_PLATFORM='OTHER'
+case "$OSTYPE" in
+  *'gnueabi'* ) SHELL_PLATFORM='ROUTER' ;;
+  *'linux'*   ) SHELL_PLATFORM='LINUX' ;;
+  *'darwin'*  ) SHELL_PLATFORM='OSX' ;;
+  *'Mac'*  ) SHELL_PLATFORM='OSX' ;;
+  *'freebsd'* ) SHELL_PLATFORM='BSD' ;;
+esac
+#if ! type -p shell_is_login ; then
+shell_is_linux       () { [[ "$OSTYPE" == *'linux'* ]] ; }
+shell_is_osx         () { [[ "$OSTYPE" == *'Mac'* ]] ; }
+shell_is_router      () { [[ "$OSTYPE" == *'gnueabi'* ]] ; }
+shell_is_elliot      () { [[ "$HOST_NAME" == *'Elliots'* ]] ; } #|| "$HOST_NAME" == *'mainpc'* ]] ; }
+shell_is_login       () { shopt -q login_shell ; }
+shell_is_interactive () { test -n "$PS1" ; }
+shell_is_script      () { ! shell_is_interactive ; }
+#fi#if ! type -p shell_is_login ; then
+shell_is_linux       () { [[ "$OSTYPE" == *'linux'* ]] ; }
+shell_is_osx         () { [[ "$OSTYPE" == *'Mac'* ]] ; }
+shell_is_router      () { [[ "$OSTYPE" == *'gnueabi'* ]] ; }
+shell_is_elliot      () { [[ "$HOST_NAME" == *'Elliots'* ]] ; } #|| "$HOST_NAME" == *'mainpc'* ]] ; }
+shell_is_login       () { shopt -q login_shell ; }
+shell_is_interactive () { test -n "$PS1" ; }
+shell_is_script      () { ! shell_is_interactive ; }
+#fi
+# Helper function to load directories of shell scripts
+include_d() {
+    local dir=$1
+    local functions_dir="${HOME}/.dotfiles/.${dir}.d"
+    
+    if [[ -d "$functions_dir" && -r "$functions_dir" && -x "$functions_dir" ]]; then
+        decho "   📁 Processing ${dir}/ directory..."
+        
+        for script_file in "$functions_dir"/*.sh; do
+            if [[ -f "$script_file" && -r "$script_file" ]]; then
+                source "$script_file"
+                # decho "   $(basename "$script_file")"
+            fi
+        done
+    else
+        decho "   ⚠️  Directory not found: $functions_dir"
+    fi
+}
+
+
+
+include_d bash_runfirst
+include_d bash_functions  
+include_d bash_completion
+include_d bash_settings
+
+# Unset local variables
+unset fn_cmd
+unset EXPORT_FUNCTIONS
+unset BASHRC_DISPATCH_PID
+
 
 # Tab selects first item
 # setopt menu_complete
@@ -174,6 +242,20 @@ zstyle ':omz:plugins:alias-finder' cheaper yes # disabled by default
 # sweet renaming shit
 autoload -U zmv
 
+# Atuin - Better shell history (if installed)
+if command -v atuin >/dev/null 2>&1; then
+    eval "$(atuin init zsh)"
+else
+    echo "⚠️  Atuin not installed. Run: brew install atuin"
+fi
+
+# Starship - Modern prompt (if installed)  
+if command -v starship >/dev/null 2>&1; then
+    eval "$(starship init zsh)"
+    echo "✅ Starship (modern prompt) loaded"
+else
+    echo "⚠️  Starship not installed. Run: brew install starship"
+fi
 
 
 [[ -s "${HOME}/.rvm/scripts/rvm" ]] && source "${HOME}/.rvm/scripts/rvm"
@@ -189,7 +271,7 @@ if [ "$DEBUG" = true ]; then
   echo -e "\x1b[1;34m Total Time: \x1b[1;32m[$(((${TOTAL}-${N_ORIG})/1000000))ms]\x1b[m                       "
   echo -e "------------------------------------------------------------------------------------"
 fi
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
 export ZSHRCRUN=true
 
 # Execute local stuff if it exists

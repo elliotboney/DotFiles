@@ -7,19 +7,14 @@
 
 tap "raggi/ale"
 tap "jlhonora/lsusb"
-tap "homebrew/dupes"
 tap "homebrew/fuse"
 tap "homebrew/apache"
 tap "homebrew/core"
 tap "homebrew/php"
-tap "homebrew/versions"
-tap "homebrew/binary"
-tap "homebrew/boneyard"
-tap "homebrew/python"
 tap "homebrew/bundle"
 tap "homebrew/services"
-tap "caskroom/fonts"
-tap 'caskroom/cask'
+tap "homebrew/cask-fonts"
+# homebrew/cask is now included by default
 
 
 ################################################
@@ -284,6 +279,24 @@ brew "zimg"
 brew "zoxide"
 brew "zsh"
 brew "zstd"
+
+################################################
+##              MODERN CLI TOOLS              ##
+################################################
+brew "bat"          # Better cat with syntax highlighting
+brew "fd"           # Better find (50x faster)
+brew "delta"        # Better git diff
+brew "dust"         # Better du
+brew "bottom"       # Better top
+brew "fzf"          # Fuzzy finder for everything
+brew "starship"     # Modern prompt
+brew "atuin"        # Synced shell history
+brew "gping"        # Better ping with graph
+brew "procs"        # Better ps
+brew "sd"           # Better sed
+brew "hyperfine"    # Benchmarking tool
+brew "tokei"        # Code statistics
+
 cask "bruno"
 cask "calibre"
 cask "gcloud-cli"

@@ -63,7 +63,7 @@ do
         PATH="${PATH}:${p}"
         # echo -e "${BGreen}${p}"
     else
-        decho -e "${BRed}[X] ${p}"
+        # decho -e "${BRed}[X] ${p}"
     fi
 done
 

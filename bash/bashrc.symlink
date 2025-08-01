@@ -1,97 +1,57 @@
-setindent "    "
-decho "\x1b[0;36mProcessing .bashrc $0\x1b[m"
+#!/usr/bin/env bash
 
-# Configuration
-# EXPORT_FUNCTIONS: export SHELL_PLATFORM and shell_is_* functions for use
-#                   in other scripts.
-EXPORT_FUNCTIONS=true
+# Minimal bashrc for tool compatibility 
+# User primarily uses zsh - this loads just the essentials for tool calls
 
-# Code
-# ----
-# Avoid recursive invocation
-[ -n "$BASHRC_DISPATCH_PID" ] && [ $$ -eq "$BASHRC_DISPATCH_PID" ] && exit
-BASHRC_DISPATCH_PID=$$
-
-HOST_NAME=$(uname -n)
-
-# Setup the main shell variables and functions
-SHELL_PLATFORM='OTHER'
-case "$OSTYPE" in
-  *'gnueabi'* ) SHELL_PLATFORM='ROUTER' ;;
-  *'linux'*   ) SHELL_PLATFORM='LINUX' ;;
-  *'darwin'*  ) SHELL_PLATFORM='OSX' ;;
-  *'Mac'*  ) SHELL_PLATFORM='OSX' ;;
-  *'freebsd'* ) SHELL_PLATFORM='BSD' ;;
-esac
-
-#if ! type -p shell_is_login ; then
-shell_is_linux       () { [[ "$OSTYPE" == *'linux'* ]] ; }
-shell_is_osx         () { [[ "$OSTYPE" == *'Mac'* ]] ; }
-shell_is_router      () { [[ "$OSTYPE" == *'gnueabi'* ]] ; }
-shell_is_elliot      () { [[ "$HOST_NAME" == *'Elliots'* ]] ; } #|| "$HOST_NAME" == *'mainpc'* ]] ; }
-shell_is_login       () { shopt -q login_shell ; }
-shell_is_interactive () { test -n "$PS1" ; }
-shell_is_script      () { ! shell_is_interactive ; }
-#fi
-
-# Make $BASH_ENV the same in interactive and non-interactive scripts
-[ -z "$BASH_ENV" ] && export BASH_ENV="$BASH_SOURCE"
-
-# Export or unset functions and shell variables
-#if shell_is_elliot; then
-  #echo "shell is elliot"
-#fi
-
-if $EXPORT_FUNCTIONS ; then
-  fn_cmd='export'
-else
-  fn_cmd='unset'
-fi
-
-$fn_cmd SHELL_PLATFORM
-# $fn_cmd -f shell_is_linux
-# $fn_cmd -f shell_is_osx
-# $fn_cmd -f shell_is_login
-# $fn_cmd -f shell_is_interactive
-# $fn_cmd -f shell_is_script
-# $fn_cmd -f shell_is_elliot
-$fn_cmd HOST_NAME
-
-function include_d {
-  dir=$1
-  if [ -d ${HOME}/.dotfiles/.${dir}.d -a -r ${HOME}/.dotfiles/.${dir}.d -a -x $HOME/.dotfiles/.${dir}.d ]; then
-    decho "    \x1b[0;33mProcessing ${1}/ directory...\x1b[m"
-   for i in ${HOME}/.dotfiles/.${dir}.d/*sh; do
-     source "${i}"
-     decho "    \x1b[38;5;242m$i\x1b[m"
-   done
- fi
+# Essential helper functions
+command_exists() {
+    type "$1" &> /dev/null ;
 }
 
-include_d bash_runfirst
-# include_d bash_aliases
-include_d bash_functions
-include_d bash_completion
-include_d bash_settings
 
-# Unset local variables
-unset fn_cmd
-unset EXPORT_FUNCTIONS
-unset BASHRC_DISPATCH_PID
+decho "\x1b[1;36mProcessing .bashrc\x1b[m"
 
-# Execute local stuff if it exists
-if [ -f $HOME/.bashrc.local ] ; then
-  decho "    \x1b[38;5;242m$HOME/.bashrc.local"
-  source $HOME/.bashrc.local
+# Basic shell settings
+export SHELL_PLATFORM='OSX'
+
+# Load essential paths from your existing setup
+# Android Tools
+export ANDROID_HOME="${HOME}/Code/Android/sdk"
+
+# Homebrew paths
+if command_exists brew; then
+    PATH="$(brew --prefix coreutils)/bin":$PATH
 fi
 
-# if shell_is_osx; then
-#   if [ -f "/usr/local/etc/grc.bashrc" ]; then
-#     decho "   \x1b[38;5;242m$(brew --prefix)/etc/grc.bashrc"
-#     source "/usr/local/etc/grc.bashrc"
-#   fi
-# else
-#     decho "   NOT OSX"
-# fi
+if [ -d "/opt/homebrew/opt/coreutils/libexec/gnubin" ]; then
+   PATH="/opt/homebrew/opt/coreutils/libexec/gnubin":$PATH
+fi
 
-decho "\x1b[0;36mDone with .bashrc\x1b[m"
+# Essential paths array (from your original setup)
+paths=(
+    "${HOME}/.bin"
+    "/opt/homebrew/bin"
+    "/usr/local/bin"
+    "/usr/local/sbin"
+    "/opt/bin"
+    "/opt/sbin"
+    "/bin"
+    "/sbin" 
+    "/usr/bin"
+    "/usr/sbin"
+    )
+
+# Add paths that exist
+for p in "${paths[@]}"; do
+    if [ -e "$p" ] || [ -d "$p" ]; then
+        PATH="${PATH}:${p}"
+    fi
+done
+
+export PATH
+
+# Basic aliases
+alias ls='ls -G'
+alias ll='ls -la'
+
+# Done - minimal but functional for tool calls

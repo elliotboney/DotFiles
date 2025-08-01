@@ -1,0 +1,59 @@
+# Optional Starship Configuration
+# Copy to ~/.config/starship.toml if you want to use it
+# mkdir -p ~/.config && cp ~/DotFiles/optional-starship.toml ~/.config/starship.toml
+
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+# Replace the '❯' symbol in the prompt with '➜'
+[character]
+success_symbol = '[➜](bold green)'
+error_symbol = '[➜](bold red)'
+
+[git_branch]
+symbol = '🌱 '
+truncation_length = 4
+truncation_symbol = ''
+
+[git_commit]
+commit_hash_length = 4
+tag_symbol = '🔖 '
+
+[git_status]
+conflicted = '🏳'
+ahead = '🏎💨'
+behind = '😰'
+diverged = '😵'
+up_to_date = '✓'
+untracked = '🤷'
+stashed = '📦'
+modified = '📝'
+staged = '[++\($count\)](green)'
+renamed = '👅'
+deleted = '🗑'
+
+[directory]
+truncation_length = 3
+truncation_symbol = '…/'
+
+[directory.substitutions]
+'Documents' = '📄'
+'Downloads' = '📥'
+'Music' = '🎵'
+'Pictures' = '📷'
+
+[python]
+symbol = '👾 '
+pyenv_version_name = true
+
+[rust]
+symbol = '🦀 '
+
+[nodejs]
+symbol = '⬢ '
+
+[cmd_duration]
+min_time = 10_000
+format = 'took [$duration](bold yellow)'

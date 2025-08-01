@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(ls:*)",
+      "Bash(git submodule:*)",
+      "Bash(time zsh:*)",
+      "mcp__openmemory__add-memory"
+    ],
+    "deny": []
+  }
+}

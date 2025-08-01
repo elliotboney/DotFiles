@@ -104,7 +104,7 @@ All scripts in `bin/bin.symlink/` are available in PATH after installation.
 The `private/` directory is a git submodule for sensitive configurations that shouldn't be public.
 
 ### Vim Plugin Management
-Vim plugins are managed via vim-plug in `vim/vimrc.bundles.symlink`. Run `:PlugInstall` in vim after installation.
+Vim plugins are managed via vim-plug in `vim/vimrc.symlink`. Run `:PlugInstall` in vim after installation.
 
 ## Working with This Repository
 
@@ -191,3 +191,8 @@ After making changes:
 1. Run `source ~/.bashrc` or `source ~/.zshrc` to reload
 2. Test the specific functionality
 3. Ensure cross-platform compatibility if applicable
+```
+
+## Memory Notes
+
+- **Caution**: DO NOT run the install.sh unless explicitly asked to
