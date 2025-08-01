@@ -68,9 +68,14 @@ augroup END
 " Persistent Undo: {
 set backup                  " Backups are nice ...
 if has('persistent_undo')
-   set backupdir=~/.vim/backup//
-   set directory=~/.vim/swap//
-   set undodir=~/.vim/undo//
+   " Create directories if they don't exist
+   silent !mkdir -p ~/.local/share/nvim/backup
+   silent !mkdir -p ~/.local/share/nvim/swap
+   silent !mkdir -p ~/.local/share/nvim/undo
+   
+   set backupdir=~/.local/share/nvim/backup//
+   set directory=~/.local/share/nvim/swap//
+   set undodir=~/.local/share/nvim/undo//
    set undofile                " So is persistent undo ...
    set undolevels=1000         " Maximum number of changes that can be undone
    set undoreload=10000        " Maximum number lines to save for undo on a buffer reload

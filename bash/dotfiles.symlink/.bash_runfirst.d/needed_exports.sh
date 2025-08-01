@@ -48,18 +48,18 @@ if [ -n "$VSCODE_APP_PATH" ]; then
   export EDITOR="$VSCODE_APP_PATH"
   # echo "EDITOR set to: $EDITOR (Type: $VSCODE_TYPE)"
 else
-  # No validated 'code' found, fall back to vim
-  export EDITOR="vim"
-  alias s="vim"
+  # No validated 'code' found, fall back to nvim
+  export EDITOR="nvim"
+  alias s="nvim"
   # echo "EDITOR set to: $EDITOR"
   if [ -n "$(which s 2>/dev/null)" ] && [ "$(whence -w s)" = "alias" ]; then
-    # echo "Alias 's' set to 'vim'."
+    # echo "Alias 's' set to 'nvim'."
   fi
 fi
 
 # You can test with:
 # echo "Current EDITOR is: $EDITOR"
-# To see if the alias 's' is set when vim is chosen:
+# To see if the alias 's' is set when nvim is chosen:
 # type s
 
 if [ -f "/usr/local/var/pyenv/bin/pyenv" ]; then

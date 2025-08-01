@@ -28,8 +28,8 @@ alias d="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 # Git Directory
 alias g="cd ~/Git"
-# Vim Shortcut
-alias v="vim"
+# Neovim Shortcut
+alias v="nvim"
 # Sublime Text
 alias s="subl"
 # Sublime Text Packages

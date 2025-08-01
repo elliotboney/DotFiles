@@ -34,12 +34,9 @@ paths=(
     "${HOME}/.nvm/current/bin"
     "${HOME}/.yarn/bin"
     "${HOME}/.bin"
-    "${HOME}/Library/Haskell/bin"
-    "${HOME}/Dropbox/3D/Firmware/Marlin/buildroot/bin"
     "${HOME}/.composer/vendor/bin"
-    "${HOME}/.config/composer/vendor/bin"
+    # "${HOME}/.config/composer/vendor/bin"
     "/Library/Frameworks/Mono.framework/Versions/Current/bin/"
-    "/usr/local/opt/coreutils/libexec/gnubin"
     "/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin"
     "/Users/eboney/Library/Python/3.9/bin"
     "/usr/local/bin"
@@ -66,7 +63,7 @@ do
         PATH="${PATH}:${p}"
         # echo -e "${BGreen}${p}"
     else
-        # echo -e "${BRed}[X] ${p}"
+        decho -e "${BRed}[X] ${p}"
     fi
 done
 

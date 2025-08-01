@@ -11,7 +11,7 @@ This is a personal dotfiles repository that manages configuration files across m
 ### Installation
 ```bash
 # Primary installation method (recommended)
-./install
+./install.sh
 
 # Alternative Ruby-based installation
 rake install
