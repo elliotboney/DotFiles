@@ -1,3 +1,12 @@
+# ***deprecated!*** #
+## new version is at [elliotboney/dotfiles-chezmoi](https://github.com/elliotboney/dotfiles-chezmoi)
+
+
+
+
+
+
+
 Table of Contents
 =================
 - [General](#general)
