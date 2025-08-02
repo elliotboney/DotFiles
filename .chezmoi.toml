@@ -1,3 +1,9 @@
+# Encryption with key stored in Lastpass
+encryption = "age"
+[age]
+    identity = "~/.config/chezmoi/key.txt"
+    recipient = "age1htl2m2qx7kzeg9ezqpq6cdfmtdgfyay9wvqv6n6qx3j0patvtd9s72l0j7"
+
 [data]
     personal = true
     work = false
