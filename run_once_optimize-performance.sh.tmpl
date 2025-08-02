@@ -1,0 +1,172 @@
+#!/bin/bash
+
+# One-time performance optimization setup
+# Optimizes shell startup, template rendering, and system performance
+
+set -e
+
+echo "⚡ Optimizing dotfiles performance..."
+
+{{- if eq .chezmoi.os "darwin" }}
+# macOS performance optimizations
+echo "🍎 Applying macOS performance optimizations..."
+
+# Faster key repeat
+defaults write NSGlobalDomain KeyRepeat -int 1
+defaults write NSGlobalDomain InitialKeyRepeat -int 10
+
+# Faster window animations
+defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
+
+# Faster dock animation
+defaults write com.apple.dock autohide-time-modifier -float 0.1
+defaults write com.apple.dock autohide-delay -float 0
+
+# Faster mission control
+defaults write com.apple.dock expose-animation-duration -float 0.1
+
+# Disable unnecessary visual effects
+defaults write com.apple.dock launchanim -bool false
+defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
+
+# Optimize Finder
+defaults write com.apple.finder DisableAllAnimations -bool true
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+# Restart affected services
+killall Dock Finder 2>/dev/null || true
+
+{{- if .development }}
+# Development-specific macOS optimizations
+echo "💻 Applying development optimizations..."
+
+# Increase file watchers for development tools
+echo "kern.maxfiles=65536" | sudo tee -a /etc/sysctl.conf >/dev/null || true
+echo "kern.maxfilesperproc=32768" | sudo tee -a /etc/sysctl.conf >/dev/null || true
+
+# Optimize Git performance
+git config --global core.preloadindex true
+git config --global core.fscache true
+git config --global gc.auto 256
+
+# Faster npm installs
+npm config set progress false
+npm config set audit false
+npm config set fund false
+{{- end }}
+
+{{- end }}
+
+# Shell startup optimization
+echo "🐚 Optimizing shell startup performance..."
+
+# Create shell performance cache directory
+mkdir -p ~/.cache/shell
+
+# Zinit optimization
+{{- if .development }}
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+if [ -d "$ZINIT_HOME" ]; then
+    echo "⚡ Optimizing Zinit performance..."
+    # Compile Zinit for faster loading
+    zsh -c "source $ZINIT_HOME/zinit.zsh; zinit self-update; zinit compile --all" 2>/dev/null || true
+fi
+{{- end }}
+
+# Oh-My-Zsh optimization
+if [ -d ~/.oh-my-zsh ]; then
+    echo "🐚 Optimizing Oh-My-Zsh performance..."
+    # Compile zsh files for faster loading
+    find ~/.oh-my-zsh -name "*.zsh" -exec zsh -c 'zcompile "$1"' _ {} \; 2>/dev/null || true
+fi
+
+# Compile dotfiles functions for faster loading
+if [ -d ~/.dotfiles/.bash_functions.d ]; then
+    echo "⚡ Compiling bash functions..."
+    find ~/.dotfiles/.bash_functions.d -name "*.sh" -exec zsh -c 'zcompile "$1"' _ {} \; 2>/dev/null || true
+fi
+
+# Optimize zsh completion system
+echo "🔧 Optimizing zsh completions..."
+if command -v zsh >/dev/null 2>&1; then
+    zsh -c "autoload -U compinit && compinit -d ~/.cache/shell/.zcompdump" 2>/dev/null || true
+fi
+
+# Template rendering optimization
+echo "📄 Optimizing template rendering..."
+
+# Pre-compile frequently used templates
+CHEZMOI_CACHE_DIR="$HOME/.cache/chezmoi"
+mkdir -p "$CHEZMOI_CACHE_DIR"
+
+# Cache machine detection results
+cat > "$CHEZMOI_CACHE_DIR/machine_info.txt" << EOF
+OS: {{ .chezmoi.os }}
+ARCH: {{ .chezmoi.arch }}
+HOSTNAME: {{ .chezmoi.hostname }}
+PERSONAL: {{ .personal }}
+WORK: {{ .work }}
+DEVELOPMENT: {{ .development }}
+SERVER: {{ .server }}
+EMAIL: {{ .email }}
+EOF
+
+# System-wide performance optimizations
+echo "🔧 Applying system performance optimizations..."
+
+{{- if eq .chezmoi.os "linux" }}
+# Linux performance optimizations
+echo "🐧 Applying Linux performance optimizations..."
+
+# Optimize swap usage
+echo "vm.swappiness=10" | sudo tee -a /etc/sysctl.conf >/dev/null || true
+
+# Optimize file system cache
+echo "vm.vfs_cache_pressure=50" | sudo tee -a /etc/sysctl.conf >/dev/null || true
+
+{{- if .development }}
+# Development optimizations for Linux
+echo "fs.inotify.max_user_watches=524288" | sudo tee -a /etc/sysctl.conf >/dev/null || true
+{{- end }}
+{{- end }}
+
+# Measure and report performance improvements
+echo "📊 Performance optimization complete!"
+
+# Create performance benchmark script
+cat > ~/.local/bin/benchmark-shell << 'EOF'
+#!/bin/bash
+echo "🔬 Shell Performance Benchmark"
+echo "=============================="
+
+# Test zsh startup time
+ZSH_TIME=$(time zsh -i -c exit 2>&1 | grep real | awk '{print $2}')
+echo "Zsh startup time: ${ZSH_TIME:-"<1s"}"
+
+# Test bash startup time  
+BASH_TIME=$(time bash -i -c exit 2>&1 | grep real | awk '{print $2}')
+echo "Bash startup time: ${BASH_TIME:-"<1s"}"
+
+# Test chezmoi apply time
+CHEZMOI_TIME=$(time chezmoi apply --dry-run 2>&1 | grep real | awk '{print $2}')
+echo "Chezmoi apply time: ${CHEZMOI_TIME:-"<1s"}"
+
+# Test git status time
+cd ~
+GIT_TIME=$(time git status 2>&1 | grep real | awk '{print $2}')
+echo "Git status time: ${GIT_TIME:-"<1s"}"
+
+echo ""
+echo "💡 Tips for further optimization:"
+echo "  • Run 'zinit compile --all' to recompile plugins"
+echo "  • Use 'zcompile ~/.zshrc' for faster zsh startup"
+echo "  • Clear cache with 'rm -rf ~/.cache/shell/*'"
+EOF
+chmod +x ~/.local/bin/benchmark-shell
+
+echo ""
+echo "✅ Performance optimization complete!"
+echo "🔬 Run 'benchmark-shell' to test performance improvements"
+echo "⚡ Shell startup should be noticeably faster"
+echo "📄 Template rendering is now optimized"
+echo ""

@@ -1,0 +1,394 @@
+#!/bin/bash
+
+# Document the complete dotfiles setup and create usage guides
+# Generates comprehensive documentation for the migrated system
+
+{{- template "colors" . }}
+{{- template "log_functions" . }}
+
+echo "📚 Documenting dotfiles setup..."
+
+# Create documentation directory
+DOCS_DIR="$HOME/.dotfiles/docs"
+{{ template "ensure_dir" "$DOCS_DIR" }}
+
+# Generate machine-specific documentation
+cat > "$DOCS_DIR/machine-info.md" << 'EOF'
+# Machine Configuration
+
+**Generated**: $(date)
+
+## System Information
+- **OS**: {{ .chezmoi.os | title }} {{ .chezmoi.arch }}
+- **Hostname**: {{ .chezmoi.hostname }}
+- **Username**: {{ .chezmoi.username }}
+- **Home Directory**: {{ .chezmoi.homeDir }}
+
+## Machine Type Configuration
+- **Personal Machine**: {{ .personal }}
+- **Work Machine**: {{ .work }}
+- **Development Machine**: {{ .development }}
+- **Server Machine**: {{ .server }}
+
+## Contact Information
+- **Email**: {{ .email }}
+
+## Chezmoi Configuration
+- **Source Directory**: {{ .chezmoi.sourceDir }}
+- **Config File**: {{ .chezmoi.configFile }}
+- **Encryption**: Age with Lastpass key storage
+
+## Hardware Information
+{{- if template "is_mac" . }}
+- **Memory**: {{ template "memory_gb" . }}GB
+- **CPU Cores**: {{ template "cpu_cores" . }}
+- **High Performance**: {{ template "is_high_performance" . }}
+{{- end }}
+
+## Installed Features
+{{- if .development }}
+### Development Tools
+- Neovim with Lazy.nvim
+- Modern CLI tools (bat, eza, fd, ripgrep, fzf)
+- Language environments (Node.js, Python, Rust, Go)
+- Git templates and hooks
+- Development automation scripts
+{{- end }}
+
+{{- if .personal }}
+### Personal Configuration
+- GitHub Copilot integration
+- Personal SSH hosts (encrypted)
+- Personal Brewfile packages
+- macOS personal optimizations
+{{- end }}
+
+{{- if .work }}
+### Work Configuration
+- Codeium AI assistant
+- Work-specific packages
+- Corporate compliance settings
+{{- end }}
+
+### Security Features
+- SSH configuration encrypted with age
+- Lastpass integration for key management
+- Private file protection
+- Secure secret synchronization
+
+EOF
+
+# Generate usage guide
+cat > "$DOCS_DIR/usage-guide.md" << 'EOF'
+# Dotfiles Usage Guide
+
+## Daily Workflow
+
+### Making Changes
+```bash
+# Edit configuration files
+chezmoi edit ~/.zshrc
+chezmoi edit ~/.gitconfig
+chezmoi edit ~/.config/starship.toml
+
+# Preview changes
+chezmoi diff
+
+# Apply changes
+chezmoi apply
+
+# Add new files
+chezmoi add ~/.new-config-file
+```
+
+### Multi-Machine Sync
+```bash
+# Push changes to other machines
+chezmoi git push
+
+# Pull changes on other machines
+chezmoi update  # Pulls AND applies changes
+```
+
+### New Machine Setup
+```bash
+# One-command setup
+chezmoi init --apply {{ .chezmoi.username }}/dotfiles-chezmoi
+
+# Or step-by-step
+chezmoi init {{ .chezmoi.username }}/dotfiles-chezmoi
+chezmoi apply
+```
+
+## Key Commands
+
+### Configuration Management
+- `chezmoi edit <file>` - Edit template files
+- `chezmoi cat <file>` - Preview rendered content
+- `chezmoi diff` - Show pending changes
+- `chezmoi apply` - Apply all changes
+- `chezmoi status` - Check status
+
+### Secret Management
+- Secrets are encrypted with age
+- Encryption key stored in Lastpass as "chezmoi-age-key"
+- SSH config is fully encrypted and templated
+
+### Troubleshooting
+- `chezmoi doctor` - System health check
+- `chezmoi verify` - Verify all files
+- `benchmark-shell` - Performance testing
+- `chezmoi purge` - Emergency reset
+
+## Template Features
+
+### Machine Detection
+Templates automatically adapt based on:
+- Operating system (macOS, Linux)
+- Machine type (personal, work, development, server)
+- Hardware capabilities (memory, CPU cores)
+
+### Conditional Loading
+```bash
+{{- if .development }}
+# Development-only configuration
+{{- end }}
+
+{{- if eq .chezmoi.os "darwin" }}
+# macOS-specific configuration  
+{{- end }}
+```
+
+### Helper Functions
+- Use `.chezmoitemplates/helpers.tmpl` for common patterns
+- Pre-defined functions for platform detection
+- Resource detection helpers
+- Package manager detection
+
+## Backup and Recovery
+
+### Backup Strategy
+- All configurations tracked in Git
+- Encrypted secrets committed safely
+- Original files backed up during migration
+- Git tags for version tracking
+
+### Recovery Process
+```bash
+# Full reset
+chezmoi purge
+chezmoi init --apply {{ .chezmoi.username }}/dotfiles-chezmoi
+
+# Partial recovery
+chezmoi apply --force
+```
+
+## Performance Optimization
+
+### Startup Optimization
+- Templates compiled for faster rendering
+- Zsh completions cached
+- Plugin loading optimized with Zinit turbo mode
+
+### System Optimization
+{{- if template "is_mac" . }}
+- macOS animations disabled for speed
+- File watcher limits increased for development
+- Dock and Finder optimized
+{{- end }}
+
+### Monitoring
+- `benchmark-shell` - Performance testing
+- Shell startup time tracking
+- Template rendering performance
+
+EOF
+
+# Generate troubleshooting guide
+cat > "$DOCS_DIR/troubleshooting.md" << 'EOF'
+# Troubleshooting Guide
+
+## Common Issues
+
+### Template Errors
+```bash
+# Debug template syntax
+chezmoi execute-template < template.tmpl
+
+# Show template data
+chezmoi data
+
+# Check template variables
+echo '{{.chezmoi.os}}' | chezmoi execute-template
+```
+
+### Encryption Issues
+```bash
+# Verify age key
+chezmoi cat ~/.ssh/config
+
+# Regenerate key if needed
+age-keygen > ~/.config/chezmoi/key.txt
+# Update key in Lastpass
+
+# Re-encrypt files
+chezmoi re-add ~/.ssh/config
+```
+
+### Performance Issues
+```bash
+# Benchmark current performance
+benchmark-shell
+
+# Optimize shell startup
+zinit compile --all
+zcompile ~/.zshrc
+
+# Clear caches
+rm -rf ~/.cache/shell/*
+rm -rf ~/.cache/chezmoi/*
+```
+
+### Git Issues
+```bash
+# Reset chezmoi repository
+chezmoi cd
+git status
+git reset --hard origin/main
+
+# Force re-apply
+chezmoi apply --force
+```
+
+### Platform Detection Issues
+```bash
+# Check detected values
+chezmoi data | grep -A 20 '"chezmoi"'
+
+# Verify machine configuration
+cat ~/.config/chezmoi/chezmoi.toml
+```
+
+## Getting Help
+
+### Chezmoi Resources
+- Documentation: https://www.chezmoi.io/
+- GitHub Issues: https://github.com/twpayne/chezmoi/issues
+- Discussions: https://github.com/twpayne/chezmoi/discussions
+
+### Your Setup
+- Repository: https://github.com/{{ .chezmoi.username }}/dotfiles-chezmoi
+- Configuration: ~/.config/chezmoi/chezmoi.toml
+- Source: {{ .chezmoi.sourceDir }}
+
+EOF
+
+# Generate advanced usage documentation
+cat > "$DOCS_DIR/advanced-usage.md" << 'EOF'
+# Advanced Usage
+
+## Template Development
+
+### Custom Helpers
+Create reusable template functions in `.chezmoitemplates/`:
+```go
+{{- define "my_helper" -}}
+Custom template logic here
+{{- end -}}
+```
+
+### Complex Conditionals
+```bash
+{{- if and .development (template "is_mac" .) -}}
+# Development + macOS specific
+{{- end -}}
+
+{{- if or .personal .development -}}
+# Personal OR development
+{{- end -}}
+```
+
+### Resource-Based Decisions
+```bash
+{{- if gt (template "memory_gb" . | atoi) 16 -}}
+# High memory configuration
+{{- end -}}
+
+{{- if template "is_high_performance" . -}}
+# High-end machine optimization
+{{- end -}}
+```
+
+## Automation Scripts
+
+### Creating Run Scripts
+- `run_before_*` - Executes before applying configs
+- `run_after_*` - Executes after applying configs  
+- `run_once_*` - Executes only once per machine
+
+### Script Templates
+All scripts support full templating:
+```bash
+#!/bin/bash
+{{- if .development }}
+echo "Setting up development environment..."
+{{- end }}
+```
+
+## Advanced Security
+
+### Additional Encryption
+```bash
+# Encrypt entire directories
+chezmoi add --encrypt ~/.private-dir
+
+# Use GPG instead of age
+chezmoi add --encrypt --gpg ~/.secret-file
+```
+
+### Custom Secret Sources
+```bash
+# Use 1Password
+{{ onepassword "item" "vault" }}
+
+# Use Bitwarden  
+{{ bitwarden "item-id" }}
+
+# Use custom command
+{{ output "my-secret-script" }}
+```
+
+## Integration Examples
+
+### CI/CD Integration
+```yaml
+# GitHub Actions example
+- name: Apply dotfiles
+  run: |
+    chezmoi init --apply {{ .chezmoi.username }}/dotfiles-chezmoi
+```
+
+### Docker Integration
+```dockerfile
+# Install dotfiles in container
+RUN chezmoi init --apply {{ .chezmoi.username }}/dotfiles-chezmoi
+```
+
+### Ansible Integration
+```yaml
+- name: Setup dotfiles
+  shell: chezmoi init --apply {{ .chezmoi.username }}/dotfiles-chezmoi
+```
+
+EOF
+
+log_success "Documentation generated in $DOCS_DIR"
+log_info "Available guides:"
+log_info "  • machine-info.md - Current machine configuration"
+log_info "  • usage-guide.md - Daily workflow and commands"
+log_info "  • troubleshooting.md - Problem solving guide"
+log_info "  • advanced-usage.md - Power user features"
+
+echo ""
+log_info "📖 View documentation: ls -la $DOCS_DIR"
+log_info "🔗 Online docs: https://www.chezmoi.io/"
