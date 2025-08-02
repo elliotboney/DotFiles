@@ -1,0 +1,81 @@
+#!/bin/bash
+
+# Post-installation setup and optimization
+# Runs after dotfiles are applied
+
+set -e
+
+echo "🔧 Setting up dotfiles environment..."
+
+# Create necessary directories
+mkdir -p ~/.cache ~/.local/bin ~/.config
+
+{{- if .development }}
+# Development environment setup
+echo "💻 Setting up development environment..."
+
+# Create common development directories
+mkdir -p ~/Code ~/Projects ~/Development
+
+# Set up git-delta pager (if not already configured)
+if command -v delta >/dev/null 2>&1 && ! git config --get core.pager >/dev/null 2>&1; then
+    git config --global core.pager delta
+    git config --global interactive.diffFilter "delta --color-only"
+    git config --global delta.navigate true
+    git config --global merge.conflictstyle diff3
+    git config --global diff.colorMoved default
+fi
+
+{{- if eq .chezmoi.os "darwin" }}
+# macOS development setup
+echo "🍎 Setting up macOS development tools..."
+
+# Install Xcode command line tools if not present
+if ! xcode-select -p >/dev/null 2>&1; then
+    echo "📱 Installing Xcode command line tools..."
+    xcode-select --install || true
+fi
+{{- end }}
+{{- end }}
+
+# Set up dotfiles environment variables
+echo "export DOTPATH=\"${HOME}/.dotfiles\"" > ~/.dotfilelocation
+echo "✅ Dotfiles location configured"
+
+{{- if .personal }}
+# Personal machine setup
+echo "🏠 Setting up personal machine configuration..."
+
+# Set up personal directories
+mkdir -p ~/Documents/Personal ~/Downloads/Software
+
+{{- if eq .chezmoi.os "darwin" }}
+# macOS personal settings
+defaults write com.apple.dock autohide -bool true
+defaults write com.apple.finder ShowPathbar -bool true
+defaults write com.apple.finder ShowStatusBar -bool true
+killall Dock Finder 2>/dev/null || true
+{{- end }}
+{{- end }}
+
+# Source new shell configuration
+echo "🐚 Reloading shell configuration..."
+if [[ -f ~/.zshrc ]]; then
+    zsh -c "source ~/.zshrc" 2>/dev/null || true
+fi
+
+# Final health check
+echo "🔍 Performing health check..."
+command -v git >/dev/null && echo "✅ Git available"
+command -v zsh >/dev/null && echo "✅ Zsh available"  
+command -v starship >/dev/null && echo "✅ Starship available"
+
+{{- if .development }}
+command -v nvim >/dev/null && echo "✅ Neovim available"
+command -v rg >/dev/null && echo "✅ Ripgrep available"
+command -v fd >/dev/null && echo "✅ fd available"
+{{- end }}
+
+echo ""
+echo "🎉 Dotfiles setup complete!"
+echo "💡 Restart your terminal or run 'source ~/.zshrc' to activate changes"
