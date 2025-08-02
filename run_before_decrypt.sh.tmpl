@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# Retrieve age encryption key from Lastpass and save to identity file
+# This runs before any encrypted files are processed
+
+KEY_FILE="${HOME}/.config/chezmoi/key.txt"
+
+# Check if key file already exists and is valid
+if [ -f "$KEY_FILE" ] && grep -q "AGE-SECRET-KEY" "$KEY_FILE" 2>/dev/null; then
+    echo "✅ Age key already exists and appears valid"
+    exit 0
+fi
+
+echo "🔑 Retrieving age encryption key from Lastpass..."
+
+# Check if lastpass CLI is available
+if ! command -v lpass >/dev/null 2>&1; then
+    echo "❌ Error: lastpass-cli not found. Install with: brew install lastpass-cli"
+    exit 1
+fi
+
+# Check if logged into Lastpass
+if ! lpass status >/dev/null 2>&1; then
+    echo "🔐 Please log into Lastpass first:"
+    lpass login {{ .email }}
+fi
+
+# Retrieve the key from Lastpass and save it
+mkdir -p "$(dirname "$KEY_FILE")"
+if lpass show --notes "chezmoi-age-key" > "$KEY_FILE" 2>/dev/null; then
+    chmod 600 "$KEY_FILE"
+    echo "✅ Age key retrieved from Lastpass and saved to $KEY_FILE"
+else
+    echo "❌ Error: Could not retrieve 'chezmoi-age-key' from Lastpass"
+    echo "Please save your age key in Lastpass as a secure note named 'chezmoi-age-key'"
+    echo ""
+    echo "Age key to save:"
+    echo "AGE-SECRET-KEY-1P84AUAFNLA326MPURZ3PXKLXNYJ9R8LFRJSQQ2V2U3TJANXYFGXSN47T3E"
+    exit 1
+fi
