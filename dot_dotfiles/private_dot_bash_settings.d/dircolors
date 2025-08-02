@@ -1,0 +1,329 @@
+# Dark                 256color customized by Elliot and Bval
+#
+# @author  {@link http://www.elliotboney.com Elliot Boney}
+# @license http://sam.zoy.org/wtfpl/  Do What The Fuck You Want To Public License (WTFPL)
+TERM xterm-256color
+
+
+
+# NOTE: string consists of one or more of the following numeric codes:
+# Attribute codes:
+#                       00=none                                                                      01=bold  04=underscore  05=blink   07=reverse  08=concealed
+#
+# Text color codes:
+#                       30=black                                                                     31=red   32=green       33=yellow  34=blue     35=magenta    36=cyan  37=white
+#
+# Background color codes:
+#                       40=black                                                                     41=red   42=green       43=yellow  44=blue     45=magenta    46=cyan  47=white
+#
+# Text                 256color coding:
+#                       38;5;COLOR_NUMBER
+#
+# Background           256color coding:
+#                       48;5;COLOR_NUMBER
+
+#ENDCODE                \_\? # symlink to nonexistent file, or non-stat'able file
+
+
+## Special files
+
+NORMAL                  00;38;5;244 # no color code at all
+NORM                    00;38;5;243 # no color code at all
+FILE                    00;38;5;245 # regular file: use no color at all
+DIR                     00;38;5;33  # directory
+LINK                    target   # symbolic link. (if set to target, colors like the target)
+RESET                   00 # reset to "normal" color
+MULTIHARDLINK           00;38;5;14  #00 # hard links
+FIFO                    48;5;230;38;5;213;01 # pipe
+SOCK                    48;5;230;38;5;214;01 # socket
+DOOR                    48;5;230;38;5;215;01 # door
+BLK                     48;5;230;38;5;244;01 # block device driver
+CHR                     48;5;230;38;5;244;01 # character device driver
+CHAR                    48;5;230;38;5;244;01 # character device driver
+ORPHAN                  48;5;160;38;5;255 # symlink to nonexistent file, or non-stat'able file
+MISSING                 48;5;160;38;5;255 # symlink to nonexistent file, or non-stat'able file
+SETUID                  00;38;5;153 # file that is setuid (u+s)
+SETGID                  48;5;45;38;5;0 # file that is setgid (g+s)
+CAPABILITY              00;38;5;222 # file with capability
+STICKY_OTHER_WRITABLE   48;5;237;38;5;39 # dir that is sticky and other-writable (+t,o+w)
+STICKY                  38;5;8 # dir that is other-writable (o+w) and not sticky
+OTHER_WRITABLE          48;5;236;38;5;33 # dir with the sticky bit set (+t) and not other-writable
+
+
+# Special EZA stuff
+
+
+
+# This is for files with execute permission:
+EXEC                     00;38;5;83
+
+.py                      00;38;5;46
+.bat                     00;38;5;46
+.exe                     00;38;5;46
+.com                     00;38;5;46
+.sh                      00;38;5;46
+
+
+#Or files that can be run
+#
+.node                   00;38;5;42
+.pkg                    00;38;5;42
+
+
+# misc special files
+.env                    0;38;5;202
+
+
+# Docs
+.pdf                    00;38;5;39
+.epub                   00;38;5;39
+.docx                   00;38;5;39
+.tmTheme                00;38;5;39
+.md                     00;38;5;39
+*README.md              01;38;5;39
+#source Files
+.php                    00;38;5;155
+.rb                     00;38;5;155
+.js                     00;38;5;155
+.ts                     00;38;5;155
+.js                     00;38;5;155
+.lua                    00;38;5;155
+
+.html                   00;38;5;137
+.css                    00;38;5;137
+.scss                   00;38;5;137
+.less                   00;38;5;137
+.sql                    00;38;5;137
+
+
+.sublime-settings       00;38;5;137
+.sublime-snippet        00;38;5;137
+.sublime-keymap         00;38;5;174
+.sublime-commands       00;38;5;95
+.tmLanguage             00;38;5;176
+.sublime-build          00;38;5;37
+
+#fonts
+.otf                    00;38;5;37
+.ttf                    00;38;5;37
+
+## Big file image formats
+.dmg                    48;5;235;38;5;61
+.iso                    48;5;235;38;5;66
+
+## Archives or compressed (violet + bold for compression)
+.tar                    01;38;5;61
+.tgz                    00;38;5;61
+.tlz                    00;38;5;61
+.txz                    00;38;5;61
+# .zip                    08;38;5;61
+.z                      00;38;5;61
+.dz                     00;38;5;61
+.gz                     00;38;5;61
+.lz                     00;38;5;61
+.xz                     00;38;5;61
+.bz2                    00;38;5;61
+.bz                     00;38;5;61
+.tbz                    00;38;5;61
+.tbz2                   00;38;5;61
+.tz                     00;38;5;61
+.deb                    00;38;5;61
+.rpm                    00;38;5;61
+.jar                    00;38;5;61
+.7z                     00;38;5;61
+.rz                     00;38;5;61
+.apk                    00;38;5;61
+.gem                    00;38;5;61
+.sublime-package        00;38;5;61
+.rar                    00;38;5;60
+
+# Image formats (yellow)
+.jpg                    00;38;5;172
+.jpeg                   00;38;5;172
+.JPG                    00;38;5;172
+.JPEG                   00;38;5;172
+.gif                    00;38;5;172
+.bmp                    00;38;5;172
+.tif                    00;38;5;173
+.tiff                   00;38;5;173
+.png                    00;38;5;172
+.webp                   00;38;5;172
+
+.pcx                    00;38;5;172
+.eps                    00;38;5;172
+.ico                    00;38;5;172
+
+.psd                    00;38;5;216
+.ai                     00;38;5;166
+.svg                    00;38;5;166
+
+.icns                   00;38;5;215
+
+# Files of special interest (base1 + bold)
+.vim                    00;38;5;205
+.xml                    00;38;5;205
+*Makefile               00;38;5;205
+*Rakefile               00;38;5;205
+*build.xml              00;38;5;205
+.nfo                    00;38;5;205
+*README                 01;38;5;245
+*README.txt             01;38;5;245
+*readme.txt             01;38;5;245
+*README.markdown        01;38;5;245
+.c                      01;38;5;245
+.cpp                    01;38;5;245
+.cc                     01;38;5;245
+
+# Config files
+.conf                   00;38;5;245
+.ini                    00;38;5;245
+.cfg                    00;38;5;245
+
+# "unimportant" files as logs and backups (base01)
+.log                    00;38;5;240
+.Log                    00;38;5;240
+.txt                    00;38;5;240
+.rtf                    00;38;5;240
+.bak                    00;38;5;240
+.aux                    00;38;5;240
+.bbl                    00;38;5;240
+.blg                    00;38;5;240
+*~                      00;38;5;240
+*#                      00;38;5;240
+.part                   00;38;5;240
+.incomplete             00;38;5;240
+.swp                    00;38;5;240
+.tmp                    00;38;5;240
+.temp                   00;38;5;240
+.o                      00;38;5;240
+.pyc                    00;38;5;240
+.class                  00;38;5;240
+*.git                    00;38;5;240
+*node_modules 02;37
+
+
+# Audio formats (orange)
+.aac                    00;38;5;166
+.au                     00;38;5;166
+.flac                   00;38;5;166
+.mp3                    00;38;5;166
+.m4a                    00;38;5;166
+
+# Video formats (as audio + bold)
+.mov                    00;38;5;166
+.mpg                    00;38;5;166
+.mkv                    00;38;5;166
+.mp4                    00;38;5;166
+.m4v                    00;38;5;166
+.vob                    00;38;5;166
+.wmv                    00;38;5;166
+.avi                    00;38;5;166
+.flv                    00;38;5;166
+.jade                   00;38;5;14
+
+
+# --------------------
+# Added by elliot
+
+# Hide Files
+.DS_Store               00;38;5;241
+.bash_history           00;38;5;241
+.hushlogin              00;38;5;241
+.hush_login             00;38;5;241
+.CFUserTextEncoding     00;38;5;241
+.Trash/                 00;38;5;241
+.Xauthority             00;38;5;241
+.zprofile               00;38;5;241
+*.zcompdump             00;38;5;241
+*LICENSE                00;38;5;241
+*license                00;38;5;241
+*changelog              00;38;5;241
+*desktop.ini            00;38;5;241
+*.git/                  00;38;5;241
+.lessht                 00;38;5;174
+.cache                  00;38;5;241
+.idea                   00;38;5;241
+.zsh_history            00;38;5;241
+.zshrc-e                00;38;5;241
+.zshrc.zwc              00;38;5;241
+.idea                   00;38;5;241
+.idea                   00;38;5;241
+.idea                   00;38;5;241
+.idea                   00;38;5;241
+.idea                   00;38;5;241
+.idea                   00;38;5;241
+
+# my version of config files
+*config                 00;38;5;174
+.gist-vim               00;38;5;174
+.gitconfig              00;38;5;174
+.viminfo                00;38;5;174
+.functions              00;38;5;174
+.aliases                00;38;5;174
+.bash_prompt            00;38;5;174
+.exports                00;38;5;174
+.path                   00;38;5;174
+.vimrc.bundles          00;38;5;174
+.mach-color             00;38;5;174
+.mac                    00;38;5;174
+.dircolors              00;38;5;174
+.completion             00;38;5;174
+.bash_profile           00;38;5;174
+.viminfo                00;38;5;174
+.gitignore_global       00;38;5;174
+.mongorc.js             00;38;5;174
+.hgignore_global        00;38;5;174
+.dbshell                00;38;5;174
+.screenrc               00;38;5;174
+.vpnc                   00;38;5;174
+.tslintrc               00;38;5;174
+.tags                   00;38;5;174
+.bashrc.local           00;38;5;174
+.dotfilelocation        00;38;5;174
+.vimrc                  00;38;5;174
+.zlogin                 00;38;5;174
+.wgetrc                 00;38;5;174
+.conf                   00;38;5;6
+.zshrc                  00;38;5;174
+.rvmrc                  00;38;5;174
+.jsbeautifyrc           00;38;5;174
+.gvimrc                 00;38;5;174
+.jshintrc               00;38;5;174
+.s3cfg                  00;38;5;174
+.yarnrc                 00;38;5;174
+.prettierrc             00;38;5;174
+.gitconfig.user         00;38;5;174
+.bowerrc                00;38;5;174
+.gitignore              00;38;5;174
+.eaglerc                00;38;5;174
+.htoprc                 00;38;5;174
+.inputrc                00;38;5;174
+.npmrc                  00;38;5;174
+.pearrc                 00;38;5;174
+.eslintrc               00;38;5;174
+.private_exports        00;38;5;174
+.profile                00;38;5;174
+.bashrc                 00;38;5;174
+.private_exports        00;38;5;174
+.zshpackages            00;38;5;174
+.curlrc                 00;38;5;174
+.babel.json             00;38;5;174
+.eslintrc.json          00;38;5;174
+.curlrc                 00;38;5;174
+
+# Other Data File
+.csv                    00;38;5;258
+
+.symlink                00;38;5;25
+
+# important files
+*id_rsa                 30;41
+*id_rsa.pub             30;41
+
+# Project files
+.sublime-project        00;38;5;2
+.sublime-workspace      00;38;5;2
+
+
+
+
