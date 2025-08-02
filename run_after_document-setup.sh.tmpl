@@ -113,10 +113,10 @@ chezmoi update  # Pulls AND applies changes
 ### New Machine Setup
 ```bash
 # One-command setup
-chezmoi init --apply {{ .chezmoi.username }}/dotfiles-chezmoi
+chezmoi init --apply {{- if hasKey . "github_username" -}}{{ .github_username }}{{- else -}}elliotboney{{- end -}}/dotfiles-chezmoi
 
 # Or step-by-step
-chezmoi init {{ .chezmoi.username }}/dotfiles-chezmoi
+chezmoi init {{- if hasKey . "github_username" -}}{{ .github_username }}{{- else -}}elliotboney{{- end -}}/dotfiles-chezmoi
 chezmoi apply
 ```
 
@@ -177,7 +177,7 @@ Templates automatically adapt based on:
 ```bash
 # Full reset
 chezmoi purge
-chezmoi init --apply {{ .chezmoi.username }}/dotfiles-chezmoi
+chezmoi init --apply {{- if hasKey . "github_username" -}}{{ .github_username }}{{- else -}}elliotboney{{- end -}}/dotfiles-chezmoi
 
 # Partial recovery
 chezmoi apply --force
@@ -277,7 +277,7 @@ cat ~/.config/chezmoi/chezmoi.toml
 - Discussions: https://github.com/twpayne/chezmoi/discussions
 
 ### Your Setup
-- Repository: https://github.com/{{ .chezmoi.username }}/dotfiles-chezmoi
+- Repository: https://github.com/{{- if hasKey . "github_username" -}}{{ .github_username }}{{- else -}}elliotboney{{- end -}}/dotfiles-chezmoi
 - Configuration: ~/.config/chezmoi/chezmoi.toml
 - Source: {{ .chezmoi.sourceDir }}
 
@@ -365,19 +365,19 @@ chezmoi add --encrypt --gpg ~/.secret-file
 # GitHub Actions example
 - name: Apply dotfiles
   run: |
-    chezmoi init --apply {{ .chezmoi.username }}/dotfiles-chezmoi
+    chezmoi init --apply {{- if hasKey . "github_username" -}}{{ .github_username }}{{- else -}}elliotboney{{- end -}}/dotfiles-chezmoi
 ```
 
 ### Docker Integration
 ```dockerfile
 # Install dotfiles in container
-RUN chezmoi init --apply {{ .chezmoi.username }}/dotfiles-chezmoi
+RUN chezmoi init --apply {{- if hasKey . "github_username" -}}{{ .github_username }}{{- else -}}elliotboney{{- end -}}/dotfiles-chezmoi
 ```
 
 ### Ansible Integration
 ```yaml
 - name: Setup dotfiles
-  shell: chezmoi init --apply {{ .chezmoi.username }}/dotfiles-chezmoi
+  shell: chezmoi init --apply {{- if hasKey . "github_username" -}}{{ .github_username }}{{- else -}}elliotboney{{- end -}}/dotfiles-chezmoi
 ```
 
 EOF

@@ -206,3 +206,10 @@ if [ ! -d "{{ . }}" ]; then
   log_info "Created directory {{ . }}"
 fi
 {{- end -}}
+
+{{/*
+Extract GitHub username from email address
+*/}}
+{{- define "github_username" -}}
+{{- splitList "@" .email | first -}}
+{{- end -}}

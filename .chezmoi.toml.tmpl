@@ -4,6 +4,7 @@
 {{- $development := promptBoolOnce . "development" "Development machine? (true/false)" -}}
 {{- $hostname := .chezmoi.hostname -}}
 {{- $email := promptStringOnce . "email" "Email address" -}}
+{{- $github_username := promptStringOnce . "github_username" "GitHub username" -}}
 
 # Encryption with key stored in Lastpass
 encryption = "age"
@@ -18,6 +19,7 @@ encryption = "age"
     development = {{ $development }}
     hostname = "{{ $hostname }}"
     email = "{{ $email }}"
+    github_username = "{{ $github_username }}"
 
 # Git configuration
 [git]

@@ -11,6 +11,7 @@ encryption = "age"
     development = true
     hostname = "Mac"
     email = "eboney@personal.com"
+    github_username = "elliotboney"
 
 # Git configuration
 [git]
