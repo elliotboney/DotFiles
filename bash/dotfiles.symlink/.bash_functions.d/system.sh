@@ -19,6 +19,21 @@ alias apt-get='sudo apt-get'
 
 
 
+# Better cat with syntax highlighting
+command -v bat >/dev/null && alias cat='bat'
+
+# Better du with visual disk usage  
+command -v dust >/dev/null && alias du='dust'
+
+# Better top with graphs
+command -v btm >/dev/null && alias top='btm'
+
+# Better ps with tree view
+command -v procs >/dev/null && alias ps='procs'
+
+# Better ping with graphs
+command -v gping >/dev/null && alias ping='gping'
+
 #! Finding Running Stuff &  Commands
 
 # Find running task, case insensitive search

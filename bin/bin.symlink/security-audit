@@ -1,0 +1,209 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+BOLD='\033[1m'
+NC='\033[0m' # No Color
+
+echo -e "${BOLD}${BLUE}🔍 Dotfiles Security Audit${NC}"
+echo "=========================="
+
+# Check for required tools
+missing_tools=()
+for tool in rg find lsof; do
+    if ! command -v "$tool" &> /dev/null; then
+        missing_tools+=("$tool")
+    fi
+done
+
+if [[ ${#missing_tools[@]} -gt 0 ]]; then
+    echo -e "${RED}❌ Missing required tools: ${missing_tools[*]}${NC}"
+    echo "Install with: brew install ripgrep findutils lsof"
+    exit 1
+fi
+
+echo -e "\n${BOLD}1. Scanning for exposed secrets...${NC}"
+
+# Check for common secret patterns
+echo -e "${BLUE}🔍 Checking for API keys, tokens, and passwords...${NC}"
+secret_patterns=(
+    "api_key.*[=:].*[\"'][a-zA-Z0-9]{8,}[\"']"
+    "api_secret.*[=:].*[\"'][a-zA-Z0-9]{8,}[\"']"
+    "aws_access_key.*[=:].*[\"'][A-Z0-9]{20}[\"']"
+    "aws_secret.*[=:].*[\"'][a-zA-Z0-9/+=]{40}[\"']"
+    "password.*[=:].*[\"'][^\"']{8,}[\"']"
+    "token.*[=:].*[\"'][a-zA-Z0-9]{16,}[\"']"
+    "client_secret.*[=:].*[\"'][a-zA-Z0-9]{8,}[\"']"
+    "private_key.*[=:].*[\"'][^\"']{32,}[\"']"
+    "ssh_key.*[=:].*[\"'][^\"']{32,}[\"']"
+    "database_url.*[=:].*[\"'][^\"']{16,}[\"']"
+)
+
+secrets_found=false
+for pattern in "${secret_patterns[@]}"; do
+    if rg -i "$pattern" \
+        --glob '!*.{log,lock,git}' \
+        --glob '!.git/**' \
+        --glob '!node_modules/**' \
+        --glob '!vendor/**' \
+        --glob '!*.backup' \
+        --glob '!*_backup' \
+        --color=always \
+        . 2>/dev/null; then
+        secrets_found=true
+    fi
+done
+
+if [[ "$secrets_found" == false ]]; then
+    echo -e "${GREEN}✅ No obvious secrets found in plaintext${NC}"
+fi
+
+echo -e "\n${BOLD}2. Checking SSH and GPG key permissions...${NC}"
+
+# Check SSH keys
+echo -e "${BLUE}🔑 Checking SSH key permissions...${NC}"
+ssh_issues=false
+if [[ -d "$HOME/.ssh" ]]; then
+    # Check SSH directory permissions
+    ssh_dir_perms=$(ls -ld "$HOME/.ssh" | awk '{print $1}')
+    if [[ ! "$ssh_dir_perms" =~ ^d.....---- ]]; then
+        echo -e "${YELLOW}⚠️  Warning: ~/.ssh directory has loose permissions: $ssh_dir_perms${NC}"
+        echo -e "   Fix with: chmod 700 ~/.ssh"
+        ssh_issues=true
+    fi
+    
+    # Check individual SSH files
+    find "$HOME/.ssh" -type f 2>/dev/null | while read -r file; do
+        filename=$(basename "$file")
+        perms=$(ls -la "$file" | awk '{print $1}')
+        
+        case "$filename" in
+            id_*|*_rsa|*_ed25519|*_ecdsa)
+                if [[ "$filename" != *.pub ]] && [[ ! "$perms" =~ ^-.....---- ]]; then
+                    echo -e "${RED}❌ Private key has loose permissions: $file ($perms)${NC}"
+                    echo -e "   Fix with: chmod 600 '$file'"
+                    ssh_issues=true
+                fi
+                ;;
+            *.pub)
+                if [[ ! "$perms" =~ ^-....--.-- ]]; then
+                    echo -e "${YELLOW}⚠️  Public key permissions could be tighter: $file ($perms)${NC}"
+                    echo -e "   Fix with: chmod 644 '$file'"
+                fi
+                ;;
+            config)
+                if [[ ! "$perms" =~ ^-.....---- ]]; then
+                    echo -e "${YELLOW}⚠️  SSH config has loose permissions: $file ($perms)${NC}"
+                    echo -e "   Fix with: chmod 600 '$file'"
+                    ssh_issues=true
+                fi
+                ;;
+        esac
+    done
+    
+    if [[ "$ssh_issues" == false ]]; then
+        echo -e "${GREEN}✅ SSH key permissions look good${NC}"
+    fi
+else
+    echo -e "${BLUE}ℹ️  No ~/.ssh directory found${NC}"
+fi
+
+# Check GPG permissions
+echo -e "\n${BLUE}🔐 Checking GPG directory permissions...${NC}"
+if [[ -d "$HOME/.gnupg" ]]; then
+    gnupg_dir_perms=$(ls -ld "$HOME/.gnupg" | awk '{print $1}')
+    if [[ ! "$gnupg_dir_perms" =~ ^d.....---- ]]; then
+        echo -e "${YELLOW}⚠️  Warning: ~/.gnupg directory has loose permissions: $gnupg_dir_perms${NC}"
+        echo -e "   Fix with: chmod 700 ~/.gnupg"
+    else
+        echo -e "${GREEN}✅ GPG directory permissions look good${NC}"
+    fi
+else
+    echo -e "${BLUE}ℹ️  No ~/.gnupg directory found${NC}"
+fi
+
+echo -e "\n${BOLD}3. Checking for hardcoded credentials in dotfiles...${NC}"
+
+# Check dotfiles for hardcoded credentials
+echo -e "${BLUE}🔍 Scanning dotfiles for potential issues...${NC}"
+dotfile_issues=false
+
+# Check for hardcoded paths that might contain usernames
+if rg -i "(/Users/[^/\s\"']+|/home/[^/\s\"']+)" \
+    --glob '*.symlink' \
+    --color=always \
+    . 2>/dev/null; then
+    echo -e "${YELLOW}⚠️  Found hardcoded user paths (consider using \$HOME)${NC}"
+    dotfile_issues=true
+fi
+
+# Check for potential credentials in environment files
+if find . -name "*.env*" -o -name "*secret*" -o -name "*credential*" 2>/dev/null | head -5 | while read -r file; do
+    echo -e "${YELLOW}⚠️  Found potential credential file: $file${NC}"
+    dotfile_issues=true
+done
+
+if [[ "$dotfile_issues" == false ]]; then
+    echo -e "${GREEN}✅ No obvious credential issues in dotfiles${NC}"
+fi
+
+echo -e "\n${BOLD}4. Checking shell history for sensitive commands...${NC}"
+
+# Check for potentially sensitive commands in shell history
+echo -e "${BLUE}🔍 Checking shell history for sensitive patterns...${NC}"
+history_files=("$HOME/.bash_history" "$HOME/.zsh_history")
+history_issues=false
+
+for hist_file in "${history_files[@]}"; do
+    if [[ -f "$hist_file" ]]; then
+        # Check for commands with passwords or keys
+        if rg -i "(password|secret|key|token|credential).*=" "$hist_file" 2>/dev/null | head -3; then
+            echo -e "${YELLOW}⚠️  Found potential secrets in shell history: $hist_file${NC}"
+            echo -e "   Consider cleaning with: history -c && history -w"
+            history_issues=true
+        fi
+    fi
+done
+
+if [[ "$history_issues" == false ]]; then
+    echo -e "${GREEN}✅ No obvious secrets found in shell history${NC}"
+fi
+
+echo -e "\n${BOLD}5. Checking for world-writable files...${NC}"
+
+# Check for world-writable files in home directory
+echo -e "${BLUE}🔍 Checking for world-writable files...${NC}"
+world_writable=$(find "$HOME" -maxdepth 2 -perm -002 -type f 2>/dev/null | head -10)
+if [[ -n "$world_writable" ]]; then
+    echo -e "${RED}❌ Found world-writable files:${NC}"
+    echo "$world_writable"
+    echo -e "   Consider fixing permissions with: chmod o-w <file>"
+else
+    echo -e "${GREEN}✅ No world-writable files found${NC}"
+fi
+
+echo -e "\n${BOLD}6. Security recommendations...${NC}"
+
+echo -e "${BLUE}💡 Security best practices:${NC}"
+echo "   • Use GPG signing for commits (run: setup-gpg-signing)"
+echo "   • Store secrets in environment variables or secure vaults"
+echo "   • Use \$HOME instead of hardcoded paths"
+echo "   • Regularly rotate API keys and tokens"
+echo "   • Keep SSH keys with 600 permissions"
+echo "   • Use strong passphrases for private keys"
+
+echo -e "\n${GREEN}✅ Security audit complete!${NC}"
+
+# Summary
+echo -e "\n${BOLD}Summary:${NC}"
+if [[ "$secrets_found" == true || "$ssh_issues" == true || "$dotfile_issues" == true || "$history_issues" == true ]]; then
+    echo -e "${YELLOW}⚠️  Some security issues found - please review the output above${NC}"
+    exit 1
+else
+    echo -e "${GREEN}🎉 No major security issues detected!${NC}"
+    exit 0
+fi

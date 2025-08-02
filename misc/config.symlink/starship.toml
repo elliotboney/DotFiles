@@ -1,6 +1,5 @@
-# Optional Starship Configuration
-# Copy to ~/.config/starship.toml if you want to use it
-# mkdir -p ~/.config && cp ~/DotFiles/optional-starship.toml ~/.config/starship.toml
+# Starship Configuration
+# This file is automatically symlinked to ~/.config/starship.toml during install
 
 "$schema" = 'https://starship.rs/config-schema.json'
 

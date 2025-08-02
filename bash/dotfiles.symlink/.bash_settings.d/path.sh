@@ -38,7 +38,7 @@ paths=(
     # "${HOME}/.config/composer/vendor/bin"
     "/Library/Frameworks/Mono.framework/Versions/Current/bin/"
     "/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin"
-    "/Users/eboney/Library/Python/3.9/bin"
+    "~/Library/Python/3.9/bin"
     "/usr/local/bin"
     "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin"
     "/usr/local/sbin"

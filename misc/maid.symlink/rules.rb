@@ -109,7 +109,7 @@ Maid.rules do
   #       # Iterate through all the files
   #       dir(File.dirname(path)+"*/*[avi|mkv|mp4]").each do |file|
   #         # Files/Directories to ignore
-  #         if file == '/Users/eboney/Downloads/00 Completed'
+  #         if file == '~/Downloads/00 Completed'
   #           puts "Ignoring #{file}\n".yellow
   #           next
   #         end
@@ -204,7 +204,7 @@ Maid.rules do
   DOWNLOAD_TYPES.each do |sub_dir, types|
     rule "Move downloaded #{sub_dir}" do
       puts "--------------------------------------------\n\033[36mMove downloaded #{sub_dir}\033[0m"
-      if !File.directory?("/Users/eboney/Downloads/#{sub_dir}")
+      if !File.directory?("~/Downloads/#{sub_dir}")
         puts "~/Downloads/#{sub_dir} is not a directory"
         mkdir("~/Downloads/#{sub_dir}")
       end
