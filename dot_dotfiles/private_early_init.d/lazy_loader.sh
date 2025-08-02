@@ -26,19 +26,19 @@ lazy_load() {
 }
 
 # Lazy load heavy functions (only if files exist)
-if [[ -f "${DOTPATH}/bash/dotfiles.symlink/.bash_functions.d/git.sh" ]]; then
-    lazy_load "git-wtf" "${DOTPATH}/bash/dotfiles.symlink/.bash_functions.d/git.sh"
-    lazy_load "git-updateall" "${DOTPATH}/bash/dotfiles.symlink/.bash_functions.d/git.sh"
+if [[ -f "${HOME}/.dotfiles/utilities.d/git.sh" ]]; then
+    lazy_load "git-wtf" "${HOME}/.dotfiles/utilities.d/git.sh"
+    lazy_load "git-updateall" "${HOME}/.dotfiles/utilities.d/git.sh"
 fi
 
-if [[ -f "${DOTPATH}/bash/dotfiles.symlink/.bash_functions.d/fs.sh" ]]; then
-    lazy_load "extract" "${DOTPATH}/bash/dotfiles.symlink/.bash_functions.d/fs.sh"
+if [[ -f "${HOME}/.dotfiles/utilities.d/filesystem.sh" ]]; then
+    lazy_load "extract" "${HOME}/.dotfiles/utilities.d/filesystem.sh"
 fi
 
-if [[ -f "${DOTPATH}/bash/dotfiles.symlink/.bash_functions.d/misc.sh" ]]; then
-    lazy_load "cleanup" "${DOTPATH}/bash/dotfiles.symlink/.bash_functions.d/misc.sh"
+if [[ -f "${HOME}/.dotfiles/utilities.d/general.sh" ]]; then
+    lazy_load "cleanup" "${HOME}/.dotfiles/utilities.d/general.sh"
 fi
 
 # Add more lazy-loaded functions here as needed
 # Example:
-# lazy_load "heavy_function" "${DOTPATH}/bash/dotfiles.symlink/.bash_functions.d/heavy.sh"
+# lazy_load "heavy_function" "${HOME}/.dotfiles/utilities.d/heavy.sh"

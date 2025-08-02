@@ -20,7 +20,7 @@ if  command_exists eza; then
     fi
     export EZA_COLORS=${EZA_COLORS}:${LS_COLORS}
 # elif  command_exists gdircolors; then
-    # eval $(/opt/homebrew/bin/gdircolors -b ${HOME}/.dotfiles/.bash_settings.d/dircolors)
+    # eval $(/opt/homebrew/bin/gdircolors -b ${HOME}/.dotfiles/environment.d/dircolors)
 else
   echo -e $PATH
   if $(dircolors &>/dev/null); then

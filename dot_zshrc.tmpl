@@ -206,7 +206,7 @@ shell_is_script      () { ! shell_is_interactive ; }
 # Helper function to load directories of shell scripts
 include_d() {
     local dir=$1
-    local functions_dir="${HOME}/.dotfiles/${dir}.d"
+    local functions_dir="${HOME}/.dotfiles/.${dir}.d"
     
     if [[ -d "$functions_dir" && -r "$functions_dir" && -x "$functions_dir" ]]; then
         decho "   📁 Processing ${dir}/ directory..."
@@ -286,12 +286,17 @@ if [ -f $HOME/.zshrc.local ] ; then
 fi
 
 {{- if .development }}
-export FPATH="${HOME}/.dotfiles/.utilities.d:${FPATH}" && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export FPATH="${HOME}/.dotfiles/utilities.d:${FPATH}" && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 {{- end }}
 
 {{- if .personal }}
 if [ -f $HOME/.grc.zsh ] ; then
   source $HOME/.grc.zsh
+fi
+
+# Override grc ls alias with eza (must be after grc loading)
+if command_exists eza; then
+  alias ls="eza -hF --group-directories-first --color=always"
 fi
 {{- end }}
 
