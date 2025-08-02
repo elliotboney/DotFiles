@@ -1,5 +1,4 @@
 "use strict";
-
 module.exports = {
     rules: {
         "at-rule-no-unknown": true,
@@ -29,6 +28,13 @@ module.exports = {
         "selector-pseudo-element-no-unknown": true,
         "selector-type-no-unknown": true,
         "string-no-newline": true,
-        "unit-no-unknown": true
+        "unit-no-unknown": true,
+        // Additional modern rules
+        "color-hex-length": "short",
+        "declaration-block-trailing-semicolon": "always",
+        "length-zero-no-unit": true,
+        "max-nesting-depth": 3,
+        "selector-max-id": 1,
+        "shorthand-property-no-redundant-values": true
     }
 };

@@ -67,11 +67,11 @@ function include_d {
        fi
      }
 
-     include_d bash_runfirst
+     include_d early_init
      include_d bash_aliases
-     include_d bash_functions
-     include_d bash_completion
-     include_d bash_settings
+     include_d utilities
+     include_d completions
+     include_d environment
 # }}}
 # fi
 

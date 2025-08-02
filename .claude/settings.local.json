@@ -1,11 +1,14 @@
 {
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "permissions": {
     "allow": [
       "Bash(find:*)",
       "Bash(ls:*)",
       "Bash(git submodule:*)",
       "Bash(time zsh:*)",
-      "mcp__openmemory__add-memory"
+      "mcp__openmemory__add-memory",
+      "mcp__firecrawl__firecrawl_scrape",
+      "mcp__firecrawl__firecrawl_search"
     ],
     "deny": []
   }
