@@ -1,0 +1,185 @@
+# Install command-line tools using Homebrew
+# Managed by chezmoi - machine-specific packages
+
+################################################
+##                    TAPS                    ##
+################################################
+
+tap "raggi/ale"
+tap "jlhonora/lsusb"
+tap "homebrew/bundle"
+tap "homebrew/services"
+tap "homebrew/cask-fonts"
+{{- if .development }}
+tap "homebrew/fuse"
+tap "homebrew/apache"
+tap "homebrew/php"
+{{- end }}
+
+################################################
+##              ESSENTIAL CASKS               ##
+################################################
+# Configure where our applications go
+cask_args appdir: '/Applications'
+
+# Core applications (all machines)
+cask "google-chrome"
+cask "iterm2"
+{{- if eq .chezmoi.os "darwin" }}
+cask "little-snitch"
+{{- end }}
+
+{{- if .personal }}
+# Personal applications
+cask "dropbox"
+cask "spotify"
+cask "vlc"
+cask "transmission"
+cask "firefox"
+cask "evernote"
+cask "kaleidoscope"
+{{- end }}
+
+{{- if .development }}
+# Development applications
+cask "sublime-text"
+cask "atom"
+cask "sourcetree"
+cask "mysqlworkbench"
+cask "paw"
+cask "bruno"
+cask "db-browser-for-sqlite"
+cask "hex-fiend"
+cask "colorsnapper"
+cask "arduino"
+cask "openscad"
+cask "angry-ip-scanner"
+cask "clion"
+{{- end }}
+
+{{- if .work }}
+# Work applications
+cask "slack-beta"
+cask "gcloud-cli"
+cask "google-cloud-sdk"
+{{- end }}
+
+{{- if .personal }}
+# Personal utilities
+cask "filezilla"
+cask "adium"
+cask "videostream"
+cask "sdformatter"
+cask "sizeup"
+cask "vnc-viewer"
+cask "unetbootin"
+cask "calibre"
+cask "lunar"
+cask "ngrok"
+{{- end }}
+
+################################################
+##            ESSENTIAL CLI TOOLS             ##
+################################################
+
+# Core tools (all machines)
+brew "git"
+brew "zsh"
+brew "curl"
+brew "wget"
+brew "coreutils"
+brew "findutils"
+brew "grep"
+brew "gnu-sed"
+brew "gnu-tar"
+brew "gnu-which"
+brew "tree-sitter"
+
+# Modern CLI replacements
+brew "bat"          # Better cat with syntax highlighting
+brew "fd"           # Better find (50x faster)
+brew "git-delta"    # Better git diff
+brew "eza"          # Better ls
+brew "bottom"       # Better top
+brew "fzf"          # Fuzzy finder for everything
+brew "starship"     # Modern prompt
+brew "ripgrep"      # Better grep
+brew "jq"           # JSON processor
+brew "yq"           # YAML processor
+
+{{- if .development }}
+# Development tools
+brew "atuin"        # Synced shell history
+brew "gping"        # Better ping with graph
+brew "procs"        # Better ps
+brew "sd"           # Better sed
+brew "hyperfine"    # Benchmarking tool
+brew "tokei"        # Code statistics
+brew "dust"         # Better du
+brew "gh"           # GitHub CLI
+brew "neovim"
+brew "node"
+brew "go"
+brew "python@3.13"
+brew "ruby"
+brew "php"
+brew "composer"
+brew "bun"
+brew "deno"
+brew "pyenv"
+brew "pipenv"
+brew "redis"
+brew "ollama"
+brew "llama.cpp"
+{{- end }}
+
+{{- if .development }}
+# Development utilities
+brew "htop"
+brew "nmap"
+brew "netcat"
+brew "ssh-copy-id"
+brew "unrar"
+brew "unar"
+brew "grc"
+brew "progress"
+brew "speedtest-cli"
+brew "terminal-notifier"
+brew "mkcert"
+brew "ddev"
+brew "supabase"
+brew "vercel-cli"
+brew "trufflehog"
+{{- end }}
+
+{{- if .personal }}
+# Personal/media tools
+brew "ffmpeg"
+brew "exiftool"
+brew "httrack"
+brew "pdfcrack"
+brew "pdfrip"
+brew "tesseract"
+brew "visidata"
+{{- end }}
+
+{{- if eq .chezmoi.hostname "Mac" }}
+# Machine-specific tools for this Mac
+brew "gnupg"
+brew "zoxide"
+{{- end }}
+
+################################################
+##            DEPENDENCIES/LIBS              ##
+################################################
+{{- if .development }}
+# Only install heavy dependencies on development machines
+brew "cmake"
+brew "automake"
+brew "autoconf"
+brew "libtool"
+brew "pkg-config"
+brew "openssl@3"
+brew "sqlite"
+brew "postgresql"
+{{- end }}
