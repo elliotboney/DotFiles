@@ -222,10 +222,10 @@ include_d() {
     fi
 }
 
-include_d bash_runfirst
-include_d bash_functions  
-include_d bash_completion
-include_d bash_settings
+include_d early_init
+include_d utilities  
+include_d completions
+include_d environment
 
 # Unset local variables
 unset fn_cmd
@@ -286,7 +286,7 @@ if [ -f $HOME/.zshrc.local ] ; then
 fi
 
 {{- if .development }}
-export FPATH="${DOTPATH}/bash/dotfiles.symlink/.bash_functions.d:${FPATH}" && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export FPATH="${HOME}/.dotfiles/.utilities.d:${FPATH}" && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 {{- end }}
 
 {{- if .personal }}
