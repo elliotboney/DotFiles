@@ -1,0 +1,19 @@
+{{- $personal := promptBoolOnce . "personal" "Personal machine? (true/false)" -}}
+{{- $work := promptBoolOnce . "work" "Work machine? (true/false)" -}}
+{{- $server := promptBoolOnce . "server" "Server machine? (true/false)" -}}
+{{- $development := promptBoolOnce . "development" "Development machine? (true/false)" -}}
+{{- $hostname := .chezmoi.hostname -}}
+{{- $email := promptStringOnce . "email" "Email address" -}}
+
+[data]
+    personal = {{ $personal }}
+    work = {{ $work }}
+    server = {{ $server }}
+    development = {{ $development }}
+    hostname = "{{ $hostname }}"
+    email = "{{ $email }}"
+
+# Git configuration
+[git]
+    autocommit = true
+    autopush = false

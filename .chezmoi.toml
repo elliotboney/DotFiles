@@ -1,0 +1,12 @@
+[data]
+    personal = true
+    work = false
+    server = false
+    development = true
+    hostname = "Mac"
+    email = "eboney@personal.com"
+
+# Git configuration
+[git]
+    autocommit = true
+    autopush = false
