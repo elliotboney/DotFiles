@@ -197,7 +197,7 @@ alias extractall='unzip -o "*.zip" | rmf *.zip'
 #   `brew install coreutils`
 if command_exists eza; then
    alias la="eza -lAhF --git --time-style=long-iso --octal-permissions  --group-directories-first --no-permissions --color-scale=age" 
-  #  alias ls="eza -hF --group-directories-first --color=always --quoting-style={shell-always,c-maybe}"
+   alias ls="eza -hF --group-directories-first --color=always"
    alias lag="la --git-ignore"
    alias lat="la -T"
    alias latg="la -T --git-ignore"

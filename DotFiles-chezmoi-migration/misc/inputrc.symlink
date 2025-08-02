@@ -1,3 +1,0 @@
-# Immediately add a trailing slash when autocompleting symlinks to directories
-set mark-symlinked-directories on
-set colored-stats on

@@ -1,0 +1,301 @@
+#!/bin/bash
+
+# Instagram Reels Video Compression Script
+# Optimizes videos for Instagram Reels with the best quality-to-size ratio
+# Based on Instagram's 2025 specifications and best practices
+
+# Color codes for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No Color
+
+# Function to display usage
+usage() {
+    echo "Usage: $0 <input_video> [-o output_video] [-q quality_preset] [-b bitrate] [-s scale] [-f fps] [-d duration]"
+    echo ""
+    echo "Arguments:"
+    echo "  input_video    Input video file (required)"
+    echo ""
+    echo "Options:"
+    echo "  -o    Output video file (default: input_compressed.mp4)"
+    echo "  -q    Quality preset: ultra, high, medium, low (default: high)"
+    echo "  -b    Target bitrate in Mbps (default: auto based on quality)"
+    echo "  -s    Scale: 1080, 720, or keep (default: 1080)"
+    echo "  -f    Frame rate: 30, 24, or keep (default: 30)"
+    echo "  -d    Max duration in seconds (default: 90)"
+    echo "  -h    Show this help message"
+    echo ""
+    echo "Examples:"
+    echo "  $0 video.mp4"
+    echo "  $0 video.mp4 -o reel.mp4 -q ultra"
+    echo "  $0 video.mp4 -q medium -s 720"
+}
+
+# Function to check if ffmpeg is installed
+check_dependencies() {
+    if ! command -v ffmpeg &> /dev/null; then
+        echo -e "${RED}Error: ffmpeg is not installed${NC}"
+        echo "Please install ffmpeg first:"
+        echo "  Ubuntu/Debian: sudo apt-get install ffmpeg"
+        echo "  macOS: brew install ffmpeg"
+        echo "  Fedora: sudo dnf install ffmpeg"
+        exit 1
+    fi
+}
+
+# Function to get video info
+get_video_info() {
+    local input_file=$1
+    duration=$(ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 "$input_file" 2>/dev/null)
+    width=$(ffprobe -v error -select_streams v:0 -show_entries stream=width -of default=noprint_wrappers=1:nokey=1 "$input_file" 2>/dev/null)
+    height=$(ffprobe -v error -select_streams v:0 -show_entries stream=height -of default=noprint_wrappers=1:nokey=1 "$input_file" 2>/dev/null)
+    fps=$(ffprobe -v error -select_streams v:0 -show_entries stream=r_frame_rate -of default=noprint_wrappers=1:nokey=1 "$input_file" 2>/dev/null)
+    
+    # Convert fps to decimal
+    if [[ $fps == *"/"* ]]; then
+        fps=$(echo "scale=2; $fps" | bc)
+    fi
+}
+
+# Default values
+quality="high"
+scale="1080"
+fps="30"
+max_duration="90"
+output_suffix="_compressed"
+
+# Parse command line arguments
+while getopts "o:q:b:s:f:d:h" opt; do
+    case $opt in
+        o) output_file="$OPTARG";;
+        q) quality="$OPTARG";;
+        b) custom_bitrate="$OPTARG";;
+        s) scale="$OPTARG";;
+        f) fps="$OPTARG";;
+        d) max_duration="$OPTARG";;
+        h) usage; exit 0;;
+        ?) usage; exit 1;;
+    esac
+done
+
+# Shift to get the positional argument (input file)
+shift $((OPTIND-1))
+
+# Get input file from positional argument
+input_file="$1"
+
+# Check if input file is provided
+if [ -z "$input_file" ]; then
+    echo "No input file provided."
+    echo ""
+    usage
+    exit 0
+fi
+
+# Check if input file exists
+if [ ! -f "$input_file" ]; then
+    echo -e "${RED}Error: Input file '$input_file' not found${NC}"
+    exit 1
+fi
+
+# Check dependencies
+check_dependencies
+
+# Set output filename if not provided
+if [ -z "$output_file" ]; then
+    filename="${input_file%.*}"
+    extension="${input_file##*.}"
+    output_file="${filename}${output_suffix}.mp4"
+fi
+
+# Get video information
+echo -e "${YELLOW}Analyzing input video...${NC}"
+get_video_info "$input_file"
+
+echo "Input video info:"
+echo "  Duration: ${duration}s"
+echo "  Resolution: ${width}x${height}"
+echo "  Frame rate: ${fps} fps"
+echo ""
+
+# Set bitrate based on quality preset
+case $quality in
+    "ultra")
+        video_bitrate="20M"
+        max_bitrate="24M"
+        audio_bitrate="320k"
+        preset="slow"
+        crf="18"
+        ;;
+    "high")
+        video_bitrate="15M"
+        max_bitrate="18M"
+        audio_bitrate="256k"
+        preset="medium"
+        crf="20"
+        ;;
+    "medium")
+        video_bitrate="10M"
+        max_bitrate="12M"
+        audio_bitrate="192k"
+        preset="medium"
+        crf="23"
+        ;;
+    "low")
+        video_bitrate="6M"
+        max_bitrate="8M"
+        audio_bitrate="128k"
+        preset="fast"
+        crf="26"
+        ;;
+    *)
+        echo -e "${RED}Error: Invalid quality preset. Use: ultra, high, medium, or low${NC}"
+        exit 1
+        ;;
+esac
+
+# Override bitrate if custom value is provided
+if [ ! -z "$custom_bitrate" ]; then
+    video_bitrate="${custom_bitrate}M"
+    max_bitrate=$(echo "$custom_bitrate + 4" | bc)"M"
+fi
+
+# Build scale filter
+if [ "$scale" == "keep" ]; then
+    scale_filter=""
+else
+    # Instagram Reels dimensions: 1080x1920 (9:16 aspect ratio)
+    case $scale in
+        "1080")
+            scale_filter="scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2:black,"
+            ;;
+        "720")
+            scale_filter="scale=720:1280:force_original_aspect_ratio=decrease,pad=720:1280:(ow-iw)/2:(oh-ih)/2:black,"
+            ;;
+        *)
+            echo -e "${RED}Error: Invalid scale. Use: 1080, 720, or keep${NC}"
+            exit 1
+            ;;
+    esac
+fi
+
+# Build fps filter
+if [ "$fps" == "keep" ]; then
+    fps_filter=""
+else
+    fps_filter="fps=$fps,"
+fi
+
+# Build complete filter chain
+filter="${scale_filter}${fps_filter}format=yuv420p"
+# Remove trailing comma if present
+filter=${filter%,}
+
+# Build ffmpeg command with two-pass encoding for optimal quality
+echo -e "${GREEN}Starting video compression...${NC}"
+echo "Output settings:"
+echo "  Quality preset: $quality"
+echo "  Video bitrate: $video_bitrate (max: $max_bitrate)"
+echo "  Audio bitrate: $audio_bitrate"
+echo "  Output resolution: ${scale}p (9:16)"
+echo "  Frame rate: $fps fps"
+echo "  Max duration: ${max_duration}s"
+echo ""
+
+# First pass
+echo -e "${YELLOW}Running first pass...${NC}"
+ffmpeg -i "$input_file" \
+    -t "$max_duration" \
+    -vf "$filter" \
+    -c:v libx264 \
+    -preset "$preset" \
+    -profile:v high \
+    -level:v 4.1 \
+    -crf "$crf" \
+    -b:v "$video_bitrate" \
+    -maxrate "$max_bitrate" \
+    -bufsize "$max_bitrate" \
+    -g 48 \
+    -keyint_min 48 \
+    -sc_threshold 0 \
+    -x264-params "ref=4:bframes=3:b_adapt=2" \
+    -movflags +faststart \
+    -c:a aac \
+    -ar 44100 \
+    -b:a "$audio_bitrate" \
+    -pass 1 \
+    -f mp4 \
+    -y /dev/null \
+    2>&1 | grep -E "frame=|fps=|time=|bitrate=" | tr '\n' '\r'
+
+echo ""
+
+# Second pass
+echo -e "${YELLOW}Running second pass...${NC}"
+ffmpeg -i "$input_file" \
+    -t "$max_duration" \
+    -vf "$filter" \
+    -c:v libx264 \
+    -preset "$preset" \
+    -profile:v high \
+    -level:v 4.1 \
+    -crf "$crf" \
+    -b:v "$video_bitrate" \
+    -maxrate "$max_bitrate" \
+    -bufsize "$max_bitrate" \
+    -g 48 \
+    -keyint_min 48 \
+    -sc_threshold 0 \
+    -x264-params "ref=4:bframes=3:b_adapt=2" \
+    -movflags +faststart \
+    -c:a aac \
+    -ar 44100 \
+    -b:a "$audio_bitrate" \
+    -pass 2 \
+    -y "$output_file" \
+    2>&1 | grep -E "frame=|fps=|time=|bitrate=" | tr '\n' '\r'
+
+echo ""
+echo ""
+
+# Clean up pass log files
+rm -f ffmpeg2pass-0.log ffmpeg2pass-0.log.mbtree
+
+# Get output file info
+if [ -f "$output_file" ]; then
+    output_size=$(ls -lh "$output_file" | awk '{print $5}')
+    output_duration=$(ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 "$output_file" 2>/dev/null)
+    
+    echo -e "${GREEN}✓ Compression complete!${NC}"
+    echo ""
+    echo "Output file: $output_file"
+    echo "File size: $output_size"
+    echo "Duration: ${output_duration}s"
+    
+    # Check if file size is optimal for Instagram
+    size_mb=$(du -m "$output_file" | cut -f1)
+    if [ "$size_mb" -gt 150 ]; then
+        echo -e "${YELLOW}⚠ Warning: File size is over 150MB. Consider using lower quality settings.${NC}"
+    fi
+else
+    echo -e "${RED}✗ Error: Compression failed${NC}"
+    exit 1
+fi
+
+echo ""
+echo -e "${GREEN}Tips for best Instagram Reels quality:${NC}"
+echo "• Upload from a mobile device when possible"
+echo "• Use stable internet connection"
+echo "• Avoid uploading during peak hours"
+echo "• Keep important content in the center (safe zone)"
+echo "• Test different quality presets to find the best balance"
+
+# Optional: Show file comparison
+if [ -f "$input_file" ] && [ -f "$output_file" ]; then
+    input_size_mb=$(du -m "$input_file" | cut -f1)
+    output_size_mb=$(du -m "$output_file" | cut -f1)
+    compression_ratio=$(echo "scale=1; $input_size_mb / $output_size_mb" | bc)
+    echo ""
+    echo "Compression ratio: ${compression_ratio}:1"
+fi

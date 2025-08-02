@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Sync from my laptop
+# "/var/www/beta.thepaperlessagent.com/" "/var/www/dashboard.thepaperlessagent.com/" "/var/www/paperlessagent/" "/var/www/red.marketing/" "/var/www/myagent.site/"
+webdirs=(  "/var/www/beta.thepaperlessagent.com/" "/var/www/dashboard.thepaperlessagent.com/" "/var/www/paperlessagent/" "/var/www/red.marketing/" "/var/www/myagent.site/")
+
+for i in "${webdirs[@]}"
+do
+   echo -e "${BWhite}Syncing ${BCyan}${i}${BWhite}...${NC}"
+   rsync -avz --progress --links --checksum --exclude=".git*" --exclude="node_modules*" --stats --exclude="vendor*" --exclude="tests*" --exclude="testing*" --exclude="uploads*" --exclude="wp-includes*" --exclude="*.sql" --exclude="wp-admin*" eboney@192.168.0.100:${i} ${i}
+done

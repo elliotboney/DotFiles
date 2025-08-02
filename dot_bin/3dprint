@@ -1,0 +1,69 @@
+#!/usr/bin/env bash
+# 3d Print a File to my Octoprint setup
+BASEFILE=$(basename "${@}")
+LOGFILE=/tmp/simpl.log
+REALRUN=true
+RUNBYUSER=true
+
+function notify () {
+  osascript -e "display notification \"${1}\" with title \"3D Print Script\""
+}
+
+if [ "`tty`" != "not a tty" ]; then
+  echo -e "Run by User"
+  RUNBYUSER=true
+  else
+  RUNBYUSER=false
+fi
+# exit 1;
+echo -e "\n------------------------------"  >> ${LOGFILE}
+echo -e "Starting print log for ${BGreen}$@${NC}"  >> ${LOGFILE}
+
+$RUNBYUSER || notify  "Processing ${BASEFILE}..."
+
+
+PRINTERCHECK=$(curl -X "GET" "http://192.168.0.78/api/printer" -H "X-Api-Key: 2CD3AC32A6D14923BE3BC508B97587E4" |  grep -c "not operational");
+PRINTERCHECKPRINTING=$(curl -X "GET" "http://192.168.0.78/api/printer" -H "X-Api-Key: 2CD3AC32A6D14923BE3BC508B97587E4"  |  grep -c "Printing");
+
+curl 'http://192.168.0.78/api/plugin/tplinksmartplug' \
+  -H 'Connection: keep-alive' \
+  -H 'Pragma: no-cache' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Accept: application/json, text/javascript, */*; q=0.01' \
+  -H 'DNT: 1' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36' \
+  -H 'Content-Type: application/json; charset=UTF-8' \
+  -H 'Origin: http://192.168.0.78' \
+  -H 'Accept-Language: en-US,en;q=0.9,zgh-MA;q=0.8,zgh;q=0.7' \
+  -H 'Cookie: remember_token_P80=eboney|957636055dbf818b0faeda96d9be7bcd86deb425d83dc781c000f84619713088b52374fe3df584ad6b3b521994cadf237e0d6bc5958c5abddd2a2fbaeb415d5b; session_P80=.eJxVjktqxDAQRO-idQhS6-_dfOxrmLbUig0eebDkhRly9yjMJlkVVY8q6sXGtFOZWVf3gz7YuETWsSS9FmhMdBCSaEpBKw-WB28URgCcUEkgo1OMWvDkXZSSI0g7OSWlcxyilSStBZGUBSuECc0L1GlKkwaUwYIhBwgAwkftkSQYLQjBadaOHIX29xuatkxny5ZIuS71_MSjzmM9n8S6fKzrH_K_sG5fSx4fFGbMS3k0NNf6bOB3vFApy5bfFQBzGy6X3t6BK8WlV871cL3chB7uw7Vn3z_foVjE.YG0jrg.7mccZ9K31mcAvBx9P9quT8mwIoI' \
+  --data-binary '{"command":"turnOn","ip":"192.168.0.79"}' \
+  --compressed \
+  --insecure
+
+
+if [ ${PRINTERCHECKPRINTING} = 1 ]; then
+  # we are PRINTING!!!
+  $RUNBYUSER && echo -e "We are ${BRed}PRINTING${NC}, just uploading file ${Green}${BASEFILE}${NC}..."
+  $RUNBYUSER || notify "We are PRINTING, just uploading file ${BASEFILE}..."
+  echo -e "We are PRINTING, just uploading file ${BASEFILE}..." >> ${LOGFILE}
+  $REALRUN && curl -k -X "POST" "http://192.168.0.78/api/files/local" -H "X-Api-Key: 2CD3AC32A6D14923BE3BC508B97587E4" -F "select=true" -F "print=true" -F "file=@$@"  >> ${LOGFILE}
+
+else
+  echo -e "We are NOT Printing..."
+  # we are NOT PRINTING
+    $RUNBYUSER || echo -e "Connecting to printer..." >> ${LOGFILE}
+    $RUNBYUSER || notify "Connecting to printer..."
+    $REALRUN && curl -k -X "POST" "http://192.168.0.78/api/connection" -H "Content-Type: application/json" -H "X-Api-Key: 2CD3AC32A6D14923BE3BC508B97587E4" -d "{\"command\":\"connect\",\"port\":\"/dev/ttyUSB0\",\"baudrate\":115200,\"save\":\"true\",\"autoconnect\":\"true\"}"  >> ${LOGFILE}
+    $REALRUN && sleep 6
+
+  $RUNBYUSER && echo -e "Uploading file ${Green}${BASEFILE}${NC}..."
+  $RUNBYUSER || notify "Uploading file ${BASEFILE}..."
+  echo -e "Uploading file ${BASEFILE}..." >> ${LOGFILE}
+  $REALRUN && curl -k -X "POST" "http://192.168.0.78/api/files/local" -H "X-Api-Key: 2CD3AC32A6D14923BE3BC508B97587E4" -F "select=true" -F "print=true" -F "file=@$@"  >> ${LOGFILE}
+  # $REALRUN && sleep 2
+  # $RUNBYUSER && echo -e "Telling print to print file ${Green}${BASEFILE}${NC} via ${Purple}http://192.168.0.78/api/files/local/${BASEFILE}${NC}"
+  # $RUNBYUSER || notify "Telling it to print file via http://192.168.0.78/api/files/local/${BASEFILE}"
+  # $REALRUN && curl -k -X "POST" "http://192.168.0.78/api/files/local/${BASEFILE}" -H 'Content-Type: application/json; charset=UTF-8' -H 'X-Api-Key: 2CD3AC32A6D14923BE3BC508B97587E4' --data-binary '{"print":true,"command":"select"}'  >> ${LOGFILE}
+
+fi

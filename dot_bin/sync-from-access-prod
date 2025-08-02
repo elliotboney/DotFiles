@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+
+# source "${HOME}/.dotfiles/.bash_runfirst.d/colors.sh"
+
+REMOTEHOST="access.thepaperlessagent.com"
+REMOTEPATH="/var/www/html/"
+LOCALPATH="/var/www/access.thepaperlessagent.com/"
+
+if [[ -z "$1" ]]; then
+  echo -e ""
+  echo -e "${White}Doing a ${BGreen}DRY RUN${White} of ${Cyan}${REMOTEHOST}${White} → ${Yellow}local${NC}"
+  echo -e ""
+   rsync --dry-run --checksum --exclude=backup* --exclude=*.zip --exclude=tmp/* --exclude=.git --exclude=*uploads/* --progress --human-readable --compress --update --archive --update --stats eboney@${REMOTEHOST}:${REMOTEPATH}/ ${LOCALPATH}
+  echo -e ""
+  echo -e "${White}That was a ${BGreen}DRY RUN${White}, add any parameter to the command to do a real run${NC}"
+  echo -e ""
+else
+  echo -e ""
+  echo -e "${White}Doing a ${BRed}LIVE RUN${White} of ${Cyan}${REMOTEHOST}${White} → ${Yellow}local${NC}"
+  echo -e ""
+  rsync --checksum --exclude=backup* --exclude=*.zip --exclude=tmp/* --exclude=.git --exclude=*uploads/* --progress --human-readable --compress --update --archive --update --stats eboney@${REMOTEHOST}:${REMOTEPATH}/ ${LOCALPATH}
+  echo -e ""
+  echo -e "${White}That was a ${BRed}REAL RUN${Green}${NC}"
+  echo -e ""
+fi

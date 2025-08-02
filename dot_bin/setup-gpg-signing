@@ -1,0 +1,81 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
+
+echo -e "${BLUE}🔐 Setting up GPG commit signing...${NC}"
+
+# Check if GPG is installed
+if ! command -v gpg &> /dev/null; then
+    echo -e "${RED}❌ GPG not found. Installing via Homebrew...${NC}"
+    brew install gnupg
+fi
+
+# Check if user already has GPG keys
+existing_keys=$(gpg --list-secret-keys --keyid-format=long 2>/dev/null | grep -E "^sec" || true)
+
+if [[ -n "$existing_keys" ]]; then
+    echo -e "${GREEN}✅ Found existing GPG keys:${NC}"
+    gpg --list-secret-keys --keyid-format=long
+    echo ""
+    echo -e "${YELLOW}Select a key to use for signing:${NC}"
+    gpg --list-secret-keys --keyid-format=long | grep -E "^sec" | awk '{print $2}' | cut -d'/' -f2
+    echo ""
+    read -p "Enter the key ID (8-character hex): " key_id
+else
+    echo -e "${YELLOW}🔑 No GPG keys found. Creating a new one...${NC}"
+    echo ""
+    echo "Please enter the following information:"
+    read -p "Real name (e.g., 'Elliot Boney'): " real_name
+    read -p "Email address: " email
+    
+    # Create GPG key batch file
+    cat > /tmp/gpg_batch << EOF
+%echo Generating a basic OpenPGP key
+Key-Type: RSA
+Key-Length: 4096
+Subkey-Type: RSA
+Subkey-Length: 4096
+Name-Real: $real_name
+Name-Email: $email
+Expire-Date: 2y
+%commit
+%echo done
+EOF
+
+    echo -e "${BLUE}🔧 Generating GPG key (this may take a moment)...${NC}"
+    gpg --batch --generate-key /tmp/gpg_batch
+    rm /tmp/gpg_batch
+    
+    # Get the new key ID
+    key_id=$(gpg --list-secret-keys --keyid-format=long | grep -E "^sec" | head -1 | awk '{print $2}' | cut -d'/' -f2)
+    echo -e "${GREEN}✅ Generated key with ID: $key_id${NC}"
+fi
+
+# Add signing key to git config
+echo -e "${BLUE}🔧 Configuring git to use GPG key $key_id...${NC}"
+git config --global user.signingkey "$key_id"
+
+# Export public key for GitHub
+echo -e "${BLUE}📋 Exporting public key for GitHub...${NC}"
+gpg --armor --export "$key_id" | tee /tmp/gpg_public_key.txt
+
+echo -e "${GREEN}✅ GPG signing setup complete!${NC}"
+echo ""
+echo -e "${YELLOW}Next steps:${NC}"
+echo "1. Copy the public key above (or from /tmp/gpg_public_key.txt)"
+echo "2. Add it to GitHub: Settings → SSH and GPG keys → New GPG key"
+echo "3. Test with: git commit -S -m 'test signed commit'"
+echo ""
+echo -e "${BLUE}💡 Tip: The public key has been copied to /tmp/gpg_public_key.txt${NC}"
+
+# Copy to clipboard if on macOS
+if [[ "$OSTYPE" == "darwin"* ]] && command -v pbcopy &> /dev/null; then
+    gpg --armor --export "$key_id" | pbcopy
+    echo -e "${GREEN}🎉 Public key copied to clipboard!${NC}"
+fi

@@ -1,0 +1,53 @@
+#!/bin/bash
+#set -x
+Red='\x1b[0;31m'
+Green='\x1b[0;32m'
+Yellow='\x1b[0;33m'
+Blue='\x1b[0;34m'
+Purple='\x1b[0;35m'
+Cyan='\x1b[0;36m'
+White='\x1b[0;37m'
+BRed='\x1b[1;31m'
+BYellow='\x1b[1;33m'
+BWhite='\x1b[1;37m'
+NC='\x1b[m'
+
+export Red;
+export Green;
+export Yellow;
+export Blue;
+export Purple;
+export Cyan;
+export White;
+export BRed;
+export BYellow;
+export BWhite;
+export NC;
+
+# set the internal field spereator to line break, so that we can iterate easily over the verify-pack output
+IFS=$'\n';
+
+# list all objects including their size, sort by size, take top 10
+objects=`git verify-pack -v .git/objects/pack/pack-*.idx | grep -v chain | sort -k3nr | head`
+
+echo "All sizes are in kB's. The pack column is the size of the object, compressed, inside the pack file."
+
+output="${Green}size,${Blue}pack,${White}SHA,${Yellow}location"
+for y in $objects
+do
+  # extract the size in bytes
+  oldsize=`echo $y | cut -f 5 -d ' '`
+  size=`numfmt --to=iec --format="%3f" $oldsize`
+  # extract the compressed size in bytes
+  oldCompressedSize=`echo $y | cut -f 6 -d ' '`
+  compressedSize=`numfmt --to=iec --format="%3f" $oldCompressedSize`
+
+  # extract the SHA
+  sha=`echo $y | cut -f 1 -d ' '`
+  # find the objects location in the repository tree
+  other=`git rev-list --all --objects | grep $sha`
+  #lineBreak=`echo -e "\n"`
+  output="${output}\n${Green}${size},${Blue}${compressedSize},${White}${other:0:40},${Yellow}${other:41}${NC}"
+done
+
+echo -e $output | column -t -s ','

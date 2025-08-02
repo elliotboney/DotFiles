@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+PATH=~/.bin:/usr/local/bin/:${PATH}
+/usr/local/bin/fswatch --recursive --event Created  -Ie ".*" --include=.*\.zip$  ~/Dropbox/3D/models | gxargs -n1 -d '\n' processmodel

@@ -1,0 +1,141 @@
+#!/usr/bin/env bash
+
+# extensions=(guest admin power_user developer analyst system)
+
+RLSGROUPS=(
+  "AMZN"
+  "BATV"
+  "ETRG"
+  "TBS"
+  "CONVERT"
+  "KILLERS"
+  "STRiFE"
+  "FLEET"
+  "FUM"
+  "YIFY"
+  "x0r"
+  "ETRG"
+  "Condo"
+  "MTB"
+  "FoV"
+  "DeeJayAhmed"
+  "FS"
+  "ShAaNiG"
+  "NTb"
+  "tbs"
+  "rip"
+  "W4f"
+
+  )
+# RLSGROUPS=( one two three )
+
+GROUPS_REGEX=${RLSGROUPS[0]}
+
+for x in "${RLSGROUPS[@]}"; do
+   GROUPS_REGEX="${GROUPS_REGEX}\|${x}"
+done
+
+GROUPS_REGEX="s|${GROUPS_REGEX#,}||g"
+echo -e "${GROUPS_REGEX}"
+
+if [[ $1 != "--doit" ]];
+  then
+  echo -e "\n ${BWhite}----------------------------------------------------${NC}"
+  echo -e " ${BWhite}|  Doing a dry run, use ${Green}--doit${BWhite} to actually rename  |${NC}"
+  echo -e " ${BWhite}----------------------------------------------------${NC}\n"
+else
+  rmf **/*.txt
+  rmf **/*.nfo
+  echo -e "\n ${BWhite}----------------------${NC}"
+  echo -e " ${BWhite}|  Doing a ${BRed}REAL${BWhite} run  |${NC}"
+  echo -e " ${BWhite}----------------------${NC}\n"
+fi
+for i in *; do
+    if [[ ${i} = "00 Movies" ]] || [[ ${i} = "02 Apps" ]] || [[ ${i} = "cleantv" ]] ; then
+      continue
+    fi
+
+    EXTENSION="${i##*.}"
+
+    # Case insensitive
+    new=$(echo $i | perl -pe 's|mkv\|mp4\|avi||ig') # Remove extentions
+
+    new=$(echo $new | perl -pe 's|\[[a-zA-Z ]+\]||ig') # Random shit cleaning
+    new=$(echo $new | perl -pe 's|www\.Torrenting\.com||ig') # Random shit cleaning
+    # echo ${new}
+
+    #-------------------------------
+    # CASE INsensitive cleaning
+    #-------------------------------
+
+    new=$(echo $new | perl -pe ${GROUPS_REGEX}) # Group shit cleaning
+    # echo $new
+    new=$(echo $new | perl -pe 's|||ig') # Random shit cleaning
+    new=$(echo $new | perl -pe 's|(S[0-9][0-9]E[0-9][0-9]).*|\1|g') # Random shit cleaning
+    new=$(echo $new | perl -pe 's|AMZN\|Complete\|WEB\|WEBRip\|5\.1Ch\|DDP5\.1\|6CH||ig') # Random shit cleaning
+    new=$(echo $new | perl -pe 's|720p\|1080[pP]\|aaf\|bluray\|brrip\|hdrip\|[xh]264\|AAC\|5\.1\|x265\|HEVC\|HD\-TS||ig') # Random shit cleaning
+    new=$(echo $new | perl -pe 's|xvid\|ReEnc\|ac3\|HDTV\|x264\|FUM\|rarbg\|web\-dl\|JYK||ig') # Random shit cleaning
+
+    #-------------------------------
+    # CASE SENSITIVE cleaning
+    #-------------------------------
+    new=$(echo $new | perl -pe 's|GFXTRA\.COM!\|videohive\|gfxday\.com[!]\|VH\.\|WEBRip\|DVDRip\|EVO\|AC3\|FLEET||g') # Random shit cleaning
+    new=$(echo $new | perl -pe 's|DTS\|WEB\-DL\|AVS||g') # Random shit cleaning
+
+    # group names
+    new=$(echo $new | perl -pe 's|x0r||g') # Random shit cleaning
+
+
+    new=$(echo $new | perl -pe 's|[0-9]{5,8}||g')            # remove long vhive numbers
+
+
+    new=$(echo $new | perl -pe 's|\-\|\.\|_| |ig') # Random shit cleaning
+
+
+    new=$(echo $new | perl -pe 's|^\- ||g')  # Remove any spaces/hyphens before the start of the file
+    new=$(echo $new | perl -pe 's| /$|/|g')  # Remove any spaces/hyphens end of the file
+    new=$(echo $new | perl -pe 's|-$||g')  # Remove any spaces/hyphens end of the file
+
+
+    new=$(echo $new | perl -pe 's|(\b)([a-z])|\U\2|g')  # Uncapitalize articles
+
+    new=$(echo $new | perl -pe 's| A | a |g')  # Uncapitalize articles
+    new=$(echo $new | perl -pe 's| An | an |g')  # Uncapitalize articles
+    new=$(echo $new | perl -pe 's| As | as |g')  # Uncapitalize articles
+    new=$(echo $new | perl -pe 's| And | and |g')  # Uncapitalize articles
+    new=$(echo $new | perl -pe 's| But | but |g')  # Uncapitalize articles
+    new=$(echo $new | perl -pe 's| For | for |g')  # Uncapitalize articles
+    new=$(echo $new | perl -pe 's| In | in |g')  # Uncapitalize articles
+    new=$(echo $new | perl -pe 's| It | it |g')  # Uncapitalize articles
+    new=$(echo $new | perl -pe 's| Of | of |g')  # Uncapitalize articles
+    new=$(echo $new | perl -pe 's| On | on |g')  # Uncapitalize articles
+    new=$(echo $new | perl -pe 's| Or | or |g')  # Uncapitalize articles
+    new=$(echo $new | perl -pe 's| Nor | nor |g')  # Uncapitalize articles
+    new=$(echo $new | perl -pe 's| The | the |g')  # Uncapitalize articles
+    new=$(echo $new | perl -pe 's| Up | up |g')  # Uncapitalize articles
+
+    # Remove stuff that can't be cleaned earlier
+    new=$(echo $new | perl -pe 's| HC | |g')
+
+    if [[ -f $i ]]; then
+      new=$(echo ${new}.${EXTENSION})
+    fi
+
+    if [[ $1 == "--doit" ]]; then
+      if [[ "$i" == "$new" ]]; then
+        echo -e " ${Black}[NOCHANGE] ${Black}$i ${Cyan}--> ${Black}$new${NC}"
+      else
+        echo -e " ${Red}[RENAMING] ${White}$i ${Cyan}--> ${BRed}$new${NC}"
+       mv "${i}" "${new}"
+     fi
+   else
+    if [[ "$i" == "$new" ]]; then
+      echo -e " ${Black}[NOCHANGE] ${Black}$i ${Cyan}--> ${Black}$new${NC}"
+    else
+      echo -e " ${Yellow}[TEST] ${White}$i ${Cyan}--> ${Green}$new${NC}"
+    fi
+  fi
+  # break
+done
+
+echo -e ""

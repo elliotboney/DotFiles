@@ -1,0 +1,173 @@
+# garbage
+
+# garbage
+regexp=.*(LogHealthSnapshot|PacketHandlerLog|LogBeacon|info was not filled|Display:|Added UsageMask|Public common data invalid|LogGarbage|LogFortMemory|LogCommonInput|Flushing async loaders|LogVivoxVoiceChat|LogAudio|LogCoreAudio|Verbose|Requesting full profile update|LogEasyAntiCheatClient|LogFortChat|HITCHHUNTER|Attempted to apply a scoped modifier|UpdateSynchronizeRequest|Leaving stat scope).*
+replace=.
+skip=yes
+count=once
+=======
+
+#CVAR
+regexp=\[\[.*\]\]
+colours=blue
+count=once
+=======
+
+#IP Address
+regexp=[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}(:[0-9]+)?
+colours=bold blue
+count=once
+=======
+
+# Worldinventory
+regexp=World Inventory received
+colours=bold green
+count=once
+=======
+
+# Logcore
+regexp=LogCore:
+colours=yellow
+count=once
+=======
+
+# LogConfig
+regexp=LogConfig:
+colours=blue
+count=once
+=======
+
+# LogOnlineChat
+regexp=LogOnlineChat:
+colours="\033[38;5;37m"
+count=once
+=======
+
+# LogFort
+regexp=LogFort:
+colours="\033[38;5;57m"
+count=once
+=======
+
+# LogProfileSys
+regexp=LogProfileSys:
+colours="\033[38;5;60m"
+count=once
+=======
+
+# LogParticles
+regexp=LogParticles:|LogRenderer:
+colours="\033[38;5;61m"
+count=once
+=======
+
+# LogFortPlayerRegistration
+regexp=LogFortPlayerRegistration:
+colours="\033[38;5;63m"
+count=once
+=======
+
+# LogFortThreatVisuals
+regexp=LogFortThreatVisuals:|LogFortMusic:|LogLevelActorContainer:
+colours="\033[38;5;240m"
+count=once
+=======
+
+
+# LogNet
+regexp=LogNet:
+colours="\033[38;5;87m"
+count=once
+=======
+
+# LogFortSettings
+regexp=LogFortSettings:
+colours="\033[38;5;135m"
+count=once
+=======
+# LogFortWorld
+regexp=LogFortWorld:
+colours="\033[38;5;137m"
+count=once
+=======
+
+# LogOnlineSession
+regexp=LogOnlineSession:
+colours="\033[38;5;139m"
+count=once
+=======
+
+
+# LogCommonUI
+regexp=LogCommonUI:|LogSlate:|LogFortUI:
+colours="\033[38;5;141m"
+count=once
+=======
+
+# LogParty
+regexp=LogParty:|LogOnlineParty:|LogLobbyBeacon:
+colours="\033[38;5;144m"
+count=once
+=======
+
+# LogExit
+regexp=LogExit:|LogInit:
+colours="\033[38;5;145m"
+count=once
+=======
+
+# LogOnlineAccount
+regexp=LogOnlineAccount:
+colours="\033[38;5;201m"
+count=once
+=======
+
+# dashes
+regexp=\-\-\-\-+
+colours=bold white
+count=once
+=======
+
+
+#Ingredients
+regexp=Ingredient|WorldItem|Ammo|Trap_\w+
+colours=bold blue
+# count=once
+=======
+
+# Files
+regexp=([\.]+)?/[\w\.\-]+/[\w/\.\-]+
+colours="\033[38;5;37m"
+=======
+
+
+# Urls
+regexp=http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\), ]|(?:%[0-9a-fA-F][0-9a-fA-F]))+
+colours="\033[38;5;37m"
+=======
+
+# Highlight my name
+regexp=ëlliöt|312f4a0fb90e48ecab95054f06fbf14d
+colours=cyan
+# count=once
+
+
+=======
+# date format
+regexp=\[(\d{4})\.(\d{2})\.(\d{2})\-(\d{2})\.(\d{2})\.(\d{2})\:\d{3}\]\[[ \d]{3}\]
+# replace=[\1-\2-\3@\4:\5:\6]
+colours=black
+count=once
+
+
+
+=======
+# Errors
+regexp=[Ee]rror
+colours=bold red
+count=once
+=======
+# Warning
+regexp=Warning
+colours=yellow
+count=once

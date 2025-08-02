@@ -1,5 +1,5 @@
 load_eza_colors() {
-    local COLORS_FILE="${HOME}/.dotfiles/.bash_settings.d/ezacolors"
+    local COLORS_FILE="${HOME}/.dotfiles/environment.d/ezacolors"
     local SCRIPT_PATH="${HOME}/.bin/eza-colors-converter.sh"
     if [ -f "$COLORS_FILE" ] && [ -f "$SCRIPT_PATH" ]; then
         EZA_COLORS=$("$SCRIPT_PATH" "$COLORS_FILE" 2>/dev/null | tr -d '"')
@@ -14,9 +14,9 @@ load_eza_colors() {
 if  command_exists eza; then
     load_eza_colors
     if command_exists gdircolors; then
-        eval $(gdircolors -b ${HOME}/.dotfiles/.bash_settings.d/dircolors)
+        eval $(gdircolors -b ${HOME}/.dotfiles/environment.d/dircolors)
     else 
-        eval $(dircolors -b ${HOME}/.dotfiles/.bash_settings.d/dircolors)
+        eval $(dircolors -b ${HOME}/.dotfiles/environment.d/dircolors)
     fi
     export EZA_COLORS=${EZA_COLORS}:${LS_COLORS}
 # elif  command_exists gdircolors; then
@@ -24,7 +24,7 @@ if  command_exists eza; then
 else
   echo -e $PATH
   if $(dircolors &>/dev/null); then
-    eval $(dircolors -b ${HOME}/.dotfiles/.bash_settings.d/dircolors)
+    eval $(dircolors -b ${HOME}/.dotfiles/environment.d/dircolors)
   fi
 fi
 

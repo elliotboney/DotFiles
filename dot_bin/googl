@@ -1,0 +1,25 @@
+#!/usr/bin/env python
+import googl
+import sys
+
+# Let's check if we have the clipboard stuff
+try:
+  import pyperclip
+except ImportError, e:
+  print "You need to install pyperclip"
+  sys.exit()
+  pass
+
+# Total Arguments passed
+total = len(sys.argv)
+# Do we have a website passed?
+if total > 1:
+  site=str(sys.argv[1])
+  pyperclip.copy(googl.Googl("AIzaSyBmhMHHABhFQH2xz7dvY_3PlQzSOhYCaRI").shorten(site)[u"id"])
+else:
+  print "\x1b[1;30;40mUseage: \x1b[1;32;40mgoogl \x1b[1;34;40m<url to shorten here>"
+
+
+
+
+# print googl.Googl("AIzaSyBmhMHHABhFQH2xz7dvY_3PlQzSOhYCaRI").shorten(site)[u"id"]

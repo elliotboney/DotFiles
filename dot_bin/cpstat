@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+if type progress &> /dev/null
+then
+  gcp -ir "$@" &
+  progress -mp $! && bell
+else
+  echo "You need to install progress"
+fi

@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+#
+
+if [ ! -f "$1" ]; then
+  echo -e "${Red}File already processed${NC}"
+
+else
+  echo -e "${White}-----------------------------------------------------"
+  PARENTDIR=$(realpath "$1" | sed 's|\(.*\)/.*|\1|')
+  MODELDIR=$(basename "${1}" .zip)
+  MODELDIR=${MODELDIR//-/ }
+  MODELDIR=${MODELDIR//+/ }
+  MODELDIR=${MODELDIR//_/ }
+
+  echo -e "${Red}PARENTDIR: ${White}${PARENTDIR}${NC}"
+  echo -e "${Red}MODELDIR: ${White}${MODELDIR}${NC}"
+
+  cd "${PARENTDIR}"
+  echo -e "${Gray}Extracting ${Green}$(basename "${1}")${Gray} file to '${MODELDIR}'...${NC}"
+  unzip -ju "$(basename "${1}")" -d "${MODELDIR}" # > /dev/null 2>&1
+  cd "${MODELDIR}"
+  echo -e "${Gray}Cleaning images and txt / html files...${NC}"
+  /usr/local/bin/rmtrash *.txt > /dev/null 2>&1
+  /usr/local/bin/rmtrash *.html > /dev/null 2>&1
+  /usr/local/bin/rmtrash *.pdf > /dev/null 2>&1
+  /usr/local/bin/rmtrash *.gcode > /dev/null 2>&1
+  /usr/local/bin/rmtrash **/*.[jJ][pP][gG] > /dev/null 2>&1
+  /usr/local/bin/rmtrash *.[jJ][pP][gG] > /dev/null 2>&1
+  /usr/local/bin/rmtrash images > /dev/null 2>&1
+  echo -e "${Gray}Moving model files to main directory...${NC}"
+
+  mv files/* . > /dev/null 2>&1
+
+  echo -e "${Gray}Deleting ${Red}$(basename "${1}")${NC}"
+  rm "$1" > /dev/null 2>&1
+
+  echo -e "${BGreen}Done!${NC}"
+  osascript -e "display notification \"${MODELDIR} Finished Processing...\" with title \"3D Model Processing\""
+
+  echo -e "${White}-----------------------------------------------------"
+fi

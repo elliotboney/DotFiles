@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+
+# source "${HOME}/.dotfiles/.bash_runfirst.d/colors.sh"
+
+REMOTEHOST="elliotboney.com"
+REMOTEPATH="/var/www/elliotboney.com/"
+
+if [[ -z "$1" ]]; then
+  echo -e ""
+  echo -e "${White}Doing a ${BGreen}DRY RUN${White} of  ${Yellow}local${White} → ${Cyan}${REMOTEHOST}${NC}"
+  echo -e ""
+   rsync --dry-run --checksum --exclude=backup* --exclude=tmp/* --exclude=*cache* --exclude=.git --exclude=*uploads/* --progress --human-readable --compress --update --archive --update --stats ${REMOTEPATH} eboney@${REMOTEHOST}:${REMOTEPATH}/
+  echo -e ""
+  echo -e "${White}That was a ${BGreen}DRY RUN${White}, add any parameter to the command to do a real run${NC}"
+  echo -e ""
+else
+  echo -e ""
+  echo -e "${White}Doing a ${BRed}LIVE RUN${White} of ${Yellow}local${White} → ${Cyan}${REMOTEHOST}${NC}"
+  echo -e ""
+  rsync --checksum --exclude=backup* --exclude=tmp/* --exclude=*cache* --exclude=.git --exclude=*uploads/* --progress --human-readable --compress --update --archive --update --stats ${REMOTEPATH} eboney@${REMOTEHOST}:${REMOTEPATH}/
+  echo -e ""
+  echo -e "${White}That was a ${BRed}REAL RUN${Green}${NC}"
+  echo -e ""
+fi

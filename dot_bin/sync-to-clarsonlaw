@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+
+# source "${HOME}/.dotfiles/.bash_runfirst.d/colors.sh"
+
+REMOTEHOST="clarsonlaw.com"
+REMOTEPATH="/var/www/clarsonlaw.com"
+LOCALPATH="/var/www/clarsonlaw.com"
+
+if [[ -z "$1" ]]; then
+  echo -e ""
+  echo -e "${White}Doing a ${BGreen}DRY RUN${White} of  ${Yellow}local${NC} → ${Cyan}${REMOTEHOST}${BCyan}${REMOTEPATH}${White} "
+  echo -e ""
+  rsync --dry-run --checksum --exclude=backup* --exclude=cache* --exclude=.idea --exclude=*.zip --exclude=tmp/* --exclude=.git --exclude=*uploads/* --progress --human-readable --compress --update --archive --stats ${LOCALPATH}/ eboney@${REMOTEHOST}:${REMOTEPATH}/
+  echo -e ""
+  echo -e "${White}That was a ${BGreen}DRY RUN${White}, add any parameter to the command to do a real run${NC}"
+  echo -e ""
+else
+  echo -e ""
+  echo -e "${White}Doing a ${BRed}LIVE RUN${White} of  ${Yellow}local${NC} → ${Cyan}${REMOTEHOST}${BCyan}${REMOTEPATH}${White}"
+  echo -e ""
+  rsync --checksum --exclude=backup* --exclude=cache* --exclude=.idea --exclude=*.zip --exclude=tmp/* --exclude=.git --exclude=*uploads/* --progress --human-readable --compress --update --archive --update --stats ${LOCALPATH}/ eboney@${REMOTEHOST}:${REMOTEPATH}/
+  echo -e ""
+  echo -e "${White}That was a ${BRed}REAL RUN${Green}${NC}"
+  echo -e ""
+fi

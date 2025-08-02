@@ -1,0 +1,88 @@
+#!/bin/bash
+
+# Normal Colors
+export Black='\x1b[0;30m'            # Black
+export LightGray='\x1b[38;5;242m'    # LightGray
+export DarkGray='\x1b[38;5;235m'     # DarkGray
+
+export Red='\x1b[0;31m'              # Red
+export Green='\x1b[0;32m'            # Green
+export Yellow='\x1b[0;33m'           # Yellow
+export Blue='\x1b[0;34m'             # Blue
+export Purple='\x1b[0;35m'           # Purple
+export Cyan='\x1b[0;36m'             # Cyan
+export White='\x1b[0;37m'            # White
+
+# Bold
+export BBlack='\x1b[1;30m'           # Black
+export BRed='\x1b[1;31m'             # Red
+export BGreen='\x1b[1;32m'           # Green
+export BYellow='\x1b[1;33m'          # Yellow
+export BBlue='\x1b[1;34m'            # Blue
+export BPurple='\x1b[1;35m'          # Purple
+export BCyan='\x1b[1;36m'            # Cyan
+export BWhite='\x1b[1;37m'           # White
+
+# Background
+export On_Black='\x1b[40m'           # Black
+export On_Red='\x1b[41m'             # Red
+export On_Green='\x1b[42m'           # Green
+export On_Yellow='\x1b[43m'          # Yellow
+export On_Blue='\x1b[44m'            # Blue
+export On_Purple='\x1b[45m'          # Purple
+export On_Cyan='\x1b[46m'            # Cyan
+export On_White='\x1b[47m'           # White
+
+export NC="\x1b[m"                   # Color Reset
+
+wwwfolder="${1}"
+
+groupname="development"
+developmentuser="$(id -u -n)"
+webserveruser="www-data"
+
+echo -e "${White}Checking if group ${BBlue}${groupname} ${White}exists...${NC}"
+
+if grep -q $groupname /etc/group; then
+  echo -e "${White}Group ${BBlue}${groupname} ${White}exists, skipping...${NC}"
+else
+  echo -e "${Yellow}Group ${BBlue}${groupname} ${Yellow}does not exist, creating...${NC}"
+  # Create a runtime user group
+  sudo addgroup $groupname
+fi
+
+if groups $developmentuser | grep &>/dev/null "\b${groupname}\b"; then
+  echo -e "${BGreen}${developmentuser} ${White}is already in ${BBlue}${groupname} ${White}skipping...${NC}"
+else
+  echo -e "${BGreen}${developmentuser} ${Yellow}is not in the group ${BBlue}${groupname} ${White}adding...${NC}"
+  # Assign user to the new runtime user group
+  sudo adduser $developmentuser $groupname
+fi
+
+if groups $webserveruser | grep &>/dev/null "\b${groupname}\b"; then
+  echo -e "${BGreen}${webserveruser} ${White}is already in ${BBlue}${groupname} ${White}skipping...${NC}"
+else
+  echo -e "${BGreen}${$webserveruser} ${Yellow}is not in the group ${BBlue}${groupname} ${White}adding...${NC}"
+  # Assign web user to the new runtime user group
+  sudo adduser $$webserveruser $groupname
+fi
+
+echo -e "${White}Assigning the ownership of all files and directories to the apache user ${BBlue}${webserveruser}${White}...${NC}"
+# Assign the ownership of all files and directories to the apache user "www-data"
+sudo chown ${webserveruser} -R "${wwwfolder}"
+
+echo -e "${White}Assigning the group ownership to the ${BBlue}${groupname} ${White}group...${NC}"
+# Assign the group ownership to the "magento-runtime" group
+sudo chgrp ${groupname} -R "${wwwfolder}"
+
+echo -e "${White}Assigning permissions on all directories ${Cyan}(Owner: full access, Group: full access, Others: read and execute)${White}...${NC}"
+# Assign permissions on all directories (Owner: full access, Group: full access, Others: read and execute)
+sudo find "${wwwfolder}" -type d -exec chmod 775 {} \;
+
+echo -e "${White}Assigning permissions on all files ${Cyan}(Owner: read and write, Group: read and write, Others: read)${White}...${NC}"
+# Assign permissions on all files (Owner: read and write, Group: read and write, Others: read)
+sudo find "${wwwfolder}" -type f -exec chmod 664 {} \;
+
+echo -e "${White}Setting the stick-bit to inherit the group ownership to new files and folders...${NC}"
+# # Set the stick-bit to inherit the group ownership to new files and folders
+sudo chmod g+s "${wwwfolder}"

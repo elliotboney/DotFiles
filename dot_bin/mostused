@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+  HIST=`history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head`
+  for z in "$(history)"; do
+    echo -e "${z}"
+  done
+  echo "${HIST}"
+

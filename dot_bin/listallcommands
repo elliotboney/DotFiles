@@ -1,0 +1,261 @@
+#!/usr/bin/python
+# Shell script document generator.
+# Original Source: https://github.com/jakeouellette/shell-helper
+import sys
+import os
+import json
+import csv
+from os.path import expanduser
+import re
+strip_ANSI_escape_sequences_sub = re.compile(r"""
+    \x1b     # literal ESC
+    \[       # literal [
+    [;\d]*   # zero or more digits or semicolons
+    [A-Za-z] # a letter
+    """, re.VERBOSE).sub
+
+
+def strip_ANSI_escape_sequences(s):
+    return strip_ANSI_escape_sequences_sub("", s)
+rows, columns = os.popen('stty size', 'r').read().split()
+
+SHOWFILENAMESASHEADER = False
+SHOWBINFILES = False
+CYAN = '\x1b[38;5;6m'             # Cyan
+BLUE = '\x1b[0;34m'
+DARKGRAY = '\x1b[38;5;235m'
+GREEN = '\033[92m'
+BRED = '\x1b[1;31m'
+END = '\033[0m'
+LIGHTGRAY = '\x1b[38;5;242m'
+BLACKBG = '\x1b[0;37;40m'
+YELLOW = '\x1b[0;33m'
+BRIGHTYELLOW = '\x1b[1;33m'
+FILENAMECOLOR = LIGHTGRAY
+ALTROWCOLOR = BLACKBG
+COMMENTCOLOR = CYAN
+COMMANDTEXTCOLOR = GREEN
+ENDCOLOR = END
+
+
+def unique(seq):
+    seen = set()
+    seen_add = seen.add
+    return [x for x in seq if not (x in seen or seen_add(x))]
+
+
+def find_files(dir):
+    to_process = list()
+    for i in os.listdir(dir):
+        to_process.append(dir + "/" + i)
+    return to_process
+
+
+def find_shell_helpers_in_file(f):
+    printables = list()
+    building_function = False
+    building_helper = False
+    script_file = False
+    comment_lines = list()
+    documentation_name = ""
+    with open(f, 'r') as openfile:
+        if ".bin" in f:
+            script_file = True
+        for line in openfile:
+            line = line.lstrip()
+            # Track comments for use with helpers
+            if line.startswith("#") and not line.startswith("#?") and not line.startswith("#!") and not line.startswith("##") and not line.startswith("# ##") and not line.startswith("# --") and not script_file:
+                if len(line[len("#"):].strip()) > 0:
+                    comment_lines.append(line[len("#"):].strip())
+            else:
+                if line.lower().startswith("#!/"):
+                    script_file = True
+                    documentation_name = f.replace(expanduser("~"), '~')
+                # This is for headings
+                elif line.lower().startswith("#!"):
+                    echo = "\n" + BRIGHTYELLOW + \
+                        line[len("#!"):].rstrip() + ENDCOLOR
+                    printables.append(EchoDocumentation(echo))
+                # For adding stuff to the list, but just using comments
+                if line.lower().startswith("#?"):
+                    documentation_name = '$ ' + line[len("#?"):].strip()
+                # Function Stuff
+                elif line.lower().startswith("function "):
+                    documentation_name = line[len("function "):].split(
+                        "(")[0].split("{")[0].strip()
+                elif line.lower().rstrip().endswith("() {") and not line.startswith("##"):
+                    documentation_name = line.split(
+                        "(")[0].split("{")[0].strip()
+                elif line.lower().rstrip().endswith("(){") and not line.startswith("##"):
+                    documentation_name = line.split(
+                        "(")[0].split("{")[0].strip()
+                # Alias stuff
+                elif line.lower().startswith("alias "):
+                    alias = line[len("alias "):].split("=")
+                    documentation_name = alias[0].strip()
+                    comment_lines.append(
+                        COMMANDTEXTCOLOR + "... " + alias[1].strip())
+                # Handle script files comments, exclude empty lines
+                elif script_file and not line.lower().startswith("#!/") and line.lower().startswith("#"):
+                    if len(line[len("#"):].strip()) > 0:
+                        comment_lines.append(line[len("#"):].strip())
+                    if len(comment_lines) > 0:
+                        printables.append(RunnableFunction(
+                            documentation_name, comment_lines))
+                        return ScriptFile(f, printables)
+                # Handle script files
+                elif script_file and not line.lower().startswith("#!/"):
+                    printables.append(RunnableFunction(
+                        documentation_name, comment_lines))
+                    return ScriptFile(f, printables)
+
+                function_ready = len(comment_lines) > 0 and documentation_name
+                # Finalize your docs
+                if function_ready:
+                    if not comment_lines[0].startswith("%"):
+                        printables.append(RunnableFunction(
+                            documentation_name, comment_lines))
+                if not line.startswith("#") or function_ready:
+                    # Reset built object
+                    comment_lines = list()
+                    documentation_name = ""
+                    building_function = False
+                    building_helper = False
+        return ShellScript(f, printables)
+
+
+def find_shell_helpers(filenames):
+    outputs = list()
+    for f in filenames:
+        if os.path.isdir(f):
+            continue
+        elif is_binary(f):
+            continue
+        else:
+            outputs.append(find_shell_helpers_in_file(f))
+    first_col_width = max(shell_script.len() for shell_script in outputs) + 2
+
+    for shell_script in outputs:
+        shell_script.printo(first_col_width)
+
+
+def is_binary(filename):
+    fin = open(filename, 'rb')
+    try:
+        CHUNKSIZE = 1024
+        while 1:
+            chunk = fin.read(CHUNKSIZE)
+            if '\0' in chunk:  # found null byte
+                return True
+            if len(chunk) < CHUNKSIZE:
+                break  # done
+    finally:
+        fin.close()
+
+    return False
+
+
+class ScriptFile:
+
+    def __init__(self, filename, printables):
+        self.filename = filename
+        self.printables = printables
+
+    def printo(self, first_col_width):
+        # print("")
+        # print(FILENAMECOLOR+self.filename+END)
+        # print(FILENAMECOLOR+self.filename[45:]+END)
+        row_boolean = True
+        for printable in self.printables:
+            printable.printo(first_col_width, row_boolean)
+            row_boolean = not row_boolean
+
+    def len(self):
+        if len(self.printables) is 0:
+            return 0
+        return max(printable.len() for printable in self.printables)
+
+
+class ShellScript:
+
+    def __init__(self, filename, printables):
+        self.filename = filename
+        self.printables = printables
+
+    def printo(self, first_col_width):
+        if SHOWFILENAMESASHEADER:
+            print("")
+            head, tail = os.path.split(os.path.split(self.filename)[0])
+            # print(FILENAMECOLOR + self.filename[45:] + END)
+            # print(self.filename.split("/"))
+            # print(self.filename.split("/")[-2])
+            print(FILENAMECOLOR + os.path.basename(self.filename) + END)
+        row_boolean = True
+        for printable in self.printables:
+            printable.printo(first_col_width, row_boolean)
+            row_boolean = not row_boolean
+
+    def len(self):
+        if len(self.printables) is 0:
+            return 0
+        return max(printable.len() for printable in self.printables)
+
+
+class RunnableFunction:
+
+    def __init__(self, name, comment_lines):
+        self.name = name
+        self.comment_lines = comment_lines
+
+    def len(self):
+        return len(self.name)
+
+    def printo(self, first_col_width, row_boolean):
+        row_start = "" if row_boolean else ALTROWCOLOR
+        row_end = "" if row_boolean else ENDCOLOR
+        int_columns = int(columns)
+        maxlength = int_columns - first_col_width + 23
+        commentlines = ", ".join(self.comment_lines)
+
+        # outputforlength = outputforlength.replace(COMMENTCOLOR, "").replace()
+        output = "  " + self.name.ljust(first_col_width) + COMMENTCOLOR + \
+            "# " + commentlines
+        outputforlength = output.replace(
+            COMMENTCOLOR, '').replace(COMMANDTEXTCOLOR, '')
+
+        if len(outputforlength) > maxlength + 5:
+            trimmed_output = (output[:maxlength - 3] + '...')
+        else:
+            trimmed_output = output
+        # print row_start + trimmed_output.ljust(maxlength + 3, " ") + "" +
+        # str(len(trimmed_output)) + "" + row_end
+        difference = maxlength - \
+            len(trimmed_output.replace(
+                COMMENTCOLOR, '').replace(COMMANDTEXTCOLOR, '')) - 10
+        padding = difference * " "  # + str(maxlength - len(trimmed_output))
+        # print END + outputforlength
+        print row_start + trimmed_output + padding + row_end + ENDCOLOR
+
+
+class EchoDocumentation:
+
+    def __init__(self, echo):
+        self.echo = echo
+
+    def len(self):
+        return 0
+
+    def printo(self, first_col_width, row_boolean):
+        print self.echo
+
+if __name__ == "__main__":
+    # files_targeted = unique(find_files(expanduser("~")+'/.bin'))
+    files_targeted = unique(find_files(expanduser(
+        "~") + '/DotFiles/bash/dotfiles.symlink/.bash_functions.d'))
+    files_targeted.extend(find_files(expanduser(
+        "~") + '/DotFiles/bash/dotfiles.symlink/.bash_aliases.d'))
+    if SHOWBINFILES:
+        files_targeted.extend(find_files(expanduser("~") + '/.bin'))
+    # files_targeted.extend(find_files(expanduser("~")+'/DotFiles/bash/dotfiles.symlink/.bash_runfirst.d'))
+
+    find_shell_helpers(files_targeted)

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+echo -e "${BYellow}Burning Bootloader...${NC}"
+avrdude -C/Applications/Arduino.app/Contents/Java/hardware/tools/avr/etc/avrdude.conf -v -patmega1284p -cusbasp -Pusb -Uflash:w:~/Documents/Arduino/hardware/anet/avr/bootloaders/atmega/ATmegaBOOT_168_atmega1284p.hex:i -Ulock:w:0x0F:m  >/dev/null 2>&1
+
+echo -e "${BBlue}Flashing ${BGreen}$1...${NC}"
+avrdude -C/Applications/Arduino.app/Contents/Java/hardware/tools/avr/etc/avrdude.conf -v -patmega1284p -c usbasp -P usb -b57600 -D -Uflash:w:$1
