@@ -4,9 +4,9 @@
 function pushdots() {
   now=$(date +"%m_%d_%Y")
   if [[ -z "$1" ]]; then
-    chezmoi git add -A . && chezmoi git commit -m "Auto dotfiles push -- $now" && chezmoi git push
+    cd ~/.local/share/chezmoi && git add -A . && git commit -m "Auto dotfiles push -- $now" && git push && cd -
   else
-    chezmoi git add -A . && chezmoi git commit -m "$1" && chezmoi git push
+    cd ~/.local/share/chezmoi && git add -A . && git commit -m "$1" && git push && cd -
   fi
 }
 

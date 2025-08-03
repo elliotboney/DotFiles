@@ -58,9 +58,9 @@ function blockdev() {
 
 
 # A safer rm, moves to trash on osx
-if command_exists rmtrash; then
+if command -v rmtrash >/dev/null 2>&1; then
   alias rmf='rmtrash -u eboney'
-elif command_exists trash; then
+elif command -v trash >/dev/null 2>&1; then
   alias rmf='trash'
 else
   alias rmf='rm -rf'
@@ -195,7 +195,7 @@ alias extractall='unzip -o "*.zip" | rmf *.zip'
 
 # grc overides for ls
 #   `brew install coreutils`
-if command_exists eza; then
+if command -v eza >/dev/null 2>&1; then
    alias la="eza -lAhF --git --time-style=long-iso --octal-permissions  --group-directories-first --no-permissions --color-scale=age" 
    alias ls="eza -hF --group-directories-first --color=always"
    alias lag="la --git-ignore"
@@ -205,7 +205,7 @@ if command_exists eza; then
    alias latd="la -T -D"
    alias latdg="la -T -D --git-ignore"
    alias latdg2="la -T -D -L 2 --git-ignore"
-elif command_exists gls; then
+elif command -v gls >/dev/null 2>&1; then
    alias ls="gls -hF --group-directories-first --color=always --quoting-style={shell-always,c-maybe}"
    alias la="gls -lAhF --group-directories-first --color=always --quoting-style={shell-always,c-maybe}"
    alias du="grc gdu"
@@ -216,25 +216,25 @@ fi
 
 alias grep="grep --color=auto"
 
-if command_exists grm; then
+if command -v grm >/dev/null 2>&1; then
   alias rm="grm -I"
 else
   alias rm="rm -I"
 fi
 
-if command_exists gln; then
+if command -v gln >/dev/null 2>&1; then
   alias ln="gln -i"
 else
   alias ln="ln -i"
 fi
 
-if command_exists gcp; then
+if command -v gcp >/dev/null 2>&1; then
   alias cp="gcp -i"
 else
   alias cp="cp -i"
 fi
 
-if command_exists gmv; then
+if command -v gmv >/dev/null 2>&1; then
   alias mv="gmv -i"
 else
   alias mv="mv -i"

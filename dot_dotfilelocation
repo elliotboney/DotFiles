@@ -1,2 +1,1 @@
-DOTPATH='/Users/eboney/DotFiles'
-export DOTPATH
+export DOTPATH="/Users/eboney/.dotfiles"

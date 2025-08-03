@@ -3,14 +3,17 @@
 # Document the complete dotfiles setup and create usage guides
 # Generates comprehensive documentation for the migrated system
 
-{{- template "colors" . }}
-{{- template "log_functions" . }}
+# Simple logging functions
+log_success() { echo "✅ $*"; }
+log_info() { echo "ℹ️  $*"; }
+log_warning() { echo "⚠️  $*"; }
+log_error() { echo "❌ $*"; }
 
 echo "📚 Documenting dotfiles setup..."
 
 # Create documentation directory
 DOCS_DIR="$HOME/.dotfiles/docs"
-{{ template "ensure_dir" "$DOCS_DIR" }}
+mkdir -p "$DOCS_DIR"
 
 # Generate machine-specific documentation
 cat > "$DOCS_DIR/machine-info.md" << 'EOF'
@@ -24,14 +27,12 @@ cat > "$DOCS_DIR/machine-info.md" << 'EOF'
 - **Username**: {{ .chezmoi.username }}
 - **Home Directory**: {{ .chezmoi.homeDir }}
 
-## Machine Type Configuration
-- **Personal Machine**: {{ .personal }}
-- **Work Machine**: {{ .work }}
-- **Development Machine**: {{ .development }}
-- **Server Machine**: {{ .server }}
-
-## Contact Information
-- **Email**: {{ .email }}
+## Platform Configuration
+- **Operating System**: {{ .chezmoi.os | title }}
+- **Architecture**: {{ .chezmoi.arch }}
+{{- if eq .chezmoi.os "linux" }}
+- **WSL Environment**: {{ if (env "WSL_DISTRO_NAME") }}Yes ({{ env "WSL_DISTRO_NAME" }}){{ else }}No{{ end }}
+{{- end }}
 
 ## Chezmoi Configuration
 - **Source Directory**: {{ .chezmoi.sourceDir }}
@@ -39,35 +40,33 @@ cat > "$DOCS_DIR/machine-info.md" << 'EOF'
 - **Encryption**: Age with Lastpass key storage
 
 ## Hardware Information
-{{- if include "is_mac" . }}
-- **Memory**: {{ include "memory_gb" . }}GB
-- **CPU Cores**: {{ include "cpu_cores" . }}
-- **High Performance**: {{ include "is_high_performance" . }}
+{{- if eq .chezmoi.os "darwin" }}
+- **Architecture**: {{ .chezmoi.arch }}
+- **Platform**: Apple Silicon/Intel Mac
 {{- end }}
 
 ## Installed Features
-{{- if .development }}
-### Development Tools
-- Neovim with Lazy.nvim
+
+### Core Tools
 - Modern CLI tools (bat, eza, fd, ripgrep, fzf)
-- Language environments (Node.js, Python, Rust, Go)
-- Git templates and hooks
-- Development automation scripts
+- Git configuration and templates
+- Shell optimization (zsh with zinit)
+- Cross-platform compatibility
+
+{{- if eq .chezmoi.os "darwin" }}
+### macOS Specific
+- Homebrew package management
+- macOS system optimizations
+- Platform-specific utilities
 {{- end }}
 
-{{- if .personal }}
-### Personal Configuration
-- GitHub Copilot integration
-- Personal SSH hosts (encrypted)
-- Personal Brewfile packages
-- macOS personal optimizations
+{{- if eq .chezmoi.os "linux" }}
+### Linux Specific
+- Package manager detection
+- Linux-specific configurations
+{{- if (env "WSL_DISTRO_NAME") }}
+- WSL integration and optimizations
 {{- end }}
-
-{{- if .work }}
-### Work Configuration
-- Codeium AI assistant
-- Work-specific packages
-- Corporate compliance settings
 {{- end }}
 
 ### Security Features
@@ -142,20 +141,24 @@ chezmoi apply
 
 ## Template Features
 
-### Machine Detection
+### Platform Detection
 Templates automatically adapt based on:
-- Operating system (macOS, Linux)
-- Machine type (personal, work, development, server)
-- Hardware capabilities (memory, CPU cores)
+- Operating system (macOS, Linux, Windows)
+- Architecture (x86_64, arm64)
+- WSL environment detection
 
 ### Conditional Loading
 ```bash
-{{- if .development }}
-# Development-only configuration
-{{- end }}
-
 {{- if eq .chezmoi.os "darwin" }}
 # macOS-specific configuration  
+{{- end }}
+
+{{- if eq .chezmoi.os "linux" }}
+# Linux-specific configuration
+{{- end }}
+
+{{- if (env "WSL_DISTRO_NAME") }}
+# WSL-specific configuration
 {{- end }}
 ```
 
@@ -191,7 +194,7 @@ chezmoi apply --force
 - Plugin loading optimized with Zinit turbo mode
 
 ### System Optimization
-{{- if include "is_mac" . }}
+{{- if eq .chezmoi.os "darwin" }}
 - macOS animations disabled for speed
 - File watcher limits increased for development
 - Dock and Finder optimized
@@ -297,25 +300,18 @@ Custom template logic here
 {{- end -}}
 ```
 
-### Complex Conditionals
+### Platform-Based Decisions
 ```bash
-{{- if and .development (include "is_mac" .) -}}
-# Development + macOS specific
+{{- if eq .chezmoi.os "darwin" -}}
+# macOS specific configuration
 {{- end -}}
 
-{{- if or .personal .development -}}
-# Personal OR development
-{{- end -}}
-```
-
-### Resource-Based Decisions
-```bash
-{{- if gt (include "memory_gb" . | atoi) 16 -}}
-# High memory configuration
+{{- if eq .chezmoi.arch "arm64" -}}
+# Apple Silicon optimization
 {{- end -}}
 
-{{- if include "is_high_performance" . -}}
-# High-end machine optimization
+{{- if and (eq .chezmoi.os "linux") (env "WSL_DISTRO_NAME") -}}
+# WSL-specific configuration
 {{- end -}}
 ```
 

@@ -5,7 +5,6 @@ alias kextlist="kextstat -kl | awk '{printf \"%i %i %s %s\n\", \$4 / 1024, \$5 /
 
 
 # Empty the Trash on all mounted volumes and the main HDD
-{{- if eq .chezmoi.os "darwin" }}
 
  # Make a quarantine exception for a DMG
  alias quarantineremove='sudo xattr -r -d com.apple.quarantine'
@@ -36,7 +35,7 @@ alias kextlist="kextstat -kl | awk '{printf \"%i %i %s %s\n\", \$4 / 1024, \$5 /
   alias fixfinder="rm ~/Library/Caches/CloudKit/CloudKitMetadata*;killall cloudd"
 
   # determine versions of PHP installed with HomeBrew
-    installedPhpVersions=($(brew ls --versions | ggrep -E 'php(@.*)?\s' | ggrep -oP '(?<=\s)\d\.\d' | uniq | sort))
+    installedPhpVersions=($(brew ls --versions | grep -E 'php(@.*)?\s' | ggrep -oP '(?<=\s)\d\.\d' | uniq | sort))
 
     # create alias for every version of PHP installed with HomeBrew
     for phpVersion in ${installedPhpVersions[*]}; do
@@ -57,7 +56,6 @@ alias kextlist="kextstat -kl | awk '{printf \"%i %i %s %s\n\", \$4 / 1024, \$5 /
 
         alias "${phpVersion}"="${value}"
     done
-fi
 
 # Updates homebrew stuff
 brewu() {
@@ -98,4 +96,3 @@ function notify () {
         osascript -e "display notification \"${1}\" with title \"${2:-Terminal}\""
     fi
 }
-{{- end }}

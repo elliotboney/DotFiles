@@ -22,119 +22,19 @@ Platform detection helpers
 Machine type detection helpers
 */}}
 {{- define "is_personal" -}}
-{{ .personal }}
+true
 {{- end -}}
 
 {{- define "is_work" -}}
-{{ .work }}
+true
 {{- end -}}
 
 {{- define "is_development" -}}
-{{ .development }}
+true
 {{- end -}}
 
 {{- define "is_server" -}}
 {{ .server }}
-{{- end -}}
-
-{{/*
-Conditional loading helpers
-*/}}
-{{- define "load_if_mac" -}}
-{{- if eq .chezmoi.os "darwin" -}}
-{{ . }}
-{{- end -}}
-{{- end -}}
-
-{{- define "load_if_development" -}}
-{{- if .development -}}
-{{ . }}
-{{- end -}}
-{{- end -}}
-
-{{- define "load_if_personal" -}}
-{{- if .personal -}}
-{{ . }}
-{{- end -}}
-{{- end -}}
-
-{{/*
-Package manager detection
-*/}}
-{{- define "has_brew" -}}
-{{- if eq .chezmoi.os "darwin" -}}true{{- else -}}false{{- end -}}
-{{- end -}}
-
-{{- define "has_apt" -}}
-{{- if and (eq .chezmoi.os "linux") (stat "/usr/bin/apt") -}}true{{- else -}}false{{- end -}}
-{{- end -}}
-
-{{- define "has_yum" -}}
-{{- if and (eq .chezmoi.os "linux") (stat "/usr/bin/yum") -}}true{{- else -}}false{{- end -}}
-{{- end -}}
-
-{{/*
-Resource detection helpers
-*/}}
-{{- define "memory_gb" -}}
-{{- if eq .chezmoi.os "darwin" -}}
-{{- $bytes := output "sysctl" "-n" "hw.memsize" | trim -}}
-{{- div (div (div $bytes 1024) 1024) 1024 -}}
-{{- else if eq .chezmoi.os "linux" -}}
-{{- $kb := output "awk" "/MemTotal/ {print $2}" "/proc/meminfo" | trim -}}
-{{- div (div $kb 1024) 1024 -}}
-{{- else -}}
-8
-{{- end -}}
-{{- end -}}
-
-{{- define "cpu_cores" -}}
-{{- if eq .chezmoi.os "darwin" -}}
-{{- output "sysctl" "-n" "hw.ncpu" | trim -}}
-{{- else if eq .chezmoi.os "linux" -}}
-{{- output "nproc" | trim -}}
-{{- else -}}
-4
-{{- end -}}
-{{- end -}}
-
-{{/*
-High-performance machine detection
-*/}}
-{{- define "is_high_performance" -}}
-{{- $memory := include "memory_gb" . | atoi -}}
-{{- $cores := include "cpu_cores" . | atoi -}}
-{{- if and (gt $memory 16) (gt $cores 8) -}}true{{- else -}}false{{- end -}}
-{{- end -}}
-
-{{/*
-Development environment helpers
-*/}}
-{{- define "has_docker" -}}
-{{- if stat "/usr/local/bin/docker" -}}true{{- else if stat "/usr/bin/docker" -}}true{{- else -}}false{{- end -}}
-{{- end -}}
-
-{{- define "has_node" -}}
-{{- if stat "/usr/local/bin/node" -}}true{{- else if stat "/usr/bin/node" -}}true{{- else -}}false{{- end -}}
-{{- end -}}
-
-{{- define "has_python3" -}}
-{{- if stat "/usr/local/bin/python3" -}}true{{- else if stat "/usr/bin/python3" -}}true{{- else -}}false{{- end -}}
-{{- end -}}
-
-{{/*
-Path construction helpers
-*/}}
-{{- define "home_path" -}}
-{{ .chezmoi.homeDir }}/{{ . }}
-{{- end -}}
-
-{{- define "config_path" -}}
-{{ .chezmoi.homeDir }}/.config/{{ . }}
-{{- end -}}
-
-{{- define "local_bin_path" -}}
-{{ .chezmoi.homeDir }}/.local/bin/{{ . }}
 {{- end -}}
 
 {{/*
@@ -168,48 +68,11 @@ command -v {{ . }} >/dev/null 2>&1
 {{- end -}}
 
 {{/*
-Conditional package installation
-*/}}
-{{- define "install_if_missing" -}}
-{{- $cmd := index . 0 -}}
-{{- $pkg := index . 1 -}}
-{{- $mgr := index . 2 -}}
-if ! {{ template "command_exists" $cmd }}; then
-  {{- if eq $mgr "brew" }}
-  brew install {{ $pkg }}
-  {{- else if eq $mgr "apt" }}
-  sudo apt install -y {{ $pkg }}
-  {{- else if eq $mgr "yum" }}
-  sudo yum install -y {{ $pkg }}
-  {{- else if eq $mgr "pacman" }}
-  sudo pacman -S --noconfirm {{ $pkg }}
-  {{- end }}
-fi
-{{- end -}}
-
-{{/*
-File backup helper
-*/}}
-{{- define "backup_file" -}}
-if [ -f "{{ . }}" ] && [ ! -f "{{ . }}.backup" ]; then
-  cp "{{ . }}" "{{ . }}.backup"
-  log_info "Backed up {{ . }}"
-fi
-{{- end -}}
-
-{{/*
 Directory creation helper
 */}}
 {{- define "ensure_dir" -}}
 if [ ! -d "{{ . }}" ]; then
   mkdir -p "{{ . }}"
-  log_info "Created directory {{ . }}"
+  echo "Created directory {{ . }}"
 fi
-{{- end -}}
-
-{{/*
-Extract GitHub username from email address
-*/}}
-{{- define "github_username" -}}
-{{- splitList "@" .email | first -}}
 {{- end -}}

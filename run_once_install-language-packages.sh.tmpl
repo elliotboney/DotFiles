@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# One-time language package installation
+# Installs Python, Rust, and other language-specific packages
+
+set -e
+
+echo "📦 Installing language-specific packages (one-time setup)..."
+
+# Python package management
+if command -v pip3 >/dev/null 2>&1; then
+    echo "🐍 Installing global Python packages..."
+    pip3 install --user --break-system-packages \
+        black \
+        flake8 \
+        mypy \
+        pytest \
+        requests \
+        pipenv || true
+fi
+
+# Rust package management
+if command -v cargo >/dev/null 2>&1; then
+    echo "🦀 Installing Rust tools..."
+    cargo install \
+        ripgrep \
+        fd-find \
+        bat \
+        eza \
+        tokei || true
+fi
+
+echo "✅ Language packages installed!"

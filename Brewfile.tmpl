@@ -10,11 +10,9 @@ tap "jlhonora/lsusb"
 tap "homebrew/bundle"
 tap "homebrew/services"
 tap "homebrew/cask-fonts"
-{{- if .development }}
 tap "homebrew/fuse"
 tap "homebrew/apache"
 tap "homebrew/php"
-{{- end }}
 
 ################################################
 ##              ESSENTIAL CASKS               ##
@@ -27,9 +25,7 @@ cask "google-chrome"
 cask "iterm2"
 {{- if eq .chezmoi.os "darwin" }}
 cask "little-snitch"
-{{- end }}
 
-{{- if .personal }}
 # Personal applications
 cask "dropbox"
 cask "spotify"
@@ -38,9 +34,7 @@ cask "transmission"
 cask "firefox"
 cask "evernote"
 cask "kaleidoscope"
-{{- end }}
 
-{{- if .development }}
 # Development applications
 cask "sublime-text"
 cask "atom"
@@ -55,16 +49,12 @@ cask "arduino"
 cask "openscad"
 cask "angry-ip-scanner"
 cask "clion"
-{{- end }}
 
-{{- if .work }}
 # Work applications
 cask "slack-beta"
 cask "gcloud-cli"
 cask "google-cloud-sdk"
-{{- end }}
 
-{{- if .personal }}
 # Personal utilities
 cask "filezilla"
 cask "adium"
@@ -76,7 +66,6 @@ cask "unetbootin"
 cask "calibre"
 cask "lunar"
 cask "ngrok"
-{{- end }}
 
 ################################################
 ##            ESSENTIAL CLI TOOLS             ##
@@ -107,7 +96,6 @@ brew "ripgrep"      # Better grep
 brew "jq"           # JSON processor
 brew "yq"           # YAML processor
 
-{{- if .development }}
 # Development tools
 brew "atuin"        # Synced shell history
 brew "gping"        # Better ping with graph
@@ -131,9 +119,7 @@ brew "pipenv"
 brew "redis"
 brew "ollama"
 brew "llama.cpp"
-{{- end }}
 
-{{- if .development }}
 # Development utilities
 brew "htop"
 brew "nmap"
@@ -150,9 +136,7 @@ brew "ddev"
 brew "supabase"
 brew "vercel-cli"
 brew "trufflehog"
-{{- end }}
 
-{{- if .personal }}
 # Personal/media tools
 brew "ffmpeg"
 brew "exiftool"
@@ -161,18 +145,15 @@ brew "pdfcrack"
 brew "pdfrip"
 brew "tesseract"
 brew "visidata"
-{{- end }}
 
 {{- if eq .chezmoi.hostname "Mac" }}
 # Machine-specific tools for this Mac
 brew "gnupg"
 brew "zoxide"
-{{- end }}
 
 ################################################
 ##            DEPENDENCIES/LIBS              ##
 ################################################
-{{- if .development }}
 # Only install heavy dependencies on development machines
 brew "cmake"
 brew "automake"
@@ -182,4 +163,5 @@ brew "pkg-config"
 brew "openssl@3"
 brew "sqlite"
 brew "postgresql"
+{{- end }}
 {{- end }}

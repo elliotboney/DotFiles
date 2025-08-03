@@ -8,12 +8,9 @@ add_newline = true
 
 # Replace the '❯' symbol in the prompt with machine-specific symbols
 [character]
-{{- if .personal }}
+{{- if eq .chezmoi.os "darwin" }}
 success_symbol = '[➜](bold green)'
 error_symbol = '[➜](bold red)'
-{{- else if .work }}
-success_symbol = '[💼](bold blue)'
-error_symbol = '[💼](bold red)'
 {{- else if .server }}
 success_symbol = '[🖥️](bold cyan)'
 error_symbol = '[🖥️](bold red)'
@@ -53,13 +50,10 @@ truncation_symbol = '…/'
 'Downloads' = '📥'
 'Music' = '🎵'
 'Pictures' = '📷'
-{{- if .development }}
 'Code' = '💻'
 'Projects' = '🚀'
 'Development' = '⚡'
-{{- end }}
 
-{{- if .development }}
 [python]
 symbol = '👾 '
 pyenv_version_name = true
@@ -79,13 +73,11 @@ disabled = false
 
 [terraform]
 symbol = '💠 '
-{{- end }}
 
 [cmd_duration]
 min_time = 10_000
 format = 'took [$duration](bold yellow)'
 
-{{- if .work }}
 # Work-specific modules
 [aws]
 symbol = '☁️ '
@@ -94,22 +86,17 @@ disabled = false
 [gcloud]
 symbol = '☁️ '
 disabled = false
-{{- end }}
 
-{{- if .personal }}
 # Personal machine customizations
 [battery]
 full_symbol = '🔋'
 charging_symbol = '🔌'
 discharging_symbol = '💀'
-{{- end }}
 
 # Machine identification in prompt
 [custom.machine]
-{{- if .personal }}
+{{- if eq .chezmoi.os "darwin" }}
 command = 'echo "🏠"'
-{{- else if .work }}
-command = 'echo "💼"'
 {{- else if .server }}
 command = 'echo "🖥️"'
 {{- else }}

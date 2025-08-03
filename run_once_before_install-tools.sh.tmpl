@@ -22,11 +22,9 @@ fi
 echo "🍺 Installing essential brew packages..."
 brew install --quiet git zsh starship || true
 
-{{- if .development }}
 # Development tools
 brew install --quiet neovim ripgrep fd fzf bat eza git-delta || true
 echo "✅ Development tools installed"
-{{- end }}
 
 {{- else if eq .chezmoi.os "linux" }}
 # Linux package installation
@@ -38,7 +36,6 @@ elif command -v yum >/dev/null 2>&1; then
 elif command -v pacman >/dev/null 2>&1; then
     sudo pacman -S --noconfirm git zsh curl wget || true
 fi
-{{- end }}
 
 # Install Starship prompt
 if ! command -v starship >/dev/null 2>&1; then
@@ -46,7 +43,6 @@ if ! command -v starship >/dev/null 2>&1; then
     curl -sS https://starship.rs/install.sh | sh -s -- --yes
 fi
 
-{{- if .development }}
 # Install zinit for zsh plugin management
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 if [[ ! -d "$ZINIT_HOME" ]]; then
@@ -54,13 +50,14 @@ if [[ ! -d "$ZINIT_HOME" ]]; then
     mkdir -p "$(dirname $ZINIT_HOME)"
     git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME" || true
 fi
-{{- end }}
 
 # Install oh-my-zsh if not present
 if [[ ! -d "${HOME}/.oh-my-zsh" ]]; then
     echo "🐚 Installing Oh My Zsh..."
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended || true
 fi
+
+{{- end }}
 
 {{- if eq .chezmoi.os "darwin" }}
 # macOS specific: Set zsh as default shell

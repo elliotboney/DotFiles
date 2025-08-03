@@ -36,7 +36,6 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 # Restart affected services
 killall Dock Finder 2>/dev/null || true
 
-{{- if .development }}
 # Development-specific macOS optimizations
 echo "💻 Applying development optimizations..."
 
@@ -53,9 +52,7 @@ git config --global gc.auto 256
 npm config set progress false
 npm config set audit false
 npm config set fund false
-{{- end }}
 
-{{- end }}
 
 # Shell startup optimization
 echo "🐚 Optimizing shell startup performance..."
@@ -64,14 +61,12 @@ echo "🐚 Optimizing shell startup performance..."
 mkdir -p ~/.cache/shell
 
 # Zinit optimization
-{{- if .development }}
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 if [ -d "$ZINIT_HOME" ]; then
     echo "⚡ Optimizing Zinit performance..."
     # Compile Zinit for faster loading
     zsh -c "source $ZINIT_HOME/zinit.zsh; zinit self-update; zinit compile --all" 2>/dev/null || true
 fi
-{{- end }}
 
 # Oh-My-Zsh optimization
 if [ -d ~/.oh-my-zsh ]; then
@@ -104,9 +99,7 @@ cat > "$CHEZMOI_CACHE_DIR/machine_info.txt" << EOF
 OS: {{ .chezmoi.os }}
 ARCH: {{ .chezmoi.arch }}
 HOSTNAME: {{ .chezmoi.hostname }}
-PERSONAL: {{ .personal }}
-WORK: {{ .work }}
-DEVELOPMENT: {{ .development }}
+PLATFORM: {{ .chezmoi.os }}/{{ .chezmoi.arch }}
 SERVER: {{ .server }}
 EMAIL: {{ .email }}
 EOF
@@ -124,11 +117,8 @@ echo "vm.swappiness=10" | sudo tee -a /etc/sysctl.conf >/dev/null || true
 # Optimize file system cache
 echo "vm.vfs_cache_pressure=50" | sudo tee -a /etc/sysctl.conf >/dev/null || true
 
-{{- if .development }}
 # Development optimizations for Linux
 echo "fs.inotify.max_user_watches=524288" | sudo tee -a /etc/sysctl.conf >/dev/null || true
-{{- end }}
-{{- end }}
 
 # Measure and report performance improvements
 echo "📊 Performance optimization complete!"
@@ -170,3 +160,6 @@ echo "🔬 Run 'benchmark-shell' to test performance improvements"
 echo "⚡ Shell startup should be noticeably faster"
 echo "📄 Template rendering is now optimized"
 echo ""
+
+{{- end }}
+{{- end }}

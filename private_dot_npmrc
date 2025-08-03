@@ -1,0 +1,12 @@
+email=elliotboney@gmail.com
+editor=code
+init-author-name=Elliot Boney
+init-author-email=elliotboney@gmail.com
+init-author-url=http://elliot.js.org/
+init-version=0.0.1
+init-license=MIT
+long=true
+loglevel=error
+progress=false
+audit=false
+fund=false

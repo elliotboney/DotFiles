@@ -19,7 +19,6 @@ echo "🍺 Installing macOS-specific packages..."
 # Core utilities that improve macOS experience
 brew install --quiet coreutils findutils gnu-sed gnu-tar || true
 
-{{- if .development }}
 # Development tools for macOS
 echo "💻 Installing development packages..."
 brew install --quiet \
@@ -34,9 +33,8 @@ brew install --quiet \
     htop \
     neovim || true
 
-# Language-specific tools
+# Language-specific tools (Node.js managed by nvm)
 brew install --quiet \
-    node \
     python@3.12 \
     go \
     rust || true
@@ -47,9 +45,7 @@ brew install --quiet \
     duti \
     blueutil \
     terminal-notifier || true
-{{- end }}
 
-{{- if .personal }}
 # Personal machine packages
 echo "🏠 Installing personal machine packages..."
 brew install --quiet \
@@ -63,9 +59,7 @@ brew install --quiet \
     obsidian \
     raycast \
     cleanmymac || true
-{{- end }}
 
-{{- if .work }}
 # Work machine packages
 echo "💼 Installing work machine packages..."
 brew install --quiet \
@@ -79,13 +73,11 @@ brew install --quiet \
     notion \
     figma \
     postman || true
-{{- end }}
 
 {{- else if eq .chezmoi.os "linux" }}
 # Linux package management
 echo "🐧 Installing Linux packages..."
 
-{{- if .development }}
 # Development packages for Linux
 if command -v apt >/dev/null 2>&1; then
     sudo apt update -qq
@@ -121,7 +113,6 @@ elif command -v pacman >/dev/null 2>&1; then
         ripgrep \
         fd || true
 fi
-{{- end }}
 
 {{- if .server }}
 # Minimal server packages
@@ -135,14 +126,14 @@ if command -v apt >/dev/null 2>&1; then
         tree || true
 fi
 {{- end }}
-
 {{- end }}
 
 # Install language-specific package managers
-{{- if .development }}
 echo "🔧 Setting up language package managers..."
 
 # Node.js package management
+{{- if ne .chezmoi.os "darwin" }}
+# Skip npm global installs on macOS since we use nvm
 if command -v npm >/dev/null 2>&1; then
     echo "📦 Installing global Node.js packages..."
     npm install -g \
@@ -154,61 +145,38 @@ if command -v npm >/dev/null 2>&1; then
         nodemon \
         pm2 || true
 fi
-
-# Python package management
-if command -v pip3 >/dev/null 2>&1; then
-    echo "🐍 Installing global Python packages..."
-    pip3 install --user \
-        black \
-        flake8 \
-        mypy \
-        pytest \
-        requests \
-        pipenv || true
-fi
-
-# Rust package management
-if command -v cargo >/dev/null 2>&1; then
-    echo "🦀 Installing Rust tools..."
-    cargo install \
-        ripgrep \
-        fd-find \
-        bat \
-        eza \
-        tokei || true
-fi
+{{- else }}
+echo "📦 Skipping npm global installs on macOS (using nvm instead)"
 {{- end }}
+
+# Language packages are installed via run_once_install-language-packages.sh.tmpl
+echo "📦 Language packages (Python, Rust) are installed separately on first run"
 
 # Conditional installations based on hardware/capabilities
 {{- if eq .chezmoi.arch "arm64" }}
 echo "💪 ARM64 architecture detected - installing optimized packages..."
 {{- if eq .chezmoi.os "darwin" }}
 # Apple Silicon specific optimizations
-{{- if .development }}
 brew install --quiet \
     docker-buildx \
     lima || true
-{{- end }}
-{{- end }}
-{{- end }}
 
 # Install based on available system resources
 TOTAL_RAM=$(( $(sysctl -n hw.memsize 2>/dev/null || echo "8589934592") / 1024 / 1024 / 1024 ))
 if [ "$TOTAL_RAM" -gt 16 ]; then
     echo "💾 High memory system detected (${TOTAL_RAM}GB) - installing memory-intensive tools..."
     {{- if eq .chezmoi.os "darwin" }}
-    {{- if .development }}
     brew install --quiet \
         docker-desktop \
         intellij-idea \
         webstorm || true
     {{- end }}
-    {{- end }}
 fi
+{{- end }}
+{{- end }}
 
 echo "✅ Conditional package installation complete!"
 echo "📊 Installed packages optimized for:"
 echo "  • Platform: {{ .chezmoi.os }}/{{ .chezmoi.arch }}"
-echo "  • Machine type: {{ if .personal }}Personal{{ else if .work }}Work{{ else if .server }}Server{{ else }}Generic{{ end }}"
-echo "  • Development: {{ .development }}"
+echo "  • Features: All enabled"
 echo "  • Memory: ${TOTAL_RAM}GB"

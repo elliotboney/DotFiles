@@ -1,11 +1,7 @@
 #
 # Set to true if you want to output some debug info
 #
-{{- if .development }}
-DEBUG=true
-{{- else }}
 DEBUG=false
-{{- end }}
 
 
 if [ "${DEBUG}" = true ]; then
@@ -24,10 +20,10 @@ if [ "${DEBUG}" = true ]; then
     fi
 {{- else }}
     DATECOMMAND='date'
-{{- end }}
     export N=$($DATECOMMAND +%N)
     export N_ORIG=$($DATECOMMAND +%N)
     export USE_EPOCHREALTIME=false
+{{- end }}
   fi
   export N_SPACE=""
 fi
@@ -55,12 +51,10 @@ decho "\x1b[1;36mProcessing .zshrc\x1b[m"
 setopt extended_glob
 setopt glob_dots
 
-{{- if .personal }}
 if [ -f "${HOME}/.private_exports" ];then
   source "${HOME}/.private_exports"
   decho "${HOME}/.private_exports"
 fi
-{{- end }}
 
 # we need DOTPATH
 if [ -f "${HOME}/.dotfilelocation" ];then
@@ -95,10 +89,8 @@ zinit wait lucid light-mode for \
 # Load other plugins without turbo (they're fast enough)
 zinit light ael-code/zsh-colored-man-pages
 zinit light chrissicool/zsh-256color
-{{- if .development }}
 zinit light desyncr/zsh-ctrlp
 zinit light joshskidmore/zsh-fzf-history-search
-{{- end }}
 
 # Load oh-my-zsh libraries and plugins
 zinit snippet OMZL::git.zsh
@@ -131,25 +123,20 @@ else
 {{- if eq .chezmoi.os "darwin" }}
     brew
 {{- end }}
-{{- if .development }}
+
     bun
     docker
     docker-compose
-{{- end }}
     colorize
     compleat
     cp
     history
-{{- if eq .chezmoi.os "darwin" }}
     # osx
-{{- end }}
     rsync
     screen
     ssh
     sudo
-{{- if .personal }}
     wpclitwo
-{{- end }}
     )
 fi
 
@@ -160,12 +147,10 @@ fpath=(${HOME}/.zsh-completions $fpath)
 source "${ZSH}/oh-my-zsh.sh"
 decho "${ZSH}/oh-my-zsh.sh"
 
-{{- if .development }}
 if [ -f "${HOME}/.nvm/nvm.sh" ]; then
   source ${HOME}/.nvm/nvm.sh --no-use
   decho "${HOME}/.nvm/nvm.sh"
 fi
-{{- end }}
 
 # Enable extended globbing
 setopt extendedglob
@@ -180,23 +165,19 @@ HOST_NAME=$(uname -n)
 # Setup the main shell variables and functions (templated platform detection)
 {{- if eq .chezmoi.os "darwin" }}
 SHELL_PLATFORM='OSX'
+shell_is_linux       () { false ; }
+shell_is_osx         () { true ; }
 {{- else if eq .chezmoi.os "linux" }}
 SHELL_PLATFORM='LINUX'
+shell_is_linux       () { true ; }
+shell_is_osx         () { false ; }
 {{- else }}
 SHELL_PLATFORM='BSD'
+shell_is_linux       () { false ; }
+shell_is_osx         () { false ; }
 {{- end }}
 
 # Platform detection functions (templated)
-{{- if eq .chezmoi.os "linux" }}
-shell_is_linux       () { true ; }
-shell_is_osx         () { false ; }
-{{- else if eq .chezmoi.os "darwin" }}
-shell_is_linux       () { false ; }
-shell_is_osx         () { true ; }
-{{- else }}
-shell_is_linux       () { false ; }
-shell_is_osx         () { false ; }
-{{- end }}
 shell_is_router      () { [[ "$OSTYPE" == *'gnueabi'* ]] ; }
 shell_is_elliot      () { [[ "$HOST_NAME" == *'Elliots'* ]] ; }
 shell_is_login       () { shopt -q login_shell ; }
@@ -206,7 +187,7 @@ shell_is_script      () { ! shell_is_interactive ; }
 # Helper function to load directories of shell scripts
 include_d() {
     local dir=$1
-    local functions_dir="${HOME}/.dotfiles/.${dir}.d"
+    local functions_dir="${HOME}/.dotfiles/${dir}.d"
     
     if [[ -d "$functions_dir" && -r "$functions_dir" && -x "$functions_dir" ]]; then
         decho "   📁 Processing ${dir}/ directory..."
@@ -253,14 +234,12 @@ zstyle ':omz:plugins:alias-finder' cheaper yes
 # sweet renaming shit
 autoload -U zmv
 
-{{- if .development }}
 # Atuin - Better shell history (if installed)
 if command -v atuin >/dev/null 2>&1; then
     eval "$(atuin init zsh)"
 else
     echo "⚠️  Atuin not installed. Run: brew install atuin"
 fi
-{{- end }}
 
 # Starship - Modern prompt (if installed)  
 if command -v starship >/dev/null 2>&1; then
@@ -270,10 +249,8 @@ else
     echo "⚠️  Starship not installed. Run: brew install starship"
 fi
 
-{{- if .development }}
 [[ -s "${HOME}/.rvm/scripts/rvm" ]] && source "${HOME}/.rvm/scripts/rvm"
 decho "${HOME}/.rvm/scripts/rvm"
-{{- end }}
 
 decho "\x1b[1;36mDone with .zshrc\x1b[m"
 
@@ -285,11 +262,8 @@ if [ -f $HOME/.zshrc.local ] ; then
   source $HOME/.zshrc.local
 fi
 
-{{- if .development }}
 export FPATH="${HOME}/.dotfiles/utilities.d:${FPATH}" && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-{{- end }}
 
-{{- if .personal }}
 if [ -f $HOME/.grc.zsh ] ; then
   source $HOME/.grc.zsh
 fi
@@ -298,7 +272,6 @@ fi
 if command_exists eza; then
   alias ls="eza -hF --group-directories-first --color=always"
 fi
-{{- end }}
 
 if [ "$DEBUG" = true ]; then
   if [[ "${USE_EPOCHREALTIME}" = true ]]; then
