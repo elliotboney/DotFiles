@@ -103,11 +103,12 @@
 	trustExitCode = true
 [ghi]
   repo = nuhabitat/site
-	token = !security find-internet-password -a eboney@personal.com -s github.com -l 'ghi token' -w
+	token = !security find-internet-password -a {{ .email }} -s github.com -l 'ghi token' -w
 
 [user]
 	name = Elliot Boney
-	email = eboney@personal.com
+	email = {{ .email }}
+	signingkey = F425B86D4EB372D7
 [commit]
 	template = ~/.stCommitMsg
 	gpgsign = true
