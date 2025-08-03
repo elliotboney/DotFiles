@@ -1,0 +1,10 @@
+{{- if lookPath "lpass" }}
+{{- $sshKey := lastpassRaw "SSH Private Key" }}
+{{- if $sshKey }}
+{{ (index $sshKey 0).note }}
+{{- else }}
+{{- fail "SSH Private Key not found in LastPass" }}
+{{- end }}
+{{- else }}
+{{- fail "LastPass CLI (lpass) not found. Please install with: brew install lastpass-cli" }}
+{{- end }}

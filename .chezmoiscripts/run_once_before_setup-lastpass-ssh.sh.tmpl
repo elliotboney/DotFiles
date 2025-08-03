@@ -1,0 +1,79 @@
+#!/bin/bash
+
+# Setup LastPass SSH entries for chezmoi template functions
+# This script helps you store your SSH keys in LastPass for use with chezmoi
+
+set -e
+
+echo "🔑 Setting up LastPass SSH key entries..."
+
+# Check if LastPass CLI is installed
+if ! command -v lpass >/dev/null 2>&1; then
+    echo "❌ LastPass CLI not found. Installing..."
+    {{- if eq .chezmoi.os "darwin" }}
+    brew install lastpass-cli
+    {{- else if eq .chezmoi.os "linux" }}
+    sudo apt update && sudo apt install lastpass-cli
+    {{- end }}
+fi
+
+# Check if user is logged in to LastPass
+if ! lpass status >/dev/null 2>&1; then
+    echo "🔐 Please log in to LastPass:"
+    echo "lpass login {{ .email }}"
+    echo ""
+    echo "After logging in, run this script again or run 'chezmoi apply'"
+    exit 0
+fi
+
+echo "✅ LastPass CLI is ready"
+
+# Function to check if entry exists
+entry_exists() {
+    lpass show "$1" >/dev/null 2>&1
+}
+
+# Create SSH entries if they don't exist
+echo "📝 Checking LastPass entries for SSH keys..."
+
+if ! entry_exists "SSH Private Key"; then
+    echo "⚠️  'SSH Private Key' entry not found in LastPass"
+    echo "Please create a secure note in LastPass with the following details:"
+    echo "  Name: SSH Private Key"
+    echo "  Note: [paste your private key content from ~/.ssh/id_rsa]"
+    echo ""
+fi
+
+if ! entry_exists "SSH Public Key"; then
+    echo "⚠️  'SSH Public Key' entry not found in LastPass"
+    echo "Please create a secure note in LastPass with the following details:"
+    echo "  Name: SSH Public Key"
+    echo "  Note: [paste your public key content from ~/.ssh/id_rsa.pub]"
+    echo ""
+fi
+
+if ! entry_exists "SSH Config"; then
+    echo "⚠️  'SSH Config' entry not found in LastPass"
+    echo "Please create a secure note in LastPass with the following details:"
+    echo "  Name: SSH Config"
+    echo "  Note: [paste your SSH config content from ~/.ssh/config]"
+    echo ""
+fi
+
+if ! entry_exists "SSH Authorized Keys"; then
+    echo "ℹ️  'SSH Authorized Keys' entry not found in LastPass (optional)"
+    echo "You can create this entry if you want to manage authorized_keys:"
+    echo "  Name: SSH Authorized Keys"
+    echo "  Note: [paste authorized keys content]"
+    echo ""
+fi
+
+echo "📋 To create these entries manually:"
+echo "1. Open LastPass web vault or app"
+echo "2. Create 'Secure Note' entries with the exact names above"
+echo "3. Copy your SSH key contents into the 'Note' field"
+echo "4. Run 'chezmoi apply' to use the new templates"
+
+echo ""
+echo "🚀 Once entries are created, your SSH keys will be automatically"
+echo "   retrieved from LastPass on any new machine during chezmoi setup!"

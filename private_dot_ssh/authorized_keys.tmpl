@@ -1,0 +1,14 @@
+{{- if lookPath "lpass" }}
+{{- $authorizedKeys := lastpassRaw "SSH Authorized Keys" }}
+{{- if $authorizedKeys }}
+{{ (index $authorizedKeys 0).note }}
+{{- else }}
+# Fallback - add your public key here if LastPass entry not found
+{{- $sshPubKey := lastpassRaw "SSH Public Key" }}
+{{- if $sshPubKey }}
+{{ (index $sshPubKey 0).note }}
+{{- end }}
+{{- end }}
+{{- else }}
+{{- fail "LastPass CLI (lpass) not found. Please install with: brew install lastpass-cli" }}
+{{- end }}

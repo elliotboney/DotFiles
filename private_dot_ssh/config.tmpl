@@ -1,0 +1,36 @@
+{{- if lookPath "lpass" }}
+{{- $sshConfig := lastpassRaw "SSH Config" }}
+{{- if $sshConfig }}
+{{ (index $sshConfig 0).note }}
+{{- else }}
+# Fallback SSH config if LastPass entry not found
+Host *
+    User eboney
+    HashKnownHosts no
+    ForwardX11 yes
+    ForwardX11Trusted no
+    TCPKeepAlive yes
+    ServerAliveInterval 30
+    ForwardAgent yes
+    IdentityFile ~/.ssh/id_rsa
+
+{{- if eq .chezmoi.os "darwin" }}
+# macOS specific settings
+Host *
+    AddKeysToAgent yes
+    UseKeychain yes
+{{- end }}
+
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_rsa
+
+Host gitlab.com
+    HostName gitlab.com
+    User git
+    IdentityFile ~/.ssh/id_rsa
+{{- end }}
+{{- else }}
+{{- fail "LastPass CLI (lpass) not found. Please install with: brew install lastpass-cli" }}
+{{- end }}

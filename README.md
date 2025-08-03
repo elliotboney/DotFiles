@@ -132,6 +132,17 @@ When you run `chezmoi init --apply`, several scripts automatically execute to se
 - Retrieves age encryption key from LastPass secure note
 - Sets up encrypted file access
 
+### 🔑 **SSH Key Setup via LastPass**
+**Script**: `.chezmoiscripts/run_once_before_setup-lastpass-ssh.sh.tmpl`
+- Verifies LastPass CLI installation and login
+- Checks for required LastPass secure note entries:
+  - `SSH Private Key` - Your private SSH key content
+  - `SSH Public Key` - Your public SSH key content  
+  - `SSH Config` - Your SSH configuration with hosts
+  - `SSH Authorized Keys` - Optional authorized keys
+- Provides setup instructions if entries are missing
+- SSH keys are dynamically retrieved via LastPass template functions
+
 ### 🛠 **Essential Tools Installation**
 **Script**: `.chezmoiscripts/run_once_before_install-tools.sh.tmpl`
 - **Homebrew** (macOS) - Package manager installation
@@ -378,10 +389,11 @@ After setup completes, you have:
 - **Encrypted Files**: Safe to store in public repository (SSH configs, sensitive settings)
 - **Local Key**: Auto-retrieved to `~/.config/chezmoi/key.txt` with 600 permissions
 
-#### **What's Encrypted**
-- **SSH Configuration**: `~/.ssh/config` with machine-specific hosts
-- **Git GPG Keys**: Personal and work signing keys
-- **API Keys**: Development and personal API credentials
+#### **What's Managed via LastPass**
+- **SSH Keys**: Private/public key pairs retrieved via LastPass template functions
+- **SSH Configuration**: Host configurations with sensitive connection details
+- **API Keys**: Development and personal API credentials stored as secure notes
+- **Git GPG Keys**: Personal and work signing keys (age-encrypted)
 - **Sensitive Settings**: Any configuration containing secrets
 
 #### **Security Benefits**
