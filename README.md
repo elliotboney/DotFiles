@@ -39,7 +39,7 @@ This dotfiles setup uses chezmoi to manage configuration files across multiple m
 ### New Machine Setup (One Command)
 ```bash
 # Install chezmoi and apply dotfiles in one command
-chezmoi init --apply elliotboney/dotfiles-chezmoi
+chezmoi init --apply yourusername/dotfiles
 ```
 
 ### Step-by-Step Installation
@@ -49,7 +49,7 @@ brew install chezmoi  # macOS
 # or: sudo snap install chezmoi  # Linux
 
 # Initialize from this repository
-chezmoi init elliotboney/dotfiles-chezmoi
+chezmoi init yourusername/dotfiles
 
 # Preview changes
 chezmoi diff
@@ -111,7 +111,7 @@ pacman -S chezmoi lastpass-cli
 ### First-Time Setup
 ```bash
 # Clone and apply (will prompt for machine configuration)
-chezmoi init --apply elliotboney/dotfiles-chezmoi
+chezmoi init --apply yourusername/dotfiles
 ```
 
 You'll be prompted to configure your machine:
@@ -120,6 +120,97 @@ You'll be prompted to configure your machine:
 - **Development machine?** (true/false)
 - **Server machine?** (true/false)
 - **Email address** (for git configuration)
+
+## Installation Scripts & What Gets Installed
+
+When you run `chezmoi init --apply`, several scripts automatically execute to set up your environment. Here's exactly what gets installed:
+
+### 🔒 **Pre-Installation: Encryption Setup**
+**Script**: `.chezmoiscripts/run_before_decrypt.sh.tmpl`
+- Installs LastPass CLI if not present
+- Prompts for LastPass login
+- Retrieves age encryption key from LastPass secure note
+- Sets up encrypted file access
+
+### 🛠 **Essential Tools Installation**
+**Script**: `.chezmoiscripts/run_once_before_install-tools.sh.tmpl`
+- **Homebrew** (macOS) - Package manager installation
+- **Core development tools**: git, zsh, starship prompt
+- **Modern CLI replacements**: neovim, ripgrep, fd, fzf, bat, eza, git-delta
+- **Shell setup**: oh-my-zsh, zinit plugin manager
+- Sets zsh as default shell
+
+### 📦 **Conditional Package Installation**
+**Script**: `.chezmoiscripts/run_once_before_conditional-packages.sh.tmpl`
+
+Based on your machine type, installs different package sets:
+
+#### **macOS Packages (All Machines)**
+```bash
+# Core utilities
+coreutils, findutils, gnu-sed, gnu-tar, grep
+
+# Development tools  
+git-delta, bat, eza, fd, ripgrep, fzf, jq, yq, htop, neovim
+python@3.12, go, rust, node, mas, docker
+
+# Personal apps (if personal=true)
+spotify, discord, vlc, transmission, obsidian, raycast
+
+# Work apps (if work=true)  
+slack, zoom, docker, kubectl, notion, figma, postman
+```
+
+#### **Linux Packages**
+```bash
+# Development essentials
+build-essential, curl, git, vim, htop, tree, jq, ripgrep
+```
+
+#### **High-Memory Systems (>16GB RAM)**
+```bash
+# Memory-intensive tools
+docker-desktop, intellij-idea, webstorm
+```
+
+### 🐍 **Language-Specific Packages**
+**Script**: `.chezmoiscripts/run_once_install-language-packages.sh.tmpl`
+- **Python**: black, flake8, mypy, pytest, requests, pipenv
+- **Rust**: ripgrep, fd-find, bat, eza, tokei (performance CLI tools)
+- **Node.js**: Global packages via npm (TypeScript, ESLint, Prettier)
+
+### ⚡ **Performance Optimization**
+**Script**: `.chezmoiscripts/run_once_optimize-performance.sh.tmpl`
+- **macOS optimizations**: Faster key repeat, reduced animations
+- **Shell performance**: Compile zsh functions, optimize completions
+- **Development tools**: Git performance tweaks, npm optimizations
+- **System tuning**: File watcher limits, swap settings (Linux)
+
+### 🎉 **Final Setup & Documentation**
+**Script**: `.chezmoiscripts/run_once_after_setup-dotfiles.sh.tmpl`
+- Generates machine-specific documentation
+- Creates usage guides and troubleshooting docs
+- Performs health checks on installed tools
+- Provides setup completion summary
+
+### 🚫 **What We DON'T Install**
+- **No GUI apps** without your machine type consent
+- **No system modifications** that require sudo (except package managers)
+- **No background services** or daemons
+- **No data collection** or telemetry tools
+- **No modifications** to system security settings
+
+### 📊 **Installation Summary**
+- **Total packages**: ~30-50 depending on machine type
+- **Disk space**: ~2-4GB for full development setup
+- **Time**: 5-15 minutes depending on internet speed
+- **Network usage**: ~1-3GB downloads
+
+### 🛡 **Safety & Transparency**
+- All scripts use `|| true` for non-critical operations
+- Package installations are logged and can be reviewed
+- No destructive operations without explicit confirmation
+- Scripts are idempotent - safe to run multiple times
 
 ## Daily Workflow
 
@@ -207,9 +298,10 @@ The system automatically adapts based on your machine type:
 │   ├── private_utilities.d/     # Utility functions (25+ files)
 │   ├── private_environment.d/   # Environment configuration
 │   └── private_completions.d/   # Shell completions
-├── run_before_*.sh.tmpl         # Pre-installation scripts
-├── run_after_*.sh.tmpl          # Post-installation scripts
-└── run_once_*.sh.tmpl           # One-time setup scripts
+├── .chezmoiscripts/             # Installation and setup scripts
+│   ├── run_before_*.sh.tmpl     # Pre-installation scripts  
+│   ├── run_once_*.sh.tmpl       # One-time setup scripts
+│   └── run_after_*.sh.tmpl      # Post-installation scripts
 ```
 
 ### Key Files
@@ -238,7 +330,7 @@ brew install chezmoi lastpass-cli  # macOS
 #### **2. One-Command Setup**
 ```bash
 # Initialize and apply in one command
-chezmoi init --apply elliotboney/dotfiles-chezmoi
+chezmoi init --apply yourusername/dotfiles
 ```
 
 #### **3. Automatic Configuration Process**
@@ -326,7 +418,7 @@ chezmoi apply
 
 ### 🔧 **Behind the Scenes**
 
-The automatic key retrieval is handled by `run_before_decrypt.sh.tmpl` which:
+The automatic key retrieval is handled by `.chezmoiscripts/run_before_decrypt.sh.tmpl` which:
 
 1. **Checks for existing key** - Skips if `~/.config/chezmoi/key.txt` exists
 2. **Validates Lastpass CLI** - Ensures `lpass` is installed
