@@ -39,7 +39,7 @@ This dotfiles setup uses chezmoi to manage configuration files across multiple m
 ### New Machine Setup (One Command)
 ```bash
 # Install chezmoi and apply dotfiles in one command
-chezmoi init --apply yourusername/dotfiles
+chezmoi init --apply elliotboney/dotfiles
 ```
 
 ### Step-by-Step Installation
@@ -49,7 +49,7 @@ brew install chezmoi  # macOS
 # or: sudo snap install chezmoi  # Linux
 
 # Initialize from this repository
-chezmoi init yourusername/dotfiles
+chezmoi init elliotboney/dotfiles
 
 # Preview changes
 chezmoi diff
@@ -111,7 +111,7 @@ pacman -S chezmoi lastpass-cli
 ### First-Time Setup
 ```bash
 # Clone and apply (will prompt for machine configuration)
-chezmoi init --apply yourusername/dotfiles
+chezmoi init --apply elliotboney/dotfiles
 ```
 
 You'll be prompted to configure your machine:
@@ -341,7 +341,7 @@ brew install chezmoi lastpass-cli  # macOS
 #### **2. One-Command Setup**
 ```bash
 # Initialize and apply in one command
-chezmoi init --apply yourusername/dotfiles
+chezmoi init --apply elliotboney/dotfiles
 ```
 
 #### **3. Automatic Configuration Process**
